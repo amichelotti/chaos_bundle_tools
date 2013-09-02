@@ -12,3 +12,6 @@ cd chaosframework
 doxygen Documentation/chaosdocs
 cd ..
 ln -s chaosframework/Documentation/html Documentation
+
+#chomod +x /$PWD/tools/ChaosMakeNewRTCU
+export PATH=$PATH;/$PWD/tools
