@@ -16,11 +16,11 @@ fi
 echo "Start $__chaos_cu_name__ creation"
 
 cu_dir="$SCRIPTPATH/../user_control_unit/"
-#if [ -d "$cu_dir" ]; then
-#	echo "[FATAL]: Control unit directory is alread present"
-#	echo "Exiting script"
-#	exit 1
-#fi
+if [ -d "$cu_dir/$__chaos_cu_name__" ]; then
+	echo "[FATAL]: Control unit directory is alread present"
+	echo "Exiting script"
+	exit 1
+fi
 
 rm -rf $cu_dir
 mkdir -p $cu_dir
@@ -32,6 +32,10 @@ mv rtcu.tmpl $__chaos_cu_name__
 
 echo "rename project files"
 cd $__chaos_cu_name__
+
+cp $SCRIPTPATH/gitignore_tmpl .gitignore
+sed -e "s/__chaos_project_type__/rtcu/g" $SCRIPTPATH/ChaosCreateOfficialRepository_tmpl > ChaosCreateOfficialRepository.sh
+
 
 sed -e "s/__chaos_cu_name__/$__chaos_cu_name__/g" CMakeLists_tmpl.txt > CMakeLists.txt
 rm CMakeLists_tmpl.txt
