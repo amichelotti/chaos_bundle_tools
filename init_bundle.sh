@@ -1,28 +1,28 @@
 #!/bin/bash
+curr=`dirname $0`
+if [ ! -d "$CHAOS_FRAMEWORK" ] ; then
+echo "please set CHAOS_FRAMEWORK [=$CHAOS_FRAMEWORK] environment to a valid directory, use \"source $curr/chaos_bundle_env.sh\""
+exit 1;
+fi
 
-#script for initialize the bundle create with google repo utility
-pushd `dirname $0` > /dev/null
-SCRIPTPATH=`pwd -P`
-popd > /dev/null
+if [ ! -d "$CHAOS_BUNDLE" ] ; then
+echo "please set CHAOS_BUNDLE [=$CHAOS_BUNDLE] environment to a valid directory, use  \"source $curr/chaos_bundle_env.sh\""
+exit 1;
+fi
 
-PARENT_SCRIPTPATH="$(dirname "$SCRIPTPATH")"
-
+ 
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
-echo -e "\033[38;5;148m!CHOAS bundle directory -> $PARENT_SCRIPTPATH\033[39m"
+echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
 echo "press any key to continue"
 read -n 1 -s
 
-#boostrap !CHAOS Framework in development mode
-export CHAOS_DEVELOPMENT="YES"
-
-$SCRIPTPATH/../chaosframework/bootstrap.sh
-ln -s $SCRIPTPATH/../chaosframework/usr $SCRIPTPATH/../usr
+$CHAOS_FRAMEWORK/bootstrap.sh
+ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
 
 #make the documentation
-cd $SCRIPTPATH/../chaosframework
+cd $CHAOS_FRAMEWORK
 doxygen Documentation/chaosdocs
 cd ..
-ln -s chaosframework/Documentation/html Documentation
+ln -sf $CHAOS_FRAMEWORK/Documentation/html Documentation
 
-#chomod +x /$PWD/ChaosMakeNewRTCU
-export PATH=$PATH:$PWD/tools
+
