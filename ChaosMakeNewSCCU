@@ -5,7 +5,7 @@ SCRIPTPATH=`pwd -P`
 popd > /dev/null
 
 __chaos_cu_name__=$1
-echo "!CHAOS Realt Time Control Unit creation tool"
+echo "!CHAOS Slow Control Control Unit creation tool"
 
 if [ ! -n "$__chaos_cu_name__" ]; then
 	echo "[FATAL]: the name of the control unit is mandatory"
@@ -26,9 +26,9 @@ rm -rf $cu_dir
 mkdir -p $cu_dir
 
 echo "Create project files"
-cp -r "$SCRIPTPATH/project_template/rtcu.tmpl"  $cu_dir
+cp -r "$SCRIPTPATH/project_template/sccu.tmpl"  $cu_dir
 cd $cu_dir
-mv rtcu.tmpl $__chaos_cu_name__
+mv sccu.tmpl $__chaos_cu_name__
 
 echo "rename project files"
 cd $__chaos_cu_name__
@@ -37,6 +37,7 @@ touch README.md
 sed -e "s/__chaos_cu_name__/$__chaos_cu_name__/g" CMakeLists_tmpl.txt > CMakeLists.txt
 rm CMakeLists_tmpl.txt
 
+#work on project
 mv __chaos_cu_name__.xcodeproj "$__chaos_cu_name__.xcodeproj"
 sed -e "s/__chaos_cu_name__/$__chaos_cu_name__/g" source/__chaos_cu_name__.cpp > "source/$__chaos_cu_name__.cpp"
 rm source/__chaos_cu_name__.cpp
@@ -73,5 +74,5 @@ git commit -a -m "Initial commit"
 git checkout -b development
 
 echo "Generate script for default gerrit lnf server and github"
-sed -e "s/__chaos_project_type__/rtcu/g" $SCRIPTPATH/.ChaosCreateOfficialRepository_tmpl > ChaosCreateOfficialRepository.sh
-sed -e "s/__chaos_project_type__/rtcu/g" $SCRIPTPATH/.ChaosCreateGitHubRepository_tmpl > ChaosCreateGitHubRepository.sh
+sed -e "s/__chaos_project_type__/sccu/g" $SCRIPTPATH/.ChaosCreateOfficialRepository_tmpl > ChaosCreateOfficialRepository.sh
+sed -e "s/__chaos_project_type__/sccu/g" $SCRIPTPATH/.ChaosCreateGitHubRepository_tmpl > ChaosCreateGitHubRepository.sh

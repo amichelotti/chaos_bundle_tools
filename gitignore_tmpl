@@ -3,9 +3,8 @@ ChaosCreateOfficialRepository.sh
 CMakeCache.txt
 CMakeFiles/*
 build/*
-ControlUnitTest.xcodeproj/xcuserdatai/*
 DerivedData
-ExampleControlUnit.xcodeproj/project.xcworkspace/xcuserdata
+*xcuserdata*
 Makefile
 cmake_install.cmake
 install_manifest.txt

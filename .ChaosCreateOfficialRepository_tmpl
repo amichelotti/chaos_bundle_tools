@@ -16,18 +16,6 @@ echo -e "\033[38;5;148mRepository name -> $repository_name\033[39m"
 
 cd $module_path
 
-echo -e "\033[38;5;148mInitialize git\033[39m"
-git init
-touch README.md
-
-
-cp __original_script_path__/gitignore_tmpl .gitignore
-
-git add .
-git commit -a -m "Initial commit"
-git checkout -b development
-
-
 echo "press any key to presist repo on gerrit lnf server"
 read -n 1 -s
 echo "Create repo on lnf gerrit server"
@@ -42,4 +30,7 @@ if [ $? -gt 0 ]; then
 
 	echo "upload to lnf git"
 	git push origin_ssh master development
+	
+	echo "add gerrit commit hook"
+	scp -p -P 29418 cvs.lnf.infn.it:hooks/commit-msg .git/hooks/
 fi

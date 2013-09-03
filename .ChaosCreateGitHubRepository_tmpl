@@ -34,5 +34,5 @@ cd $module_path
 echo "Create repo on git hub"
 curl -u "$user_name:$user_pwd" https://api.github.com/user/repos -d "{\"name\":\"$repository_name\"}"
 if [ $? -eq 0 ]; then
-	git remote add github_ssh git@github.com:$user_name/$git_repo_name
+	git remote add github_ssh "git@github.com:$user_name/$repository_name"
 fi
