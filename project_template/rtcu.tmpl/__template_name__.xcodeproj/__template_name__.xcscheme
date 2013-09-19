@@ -17,9 +17,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "32C9764917D4955400F76D3F"
-            BuildableName = "__chaos_cu_name__"
-            BlueprintName = "__chaos_cu_name__"
-            ReferencedContainer = "container:__chaos_cu_name__.xcodeproj">
+            BuildableName = "__template_name__"
+            BlueprintName = "__template_name__"
+            ReferencedContainer = "container:__template_name__.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -36,9 +36,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "32C9764917D4955400F76D3F"
-            BuildableName = "__chaos_cu_name__"
-            BlueprintName = "__chaos_cu_name__"
-            ReferencedContainer = "container:__chaos_cu_name__.xcodeproj">
+            BuildableName = "__template_name__"
+            BlueprintName = "__template_name__"
+            ReferencedContainer = "container:__template_name__.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
