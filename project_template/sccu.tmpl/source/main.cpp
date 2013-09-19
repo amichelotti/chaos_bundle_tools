@@ -19,7 +19,7 @@
  */
 
 
-#include "__chaos_cu_name__.h"
+#include "__template_name__.h"
 #include "DummyDriver.h"
 
 #include <chaos/common/chaos_constants.h>
@@ -79,7 +79,7 @@ int main (int argc, char* argv[] )
     //! [Adding the CustomControlUnit]
     if(ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->hasOption(OPT_CUSTOM_DEVICE_ID)){
         tmp_device_id = ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->getOption<string>(OPT_CUSTOM_DEVICE_ID);
-        ChaosCUToolkit::getInstance()->addControlUnit(new __chaos_cu_name__(tmp_device_id));
+        ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id));
     }
     //! [Adding the CustomControlUnit]
     

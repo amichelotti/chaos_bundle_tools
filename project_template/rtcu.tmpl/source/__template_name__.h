@@ -1,9 +1,9 @@
-/*
- *	__chaos_cu_name__.h
+/*	
+ *	__template_name__.h
  *	!CHOAS
  *	Created by Bisegni Claudio.
- *
- *    	Copyright 2013 INFN, National Institute of Nuclear Physics
+ *	
+ *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
  *    	Licensed under the Apache License, Version 2.0 (the "License");
  *    	you may not use this file except in compliance with the License.
@@ -17,55 +17,60 @@
  *    	See the License for the specific language governing permissions and
  *    	limitations under the License.
  */
+#ifndef ChaosFramework___template_name___h
+#define ChaosFramework___template_name___h
 
-#ifndef __ControlUnitTest____chaos_cu_name____
-#define __ControlUnitTest____chaos_cu_name____
-
-#include <chaos/cu_toolkit/ControlManager/SCAbstractControlUnit.h>
+#include <string>
+#include <chaos/cu_toolkit/ControlManager/RTAbstractControlUnit.h>
 
 using namespace std;
+
 using namespace chaos;
-using namespace boost;
-using namespace boost::posix_time;
+using namespace chaos::common::data;
 
-namespace cu_driver = chaos::cu::driver_manager::driver;
+class __template_name__ : public chaos::cu::RTAbstractControlUnit {
+	std::string _device_id;
+public:
+    /*
+     Construct a new CU with an identifier
+     */
+    __template_name__(std::string& device_id);
+    /*
+     Destructor a new CU with an identifier
+     */
+    ~__template_name__();
 
-class __chaos_cu_name__ : public chaos::cu::SCAbstractControlUnit {
-    string _deviceID;
 protected:
     /*
      Define the Control Unit Dataset and Actions
      */
     void unitDefineActionAndDataset()throw(CException);
-    void defineSharedVariable();
-    void unitDefineDriver(std::vector<cu_driver::DrvRequestInfo>& neededDriver);
+    
+	void unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver);
+	
     /*(Optional)
      Initialize the Control Unit and all driver, with received param from MetadataServer
      */
     void unitInit() throw(CException);
-    /*(Optional)
+    /*
      Execute the work, this is called with a determinated delay, it must be as fast as possible
      */
     void unitStart() throw(CException);
-    /*(Optional)
+    /*
+     Execute the work, this is called with a determinated delay, it must be as fast as possible
+     */
+    void unitRun() throw(CException);
+    
+    /*
      The Control Unit will be stopped
      */
     void unitStop() throw(CException);
+    
     /*(Optional)
      The Control Unit will be deinitialized and disposed
      */
     void unitDeinit() throw(CException);
-public:
-    /*
-     Construct a new CU with an identifier
-     */
-    __chaos_cu_name__(string&);
-	
-	/*
-     Base destructor
-     */
-	~__chaos_cu_name__();
+
 };
 
-
-#endif /* defined(__ControlUnitTest____chaos_cu_name____) */
+#endif

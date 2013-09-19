@@ -7,7 +7,7 @@
 //
 
 
-#include "__chaos_cu_name__.h"
+#include "__template_name__.h"
 
 #include <string>
 
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	string tmp_device_id;
 	try {
 		//add custom paramter
-		ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "Identification string for __chaos_cu_name__ control unit");
+		ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "Identification string for __template_name__ control unit");
 		
 		//start the control unit toolkit
 		ChaosCUToolkit::getInstance()->init(argc, argv);
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			tmp_device_id = ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->getOption<string>(OPT_CUSTOM_DEVICE_ID);
 			
 			//instance new control unit with associated id
-			ChaosCUToolkit::getInstance()->addControlUnit(new __chaos_cu_name__(tmp_device_id));
+			ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id));
 		} else {
 			std::cerr<< "No device id has been passed";
 			return 1;

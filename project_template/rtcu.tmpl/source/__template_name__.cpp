@@ -1,5 +1,5 @@
 /*
- *	__chaos_cu_name__.cpp
+ *	__template_name__.cpp
  *	!CHOAS
  *	Created by Bisegni Claudio.
  *
@@ -18,28 +18,28 @@
  *    	limitations under the License.
  */
 
-#include "__chaos_cu_name__.h"
+#include "__template_name__.h"
 
 using namespace chaos;
 
 /*
  Construct a new CU with an identifier
  */
-__chaos_cu_name__::__chaos_cu_name__(std::string& device_id):_device_id(device_id) {
+__template_name__::__template_name__(std::string& device_id):_device_id(device_id) {
 	
 }
 
 /*
  Destructor a new CU with an identifier
  */
-__chaos_cu_name__::~__chaos_cu_name__() {
+__template_name__::~__template_name__() {
     
 }
 
 /*
  Return the default configuration
  */
-void __chaos_cu_name__::unitDefineActionAndDataset() throw(CException) {
+void __template_name__::unitDefineActionAndDataset() throw(CException) {
 
     
     //add managed device di
@@ -48,39 +48,39 @@ void __chaos_cu_name__::unitDefineActionAndDataset() throw(CException) {
     //insert your definition code here
 }
 
-void __chaos_cu_name__::unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver) {
+void __template_name__::unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver) {
 	
 }
 
 /*
  Initialize the Custom Contro Unit and return the configuration
  */
-void __chaos_cu_name__::unitInit() throw(CException) {
+void __template_name__::unitInit() throw(CException) {
 	
 }
 
 /*
  Execute the work, this is called with a determinated delay, it must be as fast as possible
  */
-void __chaos_cu_name__::unitStart() throw(CException) {
+void __template_name__::unitStart() throw(CException) {
 
 }
 
 /*
  Execute the Control Unit work
  */
-void __chaos_cu_name__::unitRun() throw(CException) {
+void __template_name__::unitRun() throw(CException) {
  
 }
 
 /*
  Execute the Control Unit work
  */
-void __chaos_cu_name__::unitStop() throw(CException) {
+void __template_name__::unitStop() throw(CException) {
 }
 
 /*
  Deinit the Control Unit
  */
-void __chaos_cu_name__::unitDeinit() throw(CException) {
+void __template_name__::unitDeinit() throw(CException) {
 }

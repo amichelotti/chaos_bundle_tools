@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32C9765417D4956100F76D3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9763417D494D400F76D3F /* main.cpp */; };
-		32C9765517D4956500F76D3F /* __chaos_cu_name__.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D531ED17D4877E00BE1040 /* __chaos_cu_name__.cpp */; };
+		32C9765517D4956500F76D3F /* __template_name__.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D531ED17D4877E00BE1040 /* __template_name__.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		32C9763417D494D400F76D3F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		32C9764A17D4955400F76D3F /* __chaos_cu_name__ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = __chaos_cu_name__; sourceTree = BUILT_PRODUCTS_DIR; };
-		32D531EC17D4877E00BE1040 /* __chaos_cu_name__.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __chaos_cu_name__.h; sourceTree = "<group>"; };
-		32D531ED17D4877E00BE1040 /* __chaos_cu_name__.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = __chaos_cu_name__.cpp; sourceTree = "<group>"; };
+		32C9764A17D4955400F76D3F /* __template_name__ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = __template_name__; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D531EC17D4877E00BE1040 /* __template_name__.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __template_name__.h; sourceTree = "<group>"; };
+		32D531ED17D4877E00BE1040 /* __template_name__.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = __template_name__.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 		32C9764B17D4955400F76D3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32C9764A17D4955400F76D3F /* __chaos_cu_name__ */,
+				32C9764A17D4955400F76D3F /* __template_name__ */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				32C9763417D494D400F76D3F /* main.cpp */,
-				32D531EC17D4877E00BE1040 /* __chaos_cu_name__.h */,
-				32D531ED17D4877E00BE1040 /* __chaos_cu_name__.cpp */,
+				32D531EC17D4877E00BE1040 /* __template_name__.h */,
+				32D531ED17D4877E00BE1040 /* __template_name__.cpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32C9764917D4955400F76D3F /* __chaos_cu_name__ */ = {
+		32C9764917D4955400F76D3F /* __template_name__ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32C9765117D4955400F76D3F /* Build configuration list for PBXNativeTarget "__chaos_cu_name__" */;
+			buildConfigurationList = 32C9765117D4955400F76D3F /* Build configuration list for PBXNativeTarget "__template_name__" */;
 			buildPhases = (
 				32C9764617D4955400F76D3F /* Sources */,
 				32C9764717D4955400F76D3F /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = __chaos_cu_name__;
-			productName = __chaos_cu_name__;
-			productReference = 32C9764A17D4955400F76D3F /* __chaos_cu_name__ */;
+			name = __template_name__;
+			productName = __template_name__;
+			productReference = 32C9764A17D4955400F76D3F /* __template_name__ */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -95,7 +95,7 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = 32D531E617D4877E00BE1040 /* Build configuration list for PBXProject "__chaos_cu_name__" */;
+			buildConfigurationList = 32D531E617D4877E00BE1040 /* Build configuration list for PBXProject "__template_name__" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -107,7 +107,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32C9764917D4955400F76D3F /* __chaos_cu_name__ */,
+				32C9764917D4955400F76D3F /* __template_name__ */,
 			);
 		};
 /* End PBXProject section */
@@ -118,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C9765417D4956100F76D3F /* main.cpp in Sources */,
-				32C9765517D4956500F76D3F /* __chaos_cu_name__.cpp in Sources */,
+				32C9765517D4956500F76D3F /* __template_name__.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32C9765117D4955400F76D3F /* Build configuration list for PBXNativeTarget "__chaos_cu_name__" */ = {
+		32C9765117D4955400F76D3F /* Build configuration list for PBXNativeTarget "__template_name__" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32C9765217D4955400F76D3F /* Debug */,
@@ -262,7 +262,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		32D531E617D4877E00BE1040 /* Build configuration list for PBXProject "__chaos_cu_name__" */ = {
+		32D531E617D4877E00BE1040 /* Build configuration list for PBXProject "__template_name__" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32D531EE17D4877E00BE1040 /* Debug */,
