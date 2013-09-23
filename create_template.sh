@@ -19,7 +19,7 @@ if [ ! -n "$template_name" ]; then
 fi
 
 if [ ! -n "$template_type" ]; then
-	echo "[FATAL]: the template type is mandatory"
+	echo "[FATAL]: the template type is mandatory -> [rtcu|sccu|driver|common]"
 	echo "Exiting ..."
 	exit 1
 fi
@@ -96,7 +96,7 @@ for i in '*'.xcworkspacedata '*'.plist ; do
 find . -name "$i" -exec bash -c 'a=${0/_tmpl./.}; sed -e s/__template_name__/$1/g $0 | sed -e "s/__template_type__/$2/g" > $a; echo "generating $a";if  [ "$0" != "$a" ];then echo "removing $0"; rm $0;fi' {} $template_name $template_type \;
 done
 
-echo -e "\033[38;5;148mPress any key to presist repo on github server or CTRL+C to exit\033[39m"
+echo -e "\033[38;5;148mPress any key to initialize git on $template_name or CTRL+C to exit\033[39m"
 read -n 1 -s
 
 cd $destination_directory/$template_name
