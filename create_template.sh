@@ -63,19 +63,36 @@ touch README.md
 sed -e "s/__template_name__/$template_name/g" CMakeLists_tmpl.txt | sed -e "s/__template_type__/$template_type/g"> CMakeLists.txt
 rm CMakeLists_tmpl.txt
 
-mv __template_name__.xcodeproj "$template_name.xcodeproj"
-sed -e "s/__template_name__/$template_name/g" source/__template_name__.cpp | sed -e "s/__template_type__/$template_type/g" > "source/$template_name.cpp"
-rm source/__template_name__.cpp
+mv __template_name__.xcodeproj "${template_name}.xcodeproj"
+if [ "$template_type" == "driver" ]; then
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__ControlUnit.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}ControlUnit.cpp"
+	rm source/__template_name__ControlUnit.cpp
 
-sed -e "s/__template_name__/$template_name/g" source/__template_name__.h | sed -e "s/__template_type__/$template_type/g" > "source/$template_name.h"
-rm source/__template_name__.h
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__ControlUnit.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}ControlUnit.h"
+	rm source/__template_name__ControlUnit.h
+	
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.cpp"
+	rm source/__template_name__Driver.cpp
+
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.h"
+	rm source/__template_name__Driver.h
+	
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__DriverSwitch.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}DriverSwitch.cpp"
+	rm source/__template_name__DriverSwitch.cpp
+else
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.cpp"
+	rm source/__template_name__.cpp
+
+	sed -e "s/__template_name__/$template_name/g" source/__template_name__.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.h"
+	rm source/__template_name__.h
+fi
 
 sed -e "s/__template_name__/$template_name/g" source/main.cpp | sed -e "s/__template_type__/$template_type/g" > source/main_mod.cpp
 rm source/main.cpp
 mv source/main_mod.cpp source/main.cpp
 
 echo "Patching xcode project"
-cd "$template_name.xcodeproj"
+cd "${template_name}.xcodeproj"
 ## patch schemes
 find . -name "*.xcscheme" -exec bash -c 'a=${0/__template_name__/$1};b=${a/__template_type__/$2}; if [ "$0" != "$b" ]; then sed -e s/__template_name__/$1/g $0 | sed -e "s/__template_type__/$2/g" > $b; echo "generating $b"; rm $0;fi' {} $template_name $template_type \;
 
