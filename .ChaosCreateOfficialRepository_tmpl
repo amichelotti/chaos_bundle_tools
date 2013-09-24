@@ -4,25 +4,31 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
 popd > /dev/null
 
+user_name=$1
+
+if [ ! -n "$user_name" ]; then 
+	echo "\033[38;5;148m-Please provide a username for gerrit repository"
+	exit 1
+fi
+
 module_path=$SCRIPTPATH
 module_name=${SCRIPTPATH##*/}
 repository_name="chaos-__chaos_project_type__-$module_name"
 
 
-echo -e "\033[38;5;148m!CHAOS repository creation tools to LNF-Gerrit\033[39m"
-echo -e "\033[38;5;148mModule path -> $module_path\033[39m"
-echo -e "\033[38;5;148mModule name -> $module_name\033[39m"
-echo -e "\033[38;5;148mRepository name -> $repository_name\033[39m"
+echo "\033[38;5;148m!CHAOS repository creation tools to LNF-Gerrit\033[39m"
+echo "\033[38;5;148mModule path -> $module_path\033[39m"
+echo "\033[38;5;148mModule name -> $module_name\033[39m"
+echo "\033[38;5;148mRepository name -> $repository_name\033[39m"
 
 cd $module_path
 
 echo "press any key to presist repo on gerrit lnf server"
 read -n 1 -s
 echo "Create repo on lnf gerrit server"
-ssh -p 29418 cvs.lnf.infn.it gerrit create-project $repository_name
-echo "simulation of gerrit creation of $repository_name"
-if [ $? -gt 0 ]; then
-	ssh -p 29418 cvs.lnf.infn.it gerrit set-project-parent --parent chaosframework  $repository_name
+ssh -p 29418 $user_name@cvs.lnf.infn.it gerrit create-project $repository_name
+if [ $? -eq 0 ]; then
+	ssh -p 29418 $user_name@cvs.lnf.infn.it gerrit set-project-parent --parent chaosframework  $repository_name
 	git_repo_name="$repository_name.git"
 	echo "Install lnf remote $git_repo_name"
 		
@@ -32,5 +38,5 @@ if [ $? -gt 0 ]; then
 	git push origin_ssh master development
 	
 	echo "add gerrit commit hook"
-	scp -p -P 29418 cvs.lnf.infn.it:hooks/commit-msg .git/hooks/
+	scp -p -P 29418 $user_name@cvs.lnf.infn.it:hooks/commit-msg .git/hooks/
 fi
