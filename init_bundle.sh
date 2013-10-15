@@ -1,5 +1,8 @@
 #!/bin/bash
 curr=`dirname $0`
+
+source $curr/chaos_bundle_env.sh
+
 if [ ! -d "$CHAOS_FRAMEWORK" ] ; then
 echo "please set CHAOS_FRAMEWORK [=$CHAOS_FRAMEWORK] environment to a valid directory, use \"source $curr/chaos_bundle_env.sh\""
 exit 1;
