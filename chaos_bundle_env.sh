@@ -11,4 +11,5 @@ export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
 export CHAOS_DEVELOPMENT="YES"
 export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$PATH:$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin
+export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 
