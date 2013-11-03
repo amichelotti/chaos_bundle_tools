@@ -1,5 +1,9 @@
 #!/bin/bash
 curr=`dirname $0`
+OS=$(uname -s)
+ARCH=$(uname -m)
+KERNEL_VER=$(uname -r)
+KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
 source $curr/chaos_bundle_env.sh
 
@@ -16,8 +20,22 @@ fi
  
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
+
+if [ `echo $OS | tr [:upper:] [:lower:]` = `echo "Darwin" | tr [:upper:] [:lower:]` ] && [ $KERNEL_SHORT_VER -ge 1300 ]; then
+    echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
+    export CC=clang
+    export CXX="clang++ -stdlib=libstdc++"
+    export LD=clang
+
+    echo "CC = $CC"
+    echo "CXX = $CXX"
+    echo "LD = $LD"
+fi
+
 echo "press any key to continue"
 read -n 1 -s
+
+
 
 $CHAOS_FRAMEWORK/bootstrap.sh
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
