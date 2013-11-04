@@ -30,6 +30,9 @@ if [ `echo $OS | tr [:upper:] [:lower:]` = `echo "Darwin" | tr [:upper:] [:lower
     echo "CC = $CC"
     echo "CXX = $CXX"
     echo "LD = $LD"
+    export COSXMAKE="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++"
+else
+    export COSXMAKE=
 fi
 
 echo "press any key to continue"
@@ -40,20 +43,31 @@ rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
 $CHAOS_FRAMEWORK/bootstrap.sh
 
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
-for j in common drivers ; do
-for i in $(ls  $CHAOS_BUNDLE/$j) ; do
-cd $CHAOS_BUNDLE/$j/$i
-echo "* entering in $CHAOS_BUNDLE/$j/$i"
+
+for i in debug serial modbus powersupply; do
+cd $CHAOS_BUNDLE/common/$i
+echo "* entering in $CHAOS_BUNDLE/common/$i"
 rm -rf CMakeFiles CMakeCache.txt
-if ! cmake .; then
-echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/$j/$i"
+if ! cmake $COSXMAKE .; then
+echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/common/$i"
 fi;
 if ! make install; then
-echo "ERROR compiling in $CHAOS_BUNDLE/$j/$i"
+echo "ERROR compiling in $CHAOS_BUNDLE/common/$i"
 exit 1;
 fi;
-
 done;
+
+for i in $(ls  $CHAOS_BUNDLE/driver/) ; do
+cd $CHAOS_BUNDLE/driver/$i
+echo "* entering in $CHAOS_BUNDLE/driver/$i"
+rm -rf CMakeFiles CMakeCache.txt
+if ! cmake $COSXMAKE .; then
+echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/driver/$i"
+fi;
+if ! make install; then
+echo "ERROR compiling in $CHAOS_BUNDLE/driver/$i"
+exit 1;
+fi;
 done;
 
 #make the documentation
