@@ -36,9 +36,25 @@ echo "press any key to continue"
 read -n 1 -s
 
 
-
+rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
 $CHAOS_FRAMEWORK/bootstrap.sh
+
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
+for j in common drivers ; do
+for i in $(ls  $CHAOS_BUNDLE/$j) ; do
+cd $CHAOS_BUNDLE/$j/$i
+echo "* entering in $CHAOS_BUNDLE/$j/$i"
+rm -rf CMakeFiles CMakeCache.txt
+if ! cmake .; then
+echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/$j/$i"
+fi;
+if ! make install; then
+echo "ERROR compiling in $CHAOS_BUNDLE/$j/$i"
+exit 1;
+fi;
+
+done;
+done;
 
 #make the documentation
 cd $CHAOS_FRAMEWORK
