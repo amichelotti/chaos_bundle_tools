@@ -70,6 +70,19 @@ exit 1;
 fi;
 done;
 
+for i in $(ls  $CHAOS_BUNDLE/example/) ; do
+cd $CHAOS_BUNDLE/example/$i
+echo "* entering in $CHAOS_BUNDLE/example/$i"
+rm -rf CMakeFiles CMakeCache.txt
+if ! cmake $COSXMAKE .; then
+echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/example/$i"
+fi;
+if ! make install; then
+echo "ERROR compiling in $CHAOS_BUNDLE/example/$i"
+exit 1;
+fi;
+done;
+
 #make the documentation
 cd $CHAOS_FRAMEWORK
 doxygen Documentation/chaosdocs
