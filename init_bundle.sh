@@ -44,7 +44,7 @@ $CHAOS_FRAMEWORK/bootstrap.sh
 
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
 
-for i in debug serial modbus powersupply; do
+for i in debug serial test modbus powersupply; do
 cd $CHAOS_BUNDLE/common/$i
 echo "* entering in $CHAOS_BUNDLE/common/$i"
 rm -rf CMakeFiles CMakeCache.txt
