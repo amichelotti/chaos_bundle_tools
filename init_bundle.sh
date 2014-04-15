@@ -20,8 +20,25 @@ fi
  
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
+if [ "$CHAOS_TARGET" == "BBB" ]; then
+    echo "* Cross compiling for Beagle Bone"
+    export CC=arm-linux-gnueabihf-gcc
+    export CXX=arm-linux-gnueabihf-g++
+    export LD=arm-linux-gnueabihf-ld
+    export CROSS_HOST=arm-linux-gnueabihf
+else
+    export CC=gcc
+    export CXX=g++
+    export LD=ld
+fi
 
-if [ `echo $OS | tr [:upper:] [:lower:]` = `echo "Darwin" | tr [:upper:] [:lower:]` ] && [ $KERNEL_SHORT_VER -ge 1300 ]; then
+echo "* Using C-Compiler:   $CC"
+echo "* Using C++-Compiler: $CXX"
+echo "* Using Linker:       $LD"
+echo "* OS: $OS"
+echo "* KERNEL VER:$KERNEL_SHORT_VER"
+
+if [ `echo $OS | tr "[:upper:]" "[:lower:]"` = `echo "Darwin" | tr "[:upper:]" "[:lower:]"` ] && [ "$KERNEL_SHORT_VER" -ge 1300 ]; then
     echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
     export CC=clang
     export CXX="clang++ -stdlib=libstdc++"
@@ -30,6 +47,7 @@ if [ `echo $OS | tr [:upper:] [:lower:]` = `echo "Darwin" | tr [:upper:] [:lower
     echo "CC = $CC"
     echo "CXX = $CXX"
     echo "LD = $LD"
+    export CHAOS_BOOST_VERSION=53 ## TO REMOVE
     export COSXMAKE="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++"
 else
     export COSXMAKE=
@@ -40,7 +58,10 @@ read -n 1 -s
 
 
 rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
-$CHAOS_FRAMEWORK/bootstrap.sh
+if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then 
+    echo "## error bootstrapping quitting"
+    exit 1
+fi
 
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
 
