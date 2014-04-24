@@ -51,6 +51,7 @@ if [ `echo $OS | tr "[:upper:]" "[:lower:]"` = `echo "Darwin" | tr "[:upper:]" "
     export COSXMAKE="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++"
 else
     export COSXMAKE=
+    export CHAOS_BOOST_VERSION=55
 fi
 
 echo "press any key to continue"
