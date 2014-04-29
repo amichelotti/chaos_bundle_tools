@@ -47,11 +47,9 @@ if [ `echo $OS | tr "[:upper:]" "[:lower:]"` = `echo "Darwin" | tr "[:upper:]" "
     echo "CC = $CC"
     echo "CXX = $CXX"
     echo "LD = $LD"
-    export CHAOS_BOOST_VERSION=53 ## TO REMOVE
     export COSXMAKE="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++"
 else
     export COSXMAKE=
-    export CHAOS_BOOST_VERSION=55
 fi
 
 echo "press any key to continue"

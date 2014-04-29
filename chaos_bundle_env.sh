@@ -13,3 +13,4 @@ export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$PATH:$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin
 export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 export LD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
+export CHAOS_BOOST_VERSION=55
