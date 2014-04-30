@@ -14,3 +14,9 @@ export PATH=$PATH:$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin
 export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 export LD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 export CHAOS_BOOST_VERSION=55
+
+if [ "$CHAOS_TARGET" == "BBB" ]; then
+    export LMEM_VERSION=1.0.18
+     echo "* using libmemcached version $LMEM_VERSION"
+
+fi;
