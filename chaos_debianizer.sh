@@ -1,7 +1,7 @@
 #!/bin/bash
 ## must package name, source dir,  version 
 VERSION="0.0"
-ARCH="x86"
+ARCH="i386"
 PACKAGE_NAME=""
 SOURCE_DIR=""
 VER_DIR=""
@@ -47,7 +47,18 @@ if !(cp -rp $SOURCE_DIR $PACKAGE_DIR ); then
     exit 1
 fi;
 
+# if [ "$ARCH" == "i386" ]; then
+#     ## then localize libstdc++
+#     libcpp=`locate libstdc++.so.6`
+#     cp $libcpp $PACKAGE_DIR/usr/local/lib
+#     libcpp=`locate libc.so.6`
+#     cp $libcpp $PACKAGE_DIR/usr/local/lib
+#     libcpp=`locate ld-linux.so`
+#     cp $libcpp $PACKAGE_DIR/usr/local/lib
+# fi;
+
 echo "Package: $PACKAGE_NAME" > $DEBIAN_DIR/control
+echo "Filename: $PACKAGE_NAME-$ARCH-$VERSION.deb" >> $DEBIAN_DIR/control
 echo "Version: $VERSION" >> $DEBIAN_DIR/control
 echo "Section: base" >> $DEBIAN_DIR/control
 echo "Priority: optional" >> $DEBIAN_DIR/control
@@ -57,9 +68,9 @@ echo "Maintainer: claudio bisegni claudio.bisegni@lnf.infn.it, Andrea Michelotti
 echo "Description: chaos bundle, includes core libraries, binaries and includes for development" >> $DEBIAN_DIR/control
 
 cd $PACKAGE_DIR
-find . -name "*" |grep -v DEBIAN|sed -e 's/\./rm -f /' > DEBIAN/postrm
+find . -name "*" |grep -v DEBIAN|sed -e 's/\./rm -f /' 1> DEBIAN/postrm 
 chmod 0555 DEBIAN/postrm
-cd -
+cd - > /dev/null
 echo "packaging for architecture $ARCH .."
 dpkg-deb -b $PACKAGE_DIR > /dev/null
 mv $PACKAGE_DIR.deb .
