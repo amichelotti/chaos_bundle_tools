@@ -17,7 +17,7 @@ export LD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 if [ $(uname -s) == "Linux" ]; then
     export CHAOS_BOOST_VERSION=55
 else
-    export CHAOS_BOOST_VERSION=54
+    export CHAOS_BOOST_VERSION=53
 fi;
 
 
