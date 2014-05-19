@@ -20,6 +20,7 @@ else
     export CHAOS_BOOST_VERSION=53
 fi;
 
+export MONGO_VERSION=r2.6.1
 
 if [ "$CHAOS_TARGET" == "BBB" ]; then
     export LMEM_VERSION=1.0.18
