@@ -22,8 +22,8 @@ echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
 if [ "$CHAOS_TARGET" == "BBB" ]; then
     echo "* Cross compiling for Beagle Bone"
-    export CC=arm-linux-gnueabihf-gcc
-    export CXX=arm-linux-gnueabihf-g++
+    export CC=arm-linux-gnueabihf-gcc-4.8
+    export CXX=arm-linux-gnueabihf-g++-4.8
     export LD=arm-linux-gnueabihf-ld
     export CROSS_HOST=arm-linux-gnueabihf
 else
