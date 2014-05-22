@@ -9,11 +9,17 @@ template_name=$1
 template_type=$2
 destination_directory=$3
 user_paths=1
+execname=$(basename $0)
 
 echo "Template creation tool"
 
+usage(){
+    echo "usage is $execname <template name> <template type [rtcu|sccu|driver|common]>"
+}
+
 if [ ! -n "$template_name" ]; then
 	echo "[FATAL]: the name of the template is mandatory"
+	usage;
 	echo "Exiting ..."
 	exit 1
 fi
