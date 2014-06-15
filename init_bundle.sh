@@ -32,11 +32,15 @@ else
     export LD=ld
 fi
 
+#set default compile lib
+export CHAOS_LINK_LIBRARY="boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup memcached zmq uv dl"
+
 echo "* Using C-Compiler:   $CC"
 echo "* Using C++-Compiler: $CXX"
 echo "* Using Linker:       $LD"
 echo "* OS: $OS"
 echo "* KERNEL VER:$KERNEL_SHORT_VER"
+echo "* Link with: $CHAOS_LINK_LIBRARY"
 
 if [ `echo $OS | tr "[:upper:]" "[:lower:]"` = `echo "Darwin" | tr "[:upper:]" "[:lower:]"` ] && [ "$KERNEL_SHORT_VER" -ge 1300 ]; then
     echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
