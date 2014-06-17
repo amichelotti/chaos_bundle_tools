@@ -17,7 +17,11 @@ echo "please set CHAOS_BUNDLE [=$CHAOS_BUNDLE] environment to a valid directory,
 exit 1;
 fi
 
- 
+if [ ! -n "$CHAOS_LINK_LIBRARY" ] ; then
+echo "CHAOS_LINK_LIBRARY not set, please use  \"source $curr/chaos_bundle_env.sh\""
+exit 1;
+fi
+
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
 if [ "$CHAOS_TARGET" == "BBB" ]; then
@@ -31,9 +35,6 @@ else
     export CXX=g++
     export LD=ld
 fi
-
-#set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup memcached zmq uv dl"
 
 echo "* Using C-Compiler:   $CC"
 echo "* Using C++-Compiler: $CXX"
@@ -61,7 +62,7 @@ read -n 1 -s
 
 
 rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
-if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then 
+if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     echo "## error bootstrapping quitting"
     exit 1
 fi
@@ -112,5 +113,3 @@ cd $CHAOS_FRAMEWORK
 doxygen Documentation/chaosdocs
 cd ..
 ln -sf $CHAOS_FRAMEWORK/Documentation/html Documentation
-
-
