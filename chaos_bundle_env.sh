@@ -24,6 +24,7 @@ fi;
 
 #export MONGO_VERSION=r2.6.1
 export MONGO_VERSION=26compat
+export LIB_EVENT_VERSION=release-2.1.4-alpha
 
 if [ "$CHAOS_TARGET" == "BBB" ]; then
     export LMEM_VERSION=1.0.18
