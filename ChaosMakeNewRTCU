@@ -5,4 +5,4 @@ SCRIPTPATH=`pwd -P`
 popd > /dev/null
 
 __chaos_cu_name__=$1
-create_template.sh $__chaos_cu_name__ rtcu
+chaos_create_template.sh $__chaos_cu_name__ rtcu

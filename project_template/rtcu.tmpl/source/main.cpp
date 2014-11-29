@@ -22,25 +22,29 @@ using namespace chaos::cu;
 int main(int argc, char *argv[])
 {
 	string tmp_device_id;
+	control_manager::AbstractControlUnit::ControlUnitDriverList driver_list;
 	try {
 		//add custom paramter
 		ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "Identification string for __template_name__ control unit");
-		
+
 		//start the control unit toolkit
 		ChaosCUToolkit::getInstance()->init(argc, argv);
-		
+
+		//register the contorl unit class
+		ChaosCUToolkit::getInstance()->registerControlUnit<__template_name__>();
+
 		//chec if a device id as been setup
 		if(ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->hasOption(OPT_CUSTOM_DEVICE_ID)) {
 			//id has been passed
 			tmp_device_id = ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->getOption<string>(OPT_CUSTOM_DEVICE_ID);
-			
+
 			//instance new control unit with associated id
-			ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id));
+			ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id, std::string(""), driver_list));
 		} else {
 			std::cerr<< "No device id has been passed";
 			return 1;
 		}
-		
+
 		//start control unit toolkit until an event or a signal shutdown it
 		ChaosCUToolkit::getInstance()->start();
 	} catch (CException& e) {

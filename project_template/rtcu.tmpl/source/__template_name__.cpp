@@ -21,66 +21,78 @@
 #include "__template_name__.h"
 
 using namespace chaos;
+PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__)
 
 /*
- Construct a new CU with an identifier
+ Construct
  */
-__template_name__::__template_name__(std::string& device_id):_device_id(device_id) {
-	
+__template_name__::__template_name__(const string& _control_unit_id, const string& _control_unit_param, const ControlUnitDriverList& _control_unit_drivers):
+RTAbstractControlUnit(_control_unit_id, _control_unit_param, _control_unit_drivers) {
+
 }
 
 /*
- Destructor a new CU with an identifier
+ Destructor
  */
 __template_name__::~__template_name__() {
-    
+
 }
 
 /*
  Return the default configuration
  */
-void __template_name__::unitDefineActionAndDataset() throw(CException) {
-
-    
-    //add managed device di
-    setDeviceID(_device_id);
-    
+void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
     //insert your definition code here
 }
 
-void __template_name__::unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver) {
-	
+/*
+Define custom control unit attribute
+*/
+void __template_name__::unitDefineCustomAttribute() {
+
 }
 
 /*
- Initialize the Custom Contro Unit and return the configuration
+ Initialize the Custom Control Unit
  */
-void __template_name__::unitInit() throw(CException) {
-	
+void __template_name__::unitInit() throw(chaos::CException) {
+
 }
 
 /*
  Execute the work, this is called with a determinated delay, it must be as fast as possible
  */
-void __template_name__::unitStart() throw(CException) {
+void __template_name__::unitStart() throw(chaos::CException) {
 
 }
 
 /*
  Execute the Control Unit work
  */
-void __template_name__::unitRun() throw(CException) {
- 
+void __template_name__::unitRun() throw(chaos::CException) {
+
 }
 
 /*
  Execute the Control Unit work
  */
-void __template_name__::unitStop() throw(CException) {
+void __template_name__::unitStop() throw(chaos::CException) {
+
 }
 
 /*
  Deinit the Control Unit
  */
-void __template_name__::unitDeinit() throw(CException) {
+void __template_name__::unitDeinit() throw(chaos::CException) {
+
+}
+
+//! pre imput attribute change
+void __template_name__::unitInputAttributePreChangeHandler() throw(chaos::CException) {
+
+}
+
+//! attribute changed handler
+void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CException) {
+
 }
