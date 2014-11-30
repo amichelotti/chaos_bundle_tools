@@ -70,11 +70,11 @@ int main (int argc, char* argv[] )
     ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "device id for the");
     //! [Custom Option]
 
-	//! [Driver Registration]
-	MATERIALIZE_INSTANCE_AND_INSPECTOR(DummyDriver)
-	cu_driver_manager::DriverManager::getInstance()->registerDriver(DummyDriverInstancer, DummyDriverInspector);
+	  //! [Driver Registration]
+	  MATERIALIZE_INSTANCE_AND_INSPECTOR(DummyDriver)
+	  cu_driver_manager::DriverManager::getInstance()->registerDriver(DummyDriverInstancer, DummyDriverInspector);
     //! [Driver Registration]
-
+    ChaosCUToolkit::getInstance()->registerControlUnit<__template_name__>();
     ChaosCUToolkit::getInstance()->init(argc, argv);
     //! [CUTOOLKIT Init]
 
