@@ -131,10 +131,9 @@
 		326027A414B309ED00C906CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
-				CLANG_CXX_LIBRARY = "libstdc++";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = BOOST_ALL_DYN_LINK;
+					CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+					CLANG_CXX_LIBRARY = "libstdc++";
+					GCC_PREPROCESSOR_DEFINITIONS = BOOST_ALL_DYN_LINK;
 			};
 			name = Debug;
 		};

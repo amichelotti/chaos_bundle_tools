@@ -1,8 +1,8 @@
-/*	
+/*
  *	ControlUnitTest.cpp
  *	!CHOAS
  *	Created by Bisegni Claudio.
- *	
+ *
  *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
  *    	Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,7 @@
 
 /*! \page page_example_cue ChaosCUToolkit Example
  *  \section page_example_cue_sec An basic usage for the ChaosCUToolkit package
- *  
+ *
  *  \subsection page_example_cue_sec_sub1 Toolkit usage
  *  ChaosCUToolkit has private constructor so it can be used only using singleton pattern,
  *  the only way to get unique isntance is; ChaosCUToolkit::getInstance(). So the first call of
@@ -63,26 +63,28 @@ namespace cu_driver_manager = chaos::cu::driver_manager;
 int main (int argc, char* argv[] )
 {
     string tmp_device_id;
+    __template_name__::ControlUnitDriverList control_unit_drivers;
+
     //! [Custom Option]
     try {
     ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "device id for the");
     //! [Custom Option]
-    
+
 	//! [Driver Registration]
 	MATERIALIZE_INSTANCE_AND_INSPECTOR(DummyDriver)
 	cu_driver_manager::DriverManager::getInstance()->registerDriver(DummyDriverInstancer, DummyDriverInspector);
     //! [Driver Registration]
-		
+
     ChaosCUToolkit::getInstance()->init(argc, argv);
     //! [CUTOOLKIT Init]
-    
+
     //! [Adding the CustomControlUnit]
     if(ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->hasOption(OPT_CUSTOM_DEVICE_ID)){
         tmp_device_id = ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->getOption<string>(OPT_CUSTOM_DEVICE_ID);
-        ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id));
+        ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id, std::string(""), control_unit_drivers));
     }
     //! [Adding the CustomControlUnit]
-    
+
     //! [Starting the Framework]
     ChaosCUToolkit::getInstance()->start();
     //! [Starting the Framework]
