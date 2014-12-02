@@ -17,8 +17,8 @@
  *    	See the License for the specific language governing permissions and
  *    	limitations under the License.
  */
-#ifndef ChaosFramework___template_name___h
-#define ChaosFramework___template_name___h
+#ifndef ChaosRTControlUnit___template_name___h
+#define ChaosRTControlUnit___template_name___h
 
 #include <chaos/cu_toolkit/ControlManager/RTAbstractControlUnit.h>
 
@@ -43,13 +43,12 @@ protected:
 		Define the Control Unit custom attribute
 		*/
 		void unitDefineCustomAttribute();
-
     /*!(Optional)
      Initialize the Control Unit and all driver, with received param from MetadataServer
      */
-    void unitInit() throw(chaos::CException);
+		void unitInit() throw(chaos::CException);
     /*!(Optional)
-     Execute the work, this is called with a determinated delay, it must be as fast as possible
+     Execute the work, this is called with a determinated delay
      */
     void unitStart() throw(chaos::CException);
     /*!

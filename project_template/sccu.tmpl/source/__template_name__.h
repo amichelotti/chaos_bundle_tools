@@ -18,8 +18,8 @@
  *    	limitations under the License.
  */
 
-#ifndef __ControlUnitTest____template_name____
-#define __ControlUnitTest____template_name____
+#ifndef ChaosSCControlUnit____template_name____
+#define ChaosSCControlUnit____template_name____
 
 #include <chaos/cu_toolkit/ControlManager/SCAbstractControlUnit.h>
 

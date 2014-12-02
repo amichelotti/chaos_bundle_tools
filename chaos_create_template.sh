@@ -42,7 +42,7 @@ echo "Start $template_name [$template_type] creation"
 if [ ! -n "$destination_directory" ]; then
     if [ "$template_type" == "rtcu" ] || [ "$template_type" == "sccu" ]; then
 	destination_directory="$SCRIPTPATH/../user_control_unit/"
-    else 
+    else
 	destination_directory="$SCRIPTPATH/../$template_type/"
     fi
     user_paths=0
@@ -76,13 +76,13 @@ if [ "$template_type" == "driver" ]; then
 
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__ControlUnit.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}ControlUnit.h"
 	rm source/__template_name__ControlUnit.h
-	
+
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.cpp"
 	rm source/__template_name__Driver.cpp
 
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.h"
 	rm source/__template_name__Driver.h
-	
+
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__DriverSwitch.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}DriverSwitch.cpp"
 	rm source/__template_name__DriverSwitch.cpp
 else
@@ -91,6 +91,13 @@ else
 
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.h"
 	rm source/__template_name__.h
+
+  sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.cpp"
+  rm source/__template_name__Driver.cpp
+
+  sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.h"
+  rm source/__template_name__Driver.h
+
 fi
 
 sed -e "s/__template_name__/$template_name/g" source/main.cpp | sed -e "s/__template_type__/$template_type/g" > source/main_mod.cpp

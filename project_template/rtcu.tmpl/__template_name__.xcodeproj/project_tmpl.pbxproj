@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32C9765417D4956100F76D3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9763417D494D400F76D3F /* main.cpp */; };
-		32C9765517D4956500F76D3F /* __template_name__.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D531ED17D4877E00BE1040 /* __template_name__.cpp */; };
+		320B32DD1A2DED4C004E204C /* __template_name__.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 327C252A1A2DEB08002DFA7E /* __template_name__.cpp */; };
+		32C9765517D4956500F76D3F /* __template_name__Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D531ED17D4877E00BE1040 /* __template_name__Driver.cpp */; };
+		32FB20021A2E365400307A86 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9763417D494D400F76D3F /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		320B32DC1A2DED4B004E204C /* __template_name__.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __template_name__.h; sourceTree = "<group>"; };
+		327C252A1A2DEB08002DFA7E /* __template_name__.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = __template_name__.cpp; sourceTree = "<group>"; };
 		32C9763417D494D400F76D3F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		32C9764A17D4955400F76D3F /* __template_name__ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = __template_name__; sourceTree = BUILT_PRODUCTS_DIR; };
-		32D531EC17D4877E00BE1040 /* __template_name__.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __template_name__.h; sourceTree = "<group>"; };
-		32D531ED17D4877E00BE1040 /* __template_name__.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = __template_name__.cpp; sourceTree = "<group>"; };
+		32D531EC17D4877E00BE1040 /* __template_name__Driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __template_name__Driver.h; sourceTree = "<group>"; };
+		32D531ED17D4877E00BE1040 /* __template_name__Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = __template_name__Driver.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				32C9763417D494D400F76D3F /* main.cpp */,
-				32D531EC17D4877E00BE1040 /* __template_name__.h */,
-				32D531ED17D4877E00BE1040 /* __template_name__.cpp */,
+				327C252A1A2DEB08002DFA7E /* TestRTCU.cpp */,
+				320B32DC1A2DED4B004E204C /* TestRTCU.h */,
+				32D531ED17D4877E00BE1040 /* TestRTCUDriver.cpp */,
+				32D531EC17D4877E00BE1040 /* TestRTCUDriver.h */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -117,8 +122,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32C9765417D4956100F76D3F /* main.cpp in Sources */,
-				32C9765517D4956500F76D3F /* __template_name__.cpp in Sources */,
+				32FB20021A2E365400307A86 /* main.cpp in Sources */,
+				320B32DD1A2DED4C004E204C /* __template_name__.cpp in Sources */,
+				32C9765517D4956500F76D3F /* __template_name__Driver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

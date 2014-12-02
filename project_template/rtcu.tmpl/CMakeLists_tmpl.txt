@@ -26,7 +26,7 @@ LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/usr/local/lib)
 
 ADD_DEFINITIONS(-g -O2 -Wall)
 
-SET(__template_name___src source/main.cpp source/__template_name__.cpp )
+SET(__template_name___src source/main.cpp source/__template_name__.cpp source/__template_name__Driver.cpp )
 
 ADD_EXECUTABLE(__template_name__ ${__template_name___src})
 

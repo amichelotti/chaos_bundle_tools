@@ -38,51 +38,43 @@ __template_name__::~__template_name__() {
 
 }
 
-/*
- Return the default configuration
- */
+//!Return the default configuration
 void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
     //insert your definition code here
 }
 
-/*
-Define custom control unit attribute
-*/
+
+//!Define custom control unit attribute
 void __template_name__::unitDefineCustomAttribute() {
 
 }
 
-/*
- Initialize the Custom Control Unit
- */
+
+//!Initialize the Custom Control Unit
 void __template_name__::unitInit() throw(chaos::CException) {
 
 }
 
-/*
- Execute the work, this is called with a determinated delay, it must be as fast as possible
- */
+
+//!Execute the work, this is called with a determinated delay, it must be as fast as possible
 void __template_name__::unitStart() throw(chaos::CException) {
 
 }
 
-/*
- Execute the Control Unit work
- */
+
+//!Execute the Control Unit work
 void __template_name__::unitRun() throw(chaos::CException) {
 
 }
 
-/*
- Execute the Control Unit work
- */
+
+//!Execute the Control Unit work
 void __template_name__::unitStop() throw(chaos::CException) {
 
 }
 
-/*
- Deinit the Control Unit
- */
+
+//!Deinit the Control Unit
 void __template_name__::unitDeinit() throw(chaos::CException) {
 
 }
