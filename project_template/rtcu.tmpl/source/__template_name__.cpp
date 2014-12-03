@@ -38,9 +38,24 @@ __template_name__::~__template_name__() {
 
 }
 
-//!Return the default configuration
+//!Return the definition of the control unit
+/*!
+The api that can be called withi this method are listed into
+"Control Unit Definition Public API" module into html documentation
+(chaosframework/Documentation/html/group___control___unit___definition___api.html)
+*/
 void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
-    //insert your definition code here
+    //add an exemple output channel
+    addAttributeToDataSet("out_1",
+                          "Int32 output channel",
+                          DataType::TYPE_INT32,
+                          DataType::Output);
+
+    //add an exemple input channel
+    addAttributeToDataSet("in_1",
+                          "Int32 output channel",
+                          DataType::TYPE_INT32,
+                          DataType::Input);
 }
 
 
