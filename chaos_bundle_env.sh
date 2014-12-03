@@ -1,4 +1,4 @@
-
+\
 SOURCE="${BASH_SOURCE[0]}"
 
 pushd `dirname $SOURCE` > /dev/null
@@ -14,7 +14,7 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 export LD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib:$LD_LIBRARY_PATH
 #set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_filesystem memcached zmq uv dl"
+export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv dl"
 
 if [ $(uname -s) == "Linux" ]; then
     export CHAOS_BOOST_VERSION=55

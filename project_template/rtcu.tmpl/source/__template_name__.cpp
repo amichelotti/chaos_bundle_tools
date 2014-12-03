@@ -41,6 +41,43 @@ __template_name__::~__template_name__() {
 //!Return the default configuration
 void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
     //insert your definition code here
+    /*
+
+    addAttributeToDataSet("<my_double_variable_name>", // this is the name of the variable that is shown in interfaces and in MDS 
+			      "variable Description",
+			      DataType::TYPE_DOUBLE,
+			      DataType::Output);
+	
+	
+	addAttributeToDataSet("<my_int32_variable>",
+			      "variable Description",
+			      DataType::TYPE_INT32,
+			      DataType::Output);
+	
+	addAttributeToDataSet("<my_int64_variable>",
+			      "variable Description",
+			      DataType::TYPE_INT64,
+			      DataType::Output);
+	
+	
+	addAttributeToDataSet("<my_string_variable name>",
+			      "variable Description",
+			      DataType::TYPE_STRING,
+			      DataType::Output,256); // max string size
+	
+
+	addAttributeToDataSet("< my_buffer name>",
+			      "variable Description",
+			      DataType::TYPE_BYTEARRAY,
+			      DataType::Output,
+			      10000000); // max buffer size
+
+	addActionDescritionInstance<__template_name__>(this,
+						       &__template_name__::my_custom_action,
+						       "customFunctionName,
+						       "custom function desctiption");
+
+    */
 }
 
 
@@ -88,3 +125,10 @@ void __template_name__::unitInputAttributePreChangeHandler() throw(chaos::CExcep
 void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CException) {
 
 }
+
+/*
+CDataWrapper *__template_name__::my_custom_action(CDataWrapper *actionParam, bool& detachParam) {
+	CDataWrapper *result =  new CDataWrapper();
+	return result;
+}
+*/
