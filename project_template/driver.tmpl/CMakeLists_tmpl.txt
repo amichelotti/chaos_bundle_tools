@@ -27,13 +27,8 @@ ADD_EXECUTABLE(__template_name__ControlUnit ${__template_name__cu_src})
 ADD_LIBRARY(__template_name__Driver SHARED ${__template_name__driver_src})
 set_target_properties(__template_name__Driver PROPERTIES PREFIX "" SUFFIX ".extension")
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-	TARGET_LINK_LIBRARIES(__template_name__ControlUnit pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
-	TARGET_LINK_LIBRARIES(__template_name__Driver pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
-ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-	TARGET_LINK_LIBRARIES(__template_name__ControlUnit chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
-	TARGET_LINK_LIBRARIES(__template_name__Driver chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+TARGET_LINK_LIBRARIES(__template_name__ControlUnit pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
+TARGET_LINK_LIBRARIES(__template_name__Driver pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
 
 
 INSTALL_TARGETS(/bin/__template_name__ __template_name__ControlUnit)
