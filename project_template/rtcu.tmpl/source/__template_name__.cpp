@@ -23,6 +23,10 @@
 using namespace chaos;
 PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__)
 
+#define __template_name__LAPP_		LAPP_ << "[__template_name__] "
+#define __template_name__LDBG_		LDBG_ << "[__template_name__] " << __PRETTY_FUNCTION__ << " "
+#define __template_name__LERR_		LERR_ << "[__template_name__] " << __PRETTY_FUNCTION__ << "("<<__LINE__<<") "
+
 /*
  Construct
  */
@@ -106,6 +110,9 @@ void __template_name__::unitDefineCustomAttribute() {
 
 //!Initialize the Custom Control Unit
 void __template_name__::unitInit() throw(chaos::CException) {
+  
+  //check the value set on MDS for in_1 channel
+  int32_t in_1 = getAttributeCache()->getValue<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
 
 }
 
