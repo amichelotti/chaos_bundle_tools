@@ -6,6 +6,7 @@ KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
 source $curr/chaos_bundle_env.sh
+WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ ! -d "$CHAOS_FRAMEWORK" ] ; then
 echo "please set CHAOS_FRAMEWORK [=$CHAOS_FRAMEWORK] environment to a valid directory, use \"source $curr/chaos_bundle_env.sh\""
@@ -60,6 +61,22 @@ fi
 echo "press any key to continue"
 read -n 1 -s
 
+function cmake_compile(){
+    dir=$1;
+    cd $dir;
+    echo "* entering in $dir"
+    rm -rf CMakeFiles CMakeCache.txt
+    if ! cmake $COSXMAKE .; then
+	echo "ERROR unable to create Makefile in $dir"
+    fi;
+    if ! make install; then
+	echo "ERROR compiling in $dir"
+	exit 1;
+    fi;
+}
+
+
+
 
 rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
 if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
@@ -70,43 +87,20 @@ fi
 ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
 
 for i in debug serial test modbus powersupply; do
-cd $CHAOS_BUNDLE/common/$i
-echo "* entering in $CHAOS_BUNDLE/common/$i"
-rm -rf CMakeFiles CMakeCache.txt
-if ! cmake $COSXMAKE .; then
-echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/common/$i"
-fi;
-if ! make install; then
-echo "ERROR compiling in $CHAOS_BUNDLE/common/$i"
-exit 1;
-fi;
+cmake_compile $CHAOS_BUNDLE/common/$i;
 done;
 
 for i in $(ls  $CHAOS_BUNDLE/driver/) ; do
-cd $CHAOS_BUNDLE/driver/$i
-echo "* entering in $CHAOS_BUNDLE/driver/$i"
-rm -rf CMakeFiles CMakeCache.txt
-if ! cmake $COSXMAKE .; then
-echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/driver/$i"
-fi;
-if ! make install; then
-echo "ERROR compiling in $CHAOS_BUNDLE/driver/$i"
-exit 1;
-fi;
+cmake_compile $CHAOS_BUNDLE/driver/$i;
 done;
 
 for i in $(ls  $CHAOS_BUNDLE/example/) ; do
-cd $CHAOS_BUNDLE/example/$i
-echo "* entering in $CHAOS_BUNDLE/example/$i"
-rm -rf CMakeFiles CMakeCache.txt
-if ! cmake $COSXMAKE .; then
-echo "ERROR unable to create Makefile in $CHAOS_BUNDLE/example/$i"
-fi;
-if ! make install; then
-echo "ERROR compiling in $CHAOS_BUNDLE/example/$i"
-exit 1;
-fi;
+cmake_compile $CHAOS_BUNDLE/example/$i;
 done;
+
+
+cmake_compile $WEB_UI_SERVICE;
+
 
 #make the documentation
 cd $CHAOS_FRAMEWORK
