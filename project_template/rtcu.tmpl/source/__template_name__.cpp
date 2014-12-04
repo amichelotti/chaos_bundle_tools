@@ -23,6 +23,10 @@
 using namespace chaos;
 PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__)
 
+#define __template_name__LAPP_		LAPP_ << "[__template_name__] "
+#define __template_name__LDBG_		LDBG_ << "[__template_name__] " << __PRETTY_FUNCTION__ << " "
+#define __template_name__LERR_		LERR_ << "[__template_name__] " << __PRETTY_FUNCTION__ << "("<<__LINE__<<") "
+
 /*
  Construct
  */
@@ -38,46 +42,64 @@ __template_name__::~__template_name__() {
 
 }
 
-//!Return the default configuration
+//!Return the definition of the control unit
+/*!
+The api that can be called withi this method are listed into
+"Control Unit Definition Public API" module into html documentation
+(chaosframework/Documentation/html/group___control___unit___definition___api.html)
+*/
 void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
     //insert your definition code here
     /*
 
-    addAttributeToDataSet("<my_double_variable_name>", // this is the name of the variable that is shown in interfaces and in MDS 
+    addAttributeToDataSet("<my_double_variable_name>", // this is the name of the variable that is shown in interfaces and in MDS
 			      "variable Description",
 			      DataType::TYPE_DOUBLE,
 			      DataType::Output);
-	
-	
-	addAttributeToDataSet("<my_int32_variable>",
+
+
+	 addAttributeToDataSet("<my_int32_variable>",
 			      "variable Description",
 			      DataType::TYPE_INT32,
 			      DataType::Output);
-	
-	addAttributeToDataSet("<my_int64_variable>",
+
+	 addAttributeToDataSet("<my_int64_variable>",
 			      "variable Description",
 			      DataType::TYPE_INT64,
 			      DataType::Output);
-	
-	
-	addAttributeToDataSet("<my_string_variable name>",
+
+	 addAttributeToDataSet("<my_string_variable name>",
 			      "variable Description",
 			      DataType::TYPE_STRING,
 			      DataType::Output,256); // max string size
-	
 
-	addAttributeToDataSet("< my_buffer name>",
+
+	 addAttributeToDataSet("< my_buffer name>",
 			      "variable Description",
 			      DataType::TYPE_BYTEARRAY,
 			      DataType::Output,
 			      10000000); // max buffer size
 
-	addActionDescritionInstance<__template_name__>(this,
+	 addActionDescritionInstance<__template_name__>(this,
 						       &__template_name__::my_custom_action,
 						       "customFunctionName,
 						       "custom function desctiption");
 
     */
+
+    //add two int32_t channel for example
+
+    //output channel
+    addAttributeToDataSet("out_1",
+                          "Int32 output channel",
+                          DataType::TYPE_INT32,
+                          DataType::Output);
+
+    //input channel
+    addAttributeToDataSet("in_1",
+                          "Int32 output channel",
+                          DataType::TYPE_INT32,
+                          DataType::Input);
 }
 
 
@@ -86,30 +108,28 @@ void __template_name__::unitDefineCustomAttribute() {
 
 }
 
-
 //!Initialize the Custom Control Unit
 void __template_name__::unitInit() throw(chaos::CException) {
+  
+  //check the value set on MDS for in_1 channel
+  int32_t in_1 = getAttributeCache()->getValue<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
 
 }
-
 
 //!Execute the work, this is called with a determinated delay, it must be as fast as possible
 void __template_name__::unitStart() throw(chaos::CException) {
 
 }
 
-
 //!Execute the Control Unit work
 void __template_name__::unitRun() throw(chaos::CException) {
 
 }
 
-
 //!Execute the Control Unit work
 void __template_name__::unitStop() throw(chaos::CException) {
 
 }
-
 
 //!Deinit the Control Unit
 void __template_name__::unitDeinit() throw(chaos::CException) {

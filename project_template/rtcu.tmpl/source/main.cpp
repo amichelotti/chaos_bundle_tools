@@ -8,6 +8,7 @@
 
 
 #include "__template_name__.h"
+#include "__template_name__Driver.h"
 
 #include <string>
 
@@ -16,6 +17,7 @@
 
 using namespace chaos;
 using namespace chaos::cu;
+using namespace chaos::cu::driver_manager;
 
 #define OPT_CUSTOM_DEVICE_ID "device_id"
 
@@ -24,33 +26,22 @@ int main(int argc, char *argv[])
 	string tmp_device_id;
 	control_manager::AbstractControlUnit::ControlUnitDriverList driver_list;
 	try {
-		//add custom paramter
-		ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->addOption(OPT_CUSTOM_DEVICE_ID, po::value<string>(), "Identification string for __template_name__ control unit");
+		// allocate the instance and inspector for driver
+		MATERIALIZE_INSTANCE_AND_INSPECTOR(__template_name__Driver)
 
-		//start the control unit toolkit
+		// register the thriver within cu-toolkit
+		DriverManager::getInstance()->registerDriver(__template_name__DriverInstancer, __template_name__DriverInspector);
+
+		// initialize the control unit toolkit
 		ChaosCUToolkit::getInstance()->init(argc, argv);
 
-		//register the contorl unit class
+		// register the control unit class
 		ChaosCUToolkit::getInstance()->registerControlUnit<__template_name__>();
 
-		//chec if a device id as been setup
-		if(ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->hasOption(OPT_CUSTOM_DEVICE_ID)) {
-			//id has been passed
-			tmp_device_id = ChaosCUToolkit::getInstance()->getGlobalConfigurationInstance()->getOption<string>(OPT_CUSTOM_DEVICE_ID);
-
-			//instance new control unit with associated id
-			ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__(tmp_device_id, std::string(""), driver_list));
-		} else {
-			std::cerr<< "No device id has been passed";
-			return 1;
-		}
-
-		//start control unit toolkit until an event or a signal shutdown it
+		// start control unit toolkit until someone will close it
 		ChaosCUToolkit::getInstance()->start();
-	} catch (CException& e) {
-		cerr<<"Exception::"<<endl;
-		std::cerr<< "in:"<<e.errorDomain << std::endl;
-		std::cerr<< "cause:"<<e.errorMessage << std::endl;
+	} catch (CException& ex) {
+		DECODE_CHAOS_EXCEPTION(ex)
 	} catch (program_options::error &e){
 		cerr << "Unable to parse command line: " << e.what() << endl;
 	} catch (...){
