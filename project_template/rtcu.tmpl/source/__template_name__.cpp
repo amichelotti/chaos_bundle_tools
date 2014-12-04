@@ -19,8 +19,11 @@
  */
 
 #include "__template_name__.h"
+#include "__template_name__Driver.h"
 
 using namespace chaos;
+using namespace chaos::cu::driver_manager::driver;
+
 PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__)
 
 #define __template_name__LAPP_		LAPP_ << "[__template_name__] "
@@ -96,10 +99,12 @@ void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
                           DataType::Output);
 
     //input channel
+    /*
     addAttributeToDataSet("in_1",
                           "Int32 output channel",
                           DataType::TYPE_INT32,
                           DataType::Input);
+    */
 }
 
 
@@ -110,9 +115,9 @@ void __template_name__::unitDefineCustomAttribute() {
 
 //!Initialize the Custom Control Unit
 void __template_name__::unitInit() throw(chaos::CException) {
-  
+
   //check the value set on MDS for in_1 channel
-  int32_t in_1 = getAttributeCache()->getValue<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
+  //int32_t in_1 = getAttributeCache()->getValue<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
 
 }
 
@@ -123,7 +128,23 @@ void __template_name__::unitStart() throw(chaos::CException) {
 
 //!Execute the Control Unit work
 void __template_name__::unitRun() throw(chaos::CException) {
+  //get the output attribute pointer form the internal cache
+  int32_t *out_1_ptr = getAttributeCache()->getRWPtr<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_OUTPUT, "out_1");
 
+  //construct the drivesr message
+  auto_ptr<DrvMsg> driver_message((DrvMsg*)std::calloc(sizeof(DrvMsg), 1));
+
+  //set the opcode for get value from the driver
+  driver_message->opcode = __template_name__DriverOpcode_GET_CH_1;
+
+  //associate the driver message input data to output attribute pointer
+  driver_message->inputData = out_1_ptr;
+
+  //send message to the driver, at index 0, in async
+  getAccessoInstanceByIndex(0)->send(driver_message.get());
+
+  //! set output dataset as changed
+  getAttributeCache()->setOutputDomainAsChanged();
 }
 
 //!Execute the Control Unit work

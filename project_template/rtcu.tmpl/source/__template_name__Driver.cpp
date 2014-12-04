@@ -23,7 +23,7 @@
 
 #include <chaos/cu_toolkit/driver_manager/driver/AbstractDriverPlugin.h>
 
-#include <boost/regex.hpp>
+#include <boost/lexical_cast.hpp>
 
 namespace cu_driver = chaos::cu::driver_manager::driver;
 
@@ -33,9 +33,10 @@ namespace cu_driver = chaos::cu::driver_manager::driver;
 
 
 //GET_PLUGIN_CLASS_DEFINITION
-//we need only to define the driver because we don't are makeing a plugin
+//we need to define the driver with alias version and a class that implement it
 OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(__template_name__Driver, 1.0.0, __template_name__Driver)
-REGISTER_CU_DRIVER_PLUGIN_CLASS_INIT_ATTRIBUTE(__template_name__Driver,http_address/dnsname:port)
+//we need to describe the driver with a parameter string
+REGISTER_CU_DRIVER_PLUGIN_CLASS_INIT_ATTRIBUTE(__template_name__Driver, unsigned 32 bit)
 CLOSE_CU_DRIVER_PLUGIN_CLASS_DEFINITION
 
 //default constructor definition
@@ -49,16 +50,33 @@ __template_name__Driver::~__template_name__Driver() {
 }
 
 void __template_name__Driver::driverInit(const char *initParameter) throw(chaos::CException) {
-	__template_name__DriverLAPP_ << "Init dummy driver";
+	__template_name__DriverLAPP_ << "Init driver";
+	try{
+		i32_out_1_value = boost::lexical_cast<int32_t>(initParameter);
+	} catch(...) {
+		throw chaos::CException(-1, "Error on seed value", __PRETTY_FUNCTION__);
+	}
+	TestCUDriverLAPP_ << "inizialised driver with seed: " << i32_out_1_value;
 }
 
 void __template_name__Driver::driverDeinit() throw(chaos::CException) {
-	__template_name__DriverLAPP_ << "Deinit dummy driver";
+	__template_name__DriverLAPP_ << "Deinit driver";
 
 }
 
 //! Execute a command
 cu_driver::MsgManagmentResultType::MsgManagmentResult __template_name__Driver::execOpcode(cu_driver::DrvMsgPtr cmd) {
 	cu_driver::MsgManagmentResultType::MsgManagmentResult result = cu_driver::MsgManagmentResultType::MMR_EXECUTED;
+	switch(cmd->opcode) {
+		case __template_name__DriverOpcode_SET_CH_1:
+			if(!cmd->inputData  || (sizeof(int32_t) != cmd->inputDataLength)) break;
+			//we can get the value
+			i32_out_1_value = *static_cast<int32_t*>(cmd->inputData);
+		break;
+
+		case __template_name__DriverOpcode_GET_CH_1:
+			*static_cast<int32_t*>(cmd->resultData) = i32_out_1_value;
+		break;
+	}
 	return result;
 }

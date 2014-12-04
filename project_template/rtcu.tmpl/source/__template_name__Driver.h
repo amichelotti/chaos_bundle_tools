@@ -26,12 +26,17 @@ namespace cu_driver = chaos::cu::driver_manager::driver;
 
 DEFINE_CU_DRIVER_DEFINITION_PROTOTYPE(__template_name__Driver)
 
+typedef enum __template_name__DriverOpcode{
+	__template_name__DriverOpcode_SET_CH_1 = cu_driver::OpcodeType::OP_USER,
+	__template_name__DriverOpcode_GET_CH_1
+} __template_name__DriverOpcode;
+
+
 /*
  driver definition
  */
 class __template_name__Driver: ADD_CU_DRIVER_PLUGIN_SUPERCLASS {
-
-
+	int32_t i32_out_1_value;
 	void driverInit(const char *initParameter) throw(chaos::CException);
 	void driverDeinit() throw(chaos::CException);
 public:
