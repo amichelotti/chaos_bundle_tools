@@ -56,7 +56,7 @@ void __template_name__Driver::driverInit(const char *initParameter) throw(chaos:
 	} catch(...) {
 		throw chaos::CException(-1, "Error on seed value", __PRETTY_FUNCTION__);
 	}
-	TestCUDriverLAPP_ << "inizialised driver with seed: " << i32_out_1_value;
+	__template_name__DriverLAPP_ << "inizialised driver with seed: " << i32_out_1_value;
 }
 
 void __template_name__Driver::driverDeinit() throw(chaos::CException) {
