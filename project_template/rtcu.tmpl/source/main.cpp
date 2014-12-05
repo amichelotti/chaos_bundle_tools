@@ -1,12 +1,30 @@
-//
-//  main.m
-//  cocos2d-mac
-//
-//  Created by Ricardo Quesada on 8/17/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
+/*
+*	main.cpp
+*	!CHOAS
+*	Created by Bisegni Claudio.
+*
+*    	Copyright 2012 INFN, National Institute of Nuclear Physics
+*
+*    	Licensed under the Apache License, Version 2.0 (the "License");
+*    	you may not use this file except in compliance with the License.
+*    	You may obtain a copy of the License at
+*
+*    	http://www.apache.org/licenses/LICENSE-2.0
+*
+*    	Unless required by applicable law or agreed to in writing, software
+*    	distributed under the License is distributed on an "AS IS" BASIS,
+*    	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*    	See the License for the specific language governing permissions and
+*    	limitations under the License.
+*/
 
+/*
+the control unit state can be checkd using the following command:
+ChaosCLI --metadata-server mds_url:5000 --deviceid device_name --print-dataset [0-output, 1-input, 2-custom, 3-system]
 
+the set of the input channel can be done (for simple format) using the following command:
+ChaosCLI --metadata-server pcbisegni:5000 --deviceid test_1 --op 9 --rt-attr-val in_1:value
+*/
 #include "__template_name__.h"
 #include "__template_name__Driver.h"
 
