@@ -28,10 +28,10 @@ function getipport(){
     local ip;
     local defip=$1; ## default
     read ip;
-if [ ! -n "$ip" ]; then
     url=$defip
-else
-    if ! [[ $url =~ ^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9a-zA-Z]\:[0-9]+$ ]]; then
+if [ -n "$ip" ]; then
+    url=$ip
+    if ! [[ $url =~ ^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9a-zA-Z]+\:[0-9]+$ ]]; then
 	echo "## URL: $url malformed"
 	exit 1;
     fi;
@@ -41,7 +41,8 @@ echo "$url"
 }
 defip="127.0.0.1:8081"
 echo "Please insert the IP:<port> of the !CHAOS UI server (CUiserver)[$defip] ";
-url=$(getipport $defip);
+url=$(getipport $defip)
+
 
 echo "* using $url"
 port=""

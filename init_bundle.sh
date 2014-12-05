@@ -65,6 +65,10 @@ function cmake_compile(){
     dir=$1;
     cd $dir;
     echo "* entering in $dir"
+    if [ ! -f CMakeLists.txt ]; then
+	echo "* skipping $dir does not contain CMakeLists.txt"
+    fi;
+	
     rm -rf CMakeFiles CMakeCache.txt
     if ! cmake $COSXMAKE .; then
 	echo "ERROR unable to create Makefile in $dir"
