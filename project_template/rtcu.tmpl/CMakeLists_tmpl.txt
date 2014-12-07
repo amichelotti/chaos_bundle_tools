@@ -28,15 +28,21 @@ ADD_DEFINITIONS(-g -O2 -Wall -DBOOST_LOG_DYN_LINK)
 
 SET(__template_name___src source/main.cpp source/__template_name__.cpp source/__template_name__Driver.cpp )
 
+SET(__template_name__Client_src test/main.cpp )
+
 ADD_EXECUTABLE(__template_name__ ${__template_name___src})
+ADD_EXECUTABLE(__template_name__Client ${__template_name__Client_src})
 
 SET(FrameworkLib $ENV{CHAOS_LINK_LIBRARY})
 separate_arguments(FrameworkLib)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	TARGET_LINK_LIBRARIES(__template_name__ pthread chaos_cutoolkit chaos_common ${FrameworkLib})
+  TARGET_LINK_LIBRARIES(__template_name__Client pthread chaos_uitoolkit chaos_common ${FrameworkLib})
 ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	TARGET_LINK_LIBRARIES(__template_name__ chaos_cutoolkit chaos_common ${FrameworkLib})
+  TARGET_LINK_LIBRARIES(__template_name__Client chaos_uitoolkit chaos_common ${FrameworkLib})
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 INSTALL_TARGETS(/bin __template_name__)
+INSTALL_TARGETS(/bin __template_name__Client)

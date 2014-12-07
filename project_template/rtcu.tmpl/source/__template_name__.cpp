@@ -99,12 +99,10 @@ void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
                           DataType::Output);
 
     //input channel
-    /*
     addAttributeToDataSet("in_1",
                           "Int32 output channel",
                           DataType::TYPE_INT32,
                           DataType::Input);
-    */
 }
 
 
@@ -164,7 +162,7 @@ void __template_name__::unitInputAttributePreChangeHandler() throw(chaos::CExcep
 
 //! attribute changed handler
 void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CException) {
-  /*
+
   //array to managed the changed attribute list
   std::vector<chaos::cu::control_manager::VariableIndexType> changed_input_attribute;
 
@@ -184,7 +182,7 @@ void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CExcepti
             auto_ptr<DrvMsg> driver_message((DrvMsg*)std::calloc(sizeof(DrvMsg), 1));
 
             //set the opcode for get value from the driver
-            driver_message->opcode = TutorialRTDriverOpcode_SET_CH_1;
+            driver_message->opcode = __template_name__DriverOpcode_SET_CH_1;
 
             //associate the driver message input data to output attribute pointer
             driver_message->inputData = (int32_t*)in_1;
@@ -200,7 +198,7 @@ void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CExcepti
       }
       //reset the chagned index
       getAttributeCache()->resetChangedInputIndex();
-      */
+  }
 }
 
 /*
