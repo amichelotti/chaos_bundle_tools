@@ -28,7 +28,7 @@ ADD_DEFINITIONS(-g -O2 -Wall -DBOOST_LOG_DYN_LINK)
 
 SET(__template_name___src source/main.cpp source/__template_name__.cpp source/__template_name__Driver.cpp )
 
-SET(__template_name__Client_src test/main.cpp )
+SET(__template_name__Client_src test/__template_name__Client.cpp )
 
 ADD_EXECUTABLE(__template_name__ ${__template_name___src})
 ADD_EXECUTABLE(__template_name__Client ${__template_name__Client_src})
