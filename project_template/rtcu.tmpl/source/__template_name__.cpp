@@ -136,7 +136,7 @@ void __template_name__::unitRun() throw(chaos::CException) {
   driver_message->opcode = __template_name__DriverOpcode_GET_CH_1;
 
   //associate the driver message input data to output attribute pointer
-  driver_message->outputData = out_1_ptr;
+  driver_message->resultData = out_1_ptr;
 
   //send message to the driver, at index 0, in async
   getAccessoInstanceByIndex(0)->send(driver_message.get());

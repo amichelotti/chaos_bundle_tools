@@ -19,11 +19,14 @@
 */
 
 /*
+to lauch control unit
+__template_name__ --metadata-server mds_url:5000 --unit_server_alias alias --unit_server_enable yes
+
 the control unit state can be checkd using the following command:
 ChaosCLI --metadata-server mds_url:5000 --deviceid device_name --print-dataset [0-output, 1-input, 2-custom, 3-system]
 
 the set of the input channel can be done (for simple format) using the following command:
-ChaosCLI --metadata-server pcbisegni:5000 --deviceid test_1 --op 9 --rt-attr-val in_1:value
+ChaosCLI --metadata-server mds_url:5000 --deviceid device_name --op 9 --rt-attr-val in_1:value
 */
 #include "__template_name__.h"
 #include "__template_name__Driver.h"
