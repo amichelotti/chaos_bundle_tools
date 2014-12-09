@@ -98,7 +98,7 @@ else
   sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.h"
   rm source/__template_name__Driver.h
 
-  sed -e "s/__template_name__/$template_name/g" test/__template_name__Client.cpp | sed -e "s/__template_type__/$template_type/g" > "test/${template_name}Clientr.cpp"
+  sed -e "s/__template_name__/$template_name/g" test/__template_name__Client.cpp | sed -e "s/__template_type__/$template_type/g" > "test/${template_name}Client.cpp"
   rm test/__template_name__Client.cpp
 
 fi
