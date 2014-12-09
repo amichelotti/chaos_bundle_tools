@@ -29,86 +29,126 @@ using namespace chaos;
 using namespace chaos::ui;
 
 void print_state(CUStateKey::ControlUnitState state) {
-    switch (state) {
-        case CUStateKey::INIT:
-            std::cout << "Initialized";
-            break;
-        case CUStateKey::START:
-            std::cout << "Started";
-            break;
-        case CUStateKey::STOP:
-            std::cout << "Stopped";
-            break;
-        case CUStateKey::DEINIT:
-            std::cout << "Deinitilized";
-            break;
-    }
+  switch (state) {
+    case CUStateKey::INIT:
+    std::cout << "Initialized" << std::endl;
+    break;
+    case CUStateKey::START:
+    std::cout << "Started" << std::endl;
+    break;
+    case CUStateKey::STOP:
+    std::cout << "Stopped" << std::endl;
+    break;
+    case CUStateKey::DEINIT:
+    std::cout << "Deinitilized" << std::endl;
+    break;
+  }
 }
 
 
 int main (int argc, char* argv[] ) {
-    int err = 0;
-    std::string attribute_value_tmp_str;
-    CUStateKey::ControlUnitState device_state;
-    try{
-        //init UIToolkit client
-        ChaosUIToolkit::getInstance()->init(argc, argv);
+  int err = 0;
+  std::string attribute_value_tmp_str;
+  CUStateKey::ControlUnitState device_state;
+  try{
+    //init UIToolkit client
+    ChaosUIToolkit::getInstance()->init(argc, argv);
 
-        DeviceController *controller = HLDataApi::getInstance()->getControllerForDeviceID("device_id", 2000);
-        if(!controller) return -1;
+    DeviceController *controller = HLDataApi::getInstance()->getControllerForDeviceID("device_name", 40000);
+    if(!controller) return -1;
 
-        //init device
-        err = controller->initDevice();
+    //init device
+    std::cout << "Init the device" << std::endl;
+    err = controller->initDevice();
+    if(err == ErrorCode::EC_TIMEOUT) return -1;
+    print_state(device_state);
+    sleep(2);
 
-        //check the state
-        err = controller->getState(device_state);
-        if(err == ErrorCode::EC_TIMEOUT) return -1;
-        print_state(device_state);
+    //check the state
+    err = controller->getState(device_state);
+    if(err == ErrorCode::EC_TIMEOUT) return -1;
+    print_state(device_state);
+    sleep(2);
 
-        //start the device
-        err = controller->startDevice();
+    //start the device
+    std::cout << "Start the device" << std::endl;
+    err = controller->startDevice();
+    sleep(2);
 
-        //check the state
-        err = controller->getState(device_state);
-        if(err == ErrorCode::EC_TIMEOUT) return -1;
-        print_state(device_state);
+    //check the state
+    err = controller->getState(device_state);
+    if(err == ErrorCode::EC_TIMEOUT) return -1;
+    print_state(device_state);
+    sleep(2);
 
-        //print all dataset
-        controller->fetchCurrentDatatasetFromDomain((DatasetDomain)0);
-        if(controller->getCurrentDatasetForDomain((DatasetDomain)0) != NULL) {
-            std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)0)->getJSONString() <<std::endl;
-        }
+    //print all dataset
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)0);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)0) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)0)->getJSONString() <<std::endl;
+    }
 
-        controller->fetchCurrentDatatasetFromDomain((DatasetDomain)1);
-        if(controller->getCurrentDatasetForDomain((DatasetDomain)1) != NULL) {
-            std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)1)->getJSONString() <<std::endl;
-        }
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)1);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)1) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)1)->getJSONString() <<std::endl;
+    }
 
-        controller->fetchCurrentDatatasetFromDomain((DatasetDomain)2);
-        if(controller->getCurrentDatasetForDomain((DatasetDomain)2) != NULL) {
-            std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)2)->getJSONString() <<std::endl;
-        }
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)2);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)2) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)2)->getJSONString() <<std::endl;
+    }
 
-        controller->fetchCurrentDatatasetFromDomain((DatasetDomain)3);
-        if(controller->getCurrentDatasetForDomain((DatasetDomain)3) != NULL) {
-            std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)3)->getJSONString() <<std::endl;
-        }
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)3);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)3) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)3)->getJSONString() <<std::endl;
+    }
 
-        //set schedule time to 250 milliseconds
-        err = controller->setScheduleDelay(250);
+    //set schedule time to 250 milliseconds
+    std::cout << "set run schedule to 250 milliseconds" << std::endl;
+    err = controller->setScheduleDelay(250000);
+    sleep(2);
 
-        //set a value on input parameter without waith the ack
-        err = controller->setAttributeToValue("in_1", "20", true);
+    //set a value on input parameter without waith the ack
+    std::cout << "set in_1 to " << 20 << std::endl;
+    err = controller->setAttributeToValue("in_1", "20", true);
+    sleep(2);
 
-        //!update output dataset
-        controller->fetchCurrentDatatasetFromDomain((DatasetDomain)0);
-        err = controller->getAttributeStrValue("out_1", attribute_value_tmp_str);
+    //!update output dataset
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)0);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)0) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)0)->getJSONString() <<std::endl;
+    }
 
-        //! stop the device
-        err = controller->stopDevice();
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)1);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)1) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)1)->getJSONString() <<std::endl;
+    }
 
-        //! deinit the device
-        err = controller->deinitDevice();
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)2);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)2) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)2)->getJSONString() <<std::endl;
+    }
+
+    controller->fetchCurrentDatatasetFromDomain((DatasetDomain)3);
+    if(controller->getCurrentDatasetForDomain((DatasetDomain)3) != NULL) {
+      std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)3)->getJSONString() <<std::endl;
+    }
+    sleep(2);
+
+    //! stop the device
+    std::cout << "Stop the device" << std::endl;
+    err = controller->stopDevice();
+    err = controller->getState(device_state);
+    if(err == ErrorCode::EC_TIMEOUT) return -1;
+    print_state(device_state);
+    sleep(2);
+
+    //! deinit the device
+    std::cout << "Deinit the device" << std::endl;
+    err = controller->deinitDevice();
+    err = controller->getState(device_state);
+    if(err == ErrorCode::EC_TIMEOUT) return -1;
+    print_state(device_state);
+    sleep(2);
     } catch (CException& e) {
         std::cerr << e.errorCode << " - "<< e.errorDomain << " - " << e.errorMessage << std::endl;
     }
