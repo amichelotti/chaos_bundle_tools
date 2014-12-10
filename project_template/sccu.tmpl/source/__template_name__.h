@@ -33,6 +33,7 @@ namespace cu_driver = chaos::cu::driver_manager::driver;
 class __template_name__ : public chaos::cu::control_manager::SCAbstractControlUnit {
   PUBLISHABLE_CONTROL_UNIT_INTERFACE(__template_name__)
 
+    const double * i_rand_max_p;
 protected:
     /*
      Define the Control Unit Dataset and Actions

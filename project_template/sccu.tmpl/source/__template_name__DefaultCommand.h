@@ -34,7 +34,7 @@ class __template_name__DefaultCommand : public ccc_slow_command::SlowCommand {
 
   // TODO: PUT HERE YOUR VARIABLES
   double *o_out1_p;
-  const int *i_rand_max_p;
+  const double *i_rand_max_p;
   ///
   // your driver interface
   __template_name__Interface *driver;

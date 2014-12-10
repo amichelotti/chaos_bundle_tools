@@ -97,6 +97,17 @@ void __template_name__::defineSharedVariable() {
 
 // Abstract method for the initialization of the control unit
 void __template_name__::unitInit() throw(CException) {
+    chaos::cu::driver_manager::driver::DriverAccessor * accessor =AbstractControlUnit::getAccessoInstanceByIndex(0);
+  if(accessor == NULL){
+    throw chaos::CException(-1, "Cannot retrieve the requested driver", __FUNCTION__);
+  }
+
+  i_rand_max_p =getAttributeCache()->getROPtr<double>(AttributeValueSharedCache::SVD_INPUT, "rand_max");
+  
+  if(i_rand_max_p == NULL || (*i_rand_max_p<=0)){
+    throw chaos::CException(-1, "BAD rand_max value", __FUNCTION__);
+  }
+  LAPP_<< " Rand MAX:" << *i_rand_max_p;
 
 }
 

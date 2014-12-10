@@ -52,7 +52,7 @@ uint8_t __template_name__CommandSample::implementedHandler() {
 // Called when the command is executed
 void __template_name__CommandSample::setHandler(CDataWrapper *data) {
   // TODO
-    LDBG_<< " * set handler "<<__FUNCTION__;
+    LAPP_<< " * set handler "<<__FUNCTION__;
   o_out2_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out2");
   o_out1_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out1");
   i_timeout_p =getAttributeCache()->getROPtr<int>(AttributeValueSharedCache::SVD_INPUT, "timeout");
@@ -69,7 +69,8 @@ void __template_name__CommandSample::setHandler(CDataWrapper *data) {
         setFeatures(chaos_batch::features::FeaturesFlagTypes::FF_SET_COMMAND_TIMEOUT, (uint64_t) *i_timeout_p);
         CMDCU_<< "* setting timeout for command \""<<__template_name__CommandSample::command_alias<<"\":"<<*i_timeout_p<<" ms";
     }
-	cnt = 0;
+    setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)1000000);
+    cnt = 0;
     parm_from_cmd= data->getInt32Value("parm1");
     driver->op1(parm_from_cmd);
     cnt =parm_from_cmd + 1;
@@ -84,7 +85,7 @@ void __template_name__CommandSample::setHandler(CDataWrapper *data) {
 void __template_name__CommandSample::acquireHandler() {
     // TODO: put here your "fire" acquisition code
 
-    LDBG_<< " * acquire handler "<<cnt;
+    LAPP_<< " * acquire handler "<<cnt;
     cnt++;
     
 }
@@ -92,12 +93,12 @@ void __template_name__CommandSample::acquireHandler() {
 // Correlation and commit phase
 void __template_name__CommandSample::ccHandler() {
     // TODO: put here yfeedback code
-    LDBG_<< " * CC handler "<<cnt;
+    LAPP_<< " * CC handler "<<cnt;
 
     *o_out2_p = cnt;
     if(cnt>100){
         // command has finished
-        LDBG_<< " * mark as end command"<<cnt;
+        LAPP_<< " * mark as end command:"<<cnt;
 
         BC_END_RUNNIG_PROPERTY;
     }
@@ -107,7 +108,7 @@ void __template_name__CommandSample::ccHandler() {
 
 bool __template_name__CommandSample::timeoutHandler() {
 	//move the state machine on fault
-    LDBG_<< " * TIMEOUT "<<cnt;
+    LAPP_<< " * TIMEOUT "<<cnt;
     BC_FAULT_RUNNIG_PROPERTY;
 
 	return false;

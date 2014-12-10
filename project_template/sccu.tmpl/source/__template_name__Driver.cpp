@@ -52,7 +52,7 @@ __template_name__Driver::~__template_name__Driver() {
 }
 
 void __template_name__Driver::driverInit(const char *initParameter) throw(chaos::CException) {
-  __template_name__LAPP_<<" Initialized" << initParameter?initParameter:"";
+  __template_name__LAPP_<<" Initialized" << (initParameter)?initParameter:"";
 }
 
 void __template_name__Driver::driverDeinit() throw(chaos::CException) {

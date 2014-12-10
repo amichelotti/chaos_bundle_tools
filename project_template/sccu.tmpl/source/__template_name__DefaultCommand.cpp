@@ -1,7 +1,7 @@
 /*
  *	__template_name__DefaultCommand.h
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	!CHAOS
+ *	Created automatically
  *
  *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
@@ -31,8 +31,8 @@ using namespace chaos::common::batch_command;
 using namespace chaos::cu::control_manager::slow_command;
 
 __template_name__DefaultCommand::__template_name__DefaultCommand() {
-    //set default scheduler delay
-    setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)1000);
+  driver=NULL;
+
 }
 
 __template_name__DefaultCommand::~__template_name__DefaultCommand() {
@@ -47,8 +47,10 @@ uint8_t __template_name__DefaultCommand::implementedHandler() {
 // Called when the command is executed
 void __template_name__DefaultCommand::setHandler(CDataWrapper *data) {
   // TODO
+    //set default scheduler delay
+  setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)1000000);
   o_out1_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out1");
-  i_rand_max_p =getAttributeCache()->getROPtr<int>(AttributeValueSharedCache::SVD_INPUT, "rand_max");
+  i_rand_max_p =getAttributeCache()->getROPtr<double>(AttributeValueSharedCache::SVD_INPUT, "rand_max");
   chaos::cu::driver_manager::driver::DriverAccessor * accessor = driverAccessorsErogator->getAccessoInstanceByIndex(0);
   if(accessor && (driver == NULL)){
       driver = new __template_name__Interface(accessor);
@@ -62,14 +64,14 @@ void __template_name__DefaultCommand::setHandler(CDataWrapper *data) {
  \return the mask for the runnign state
  */
 void __template_name__DefaultCommand::acquireHandler() {
-    
+      LDBG_<< "acquire ";
     // TODO: put here your "Default" acquisition code
     if(driver){
         double var;
         
         driver->op2(*i_rand_max_p,&var);
         *o_out1_p = var;
-        
+	CMDCU_<< "acquire: "<<var;        
         getAttributeCache()->setOutputDomainAsChanged();
     }
     
