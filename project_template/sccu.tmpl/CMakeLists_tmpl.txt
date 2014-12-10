@@ -19,9 +19,9 @@ LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/../../chaosframework/usr/local/lib)
 
 ADD_DEFINITIONS(-g -O2 -Wall -DBOOST_LOG_DYN_LINK)
 
-SET(__template_name___src source/main.cpp source/__template_name__.cpp source/DefaultCommand.cpp source/DummyDriver.cpp)
+SET(__template_name___src source/main.cpp source/__template_name__.cpp source/DefaultCommand.cpp source/__template_name__Interface.cpp source/__template_name__Driver.cpp)
 
 ADD_EXECUTABLE(__template_name__ ${__template_name___src})
 
-TARGET_LINK_LIBRARIES(__template_name__ pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
+TARGET_LINK_LIBRARIES(__template_name__ pthread chaos_cutoolkit chaos_common ${FrameworkLib})
 INSTALL_TARGETS(/bin __template_name__)

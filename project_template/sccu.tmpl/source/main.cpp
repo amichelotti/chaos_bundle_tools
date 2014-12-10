@@ -1,7 +1,7 @@
 /*
- *	ControlUnitTest.cpp
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	
+ *	!CHAOS
+ *	Created automatically
  *
  *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
@@ -20,11 +20,11 @@
 
 
 #include "__template_name__.h"
-#include "DummyDriver.h"
+
 
 #include <chaos/common/chaos_constants.h>
 #include <chaos/cu_toolkit/ChaosCUToolkit.h>
-
+#include "__template_name__Driver.h"
 #include <iostream>
 #include <string>
 
@@ -59,7 +59,7 @@ namespace cu_driver_manager = chaos::cu::driver_manager;
 
 #define OPT_CUSTOM_DEVICE_ID "device_id"
 
-
+using namespace chaos::driver::__template_name__;
 int main (int argc, char* argv[] )
 {
     string tmp_device_id;
@@ -71,8 +71,8 @@ int main (int argc, char* argv[] )
     //! [Custom Option]
 
 	  //! [Driver Registration]
-	  MATERIALIZE_INSTANCE_AND_INSPECTOR(DummyDriver)
-	  cu_driver_manager::DriverManager::getInstance()->registerDriver(DummyDriverInstancer, DummyDriverInspector);
+    MATERIALIZE_INSTANCE_AND_INSPECTOR(__template_name__Driver)
+	  cu_driver_manager::DriverManager::getInstance()->registerDriver(__template_name__DriverInstancer, __template_name__DriverInspector);
     //! [Driver Registration]
     ChaosCUToolkit::getInstance()->registerControlUnit<__template_name__>();
     ChaosCUToolkit::getInstance()->init(argc, argv);

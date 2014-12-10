@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32C9767617D60F4200F76D3F /* DummyDriver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9766F17D60F4200F76D3F /* DummyDriver.cpp */; };
+		53134FC41A3861C700C4483F /* __template_name__CommandSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53134FC31A3861C700C4483F /* __template_name__CommandSample.cpp */; };
+		53134FC21A384D2000C4483F /* __template_name__CommandSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = __template_name__CommandSample.h; path = source/__template_name__CommandSample.h; sourceTree = SOURCE_ROOT; };
+		53134FC31A3861C700C4483F /* __template_name__CommandSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = __template_name__CommandSample.cpp; path = source/__template_name__CommandSample.cpp; sourceTree = SOURCE_ROOT; };
+		53D29D191A374277009D333F  /* __template_name__Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9766F17D60F4200F76D4F /* __template_name__Driver.cpp */; };
+		32C9767617D60F4200F76D3F /* __template_name__Interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9766F17D60F4200F76D3F /* __template_name__Interface.cpp */; };
 		32C9767717D60F4200F76D3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9767117D60F4200F76D3F /* main.cpp */; };
 		32C9767817D60F4200F76D3F /* __template_name__.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9767217D60F4200F76D3F /* __template_name__.cpp */; };
-		32C9767917D60F4200F76D3F /* DefaultCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9767417D60F4200F76D3F /* DefaultCommand.cpp */; };
+		32C9767917D60F4200F76D3F /* __template_name__DefaultCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C9767417D60F4200F76D3F /* __template_name__DefaultCommand.cpp */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32BE864A15A0E3C500818C39 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		32C9766F17D60F4200F76D3F /* DummyDriver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DummyDriver.cpp; path = source/DummyDriver.cpp; sourceTree = SOURCE_ROOT; };
-		32C9767017D60F4200F76D3F /* DummyDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDriver.h; path = source/DummyDriver.h; sourceTree = SOURCE_ROOT; };
+		32C9766F17D60F4200F76D4F /* __template_name__Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = __template_name__Driver.cpp; path = source/__template_name__Driver.cpp; sourceTree = SOURCE_ROOT; };
+		32C9767017D60F4200F76D4F /* __template_name__Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = __template_name__Driver.h; path = source/__template_name__Driver.h; sourceTree = SOURCE_ROOT; };
+		32C9766F17D60F4200F76D3F /* __template_name__Interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = __template_name__Interface.cpp; path = source/__template_name__Interface.cpp; sourceTree = SOURCE_ROOT; };
+		32C9767017D60F4200F76D3F /* __template_name__Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = __template_name__Interface.h; path = source/__template_name__Interface.h; sourceTree = SOURCE_ROOT; };
 		32C9767117D60F4200F76D3F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = source/main.cpp; sourceTree = SOURCE_ROOT; };
 		32C9767217D60F4200F76D3F /* __template_name__.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = __template_name__.cpp; path = source/__template_name__.cpp; sourceTree = SOURCE_ROOT; };
 		32C9767317D60F4200F76D3F /* __template_name__.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = __template_name__.h; path = source/__template_name__.h; sourceTree = SOURCE_ROOT; };
-		32C9767417D60F4200F76D3F /* DefaultCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DefaultCommand.cpp; path = source/DefaultCommand.cpp; sourceTree = SOURCE_ROOT; };
-		32C9767517D60F4200F76D3F /* DefaultCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultCommand.h; path = source/DefaultCommand.h; sourceTree = SOURCE_ROOT; };
+		32C9767417D60F4200F76D3F /* __template_name__DefaultCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = __template_name__DefaultCommand.cpp; path = source/__template_name__DefaultCommand.cpp; sourceTree = SOURCE_ROOT; };
+		32C9767517D60F4200F76D3F /* __template_name__DefaultCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = __template_name__DefaultCommand.h; path = source/__template_name__DefaultCommand.h; sourceTree = SOURCE_ROOT; };
 		32F7448F14B49CCB0025638B /* __template_name__ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = __template_name__; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,13 +63,17 @@
 		326DB50714B3B7890018A8D0 /* __template_name__ */ = {
 			isa = PBXGroup;
 			children = (
-				32C9766F17D60F4200F76D3F /* DummyDriver.cpp */,
-				32C9767017D60F4200F76D3F /* DummyDriver.h */,
+				53134FC31A3861C700C4483F /* __template_name__CommandSample.cpp */,
+				53134FC21A384D2000C4483F /* __template_name__CommandSample.h */,
+				32C9766F17D60F4200F76D4F  /* __template_name__Driver.cpp */,
+				32C9767017D60F4200F76D4F /* __template_name__Driver.h */,
+				32C9766F17D60F4200F76D3F /* __template_name__Interface.cpp */,
+				32C9767017D60F4200F76D3F /* __template_name__Interface.h */,
 				32C9767117D60F4200F76D3F /* main.cpp */,
 				32C9767217D60F4200F76D3F /* __template_name__.cpp */,
 				32C9767317D60F4200F76D3F /* __template_name__.h */,
-				32C9767417D60F4200F76D3F /* DefaultCommand.cpp */,
-				32C9767517D60F4200F76D3F /* DefaultCommand.h */,
+				32C9767417D60F4200F76D3F /* __template_name__DefaultCommand.cpp */,
+				32C9767517D60F4200F76D3F /* __template_name__DefaultCommand.h */,
 			);
 			name = __template_name__;
 			path = ControlUnitTest;
@@ -118,10 +129,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D29D191A374277009D333F /* __template_name__Driver.cpp in Sources */,
 				32C9767717D60F4200F76D3F /* main.cpp in Sources */,
 				32C9767817D60F4200F76D3F /* __template_name__.cpp in Sources */,
-				32C9767617D60F4200F76D3F /* DummyDriver.cpp in Sources */,
-				32C9767917D60F4200F76D3F /* DefaultCommand.cpp in Sources */,
+				32C9767617D60F4200F76D3F /* __template_name__Interface.cpp in Sources */,
+				32C9767917D60F4200F76D3F /* __template_name__DefaultCommand.cpp in Sources */,
+				53134FC41A3861C700C4483F /* __template_name__CommandSample.cpp in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

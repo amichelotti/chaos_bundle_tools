@@ -1,7 +1,7 @@
 /*
- *	DefaultCommand.h
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	__template_name__CommandSample.h
+ *	!CHAOS
+ *	Created automatically
  *
  *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
@@ -18,17 +18,30 @@
  *    	limitations under the License.
  */
 
-#ifndef __ControlUnitTest__DefaultCommand__
-#define __ControlUnitTest__DefaultCommand__
+#ifndef __ControlUnitTest____template_name__CommandSample__
+#define __ControlUnitTest____template_name__CommandSample__
 
 #include <chaos/cu_toolkit/ControlManager/slow_command/SlowCommand.h>
-
+#include "__template_name__Interface.h"
 using namespace chaos;
 
 namespace c_data = chaos::common::data;
 namespace ccc_slow_command = chaos::cu::control_manager::slow_command;
 
-class DefaultCommand : public ccc_slow_command::SlowCommand {
+using namespace chaos::driver::__template_name__;
+
+class __template_name__CommandSample : public ccc_slow_command::SlowCommand {
+
+  // TODO: PUT HERE YOUR VARIABLES
+  double *o_out2_p,*o_out1_p;
+  const int *i_timeout_p;
+  int parm_from_cmd;
+  int cnt;
+  
+  ///
+  // your driver interface
+  __template_name__Interface *driver;
+  
    protected:
     // return the implemented handler
     uint8_t implementedHandler();
@@ -46,9 +59,14 @@ class DefaultCommand : public ccc_slow_command::SlowCommand {
     // Correlation and commit phase
     void ccHandler();
     
+    bool timeoutHandler();
+
+    
 public:
-    DefaultCommand();
-    ~DefaultCommand();
+    static const char* command_alias;
+    
+    __template_name__CommandSample();
+    ~__template_name__CommandSample();
 };
 
-#endif /* defined(__ControlUnitTest__DefaultCommand__) */
+#endif /* defined(__ControlUnitTest____template_name__CommandSample__) */

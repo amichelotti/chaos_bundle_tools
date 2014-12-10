@@ -7,7 +7,8 @@
 //
 
 #include "__template_name__.h"
-#include "DefaultCommand.h"
+#include "__template_name__DefaultCommand.h"
+#include "__template_name__CommandSample.h"
 
 using namespace chaos::common::data;
 
@@ -33,15 +34,33 @@ __template_name__::~__template_name__() {
 void __template_name__::unitDefineActionAndDataset() throw(CException) {
 
     //install a default command
-    installCommand<DefaultCommand>("default_command");
-    /*
+    installCommand<__template_name__DefaultCommand>("default_command");
 
-    addAttributeToDataSet("<my_double_variable_name>", // this is the name of the variable that is shown in interfaces and in MDS 
-			      "variable Description",
+
+    // TODO
+    installCommand<__template_name__CommandSample>(__template_name__CommandSample::command_alias);
+
+    addAttributeToDataSet("out1", // this is the name of the variable that is shown in interfaces and in MDS
+			      "a random value",
 			      DataType::TYPE_DOUBLE,
 			      DataType::Output);
+    
+    addAttributeToDataSet("out2", // this is the name of the variable that is shown in interfaces and in MDS
+                          "out2 changed by 'fire' command",
+                          DataType::TYPE_INT32,
+                          DataType::Output);
+    
+    addAttributeToDataSet("rand_max",
+						  "random max interval",
+						  DataType::TYPE_DOUBLE,
+						  DataType::Input);
+    addAttributeToDataSet("timeout",
+						  "The command timeout",
+						  DataType::TYPE_INT32,
+						  DataType::Input);
+    //////
 	
-	
+/*
 	addAttributeToDataSet("<my_int32_variable>",
 			      "variable Description",
 			      DataType::TYPE_INT32,
