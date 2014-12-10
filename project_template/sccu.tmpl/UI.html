@@ -14,7 +14,7 @@
     
     <script>
         
-        CULoad(null, 5000);
+        CULoad(null, 2000);
         
     </script>
 
@@ -27,7 +27,7 @@
     
     <header>
       <h1 id="name_0">NOME DEL DISPOSITIVO</h1>
-            <h2 id="site_device">LOCAZIONE DEL DISPOSITIVO</h2>            
+            <h2 id="timestamp_0">TIMESTAMP</h2>            
     </header>
     
     <div class="sub-content">
@@ -65,7 +65,7 @@
             
                 <tr>
                   <td id="value_changed" digits="3"><input id="paramin" type="text"></td>
-                  <td id="button"><button id="button_set0" onclick="cus[0].sendCommand('fire','{parm1='+paramin.value+'}');"> Send Command</button></td>
+                  <td id="button"><button id="button_set0" onclick="cus[0].sendCommand('fire','{parm1:'+paramin.value+'}');"> Send Command</button></td>
                 </tr>
                 
             <tr>

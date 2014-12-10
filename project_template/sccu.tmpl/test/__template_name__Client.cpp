@@ -145,12 +145,20 @@ int main (int argc, char* argv[] ) {
     sleep(2);
 
     char stringa[256];
+    printf("commands: quit, dump, <alias:{json parameters}>\n");
     do{
       printf(">");
       
       gets(stringa);
       if(strstr(stringa,"quit")){
 	break;
+      } else if(strstr(stringa,"dump")){
+	    //!update output dataset
+	controller->fetchCurrentDatatasetFromDomain((DatasetDomain)0);
+	if(controller->getCurrentDatasetForDomain((DatasetDomain)0) != NULL) {
+	  std::cout << controller->getCurrentDatasetForDomain((DatasetDomain)0)->getJSONString() <<std::endl;
+    }
+
       } else {
 	char* pnt=0;
 	if((pnt=strchr(stringa,':'))){

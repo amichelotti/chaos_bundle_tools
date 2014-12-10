@@ -19,7 +19,7 @@
  */
 #include "__template_name__CommandSample.h"
 
-#define CMDCU_ LAPP_ << "[__template_name__CommandSample] - "
+#define APP    LAPP_ << "[__template_name__CommandSample] - "
 #define DBG    LDBG_<< "[__template_name__CommandSample] - "
 
 using namespace chaos;
@@ -52,8 +52,8 @@ uint8_t __template_name__CommandSample::implementedHandler() {
 // Called when the command is executed
 void __template_name__CommandSample::setHandler(CDataWrapper *data) {
   // TODO
-    LAPP_<< " * set handler "<<__FUNCTION__;
-  o_out2_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out2");
+    APP<< " * set handler "<<__FUNCTION__;
+  o_out2_p = getAttributeCache()->getRWPtr<int>(AttributeValueSharedCache::SVD_OUTPUT, "out2");
   o_out1_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out1");
   i_timeout_p =getAttributeCache()->getROPtr<int>(AttributeValueSharedCache::SVD_INPUT, "timeout");
   chaos::cu::driver_manager::driver::DriverAccessor * accessor = driverAccessorsErogator->getAccessoInstanceByIndex(0);
@@ -66,10 +66,10 @@ void __template_name__CommandSample::setHandler(CDataWrapper *data) {
 		throw chaos::CException(0, "command parameter not found", __FUNCTION__);
 	}
     if(*i_timeout_p>0){
-        setFeatures(chaos_batch::features::FeaturesFlagTypes::FF_SET_COMMAND_TIMEOUT, (uint64_t) *i_timeout_p);
-        CMDCU_<< "* setting timeout for command \""<<__template_name__CommandSample::command_alias<<"\":"<<*i_timeout_p<<" ms";
+        setFeatures(chaos_batch::features::FeaturesFlagTypes::FF_SET_COMMAND_TIMEOUT, (uint64_t) *i_timeout_p * 1000);
+        APP<< "* setting timeout for command \""<<__template_name__CommandSample::command_alias<<"\":"<<*i_timeout_p<<" ms";
     }
-    setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)1000000);
+    setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)500000);
     cnt = 0;
     parm_from_cmd= data->getInt32Value("parm1");
     driver->op1(parm_from_cmd);
@@ -85,31 +85,31 @@ void __template_name__CommandSample::setHandler(CDataWrapper *data) {
 void __template_name__CommandSample::acquireHandler() {
     // TODO: put here your "fire" acquisition code
 
-    LAPP_<< " * acquire handler "<<cnt;
+    APP<< " * acquire handler "<<cnt;
     cnt++;
     
 }
 
 // Correlation and commit phase
 void __template_name__CommandSample::ccHandler() {
-    // TODO: put here yfeedback code
-    LAPP_<< " * CC handler "<<cnt;
-
-    *o_out2_p = cnt;
-    if(cnt>100){
-        // command has finished
-        LAPP_<< " * mark as end command:"<<cnt;
-
-        BC_END_RUNNIG_PROPERTY;
-    }
-    getAttributeCache()->setOutputDomainAsChanged();
+  // TODO: put here yfeedback code
+  APP<< " * CC handler "<<cnt;
+  
+  *o_out2_p = cnt;
+  if(cnt>100){
+    // command has finished
+    APP<< " * mark as end command:"<<cnt;
     
+    BC_END_RUNNIG_PROPERTY;
+  }
+  getAttributeCache()->setOutputDomainAsChanged();
+  
 }
 
 bool __template_name__CommandSample::timeoutHandler() {
 	//move the state machine on fault
-    LAPP_<< " * TIMEOUT "<<cnt;
-    BC_FAULT_RUNNIG_PROPERTY;
+  APP<< " * TIMEOUT "<<cnt;
+  BC_FAULT_RUNNIG_PROPERTY;
 
-	return false;
+  return false;
 }

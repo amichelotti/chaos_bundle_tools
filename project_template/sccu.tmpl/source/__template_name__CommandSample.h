@@ -33,7 +33,8 @@ using namespace chaos::driver::__template_name__;
 class __template_name__CommandSample : public ccc_slow_command::SlowCommand {
 
   // TODO: PUT HERE YOUR VARIABLES
-  double *o_out2_p,*o_out1_p;
+  double *o_out1_p;
+  int *o_out2_p;
   const int *i_timeout_p;
   int parm_from_cmd;
   int cnt;
