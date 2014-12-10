@@ -86,21 +86,27 @@ if [ "$template_type" == "driver" ]; then
 	sed -e "s/__template_name__/$template_name/g" source/__template_name__DriverSwitch.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}DriverSwitch.cpp"
 	rm source/__template_name__DriverSwitch.cpp
 else
-	sed -e "s/__template_name__/$template_name/g" source/__template_name__.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.cpp"
-	rm source/__template_name__.cpp
+    
+    sed -e "s/__template_name__/$template_name/g" source/__template_name__.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.cpp"
+    rm source/__template_name__.cpp
 
-	sed -e "s/__template_name__/$template_name/g" source/__template_name__.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.h"
-	rm source/__template_name__.h
-
-  sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.cpp | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.cpp"
-  rm source/__template_name__Driver.cpp
-
-  sed -e "s/__template_name__/$template_name/g" source/__template_name__Driver.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}Driver.h"
-  rm source/__template_name__Driver.h
-
-  sed -e "s/__template_name__/$template_name/g" test/__template_name__Client.cpp | sed -e "s/__template_type__/$template_type/g" > "test/${template_name}Client.cpp"
-  rm test/__template_name__Client.cpp
-
+    sed -e "s/__template_name__/$template_name/g" source/__template_name__.h | sed -e "s/__template_type__/$template_type/g" > "source/${template_name}.h"
+    rm source/__template_name__.h
+    for j in source test; do
+	for i in Driver Interface Client CommandSample DefaultCommand SampleCommand; do
+	    if [ -f "$j/__template_name__$i.h" ]; then
+		echo "* generating $j/${template_name}$i.h"
+	    	sed -e "s/__template_name__/$template_name/g" $j/__template_name__$i.h | sed -e "s/__template_type__/$template_type/g" > "$j/${template_name}$i.h"
+		rm $j/__template_name__$i.h
+	    fi
+	    if [ -f "$j/__template_name__$i.cpp" ]; then
+		echo "* generating $j/${template_name}$i.cpp"
+		sed -e "s/__template_name__/$template_name/g" $j/__template_name__$i.cpp | sed -e "s/__template_type__/$template_type/g" > "$j/${template_name}$i.cpp"
+		rm $j/__template_name__$i.cpp
+	fi
+	    
+	done;
+    done;
 fi
 
 sed -e "s/__template_name__/$template_name/g" source/main.cpp | sed -e "s/__template_type__/$template_type/g" > source/main_mod.cpp
