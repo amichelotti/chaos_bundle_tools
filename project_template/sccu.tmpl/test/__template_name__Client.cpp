@@ -50,6 +50,41 @@ int sendCmd(DeviceController *controller ,std::string cmd_alias_str,char*param){
 					     0,
 					     data_wrapper.get());
 
+  if (err != ErrorCode::EC_NO_ERROR) throw CException(2, "Error", "executing commant");
+  chaos_batch::CommandState command_state;
+  command_state.command_id = cmd_id_tmp;
+  err = controller->getCommandState(command_state);
+  std::cout << "Device state start -------------------------------------------------------" << std::endl;
+  std::cout << "Command";
+  switch (command_state.last_event) {
+  case chaos_batch::BatchCommandEventType::EVT_COMPLETED:
+    std::cout << " has completed"<< std::endl;;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_FAULT:
+    std::cout << " has fault";
+    std::cout << "Error code		:"<<command_state.fault_description.code<< std::endl;
+    std::cout << "Error domain		:"<<command_state.fault_description.domain<< std::endl;
+    std::cout << "Error description	:"<<command_state.fault_description.description<< std::endl;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_KILLED:
+    std::cout << " has been killed"<< std::endl;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_PAUSED:
+    std::cout << " has been paused"<< std::endl;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_QUEUED:
+    std::cout << " has been queued"<< std::endl;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_RUNNING:
+    std::cout << " is running"<< std::endl;
+    break;
+  case chaos_batch::BatchCommandEventType::EVT_WAITING:
+    std::cout << " is waiting"<< std::endl;
+    break;
+  }
+  std::cout << "Device state end ---------------------------------------------------------" << std::endl;
+
+
   return err;
 }
 
