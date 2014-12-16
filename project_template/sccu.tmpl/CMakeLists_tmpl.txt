@@ -17,7 +17,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 INCLUDE_DIRECTORIES(. ${PROJECT_SOURCE_DIR}/../../usr/local/include)
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/../../chaosframework/usr/local/lib)
 
-ADD_DEFINITIONS(-g -O2 -Wall -DBOOST_LOG_DYN_LINK)
+ADD_DEFINITIONS(-g -O2 -DBOOST_LOG_DYN_LINK)
 
 SET(__template_name___src source/main.cpp source/__template_name__.cpp source/__template_name__DefaultCommand.cpp source/__template_name__CommandSample.cpp source/__template_name__Interface.cpp source/__template_name__Driver.cpp)
 
