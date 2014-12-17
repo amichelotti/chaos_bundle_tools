@@ -40,7 +40,6 @@ export CXX=g++
 export LD=ld
 
 if [ "$CHAOS_TARGET" == "BBB" ]; then
-    export LMEM_VERSION=1.0.18
     echo "* using libmemcached version $LMEM_VERSION"
     echo "* Cross compiling for Beagle Bone"
     export CC=arm-linux-gnueabihf-gcc-4.8
@@ -68,12 +67,14 @@ fi
 
 if [ `echo $OS | tr '[:upper:]' '[:lower:]'` = `echo "Darwin" | tr '[:upper:]' '[:lower:]'` ] && [ $KERNEL_SHORT_VER -ge 1300 ] && [ ! -n "$CROSS_HOST" ]; then
     echo "Use standard CLIB with clang"
-    export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=\"-stdlib=libstdc++\" $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX"
+    export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX"
     echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
     export CC=clang
-    export CXX="clang++ -stdlib=libstdc++"
+    export CXX="clang++"
+    export CXXFLAGS="-stdlib=libstdc++"
+    export LDFLAGS="-stdlib=libstdc++"
     export LD=clang
-
+    export LMEM_VERSION=1.0.18
 else
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX -DCMAKE_CXX_COMPILER=$CXX  -DCMAKE_C_COMPILER=$CC"
 fi
