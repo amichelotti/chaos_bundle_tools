@@ -6,7 +6,7 @@ KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
 source $curr/chaos_bundle_env.sh
-WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
+
 
 if [ ! -d "$CHAOS_FRAMEWORK" ] ; then
 echo "please set CHAOS_FRAMEWORK [=$CHAOS_FRAMEWORK] environment to a valid directory, use \"source $curr/chaos_bundle_env.sh\""
@@ -25,38 +25,17 @@ fi
 
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
-if [ "$CHAOS_TARGET" == "BBB" ]; then
-    echo "* Cross compiling for Beagle Bone"
-    export CC=arm-linux-gnueabihf-gcc-4.8
-    export CXX=arm-linux-gnueabihf-g++-4.8
-    export LD=arm-linux-gnueabihf-ld
-    export CROSS_HOST=arm-linux-gnueabihf
-else
-    export CC=gcc
-    export CXX=g++
-    export LD=ld
-fi
+
 
 echo "* Using C-Compiler:   $CC"
 echo "* Using C++-Compiler: $CXX"
 echo "* Using Linker:       $LD"
+echo "* Using CMAKE_FLAGS:  $CHAOS_CMAKE_FLAGS"
 echo "* OS: $OS"
+echo "* INSTALL DIR:$CHAOS_PREFIX"
 echo "* KERNEL VER:$KERNEL_SHORT_VER"
 echo "* Link with: $CHAOS_LINK_LIBRARY"
 
-if [ `echo $OS | tr "[:upper:]" "[:lower:]"` = `echo "Darwin" | tr "[:upper:]" "[:lower:]"` ] && [ "$KERNEL_SHORT_VER" -ge 1300 ]; then
-    echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
-    export CC=clang
-    export CXX="clang++ -stdlib=libstdc++"
-    export LD=clang
-
-    echo "CC = $CC"
-    echo "CXX = $CXX"
-    echo "LD = $LD"
-    export COSXMAKE="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++"
-else
-    export COSXMAKE=
-fi
 
 echo "press any key to continue"
 read -n 1 -s
@@ -70,7 +49,7 @@ function cmake_compile(){
     fi;
 	
     rm -rf CMakeFiles CMakeCache.txt
-    if ! cmake $COSXMAKE .; then
+    if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	echo "ERROR unable to create Makefile in $dir"
     fi;
     if ! make install; then
