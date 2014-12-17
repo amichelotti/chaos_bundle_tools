@@ -40,7 +40,6 @@ export CXX=g++
 export LD=ld
 
 if [ "$CHAOS_TARGET" == "BBB" ]; then
-    echo "* using libmemcached version $LMEM_VERSION"
     echo "* Cross compiling for Beagle Bone"
     export CC=arm-linux-gnueabihf-gcc-4.8
     export CXX=arm-linux-gnueabihf-g++-4.8
@@ -74,7 +73,8 @@ if [ `echo $OS | tr '[:upper:]' '[:lower:]'` = `echo "Darwin" | tr '[:upper:]' '
     export CXXFLAGS="-stdlib=libstdc++"
     export LDFLAGS="-stdlib=libstdc++"
     export LD=clang
-    export LMEM_VERSION=1.0.18
+    ## 18, 16 doesnt compile
+    export LMEM_VERSION=1.0.14
 else
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX -DCMAKE_CXX_COMPILER=$CXX  -DCMAKE_C_COMPILER=$CC"
 fi
