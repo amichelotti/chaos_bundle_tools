@@ -1,34 +1,21 @@
 cmake_minimum_required(VERSION 2.6)
-option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
-
-
-IF( ($ENV{CHAOS32}) OR (BUILD_FORCE_32) )
-    MESSAGE(STATUS "Enabling 32 bit Compilation")
-    set (CMAKE_C_FLAGS "-m32")
-    set (CMAKE_CXX_FLAGS "-m32")
-    set (CMAKE_LINK_FLAGS "-m32")
-ENDIF()
-
-set (CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/../../usr/local)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-
-ADD_DEFINITIONS(-g -O2 -Wall)
-add_definitions(-DBOOST_ALL_DYN_LINK)
+include($ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)
 
 SET(__template_name__driver_src source/__template_name__Driver.cpp source/__template_name__DriverSwitch.cpp)
 SET(__template_name__cu_src source/main.cpp source/__template_name__ControlUnit.cpp ${__template_name__driver_src})
 
-INCLUDE_DIRECTORIES(. ${PROJECT_SOURCE_DIR}/../../usr/local/include)
-LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/../../chaosframework/usr/local/lib)
-
 ADD_EXECUTABLE(__template_name__ControlUnit ${__template_name__cu_src})
+IF(BUILD_FORCE_STATIC)
+ADD_LIBRARY(__template_name__Driver STATIC ${__template_name__driver_src})
+ELSE()
 ADD_LIBRARY(__template_name__Driver SHARED ${__template_name__driver_src})
+ENDIF()
+
 set_target_properties(__template_name__Driver PROPERTIES PREFIX "" SUFFIX ".extension")
 
-TARGET_LINK_LIBRARIES(__template_name__ControlUnit pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
-TARGET_LINK_LIBRARIES(__template_name__Driver pthread chaos_cutoolkit chaos_common boost_program_options boost_system boost_thread boost_chrono boost_regex boost_log boost_log_setup boost_atomic memcached)
+TARGET_LINK_LIBRARIES(__template_name__ControlUnit chaos_cutoolkit chaos_common ${FrameworkLib})
+TARGET_LINK_LIBRARIES(__template_name__Driver chaos_cutoolkit chaos_common ${FrameworkLib}
+
 
 
 INSTALL_TARGETS(/bin/__template_name__ __template_name__ControlUnit)

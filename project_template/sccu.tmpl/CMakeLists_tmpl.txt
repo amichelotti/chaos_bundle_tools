@@ -1,40 +1,15 @@
 cmake_minimum_required(VERSION 2.6)
-option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
-
-
-IF( ($ENV{CHAOS32}) OR (BUILD_FORCE_32) )
-    MESSAGE(STATUS "Enabling 32 bit Compilation")
-    set (CMAKE_C_FLAGS "-m32")
-    set (CMAKE_CXX_FLAGS "-m32")
-    set (CMAKE_LINK_FLAGS "-m32")
-ENDIF()
-if( DEFINED ENV{CHAOS_BUNDLE} ) 
-    MESSAGE(STATUS "Using $ENV{CHAOS_BUNDLE}")
-      set (PROJECT_SOURCE_DIR $ENV{CHAOS_BUNDLE})
-ELSE()
-    MESSAGE(FATAL_ERROR "Please set CHAOS_BUNDLE environment")
-ENDIF()
-
-set (CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/usr/local)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-
-INCLUDE_DIRECTORIES(. ${PROJECT_SOURCE_DIR}/usr/local/include)
-LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/usr/local/lib)
-
-ADD_DEFINITIONS(-g -O2 -DBOOST_LOG_DYN_LINK)
+include($ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)
 
 SET(__template_name___src source/main.cpp source/__template_name__.cpp source/__template_name__DefaultCommand.cpp source/__template_name__CommandSample.cpp source/__template_name__Interface.cpp source/__template_name__Driver.cpp)
 
-SET(FrameworkLib $ENV{CHAOS_LINK_LIBRARY})
-separate_arguments(FrameworkLib)
+
 SET(__template_name__Client_src test/__template_name__Client.cpp )
 
 ADD_EXECUTABLE(__template_name__ ${__template_name___src})
 ADD_EXECUTABLE(__template_name__Client ${__template_name__Client_src})
 
-TARGET_LINK_LIBRARIES(__template_name__ pthread chaos_cutoolkit chaos_common ${FrameworkLib})
- TARGET_LINK_LIBRARIES(__template_name__Client pthread chaos_uitoolkit chaos_common ${FrameworkLib})
+TARGET_LINK_LIBRARIES(__template_name__ chaos_cutoolkit chaos_common ${FrameworkLib})
+ TARGET_LINK_LIBRARIES(__template_name__Client chaos_uitoolkit chaos_common ${FrameworkLib})
 
 INSTALL_TARGETS(/bin __template_name__)
