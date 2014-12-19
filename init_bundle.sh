@@ -4,7 +4,7 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
-
+NPROC=$(getconf _NPROCESSORS_ONLN)
 source $curr/chaos_bundle_env.sh
 
 
@@ -53,6 +53,11 @@ function cmake_compile(){
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	echo "ERROR unable to create Makefile in $dir"
     fi;
+    if ! make -j $NPROC; then
+	echo "ERROR compiling in $dir"
+	exit 1;
+    fi;
+
     if ! make install; then
 	echo "ERROR compiling in $dir"
 	exit 1;
