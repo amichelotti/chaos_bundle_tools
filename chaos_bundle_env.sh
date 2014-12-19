@@ -19,7 +19,7 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib
 export LD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib:$LD_LIBRARY_PATH
 #set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv dl"
+export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv dl pthread"
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
@@ -28,7 +28,7 @@ else
     export CHAOS_BOOST_VERSION=53
 fi;
 
-if [ -n "$CHAOS_PREFIX" ]; then
+if [ -z "$CHAOS_PREFIX" ]; then
     export CHAOS_PREFIX=$CHAOS_BUNDLE/usr/local
 fi
 
@@ -55,19 +55,27 @@ else
 fi
 
 export CHAOS_CMAKE_FLAGS=""
+export CHAOS_BOOST_FLAGS=""
+if [ -n "$CHAOS_STATIC" ]; then
+    export CHAOS_BOOST_FLAGS="link=static"
+    export CHAOS_CMAKE_FLAGS="-DBUILD_FORCE_STATIC=true"
+else
+    export CHAOS_BOOST_FLAGS="link=shared"
+fi
+
 
 if [ -n "$CHAOS32" ]; then
-    export CHAOS_CMAKE_FLAGS="-DBUILD_FORCE_32=true"
+    export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DBUILD_FORCE_32=true"
     export CFLAGS="$CFLAGS -m32"
     export CXXFLAGS="$CXXFLAGS -m32"
     echo "Force 32 bit binaries"
+    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS cflags=-m32 cxxflags=-m32 address-model=32"
 fi
 
 
 if [ `echo $OS | tr '[:upper:]' '[:lower:]'` = `echo "Darwin" | tr '[:upper:]' '[:lower:]'` ] && [ $KERNEL_SHORT_VER -ge 1300 ] && [ ! -n "$CROSS_HOST" ]; then
     echo "Use standard CLIB with clang"
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX"
-    echo "We are on mavericks but we still use the stdlib++, these are the variable setupped:"
     export CC=clang
     export CXX="clang++"
     export CXXFLAGS="-stdlib=libstdc++"
@@ -75,8 +83,10 @@ if [ `echo $OS | tr '[:upper:]' '[:lower:]'` = `echo "Darwin" | tr '[:upper:]' '
     export LD=clang
     ## 18, 16 doesnt compile
     export LMEM_VERSION=1.0.14
-else
-    export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX -DCMAKE_CXX_COMPILER=$CXX  -DCMAKE_C_COMPILER=$CC"
+    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS toolset=clang cxxflags=-stdlib=libstdc++ linkflags=-stdlib=libstdc++"    
 fi
+
+export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS --prefix=$CHAOS_PREFIX --with-program_options --with-chrono --with-filesystem --with-iostreams --with-log --with-regex --with-random --with-system --with-thread --with-atomic --with-timer install"
+export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_CC_COMPILER=$CC"
 
 

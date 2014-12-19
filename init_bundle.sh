@@ -48,7 +48,8 @@ function cmake_compile(){
 	echo "* skipping $dir does not contain CMakeLists.txt"
     fi;
 	
-    rm -rf CMakeFiles CMakeCache.txt
+    rm -rf CMakeCache.txt
+    echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	echo "ERROR unable to create Makefile in $dir"
     fi;
