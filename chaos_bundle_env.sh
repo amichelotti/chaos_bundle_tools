@@ -13,7 +13,6 @@ KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
 
 #boostrap !CHAOS Framework in development mode
-export CHAOS_DEVELOPMENT="YES"
 export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 export DYLD_LIBRARY_PATH=$CHAOS_BUNDLE/usr/local/lib

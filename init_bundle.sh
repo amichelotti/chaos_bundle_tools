@@ -46,6 +46,12 @@ else
     echo "* default target distribution"
 fi
 
+if [ -n "$CHAOS_DEVELOPMENT" ]; then
+    echo "* Development (Debug) target"
+else
+    echo "* Release target"
+fi
+
 echo "* !Chaos Target:$CHAOS_TARGET"
 
 echo "press any key to continue"
@@ -101,6 +107,10 @@ done;
 
 cmake_compile $WEB_UI_SERVICE;
 
+if [ -n "$CHAOS_DEVELOPMENT" ]; then
+    echo "* linking $CHAOS_BUNDLE/usr in $CHAOS_FRAMEWORK"
+    ln -sf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK
+fi
 
 #make the documentation
 cd $CHAOS_FRAMEWORK
