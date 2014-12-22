@@ -45,7 +45,8 @@ if [ "$CHAOS_TARGET" == "BBB" ]; then
     export CXX=arm-linux-gnueabihf-g++-4.8
     export LD=arm-linux-gnueabihf-ld
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
-
+else
+    export CHAOS_TARGET=$OS
 fi;
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then

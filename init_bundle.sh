@@ -35,7 +35,18 @@ echo "* OS: $OS"
 echo "* INSTALL DIR:$CHAOS_PREFIX"
 echo "* KERNEL VER:$KERNEL_SHORT_VER"
 echo "* Link with: $CHAOS_LINK_LIBRARY"
+if [ -n "$CHAOS_STATIC" ]; then
+    echo "* Static distribution"
+else
+    echo "* Dynamic distribution"
+fi
+if [ -n "$CHAOS32" ]; then
+    echo "* 32 bit distribution"
+else
+    echo "* default target distribution"
+fi
 
+echo "* !Chaos Target:$CHAOS_TARGET"
 
 echo "press any key to continue"
 read -n 1 -s
