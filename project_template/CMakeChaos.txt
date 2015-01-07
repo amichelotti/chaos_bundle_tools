@@ -5,7 +5,7 @@ option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
 option(BUILD_FORCE_STATIC "Set static compilation" OFF)
 
 
-IF( ($ENV{CHAOS32}) OR (BUILD_FORCE_32) )
+IF( ( DEFINED ENV{CHAOS32}) OR BUILD_FORCE_32 )
     MESSAGE(STATUS "Enabling 32 bit Compilation")
     set (BUILD_FORCE_32 1)
     set (CMAKE_C_FLAGS "-m32")
@@ -34,7 +34,7 @@ ADD_DEFINITIONS(-g -O2)
 set(FrameworkLib $ENV{CHAOS_LINK_LIBRARY})
 separate_arguments(FrameworkLib)
 
-IF( DEFINED ENV{CHAOS_STATIC} OR DEFINED BUILD_FORCE_STATIC)
+IF( (DEFINED ENV{CHAOS_STATIC}) OR BUILD_FORCE_STATIC )
 	MESSAGE(STATUS "Enabling Static compilation")
 	SET(BUILD_FORCE_STATIC 1)
 	SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
