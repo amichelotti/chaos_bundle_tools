@@ -5,6 +5,14 @@ SET(__template_name__driver_src source/__template_name__Driver.cpp source/__temp
 SET(__template_name__cu_src source/main.cpp source/__template_name__ControlUnit.cpp ${__template_name__driver_src})
 
 ADD_EXECUTABLE(__template_name__ControlUnit ${__template_name__cu_src})
+
+IF(BUILD_FORCE_STATIC)
+  SET(CMAKE_EXE_LINKER_FLAGS "-static -Wl,--whole-archive -lchaos_common -Wl,--no-whole-archive")
+  TARGET_LINK_LIBRARIES(__template_name__ControlUnit chaos_cutoolkit  ${FrameworkLib})
+ELSE()
+  TARGET_LINK_LIBRARIES(__template_name__ControlUnit chaos_cutoolkit chaos_common ${FrameworkLib})
+ENDIF()
+
 IF(BUILD_FORCE_STATIC)
 ADD_LIBRARY(__template_name__Driver STATIC ${__template_name__driver_src})
 ELSE()
@@ -13,7 +21,6 @@ ENDIF()
 
 set_target_properties(__template_name__Driver PROPERTIES PREFIX "" SUFFIX ".extension")
 
-TARGET_LINK_LIBRARIES(__template_name__ControlUnit chaos_cutoolkit chaos_common ${FrameworkLib})
 TARGET_LINK_LIBRARIES(__template_name__Driver chaos_cutoolkit chaos_common ${FrameworkLib}
 
 
