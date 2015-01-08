@@ -29,6 +29,10 @@ fi;
 
 if [ -z "$CHAOS_PREFIX" ]; then
     export CHAOS_PREFIX=$CHAOS_BUNDLE/usr/local
+else
+    if [ "$CHAOS_PREFIX" != "$CHAOS_BUNDLE/usr/local" ]; then
+	echo "* WARNING INSTALLATION DIR $CHAOS_PREFIX *****"
+    fi
 fi
 
 #export MONGO_VERSION=26compat
@@ -37,7 +41,10 @@ export LIB_EVENT_VERSION=release-2.1.4-alpha
 export CC=gcc
 export CXX=g++
 export LD=ld
-
+unset CHAOS_CROSS_HOST
+unset CC
+unset CXX
+unset LD
 if [ "$CHAOS_TARGET" == "BBB" ]; then
     echo "* Cross compiling for Beagle Bone"
     export CC=arm-linux-gnueabihf-gcc-4.8
@@ -45,6 +52,7 @@ if [ "$CHAOS_TARGET" == "BBB" ]; then
     export LD=arm-linux-gnueabihf-ld
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
 else
+    
     export CHAOS_TARGET=$OS
 fi;
 

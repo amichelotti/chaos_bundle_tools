@@ -26,13 +26,14 @@ fi
 echo -e "\033[38;5;148m!CHAOS initialization script\033[39m"
 echo -e "\033[38;5;148m!CHOAS bundle directory -> $CHAOS_BUNDLE\033[39m"
 
-
-echo "* Using C-Compiler:   $CC"
-echo "* Using C++-Compiler: $CXX"
-echo "* Using Linker:       $LD"
+echo "* CHAOS BUNDLE SOURCE (CHAOS_BUNDLE) :$CHAOS_BUNDLE"
+echo "* INSTALL DIR         (CHAOS_PREFIX):$CHAOS_PREFIX"
+echo "* Using C-Compiler    (CC) : $CC"
+echo "* Using C++-Compiler  (CXX): $CXX"
+echo "* Using Linker        (LD) : $LD"
 echo "* Using CMAKE_FLAGS:  $CHAOS_CMAKE_FLAGS"
 echo "* OS: $OS"
-echo "* INSTALL DIR:$CHAOS_PREFIX"
+
 echo "* KERNEL VER:$KERNEL_SHORT_VER"
 echo "* Link with: $CHAOS_LINK_LIBRARY"
 if [ -n "$CHAOS_STATIC" ]; then
