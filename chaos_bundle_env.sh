@@ -24,7 +24,7 @@ export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 if [ $(uname -s) == "Linux" ]; then
     export CHAOS_BOOST_VERSION=55
 else
-    export CHAOS_BOOST_VERSION=53
+    export CHAOS_BOOST_VERSION=56
 fi;
 
 if [ -z "$CHAOS_PREFIX" ]; then
@@ -55,7 +55,7 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
 #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
 else
-    
+
     export CHAOS_TARGET=$OS
 fi;
 
