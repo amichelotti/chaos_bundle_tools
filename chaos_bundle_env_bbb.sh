@@ -1,4 +1,4 @@
-export CHAOS_TARGET=BBB
+export CHAOS_TARGET=armhf
 SOURCE="${BASH_SOURCE[0]}"
 
 pushd `dirname $SOURCE` > /dev/null

@@ -28,7 +28,7 @@ else
 fi
 
 
-if [ "$CHAOS_TARGET" == "BBB" ]; then
+if [ "$CHAOS_TARGET" == "armhf" ]; then
     ARCH="armhf"
 fi;
 
