@@ -15,7 +15,7 @@ if [ "$OS" == "Linux" ]; then
     compile_build=("release" "debug")
 else
     compile_type=("dynamic");
-    compile_target=("host");
+    compile_target=("$ARCH");
     compile_build=("release" "debug")
 fi
 
