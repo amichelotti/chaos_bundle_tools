@@ -91,8 +91,8 @@ for type in ${compile_type[@]} ; do
 	    if [ "$type" == "static" ]; then
 		export CHAOS_STATIC=true
 	    fi
-	    if [ "$target" == "arm" ]; then
-		export CHAOS_TARGET=BBB
+	    if [ "$target" == "armhf" ]; then
+		export CHAOS_TARGET=armhf
 	    fi
 	    
 	    if [ "$build" == "debug" ]; then

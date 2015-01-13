@@ -64,6 +64,7 @@ function cmake_compile(){
     echo "* entering in $dir"
     if [ ! -f CMakeLists.txt ]; then
 	echo "* skipping $dir does not contain CMakeLists.txt"
+	return 0;
     fi;
 	
     rm -rf CMakeCache.txt
