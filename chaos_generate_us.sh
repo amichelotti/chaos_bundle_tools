@@ -8,6 +8,7 @@ exename=`basename $0`
 lista_cu=();
 
 lista_driver=();
+lista_driver_ns=();
 lista_h=();
 lista_hd=();
 lista_lib=""
@@ -53,17 +54,26 @@ for c in $listah; do
     namespace=`echo $nameget|sed "s/namespace\W\+\(\w\+\)\W*{/\1/g"`;
 
     for n in $namespace; do
-	filenamespace="$filenamespace::$n";
+	if [ -z "$filenamespace" ];then
+	    filenamespace="$n";
+	else
+	    filenamespace="$filenamespace::$n";
+	fi
     done;
-
+    
     plugin=`grep ADD_CU_DRIVER_PLUGIN_SUPERCLASS $c -s`;
     if [ -n "$plugin" ]; then
 	if [[ "$plugin" =~ class\ +(.+)\: ]]; then
-	    lista_driver+=("$filenamespace::${BASH_REMATCH[1]}");
+	    
+	    lista_driver+=("${BASH_REMATCH[1]}");
+	    lista_driver_ns+=("$filenamespace");
 	    lista_hd+=("$header");
 	fi
     fi
-    cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))/REGISTER_CU($filenamespace::\1)/g"`;
+    if [ -n "$filenamespace" ];then
+	filenamespace="$filenamespace::"
+    fi
+    cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed 's/[a-zA-Z]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
     if [ -n "$cu" ]; then
 
 	lista_cu+=("$cu");
@@ -122,7 +132,7 @@ done
 arr=0
 for c in ${lista_driver[@]}; do
     
-    echo -e "\t\tREGISTER_DRIVER($c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
+    echo -e "\t\tMATERIALIZE_INSTANCE_AND_INSPECTOR_WITH_NS(${lista_driver_ns[arr]},$c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
   ((arr++))
 done
 echo -e "\t\tchaos::cu::ChaosCUToolkit::getInstance()->start();" >> $project_dir/main.cpp
