@@ -60,7 +60,9 @@ for c in $listah; do
 	    filenamespace="$filenamespace::$n";
 	fi
     done;
-    
+    if [ -n "$filenamespace" ];then
+	filenamespace="::$filenamespace"
+    fi
     plugin=`grep ADD_CU_DRIVER_PLUGIN_SUPERCLASS $c -s`;
     if [ -n "$plugin" ]; then
 	if [[ "$plugin" =~ class\ +(.+)\: ]]; then
