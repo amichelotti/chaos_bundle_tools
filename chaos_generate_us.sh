@@ -12,7 +12,8 @@ lista_driver_ns=();
 lista_h=();
 lista_hd=();
 lista_lib=""
-while getopts i:o:n:h opt; do
+skipdir=();
+while getopts i:o:n:hs: opt; do
     case $opt in
 	i) startdir=$OPTARG
 	    ;;
@@ -20,7 +21,10 @@ while getopts i:o:n:h opt; do
 	    ;;
 	n) pname=$OPTARG
 	    ;;
-	h) echo "Usage : $exename [-i <input directory>] [-o <output directory>] [-n <project name>]"
+	s) skipdir+=($OPTARG)
+	    
+	    ;;
+	h) echo -e "Usage : $exename [-i <input directory>] [-o <output directory>] [-n <project name>] [-s <directory to skip>]\n-i <input direcory>: directory that contains CUs\n-o <output directory>: Unit Server project dir\n-n <project name>: name of the unit server project\n-s <directory>: skip the specified firectory"
 	    exit 0
 	    ;;
     esac
@@ -42,13 +46,26 @@ echo "* creating $project_dir"
 mkdir -p $project_dir
 parent=`dirname $startdir`
 prefix=`basename $startdir`
-incdir_list=""
-if [ "$parent" != "." ]; then
-    
-    prefix="$(basename $parent)\/$prefix"
-fi
-for c in $listah; do
 
+incdir_list=""
+# echo "$prefix"
+# if [ "$parent" != "." ] && [ "$parent" != ".." ]; then  
+#     prefix="$(basename $parent)\/$prefix"
+# fi
+
+function to_skip(){
+    for s in ${skipdir[@]}; do
+	if [[ "$1" =~ $s ]]; then
+	    return 0
+	fi
+    done
+    return 1
+}
+for c in $listah; do
+    if to_skip $c; then
+	echo "* skipping $c"
+	continue;
+    fi
     header=`echo $c | sed 's/src\///' | sed 's/source\///' | sed "s/\.\//$prefix\//g"`;
     filenamespace=""
     nameget=`egrep "namespace\ +\w+\ *\{" $c`;
@@ -78,7 +95,7 @@ for c in $listah; do
     fi
     cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed 's/[:alpha:_]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
     if [ -n "$cu" ]; then
-
+	echo "* got CU in $header"
 	lista_cu+=("$cu");
 	lista_h+=("$header");
     fi
@@ -98,6 +115,11 @@ done
 listcmake=`find . -name "CMakeLists.txt"`;
 listadep=""
 for c in $listcmake;do
+    if to_skip $c; then
+	echo "* skipping $c"
+	continue;
+    fi
+
     varl=`grep -i add_library $c | grep SHARED`;
     incdir=`dirname $startdir/$c | sed 's/\.\///g'`
     parent=`dirname $incdir`
@@ -174,3 +196,4 @@ echo "TARGET_LINK_LIBRARIES($pname $lista_lib $lista_unica common_debug)" >>  $p
 echo "INSTALL_TARGETS(/bin $pname)" >>  $project_dir/CMakeLists.txt
 
 popd > /dev/null
+echo "* Generated $project_dir"

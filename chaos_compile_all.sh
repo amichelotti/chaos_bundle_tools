@@ -10,6 +10,7 @@ prefix_build=chaos-dev
 outbase=$dir/../
 create_deb_ver=""
 remove_working="false"
+log="$0.log"
 
 if [ "$OS" == "Linux" ]; then
     compile_type=( "dynamic" "static" );
@@ -80,7 +81,7 @@ function setEnvAndCompile(){
     echo "* Starting target $1"
     source $dir/chaos_bundle_env.sh
     $dir/chaos_clean.sh >& /dev/null
-    echo -e '\n\n' | $dir/init_bundle.sh >& $outbase/$1.log;
+    echo -e '\n\n' | $dir/init_bundle.sh >& $log;
 }
 
 
@@ -105,6 +106,7 @@ for type in ${compile_type[@]} ; do
 		export CHAOS_DEVELOPMENT=true
 	    fi
 	    tgt=$prefix_build-$target-$type-$build
+	    log=$outbase/$tgt.log
 	    rm -rf $outbase/$tgt
 	    mkdir -p $outbase/$tgt
 	    export CHAOS_PREFIX=$outbase/$tgt
@@ -113,16 +115,38 @@ for type in ${compile_type[@]} ; do
 		((err++))
 		echo "## Error $err compiling $tgt"
 	    else
-		echo "* OK $tgt"
+		echo -e "* OK compilation $tgt"
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
 		    $dir/chaos_debianizer.sh $nameok $CHAOS_PREFIX $create_deb_ver
 		fi
 	    fi
+	    echo "* generating Unit Server"
+	    if $dir/chaos_generate_us.sh -i $dir/../driver -o $CHAOS_PREFIX -n UnitServer >> $log 2>&1 ; then
+		pushd $CHAOS_PREFIX/UnitServer > /dev/null
+		if cmake . >> $log ; then
+		    
+		    if  make install >> $log 2>&1 ; then
+			echo "* UnitServer successfully installed"
+		    else
+			echo "## error compiling UnitServer \"$log\" for details" 
+			((err++))
+		    fi
+		else
+		    echo "## error during Unit Server makefile generation"
+		    ((err++))
+		fi
+		popd > /dev/null
+	    else
+		echo "## error during generation of Unit Server"
+		((err++))
+	    fi
+		
 	    if [ "$remove_working" == "true" ]; then
 		echo "* removing $nameok"
 		rm -rf $CHAOS_PREFIX
 	    fi
+	    echo 
 	done
     done
 done;
