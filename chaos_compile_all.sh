@@ -7,7 +7,7 @@ err=0
 OS=`uname -s`
 ARCH=`uname -m`
 prefix_build=chaos-dev
-outbase=$dir/../../
+outbase=$dir/../
 create_deb_ver=""
 remove_working="false"
 
@@ -78,9 +78,9 @@ function unSetEnv(){
 
 function setEnvAndCompile(){
     echo "* Starting target $1"
-    source $dir/../chaos_bundle_env.sh
-    $dir/../chaos_clean.sh >& /dev/null
-    echo -e '\n\n' | $dir/../init_bundle.sh >& $outbase/$1.log;
+    source $dir/chaos_bundle_env.sh
+    $dir/chaos_clean.sh >& /dev/null
+    echo -e '\n\n' | $dir/init_bundle.sh >& $outbase/$1.log;
 }
 
 
@@ -116,7 +116,7 @@ for type in ${compile_type[@]} ; do
 		echo "* OK $tgt"
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
-		    $dir/../chaos_debianizer.sh $nameok $CHAOS_PREFIX $create_deb_ver
+		    $dir/chaos_debianizer.sh $nameok $CHAOS_PREFIX $create_deb_ver
 		fi
 	    fi
 	    if [ "$remove_working" == "true" ]; then
