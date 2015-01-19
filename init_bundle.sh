@@ -92,7 +92,7 @@ if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     exit 1
 fi
 
-ln -sf $CHAOS_FRAMEWORK/usr $CHAOS_BUNDLE/usr
+ln -sf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr 
 
 for i in debug serial test modbus powersupply; do
 cmake_compile $CHAOS_BUNDLE/common/$i;

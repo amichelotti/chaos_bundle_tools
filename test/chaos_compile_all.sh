@@ -9,6 +9,8 @@ ARCH=`uname -m`
 prefix_build=chaos-dev
 outbase=$dir/../../
 create_deb_ver=""
+remove_working="false"
+
 if [ "$OS" == "Linux" ]; then
     compile_type=( "dynamic" "static" );
     compile_target=( "$ARCH" "armhf" );
@@ -19,7 +21,7 @@ else
     compile_build=("release" "debug")
 fi
 
-while getopts t:o:i:b:p:hd: opt; do
+while getopts t:o:w:b:p:hd:r opt; do
     case $opt in
 	t)
 	    compile_target=($OPTARG);
@@ -33,13 +35,17 @@ while getopts t:o:i:b:p:hd: opt; do
 	    compile_build=($OPTARG);
 	    echo "* setting compilation build to $compile_build";
 	    ;;
+	r) 
+	    remove_working=true;
+	    echo "* remove working as done";
+	    ;;
 
-	i) 
+	w) 
 	    if [ -d "$OPTARG"]; then
-		echo "* Using $OPTARG as test base directory";
+		echo "* Using $OPTARG as working directory";
 		outbase=$OPTARG
 	    else
-		echo "## bad installation directory $OPTARG"
+		echo "## bad working directory $OPTARG"
 		exit -1
 	    fi
 	    ;;
@@ -53,7 +59,7 @@ while getopts t:o:i:b:p:hd: opt; do
 	    ;;
 
 	h)
-	    echo "Usage is $0 [-i <test base directory] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>]";
+	    echo -e "Usage is $0 [-w <work directory>] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r]\n -w <work directory>: where directories are generated [$outbase]\t <target>: cross compilation target, [all]\n-o <static|dynamic>: enable static or dynamic compilations [all]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n";
 	    exit 0;
 	    ;;
     esac
@@ -112,6 +118,10 @@ for type in ${compile_type[@]} ; do
 		    nameok=`echo $tgt | sed s/_/-/g`
 		    $dir/../chaos_debianizer.sh $nameok $CHAOS_PREFIX $create_deb_ver
 		fi
+	    fi
+	    if [ "$remove_working" == "true" ]; then
+		echo "* removing $nameok"
+		rm -rf $CHAOS_PREFIX
 	    fi
 	done
     done
