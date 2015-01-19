@@ -76,7 +76,7 @@ for c in $listah; do
     if [ -n "$filenamespace" ];then
 	filenamespace="$filenamespace::"
     fi
-    cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed 's/[a-zA-Z]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
+    cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed 's/[:alpha:_]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
     if [ -n "$cu" ]; then
 
 	lista_cu+=("$cu");
@@ -168,8 +168,9 @@ echo "SET(src main.cpp )" >>  $project_dir/CMakeLists.txt
 if [ -n "$incdir_list" ]; then
     echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} $incdir_list)" >> $project_dir/CMakeLists.txt
 fi
+echo -e "IF(BUILD_FORCE_STATIC)\nSET(CMAKE_EXE_LINKER_FLAGS \"-static -Wl,--whole-archive -lchaos_common -Wl,--no-whole-archive\")\nENDIF()\n" >>  $project_dir/CMakeLists.txt
 echo "ADD_EXECUTABLE($pname \${src})" >>  $project_dir/CMakeLists.txt
-echo "TARGET_LINK_LIBRARIES($pname $lista_lib $lista_unica)" >>  $project_dir/CMakeLists.txt
+echo "TARGET_LINK_LIBRARIES($pname $lista_lib $lista_unica common_debug)" >>  $project_dir/CMakeLists.txt
 echo "INSTALL_TARGETS(/bin $pname)" >>  $project_dir/CMakeLists.txt
 
 popd > /dev/null

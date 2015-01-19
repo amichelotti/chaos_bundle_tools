@@ -92,7 +92,9 @@ if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     exit 1
 fi
 
-ln -sf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr 
+echo " * linking $CHAOS_PREFIX $CHAOS_FRAMEWORK/usr"
+mkdir -p $CHAOS_FRAMEWORK/usr
+ln -sf $CHAOS_PREFIX $CHAOS_FRAMEWORK/usr
 
 for i in debug serial test modbus powersupply; do
 cmake_compile $CHAOS_BUNDLE/common/$i;
