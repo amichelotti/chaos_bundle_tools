@@ -120,8 +120,11 @@ function setEnv(){
     echo "* Configuration :$build"
     echo "* Prefix        :$prefix"
     source $dir/chaos_bundle_env.sh >& $log
+    rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
     mkdir -p $CHAOS_BUNDLE/usr
+    mkdir -p $CHAOS_FRAMEWORK/usr
     ln -sf $prefix $CHAOS_FRAMEWORK/usr/local
+    
 
 }
 function compile(){
