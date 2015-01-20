@@ -159,7 +159,7 @@ fi
 for type in ${compile_type[@]} ; do
     for target in ${compile_target[@]} ; do
 	for build in ${compile_build[@]} ; do
-	    local error=0
+	    error=0
 	    tgt=$prefix_build-$target-$type-$build
 	    log=$outbase/$tgt.log
 	    prefix=$outbase/$tgt
