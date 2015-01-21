@@ -32,15 +32,15 @@ while getopts t:o:w:b:p:hd:rs opt; do
     case $opt in
 	t)
 	    compile_target=($OPTARG);
-	    echo "* setting compilation target to $compile_target";
+	    echo "* setting target to $compile_target";
 	    ;;
 	o) 
 	    compile_type=($OPTARG);
-	    echo "* setting compilation type to $compile_type";
+	    echo "* setting type to $compile_type";
 	    ;;
 	b) 
 	    compile_build=($OPTARG);
-	    echo "* setting compilation build to $compile_build";
+	    echo "* setting build to $compile_build";
 	    ;;
 	r) 
 	    remove_working=true;

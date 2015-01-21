@@ -86,7 +86,7 @@ function generate_cu(){
 	done
 	
 	
-	eval $replace | sed s/\$US/$usown/g|sed s/\$CUID/$cuname\_$ninstances/g>> $outfile
+	eval $replace | sed s/\$US/$usown/g|sed s/\$CUID/$usown\\/$cuname\_$ninstances/g>> $outfile
 	if (( $ninstances > 0 ));then
 	    echo ",">> $outfile
 	fi
@@ -115,7 +115,7 @@ function generate_array(){
     cnt=0
 }
 function generate_dataservers(){
-    generate_array "dataservers";
+    generate_array "data_servers";
     for d in ${dataservers[@]}; do
 	add_array "{\"hostname\":\"$d\" , \"id_server\":$cnt,\"is_live\" : true}" ${#dataservers[@]}
     done;
