@@ -204,9 +204,9 @@ for type in ${compile_type[@]} ; do
 		echo -e "* OK compilation $tgt"
 		saveEnv
 		cp -r $CHAOS_BUNDLE/tools $prefix
-		mkdir $prefix/etc
-		mdkir $prefix/vfs
-		mdkir $prefix/log
+		mkdir -p $prefix/etc
+		mkdir -p $prefix/vfs
+		mkdir -p $prefix/log
 		path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
 		logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
 		cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.conf
