@@ -39,7 +39,18 @@ cds_checks(){
 	error_mesg "CDS configuration file \"$CDS_CONF\" not found in $CHAOS_PREFIX/etc/"
 	exit 1
     fi
-    
+
+    if ! ps -fe |grep [m]ongod >/dev/null ;then
+	error_mesg "mongod not running" ; exit 1
+    else
+	ok_msg "mongod check"
+    fi
+    if ! ps -fe |grep [e]pmd >/dev/null ;then
+	error_mesg "epmd (couchbase) not running" ; exit 1
+    else
+	ok_msg "couchbase check"
+    fi
+
 }
 
 mds_checks(){
@@ -59,6 +70,8 @@ mds_checks(){
 
     if ! ps -fe |grep [m]ysqld >/dev/null ;then
 	error_mesg "mysqld not running" ; exit 1
+    else
+	ok_msg "mysqld check"
     fi
     
     if ! which mvn > /dev/null ; then
@@ -69,7 +82,8 @@ mds_checks(){
 
 get_pid(){
     local execname=`echo $1 | sed 's/\(.\)/[\1]/'`
-    ps -fe |grep "$execname" | cut -d ' ' -f 3
+    ps -fe |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2
+
 }
 
 
@@ -168,10 +182,20 @@ stop_all(){
 
 status(){
     local status=0
+    check_proc "mysqld"
+    status=$((status + $?))
+    check_proc "mongod"
+    status=$((status + $?))
+
+    check_proc "epmd"
+    status=$((status + $?))
+
     check_proc "tomcat:run"
     status=$((status + $?))
     check_proc "$CDS_EXEC"
     status=$((status + $?))
+    
+
     exit $status
 }
 case "$cmd" in
