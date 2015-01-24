@@ -28,7 +28,7 @@ build=${compile_build[0]}
 tgt=$prefix_build-$target-$type-$build
 prefix=$outbase/$tgt
 log=$outbase/$tgt.log
-while getopts t:o:w:b:p:hd:rs opt; do
+while getopts t:o:w:b:p:hd:rsc opt; do
     case $opt in
 	t)
 	    compile_target=($OPTARG);
@@ -68,10 +68,14 @@ while getopts t:o:w:b:p:hd:rs opt; do
 	    switch_env=true
 	    echo "* switching environment";
 	    ;;
+	c)
+	    config=true
+	    echo "* configuring environment";
+	    ;;
 
 
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n";
+	    echo -e "Usage is $0 [-w <work directory>] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c:configure installation directory (etc,env,tools)";
 	    exit 0;
 	    ;;
     esac
@@ -81,7 +85,8 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 tgt=$prefix_build-$target-$type-$build
-prefix=$outbase/$tgt
+prefix=`echo "$outbase/$tgt"| sed 's/\/\w*\/\.\{2\}//g'|sed 's/\/\{2,\}/\//g'`
+echo "===>$prefix"
 log=$outbase/$tgt.log
 
 
@@ -125,8 +130,9 @@ function setEnv(){
     mkdir -p $CHAOS_FRAMEWORK/usr
     ln -sf $prefix $CHAOS_FRAMEWORK/usr/local
     
-
 }
+
+
 function compile(){
     $dir/chaos_clean.sh >& /dev/null
     echo "* compiling $tgt ...."
@@ -150,14 +156,38 @@ function saveEnv(){
     echo "export PATH=\$PATH:\$CHAOS_BUNDLE/bin:\$CHAOS_BUNDLE/tools" >> $prefix/chaos_env.sh
     
 }
+function configure(){
+    setEnv $type $target $build $prefix
+    saveEnv
+    
+    cp -r $CHAOS_BUNDLE/tools $prefix
+    mkdir -p $prefix/etc
+    mkdir -p $prefix/vfs
+    mkdir -p $prefix/log
+    path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
+    logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
+    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.conf
+    ln -sf $prefix/etc/cds_local.conf $prefix/etc/cds.conf
+
+}
 
 echo "* OS:\"$OS\""
 
 if [ -n "$switch_env" ]; then
 
     setEnv $type $target $build $prefix
+
     exit 0
 fi
+
+if [ -n "$config" ]; then
+
+    configure
+
+    exit 0
+fi
+
+
 
 for type in ${compile_type[@]} ; do
     for target in ${compile_target[@]} ; do
@@ -202,15 +232,7 @@ for type in ${compile_type[@]} ; do
 
 	    if (($error == 0)); then
 		echo -e "* OK compilation $tgt"
-		saveEnv
-		cp -r $CHAOS_BUNDLE/tools $prefix
-		mkdir -p $prefix/etc
-		mkdir -p $prefix/vfs
-		mkdir -p $prefix/log
-		path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
-		logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
-		cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.conf
-		ln -sf $prefix/etc/cds_local.conf $prefix/etc/cds.conf
+		configure
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
 		    $dir/chaos_debianizer.sh $nameok $prefix $create_deb_ver
