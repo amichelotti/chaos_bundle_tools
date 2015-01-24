@@ -86,7 +86,7 @@ target=${compile_target[0]}
 build=${compile_build[0]}
 tgt=$prefix_build-$target-$type-$build
 prefix=`echo "$outbase/$tgt"| sed 's/\/\w*\/\.\{2\}//g'|sed 's/\/\{2,\}/\//g'`
-echo "===>$prefix"
+
 log=$outbase/$tgt.log
 
 
@@ -154,6 +154,8 @@ function saveEnv(){
     echo "export CHAOS_PREFIX=\$PWD" >> $prefix/chaos_env.sh
     echo "export CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $prefix/chaos_env.sh
     echo "export PATH=\$PATH:\$CHAOS_BUNDLE/bin:\$CHAOS_BUNDLE/tools" >> $prefix/chaos_env.sh
+    echo "export LD_LIBRARY_PATH=\$CHAOS_BUNDLE/lib" >> $prefix/chaos_env.sh
+    echo "export DYLD_LIBRARY_PATH=\$CHAOS_BUNDLE/lib" >> $prefix/chaos_env.sh
     
 }
 function configure(){
@@ -166,8 +168,8 @@ function configure(){
     mkdir -p $prefix/log
     path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
     logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
-    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.conf
-    ln -sf $prefix/etc/cds_local.conf $prefix/etc/cds.conf
+    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.cfg
+    ln -sf $prefix/etc/cds_local.cfg $prefix/etc/cds.cfg
 
 }
 

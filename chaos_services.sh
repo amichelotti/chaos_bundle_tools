@@ -43,12 +43,12 @@ cds_checks(){
     if ! ps -fe |grep [m]ongod >/dev/null ;then
 	error_mesg "mongod not running" ; exit 1
     else
-	ok_msg "mongod check"
+	ok_mesg "mongod check"
     fi
     if ! ps -fe |grep [e]pmd >/dev/null ;then
 	error_mesg "epmd (couchbase) not running" ; exit 1
     else
-	ok_msg "couchbase check"
+	ok_mesg "couchbase check"
     fi
 
 }
@@ -71,7 +71,7 @@ mds_checks(){
     if ! ps -fe |grep [m]ysqld >/dev/null ;then
 	error_mesg "mysqld not running" ; exit 1
     else
-	ok_msg "mysqld check"
+	ok_mesg "mysqld check"
     fi
     
     if ! which mvn > /dev/null ; then
@@ -105,7 +105,7 @@ stop_proc(){
 check_proc(){
     pid=`get_pid "$1"`
     if [ -n "$pid" ]; then
-	ok_mesg "process $1 is running with pid $pid"
+	ok_mesg "process $1 is running with pid \"$pid\""
 	return 0
     fi
     nok_mesg "process $1 is not running"
@@ -115,7 +115,7 @@ check_proc(){
 check_proc_then_kill(){
     pid=`get_pid "$1"`
     if [ -n "$pid" ]; then
-	warn_mesg "process $1 is running with pid $pid, killing"
+	warn_mesg "process $1 is running with pid \"$pid\", killing"
 	stop_proc $1;
     fi
 }
@@ -124,14 +124,20 @@ run_proc(){
     process_name="$2"
     eval $command_line
     if [ $? -eq 0 ]; then
+	sleep 1
 	pid=`get_pid $process_name`
-	if [ $? -eq 0 ]; then
-	    ok_mesg "process \e[32m\e[1m$process_name\e[21m\e[39m with pid $pid, started" 
+	if [ $? -eq 0 ] && [ -n "$pid" ]; then
+	    ok_mesg "process \e[32m\e[1m$process_name\e[21m\e[39m with pid \"$pid\", started" 
 	    return 0
+	else
+	    nok_mesg "process $process_name quitted unexpectly "
+	    exit 1
 	fi
+    else
+	error_mesg "error lunching $process_name"
+	exit 1
     fi
-    err_mesg "error lunching $process_name"
-    exit 1
+
 }
 usage(){
     info_mesg "Usage :$0 {start|stop|status|start mds | start cds | stop mds | stop cds}"
@@ -149,7 +155,7 @@ start_cds(){
     cds_checks
     info_mesg "starting CDS..."
     check_proc_then_kill "$CDS_EXEC"
-    run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF &" "$CDS_EXEC"
+    run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF > /dev/null 2>&1 &" "$CDS_EXEC"
 }
 mds_stop()
 {    
@@ -217,7 +223,7 @@ case "$cmd" in
 		    exit 0
 		    ;;
 		*) 
-		    err_mesg "\"$2\" no such service"
+		    error_mesg "\"$2\" no such service"
 		    usage
 		    ;;
 	    esac
@@ -239,7 +245,7 @@ case "$cmd" in
 		    exit 0
 		    ;;
 		*) 
-		    err_mesg "\"$2\" no such service"
+		    error_mesg "\"$2\" no such service"
 		    usage
 		    ;;
 	    esac
