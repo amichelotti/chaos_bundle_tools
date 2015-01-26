@@ -1,12 +1,13 @@
 #!/bin/bash
 
+separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`
 popd > /dev/null
 err=0
 OS=`uname -s`
 ARCH=`uname -m`
-prefix_build=chaos-dev
+prefix_build=chaos_dev
 outbase=$dir/../
 create_deb_ver=""
 remove_working="false"
@@ -25,9 +26,7 @@ fi
 type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
-tgt=$prefix_build-$target-$type-$build
-prefix=$outbase/$tgt
-log=$outbase/$tgt.log
+
 while getopts t:o:w:b:p:hd:rsc opt; do
     case $opt in
 	t)
@@ -84,10 +83,17 @@ done
 type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
-tgt=$prefix_build-$target-$type-$build
-prefix=`echo "$outbase/$tgt"| sed 's/\/\w*\/\.\{2\}//g'|sed 's/\/\{2,\}/\//g'`
 
-log=$outbase/$tgt.log
+
+init_tgt_vars(){
+    tgt="$prefix_build""$separator""$target""$separator""$type""$separator""$build"
+
+    prefix=`echo "$outbase/$tgt"|sed 's/\/\{2,\}/\//g' | sed 's/\/\w*\/\.\{2\}//g'`
+    log=$outbase/$tgt.log
+}
+
+
+init_tgt_vars;
 
 
 function unSetEnv(){
@@ -124,6 +130,7 @@ function setEnv(){
     echo "* Type          :$type"
     echo "* Configuration :$build"
     echo "* Prefix        :$prefix"
+    echo "* OS            :\"$OS\""
     source $dir/chaos_bundle_env.sh >& $log
     rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
     mkdir -p $CHAOS_BUNDLE/usr
@@ -166,14 +173,16 @@ function configure(){
     mkdir -p $prefix/etc
     mkdir -p $prefix/vfs
     mkdir -p $prefix/log
+    mkdir -p $prefix/chaosframework
+    
     path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
     logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.cfg
     ln -sf $prefix/etc/cds_local.cfg $prefix/etc/cds.cfg
-
+    ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $prefix/chaosframework
 }
 
-echo "* OS:\"$OS\""
+
 
 if [ -n "$switch_env" ]; then
 
@@ -195,9 +204,7 @@ for type in ${compile_type[@]} ; do
     for target in ${compile_target[@]} ; do
 	for build in ${compile_build[@]} ; do
 	    error=0
-	    tgt=$prefix_build-$target-$type-$build
-	    log=$outbase/$tgt.log
-	    prefix=$outbase/$tgt
+	    init_tgt_vars;
 	    rm -rf $prefix
 	    mkdir -p $prefix
 	    setEnv $type $target $build $prefix

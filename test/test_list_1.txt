@@ -1,0 +1,3 @@
+test-local-services
+test-local-powersupply
+test-local-default-us
