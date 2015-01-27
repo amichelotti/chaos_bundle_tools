@@ -12,32 +12,32 @@ fi
 
 info_mesg(){
     if [ -z "$2" ]; then
-	echo -e "* \e[1m$1\e[22m"
+	echo -e "* \x1B[1m$1\x1B[22m"
     else
-	echo -e "* \e[1m$1\e[32m$2\e[39m\e[22m"
+	echo -e "* \x1B[1m$1\x1B[32m$2\x1B[39m\x1B[22m"
     fi
 }
 error_mesg(){
     if [ -z "$2" ]; then
-	echo -e "# \e[31m\e[1m$1\e[22m\e[39m"
+	echo -e "# \x1B[31m\x1B[1m$1\x1B[22m\x1B[39m"
     else
-	echo -e "# \e[1m$1\e[31m$2\e[39m\e[22m"
+	echo -e "# \x1B[1m$1\x1B[31m$2\x1B[39m\x1B[22m"
     fi
 }
 
 warn_mesg(){
     if [ -z "$2" ]; then
-	echo -e "% \e[33m\e[1m$1\e[22m\e[39m"
+	echo -e "% \x1B[33m\x1B[1m$1\x1B[22m\x1B[39m"
     else
-	echo -e "# \e[1m$1\e[33m$2\e[39m\e[22m"
+	echo -e "# \x1B[1m$1\x1B[33m$2\x1B[39m\x1B[22m"
     fi
 }
 
 ok_mesg(){
-    echo -e "* $1 \e[32m\e[1mOK\e[22m\e[39m"
+    echo -e "* $1 \x1B[32m\x1B[1mOK\x1B[22m\x1B[39m"
 }
 nok_mesg(){
-    echo -e "* $1 \e[31m\e[1mNOK\e[22m\e[39m"
+    echo -e "* $1 \x1B[31m\x1B[1mNOK\x1B[22m\x1B[39m"
 }
 
 function unSetEnv(){
@@ -177,20 +177,20 @@ check_proc(){
 	cpu=$(get_cpu_stat $pid)
 	mem=$(get_mem_stat $pid)
 	if [ $(echo "($cpu - 50)>0" | bc) -gt 0 ]; then
-	    cpu="\e[31m$cpu%\e[39m"
+	    cpu="\x1B[31m$cpu%\x1B[39m"
 	else
-	    cpu="\e[1m$cpu%\e[22m"
+	    cpu="\x1B[1m$cpu%\x1B[22m"
 	fi
 	if [ $(echo "($mem - 50)>0" |bc) -gt 0 ]; then
-	    mem="\e[31m$mem%\e[39m"
+	    mem="\x1B[31m$mem%\x1B[39m"
 	else
-	    mem="\e[1m$mem%\e[22m"
+	    mem="\x1B[1m$mem%\x1B[22m"
 	fi
 
-	ok_mesg "process \e[1m$1\e[22m is running with pid \e[1m$pid\e[22m cpu $cpu, mem $mem"
+	ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$pid\x1B[22m cpu $cpu, mem $mem"
 	return 0
     fi
-    nok_mesg "process \e[1m$1\e[22m is not running"
+    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
     return 1
 }
 
@@ -209,7 +209,7 @@ run_proc(){
 	sleep 1
 	pid=`get_pid $process_name`
 	if [ $? -eq 0 ] && [ -n "$pid" ]; then
-	    ok_mesg "process \e[32m\e[1m$process_name\e[21m\e[39m with pid \"$pid\", started" 
+	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$pid\", started" 
 	    return 0
 	else
 	    nok_mesg "process $process_name quitted unexpectly "
