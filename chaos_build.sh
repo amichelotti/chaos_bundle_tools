@@ -4,9 +4,10 @@ separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`
 popd > /dev/null
+
+source $dir/common_util.sh
 err=0
-OS=`uname -s`
-ARCH=`uname -m`
+
 prefix_build=chaos_dev
 outbase=$dir/../
 create_deb_ver=""
@@ -27,31 +28,31 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc opt; do
+while getopts t:o:w:b:p:hd:rsc: opt; do
     case $opt in
 	t)
 	    compile_target=($OPTARG);
-	    echo "* setting target to $compile_target";
+	    info_mesg "setting target to " "$compile_target";
 	    ;;
 	o) 
 	    compile_type=($OPTARG);
-	    echo "* setting type to $compile_type";
+	    info_mesg "setting type to " "$compile_type";
 	    ;;
 	b) 
 	    compile_build=($OPTARG);
-	    echo "* setting build to $compile_build";
+	    info_mesg "setting build to " "$compile_build";
 	    ;;
 	r) 
 	    remove_working=true;
-	    echo "* remove working as done";
+	    info_mesg "remove working as done";
 	    ;;
 
 	w) 
 	    if [ -d "$OPTARG"]; then
-		echo "* Using $OPTARG as working directory";
 		outbase=$OPTARG
+		info_mesg "* Using working directory " "$outbase";
 	    else
-		echo "## bad working directory $OPTARG"
+		error_mesg "bad working directory " "$OPTARG"
 		exit -1
 	    fi
 	    ;;
@@ -61,20 +62,25 @@ while getopts t:o:w:b:p:hd:rsc opt; do
 	    ;;
 	d)
 	    create_deb_ver="$OPTARG"
-	    echo "* create debian package"
+	    info_mesg "create debian package version" "$create_deb_ver"
 	    ;;
 	s)
 	    switch_env=true
 	    echo "* switching environment";
 	    ;;
 	c)
-	    config=true
-	    echo "* configuring environment";
+	    config="$OPTARG"
+	    if [ ! -d "$config" ]; then
+		error_mesg "directory $config in invalid"
+		exit 1
+	    else
+		info_mesg "configuring environment in " "$config";
+	    fi
 	    ;;
 
 
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c:configure installation directory (etc,env,tools)";
+	    echo -e "Usage is $0 [-w <work directory>] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)";
 	    exit 0;
 	    ;;
     esac
@@ -88,7 +94,7 @@ build=${compile_build[0]}
 init_tgt_vars(){
     tgt="$prefix_build""$separator""$target""$separator""$type""$separator""$build"
 
-    prefix=`echo "$outbase/$tgt"|sed 's/\/\{2,\}/\//g' | sed 's/\/\w*\/\.\{2\}//g'`
+    PREFIX=`echo "$outbase/$tgt"|sed 's/\/\{2,\}/\//g' | sed 's/\/\w*\/\.\{2\}//g'`
     log=$outbase/$tgt.log
 }
 
@@ -96,105 +102,27 @@ init_tgt_vars(){
 init_tgt_vars;
 
 
-function unSetEnv(){
-    unset CHAOS_BUNDLE
-    unset CHAOS_STATIC
-    unset CHAOS_TARGET
-    unset CHAOS_PREFIX
-    unset CHAOS_DEVELOPMENT
-}
-# type target build
-function setEnv(){
-    local type=$1
-    local target=$2
-    local build=$3
-    local prefix=$4
-    unSetEnv ;
-    if [ "$type" == "static" ]; then
-	export CHAOS_STATIC=true
-    fi
-    if [ "$target" == "armhf" ]; then
-	export CHAOS_TARGET=armhf
-    fi
-	    
-    if [ "$build" == "debug" ]; then
-	export CHAOS_DEVELOPMENT=true
-    fi
-    if [ -d "$prefix" ]; then
-	export CHAOS_PREFIX=$prefix
-    else
-	echo "## directory $prefix is invalid"
-	exit 1
-    fi
-    echo "* Target        :$target"
-    echo "* Type          :$type"
-    echo "* Configuration :$build"
-    echo "* Prefix        :$prefix"
-    echo "* OS            :\"$OS\""
-    source $dir/chaos_bundle_env.sh >& $log
-    rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
-    mkdir -p $CHAOS_BUNDLE/usr
-    mkdir -p $CHAOS_FRAMEWORK/usr
-    ln -sf $prefix $CHAOS_FRAMEWORK/usr/local
-    
-}
+
 
 
 function compile(){
     $dir/chaos_clean.sh >& /dev/null
-    echo "* compiling $tgt ...."
+    info_mesg "compiling " "$tgt ...."
     echo -e '\n\n' | $dir/init_bundle.sh >& $log;
     
 }
-function saveEnv(){
-    
-    echo "echo \"* Environment $tgt\"" > $prefix/chaos_env.sh
-    if [ -n "$CHAOS_STATIC" ];then
-	echo "export CHAOS_STATIC=true" >> $prefix/chaos_env.sh
-    fi
-    if [ -n "$CHAOS_DEVELOPMENT" ];then
-	echo "export CHAOS_DEVELOPMENT=true" >> $prefix/chaos_env.sh
-    fi
-    if [ -n "$CHAOS_TARGET" ];then
-	echo "export CHAOS_TARGET=$CHAOS_TARGET" >> $prefix/chaos_env.sh
-    fi
-    echo "export CHAOS_PREFIX=\$PWD" >> $prefix/chaos_env.sh
-    echo "export CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $prefix/chaos_env.sh
-    echo "export PATH=\$PATH:\$CHAOS_BUNDLE/bin:\$CHAOS_BUNDLE/tools" >> $prefix/chaos_env.sh
-    echo "export LD_LIBRARY_PATH=\$CHAOS_BUNDLE/lib" >> $prefix/chaos_env.sh
-    echo "export DYLD_LIBRARY_PATH=\$CHAOS_BUNDLE/lib" >> $prefix/chaos_env.sh
-    
-}
-function configure(){
-    setEnv $type $target $build $prefix
-    saveEnv
-    
-    cp -r $CHAOS_BUNDLE/tools $prefix
-    mkdir -p $prefix/etc
-    mkdir -p $prefix/vfs
-    mkdir -p $prefix/log
-    mkdir -p $prefix/chaosframework
-    
-    path=`echo $prefix/vfs|sed 's/\//\\\\\//g'`
-    logpath=`echo $prefix/log/cds.log|sed 's/\//\\\\\//g'`
-    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $prefix/etc/cds_local.cfg
-    ln -sf $prefix/etc/cds_local.cfg $prefix/etc/cds.cfg
-    ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $prefix/chaosframework
-}
-
 
 
 if [ -n "$switch_env" ]; then
 
-    setEnv $type $target $build $prefix
-
+    setEnv $type $target $build $PREFIX
     exit 0
 fi
 
 if [ -n "$config" ]; then
-
-    configure
-
+    PREFIX=$config
+    setEnv $type $target $build $PREFIX
+    chaos_configure
     exit 0
 fi
 
@@ -205,52 +133,57 @@ for type in ${compile_type[@]} ; do
 	for build in ${compile_build[@]} ; do
 	    error=0
 	    init_tgt_vars;
-	    rm -rf $prefix
-	    mkdir -p $prefix
-	    setEnv $type $target $build $prefix
+	    rm -rf $PREFIX
+	    mkdir -p $PREFIX
+	    unSetEnv
+	    setEnv $type $target $build $PREFIX
+	    start_profile_time
 	    compile $tgt;
 	    if [ $? -ne 0 ]; then 
 		((err++))
-		echo "## Error $err compiling $tgt"
+		error_mesg "Error $err compiling $tgt"
 		error=1
 	    else
-		echo "* generating Unit Server"
-		if $dir/chaos_generate_us.sh -i $dir/../driver -o $prefix -n UnitServer >> $log 2>&1 ; then
-		    pushd $prefix/UnitServer > /dev/null
+		info_mesg "generating " "Unit Server.."
+		if $dir/chaos_generate_us.sh -i $dir/../driver -o $PREFIX -n UnitServer >> $log 2>&1 ; then
+		    pushd $PREFIX/UnitServer > /dev/null
 		    if cmake . >> $log ; then
 			
 			if  make install >> $log 2>&1 ; then
-			    echo "* UnitServer successfully installed"
+			    info_mesg "UnitServer " "successfully installed"
 			else
-			    echo "## error compiling UnitServer \"$log\" for details" 
+			    error_mesg "error compiling UnitServer \"$log\" for details" 
 			    ((err++))
 			    error=1
 			fi
 		    else
-			echo "## error during Unit Server makefile generation"
+			error_mesg "error during Unit Server makefile generation"
 			((err++))
 			error=1
 		    fi
 		    popd > /dev/null
 		else
-		    echo "## error during generation of Unit Server"
+		    error_mesg "error during generation of Unit Server"
 		    ((err++))
 		    error=1
 		fi
 	    fi
 
 	    if (($error == 0)); then
-		echo -e "* OK compilation $tgt"
-		configure
+		tt=$(end_profile_time)
+		info_mesg "compilation ($tt s)" "$tgt OK"
+		chaos_configure
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
-		    $dir/chaos_debianizer.sh $nameok $prefix $create_deb_ver
+		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver; then
+			ok_mesg "debian package generated"
+		    fi
 		fi
 	    fi
 	
 	    if [ "$remove_working" == "true" ]; then
-		echo "* removing $nameok"
-		rm -rf $prefix
+		info_mesg "removing " "$nameok"
+		rm -rf $PREFIX
 	    fi
 	    echo 
 	done
@@ -258,7 +191,7 @@ for type in ${compile_type[@]} ; do
 done;
 
 if [ $err -gt 0 ]; then
-    echo "## Number of errors $err"
+    error_mesg "Number of errors $err"
     exit $err
 fi 
-echo "* OK"
+ok_mesg "building"

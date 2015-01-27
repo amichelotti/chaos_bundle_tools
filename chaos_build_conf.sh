@@ -14,11 +14,15 @@ while getopts i:o:u:c:n:hd:j: opt; do
 	    ;;
 	n) instances+=($OPTARG)
 	    ;;
-	o) outfile=$OPTARG
+	o) outfile="$OPTARG"
+	    if ! echo > $outfile;then
+		echo "## cannot open file $outfile"
+		exit 1
+	    fi
 	    ;;
-	u) usname=$OPTARG
+	u) usname="$OPTARG"
 	    ;;
-	c) cuname=$OPTARG
+	c) cuname="$OPTARG"
 	    ;;
 	d) dataservers+=($OPTARG)
 	    ;;
@@ -177,5 +181,5 @@ function generate_conf(){
 }
 
 generate_conf
-
+exit 0
 

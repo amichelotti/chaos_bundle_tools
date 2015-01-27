@@ -6,6 +6,8 @@ source $scriptdir/common_util.sh
 CDS_EXEC=ChaosDataService
 CDS_CONF=cds.cfg
 
+UI_EXEC=CUIserver
+US_EXEC=UnitServer
 cds_checks(){
     if [ -z "$CHAOS_PREFIX" ]; then
 	error_mesg "CHAOS_PREFIX environment variables not set"
@@ -66,7 +68,7 @@ mds_checks(){
 
 
 usage(){
-    info_mesg "Usage :$0 {start|stop|status|start mds | start cds | stop mds | stop cds}"
+    info_mesg "Usage :$0 {start|stop|status|start mds | start uis| start cds | stop uis|stop mds | stop cds}"
 }
 start_mds(){
     mds_checks;
@@ -81,8 +83,21 @@ start_cds(){
     cds_checks
     info_mesg "starting CDS..."
     check_proc_then_kill "$CDS_EXEC"
-    run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF > /dev/null 2>&1 &" "$CDS_EXEC"
+    run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
+start_ui(){
+    
+    info_mesg "starting UI Server..."
+    check_proc_then_kill "$UI_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port 8081 > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+}
+
+ui_stop()
+{    
+    info_mesg "stopping UI Server..."
+    stop_proc "$UI_EXEC"
+}
+
 mds_stop()
 {    
     info_mesg "stopping MDS..."
@@ -100,6 +115,8 @@ start_all(){
     status=$((status + $?))
     start_cds
     status=$((status + $?))
+    start_ui
+    status=$((status + $?))
     exit $status
 }
 stop_all(){
@@ -109,6 +126,13 @@ stop_all(){
     status=$((status + $?))
     cds_stop
     status=$((status + $?))
+    ui_stop
+    status=$((status + $?))
+    if [ -n "$(get_pid $US_EXEC)" ];then
+	stop_proc "$US_EXEC"
+	status=$((status + $?))
+    fi
+
     exit $status
 }
 
@@ -126,7 +150,12 @@ status(){
     status=$((status + $?))
     check_proc "$CDS_EXEC"
     status=$((status + $?))
-    
+    check_proc "$UI_EXEC"
+    status=$((status + $?))
+
+    if [ -n "$(get_pid $US_EXEC)" ];then
+	check_proc "$US_EXEC"
+    fi
 
     exit $status
 }
@@ -148,6 +177,10 @@ case "$cmd" in
 		    start_cds
 		    exit 0
 		    ;;
+	       uis)
+		    start_ui
+		    exit 0
+		    ;;
 		*) 
 		    error_mesg "\"$2\" no such service"
 		    usage
@@ -163,11 +196,15 @@ case "$cmd" in
 	else
 	    case "$2" in
 		mds)
-		    start_mds
+		    mds_stop
 		    exit 0
 		    ;;
 		cds)
-		    start_cds
+		    cds_stop
+		    exit 0
+		    ;;
+		uis)
+		    ui_stop
 		    exit 0
 		    ;;
 		*) 

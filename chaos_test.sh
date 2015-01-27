@@ -58,7 +58,8 @@ test_prefix;
 final_test_list=()
 for test in ${testlist[@]}; do
    basedir=`dirname $test`
-   testdirs=`cat $test | cut -d ' ' -f 1`
+   testdirs=`sed s/#.*// $test | cut -d ' ' -f 1`
+   echo $testdirs
    for test_test in $testdirs; do
        test_full_dir=$basedir/$test_test
        if [ ! -d "$test_full_dir" ]; then
@@ -86,24 +87,25 @@ for test in ${final_test_list[@]};do
     info_mesg "starting test $test ..."
     group_test=`dirname $test`
     group_test=`basename $group_test`
-    start_time=`date $time_format`
-    out=`$test`
+    start_profile_time
+    $test
     res=$?
     status=$(($status + $res))
-    end_time=`date $time_format`
-    exec_time=$( echo "$end_time - $start_time"|bc)
+
+    exec_time=$(end_profile_time)
     if [ $res -eq 0 ]; then
 	ok_list+=("$test")
-	ok_mesg "test $test ($exec_time s)"
+	info_mesg "\e[32mTEST \"$test\" ($exec_time s) OK\e[39m"
 	echo "$group_test;$test;OK;$exec_time" >> $report_file
     else
+
 	error_list+=("$test")
-	nok_mesg "test $test ($exec_time s)"
+	info_mesg "\e[31mTEST \"$test\" ($exec_time s) FAILED\e[39m"
 	echo "$group_test;$test;NOK;$exec_time" >> $report_file
 	if [ -n "$stop_on_error" ];then
 	    exit 1
 	fi
     fi
 done
-return $status
+exit $status
 

@@ -176,12 +176,12 @@ done
 arr=0
 for c in ${lista_driver[@]}; do
     
-    echo -e "\t\tMATERIALIZE_INSTANCE_AND_INSPECTOR_WITH_NS(${lista_driver_ns[arr]},$c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
+    echo -e "\t\tREGISTER_DRIVER(${lista_driver_ns[arr]},$c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
   ((arr++))
 done
 echo -e "\t\tchaos::cu::ChaosCUToolkit::getInstance()->start();" >> $project_dir/main.cpp
 
-echo -e "\t} catch (CException& e) {\n\t\tstd::cerr<<\"Exception:\"<<std::endl;\n\t\tstd::cerr<< \"domain	:\"<<e.errorDomain << std::endl;\n\t\tstd::cerr<< \"cause	:\"<<e.errorMessage << std::endl;\n\t} catch (program_options::error &e){\n\t\tstd::cerr << "\"Unable to parse command line: \"" << e.what() << std::endl;\n\t} catch (...){\n\t\tstd::cerr << \"unexpected exception caught.. \" << std::endl;\n\t}\n}\n" >> $project_dir/main.cpp
+echo -e "\t} catch (CException& e) {\n\t\tstd::cerr<<\"Exception:\"<<std::endl;\n\t\tstd::cerr<< \"domain	:\"<<e.errorDomain << std::endl;\n\t\tstd::cerr<< \"cause	:\"<<e.errorMessage << std::endl;return -1;\n\t} catch (program_options::error &e){\n\t\tstd::cerr << "\"Unable to parse command line: \"" << e.what() << std::endl;return -2;\n\t} catch (...){\n\t\tstd::cerr << \"unexpected exception caught.. \" << std::endl;return -3;\n\t}return 0;\n}\n" >> $project_dir/main.cpp
 
 echo "cmake_minimum_required(VERSION 2.6)" > $project_dir/CMakeLists.txt
 echo "include(\$ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)" >>  $project_dir/CMakeLists.txt
