@@ -48,7 +48,7 @@ while getopts t:o:w:b:p:hd:rsc: opt; do
 	    ;;
 
 	w) 
-	    if [ -d "$OPTARG"]; then
+	    if [ -d "$OPTARG" ]; then
 		outbase=$OPTARG
 		info_mesg "* Using working directory " "$outbase";
 	    else
