@@ -65,7 +65,7 @@ function cmake_compile(){
 	warn_mesg "skipping $dir does not contain CMakeLists.txt"
 	return 0;
     fi;
-	
+
     rm -rf CMakeCache.txt
     echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
@@ -92,9 +92,11 @@ if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     exit 1
 fi
 
-echo " * linking $CHAOS_PREFIX $CHAOS_FRAMEWORK/usr/local"
-mkdir -p $CHAOS_FRAMEWORK/usr
-ln -sf $CHAOS_PREFIX $CHAOS_FRAMEWORK/usr/local
+if [ -n "$CHAOS_DEVELOPMENT" ]; then
+    info_mesg "linking" "$CHAOS_BUNDLE/usr/local/include/chaos in $CHAOS_FRAMEWORK/chaos"
+    rm -rf $CHAOS_BUNDLE/usr/local/include/chaos
+    ln -sf  $CHAOS_FRAMEWORK/chaos $CHAOS_BUNDLE/usr/local/include/chaos
+fi
 
 for i in debug serial test modbus powersupply; do
 cmake_compile $CHAOS_BUNDLE/common/$i;
@@ -122,4 +124,3 @@ doxygen Documentation/chaosdocs
 cd ..
 ln -sf $CHAOS_FRAMEWORK/Documentation/html Documentation
 chaos_configure
-
