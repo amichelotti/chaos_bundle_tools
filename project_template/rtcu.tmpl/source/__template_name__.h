@@ -28,7 +28,7 @@ public:
     /*!
      Construct a new CU with full constructor
      */
-    __template_name__(const string& _control_unit_id, const string& _control_unit_param, const ControlUnitDriverList& _control_unit_drivers);
+    __template_name__(const std::string& _control_unit_id, const std::string& _control_unit_param, const ControlUnitDriverList& _control_unit_drivers);
     /*!
      Destructor a new CU
      */

@@ -28,7 +28,7 @@ namespace __template_type__ {
 		
 		class __template_name__ControlUnit : public chaos::cu::RTAbstractControlUnit {
 			// init paramter
-			string device_id;
+			std::string device_id;
 			
 		protected:
 			//define dataset
@@ -55,7 +55,7 @@ namespace __template_type__ {
 			/*
 			 Construct a new CU with an identifier
 			 */
-			__template_name__ControlUnit(string _device_id);
+			__template_name__ControlUnit(std::string _device_id);
 			
 			/*
 			 Base destructor
