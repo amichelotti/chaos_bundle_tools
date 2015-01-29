@@ -11,6 +11,7 @@
 #include "__template_name__CommandSample.h"
 
 using namespace chaos::common::data;
+using namespace chaos::common::data::cache;
 
 using namespace chaos::cu::control_manager::slow_command;
 using namespace chaos::cu::driver_manager::driver;
@@ -102,7 +103,7 @@ void __template_name__::unitInit() throw(CException) {
     throw chaos::CException(-1, "Cannot retrieve the requested driver", __FUNCTION__);
   }
 
-  i_rand_max_p =getAttributeCache()->getROPtr<double>(AttributeValueSharedCache::SVD_INPUT, "rand_max");
+  i_rand_max_p =getAttributeCache()->getROPtr<double>(DOMAIN_INPUT, "rand_max");
   
   if(i_rand_max_p == NULL || (*i_rand_max_p<=0)){
     throw chaos::CException(-1, "BAD rand_max value", __FUNCTION__);

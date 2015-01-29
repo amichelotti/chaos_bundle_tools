@@ -1,7 +1,7 @@
 /*
  *	__template_name__.cpp
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	!CHAOS
+ *	Created automatically
  *
  *    	Copyright 2012 INFN, National Institute of Nuclear Physics
  *
@@ -22,6 +22,7 @@
 #include "__template_name__Driver.h"
 
 using namespace chaos;
+using namespace chaos::common::data::cache;
 using namespace chaos::cu::driver_manager::driver;
 
 PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__)
@@ -115,7 +116,7 @@ void __template_name__::unitDefineCustomAttribute() {
 void __template_name__::unitInit() throw(chaos::CException) {
 
   //check the value set on MDS for in_1 channel
-  //int32_t in_1 = getAttributeCache()->getValue<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
+  //int32_t in_1 = getAttributeCache()->getValue<int32_t>(DOMAIN_INPUT, "in_1");
 
 }
 
@@ -127,7 +128,7 @@ void __template_name__::unitStart() throw(chaos::CException) {
 //!Execute the Control Unit work
 void __template_name__::unitRun() throw(chaos::CException) {
   //get the output attribute pointer form the internal cache
-  int32_t *out_1_ptr = getAttributeCache()->getRWPtr<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_OUTPUT, "out_1");
+  int32_t *out_1_ptr = getAttributeCache()->getRWPtr<int32_t>(DOMAIN_OUTPUT, "out_1");
 
   //construct the drivesr message
   auto_ptr<DrvMsg> driver_message((DrvMsg*)std::calloc(sizeof(DrvMsg), 1));
@@ -176,7 +177,7 @@ void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CExcepti
       it++) {
         switch(*it) {
           case 0: {//int_1 attribute
-            const int32_t *in_1 = getAttributeCache()->getROPtr<int32_t>(chaos::common::data::cache::AttributeValueSharedCache::SVD_INPUT, "in_1");
+            const int32_t *in_1 = getAttributeCache()->getROPtr<int32_t>(DOMAIN_INPUT, "in_1");
 
             //construct the drivesr message
             auto_ptr<DrvMsg> driver_message((DrvMsg*)std::calloc(sizeof(DrvMsg), 1));
