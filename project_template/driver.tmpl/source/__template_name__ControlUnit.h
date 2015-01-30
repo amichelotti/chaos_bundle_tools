@@ -1,7 +1,7 @@
 /*
  *	__template_name__ControlUnit.h
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	!CHAOS
+ *	Automatically generated
  *
  *    	Copyright 2013 INFN, National Institute of Nuclear Physics
  *
@@ -26,7 +26,8 @@
 namespace __template_type__ {
 	namespace __template_name__ {
 		
-		class __template_name__ControlUnit : public chaos::cu::RTAbstractControlUnit {
+		class __template_name__ControlUnit : public chaos::cu::control_manager::RTAbstractControlUnit {
+		  PUBLISHABLE_CONTROL_UNIT_INTERFACE(__template_name__ControlUnit)
 			// init paramter
 			std::string device_id;
 			
@@ -34,8 +35,6 @@ namespace __template_type__ {
 			//define dataset
 			void unitDefineActionAndDataset()throw(chaos::CException);
 			
-			//defin control unit driver
-			void unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver);
 			
 			// init contorl unit
 			void unitInit() throw(chaos::CException);
@@ -52,15 +51,14 @@ namespace __template_type__ {
 			//deinit
 			void unitDeinit() throw(chaos::CException);
 		public:
-			/*
-			 Construct a new CU with an identifier
-			 */
-			__template_name__ControlUnit(std::string _device_id);
-			
-			/*
-			 Base destructor
-			 */
+
+
+			__template_name__ControlUnit(const std::string& _control_unit_id, const std::string& _control_unit_param, const ControlUnitDriverList& _control_unit_drivers);
+    /*!
+      Destructor a new CU
+     */
 			~__template_name__ControlUnit();
+
 		};
 	}
 }

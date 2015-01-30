@@ -21,7 +21,7 @@ ENDIF()
 
 set_target_properties(__template_name__Driver PROPERTIES PREFIX "" SUFFIX ".extension")
 
-TARGET_LINK_LIBRARIES(__template_name__Driver chaos_cutoolkit chaos_common ${FrameworkLib}
+TARGET_LINK_LIBRARIES(__template_name__Driver chaos_cutoolkit chaos_common ${FrameworkLib})
 
 
 

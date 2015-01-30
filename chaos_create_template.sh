@@ -5,17 +5,31 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
 popd > /dev/null
 
-template_name=$1
-template_type=$2
-destination_directory=$3
+source $SCRIPTPATH/common_util.sh
+
 user_paths=1
 execname=$(basename $0)
 
 echo "Template creation tool"
-
+valid_templates="rtcu sccu driver common"
 usage(){
-    echo "usage is $execname <template name> <template type [rtcu|sccu|driver|common]>"
+    echo -e "usage is $execname [-o outputdir] [-n] <template name> <template type [$valid_templates]>\n-o <output directory>\n-n:skip git\n"
 }
+
+while getopts o:n opt; do
+    case $opt in
+	o) 
+	    destination_directory=$OPTARG
+	    ;;
+	n) skip_git=true
+	    ;;
+	*) usage;exit 1
+	    ;;
+    esac
+done
+shift $(($OPTIND-1))
+template_name=$1
+template_type=$2
 
 if [ ! -n "$template_name" ]; then
 	echo "[FATAL]: the name of the template is mandatory"
@@ -25,15 +39,23 @@ if [ ! -n "$template_name" ]; then
 fi
 
 if [ ! -n "$template_type" ]; then
-	echo "[FATAL]: the template type is mandatory -> [rtcu|sccu|driver|common]"
+	echo "[FATAL]: the template type is mandatory -> [$valid_templates]"
 	echo "Exiting ..."
 	exit 1
 fi
+found=""
+for t in $valid_templates;do
 
-if [ "$template_type" != "rtcu" ] && [ "$template_type" != "sccu" ] && [ "$template_type" != "driver" ] && [ "$template_type" != "common" ]; then
-	echo "[FATAL]: bad template type, valid types are: [rtcu|sccu|driver|common]"
-	echo "Exiting ..."
-	exit 1
+    if [ "$template_type" == "$t" ];then
+	found=$t;
+
+    fi
+done
+
+if [ -z "$found" ];then
+    echo "[FATAL]: bad template type \"$template_type\", valid types are: [$valid_templates]"
+    echo "Exiting ..."
+    exit 1
 fi
 
 
@@ -134,20 +156,22 @@ rm project_tmpl.pbxproj
 for i in '*'.xcworkspacedata '*'.plist ; do
 find . -name "$i" -exec bash -c 'a=${0/_tmpl./.}; sed -e s/__template_name__/$1/g $0 | sed -e "s/__template_type__/$2/g" > $a; echo "generating $a";if  [ "$0" != "$a" ];then echo "removing $0"; rm $0;fi' {} $template_name $template_type \;
 done
+if [ -z "$skip_git" ];then
 
-echo -e "\033[38;5;148mPress any key to initialize git on $template_name or CTRL+C to exit\033[39m"
-read -n 1 -s
+    echo -e "\033[38;5;148mPress any key to initialize git on $template_name or CTRL+C to exit\033[39m"
+    read -n 1 -s
 
-cd $destination_directory/$template_name
+    cd $destination_directory/$template_name
 
-git init
-echo "copy ignore default file"
-cp $SCRIPTPATH/gitignore_tmpl .gitignore
-
-git add .
-git commit -a -m "Initial commit"
-git checkout -b development
-
-echo "Generate script for default gerrit lnf server and github"
-sed -e "s/__chaos_project_type__/$template_type/g" $SCRIPTPATH/.ChaosCreateOfficialRepository_tmpl > ChaosCreateOfficialRepository.sh
-sed -e "s/__chaos_project_type__/$template_type/g" $SCRIPTPATH/.ChaosCreateGitHubRepository_tmpl > ChaosCreateGitHubRepository.sh
+    git init
+    echo "copy ignore default file"
+    cp $SCRIPTPATH/gitignore_tmpl .gitignore
+    
+    git add .
+    git commit -a -m "Initial commit"
+    git checkout -b development
+    
+    echo "Generate script for default gerrit lnf server and github"
+    sed -e "s/__chaos_project_type__/$template_type/g" $SCRIPTPATH/.ChaosCreateOfficialRepository_tmpl > ChaosCreateOfficialRepository.sh
+    sed -e "s/__chaos_project_type__/$template_type/g" $SCRIPTPATH/.ChaosCreateGitHubRepository_tmpl > ChaosCreateGitHubRepository.sh
+fi

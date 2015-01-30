@@ -25,7 +25,7 @@
 using namespace chaos;
 
 using namespace chaos::common::data;
-
+using namespace chaos::common::data::cache;
 using namespace chaos::common::batch_command;
 
 using namespace chaos::cu::control_manager::slow_command;
@@ -49,8 +49,8 @@ void __template_name__DefaultCommand::setHandler(CDataWrapper *data) {
   // TODO
     //set default scheduler delay
   setFeatures(features::FeaturesFlagTypes::FF_SET_SCHEDULER_DELAY, (uint64_t)1000000);
-  o_out1_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out1");
-  i_rand_max_p =getAttributeCache()->getROPtr<double>(AttributeValueSharedCache::SVD_INPUT, "rand_max");
+  o_out1_p = getAttributeCache()->getRWPtr<double>(DOMAIN_OUTPUT, "out1");
+  i_rand_max_p =getAttributeCache()->getROPtr<double>(DOMAIN_INPUT, "rand_max");
   chaos::cu::driver_manager::driver::DriverAccessor * accessor = driverAccessorsErogator->getAccessoInstanceByIndex(0);
   if(accessor && (driver == NULL)){
       driver = new __template_name__Interface(accessor);
