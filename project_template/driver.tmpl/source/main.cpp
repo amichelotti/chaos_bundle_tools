@@ -1,7 +1,7 @@
 /*
  *	main.cpp
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	!CHAOS
+ *	Created automatically
  *
  *    	Copyright 2013 INFN, National Institute of Nuclear Physics
  *
@@ -67,14 +67,9 @@ int main (int argc, char* argv[] )
 		//! [CUTOOLKIT Init]
 		
 		//! [Driver Registration]
-		MATERIALIZE_INSTANCE_AND_INSPECTOR_WITH_NS(__template_type__::__template_name__, __template_name__Driver)
-		cu_driver_manager::DriverManager::getInstance()->registerDriver(__template_name__DriverInstancer, __template_name__DriverInspector);
-		//! [Driver Registration]
+		REGISTER_DRIVER(__template_type__::__template_name__, __template_name__Driver);
 
-		//! [Adding the CustomControlUnit]
-		ChaosCUToolkit::getInstance()->addControlUnit(new __template_name__ControlUnit(tmp_device_id));
-		//! [Adding the CustomControlUnit]
-		
+
 		//! [Starting the Framework]
 		ChaosCUToolkit::getInstance()->start();
 		//! [Starting the Framework]

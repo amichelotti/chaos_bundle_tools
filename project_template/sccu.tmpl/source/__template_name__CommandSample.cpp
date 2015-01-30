@@ -25,6 +25,7 @@
 using namespace chaos;
 
 using namespace chaos::common::data;
+using namespace chaos::common::data::cache;
 
 using namespace chaos::common::batch_command;
 
@@ -53,9 +54,9 @@ uint8_t __template_name__CommandSample::implementedHandler() {
 void __template_name__CommandSample::setHandler(CDataWrapper *data) {
   // TODO
     APP<< " * set handler "<<__FUNCTION__;
-  o_out2_p = getAttributeCache()->getRWPtr<int>(AttributeValueSharedCache::SVD_OUTPUT, "out2");
-  o_out1_p = getAttributeCache()->getRWPtr<double>(AttributeValueSharedCache::SVD_OUTPUT, "out1");
-  i_timeout_p =getAttributeCache()->getROPtr<int>(AttributeValueSharedCache::SVD_INPUT, "timeout");
+  o_out2_p = getAttributeCache()->getRWPtr<int>(DOMAIN_OUTPUT, "out2");
+  o_out1_p = getAttributeCache()->getRWPtr<double>(DOMAIN_OUTPUT, "out1");
+  i_timeout_p =getAttributeCache()->getROPtr<int>(DOMAIN_INPUT, "timeout");
   chaos::cu::driver_manager::driver::DriverAccessor * accessor = driverAccessorsErogator->getAccessoInstanceByIndex(0);
   if(accessor && (driver == NULL)){
       driver = new __template_name__Interface(accessor);

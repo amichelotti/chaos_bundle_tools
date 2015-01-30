@@ -1,7 +1,7 @@
 /*
  *	__template_name__ControlUnit.cpp
- *	!CHOAS
- *	Created by Bisegni Claudio.
+ *	!CHAOS
+ *	Automatically generated
  *
  *    	Copyright 2013 INFN, National Institute of Nuclear Physics
  *
@@ -24,18 +24,23 @@
 #include <boost/lexical_cast.hpp>
 
 using namespace chaos::common::data;
-using namespace chaos::cu::control_manager::slow_command;
 using namespace chaos::cu::driver_manager::driver;
 using namespace __template_type__::__template_name__;
 
+
+PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__ControlUnit)
 #define __template_name__CUAPP_ LAPP_ << "[__template_name__ControlUnit] - "
 
 
 /*
  Construct a new CU with an identifier
  */
-__template_name__ControlUnit::__template_name__ControlUnit(string _device_id):device_id(_device_id) {
+__template_name__ControlUnit::__template_name__ControlUnit(const std::string& _control_unit_id, const std::string& _control_unit_param, const ControlUnitDriverList& _control_unit_drivers):
+RTAbstractControlUnit(_control_unit_id, _control_unit_param, _control_unit_drivers) {
+
 }
+
+
 
 __template_name__ControlUnit::~__template_name__ControlUnit() {
 	
@@ -47,10 +52,7 @@ __template_name__ControlUnit::~__template_name__ControlUnit() {
 void __template_name__ControlUnit::unitDefineActionAndDataset() throw(chaos::CException) {
 }
 
-void __template_name__ControlUnit::unitDefineDriver(std::vector<chaos::cu::driver_manager::driver::DrvRequestInfo>& neededDriver) {
-	chaos::cu::driver_manager::driver::DrvRequestInfo drv1 = {"__template_name__Driver", "1.0.0", "parameter" };
-	neededDriver.push_back(drv1);
-}
+
 
 // Abstract method for the initialization of the control unit
 void __template_name__ControlUnit::unitInit() throw(chaos::CException) {

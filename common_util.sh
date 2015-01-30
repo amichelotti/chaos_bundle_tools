@@ -108,6 +108,7 @@ function saveEnv(){
 	fi
 
     fi
+    echo "source \$PWD/tools/chaos_bundle_env.sh" >> $PREFIX/chaos_env.sh
 
     echo "export PATH=\$PATH:\$CHAOS_PREFIX/bin:\$CHAOS_PREFIX/tools" >> $PREFIX/chaos_env.sh
 

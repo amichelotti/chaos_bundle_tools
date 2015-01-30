@@ -167,6 +167,37 @@ for type in ${compile_type[@]} ; do
 		    ((err++))
 		    error=1
 		fi
+
+		for i in sccu rtcu common driver;do
+		    info_mesg "testing template " "$i"
+		    rm -rf /tmp/_prova_"$i"_
+		
+		    if  $dir/chaos_create_template.sh -o /tmp -n _prova_"$i"_ $i> /dev/null ;then
+			pushd /tmp/_prova_"$i"_ >/dev/null
+			if cmake . > /dev/null ; then
+			    if ! make >& /tmp/_prova_"$i".compilation ;then 
+				error_mesg "error during compiling $i template, /tmp/_prova_"$i".compilation for details"
+				((err++))
+				error=1
+			    else
+				ok_mesg "template $i"
+				rm /tmp/_prova_"$i".compilation
+			    fi
+			else
+			    error_mesg "error  generating makefile for $i"
+			    ((err++))
+			    error=1
+			fi
+			popd >/dev/null
+			rm -rf /tmp/_prova_"$i"_
+		    else
+			error_mesg "error during generation of $i template"
+			((err++))
+			error=1
+			
+		    fi
+
+		done
 	    fi
 
 	    if (($error == 0)); then
