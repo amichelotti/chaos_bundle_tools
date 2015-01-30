@@ -68,8 +68,9 @@ for c in $listah; do
     fi
     header=`echo $c | sed 's/src\///' | sed 's/source\///' | sed "s/\.\//$prefix\//g"`;
     filenamespace=""
-    nameget=`egrep "namespace\ +\w+\ *\{" $c`;
-    namespace=`echo $nameget|sed "s/namespace\W\+\(\w\+\)\W*{/\1/g"`;
+    namespace=`grep -o 'namespace\s\+\w\+' $c | sed 's/namespace\ *//g' | tr '\n' ' '`;
+    echo " ==> $namespace"
+
 
     for n in $namespace; do
 	if [ -z "$filenamespace" ];then
