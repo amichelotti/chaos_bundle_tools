@@ -14,7 +14,7 @@ usage(){
 while getopts t:d:r:k opt; do
     case $opt in
 	t) 
-	if [ -f "$OPTARG" ]; then
+	if [ ! -f "$OPTARG" ]; then
 	    error_mesg "test list $OPTARG not found"
 	    exit 1
 	fi
