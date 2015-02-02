@@ -8,7 +8,7 @@
 
 
 #include "__template_name__.h"
-
+#include <iostream>
 using namespace common::__template_name__;
 #include <boost/program_options.hpp>
 

@@ -144,6 +144,7 @@ for type in ${compile_type[@]} ; do
 		error_mesg "Error $err compiling $tgt"
 		error=1
 	    else
+		if [ "$OS" == "Linux" ]; then
 		info_mesg "generating " "Unit Server.."
 		if $dir/chaos_generate_us.sh -i $dir/../driver -o $PREFIX -n UnitServer >> $log 2>&1 ; then
 		    pushd $PREFIX/UnitServer > /dev/null
@@ -166,6 +167,9 @@ for type in ${compile_type[@]} ; do
 		    error_mesg "error during generation of Unit Server"
 		    ((err++))
 		    error=1
+		fi
+		else
+		    info_mesg "skipping UnitServer on $OS"
 		fi
 
 		for i in sccu rtcu common driver;do

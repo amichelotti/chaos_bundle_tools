@@ -68,8 +68,10 @@ for c in $listah; do
     fi
     header=`echo $c | sed 's/src\///' | sed 's/source\///' | sed "s/\.\//$prefix\//g"`;
     filenamespace=""
-    namespace=`grep -o 'namespace\s\+\w\+' $c | sed 's/namespace\ *//g' | tr '\n' ' '`;
-    echo " ==> $namespace"
+#    namespace=`grep -o 'namespace\s\+\w\+\s*{' $c |sed 's/namespace\s\+\(\w\+\)\s*{/\1/g'`;
+    namespace=`grep -o 'namespace\s\+\w\+\s*{' $c | sed 's/namespace\ *//g' |sed 's/[\ {]//g'`
+  #  namespace=`grep -o 'namespace\s\+\w\+' $c | sed 's/^namespace //g'`
+#`grep -o 'namespace\s\+\w\+' $c | sed 's/namespace\ *//g' | tr '\n' ' '`;
 
 
     for n in $namespace; do
@@ -123,7 +125,9 @@ for c in $listcmake;do
 
     varl=`grep -i add_library $c | grep SHARED`;
     incdir=`dirname $startdir/$c | sed 's/\.\///g'`
+
     parent=`dirname $incdir`
+
     path=`basename $parent`/`basename $incdir`
     incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$path"
     for var in $varl; do
