@@ -51,7 +51,7 @@ mds_checks(){
 	    error_mesg "directory $MDS_DIR not found"
 	    exit 1
 	fi
-	MDS_LOG=$MDS_DIR/mds.log
+	MDS_LOG=$CHAOS_PREFIX/log/mds.log
     fi
 
     if ! ps -fe |grep [m]ysqld >/dev/null ;then

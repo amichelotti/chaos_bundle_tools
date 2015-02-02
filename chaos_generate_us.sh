@@ -39,7 +39,7 @@ if [ ! -d "$startdir" ]; then
     exit 1
 fi
 pushd $startdir > /dev/null
-listacpp=`find . -name "*.cpp"`;
+
 listah=`find . -name "*.h"`;
 project_dir=$outdir/$pname
 echo "* creating $project_dir"

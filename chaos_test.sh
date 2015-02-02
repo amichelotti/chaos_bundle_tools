@@ -37,6 +37,7 @@ while getopts t:d:r:k opt; do
 	    ;;
 	*)
 	    usage
+	    exit 1
 	    ;;
     esac
 done
