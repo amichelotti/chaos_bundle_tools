@@ -106,8 +106,8 @@ for i in $(ls  $CHAOS_BUNDLE/driver/) ; do
 cmake_compile $CHAOS_BUNDLE/driver/$i;
 done;
 
-for i in $(ls  $CHAOS_BUNDLE/example/) ; do
-cmake_compile $CHAOS_BUNDLE/example/$i;
+for i in $(ls  $CHAOS_BUNDLE/examples/) ; do
+cmake_compile $CHAOS_BUNDLE/examples/$i;
 done;
 
 
