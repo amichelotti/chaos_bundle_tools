@@ -12,26 +12,13 @@ else
     nok_mesg "Generic UnitServer started"
     exit 1
 fi
-sleep 2
-cnt=20
-ok=0
-info_mesg "checking for CU registration"
-while (((cnt > 0) && (ok==0) ));do
-    if grep -o "TEST_UNIT_0\/TEST_CU_0 .\+ registered" $CHAOS_PREFIX/log/UnitServer.log > /dev/null;then
-	ok=1
-    else
-	echo -n "."
-    fi
-    sleep 1
-    ((cnt++))
-done
-echo
 
-if [ $ok -eq 0 ]; then 
+info_mesg "checking for CU registration"
+if execute_command_until_ok "grep -o \"TEST_UNIT_0\/TEST_CU_0 .\+ registered\" $CHAOS_PREFIX/log/UnitServer.log > /dev/null" 30; then
+    ok_mesg "Generic UnitServer registered"
+else
     nok_mesg "Generic UnitServer registered"
     exit 1
-else
-    ok_mesg "Generic UnitServer registered"
 fi
     
 

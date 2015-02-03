@@ -241,6 +241,15 @@ start_services(){
 	return 1
     fi
 }
+start_mds(){
+    if $tools/chaos_services.sh start mds; then
+	ok_mesg "chaos start mds"
+	return 0
+    else
+	nok_mesg "chaos start mds"
+	return 1
+    fi
+}
 
 test_prefix(){
     if [ -z "$CHAOS_PREFIX" ];then
@@ -269,13 +278,18 @@ build_mds_conf(){
     local ncu=$1
     local nus=$2
     local out=$3
+    local dataserver="$4"
     local lista_conf=""
 
     for l in $(find_cu_conf);do
 	lista_conf="-i $l -n $ncu "
     done
-    local param="$lista_conf -j $nus -o $out"
     
+    local param="$lista_conf -j $nus -o $out"
+    if [ -n "$dataserver" ];then
+	param="$param -d $dataserver"
+    fi
+
     if [ -n "$lista_conf" ] && $CHAOS_TOOLS/chaos_build_conf.sh $param;then
 	ok_mesg "MDS configuration generated"
 	return 0
@@ -293,5 +307,33 @@ function start_profile_time(){
 function end_profile_time(){
     _end_profile_time=`date $time_format`
     echo "$_end_profile_time - $_start_profile_time"|bc
+}
+
+execute_command_until_ok(){
+    local command="$1"
+    local _cnt_=$2
+    local _ok_=0
+
+    while (((_cnt_ > 0) && (_ok_==0) ));do
+	execute_command=`eval $command`
+	if [ $? -eq 0 ] ;then
+	    _ok_=1
+	else
+	    echo -n "."
+	    ((_cnt_--))
+	    sleep 1
+	fi
+
+    done
+   if [ $_cnt_ -lt $2 ]; then
+       echo
+   fi
+   if [ $_ok_ -eq 0 ]; then 
+       return 1
+   
+   fi
+
+   return 0
+
 }
 

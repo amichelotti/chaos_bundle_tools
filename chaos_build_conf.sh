@@ -2,7 +2,7 @@
 
 usname="TEST_UNIT"
 cuname="TEST_CU"
-dataservers=("localhost:11211")
+dataservers=()
 instances=()
 nus=1
 outfile="test_conf.mds"
@@ -24,7 +24,7 @@ while getopts i:o:u:c:n:hd:j: opt; do
 	    ;;
 	c) cuname="$OPTARG"
 	    ;;
-	d) dataservers+=($OPTARG)
+	d) dataservers+=("$OPTARG")
 	    ;;
 	j) nus=$OPTARG
 	    ;;
@@ -34,6 +34,10 @@ while getopts i:o:u:c:n:hd:j: opt; do
 	    ;;
     esac
 done;
+
+if [ ${#dataservers} -eq 0 ];then
+    dataservers+=("localhost:11211")
+fi
 
 for c in ${infile[@]}; do
     if [ ! -f "$c" ]; then
@@ -100,15 +104,15 @@ function generate_cu(){
 function add_array(){
     var="$1"
     max=$2
-    if [[ $cnt==0 ]]; then
-	echo -n "[" >> $outfile
+    if [ $cnt -eq 0 ]; then
+	echo "[" >> $outfile
     fi
     echo -n "$var" >> $outfile
     ((cnt++))
-    if [[ $cnt < $max ]]; then
+    if [ $cnt -lt $max ]; then
 	echo "," >> $outfile
     fi
-    if [[ $cnt == $max ]]; then
+    if [ $cnt -eq $max ]; then
 	echo -n "]" >> $outfile
     fi
 
