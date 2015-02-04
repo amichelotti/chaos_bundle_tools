@@ -28,7 +28,7 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc: opt; do
+while getopts t:o:w:b:p:hd:rsc:k opt; do
     case $opt in
 	t)
 	    compile_target=($OPTARG);
@@ -58,7 +58,11 @@ while getopts t:o:w:b:p:hd:rsc: opt; do
 	    ;;
 	p)
 	    prefix_build="$OPTARG"
-	    echo "* prefix $prefix_build"
+	    info_mesg "prefix " "$prefix_build"
+	    ;;
+	k)
+	    perform_test=true
+	    info_mesg "execute test after build"
 	    ;;
 	d)
 	    create_deb_ver="$OPTARG"
@@ -66,7 +70,7 @@ while getopts t:o:w:b:p:hd:rsc: opt; do
 	    ;;
 	s)
 	    switch_env=true
-	    echo "* switching environment";
+	    info_mesg "switching environment";
 	    ;;
 	c)
 	    config="$OPTARG"
@@ -80,7 +84,7 @@ while getopts t:o:w:b:p:hd:rsc: opt; do
 
 
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)";
+	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n";
 	    exit 0;
 	    ;;
     esac
@@ -208,6 +212,20 @@ for type in ${compile_type[@]} ; do
 		tt=$(end_profile_time)
 		info_mesg "compilation ($tt s)" "$tgt OK"
 		chaos_configure
+		if [ -n "$perform_test" ];then
+		    if [ "$ARCH" == "$target" ];then
+			start_profile_time
+			$PREFIX/tools/chaos_test.sh
+			tt=$(end_profile_time)
+			if [ $? -eq 0 ];then
+			    ok_mesg "TEST RUN ($tt s)"
+			else
+			    nok_mesg "TEST RUN ($tt s)"
+			fi
+		    else
+			info_mesg "test skipped on cross compilation"
+		    fi
+		fi
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
 		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver; then

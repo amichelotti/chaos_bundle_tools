@@ -8,10 +8,14 @@ testlists=()
 test_found=0
 report_file="/dev/null"
 stop_on_error=""
+CALLGRIND_OPT="valgrind --tool=callgrind"
+export CHAOS_RUNPREFIX=""
+export CHAOS_RUNOUTPREFIX=""
+export CHAOS_RUNTYPE=""
 usage(){
-    echo -e "Usage :$0 [-t <testlist0> .. -t <testlistN>] [-d <directory of testlists> [$testdir]] [-r csv report_file] [-k]\n-t <testlist>: choose a particular testlist\n-d <dir>: execute all the testlist in a given directory\n-r <report>:create a CSV file with test summary\n-s:stop on error\n"
+    echo -e "Usage :$0 [-t <testlist0> .. -t <testlistN>] [-d <directory of testlists> [$testdir]] [-r csv report_file] [-v] [-k]\n-t <testlist>: choose a particular testlist\n-d <dir>: execute all the testlist in a given directory\n-r <report>:create a CSV file with test summary\n-s:stop on error\n-v:enable callgrind\n"
 }
-while getopts t:d:r:k opt; do
+while getopts t:d:r:kv opt; do
     case $opt in
 	t) 
 	if [ ! -f "$OPTARG" ]; then
@@ -22,6 +26,11 @@ while getopts t:d:r:k opt; do
 	;;
 	k)
 	    stop_on_error="true"
+	    ;;
+	v)
+	    export CHAOS_RUNPREFIX="$CALLGRIND_OPT"
+	    export CHAOS_RUNOUTPREFIX="--callgrind-out-file="
+	    export CHAOS_RUNTYPE="callgrind"
 	    ;;
 	r)
 	    report_file=$OPTARG
@@ -108,5 +117,16 @@ for test in ${final_test_list[@]};do
 	fi
     fi
 done
+if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
+    if callgrind_control --dump >& /dev/null; then
+	info_mesg "look callgrind dump in $CHAOS_PREFIX/log"
+
+    else
+	warn_mesg "cannot dump callgrind"
+    fi
+
+fi
+
 exit $status
+
 

@@ -140,7 +140,7 @@ function chaos_configure(){
 
 get_pid(){
     local execname=`echo $1 | sed 's/\(.\)/[\1]/'`
-    ps -fe |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2
+    ps -fe |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2|tr '\n' ' '
     
 }
 time_format="+%s.%N"
@@ -150,17 +150,19 @@ fi
 
 stop_proc(){
     pid=`get_pid "$1"`
-    if [ -n "$pid" ]; then
-	if ! kill -9 $pid ; then
-	    error_mesg "cannot kill process $pid"
-	    exit 1
-	else
-	    ok_mesg "process $1 killed"
-	fi
+    for p in $pid;do
+	if [ -n "$p" ]; then
+	    if ! kill -9 $p ; then
+		error_mesg "cannot kill process $p"
+		exit 1
+	    else
+		ok_mesg "process $1 ($p) killed"
+	    fi
 	
-    else
-	warn_mesg "process $1 not running"
-    fi
+	else
+	    warn_mesg "process $1 ($p) not running"
+	fi
+    done
 }
 get_cpu_stat(){
     info=`ps -o pcpu,pmem $1| tail -1 |sed 's/\s\+/\ /g'`
@@ -172,27 +174,31 @@ get_mem_stat(){
 }
 
 check_proc(){
+    local status=0
     pid=`get_pid "$1"`
-    if [ -n "$pid" ]; then
+    for p in $pid;do
+	if [ -n "$p" ]; then
 
-	cpu=$(get_cpu_stat $pid)
-	mem=$(get_mem_stat $pid)
-	if [ $(echo "($cpu - 50)>0" | bc) -gt 0 ]; then
-	    cpu="\x1B[31m$cpu%\x1B[39m"
+	    cpu=$(get_cpu_stat $p)
+	    mem=$(get_mem_stat $p)
+	    if [ $(echo "($cpu - 50)>0" | bc) -gt 0 ]; then
+		cpu="\x1B[31m$cpu%\x1B[39m"
+	    else
+		cpu="\x1B[1m$cpu%\x1B[22m"
+	    fi
+	    if [ $(echo "($mem - 50)>0" |bc) -gt 0 ]; then
+		mem="\x1B[31m$mem%\x1B[39m"
+	    else
+		mem="\x1B[1m$mem%\x1B[22m"
+	    fi
+	    
+	    ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$p\x1B[22m cpu $cpu, mem $mem"
 	else
-	    cpu="\x1B[1m$cpu%\x1B[22m"
+	    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
+	    ((status++))
 	fi
-	if [ $(echo "($mem - 50)>0" |bc) -gt 0 ]; then
-	    mem="\x1B[31m$mem%\x1B[39m"
-	else
-	    mem="\x1B[1m$mem%\x1B[22m"
-	fi
-
-	ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$pid\x1B[22m cpu $cpu, mem $mem"
-	return 0
-    fi
-    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
-    return 1
+    done
+	return $status
 }
 
 check_proc_then_kill(){
@@ -205,22 +211,45 @@ check_proc_then_kill(){
 run_proc(){
     command_line="$1"
     process_name="$2"
-    eval $command_line
+    local run_prefix="$CHAOS_RUNPREFIX"
+    local oldpid=`get_pid $process_name`
+    local oldpidl=()
+    if [ $? -eq 0 ] && [ -n "$oldpid" ]; then
+	oldpidl=($oldpid)
+    fi
+	
+    if [ -z "$run_prefix" ];then
+	eval $command_line
+    else
+	if [ -n "$CHAOS_RUNOUTPREFIX" ];then
+
+	    run_prefix="$run_prefix $CHAOS_RUNOUTPREFIX$CHAOS_PREFIX/log/data_$process_name.log"
+	fi
+	eval "$run_prefix $command_line"
+    fi
+
     if [ $? -eq 0 ]; then
 	sleep 1
+	local pidl=()
 	pid=`get_pid $process_name`
 	if [ $? -eq 0 ] && [ -n "$pid" ]; then
-	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$pid\", started" 
+	    pidl=($pid)
+	fi
+
+	if [ ${#pidl[@]} -gt ${#oldpidl[@]} ];then
+	    local p=${pidl[$((${#pidl[@]} -1))]}
+	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$p\", started" 
 	    return 0
 	else
 	    nok_mesg "process $process_name quitted unexpectly "
 	    exit 1
 	fi
+	
     else
 	error_mesg "error lunching $process_name"
 	exit 1
     fi
-
+    return 0
 }
 
 test_services(){
@@ -233,6 +262,7 @@ test_services(){
     fi
 }
 start_services(){
+
     if $tools/chaos_services.sh start ; then
 	ok_mesg "chaos start services"
 	return 0
@@ -337,3 +367,108 @@ execute_command_until_ok(){
 
 }
 
+chaos_cli_cmd(){
+    local meta="$1"
+    local cuname="$2"
+    local param="$3"
+    local timeout=5000
+    cli_cmd=""
+    if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
+	timeout=$((timeout * 10))
+    fi
+    cli_cmd=`ChaosCLI --metadata-server=$meta --deviceid $cuname --timeout $timeout $param 2>&1`
+   
+    if [ $? -eq 0 ]; then
+	return 0
+    fi
+    error_mesg "Error \"ChaosCLI --metadata-server=$meta --deviceid $cuname $param \" returned:$out"
+    return 1
+
+}
+# meta cuname
+init_cu(){
+    chaos_cli_cmd $1 $2 "--op 1"
+}
+start_cu(){
+    chaos_cli_cmd $1 $2 "--op 2"
+}
+deinit_cu(){
+    chaos_cli_cmd $1 $2 "--op 4"
+}
+stop_cu(){
+    chaos_cli_cmd $1 $2 "--op 3"
+}
+
+get_timestamp_cu(){
+    local meta="$1"
+    local cuname="$2"
+
+    timestamp_cu=0
+    if ! chaos_cli_cmd $meta $cuname "--print-dataset 0";then
+	return 1
+    fi
+
+    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+	timestamp_cu=${BASH_REMATCH[1]}
+	return 0
+    fi
+    
+    return 1
+}
+
+
+loop_cu_test(){
+    local meta="$1"
+    local cuname="$2"
+    local max="$3"
+    local cnt=0
+    local t1=0
+    for ((cnt=0;cnt<$max;cnt++));do
+	info_mesg "loop cu test $cnt on CU $cuname"
+	if init_cu $meta $cuname;then
+	    ok_mesg "- $cnt init $cuname"
+	else
+	    nok_mesg "- $cnt init $cuname"
+	    return 1
+	fi
+
+	if start_cu $meta $cuname;then
+	    ok_mesg "- $cnt start $cuname"
+	else
+	    nok_mesg "- $cnt start $cuname"
+	    return 1
+	fi
+	sleep 1
+	if get_timestamp_cu $meta $cuname;then
+	    ok_mesg "- $cnt get timestamp $timestamp_cu"
+	    
+	    if [ $t1 -gt 0 ];then
+		res=$((timestamp_cu -t1)) 
+		if [ $res -gt 0 ]; then
+		    info_mesg "cu $cuname is living loop time" " $res ms"
+		else
+		    warn_mesg "cu $cuname not progressing"
+		fi
+	    fi
+	    t1=$timestamp_cu	    
+	else
+	    nok_mesg "- $cnt get timestamp $cuname"
+	    return 1
+	fi
+	
+	if stop_cu $meta $cuname;then
+	    ok_mesg "- $cnt stop $cuname"
+	else
+	    nok_mesg "- $cnt stop $cuname"
+	    return 1
+	fi
+
+	if deinit_cu $meta $cuname;then
+	    ok_mesg "- $cnt deinit $cuname"
+	else
+	    nok_mesg "- $cnt deinit $cuname"
+	    return 1
+	fi
+    done
+    return 0
+}

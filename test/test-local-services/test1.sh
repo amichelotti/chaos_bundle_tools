@@ -2,6 +2,14 @@
 source $CHAOS_TOOLS/common_util.sh
 MDS_HOME=$CHAOS_PREFIX/chaosframework/ChaosMDSLite/
 rm $MDS_HOME/mds_init.conf*
+NUS=10
+NCU=20
+if [ -n "$1" ];then
+    NUS=$1
+fi
+if [ -n "$2" ];then
+    NCU=$2
+fi
 
 start_services || exit 1
 
@@ -12,7 +20,7 @@ else
     exit 1
 fi
 
-if ! build_mds_conf 1 1 $MDS_HOME/mds_init.conf "$execute_command" > /dev/null; then
+if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$execute_command" > /dev/null; then
     nok_mesg "MDS configuration created"
     exit 1
 else

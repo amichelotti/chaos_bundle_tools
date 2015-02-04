@@ -95,6 +95,7 @@ IF (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${dir})
    MESSAGE(STATUS "${dir} directory exists")
 ENDIF()
 ENDFOREACH()
+
 IF (DEFINED PROJECT_NAME)
    FILE(GLOB conf_src conf/*)
    INSTALL(FILES ${conf_src} DESTINATION etc/${PROJECT_NAME})
