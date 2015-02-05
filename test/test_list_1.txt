@@ -1,3 +1,4 @@
-test-local-services # start local services
+# start local services
+test-local-services/test-local-services.sh
 # test-local-powersupply
 # test-local-default-us

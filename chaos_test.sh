@@ -68,23 +68,25 @@ test_prefix;
 final_test_list=()
 for test in ${testlist[@]}; do
    basedir=`dirname $test`
-   testdirs=`sed s/#.*// $test | cut -d ' ' -f 1`
-   echo $testdirs
-   for test_test in $testdirs; do
-       test_full_dir=$basedir/$test_test
-       if [ ! -d "$test_full_dir" ]; then
+   tests=`sed s/#.*// $test | cut -d ' ' -f 1`
+
+   for test_test in $tests; do
+       if [[ "$test_test" =~ ^/.+ ]];then
+	   test_full_dir=$test_test
+       else
+	   test_full_dir=$basedir/$test_test
+       fi
+       
+       if [ ! -f "$test_full_dir" ]; then
 	   error_mesg "test dir \"$test_full_dir\" specified in \"$test\" not found"
 	   exit 1
        else
-	   list=`ls $test_full_dir/test*.sh 2>/dev/null |sort -n`
-	   for l in $list;do
-	       if [ ! -x "$l" ];then
-		   warn_mesg "test $l is not executable please change execution bit"
-	       else
-		   final_test_list+=($l)
-		   ((test_found++))
-	       fi
-	   done
+	   if [ -x $test_full_dir ];then
+	       final_test_list+=($test_full_dir)
+	       ((test_found++))
+	   else
+	       warn_mesg "not executable found " "$test_full_dir"
+	   fi
        fi
    done
 done
@@ -97,12 +99,14 @@ for test in ${final_test_list[@]};do
     info_mesg "starting test $test ..."
     group_test=`dirname $test`
     group_test=`basename $group_test`
+    pushd `dirname $test` >/dev/null
     start_profile_time
     $test
     res=$?
     status=$(($status + $res))
 
     exec_time=$(end_profile_time)
+    popd >/dev/null
     if [ $res -eq 0 ]; then
 	ok_list+=("$test")
 	info_mesg "\e[32mTEST \"$test\" ($exec_time s) OK\e[39m"

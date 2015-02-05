@@ -216,8 +216,9 @@ for type in ${compile_type[@]} ; do
 		    if [ "$ARCH" == "$target" ];then
 			start_profile_time
 			$PREFIX/tools/chaos_test.sh
+			status=$?
 			tt=$(end_profile_time)
-			if [ $? -eq 0 ];then
+			if [ $status -eq 0 ];then
 			    ok_mesg "TEST RUN ($tt s)"
 			else
 			    nok_mesg "TEST RUN ($tt s)"

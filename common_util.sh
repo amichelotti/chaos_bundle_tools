@@ -1,6 +1,7 @@
 tools=$CHAOS_BUNDLE/tools
 OS=`uname -s`
 ARCH=`uname -m`
+SCRIPTNAME=`basename $0`
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 NPROC=$(getconf _NPROCESSORS_ONLN)
@@ -29,7 +30,7 @@ warn_mesg(){
     if [ -z "$2" ]; then
 	echo -e "% \x1B[33m\x1B[1m$1\x1B[22m\x1B[39m"
     else
-	echo -e "# \x1B[1m$1\x1B[33m$2\x1B[39m\x1B[22m"
+	echo -e "% \x1B[1m$1\x1B[33m$2\x1B[39m\x1B[22m"
     fi
 }
 
@@ -136,11 +137,12 @@ function chaos_configure(){
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds_local.cfg
     ln -sf $PREFIX/etc/cds_local.cfg $PREFIX/etc/cds.cfg
     ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
+    cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
 }
 
 get_pid(){
     local execname=`echo $1 | sed 's/\(.\)/[\1]/'`
-    ps -fe |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2|tr '\n' ' '
+    ps -fe |grep -v "$SCRIPTNAME" |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2|tr '\n' ' '
     
 }
 time_format="+%s.%N"
@@ -160,21 +162,32 @@ stop_proc(){
 	    fi
 	
 	else
-	    warn_mesg "process $1 ($p) not running"
+	    warn_mesg "process $1 ($p) " "not running"
 	fi
     done
 }
 get_cpu_stat(){
-    info=`ps -o pcpu,pmem $1| tail -1 |sed 's/\s\+/\ /g'`
-    echo "$info" | cut -d ' ' -f 2
+    info=`ps -o pcpu $1| tail -1`
+    if [[ "$info" =~ ([0-9\.]+) ]]; then 
+	echo "${BASH_REMATCH[1]}"
+    else
+	echo "0"
+	return 1
+    fi
 }
 get_mem_stat(){
-    info=`ps -o pcpu,pmem $1| tail -1 |sed 's/\s\+/\ /g'`
-    echo "$info" | cut -d ' ' -f 3
+    info=`ps -o pmem $1| tail -1`
+    if [[ "$info" =~ ([0-9\.]+) ]]; then 
+	echo "${BASH_REMATCH[1]}"
+    else
+	echo "0"
+	return 1
+    fi
 }
 
 check_proc(){
     local status=0
+    proc_list=()
     pid=`get_pid "$1"`
     for p in $pid;do
 	if [ -n "$p" ]; then
@@ -193,6 +206,7 @@ check_proc(){
 	    fi
 	    
 	    ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$p\x1B[22m cpu $cpu, mem $mem"
+	    proc_list+=($p)
 	else
 	    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
 	    ((status++))
@@ -204,13 +218,14 @@ check_proc(){
 check_proc_then_kill(){
     pid=`get_pid "$1"`
     if [ -n "$pid" ]; then
-	warn_mesg "process $1 is running with pid \"$pid\", killing"
+	warn_mesg "process $1 is running with pid \"$pid\" " "killing"
 	stop_proc $1;
     fi
 }
 run_proc(){
     command_line="$1"
     process_name="$2"
+    proc_pid=0
     local run_prefix="$CHAOS_RUNPREFIX"
     local oldpid=`get_pid $process_name`
     local oldpidl=()
@@ -239,6 +254,8 @@ run_proc(){
 	if [ ${#pidl[@]} -gt ${#oldpidl[@]} ];then
 	    local p=${pidl[$((${#pidl[@]} -1))]}
 	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$p\", started" 
+	    proc_pid=$p
+	    
 	    return 0
 	else
 	    nok_mesg "process $process_name quitted unexpectly "
@@ -421,19 +438,43 @@ loop_cu_test(){
     local meta="$1"
     local cuname="$2"
     local max="$3"
+    local pid="$4"
     local cnt=0
     local t1=0
+    local cpu=0
+    local mem=0
+    local oldcpu=0
+    local oldmem=0
+
     for ((cnt=0;cnt<$max;cnt++));do
-	info_mesg "loop cu test $cnt on CU $cuname"
+
+	oldcpu=$cpu
+	oldmem=$mem
+	cpu=$(get_cpu_stat $pid)
+	mem=$(get_mem_stat $pid)
+	info_mesg "loop cu test $cnt on CU $cuname, cpu:$cpu% mem:$mem%"
+	if [ $cnt -eq 0 ];then
+	    oldcpu=$cpu
+	    oldmem=$mem
+	fi
+	cpudiff=$(echo "($cpu - $oldcpu)" |bc)
+	memdiff=$(echo "($mem - $oldmem)" |bc)
+	if [ $(echo "($cpudiff > 1)"|bc) -gt 0 ];then
+	    warn_mesg "cpu occupation \x1B[1m$cpu%\x1B[22m increased respect previous cycle \x1B[1m$oldcpu%\x1B[22m by " "$cpudiff%"
+	fi
+	if [ $(echo "($memdiff > 0)"|bc) -gt 0 ];then
+	    warn_mesg "mem occupation \x1B[1m$mem%\x1B[22m increased respect previous cycle \x1B[1m$oldmem\x1B[22m by " "$memdiff%"
+	fi
 	if init_cu $meta $cuname;then
-	    ok_mesg "- $cnt init $cuname"
+	    ok_mesg "- $cnt init $cuname cpu $cpu% mem $mem%"
 	else
 	    nok_mesg "- $cnt init $cuname"
 	    return 1
 	fi
-
+	cpu=$(get_cpu_stat $pid)
+	mem=$(get_cpu_stat $pid)
 	if start_cu $meta $cuname;then
-	    ok_mesg "- $cnt start $cuname"
+	    ok_mesg "- $cnt start $cuname $cpu% mem $mem%"
 	else
 	    nok_mesg "- $cnt start $cuname"
 	    return 1
@@ -447,7 +488,7 @@ loop_cu_test(){
 		if [ $res -gt 0 ]; then
 		    info_mesg "cu $cuname is living loop time" " $res ms"
 		else
-		    warn_mesg "cu $cuname not progressing"
+		    warn_mesg "cu $cuname " "not progressing"
 		fi
 	    fi
 	    t1=$timestamp_cu	    
@@ -455,20 +496,70 @@ loop_cu_test(){
 	    nok_mesg "- $cnt get timestamp $cuname"
 	    return 1
 	fi
-	
+	cpu=$(get_cpu_stat $pid)
+	mem=$(get_cpu_stat $pid)
 	if stop_cu $meta $cuname;then
-	    ok_mesg "- $cnt stop $cuname"
+	    ok_mesg "- $cnt stop $cuname $cpu% mem $mem%"
 	else
 	    nok_mesg "- $cnt stop $cuname"
 	    return 1
 	fi
-
+	cpu=$(get_cpu_stat $pid)
+	mem=$(get_cpu_stat $pid)
 	if deinit_cu $meta $cuname;then
-	    ok_mesg "- $cnt deinit $cuname"
+	    ok_mesg "- $cnt deinit $cuname $cpu% mem $mem%"
 	else
 	    nok_mesg "- $cnt deinit $cuname"
 	    return 1
 	fi
     done
     return 0
+}
+
+launch_us_cu(){
+    local USNAME=UnitServer
+    local NUS=2
+    local NCU=5
+    local META="localhost:5000"
+    if [ -n "$1" ];then
+	NUS=$1
+    fi
+    if [ -n "$2" ];then
+	NCU=$2
+    fi
+    if [ -n "$3" ];then
+	META="$3"
+    fi
+    if [ -n "$4" ];then
+	USNAME="$4"
+    fi
+    check_proc_then_kill "$USNAME"
+    if [ ! -x $CHAOS_PREFIX/bin/$USNAME ]; then
+	nok_mesg "Unit Server $USNAME not found, in $CHAOS_PREFIX/bin/$USNAME"
+	exit 1
+    fi
+
+    us_proc=()
+    info_mesg "launching " "$NUS $USNAME with $NCU CU"
+
+    for ((us=0;us<$NUS;us++));do
+	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > /dev/null 2>&1 &" "$USNAME"; then
+	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
+	    us_proc+=($proc_pid)
+	else
+	    nok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" started"
+            return 1
+	fi
+	
+	for ((cu=0;cu<$NCU;cu++));do
+	    info_mesg "checking for CU TEST_UNIT_$us/TEST_CU_$cu registration"
+	    if execute_command_until_ok "grep -o \"TEST_UNIT_$us\/TEST_CU_$cu .\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null" 30; then
+		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"
+	    else
+		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"
+		return 1
+	    fi
+	done
+    done
 }
