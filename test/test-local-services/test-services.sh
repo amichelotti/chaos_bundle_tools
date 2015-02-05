@@ -1,16 +1,17 @@
 #!/bin/bash
 source $CHAOS_TOOLS/common_util.sh
 MDS_HOME=$CHAOS_PREFIX/chaosframework/ChaosMDSLite/
-rm $MDS_HOME/mds_init.conf*
+rm -rf $MDS_HOME/mds_init.conf* >/dev/null
 NUS=10
 NCU=20
+
 if [ -n "$1" ];then
     NUS=$1
 fi
 if [ -n "$2" ];then
     NCU=$2
 fi
-
+info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU"
 start_services || exit 1
 
 if execute_command_until_ok "grep -o \"with url:.\+\" $PREFIX/log/cds.log  |sed 's/with url: //g'" 15; then

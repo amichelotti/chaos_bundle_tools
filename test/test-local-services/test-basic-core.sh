@@ -3,23 +3,29 @@ source $CHAOS_TOOLS/common_util.sh
 USNAME=UnitServer
 NUS=5
 NCU=10
+META="localhost:5000"
 if [ -n "$1" ];then
     NUS=$1
 fi
 if [ -n "$2" ];then
     NCU=$2
 fi
+if [ -n "$3" ];then
+    META="$3"
+fi
+info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 if [ ! -x $CHAOS_PREFIX/bin/UnitServer ]; then
     nok_mesg "Generic UnitServer not found"
     exit 1
 fi
 check_proc_then_kill "$USNAME"
-
+us_proc=()
 for ((us=0;us<$NUS;us++));do
     rm $CHAOS_PREFIX/log/UnitServer_$us.log >& /dev/null
-    if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/UnitServer_$us.log --unit_server_alias TEST_UNIT_$us --unit_server_enable true > /dev/null 2>&1 &" "$USNAME"; then
-	ok_mesg "Generic UnitServer \"TEST_UNIT_$us\" started"
+    if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/UnitServer_$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > /dev/null 2>&1 &" "$USNAME"; then
+	ok_mesg "Generic UnitServer \"TEST_UNIT_$us\" ($proc_pid) started"
+	us_proc+=$proc_pid
     else
 	nok_mesg "Generic UnitServer \"TEST_UNIT_$us\" started"
 	exit 1
@@ -35,7 +41,7 @@ for ((us=0;us<$NUS;us++));do
 	fi
 
 	info_mesg "checking \"TEST_UNIT_$us/TEST_CU_$cu\" accessibility from UI"
-	if loop_cu_test "localhost:5000" "TEST_UNIT_$us/TEST_CU_$cu" 3;then
+	if loop_cu_test "localhost:5000" "TEST_UNIT_$us/TEST_CU_$cu" 4 ${us_proc[$us]};then
 	    ok_mesg "UI access to \"TEST_UNIT_$us/TEST_CU_$cu\""
 	else
 	    nok_mesg "UI access \"TEST_UNIT_$us/TEST_CU_$cu\""
@@ -53,6 +59,10 @@ for ((us=0;us<$NUS;us++));do
 	    ok_mesg "Start \"TEST_UNIT_$us/TEST_CU_$cu\""
 	else
 	    nok_mesg "Start \"TEST_UNIT_$us/TEST_CU_$cu\""
+	    exit 1
+	fi
+	if ! check_proc $USNAME;then
+	    error_mesg "$USNAME quitted"
 	    exit 1
 	fi
 
