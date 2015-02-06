@@ -111,6 +111,7 @@ init_tgt_vars;
 
 function compile(){
     $dir/chaos_clean.sh >& /dev/null
+    info_mesg "log on " "$log"
     info_mesg "compiling " "$tgt ...."
     echo -e '\n\n' | $dir/init_bundle.sh >& $log;
     
@@ -150,6 +151,7 @@ for type in ${compile_type[@]} ; do
 	    else
 		if [ "$OS" == "Linux" ]; then
 		info_mesg "generating " "Unit Server.."
+		echo "==== GENERATING UNIT SERVER ====" >> $log 2>&1 
 		if $dir/chaos_generate_us.sh -i $dir/../driver -o $PREFIX -n UnitServer >> $log 2>&1 ; then
 		    pushd $PREFIX/UnitServer > /dev/null
 		    if cmake . >> $log ; then
@@ -179,17 +181,18 @@ for type in ${compile_type[@]} ; do
 		for i in sccu rtcu common driver;do
 		    info_mesg "testing template " "$i"
 		    rm -rf /tmp/_prova_"$i"_
-		
-		    if  $dir/chaos_create_template.sh -o /tmp -n _prova_"$i"_ $i> /dev/null ;then
+		    echo "==== TESTING TEMPLATE $i ====" >> $log 2>&1 
+		    if  $dir/chaos_create_template.sh -o /tmp -n _prova_"$i"_ $i >> $log 2>&1 ;then
+			mkdir -p /tmp/_prova_"$i"_
 			pushd /tmp/_prova_"$i"_ >/dev/null
-			if cmake . > /dev/null ; then
-			    if ! make >& /tmp/_prova_"$i".compilation ;then 
-				error_mesg "error during compiling $i template, /tmp/_prova_"$i".compilation for details"
+			if cmake .  >> $log 2>&1 ; then
+			    if ! make -j $NPROC >> $log 2>&1 ;then 
+				error_mesg "error during compiling $i template"
 				((err++))
 				error=1
 			    else
 				ok_mesg "template $i"
-				rm /tmp/_prova_"$i".compilation
+
 			    fi
 			else
 			    error_mesg "error  generating makefile for $i"
@@ -210,13 +213,14 @@ for type in ${compile_type[@]} ; do
 
 	    if (($error == 0)); then
 		tt=$(end_profile_time)
-		info_mesg "compilation ($tt s)" "$tgt OK"
+		info_mesg "compilation ($tt s) " "$tgt OK"
 		chaos_configure
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
-			info_mesg "Starting chaos testsuite (it takes some time)" "...."
+			info_mesg "Starting chaos testsuite (it takes some time), test report file" "test-$tgt.csv"
 			start_profile_time
-			$PREFIX/tools/chaos_test.sh >& $log
+			echo "===== TESTING ====" >> $log 2>&1 
+			$PREFIX/tools/chaos_test.sh -r test-$tgt.csv >> $log 2>&1 
 			status=$?
 			tt=$(end_profile_time)
 			if [ $status -eq 0 ];then
@@ -230,7 +234,7 @@ for type in ${compile_type[@]} ; do
 		fi
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
-		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver; then
+		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver >> $log 2>&1; then
 			ok_mesg "debian package generated"
 		    fi
 		fi

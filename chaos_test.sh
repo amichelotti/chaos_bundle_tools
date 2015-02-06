@@ -12,6 +12,7 @@ CALLGRIND_OPT="valgrind --tool=callgrind"
 export CHAOS_RUNPREFIX=""
 export CHAOS_RUNOUTPREFIX=""
 export CHAOS_RUNTYPE=""
+export CHAOS_TEST_REPORT=""
 usage(){
     echo -e "Usage :$0 [-t <testlist0> .. -t <testlistN>] [-d <directory of testlists> [$testdir]] [-r csv report_file] [-v] [-k]\n-t <testlist>: choose a particular testlist\n-d <dir>: execute all the testlist in a given directory\n-r <report>:create a CSV file with test summary\n-s:stop on error\n-v:enable callgrind\n"
 }
@@ -33,8 +34,10 @@ while getopts t:d:r:kv opt; do
 	    export CHAOS_RUNTYPE="callgrind"
 	    ;;
 	r)
-	    report_file=$OPTARG
-	    echo "test group;test name; status; exec time" > $report_file
+	    report_file="$PWD/$OPTARG"
+	    export CHAOS_TEST_REPORT=$report_file
+	    echo "test group;test name; status; exec time (s); %cpu ; %mem; desc" > $report_file
+	    info_mesg "enable report in " "$CHAOS_TEST_REPORT"
 	    ;;
 	d)
 	    if [ -d "$OPTARG" ]; then
@@ -99,6 +102,7 @@ for test in ${final_test_list[@]};do
     info_mesg "starting test $test ..."
     group_test=`dirname $test`
     group_test=`basename $group_test`
+    test_name=`basename $test`
     pushd `dirname $test` >/dev/null
     start_profile_time
     $test
@@ -109,13 +113,14 @@ for test in ${final_test_list[@]};do
     popd >/dev/null
     if [ $res -eq 0 ]; then
 	ok_list+=("$test")
+	
 	info_mesg "\e[32mTEST \"$test\" ($exec_time s) OK\e[39m"
-	echo "$group_test;$test;OK;$exec_time" >> $report_file
+
     else
 
 	error_list+=("$test")
 	info_mesg "\e[31mTEST \"$test\" ($exec_time s) FAILED\e[39m"
-	echo "$group_test;$test;NOK;$exec_time" >> $report_file
+
 	if [ -n "$stop_on_error" ];then
 	    exit 1
 	fi

@@ -2,6 +2,7 @@ tools=$CHAOS_BUNDLE/tools
 OS=`uname -s`
 ARCH=`uname -m`
 SCRIPTNAME=`basename $0`
+SCRIPTTESTPATH=$0
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 NPROC=$(getconf _NPROCESSORS_ONLN)
@@ -10,6 +11,16 @@ if [ -n "$CHAOS_PREFIX" ];then
     PREFIX=$CHAOS_PREFIX
 fi
 
+declare -a __testinfo__
+for ((cnt=0;cnt<4;cnt++));do
+    if [ -z "${__testinfo__[$cnt]}" ];then
+	__testinfo__[$cnt]=0
+	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+    fi
+done
+
+
+  
 
 info_mesg(){
     if [ -z "$2" ]; then
@@ -166,32 +177,47 @@ stop_proc(){
 	fi
     done
 }
+
+
 get_cpu_stat(){
+    local cpu=0
     info=`ps -o pcpu $1| tail -1`
     if [[ "$info" =~ ([0-9\.]+) ]]; then 
-	echo "${BASH_REMATCH[1]}"
+	cpu=${BASH_REMATCH[1]}
+	read -r -a __testinfo__ </tmp/__chaos_test_info__
+	__testinfo__[0]=`echo "(${__testinfo__[0]} + $cpu)"|bc`
+	((__testinfo__[1]++))
+	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+	echo "$cpu"
+	return 0
     else
 	echo "0"
 	return 1
     fi
 }
 get_mem_stat(){
+    local mem=0
     info=`ps -o pmem $1| tail -1`
     if [[ "$info" =~ ([0-9\.]+) ]]; then 
-	echo "${BASH_REMATCH[1]}"
+	mem=${BASH_REMATCH[1]}
+	read -r -a __testinfo__ </tmp/__chaos_test_info__
+	__testinfo__[2]=`echo "(${__testinfo__[2]} + $mem)"|bc`
+	((__testinfo__[3]++))
+
+	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+	echo "$mem"
+	return 0
     else
 	echo "0"
 	return 1
     fi
 }
-
 check_proc(){
     local status=0
     proc_list=()
     pid=`get_pid "$1"`
     for p in $pid;do
 	if [ -n "$p" ]; then
-
 	    cpu=$(get_cpu_stat $p)
 	    mem=$(get_mem_stat $p)
 	    if [ $(echo "($cpu - 50)>0" | bc) -gt 0 ]; then
@@ -206,6 +232,7 @@ check_proc(){
 	    fi
 	    
 	    ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$p\x1B[22m cpu $cpu, mem $mem"
+
 	    proc_list+=($p)
 	else
 	    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
@@ -270,7 +297,8 @@ run_proc(){
 }
 
 test_services(){
-    if $tools/chaos_services.sh status ; then
+
+    if  $tools/chaos_services.sh status ; then
 	ok_mesg "chaos services"
 	return 0
     else
@@ -562,4 +590,48 @@ launch_us_cu(){
 	    fi
 	done
     done
+}
+start_test(){
+    for ((cnt=0;cnt<4;cnt++));do
+	if [ -z "$__testinfo__[$cnt]" ];then
+	    __testinfo__[$cnt]=0
+	fi
+    done
+    echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+    __start_test_time__=`date $time_format`
+
+}
+end_test(){
+    local status=$1
+    local desc="--"
+    local pcpu="--"
+    local pmem="--"
+    local __end_test_time__=`date $time_format`
+    local __start_test_name__=$SCRIPTNAME
+    local __start_test_group__=$(get_abs_dir $SCRIPTTESTPATH)
+    local __start_test_group__=`basename $__start_test_group__`
+    local exec_time=`echo "scale=3;($__end_test_time__ - $__start_test_time__ )" |bc`
+    read -r -a __testinfo__ </tmp/__chaos_test_info__
+    echo "===> ${__testinfo__[0]} ${__testinfo__[2]}"
+    if [ ${__testinfo__[1]} -gt 0 ];then
+	pcpu=`echo "scale=2;${__testinfo__[0]} / ${__testinfo__[1]}" |bc -l`
+
+    fi
+    if [ ${__testinfo__[3]} -gt 0 ];then
+	pmem=`echo "scale=2;${__testinfo__[2]} / ${__testinfo__[3]}" |bc -l`
+
+    fi
+
+    if [ -n "$2" ];then
+	desc=$2
+    fi
+
+    if [ -f "$CHAOS_TEST_REPORT" ];then
+	local stat="FAILED"
+	if [ $status -eq 0 ];then
+	    stat="OK"
+	fi
+	echo "$__start_test_group__;$SCRIPTNAME;$stat;$exec_time;$pcpu;$pmem;$desc" >> $CHAOS_TEST_REPORT
+    fi
+    exit $status
 }
