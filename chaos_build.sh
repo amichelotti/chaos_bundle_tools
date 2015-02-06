@@ -214,8 +214,9 @@ for type in ${compile_type[@]} ; do
 		chaos_configure
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
+			info_mesg "Starting chaos testsuite (it takes some time)" "...."
 			start_profile_time
-			$PREFIX/tools/chaos_test.sh
+			$PREFIX/tools/chaos_test.sh >& $log
 			status=$?
 			tt=$(end_profile_time)
 			if [ $status -eq 0 ];then

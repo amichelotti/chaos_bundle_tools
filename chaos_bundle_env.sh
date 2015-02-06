@@ -62,6 +62,8 @@ fi;
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
 	export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
+	export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
+	export CFLAGS="$CFLAGS -g"
 #	export CXXFLAGS="$CXXFLAGS -fPIC -fsanitize=thread"
 #	export CFLAGS="$CFLAGS -fPIC -fsanitize=thread"
 #	export LDFLAGS="-pie -ltsan"
@@ -74,7 +76,6 @@ export CHAOS_BOOST_FLAGS=""
 if [ -n "$CHAOS_STATIC" ]; then
     export CHAOS_BOOST_FLAGS="link=static"
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DBUILD_FORCE_STATIC=true"
-
 else
     export CHAOS_BOOST_FLAGS="link=shared"
 fi
