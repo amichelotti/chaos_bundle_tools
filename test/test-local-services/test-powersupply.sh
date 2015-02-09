@@ -75,6 +75,11 @@ while ((tot<total));do
 	done
     done
     
+    if [ $tot -eq $total ];then
+	stop_proc $TESTEXE >& /dev/null
+	stop_proc $USNAME >& /dev/null
+	end_test $errors
+    fi
     if ! check_proc $TESTEXE>/dev/null;then
 	
 	res=$(( ((total-tot)!=0) || (errors!=0) ))
@@ -82,7 +87,7 @@ while ((tot<total));do
     fi
 
     
-    if [ $tot -neq $total ] && [ ${#proc_list[@]} -lt $NUS ];then
+    if [ "$tot" -neq "$total" ] && [ ${#proc_list[@]} -lt $NUS ];then
 	error_mesg "Unit Server $USNAME running (${#proc_list[@]}) less than expected ($NUS)"
 	end_test 1 "Unit Server $USNAME running (${#proc_list[@]}) less than expected ($NUS)"
     fi

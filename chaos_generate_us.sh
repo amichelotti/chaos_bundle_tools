@@ -7,7 +7,7 @@ pname="UnitServer"
 exename=`basename $0`
 lista_cu=();
 
-lista_driver=();
+lista_driver="";
 lista_driver_ns=();
 lista_h=();
 lista_hd=();
@@ -41,6 +41,7 @@ fi
 pushd $startdir > /dev/null
 
 listah=`find . -name "*.h"`;
+listacpp=`find . -name "*.cpp"`;
 project_dir=$outdir/$pname
 echo "* creating $project_dir"
 mkdir -p $project_dir
@@ -84,27 +85,35 @@ for c in $listah; do
     if [ -n "$filenamespace" ];then
 	filenamespace="::$filenamespace"
     fi
-    plugin=`grep ADD_CU_DRIVER_PLUGIN_SUPERCLASS $c -s`;
-    if [ -n "$plugin" ]; then
-	if [[ "$plugin" =~ class\ +(.+)\: ]]; then
+    # plugin=`grep ADD_CU_DRIVER_PLUGIN_SUPERCLASS $c -s`;
+    # if [ -n "$plugin" ]; then
+    # 	if [[ "$plugin" =~ class\ +(.+)\: ]]; then
 	    
-	    lista_driver+=("${BASH_REMATCH[1]}");
-	    lista_driver_ns+=("$filenamespace");
-	    lista_hd+=("$header");
-	fi
-    fi
+    # 	    lista_driver+=("${BASH_REMATCH[1]}");
+    # 	    lista_driver_ns+=("$filenamespace");
+    # 	    lista_hd+=("$header");
+    # 	fi
+    # fi
     if [ -n "$filenamespace" ];then
 	filenamespace="$filenamespace::"
     fi
-    cu=`grep -s PUBLISHABLE_CONTROL_UNIT_INTERFACE $c | sed 's/[:alpha:_]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
+    cu=`grep -s -o "PUBLISHABLE_CONTROL_UNIT_INTERFACE(.\+)" $c | sed 's/[:alpha:_]\+:://g'|sed "s/PUBLISHABLE_CONTROL_UNIT_INTERFACE(\(\w\+\))$/REGISTER_CU($filenamespace\1)/g"`;
     if [ -n "$cu" ]; then
 	echo "* got CU in $header"
 	lista_cu+=("$cu");
 	lista_h+=("$header");
     fi
 done
-# for c in $listacpp; do
+ for c in $listacpp; do
+     
 
+     plugin=`grep -s -o "OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(.\+)" $c| sed "s/OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(\(\w\+\),.\+,\(.*\)::\(.\+\))/REGISTER_DRIVER(\2,\3)/g"| sed "s/OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(\(\w\+\),.\+,\(.\+\))/REGISTER_DRIVER(,\2)/g"| sed s/\ //g`
+     if [[ "$plugin" =~ REGISTER_DRIVER\(.*,.+\) ]];then
+	 lista_driver="$lista_driver $plugin"
+
+	 nameh=`echo $c | sed s/\.cpp/\.h/|sed 's/src\///' | sed 's/source\///' | sed "s/\.\//$prefix\//g"`;
+	 lista_hd+=($nameh)
+     fi
 #     drv=`grep -s REGISTER_PLUGIN\( $c | sed s/REGISTER_PLUGIN\(/REGISTER_DRIVER\(/`;
 #     rr=`basename $startdir`
 
@@ -113,7 +122,7 @@ done
 # 	lista_driver+=("$drv");
 # 	lista_h+=("$header");
 #     fi
-# done;
+ done;
 
 listcmake=`find . -name "CMakeLists.txt"`;
 listadep=""
@@ -179,9 +188,10 @@ for c in ${lista_cu[@]}; do
     ((arr++))
 done
 arr=0
-for c in ${lista_driver[@]}; do
+for c in $lista_driver; do
     
-    echo -e "\t\tREGISTER_DRIVER(${lista_driver_ns[arr]},$c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
+#    echo -e "\t\tREGISTER_DRIVER(${lista_driver_ns[arr]},$c); /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
+     echo -e "\t\t$c; /* file: ${lista_hd[$arr]} */" >> $project_dir/main.cpp
   ((arr++))
 done
 echo -e "\t\tchaos::cu::ChaosCUToolkit::getInstance()->start();" >> $project_dir/main.cpp

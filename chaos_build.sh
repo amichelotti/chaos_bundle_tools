@@ -35,12 +35,22 @@ while getopts t:o:w:b:p:hd:rsc:k opt; do
 	    info_mesg "setting target to " "$compile_target";
 	    ;;
 	o) 
-	    compile_type=($OPTARG);
-	    info_mesg "setting type to " "$compile_type";
+	    if [[ ${compile_type[@]} =~ $OPTARG ]]; then 
+		compile_type=($OPTARG);
+		info_mesg "setting type to " "$compile_type";
+	    else
+		error_mesg "compile type one of: ${compile_type[@]}"
+		exit 1
+	    fi
 	    ;;
 	b) 
-	    compile_build=($OPTARG);
-	    info_mesg "setting build to " "$compile_build";
+	    if [[ ${compile_build[@]} =~ $OPTARG ]]; then 
+		compile_build=($OPTARG);
+		info_mesg "setting build to " "$compile_build";
+	    else
+		error_mesg "compile build one of ${compile_build[@]}"
+		exit 1
+	    fi
 	    ;;
 	r) 
 	    remove_working=true;
