@@ -355,9 +355,20 @@ build_mds_conf(){
     local out=$3
     local dataserver="$4"
     local lista_conf=""
+    local ncutype=0
+    local lista_file=$(find_cu_conf)
+    for l in $lista_file;do
+	((ncutype++))
+    done
+    if [ $ncutype -eq 0 ];then
+	error_mesg "at least one configuration file must be provided"
+	return 1
+    fi
 
     for l in $(find_cu_conf);do
-	lista_conf="-i $l -n $ncu "
+	local n=$((ncu/ncutype))
+	lista_conf="$lista_conf -i $l -n $n"
+	info_mesg "generating $n CU from " "$l"
     done
     
     local param="$lista_conf -j $nus -o $out"
@@ -365,11 +376,17 @@ build_mds_conf(){
 	param="$param -d $dataserver"
     fi
 
-    if [ -n "$lista_conf" ] && $CHAOS_TOOLS/chaos_build_conf.sh $param;then
+    if [ -n "$5" ];then
+	param="$param -c $5"
+    fi
+
+
+    if [ -n "$lista_conf" ] && $CHAOS_TOOLS/chaos_build_conf.sh $param >& /dev/null;then
 	ok_mesg "MDS configuration generated"
 	return 0
     else
 	nok_mesg "MDS configuration generated"
+	return 1
     fi
 }
 
@@ -572,7 +589,7 @@ launch_us_cu(){
 
     for ((us=0;us<$NUS;us++));do
 	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > /dev/null 2>&1 &" "$USNAME"; then
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else
@@ -612,7 +629,7 @@ end_test(){
     local __start_test_group__=`basename $__start_test_group__`
     local exec_time=`echo "scale=3;($__end_test_time__ - $__start_test_time__ )" |bc`
     read -r -a __testinfo__ </tmp/__chaos_test_info__
-    echo "===> ${__testinfo__[0]} ${__testinfo__[2]}"
+
     if [ ${__testinfo__[1]} -gt 0 ];then
 	pcpu=`echo "scale=2;${__testinfo__[0]} / ${__testinfo__[1]}" |bc -l`
 

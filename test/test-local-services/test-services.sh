@@ -21,8 +21,8 @@ else
     nok_mesg "CDS not bind a valid url"
     end_test 1 "CDS not bind a valid url"
 fi
-
-if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$execute_command" > /dev/null; then
+info_mesg "Building " "configuration"
+if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$execute_command" "TEST_CU" ; then
     nok_mesg "MDS configuration created"
     end_test 1 "MDS configuration"
 else

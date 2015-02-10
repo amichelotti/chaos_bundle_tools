@@ -1,13 +1,15 @@
 #!/bin/bash
 
 usname="TEST_UNIT"
-cuname="TEST_CU"
+cuname=""
 dataservers=()
 instances=()
 nus=1
 outfile="test_conf.mds"
 infile=()
 device_classes=()
+setcuclass="true"
+cucounter=0
 while getopts i:o:u:c:n:hd:j: opt; do
     case $opt in
 	i) infile+=($OPTARG)
@@ -23,6 +25,7 @@ while getopts i:o:u:c:n:hd:j: opt; do
 	u) usname="$OPTARG"
 	    ;;
 	c) cuname="$OPTARG"
+	    setcuclass=""
 	    ;;
 	d) dataservers+=("$OPTARG")
 	    ;;
@@ -66,6 +69,11 @@ function generate_cu(){
 
     variables=`cat $confile | grep -o '\$r[0-9]*'|sort -n |uniq`
     expressions=`cat $confile | grep -o '\$r[0-9]*([0-9\.,]*)'`
+    if [ -n "$setcuclass" ];then
+	local name=`basename $confile`
+	cuname=`echo $name|sed s/\.conf//|tr [:lower:] [:upper:]`
+
+    fi
     
     while ((ninstances--)); do
 	randoms=()
@@ -92,12 +100,22 @@ function generate_cu(){
 	    fi
 	    fi
 	done
-	
-	
-	eval $replace | sed s/\$US/$usown/g|sed s/\$CUID/$usown\\/$cuname\_$ninstances/g>> $outfile
+
+	if [ -n "$setcuclass" ];then
+	    cucounter=$ninstances
+	fi
+	if [ -n "$replace" ];then
+	    eval $replace | sed s/\$US/$usown/g|sed s/\$CUID/$usown\\/$cuname\_$cucounter/g>> $outfile
+	else
+	    cat $confile | sed s/\$US/$usown/g|sed s/\$CUID/$usown\\/$cuname\_$cucounter/g>> $outfile
+	fi
 	if (( $ninstances > 0 ));then
 	    echo ",">> $outfile
 	fi
+	if [ -z "$setcuclass" ];then
+	    ((cucounter++))
+	fi
+
     done
 }
 
@@ -154,6 +172,7 @@ function generate_us(){
 
     for (( d=0;d<$nus;++d)); do
 	name="$usname""_$d"
+	cucounter=0
 	echo -ne "{ \"unit_server_alias\" : \"$name\", \"private_key\" :  null  , \"public_key\" :  null  , \n\"cu_desc\" :[" >> $outfile
 	ninstp=0
 	for c in ${infile[@]}; do
@@ -166,6 +185,9 @@ function generate_us(){
 	    fi
 	    generate_cu $c $ninst $name
 	    ((ninstp++))
+	    if [ $ninstp -lt ${#infile[@]} ];then
+		echo "," >> $outfile
+	    fi
 	done
 	echo "]}" >> $outfile ## close cu array close us
 	if (( $d < $((nus -1)) )); then

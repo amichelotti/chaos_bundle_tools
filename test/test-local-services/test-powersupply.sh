@@ -87,7 +87,7 @@ while ((tot<total));do
     fi
 
     
-    if [ "$tot" -neq "$total" ] && [ ${#proc_list[@]} -lt $NUS ];then
+    if [ ${#proc_list[@]} -lt $NUS ];then
 	error_mesg "Unit Server $USNAME running (${#proc_list[@]}) less than expected ($NUS)"
 	end_test 1 "Unit Server $USNAME running (${#proc_list[@]}) less than expected ($NUS)"
     fi
