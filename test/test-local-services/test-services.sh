@@ -5,12 +5,15 @@ MDS_HOME=$CHAOS_PREFIX/chaosframework/ChaosMDSLite/
 rm -rf $MDS_HOME/mds_init.conf* >/dev/null
 NUS=10
 NCU=20
-
+TESTCU=""
 if [ -n "$1" ];then
     NUS=$1
 fi
 if [ -n "$2" ];then
     NCU=$2
+fi
+if [ -n "$3" ];then
+    TESTCU="$3"
 fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU"
 start_services || end_test 1 "cannot start services"
@@ -22,7 +25,7 @@ else
     end_test 1 "CDS not bind a valid url"
 fi
 info_mesg "Building " "configuration"
-if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$execute_command" "TEST_CU" ; then
+if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$execute_command" "TEST_CU" "$TESTCU"; then
     nok_mesg "MDS configuration created"
     end_test 1 "MDS configuration"
 else

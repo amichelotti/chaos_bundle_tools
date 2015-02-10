@@ -357,18 +357,39 @@ build_mds_conf(){
     local lista_conf=""
     local ncutype=0
     local lista_file=$(find_cu_conf)
+    local cuname=$5
+    local include="$6"
     for l in $lista_file;do
-	((ncutype++))
+	if [ -z "$include" ];then
+	    ((ncutype++))
+	else
+	    for ll in $include;do
+		if [[ $l =~ $ll ]];then
+		    ((ncutype++))
+		fi
+	    done
+	fi
     done
     if [ $ncutype -eq 0 ];then
 	error_mesg "at least one configuration file must be provided"
 	return 1
     fi
 
-    for l in $(find_cu_conf);do
+    for l in $lista_file;do
 	local n=$((ncu/ncutype))
-	lista_conf="$lista_conf -i $l -n $n"
-	info_mesg "generating $n CU from " "$l"
+	if [ -z "$include" ];then
+	    lista_conf="$lista_conf -i $l -n $n"
+	    info_mesg "generating $n CU from " "$l"
+	else
+	    for ll in $include;do
+		if [[ $l =~ $ll ]];then
+		    lista_conf="$lista_conf -i $l -n $n"
+		    info_mesg "generating $n CU from " "$l"
+		fi 
+	    done
+
+	   
+	fi
     done
     
     local param="$lista_conf -j $nus -o $out"
@@ -376,8 +397,8 @@ build_mds_conf(){
 	param="$param -d $dataserver"
     fi
 
-    if [ -n "$5" ];then
-	param="$param -c $5"
+    if [ -n "$cuname" ];then
+	param="$param -c $cuname"
     fi
 
 
@@ -433,17 +454,17 @@ chaos_cli_cmd(){
     local meta="$1"
     local cuname="$2"
     local param="$3"
-    local timeout=5000
+    local timeout=10000
     cli_cmd=""
     if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
 	timeout=$((timeout * 10))
     fi
-    cli_cmd=`ChaosCLI --metadata-server=$meta --deviceid $cuname --timeout $timeout $param 2>&1`
+    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --metadata-server=$meta --deviceid $cuname --timeout $timeout $param 2>&1`
    
     if [ $? -eq 0 ]; then
 	return 0
     fi
-    error_mesg "Error \"ChaosCLI --metadata-server=$meta --deviceid $cuname $param \" returned:$out"
+    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server=$meta --deviceid $cuname $param \" returned:$cli_cmd"
     return 1
 
 }
@@ -589,7 +610,7 @@ launch_us_cu(){
 
     for ((us=0;us<$NUS;us++));do
 	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else
