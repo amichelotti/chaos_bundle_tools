@@ -230,7 +230,11 @@ for type in ${compile_type[@]} ; do
 			info_mesg "Starting chaos testsuite (it takes some time), test report file" "test-$tgt.csv"
 			start_profile_time
 			echo "===== TESTING ====" >> $log 2>&1 
-			$PREFIX/tools/chaos_test.sh -r test-$tgt.csv >> $log 2>&1 
+			if [ "$build" == "debug" ];then
+			      $PREFIX/tools/chaos_test.sh -g -r test-$tgt.csv >> $log 2>&1 
+			else
+			    $PREFIX/tools/chaos_test.sh -r test-$tgt.csv >> $log 2>&1 
+			fi
 			status=$?
 			tt=$(end_profile_time)
 			if [ $status -eq 0 ];then

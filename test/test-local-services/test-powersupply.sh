@@ -57,6 +57,19 @@ while ((tot<total));do
     fi
     info_mesg "errors " "$errors/$tot"
     info_mesg "success " "$success/$tot"
+
+    if [ $tot -eq $total ];then
+	stop_proc $TESTEXE >& /dev/null
+	stop_proc $USNAME >& /dev/null
+	end_test $errors
+    fi
+
+    # if ! check_proc $TESTEXE>/dev/null;then
+	
+    # 	res=$(( ((total-tot)!=0) || (errors!=0) ))
+    # 	end_test $res
+    # fi
+
     for ((us=0;us<$NUS;us++));do
 	for ((cu=0;cu<$NCU;cu++));do
 	    if grep -o "Test powersupply OK" $CHAOS_PREFIX/log/$TESTEXE-$us-$cu.log >& /dev/null;then
@@ -75,17 +88,7 @@ while ((tot<total));do
 	done
     done
     
-    if [ $tot -eq $total ];then
-	stop_proc $TESTEXE >& /dev/null
-	stop_proc $USNAME >& /dev/null
-	end_test $errors
-    fi
 
-    if ! check_proc $TESTEXE>/dev/null;then
-	
-	res=$(( ((total-tot)!=0) || (errors!=0) ))
-	end_test $res
-    fi
 
     
     # if [ ${#proc_list[@]} -lt $NUS ];then

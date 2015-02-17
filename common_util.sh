@@ -499,7 +499,40 @@ get_timestamp_cu(){
     return 1
 }
 
+get_dataset_cu(){
+    local meta="$1"
+    local cuname="$2"
+    local type="$3"
+    if [ -z "$type" ];then
+	type=0
+    fi
 
+    if ! chaos_cli_cmd $meta $cuname "--print-dataset $type";then
+	return 1
+    fi
+
+    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+	timestamp_cu=${BASH_REMATCH[1]}
+    else
+	return 1
+    fi
+
+    dataset_cu="$cli_cmd"
+    return 0
+}
+
+get_hdataset_cu(){
+    local meta="$1"
+    local cuname="$2"
+    local st_time="$3"
+    local end_time="$4"
+    local filename="$5"
+    info_mesg "dumping historical data for cu $cuname interval " "$end_time-$st_time"
+    if ! $CHAOS_PREFIX/bin/ChaosDataExport --metadata-server $meta --device-id $cuname --start-time $st_time --end-time $end_time --dest-file $filename --dest-type 1 > $CHAOS_PREFIX/log/ChaosDataExport.log 2>&1 ;then
+	return 1
+    fi
+    return 0
+}
 loop_cu_test(){
     local meta="$1"
     local cuname="$2"
