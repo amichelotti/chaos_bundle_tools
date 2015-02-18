@@ -28,7 +28,7 @@ Usage(){
     echo -e "Usage is $0 [ -i <source dir> ] [-p <package name > ] [-v <version> ] [-c] [-s] [-d] [-a]\n-i <source dir>: a valid source chaos distribution [$SOURCE_DIR]\n-p <package name>: is the package name prefix [$PACKAGE_NAME]\n-v <version>:a version of the package distribution [$VERSION]\n-c: client distribution (i.e US) [$CLIENT]\n-s: server distribution (CDS,MDS..)\n-a: development with all (client, server and includes)\n-d: dynamic distribution\n-t <i386|x86_64|armhf> [$ARCH]\n"
     exit 1
 }
-while getopts p:i:v:dt: opt; do
+while getopts p:i:v:dt:sac opt; do
     case $opt in
 	p) PACKAGE_NAME=$OPTARG
 	    ;;

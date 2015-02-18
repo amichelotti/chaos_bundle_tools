@@ -345,6 +345,10 @@ get_abs_dir() {
  
   echo "$(cd "$1" && pwd)"
 }
+get_abs_parent_dir() {
+ 
+  echo "$(cd "$(dirname "$1")" && pwd)"
+}
 
 find_cu_conf(){
     find $CHAOS_PREFIX/etc -name "*.conf"
@@ -680,7 +684,7 @@ end_test(){
     local pmem="--"
     local __end_test_time__=`date $time_format`
     local __start_test_name__=$SCRIPTNAME
-    local __start_test_group__=$(get_abs_dir $SCRIPTTESTPATH)
+    local __start_test_group__=$(get_abs_parent_dir $SCRIPTTESTPATH)
     local __start_test_group__=`basename $__start_test_group__`
     local exec_time=`echo "scale=3;($__end_test_time__ - $__start_test_time__ )" |bc`
     read -r -a __testinfo__ </tmp/__chaos_test_info__

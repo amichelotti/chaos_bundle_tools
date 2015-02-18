@@ -2,7 +2,7 @@
 cmd=$1
 scriptdir=`dirname $0`
 source $scriptdir/common_util.sh
-scriptdir=$(get_abs_dir $0)
+scriptdir=$(get_abs_parent_dir $0)
 testdir=$scriptdir/test
 testlists=()
 test_found=0
