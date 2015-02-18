@@ -5,59 +5,107 @@ dir=`pwd -P`
 popd > /dev/null
 source $dir/common_util.sh
 
-VERSION="0.0"
-ARCH="i386"
-PACKAGE_NAME=""
 SOURCE_DIR=""
-VER_DIR=""
 
 
 copy(){
-    if ! cp -a $1 $2 >&/dev/null;then
+    if ! cp -af $1 $2 >&/dev/null;then
 	error_mesg "cannot copy from $1 to $2"
 	exit 1
     fi
 
 }
+VERSION="0.1"
+PACKAGE_NAME="chaos"
+SOURCE_DIR=""
+if [ -n "$CHAOS_PREFIX" ];then
+    SOURCE_DIR=$CHAOS_PREFIX
+fi
 
-if [ ! -n "$1" ]; then
-    echo "## you must specify a <package name> <source dir> <version> [-u]"
-    echo "-u:generate a simplified distribution for unit server deploy"
+CLIENT="true"
+
+Usage(){
+    echo -e "Usage is $0 [ -i <source dir> ] [-p <package name > ] [-v <version> ] [-c] [-s] [-d] [-a]\n-i <source dir>: a valid source chaos distribution [$SOURCE_DIR]\n-p <package name>: is the package name prefix [$PACKAGE_NAME]\n-v <version>:a version of the package distribution [$VERSION]\n-c: client distribution (i.e US) [$CLIENT]\n-s: server distribution (CDS,MDS..)\n-a: development with all (client, server and includes)\n-d: dynamic distribution\n-t <i386|x86_64|armhf> [$ARCH]\n"
     exit 1
-else
-    PACKAGE_NAME="$1"
+}
+while getopts p:i:v:dt: opt; do
+    case $opt in
+	p) PACKAGE_NAME=$OPTARG
+	    ;;
+	i) SOURCE_DIR=$OPTARG
+	    ;;
+	v) VERSION=$OPTARG
+	    ;;
+	c) CLIENT="true"
+	    SERVER=""
+	    ;;
+	s) SERVER="true"
+	    CLIENT=""
+	    ;;
+	a) ALL="true"
+	    ;;
+        d) DYNAMIC="true"
+	    ;;
+        t) ARCH=$OPTARG
+	    ;;
+	*)
+	    Usage
+    esac
+	
+done
+
+
+SOURCE_DIR=$(get_abs_dir $SOURCE_DIR)
+
+
+if [ ! -d "$SOURCE_DIR" ];then
+    error_mesg "missing a valid source directory"
+    Usage
 fi
 
-if [[ (! -d "$2" ) || ( -h "$2" ) ]]; then
-    error_mesg "you must specify a <source dir> (not a link)"
-    exit 1
-else
-    SOURCE_DIR="$2"
+if [ "$ARCH" != "i386" ] && [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "armhf" ];then
+    error_mesg " you must specify a valid architecture"
+    Usage;
 fi
 
-if [ ! -n "$3" ]; then
-    error_mesg "you must specify a <version>"
-    exit 1;
-else
-    VERSION="$3"
+if [ "$ARCH" == "x86_64" ];then
+    ARCH="amd64"
+fi
+	  
+EXT=""
+if [ -n "$CLIENT" ];then
+    EXT="client"
+    desc="Client !CHAOS package include libraries and binaries"
 fi
 
+if [ -n "$SERVER" ];then
+    EXT="server"
+    desc="Server !CHAOS package include libraries and binaries"
+fi
 
-if [ "$CHAOS_TARGET" == "armhf" ]; then
-    ARCH="armhf"
-fi;
+if [ -n "$ALL" ];then
+    EXT="devel"
+    desc="Development package include libraries, includes and tools"
+fi
 
-NAME=$PACKAGE_NAME-$VERSION
-PACKAGE_DIR="/tmp/$PACKAGE_NAME-$ARCH-$VERSION"
+if [ -n "$DYNAMIC" ];then
+    EXT="dyn-$EXT"
+else
+    EXT="static-$EXT"
+fi
+
+NAME=$PACKAGE_NAME-$EXT-$ARCH-$VERSION
+PACKAGE_DIR="/tmp/$NAME"
 PACKAGE_DEST="$PACKAGE_DIR/usr/local/$NAME"
 DEBIAN_DIR="$PACKAGE_DIR/DEBIAN"
+info_mesg "taking distribution $SOURCE_DIR, building " "$NAME"
 if !(mkdir -p "$DEBIAN_DIR"); then
     echo "## cannot create $DEBIAN_DIR"
     exit 1
 fi;
 
 
-if [ "$4" == "-u" ];then
+if [ -n "$CLIENT" ];then
    if mkdir -p $PACKAGE_DEST/bin;then
        copy $SOURCE_DIR/bin/UnitServer $PACKAGE_DEST/bin
 
@@ -65,45 +113,42 @@ if [ "$4" == "-u" ];then
        error_mesg "cannot create directory " "$PACKAGE_DEST/bin"
        exit 1
    fi
-else
+fi
 
-    copy $SOURCE_DIR/* $PACKAGE_DEST
+if [ -n "$SERVER" ];then
+    copy $SOURCE_DIR/bin $PACKAGE_DEST
+fi
+
+if [ -n "$ALL" ];then
+    copy $SOURCE_DIR $PACKAGE_DEST
 fi
 
 copy $SOURCE_DIR/tools/package_template/etc $PACKAGE_DIR
-if [ -z "$CHAOS_STATIC" ]; then
+
+if [ -n "$DYNAMIC" ]; then
     copy $SOURCE_DIR/lib $PACKAGE_DEST/
     mkdir -p $PACKAGE_DIR/etc/ld.so.conf.d/
     echo "/usr/local/$NAME/lib" > $PACKAGE_DIR/etc/ld.so.conf.d/$PACKAGE_NAME.conf
 fi
 
-# if [ "$ARCH" == "i386" ]; then
-#     ## then localize libstdc++
-#     libcpp=`locate libstdc++.so.6`
-#     cp $libcpp $PACKAGE_DEST/usr/local/lib
-#     libcpp=`locate libc.so.6`
-#     cp $libcpp $PACKAGE_DEST/usr/local/lib
-#     libcpp=`locate ld-linux.so`
-#     cp $libcpp $PACKAGE_DEST/usr/local/lib
-# fi;
 
-echo "Package: $PACKAGE_NAME" > $DEBIAN_DIR/control
-echo "Filename: $PACKAGE_NAME-$ARCH-$VERSION.deb" >> $DEBIAN_DIR/control
+echo "Package: $PACKAGE_NAME-$EXT" > $DEBIAN_DIR/control
+echo "Filename: $NAME.deb" >> $DEBIAN_DIR/control
 echo "Version: $VERSION" >> $DEBIAN_DIR/control
 echo "Section: base" >> $DEBIAN_DIR/control
 echo "Priority: optional" >> $DEBIAN_DIR/control
 echo "Architecture: $ARCH" >> $DEBIAN_DIR/control
-echo "Depends: bash (>= 2.05a-11),gcc(>=4.4),g++(>=4.4)" >> $DEBIAN_DIR/control
-echo "Maintainer: claudio bisegni claudio.bisegni@lnf.infn.it, Andrea Michelotti andrea.michelotti@lnf.infn.it" >> $DEBIAN_DIR/control
-if [ "$4" == "-u" ];then
-    echo "Description: lite dristribution" >> $DEBIAN_DIR/control
+if [ "$ALL" ];then
+    echo "Depends: bash (>= 3),gcc(>=4.8),g++(>=4.8), cmake(>=2.6)" >> $DEBIAN_DIR/control
 else
-    echo "Description: chaos bundle, includes core libraries, binaries and includes for development" >> $DEBIAN_DIR/control
+    echo "Depends: bash (>= 3)" >> $DEBIAN_DIR/control
 fi
+echo "Maintainer: claudio bisegni claudio.bisegni@lnf.infn.it, Andrea Michelotti andrea.michelotti@lnf.infn.it" >> $DEBIAN_DIR/control
+echo "Description: $desc" >> $DEBIAN_DIR/control
 
 cd $PACKAGE_DIR
-copy "$CHAOS_TOOLS/package_template/DEBIAN/postrm" DEBIAN/
-copy "$CHAOS_TOOLS/package_template/DEBIAN/postinst" DEBIAN/
+copy "$SOURCE_DIR/tools/package_template/DEBIAN/postrm" DEBIAN/
+copy "$SOURCE_DIR/tools/package_template/DEBIAN/postinst" DEBIAN/
 
 listabin=`ls $PACKAGE_DEST/bin`
 for i in $listabin;do
@@ -111,7 +156,7 @@ for i in $listabin;do
     echo "ln -sf /usr/local/$NAME/bin/$name /usr/bin" >> DEBIAN/postinst
     echo "rm /usr/bin/$name" >> DEBIAN/postrm 
 done
-if [ -z "$CHAOS_STATIC" ]; then
+if [ -n "$DYNAMIC" ]; then
     echo "rm -f /etc/ld.so.conf.d/$PACKAGE_NAME.conf" >> DEBIAN/postrm
     echo "ldconfig" >> DEBIAN/postinst
 fi
@@ -120,9 +165,9 @@ echo "rm -rf /usr/local/$NAME" >>DEBIAN/postrm
 chmod 0555 DEBIAN/postrm
 chmod 0555 DEBIAN/postinst
 cd - > /dev/null
-info_mesg "packaging $PACKAGE_NAME-$ARCH-$VERSION for architecture " "$ARCH .."
+info_mesg "packaging $NAME for architecture " "$ARCH .."
 dpkg-deb -b $PACKAGE_DIR > /dev/null
 mv $PACKAGE_DIR.deb .
-info_mesg "created " "$PACKAGE_NAME-$ARCH-$VERSION.deb"
+info_mesg "created " "$NAME.deb"
 
 rm -rf $PACKAGE_DIR

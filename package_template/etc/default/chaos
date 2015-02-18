@@ -1,2 +1,15 @@
-UNITSERVER=/usr/local/bin/UnitServer
-LOG=/dev/null
+## configuration of CHAOS client and server applications
+METADATASERVER=chaost-mds1.chaos.lnf.infn.it:5000
+
+## if not defined takes the name of the HW address of eth0
+# USNAME=<myname>
+
+## UNITSERVER binary
+# UNITSERVER=/usr/bin/UnitServer
+
+## LOG FILE FOR UNIT SERVER
+UNITSERVER_LOG=/dev/null
+
+## ip published on the !CHAOS cloud
+## if commented autodetect
+# PUBLISHIP=

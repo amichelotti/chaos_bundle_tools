@@ -343,7 +343,7 @@ get_abs_filename() {
 
 get_abs_dir() {
  
-  echo "$(cd "$(dirname "$1")" && pwd)"
+  echo "$(cd "$1" && pwd)"
 }
 
 find_cu_conf(){

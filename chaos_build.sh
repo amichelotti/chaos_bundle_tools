@@ -8,7 +8,7 @@ popd > /dev/null
 source $dir/common_util.sh
 err=0
 
-prefix_build=chaos_dev
+prefix_build=chaos
 outbase=$dir/../
 create_deb_ver=""
 remove_working="false"
@@ -76,7 +76,7 @@ while getopts t:o:w:b:p:hd:rsc:k opt; do
 	    ;;
 	d)
 	    create_deb_ver="$OPTARG"
-	    info_mesg "create debian package version" "$create_deb_ver"
+	    info_mesg "create debian package version " "$create_deb_ver"
 	    ;;
 	s)
 	    switch_env=true
@@ -248,7 +248,20 @@ for type in ${compile_type[@]} ; do
 		fi
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
-		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver -u >> $log 2>&1; then
+		    extra="-i $PREFIX -v $create_deb_ver -t $target"
+		    if [ -z "$CHAOS_STATIC" ];then
+			extra="$extra -d"
+		    fi
+		    info_mesg "creating debian package " "client"
+		    if $dir/chaos_debianizer.sh $extra  >> $log 2>&1; then
+			ok_mesg "debian package generated"
+		    fi
+		    info_mesg "creating debian package " "server"
+		    if $dir/chaos_debianizer.sh $extra  -s >> $log 2>&1; then
+			ok_mesg "debian package generated"
+		    fi
+		    info_mesg "creating debian package " "devel"
+		    if $dir/chaos_debianizer.sh $extra  -a >> $log 2>&1; then
 			ok_mesg "debian package generated"
 		    fi
 		fi
