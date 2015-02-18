@@ -50,58 +50,40 @@ for ((us=0;us<$NUS;us++));do
     done
 done
 
-declare -A dataset
-for ((us=0;us<$NUS;us++));do
-    for ((cu=0;cu<$NCU;cu++));do
 
-	cnt=0
-	start_timestamp=0
-	end_timestamp=0
-	info_mesg "acquiring dataset of TEST_UNIT_$us/TEST_CU_$cu for " "$ACQUIRE_S s"
-	if get_timestamp_cu $META "TEST_UNIT_$us/TEST_CU_$cu";then
-	    ok_mesg "- timestamp TEST_UNIT_$us/TEST_CU_$cu"
-	    start_timestamp=$timestamp_cu
-	else
-	    nok_mesg "- timestamp TEST_UNIT_$us/TEST_CU_$cu"
-	    end_test 1 "getting initial timestamp of TEST_UNIT_$us/TEST_CU_$cu"
-	fi
-	rm /tmp/dataset >/dev/null
-	while ((cnt<ACQUIRE_S));do
-	    
+
+if get_timestamp_cu $META "TEST_UNIT_0/TEST_CU_0";then
+    ok_mesg "- timestamp start"
+    start_timestamp=$timestamp_cu
+else
+    nok_mesg "- timestamp start"
+    end_test 1 "getting initial timestamp "
+fi
+
+rm /tmp/hexp_dataset_*-*-*-* >& /dev/null
+cnt=0
+while ((cnt<ACQUIRE_S));do
+    for ((us=0;us<$NUS;us++));do
+	for ((cu=0;cu<$NCU;cu++));do
 	    if get_dataset_cu $META "TEST_UNIT_$us/TEST_CU_$cu";then
 		ok_mesg "- $cnt/$ACQUIRE_S dataset TEST_UNIT_$us/TEST_CU_$cu"
-       
+		echo "$dataset_cu" >> /tmp/hexp_dataset_$us-$cu-$start_timestamp-0
+		end_timestamp=$timestamp_cu
 	    else
 		nok_mesg "- $cnt/$ACQUIRE_S dataset TEST_UNIT_$us/TEST_CU_$cu"
 		end_test 1 "getting dataset of TEST_UNIT_$us/TEST_CU_$cu"
 	    fi
-	    ## acquire and store dataset
-	    dataset["$timestamp_cu"]="$dataset_cu"
-	    echo "$dataset_cu" >> /tmp/dataset
-	    ((cnt++))
-	    sleep 1
-	done
-	if get_timestamp_cu $META "TEST_UNIT_$us/TEST_CU_$cu";then
-	    ok_mesg "- timestamp TEST_UNIT_$us/TEST_CU_$cu"
-	    end_timestamp=$timestamp_cu
-	else
-	    nok_mesg "- timestamp TEST_UNIT_$us/TEST_CU_$cu"
-	    end_test 1 "getting final timestamp of TEST_UNIT_$us/TEST_CU_$cu"
-	fi
-
-	info_mesg "acquisition for TEST_UNIT_$us/TEST_CU_$cu ended interval " "$end_timestamp-$start_timestamp"
-	rm /tmp/hexp_dataset_$us-$cu >/dev/null
-	for i in ${!dataset[@]};do
-	    echo "${dataset[$i]}" >> /tmp/hexp_dataset_$us-$cu
-	done
-
-	if get_hdataset_cu $META "TEST_UNIT_$us/TEST_CU_$cu" $start_timestamp $end_timestamp /tmp/hdataset_$end_timestamp-$start_timestamp;then
-	    ok_mesg "historical data retrived" 
-	else
-	    nok_mesg "historical data retrived" 
-	    end_test 1 "retriving historical data of TEST_UNIT_$us/TEST_CU_$cu"
-	fi
+	done;
     done;
+    ((cnt++))
+    sleep 1
 done;
+
+for ((us=0;us<$NUS;us++));do
+    for ((cu=0;cu<$NCU;cu++));do
+	mv /tmp/hexp_dataset_$us-$cu-$start_timestamp-0 /tmp/hexp_dataset_$us-$cu-$start_timestamp-$end_timestamp
+    done
+done
+
 stop_proc $USNAME
 end_test 0

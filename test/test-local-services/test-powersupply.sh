@@ -48,7 +48,7 @@ success=0
 errors=0
 tot=0
 total=$((NUS*NCU))
-while ((tot<total));do
+while ((tot<=total));do
     clear
     info_mesg "Test $TESTEXE in progress " "$tot/$total done"
     if ! check_proc $USNAME;then
@@ -58,9 +58,9 @@ while ((tot<total));do
     info_mesg "errors " "$errors/$tot"
     info_mesg "success " "$success/$tot"
 
-    if [ $tot -eq $total ];then
-	stop_proc $TESTEXE >& /dev/null
-	stop_proc $USNAME >& /dev/null
+    if [ "$tot" -eq "$total" ];then
+	stop_proc "$TESTEXE" >& /dev/null
+	stop_proc "$USNAME" >& /dev/null
 	end_test $errors
     fi
 
@@ -101,6 +101,6 @@ while ((tot<total));do
     sleep 5
 
 done
-stop_proc $TESTEXE >& /dev/null
-stop_proc $USNAME >& /dev/null
+stop_proc "$TESTEXE" >& /dev/null
+stop_proc "$USNAME" >& /dev/null
 end_test $errors

@@ -106,6 +106,7 @@ function saveEnv(){
 	echo "export CHAOS_TARGET=$CHAOS_TARGET" >> $PREFIX/chaos_env.sh
     fi
     echo "export CHAOS_PREFIX=\$PWD" >> $PREFIX/chaos_env.sh
+    echo "export CHAOS_TOOLS=\$CHAOS_PREFIX/tools" >> $PREFIX/chaos_env.sh
     echo "if [ -z \"\$CHAOS_BUNDLE\" ];then" >> $PREFIX/chaos_env.sh
     echo -e "\texport CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $PREFIX/chaos_env.sh
     echo "fi" >> $PREFIX/chaos_env.sh

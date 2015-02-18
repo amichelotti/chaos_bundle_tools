@@ -227,7 +227,7 @@ for type in ${compile_type[@]} ; do
 		chaos_configure
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
-			info_mesg "Starting chaos testsuite (it takes some time), test report file" "test-$tgt.csv"
+			info_mesg "Starting chaos testsuite (it takes some time), test report file " "test-$tgt.csv"
 			start_profile_time
 			echo "===== TESTING ====" >> $log 2>&1 
 			if [ "$build" == "debug" ];then
@@ -248,7 +248,7 @@ for type in ${compile_type[@]} ; do
 		fi
 		if [ -n "$create_deb_ver" ]; then
 		    nameok=`echo $tgt | sed s/_/-/g`
-		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver >> $log 2>&1; then
+		    if $dir/chaos_debianizer.sh $nameok $PREFIX $create_deb_ver -u >> $log 2>&1; then
 			ok_mesg "debian package generated"
 		    fi
 		fi

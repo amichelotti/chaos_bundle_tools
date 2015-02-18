@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "* installing !CHAOS and service"
+pushd /etc/rc5.d >/dev/null
+ln -s ../init.d/chaos.sh S87chaos
+cd /etc/rc0.d
+ln -s ../init.d/chaos.sh K87chaos
+popd > /dev/null

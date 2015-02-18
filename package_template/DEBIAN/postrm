@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "* uninstalling !CHAOS and service"
+rm /etc/rc5.d/S87chaos
+rm /etc/rc0.d/K87chaos
