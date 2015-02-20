@@ -1,5 +1,6 @@
 ## configuration of CHAOS client and server applications
-METADATASERVER=chaost-mds1.chaos.lnf.infn.it:5000
+#METADATASERVER=chaost-mds1.chaos.lnf.infn.it:5000
+METADATASERVER=192.168.150.31
 
 ## if not defined takes the name of the HW address of eth0
 # USNAME=<myname>
@@ -8,7 +9,7 @@ METADATASERVER=chaost-mds1.chaos.lnf.infn.it:5000
 # UNITSERVER=/usr/bin/UnitServer
 
 ## LOG FILE FOR UNIT SERVER
-UNITSERVER_LOG=/dev/null
+UNITSERVER_LOG=/root/us.log
 
 ## ip published on the !CHAOS cloud
 ## if commented autodetect

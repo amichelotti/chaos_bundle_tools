@@ -116,7 +116,14 @@ if [ -n "$CLIENT" ];then
 fi
 
 if [ -n "$SERVER" ];then
-    copy $SOURCE_DIR/bin $PACKAGE_DEST
+   if mkdir -p $PACKAGE_DEST/bin;then
+       copy $SOURCE_DIR/bin $PACKAGE_DEST
+   else
+       error_mesg "cannot create directory " "$PACKAGE_DEST/bin"
+       exit 1
+   fi
+
+
 fi
 
 if [ -n "$ALL" ];then

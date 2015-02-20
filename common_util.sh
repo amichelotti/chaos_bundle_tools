@@ -83,6 +83,7 @@ function setEnv(){
 	exit 1
     fi
     info_mesg "CHAOS_BUNDLE  :" "$CHAOS_BUNDLE"
+    info_mesg "Host Arch     :" "$ARCH"
     info_mesg "Target        :" "$target"
     info_mesg "Type          :" "$type"
     info_mesg "Configuration :" "$build"

@@ -31,8 +31,13 @@ build=${compile_build[0]}
 while getopts t:o:w:b:p:hd:rsc:k opt; do
     case $opt in
 	t)
-	    compile_target=($OPTARG);
-	    info_mesg "setting target to " "$compile_target";
+	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
+		compile_target=($OPTARG);
+		info_mesg "setting target to " "$compile_target";
+	    else
+		error_mesg "compile targets one of: ${compile_target[@]}"
+		exit 1
+	    fi
 	    ;;
 	o) 
 	    if [[ ${compile_type[@]} =~ $OPTARG ]]; then 
