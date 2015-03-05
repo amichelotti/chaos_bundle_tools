@@ -53,6 +53,8 @@ nok_mesg(){
 }
 
 function unSetEnv(){
+    unset CC
+    unset CXX
     unset CHAOS_STATIC
     unset CHAOS_TARGET
     unset CHAOS_DEVELOPMENT

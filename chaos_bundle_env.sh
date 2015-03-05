@@ -17,7 +17,7 @@ export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread"
+export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread rt"
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
@@ -39,13 +39,8 @@ export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib:$LD_LIBRARY_PATH
 #export MONGO_VERSION=26compat
 export MONGO_VERSION=legacy-1.0.0-rc0
 export LIB_EVENT_VERSION=release-2.1.4-alpha
-export CC=gcc
-export CXX=g++
-export LD=ld
+
 unset CHAOS_CROSS_HOST
-unset CC
-unset CXX
-unset LD
 export CHAOS_CMAKE_FLAGS=""
 
 if [ "$CHAOS_TARGET" == "armhf" ]; then

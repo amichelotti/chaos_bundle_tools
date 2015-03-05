@@ -8,6 +8,7 @@ CDS_CONF=cds.cfg
 
 UI_EXEC=CUIserver
 US_EXEC=UnitServer
+WAN_EXEC=ChaosWANProxy
 cds_checks(){
     if [ -z "$CHAOS_PREFIX" ]; then
 	error_mesg "CHAOS_PREFIX environment variables not set"
@@ -51,6 +52,7 @@ mds_checks(){
 	    error_mesg "directory $MDS_DIR not found"
 	    exit 1
 	fi
+	mkdir -p $CHAOS_PREFIX/log
 	MDS_LOG=$CHAOS_PREFIX/log/mds.log
     fi
 
@@ -132,6 +134,10 @@ stop_all(){
 	stop_proc "$US_EXEC"
 	status=$((status + $?))
     fi
+    if [ -n "$(get_pid $WAN_EXEC)" ];then
+	stop_proc "$WAN_EXEC"
+	status=$((status + $?))
+    fi
 
     exit $status
 }
@@ -152,6 +158,12 @@ status(){
     status=$((status + $?))
     check_proc "$UI_EXEC"
     status=$((status + $?))
+
+
+    if [ -n "$(get_pid $WAN_EXEC)" ];then
+	check_proc "$WAN_EXEC"
+    fi
+
 
     if [ -n "$(get_pid $US_EXEC)" ];then
 	check_proc "$US_EXEC"

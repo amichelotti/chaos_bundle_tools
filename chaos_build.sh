@@ -148,8 +148,8 @@ fi
 
 
 
-for type in ${compile_type[@]} ; do
-    for target in ${compile_target[@]} ; do
+for target in ${compile_target[@]} ; do
+    for type in ${compile_type[@]} ; do
 	for build in ${compile_build[@]} ; do
 	    error=0
 	    init_tgt_vars;
