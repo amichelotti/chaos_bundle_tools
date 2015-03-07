@@ -80,8 +80,9 @@ check_proc "tomcat:run" || end_test 1 "MDS not running"
 check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 info_mesg "performing test " "CREST"
-if run_proc "$CHAOS_PREFIX/bin/crest_test localhost:8082 > $CHAOS_PREFIX/log/crest_test.log" "crest_test";then
+if $CHAOS_PREFIX/bin/crest_test localhost:8082 1000 > $CHAOS_PREFIX/log/crest_test.log ;then
     ok_mesg "CREST"
+    cat $CHAOS_PREFIX/log/crest_test.log |grep average
 else
     nok_mesg "CREST"
     end_test 1 "CREST test failed"
