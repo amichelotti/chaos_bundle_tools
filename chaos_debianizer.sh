@@ -98,6 +98,7 @@ NAME=$PACKAGE_NAME-$EXT-$ARCH-$VERSION
 PACKAGE_DIR="/tmp/$NAME"
 PACKAGE_DEST="$PACKAGE_DIR/usr/local/$NAME"
 DEBIAN_DIR="$PACKAGE_DIR/DEBIAN"
+rm -rf $PACKAGE_DIR >& /dev/null
 info_mesg "taking distribution $SOURCE_DIR, building " "$NAME"
 if !(mkdir -p "$DEBIAN_DIR"); then
     echo "## cannot create $DEBIAN_DIR"
@@ -154,8 +155,13 @@ echo "Maintainer: claudio bisegni claudio.bisegni@lnf.infn.it, Andrea Michelotti
 echo "Description: $desc" >> $DEBIAN_DIR/control
 
 cd $PACKAGE_DIR
-copy "$SOURCE_DIR/tools/package_template/DEBIAN/postrm" DEBIAN/
-copy "$SOURCE_DIR/tools/package_template/DEBIAN/postinst" DEBIAN/
+echo "#!/bin/sh" > DEBIAN/postrm
+echo "#!/bin/sh" > DEBIAN/postinst
+echo "INSTDIR=/usr/local/$NAME" >> DEBIAN/postrm
+echo "INSTDIR=/usr/local/$NAME" >> DEBIAN/postinst
+
+cat "$SOURCE_DIR/tools/package_template/DEBIAN/postrm" >> DEBIAN/postrm
+cat "$SOURCE_DIR/tools/package_template/DEBIAN/postinst" >> DEBIAN/postinst
 
 listabin=`ls $PACKAGE_DEST/bin`
 for i in $listabin;do
@@ -167,8 +173,7 @@ if [ -n "$DYNAMIC" ]; then
     echo "rm -f /etc/ld.so.conf.d/$PACKAGE_NAME.conf" >> DEBIAN/postrm
     echo "ldconfig" >> DEBIAN/postinst
 fi
-echo "echo \"removing /usr/local/$NAME\"" >>DEBIAN/postrm
-echo "rm -rf /usr/local/$NAME" >>DEBIAN/postrm
+
 chmod 0555 DEBIAN/postrm
 chmod 0555 DEBIAN/postinst
 cd - > /dev/null

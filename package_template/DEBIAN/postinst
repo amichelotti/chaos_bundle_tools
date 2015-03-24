@@ -1,4 +1,40 @@
-#!/bin/bash
-echo "* installing !CHAOS and service"
-update-rc.d chaos.sh start 90 5 stop 90 0 1 6
+echo "* installing !CHAOS and services in $INSTDIR"
+chaoslist=`ls /etc/init/__chaos*`
+if cat /sys/class/net/eth0/address > /dev/null;then
+	USNAME=`cat /sys/class/net/eth0/address`
+else
+	USNAME=`hostname`
+fi
+FORSED=$(echo $INSTDIR|sed 's/\//\\\//g')
+echo "* default USNAME $USNAME, $FORSED"
 
+for i in $chaoslist;do
+    name=`echo $i|sed s/__chaos/chaos/`
+    if cat $i | sed s/__prefix_dir__/$FORSED/g | sed s/__server_alias__/$USNAME/g > $name;then
+	echo "* generating configuration script $name"
+    else
+	echo "# generation failed of configuration script $name"
+    fi
+    rm -f $i > /dev/null
+done
+
+chaoslist=`ls /etc/default/__*.cfg`
+mkdir $INSTDIR/etc/
+mkdir $INSTDIR/log
+
+for i in $chaoslist;do
+    name=`echo $i|sed s/__//`
+    bname=`basename $name`
+    if cat $i | sed s/__prefix_dir__/$FORSED/g | sed s/__server_alias__/$USNAME/g > $INSTDIR/etc/$bname;then
+	echo "* generating configuration file $INSTDIR/etc/$bname"
+    else
+	echo "# generation failed of $INSTDIR/etc/$bname"
+    fi
+    rm -f $i > /dev/null
+done
+
+echo "* done"
+update-rc.d chaos.sh start 90 5 . stop 90 0 1 6 .
+
+ln -sf /usr/local/chaos-dyn-client-amd64-0.1/bin/UnitServer /usr/bin
+ldconfig
