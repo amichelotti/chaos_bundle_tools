@@ -60,6 +60,7 @@ else
     end_test 1 "MDS configuration"
 fi
 
+check_proc_then_kill "ChaosWANProxy"
 sleep 1
 echo "log-on-console=YES" > $CHAOS_PREFIX/etc/WanProxy.conf
 echo "log-level=debug" >> $CHAOS_PREFIX/etc/WanProxy.conf
@@ -79,13 +80,20 @@ check_proc CUIserver || end_test 1 "CUIserver not running"
 check_proc "tomcat:run" || end_test 1 "MDS not running"
 check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
-info_mesg "performing test " "CREST"
-if $CHAOS_PREFIX/bin/crest_test localhost:8082 1000 > $CHAOS_PREFIX/log/crest_test.log ;then
-    ok_mesg "CREST"
+info_mesg "performing test pushing on ChaosWANProxy " "CREST CU"
+if $CHAOS_PREFIX/bin/crest_test localhost:8082 10000 > $CHAOS_PREFIX/log/crest_test.log ;then
+    ok_mesg "CREST CU TEST"
     cat $CHAOS_PREFIX/log/crest_test.log |grep average
 else
-    nok_mesg "CREST"
-    end_test 1 "CREST test failed"
+    nok_mesg "CREST CU TEST"
+    end_test 1 "CREST CU TEST"
+fi
+info_mesg "performing test retriving from CUIserver " "CREST UI"
+if $CHAOS_PREFIX/bin/chaos_crest_ui_test localhost:8081 "BTF_SIM/QDC0" > $CHAOS_PREFIX/log/crest_ui_test.log ;then
+    ok_mesg "CREST UI TEST"
+else
+    nok_mesg "CREST UI TEST"
+    end_test 1 "CREST UI TEST"
 fi
 
 end_test 0

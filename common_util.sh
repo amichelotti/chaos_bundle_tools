@@ -311,12 +311,28 @@ test_services(){
     fi
 }
 start_services(){
-
-    if $tools/chaos_services.sh start ; then
-	ok_mesg "chaos start services"
-	return 0
+    
+    if $tools/chaos_services.sh start mds; then
+	ok_mesg "chaos start MDS"
+	
     else
-	nok_mesg "chaos start services"
+	nok_mesg "chaos start MDS"
+	return 1
+    fi
+
+    if $tools/chaos_services.sh start cds; then
+	ok_mesg "chaos start CDS"
+	
+    else
+	nok_mesg "chaos start CDS"
+	return 1
+    fi
+
+    if $tools/chaos_services.sh start uis; then
+	ok_mesg "chaos start UIS"
+	
+    else
+	nok_mesg "chaos start UIS"
 	return 1
     fi
 }
@@ -467,12 +483,12 @@ chaos_cli_cmd(){
     if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
 	timeout=$((timeout * 10))
     fi
-    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --metadata-server=$meta --deviceid $cuname --timeout $timeout $param 2>&1`
+    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --deviceid $cuname --timeout $timeout $param 2>&1`
    
     if [ $? -eq 0 ]; then
 	return 0
     fi
-    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server=$meta --deviceid $cuname $param \" returned:$cli_cmd"
+    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --deviceid $cuname --timeout $timeout $param \" returned:$cli_cmd"
     return 1
 
 }

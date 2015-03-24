@@ -70,7 +70,7 @@ mds_checks(){
 
 
 usage(){
-    info_mesg "Usage :$0 {start|stop|status|start mds | start uis| start cds | stop uis|stop mds | stop cds}"
+    info_mesg "Usage :$0 {start|stop|status|start mds | start uis| start cds | start wan| stop uis|stop mds | stop cds |stop wan}"
 }
 start_mds(){
     mds_checks;
@@ -87,17 +87,33 @@ start_cds(){
     check_proc_then_kill "$CDS_EXEC"
     run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
-start_ui(){
+start_ui(){    
+    port=8081
     
-    info_mesg "starting UI Server..."
+    info_mesg "starting UI Server on port " "$port"
     check_proc_then_kill "$UI_EXEC"
-    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port 8081 > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+}
+start_wan(){
+    port=8082
+    info_mesg "starting WAN Server on port " "$port" 
+    check_proc_then_kill "$WAN_EXEC"
+    if [ ! -e "$CHAOS_PREFIX/etc/WanProxy.conf" ]; then
+	warn_mesg "Wan proxy configuration file not found in \"$CHAOS_PREFIX/etc/WanProxy.conf\" " "start skipped"
+	return
+    fi
+    run_proc "$CHAOS_PREFIX/bin/$WAN_EXEC --conf_file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/$WAN_EXEC.std.out 2>&1 &" "$WAN_EXEC"
 }
 
 ui_stop()
 {    
     info_mesg "stopping UI Server..."
     stop_proc "$UI_EXEC"
+}
+wan_stop()
+{    
+    info_mesg "stopping WAN Server..."
+    stop_proc "$WAN_EXEC"
 }
 
 mds_stop()
@@ -119,6 +135,9 @@ start_all(){
     status=$((status + $?))
     start_ui
     status=$((status + $?))
+    start_wan
+    status=$((status + $?))
+
     exit $status
 }
 stop_all(){
@@ -130,15 +149,12 @@ stop_all(){
     status=$((status + $?))
     ui_stop
     status=$((status + $?))
+    wan_stop
+    status=$((status + $?))
     if [ -n "$(get_pid $US_EXEC)" ];then
 	stop_proc "$US_EXEC"
 	status=$((status + $?))
     fi
-    if [ -n "$(get_pid $WAN_EXEC)" ];then
-	stop_proc "$WAN_EXEC"
-	status=$((status + $?))
-    fi
-
     exit $status
 }
 
@@ -193,6 +209,10 @@ case "$cmd" in
 		    start_ui
 		    exit 0
 		    ;;
+	       wan)
+		    start_wan
+		    exit 0
+		    ;;
 		*) 
 		    error_mesg "\"$2\" no such service"
 		    usage
@@ -216,6 +236,10 @@ case "$cmd" in
 		    exit 0
 		    ;;
 		uis)
+		    ui_stop
+		    exit 0
+		    ;;
+		wan)
 		    ui_stop
 		    exit 0
 		    ;;

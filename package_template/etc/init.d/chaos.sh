@@ -1,7 +1,7 @@
 #!/bin/bash 
 ### BEGIN INIT INFO
 # Provides:          chaos
-# Required-Start:    $network $remote_fs $all ssh openvpn
+# Required-Start:    $network $remote_fs openvpn
 # Required-Stop:     $network $remote_fs $syslog
 # Should-Start:      network-manager
 # Should-Stop:       network-manager

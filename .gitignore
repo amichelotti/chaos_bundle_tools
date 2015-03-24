@@ -5,6 +5,7 @@ CUSchemaDB*
 ChaosMDSLite/RecCommon.jardesc
 ChaosMDSLite/RecServer.jardesc
 *xccheckout*
+*.txt
 xcshareddata
 CMakeCache.txt
 CMakeFiles
