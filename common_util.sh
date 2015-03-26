@@ -483,7 +483,7 @@ chaos_cli_cmd(){
     if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
 	timeout=$((timeout * 10))
     fi
-    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --deviceid $cuname --timeout $timeout $param 2>&1`
+    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --deviceid $cuname --timeout $timeout $param 2>&1`
    
     if [ $? -eq 0 ]; then
 	return 0
@@ -677,7 +677,7 @@ launch_us_cu(){
 	
 	for ((cu=0;cu<$NCU;cu++));do
 	    info_mesg "checking for CU TEST_UNIT_$us/TEST_CU_$cu registration"
-	    if execute_command_until_ok "grep -o \"TEST_UNIT_$us\/TEST_CU_$cu .\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null" 30; then
+	    if execute_command_until_ok "grep -o \"TEST_UNIT_$us\/TEST_CU_$cu .\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null" 180; then
 		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"
 	    else
 		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"

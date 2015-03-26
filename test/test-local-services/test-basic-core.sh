@@ -34,11 +34,33 @@ fi
 if launch_us_cu $NUS $NCU $META $USNAME;then
     if ! check_proc $USNAME;then
 	error_mesg "$USNAME quitted"
-	killall -9 create-noise-requests.sh
+	stop_proc "create-noise-requests.sh"
 	end_test 1 "$USNAME quitted"
     fi
+else
+    	error_mesg "registration failed"
+	stop_proc $USNAME
+	stop_proc "create-noise-requests.sh"
+	end_test 1 "registration failed"
 fi
 
+if [ -n "$5" ];then
+    stop_proc "create-noise-requests.sh"
+
+    for ((us=0;us<$NUS;us++));do
+	for ((cu=0;cu<$NCU;cu++));do
+	    info_mesg "forcing in deinit after noise \"TEST_UNIT_$us/TEST_CU_$cu\" "
+	    if execute_command_until_ok "deinit_cu $META TEST_UNIT_$us/TEST_CU_$cu" 160; then
+		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" deinitialized"
+	    else
+		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" deinitilized"
+		stop_proc $USNAME
+		end_test 1 "CU \"TEST_UNIT_$us/TEST_CU_$cu\" deinitilized"
+	    fi
+	done
+    done
+
+fi
 info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing test..."
 for ((us=0;us<$NUS;us++));do
     for ((cu=0;cu<$NCU;cu++));do
@@ -46,9 +68,9 @@ for ((us=0;us<$NUS;us++));do
 	info_mesg "checking \"TEST_UNIT_$us/TEST_CU_$cu\" accessibility from UI"
 	if loop_cu_test "$META" "TEST_UNIT_$us/TEST_CU_$cu" 4 ${us_proc[$us]};then
 	    ok_mesg "UI access to \"TEST_UNIT_$us/TEST_CU_$cu\""
-    else
+	else
 	    nok_mesg "UI access \"TEST_UNIT_$us/TEST_CU_$cu\""
-	    killall -9 create-noise-requests.sh >& /dev/null
+	    stop_proc $USNAME
 	    end_test 1 "UI access \"TEST_UNIT_$us/TEST_CU_$cu\""
 	fi
 	
@@ -56,7 +78,7 @@ for ((us=0;us<$NUS;us++));do
 	    ok_mesg "Init \"TEST_UNIT_$us/TEST_CU_$cu\""
 	else
 	nok_mesg "Init \"TEST_UNIT_$us/TEST_CU_$cu\""
-	killall -9 create-noise-requests.sh >& /dev/null
+	stop_proc $USNAME
 	end_test 1 "Init \"TEST_UNIT_$us/TEST_CU_$cu\""
 	fi
 	
@@ -64,17 +86,16 @@ for ((us=0;us<$NUS;us++));do
 	    ok_mesg "Start \"TEST_UNIT_$us/TEST_CU_$cu\""
 	else
 	    nok_mesg "Start \"TEST_UNIT_$us/TEST_CU_$cu\""
-	    killall -9 create-noise-requests.sh >& /dev/null
+	    stop_proc $USNAME
 	    end_test 1 "Start \"TEST_UNIT_$us/TEST_CU_$cu\""
 	fi
 	if ! check_proc $USNAME;then
 	    error_mesg "$USNAME quitted"
-	    killall -9 create-noise-requests.sh >& /dev/null
 	    end_test 1 "$USNAME quitted"
 	fi
 
     done
 done    
 stop_proc $USNAME
-killall -9 create-noise-requests.sh >& /dev/null
+
 end_test 0
