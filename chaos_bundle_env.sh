@@ -1,4 +1,4 @@
-\
+
 SOURCE="${BASH_SOURCE[0]}"
 
 pushd `dirname $SOURCE` > /dev/null
@@ -17,7 +17,7 @@ export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread rt"
+export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_atomic memcached zmq uv mongoose jsoncpp dl pthread rt"
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
@@ -42,6 +42,7 @@ export LIB_EVENT_VERSION=release-2.1.4-alpha
 
 unset CHAOS_CROSS_HOST
 export CHAOS_CMAKE_FLAGS=""
+export CHAOS_BOOST_FLAGS=""
 
 if [ "$CHAOS_TARGET" == "armhf" ]; then
     echo "* Cross compiling for ARMHF platforms (Beagle Bone,PI)"
@@ -49,30 +50,66 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     export CXX=arm-linux-gnueabihf-g++-4.8
     export LD=arm-linux-gnueabihf-ld
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
-#    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
-else
-
-    export CHAOS_TARGET=$OS
-fi;
+    #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
+else 
+    if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
+	echo "* Cross compiling for ARM platforms on linux 2.6 (Libera)"
+	export CC=arm-unknown-linux-gnueabi-gcc
+	export CXX=arm-unknown-linux-gnueabi-g++
+	export LD=arm-unknown-linux-gnueabi-ld
+	export CHAOS_CROSS_HOST=arm-unknown-linux-gnueabi
+	if [ -z "$CHAOS_EXCLUDE_DIR" ];then
+	    
+	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
+	fi
+	export CHAOS_DISABLE_EVENTFD=true
+	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	export CHAOS_BOOST_VERSION=55
+	# 
+	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
+    else
+	if [ "$CHAOS_TARGET" == "linux-old" ]; then
+	    echo "* Cross compiling for i686 platforms on linux <=2.6"
+	    export CC=i686-infn-linux-gnu-gcc
+	    export CXX=i686-infn-linux-gnu-g++
+	    export LD=i686-infn-linux-gnu-ld
+	    export CHAOS_CROSS_HOST=i686-infn-linux-gnu
+	    if [ -z "$CHAOS_EXCLUDE_DIR" ];then
+		
+		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
+	    fi
+	    export CHAOS_DISABLE_EVENTFD=true
+	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	    export CHAOS_BOOST_VERSION=55
+	    # 
+	    export CHAOS_BOOST_FLAGS="target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
+	    
+	else
+	    export CHAOS_TARGET=$OS
+	fi
+    fi;
+fi
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
-	export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
-	export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
-	export CFLAGS="$CFLAGS -g"
-#	export CXXFLAGS="$CXXFLAGS -fPIC -fsanitize=thread"
-#	export CFLAGS="$CFLAGS -fPIC -fsanitize=thread"
-#	export LDFLAGS="-pie -ltsan"
+    export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
+    export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
+    export CFLAGS="$CFLAGS -g"
+    #	export CXXFLAGS="$CXXFLAGS -fPIC -fsanitize=thread"
+    #	export CFLAGS="$CFLAGS -fPIC -fsanitize=thread"
+    #	export LDFLAGS="-pie -ltsan"
 else
-	export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Release "
+    export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Release "
 fi
 
 
-export CHAOS_BOOST_FLAGS=""
+
 if [ -n "$CHAOS_STATIC" ]; then
-    export CHAOS_BOOST_FLAGS="link=static"
+    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DBUILD_FORCE_STATIC=true"
 else
-    export CHAOS_BOOST_FLAGS="link=shared"
+    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=shared"
 fi
 
 

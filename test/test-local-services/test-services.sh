@@ -15,7 +15,7 @@ fi
 if [ -n "$3" ];then
     TESTCU="$3"
 fi
-info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU"
+info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
 
 if execute_command_until_ok "grep -o \"with url:.\+\" $PREFIX/log/cds.log  |sed 's/with url: //g'" 15; then

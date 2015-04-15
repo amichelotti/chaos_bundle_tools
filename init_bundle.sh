@@ -54,6 +54,11 @@ else
     info_mesg "build                    :" "Release target"
 fi
 
+if [ -n "$CHAOS_EXCLUDE_DIR" ]; then
+    info_mesg "excluding from build     :" "$CHAOS_EXCLUDE_DIR"
+fi
+
+
 info_mesg "!Chaos Target            :" "$CHAOS_TARGET"
 
 info_mesg "press any key to continue"
@@ -62,12 +67,18 @@ read -n 1 -s
 function cmake_compile(){
     dir=$1;
     cd $dir;
-    echo "* entering in $dir"
+    bdir=`basename $dir`
+    
+    if chaos_exclude "$bdir";then
+	echo "* skipping $i, because is in CHAOS_EXCLUDE_DIR"
+	return 0
+    fi
+
     if [ ! -f CMakeLists.txt ]; then
 	warn_mesg "skipping $dir does not contain CMakeLists.txt"
 	return 0;
     fi;
-
+    echo "* entering in $dir"
     rm -rf CMakeCache.txt
     echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then

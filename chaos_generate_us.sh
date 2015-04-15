@@ -24,7 +24,7 @@ while getopts i:o:n:hs: opt; do
 	s) skipdir+=($OPTARG)
 	    
 	    ;;
-	h) echo -e "Usage : $exename [-i <input directory>] [-o <output directory>] [-n <project name>] [-s <directory to skip>]\n-i <input direcory>: directory that contains CUs\n-o <output directory>: Unit Server project dir\n-n <project name>: name of the unit server project\n-s <directory>: skip the specified firectory"
+	h) echo -e "Usage : $exename [-i <input directory>] [-o <output directory>] [-n <project name>] [-s <directory to skip>]\n-i <input direcory>: directory that contains CUs\n-o <output directory>: Unit Server project dir\n-n <project name>: name of the unit server project\n-s <directory>: skip the specified directory"
 	    exit 0
 	    ;;
     esac
@@ -55,7 +55,9 @@ incdir_list=""
 # fi
 
 function to_skip(){
-    for s in ${skipdir[@]}; do
+
+    for s in ${skipdir[@]} $CHAOS_EXCLUDE_DIR; do
+	echo "skipping $s..."
 	if [[ "$1" =~ $s ]]; then
 	    return 0
 	fi

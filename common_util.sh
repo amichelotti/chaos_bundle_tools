@@ -58,6 +58,7 @@ function unSetEnv(){
     unset CHAOS_STATIC
     unset CHAOS_TARGET
     unset CHAOS_DEVELOPMENT
+
 }
 
 # type target build
@@ -67,11 +68,12 @@ function setEnv(){
     local build=$3
     local prefix=$4
 
+    
     if [ "$type" == "static" ]; then
 	export CHAOS_STATIC=true
     fi
-    if [ "$target" == "armhf" ]; then
-	export CHAOS_TARGET=armhf
+    if [ "$target" != "$ARCH" ]; then
+	export CHAOS_TARGET=$target
     fi
 	    
     if [ "$build" == "debug" ]; then
@@ -91,6 +93,11 @@ function setEnv(){
     info_mesg "Configuration :" "$build"
     info_mesg "Prefix        :" "$prefix"
     info_mesg "OS            :" "$OS"
+    if [ -n "$CHAOS_EXCLUDE_DIR" ]; then
+
+	info_mesg "Excluding :" "$CHAOS_EXCLUDE_DIR"
+    fi
+
     source $dir/chaos_bundle_env.sh >& $log
     rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
     mkdir -p $CHAOS_BUNDLE/usr
@@ -729,4 +736,14 @@ end_test(){
 	echo "$__start_test_group__;$SCRIPTNAME;$stat;$exec_time;$pcpu;$pmem;$desc" >> $CHAOS_TEST_REPORT
     fi
     exit $status
+}
+
+chaos_exclude(){
+    name=$1
+    for i in $CHAOS_EXCLUDE_DIR;do
+	if [ "$name" == "$i" ]; then
+	    return 0;
+	fi
+    done
+    return 1
 }

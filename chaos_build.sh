@@ -13,10 +13,10 @@ outbase=$dir/../
 create_deb_ver=""
 remove_working="false"
 log="$0.log"
-
+exclude_dir=()
 if [ "$OS" == "Linux" ]; then
     compile_type=( "dynamic" "static" );
-    compile_target=( "$ARCH" "armhf" );
+    compile_target=( "$ARCH" "armhf" "arm-linux-2.6" "linux-old");
     compile_build=("release" "debug")
 else
     compile_type=("dynamic");
@@ -28,7 +28,7 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc:k opt; do
+while getopts t:o:w:b:p:hd:rsc:kx: opt; do
     case $opt in
 	t)
 	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
@@ -96,10 +96,13 @@ while getopts t:o:w:b:p:hd:rsc:k opt; do
 		info_mesg "configuring environment in " "$config";
 	    fi
 	    ;;
+	x)
+	    exclude_dir+=("$OPTARG")
+	    ;;
 
 
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n";
+	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation";
 	    exit 0;
 	    ;;
     esac
@@ -108,7 +111,7 @@ done
 type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
-
+export CHAOS_EXCLUDE_DIR="${exclude_dir[@]}"
 
 init_tgt_vars(){
     tgt="$prefix_build""$separator""$target""$separator""$type""$separator""$build"
@@ -135,7 +138,7 @@ function compile(){
 
 if [ -n "$switch_env" ]; then
 
-    setEnv $type $target $build $PREFIX
+    setEnv $type $target $build $PREFIX 
     exit 0
 fi
 

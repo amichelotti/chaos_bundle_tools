@@ -102,5 +102,6 @@ ENDFOREACH()
 
 IF (DEFINED PROJECT_NAME)
    FILE(GLOB conf_src conf/*)
-   INSTALL(FILES ${conf_src} DESTINATION etc/${PROJECT_NAME})
+   FILE(GLOB perf_src perf/*)
+   INSTALL(FILES ${conf_src} ${perf_src} DESTINATION etc/${PROJECT_NAME})
 ENDIF()
