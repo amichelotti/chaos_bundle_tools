@@ -17,7 +17,11 @@ export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
-export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread rt"
+if [ $(uname -s) == "Darwin" ]; then
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread"
+else
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread rt"
+fi;
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
@@ -100,4 +104,3 @@ fi
 
 export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS --prefix=$CHAOS_PREFIX --with-program_options --with-chrono --with-filesystem --with-iostreams --with-log --with-regex --with-random --with-system --with-thread --with-atomic --with-timer install"
 export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX"
-
