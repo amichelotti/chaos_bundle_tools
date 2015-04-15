@@ -6,6 +6,8 @@ rm -rf $MDS_HOME/mds_init.conf* >/dev/null
 NUS=10
 NCU=20
 TESTCU=""
+CDSMODE="3"
+
 if [ -n "$1" ];then
     NUS=$1
 fi
@@ -15,6 +17,14 @@ fi
 if [ -n "$3" ];then
     TESTCU="$3"
 fi
+
+if [ -n "$4" ];then
+    CDSMODE="$4"
+fi
+
+
+sed -i s/run_mode=.*/run_mode\=$CDSMODE/g $CHAOS_PREFIX/etc/cds.cfg
+
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
 
