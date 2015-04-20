@@ -167,7 +167,7 @@ listabin=`ls $PACKAGE_DEST/bin`
 for i in $listabin;do
     name=`basename $i`
     echo "ln -sf /usr/local/$NAME/bin/$name /usr/bin" >> DEBIAN/postinst
-    echo "rm /usr/bin/$name" >> DEBIAN/postrm 
+    echo "rm -rf /usr/bin/$name" >> DEBIAN/postrm 
 done
 if [ -n "$DYNAMIC" ]; then
     echo "rm -f /etc/ld.so.conf.d/$PACKAGE_NAME.conf" >> DEBIAN/postrm

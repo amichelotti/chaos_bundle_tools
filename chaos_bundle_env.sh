@@ -55,6 +55,8 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     export CXX=arm-linux-gnueabihf-g++-4.8
     export LD=arm-linux-gnueabihf-ld
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
+    export CFLAGS="$CFLAGS -D__BSON_USEMEMCPY__"
+    export CXXFLAGS="$CXXFLAGS -D__BSON_USEMEMCPY__"
     #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
 else 
     if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
@@ -68,8 +70,8 @@ else
 	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	fi
 	export CHAOS_DISABLE_EVENTFD=true
-	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
-	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	export CHAOS_BOOST_VERSION=55
 	# 
 	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
