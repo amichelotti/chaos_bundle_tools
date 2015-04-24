@@ -23,7 +23,7 @@ if [ ! -n "$CHAOS_LINK_LIBRARY" ] ; then
     exit 1;
 fi
 
-info_mesg "\033[38;5;148m!CHAOS initialization script\033[39m"
+info_mesg "!CHAOS initialization script"
 
 
 info_mesg "CHAOS BUNDLE SOURCE (CHAOS_BUNDLE) :" "$CHAOS_BUNDLE"

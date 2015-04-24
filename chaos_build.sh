@@ -16,7 +16,7 @@ log="$0.log"
 exclude_dir=()
 if [ "$OS" == "Linux" ]; then
     compile_type=( "dynamic" "static" );
-    compile_target=( "$ARCH" "armhf" "arm-linux-2.6" "linux-old");
+    compile_target=( "$ARCH" "armhf" "crio90xx" "arm-linux-2.6" "linux-old");
     compile_build=("release" "debug")
 else
     compile_type=("dynamic");
@@ -144,7 +144,11 @@ fi
 
 if [ -n "$config" ]; then
     PREFIX=$config
-    setEnv $type $target $build $PREFIX
+
+    if ! setEnv $type $target $build $PREFIX; then
+	error_mesg "error setting environment check " "$log"
+	exit 1
+    fi
     chaos_configure
     exit 0
 fi
@@ -159,7 +163,11 @@ for target in ${compile_target[@]} ; do
 	    rm -rf $PREFIX
 	    mkdir -p $PREFIX
 	    unSetEnv
-	    setEnv $type $target $build $PREFIX
+
+	    if ! setEnv $type $target $build $PREFIX; then
+		error_mesg "error setting environment check " "$log"
+		exit 1
+	    fi
 	    start_profile_time
 	    compile $tgt;
 	    if [ $? -ne 0 ]; then 

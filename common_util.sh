@@ -53,8 +53,8 @@ nok_mesg(){
 }
 
 function unSetEnv(){
-    unset CC
-    unset CXX
+#    unset CC
+#    unset CXX
     unset CHAOS_STATIC
     unset CHAOS_TARGET
     unset CHAOS_DEVELOPMENT
@@ -98,11 +98,14 @@ function setEnv(){
 	info_mesg "Excluding :" "$CHAOS_EXCLUDE_DIR"
     fi
 
-    source $dir/chaos_bundle_env.sh >& $log
-    rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
-    mkdir -p $CHAOS_BUNDLE/usr
-    mkdir -p $CHAOS_FRAMEWORK/usr
-    ln -sf $PREFIX $CHAOS_FRAMEWORK/usr/local
+    if source $dir/chaos_bundle_env.sh >& $log; then
+	rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
+	mkdir -p $CHAOS_BUNDLE/usr
+	mkdir -p $CHAOS_FRAMEWORK/usr
+	ln -sf $PREFIX $CHAOS_FRAMEWORK/usr/local
+    else
+	return 1
+    fi
     
 }
 

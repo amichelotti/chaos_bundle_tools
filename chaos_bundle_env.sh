@@ -9,7 +9,6 @@ ARCH=$(uname -m)
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
-
 export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
 
 #boostrap !CHAOS Framework in development mode
@@ -20,7 +19,7 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 if [ $(uname -s) == "Darwin" ]; then
     export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread"
 else
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread rt"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_atomic memcached zmq uv mongoose jsoncpp dl pthread rt"
 fi;
 
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
@@ -60,23 +59,29 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
 else 
     if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
-	echo "* Cross compiling for ARM platforms on linux 2.6 (Libera)"
-	export CC=arm-unknown-linux-gnueabi-gcc
-	export CXX=arm-unknown-linux-gnueabi-g++
-	export LD=arm-unknown-linux-gnueabi-ld
-	export CHAOS_CROSS_HOST=arm-unknown-linux-gnueabi
+	if [ -x /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc ]; then
+	    export PATH=/usr/local/gcc46-arm-infn-linux26/bin:$PATH
+	    echo "* Cross compiling for ARM(soft float) platforms on linux 2.6"
+	    export CC=arm-infn-linux-gnueabi-gcc
+	    export CXX=arm-infn-linux-gnueabi-g++
+	    export LD=arm-infn-linux-gnueabi-ld
+	    export CHAOS_CROSS_HOST=arm-infn-linux-gnueabi
+	else
+	    echo "## cannot find /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc"
+	    return 1
+	fi
 	if [ -z "$CHAOS_EXCLUDE_DIR" ];then
 	    
 	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	fi
 	export CHAOS_DISABLE_EVENTFD=true
-	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
-	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
+	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
 	export CHAOS_BOOST_VERSION=55
 	# 
 	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
     else
-	if [ "$CHAOS_TARGET" == "linux-old" ]; then
+	if [ "$CHAOS_TARGET" == "linux-old" ] ; then
 	    echo "* Cross compiling for i686 platforms on linux <=2.6"
 	    export CC=i686-infn-linux-gnu-gcc
 	    export CXX=i686-infn-linux-gnu-g++
@@ -90,11 +95,30 @@ else
 	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CHAOS_BOOST_VERSION=55
-	    # 
+	    #  
 	    export CHAOS_BOOST_FLAGS="target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
 	    
 	else
-	    export CHAOS_TARGET=$OS
+	    if [ "$CHAOS_TARGET" == "crio90xx" ] && [ "$ARCH" != "armv7l" ]; then
+		if [ "$TARGET_PREFIX" != "arm-nilrt-linux-gnueabi-" ];then
+		    echo "## you should source the CRIO SDK setup \"environment-setup-armv7a-vfp-neon-nilrt-linux-gnueabi\" look in default installation directory \"/usr/local/oecore-x86_64/\""
+		    return 1
+		fi
+		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
+		export CC="arm-nilrt-linux-gnueabi-gcc"
+		export CFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mfpu=neon --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
+
+		export CXX="arm-nilrt-linux-gnueabi-g++"
+		export CXXFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mfpu=neon --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
+
+		export LD="arm-nilrt-linux-gnueabi-ld --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi"
+		export LDFLAGS="--sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi"
+		export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux"
+		export CHAOS_CROSS_HOST="arm-nilrt-linux-gnueabi"
+		export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DCMAKE_EXE_LINKER_FLAGS=-L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
+	    else
+		export CHAOS_TARGET=$OS
+	    fi
 	fi
     fi;
 fi
