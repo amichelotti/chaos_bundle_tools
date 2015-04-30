@@ -22,8 +22,13 @@ if [ -n "$4" ];then
     CDSMODE="$4"
 fi
 
+if [ "$CDSMODE" == 1 ];then
+    ln -sf $CHAOS_PREFIX/etc/cds_noidx.cfg $CHAOS_PREFIX/etc/cds.cfg
+else
+    ln -sf $CHAOS_PREFIX/etc/cds_local.cfg $CHAOS_PREFIX/etc/cds.cfg
+    
+fi
 
-sed -i s/run_mode=.*/run_mode\=$CDSMODE/g $CHAOS_PREFIX/etc/cds.cfg
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
