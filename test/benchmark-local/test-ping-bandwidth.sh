@@ -37,8 +37,9 @@ else
 	end_test 1 "registration failed"
 fi
 
-
-for ((sched=10000;sched>=0;sched-=1000));do
+sched=5000
+# for ((sched=10000;sched>=0;sched-=1000));do
+while ((sched>=0));do
 info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
 	if $CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched > $CHAOS_PREFIX/log/MessClient-$sched.stdout 2>&1 ;then
 	    if [ -x /usr/bin/gnuplot ];then
@@ -59,6 +60,11 @@ info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test
 	if ! check_proc ChaosDataService;then
 	    nok_mesg "Chaos DataService is unexpectly dead!!"
 	    end_test 1 "Chaos DataService is unexpectly dead!!"
+	fi
+	if((sched<=1000));then
+	    ((sched-=200))
+	else
+	    ((sched-=1000))
 	fi
 done
 # for ((us=0;us<$NUS;us++));do
