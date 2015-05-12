@@ -19,7 +19,7 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 if [ $(uname -s) == "Darwin" ]; then
     export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread"
 else
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_atomic memcached zmq uv mongoose jsoncpp dl pthread rt"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic memcached zmq uv mongoose jsoncpp dl pthread rt"
 fi;
 
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
@@ -60,12 +60,19 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
 else 
     if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
 	if [ -x /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc ]; then
-	    export PATH=/usr/local/gcc46-arm-infn-linux26/bin:$PATH
+
 	    echo "* Cross compiling for ARM(soft float) platforms on linux 2.6"
-	    export CC=arm-infn-linux-gnueabi-gcc
-	    export CXX=arm-infn-linux-gnueabi-g++
-	    export LD=arm-infn-linux-gnueabi-ld
-	    export CHAOS_CROSS_HOST=arm-infn-linux-gnueabi
+	    export PATH=/usr/local/gcc46-arm-infn-linux26/bin:$PATH
+	     export CC=arm-infn-linux-gnueabi-gcc
+	     export CXX=arm-infn-linux-gnueabi-g++
+	     export LD=arm-infn-linux-gnueabi-ld
+	     export CHAOS_CROSS_HOST=arm-infn-linux-gnueabi
+	    # export PATH=$HOME/libera-arm-2.6.20/bin:$PATH
+	    #  export CC=arm-unknown-linux-gnueabi-gcc
+	    #  export CXX=arm-unknown-linux-gnueabi-g++
+	    #  export LD=arm-unknown-linux-gnueabi-ld
+	    #  export CHAOS_CROSS_HOST=arm-unknown-linux-gnueabi
+
 	else
 	    echo "## cannot find /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc"
 	    return 1
@@ -123,6 +130,8 @@ else
     fi;
 fi
 
+export CXXFLAGS="$CXXFLAGS -DCHAOS"
+export CFLAGS="$CFLAGS -DCHAOS"
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
     export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
