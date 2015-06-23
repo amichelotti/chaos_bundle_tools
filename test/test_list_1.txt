@@ -1,5 +1,5 @@
 # start local services
-benchmark-local/benchmark-local.sh
 test-local-services/test-local-services.sh
+benchmark-local/benchmark-local.sh
 # test-local-powersupply
 # test-local-default-us

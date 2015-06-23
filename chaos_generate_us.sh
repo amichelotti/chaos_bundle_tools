@@ -69,14 +69,20 @@ for c in $listah; do
 	echo "* skipping $c"
 	continue;
     fi
+    
     header=`echo $c | sed 's/src\///' | sed 's/source\///' | sed "s/\.\//$prefix\//g"`;
     filenamespace=""
 #    namespace=`grep -o 'namespace\s\+\w\+\s*{' $c |sed 's/namespace\s\+\(\w\+\)\s*{/\1/g'`;
     namespace=`grep -o 'namespace\s\+\w\+\s*{' $c | sed 's/namespace\ *//g' |sed 's/[\ {]//g'`
   #  namespace=`grep -o 'namespace\s\+\w\+' $c | sed 's/^namespace //g'`
 #`grep -o 'namespace\s\+\w\+' $c | sed 's/namespace\ *//g' | tr '\n' ' '`;
+    oldbb=$bb
+    bb=$(dirname $c)
+    if [ "$bb" != "." ] && [ "$bb" != "$oldbb" ]; then
 
-
+	incdir_list+=" $startdir/$bb"
+    fi
+    
     for n in $namespace; do
 	if [ -z "$filenamespace" ];then
 	    filenamespace="$n";
@@ -128,12 +134,23 @@ done
 
 listcmake=`find . -name "CMakeLists.txt"`;
 listadep=""
+cmake_things=""
+
 for c in $listcmake;do
     if to_skip $c; then
 	echo "* skipping $c"
 	continue;
     fi
-
+    cmake_things+="##### from $startdir/$c ###### \n"
+#    cmake_include="$(grep INCLUDE_DIRECTORIES $c)"
+#    if [ -n "$cmake_include" ]; then
+#	cmake_things+="$cmake_include\n"
+#    fi
+    cmake_include="$(grep ADD_DEFINITIONS $c)"
+    if [ -n "$cmake_include" ]; then
+	cmake_things+="$cmake_include\n"
+    fi
+    cmake_things+="#########################\n"
     varl=`grep -i add_library $c | grep SHARED`;
     incdir=`dirname $startdir/$c | sed 's/\.\///g'`
 
@@ -141,6 +158,9 @@ for c in $listcmake;do
 
     path=`basename $parent`/`basename $incdir`
     incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$path"
+#    echo "start dir $startdir"
+#    for h in `find $startdir -name "*.h"`; do
+#    done
     for var in $varl; do
 	if [ -n "$var" ]; then
 	    if [[ "$var" =~ .+\((.+) ]];then
@@ -203,7 +223,7 @@ echo -e "\t} catch (CException& e) {\n\t\tstd::cerr<<\"Exception:\"<<std::endl;\
 echo "cmake_minimum_required(VERSION 2.6)" > $project_dir/CMakeLists.txt
 echo "include(\$ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)" >>  $project_dir/CMakeLists.txt
 echo "SET(src main.cpp )" >>  $project_dir/CMakeLists.txt
-
+echo -e "$cmake_things" >> $project_dir/CMakeLists.txt
 if [ -n "$incdir_list" ]; then
     echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} $incdir_list)" >> $project_dir/CMakeLists.txt
 fi
