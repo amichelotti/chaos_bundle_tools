@@ -17,9 +17,9 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
 if [ $(uname -s) == "Darwin" ]; then
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq uv mongoose jsoncpp dl pthread"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq mongoose jsoncpp dl pthread"
 else
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic memcached zmq uv mongoose jsoncpp dl pthread rt"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic memcached zmq mongoose jsoncpp dl pthread rt"
 fi;
 
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
@@ -57,7 +57,7 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     export CFLAGS="$CFLAGS -D__BSON_USEMEMCPY__"
     export CXXFLAGS="$CXXFLAGS -D__BSON_USEMEMCPY__"
     #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
-else 
+else
     if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
 	if [ -x /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc ]; then
 
@@ -78,14 +78,14 @@ else
 	    return 1
 	fi
 	if [ -z "$CHAOS_EXCLUDE_DIR" ];then
-	    
+
 	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	fi
 	export CHAOS_DISABLE_EVENTFD=true
 	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
 	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
 	export CHAOS_BOOST_VERSION=55
-	# 
+	#
 	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
     else
 	if [ "$CHAOS_TARGET" == "linux-old" ] ; then
@@ -95,16 +95,16 @@ else
 	    export LD=i686-infn-linux-gnu-ld
 	    export CHAOS_CROSS_HOST=i686-infn-linux-gnu
 	    if [ -z "$CHAOS_EXCLUDE_DIR" ];then
-		
+
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	    fi
 	    export CHAOS_DISABLE_EVENTFD=true
 	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CHAOS_BOOST_VERSION=55
-	    #  
+	    #
 	    export CHAOS_BOOST_FLAGS="target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
-	    
+
 	else
 	    if [ "$CHAOS_TARGET" == "crio90xx" ] && [ "$ARCH" != "armv7l" ]; then
 		if [ "$TARGET_PREFIX" != "arm-nilrt-linux-gnueabi-" ];then
