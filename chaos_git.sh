@@ -43,6 +43,13 @@ git_checkout(){
 }
 
 while getopts t:c:p:hs opt; do
+    case $opt in
+	t) 
+	    echo -n "provide a tag message:"
+	    read mesg
+	    ;;
+    esac
+
     for d in $git_dirs; do
 	dir=$(dirname $d)
 	dir=$(dirname $dir)
@@ -57,7 +64,7 @@ while getopts t:c:p:hs opt; do
 		git_checkout $dir $OPTARG 
 		;;
 	    t)
-		git tag -f -m "$OPTARG"
+		git tag -f -m "$mesg" $OPTARG
 		git push
 		;;
 	    p)
