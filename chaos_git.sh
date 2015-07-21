@@ -72,9 +72,9 @@ while getopts c:p:hs opt; do
 		dir=$(dirname $d)
 		dir=$(dirname $dir)
 		pushd $dir > /dev/null
-		if git status | grep modified; then
-		    git_checkout $dir $OPTARG 
-		    git commit -m "$mess"
+		if git status | grep modified > /dev/null; then
+		    info_mesg "committing changes in " "$dir"
+		    git commit -m "$mess" .
 		fi
 		git push > /dev/null
 		popd > /dev/null
