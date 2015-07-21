@@ -27,6 +27,7 @@
 
 using namespace chaos;
 using namespace chaos::ui;
+namespace chaos_batch = chaos::common::batch_command;
 
 int sendCmd(DeviceController *controller ,std::string cmd_alias_str,char*param){
   int err;

@@ -15,7 +15,8 @@ remove_working="false"
 log="$0.log"
 exclude_dir=()
 
-git_dirs=$(find . -name ".git")
+git_dirs=$(find . -name ".git" -exec grep -sl opensource \{\}/config \;)
+
 
 die(){
     error_mesg "$1" " exiting... "
@@ -45,7 +46,8 @@ while getopts c:p:hs opt; do
     case $opt in
 	s)
 	    for d in $git_dirs; do
-		dir=`dirname $d`
+		dir=$(dirname $d)
+		dir=$(dirname $dir)
 		pushd $dir > /dev/null
 		info_mesg "directory " "$dir"
 		git status 
@@ -55,21 +57,25 @@ while getopts c:p:hs opt; do
 
 	c)
 	    for d in $git_dirs; do
-		dir=`dirname $d`
+		dir=$(dirname $d)
+		dir=$(dirname $dir)
 		pushd $dir >& /dev/null
 		git_checkout $dir $OPTARG 
 		popd > /dev/null
 	    done
 	    ;;
 	p)
-	    
+
 	    echo -n "commit/push message for branch $OPTARG:"
 	    read mess
 	    for d in $git_dirs; do
-		dir=`dirname $d`
+		dir=$(dirname $d)
+		dir=$(dirname $dir)
 		pushd $dir > /dev/null
-		git_checkout $dir $OPTARG 
-		git commit -m "$mess"
+		if git status | grep modified; then
+		    git_checkout $dir $OPTARG 
+		    git commit -m "$mess"
+		fi
 		git push > /dev/null
 		popd > /dev/null
 	    done

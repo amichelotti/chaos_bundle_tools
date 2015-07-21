@@ -167,7 +167,9 @@ function chaos_configure(){
     sed 's/run_mode=.*/run_mode=1/' $PREFIX/etc/cds_local.cfg | sed 's/vfs_storage_driver_kvp=.*/vfs_storage_driver_kvp=posix_root_path:\/dev\/null/g' > $PREFIX/etc/cds_noidx.cfg
 
     ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
-    cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
+    if [ -e  "$PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml" ];then	
+	cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
+    fi
 }
 
 get_pid(){
