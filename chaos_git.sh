@@ -57,7 +57,8 @@ while getopts t:c:p:hs opt; do
 		git_checkout $dir $OPTARG 
 		;;
 	    t)
-		git tag -a -m "$OPTARG" 
+		git tag -f -m "$OPTARG"
+		git push
 		;;
 	    p)
 		if git status | grep modified > /dev/null; then
