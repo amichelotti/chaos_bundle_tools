@@ -17,7 +17,7 @@ exclude_dir=()
 
 git_dirs=$(find . -name ".git" -exec grep -sl opensource \{\}/config \;)
 
-
+mesg=""
 die(){
     error_mesg "$1" " exiting... "
     exit 1
@@ -42,47 +42,40 @@ git_checkout(){
    
 }
 
-while getopts c:p:hs opt; do
-    case $opt in
-	s)
-	    for d in $git_dirs; do
-		dir=$(dirname $d)
-		dir=$(dirname $dir)
-		pushd $dir > /dev/null
+while getopts t:c:p:hs opt; do
+    for d in $git_dirs; do
+	dir=$(dirname $d)
+	dir=$(dirname $dir)
+	pushd $dir > /dev/null
+	case $opt in
+	    s)
 		info_mesg "directory " "$dir"
 		git status 
-		popd > /dev/null
-	    done
-	    ;;
+		;;
 
-	c)
-	    for d in $git_dirs; do
-		dir=$(dirname $d)
-		dir=$(dirname $dir)
-		pushd $dir >& /dev/null
+	    c)
 		git_checkout $dir $OPTARG 
-		popd > /dev/null
-	    done
-	    ;;
-	p)
-
-	    echo -n "commit/push message for branch $OPTARG:"
-	    read mess
-	    for d in $git_dirs; do
-		dir=$(dirname $d)
-		dir=$(dirname $dir)
-		pushd $dir > /dev/null
+		;;
+	    t)
+		git tag -a -m "$OPTARG" 
+		;;
+	    p)
 		if git status | grep modified > /dev/null; then
-		    info_mesg "committing changes in " "$dir"
-		    git commit -m "$mess" .
-		    git push > /dev/null
+		    echo -n "modification found on \"$dir\" [branch:$OPTARG], empty comment to skip:"
+		    read mesg
+		    if [ -n "$mesg" ]; then
+			info_mesg "committing changes in " "$dir"
+			git commit -m "$mesg" .
+			git push > /dev/null
+		    fi
 		fi
-		popd > /dev/null
-	    done
-	    ;;
-	h)
-	    echo -e "Usage is $0 [-s] [ -c <checkout branch> ] [ -p <commit and push branch> ]\n-c <branch name>: check out a given branch name in all subdirs\n-p <branch name>:commit and push a given branch\n-s:retrive the branch status"
-	    exit 0;
-	    ;;
-    esac
+		
+		;;
+	    h)
+		echo -e "Usage is $0 [-s] [-t <tag name>][ -c <checkout branch> ] [ -p <branch name> ]\n-c <branch name>: check out a given branch name in all subdirs\n-p <branch>:commit and push modifications of a given branch\n-s:retrive the branch status\n-t <tag name>:make an annotated tag to all"
+		exit 0;
+		;;
+	esac
+	popd > /dev/null
+    done
 done
