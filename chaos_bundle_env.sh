@@ -11,6 +11,7 @@ KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
 export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
 
+
 #boostrap !CHAOS Framework in development mode
 export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework
 export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
@@ -37,6 +38,7 @@ else
 	echo "* INSTALLATION DIR $CHAOS_PREFIX"
     fi
 fi
+
 export DYLD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib:$LD_LIBRARY_PATH
 
@@ -108,8 +110,9 @@ else
 	else
 	    if [ "$CHAOS_TARGET" == "crio90xx" ] && [ "$ARCH" != "armv7l" ]; then
 		if [ "$TARGET_PREFIX" != "arm-nilrt-linux-gnueabi-" ];then
-		    echo "## you should source the CRIO SDK setup \"environment-setup-armv7a-vfp-neon-nilrt-linux-gnueabi\" look in default installation directory \"/usr/local/oecore-x86_64/\""
-		    return 1
+		    #echo "## you should source the CRIO SDK setup \"environment-setup-armv7a-vfp-neon-nilrt-linux-gnueabi\" look in default installation directory \"/usr/local/oecore-x86_64/\""
+		    #return 1
+		    source /usr/local/oecore-x86_64/environment-setup-armv7a-vfp-neon-nilrt-linux-gnueabi
 		fi
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 		export CC="arm-nilrt-linux-gnueabi-gcc"

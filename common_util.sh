@@ -6,6 +6,9 @@ SCRIPTTESTPATH=$0
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 NPROC=$(getconf _NPROCESSORS_ONLN)
+if [ -z "$CHAOS_BUNDLE" ];then
+    export CHAOS_BUNDLE="$(dirname $SCRIPTTESTPATH)"
+fi
 
 if [ -n "$CHAOS_PREFIX" ];then
     PREFIX=$CHAOS_PREFIX
