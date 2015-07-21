@@ -75,8 +75,8 @@ while getopts c:p:hs opt; do
 		if git status | grep modified > /dev/null; then
 		    info_mesg "committing changes in " "$dir"
 		    git commit -m "$mess" .
+		    git push > /dev/null
 		fi
-		git push > /dev/null
 		popd > /dev/null
 	    done
 	    ;;
