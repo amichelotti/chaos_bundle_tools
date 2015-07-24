@@ -5,10 +5,11 @@ source $scriptdir/common_util.sh
 
 CDS_EXEC=ChaosDataService
 CDS_CONF=cds.cfg
-
+MDS_EXEC=ChaosMetadataService
 UI_EXEC=CUIserver
 US_EXEC=UnitServer
 WAN_EXEC=ChaosWANProxy
+
 cds_checks(){
     if [ -z "$CHAOS_PREFIX" ]; then
 	error_mesg "CHAOS_PREFIX environment variables not set"
@@ -41,31 +42,15 @@ cds_checks(){
 }
 
 mds_checks(){
-    if [ -z "$MDS_DIR" ]; then
-	if [ -z "$CHAOS_BUNDLE" ]; then
-	    error_mesg "CHAOS_BUNDLE and MDS_DIR environment variables not set, please set one of them"
-	    exit 1
-	fi
-	MDS_DIR=$CHAOS_BUNDLE/chaosframework/ChaosMDSLite
-	
-	if [ ! -d "$MDS_DIR" ]; then
-	    error_mesg "directory $MDS_DIR not found"
-	    exit 1
-	fi
-	mkdir -p $CHAOS_PREFIX/log
-	MDS_LOG=$CHAOS_PREFIX/log/mds.log
-    fi
-
-    if ! ps -fe |grep [m]ysqld >/dev/null ;then
-	error_mesg "mysqld not running" ; exit 1
+    MDS_LOG=$CHAOS_PREFIX/log/mds.log
+    mkdir -p $CHAOS_PREFIX/log
+    if [ -x "$CHAOS_PREFIX/bin/$MDS_EXEC" ]; then
+	MDS_BIN=$CHAOS_PREFIX/bin/$MDS_EXEC
     else
-	ok_mesg "mysqld check"
-    fi
-    
-    if ! which mvn > /dev/null ; then
-	error_mesg "mvn not found"
+	error_mesg "$MDS_EXEC binary not found in $CHAOS_PREFIX/bin"
 	exit 1
     fi
+
 }
 
 
@@ -75,9 +60,9 @@ usage(){
 start_mds(){
     mds_checks;
     info_mesg "starting MDS..."
-    check_proc_then_kill "tomcat:run"
+    check_proc_then_kill "$MDS_EXEC"
     cd "$MDS_DIR"
-    run_proc "mvn tomcat:run > $MDS_LOG 2>&1 &" "tomcat:run"
+    run_proc "$MDS_BIN --conf-file $CHAOS_PREFIX/etc/mds.cfg > $MDS_LOG 2>&1 &" "$MDS_EXEC"
     cd - > /dev/null
 }
 
@@ -85,7 +70,7 @@ start_cds(){
     cds_checks
     info_mesg "starting CDS..."
     check_proc_then_kill "$CDS_EXEC"
-    run_proc "$CDS_BIN --conf_file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
+    run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
 start_ui(){    
     port=8081
@@ -102,7 +87,7 @@ start_wan(){
 	warn_mesg "Wan proxy configuration file not found in \"$CHAOS_PREFIX/etc/WanProxy.conf\" " "start skipped"
 	return
     fi
-    run_proc "$CHAOS_PREFIX/bin/$WAN_EXEC --conf_file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/$WAN_EXEC.std.out 2>&1 &" "$WAN_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$WAN_EXEC --conf-file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/$WAN_EXEC.std.out 2>&1 &" "$WAN_EXEC"
 }
 
 ui_stop()

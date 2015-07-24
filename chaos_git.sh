@@ -67,7 +67,7 @@ while getopts t:c:p:hsd: opt; do
 	    ;;
 	h)
 	    echo -e "Usage is $0 [-s] [-t <tag name>][ -c <checkout branch> ] [ -p <branch name> ] [-d <directory0>] [-d <directory1>] \n-c <branch name>: check out a given branch name in all subdirs\n-p <branch>:commit and push modifications of a given branch\n-s:retrive the branch status\n-t <tag name>:make an annotated tag to all\n-d <directory>: apply just to the specified directory"
-	    exit 0;
+	    exit 0
 	    ;;
     esac
 

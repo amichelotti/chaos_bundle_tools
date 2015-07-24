@@ -165,10 +165,14 @@ function chaos_configure(){
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds_local.cfg
     ln -sf $PREFIX/etc/cds_local.cfg $PREFIX/etc/cds.cfg
     sed 's/run_mode=.*/run_mode=1/' $PREFIX/etc/cds_local.cfg | sed 's/vfs_storage_driver_kvp=.*/vfs_storage_driver_kvp=posix_root_path:\/dev\/null/g' > $PREFIX/etc/cds_noidx.cfg
-
-    ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
+    if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMDSLite ]; then
+	ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
+    fi
     if [ -e  "$PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml" ];then	
 	cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
+    fi
+    if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg ]; then
+	cp $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg $PREFIX/etc/mds.cfg
     fi
 }
 
