@@ -56,6 +56,7 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     export CXX=arm-linux-gnueabihf-g++-4.8
     export LD=arm-linux-gnueabihf-ld
     export CHAOS_CROSS_HOST=arm-linux-gnueabihf
+    export CHAOS_BOOST_VERSION=55
     export CFLAGS="$CFLAGS -D__BSON_USEMEMCPY__"
     export CXXFLAGS="$CXXFLAGS -D__BSON_USEMEMCPY__"
     #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
@@ -92,6 +93,7 @@ else
     else
 	if [ "$CHAOS_TARGET" == "linux-old" ] ; then
 	    echo "* Cross compiling for i686 platforms on linux <=2.6"
+	    export CHAOS_BOOST_VERSION=56
 	    export CC=i686-infn-linux-gnu-gcc
 	    export CXX=i686-infn-linux-gnu-g++
 	    export LD=i686-infn-linux-gnu-ld
