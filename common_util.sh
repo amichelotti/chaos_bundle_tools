@@ -73,24 +73,39 @@ function setEnv(){
     local target=$2
     local build=$3
     local prefix=$4
-
-    
-    if [ "$type" == "static" ]; then
-	export CHAOS_STATIC=true
-    fi
-    if [ "$target" != "$ARCH" ]; then
-	export CHAOS_TARGET=$target
-    fi
-	    
-    if [ "$build" == "debug" ]; then
-	export CHAOS_DEVELOPMENT=true
-    fi
-    if [ -d "$prefix" ]; then
-	export CHAOS_PREFIX=$prefix
-	PREFIX=$prefix
+    if [ -z "$1" ]; then
+	## fetch from configuration file
+	if [ -e "$CHAOS_BUNDLE/.chaos_config" ]; then
+	    source $CHAOS_BUNDLE/.chaos_config
+	fi
     else
-	echo "## directory $prefix is invalid"
-	exit 1
+    
+	if [ "$type" == "static" ]; then
+	    export CHAOS_STATIC=true
+	fi
+	if [ "$target" != "$ARCH" ]; then
+	    export CHAOS_TARGET=$target
+	fi
+	
+	if [ "$build" == "debug" ]; then
+	    export CHAOS_DEVELOPMENT=true
+	fi
+	if [ -d "$prefix" ]; then
+	    export CHAOS_PREFIX=$prefix
+	    PREFIX=$prefix
+	else
+	    echo "## directory $prefix is invalid"
+	    exit 1
+	fi
+	if [ -e "$CHAOS_BUNDLE/.chaos_config" ]; then
+	    cat $CHAOS_BUNDLE/.chaos_config | sed 's/CHAOS_BUNDLE=.*//g'|sed 's/CHAOS_PREFIX=.*//g'|sed 's/CHAOS_BUNDLE=.*//g'|sed 's/CHAOS_STATIC=.*//g'|sed 's/CHAOS_TARGET=.*//g'|sed 's/CHAOS_DEVELOPMENT=.*//g' > /tmp/.chaos_config
+	    mv /tmp/.chaos_config $CHAOS_BUNDLE/.chaos_config
+	fi
+	echo "CHAOS_BUNDLE=$CHAOS_BUNDLE" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_PREFIX=$CHAOS_PREFIX" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_STATIC=$CHAOS_STATIC" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_TARGET=$CHAOS_TARGET" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_DEVELOPMENT=$CHAOS_DEVELOPMENT" >> $CHAOS_BUNDLE/.chaos_config
     fi
     info_mesg "CHAOS_BUNDLE  :" "$CHAOS_BUNDLE"
     info_mesg "Host Arch     :" "$ARCH"
@@ -100,7 +115,6 @@ function setEnv(){
     info_mesg "Prefix        :" "$prefix"
     info_mesg "OS            :" "$OS"
     if [ -n "$CHAOS_EXCLUDE_DIR" ]; then
-
 	info_mesg "Excluding :" "$CHAOS_EXCLUDE_DIR"
     fi
 
