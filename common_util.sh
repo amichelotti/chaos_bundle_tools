@@ -108,7 +108,9 @@ function setEnv(){
 	rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
 	mkdir -p $CHAOS_BUNDLE/usr
 	mkdir -p $CHAOS_FRAMEWORK/usr
+	info_mesg "linking $CHAOS_FRAMEWORK/usr/local to " "$PREFIX"
 	ln -sf $PREFIX $CHAOS_FRAMEWORK/usr/local
+	ln -sf $PREFIX $CHAOS_BUNDLE/usr/local
     else
 	return 1
     fi

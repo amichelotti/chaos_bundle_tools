@@ -90,7 +90,7 @@ while getopts t:o:w:b:p:hd:rsc:kx:n: opt; do
 	c)
 	    config="$OPTARG"
 	    if [ ! -d "$config" ]; then
-		error_mesg "directory $config in invalid"
+		error_mesg "directory $config is invalid"
 		exit 1
 	    else
 		info_mesg "configuring environment in " "$config";
@@ -125,12 +125,15 @@ init_tgt_vars(){
 
 init_tgt_vars;
 
-
+if [ ! -d "$PREFIX" ];then
+    info_mesg "new configuration " "$PREFIX" 
+    $dir/chaos_clean.sh
+fi
 
 
 
 function compile(){
-    $dir/chaos_clean.sh >& /dev/null
+  
     info_mesg "log on " "$log"
     info_mesg "compiling " "$tgt ...."
     echo -e '\n\n' | $dir/init_bundle.sh >& $log;
