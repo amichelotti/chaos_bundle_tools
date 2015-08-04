@@ -103,7 +103,7 @@ wan_stop()
 mds_stop()
 {
     info_mesg "stopping MDS..."
-    stop_proc "tomcat:run"
+    stop_proc "$MDS_EXEC"
 }
 
 cds_stop(){
@@ -146,10 +146,8 @@ status(){
     local status=0
     check_proc "mongod"
     status=$((status + $?))
-
     check_proc "epmd"
     status=$((status + $?))
-
     check_proc "$MDS_EXEC"
     status=$((status + $?))
     check_proc "$CDS_EXEC"
