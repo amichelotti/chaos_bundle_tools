@@ -144,15 +144,13 @@ stop_all(){
 
 status(){
     local status=0
-    check_proc "mysqld"
-    status=$((status + $?))
     check_proc "mongod"
     status=$((status + $?))
 
     check_proc "epmd"
     status=$((status + $?))
 
-    check_proc "tomcat:run"
+    check_proc "$MDS_EXEC"
     status=$((status + $?))
     check_proc "$CDS_EXEC"
     status=$((status + $?))
