@@ -50,7 +50,7 @@ fi
 start_mds || end_test 1 "Starting MDS"
 
 
-if ChaosMDSCmd --mds-conf $MDS_TEST_CONF; then
+if ChaosMDSCmd --mds-conf $MDS_TEST_CONF >& /dev/null; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"

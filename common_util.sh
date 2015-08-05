@@ -5,6 +5,7 @@ SCRIPTNAME=`basename $0`
 SCRIPTTESTPATH=$0
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
+
 if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
 fi
@@ -558,6 +559,8 @@ get_timestamp_cu(){
     if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
 	return 0
+    else
+	error_mesg "cannot get timestamp from: \"$cli_cmd\""
     fi
     
     return 1
@@ -575,7 +578,7 @@ get_dataset_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
     else
 	return 1
@@ -727,6 +730,9 @@ launch_us_cu(){
     done
 }
 start_test(){
+    data=`date`
+    echo "======================================================================================================="
+    info_mesg "[ $data ] starting test " "$0"
     for ((cnt=0;cnt<4;cnt++));do
 	if [ -z "$__testinfo__[$cnt]" ];then
 	    __testinfo__[$cnt]=0
