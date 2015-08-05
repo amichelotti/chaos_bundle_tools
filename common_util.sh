@@ -523,12 +523,12 @@ chaos_cli_cmd(){
     if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
 	timeout=$((timeout * 10))
     fi
-    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --deviceid $cuname --timeout $timeout $param 2>&1`
+    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --device-id $cuname --timeout $timeout $param 2>&1`
    
     if [ $? -eq 0 ]; then
 	return 0
     fi
-    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --deviceid $cuname --timeout $timeout $param \" returned:$cli_cmd"
+    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --device-id $cuname --timeout $timeout $param \" returned:$cli_cmd"
     return 1
 
 }
@@ -555,7 +555,7 @@ get_timestamp_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
 	return 0
     fi
@@ -707,7 +707,7 @@ launch_us_cu(){
 
     for ((us=0;us<$NUS;us++));do
 	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit-server-alias TEST_UNIT_$us --metadata-server $META > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else

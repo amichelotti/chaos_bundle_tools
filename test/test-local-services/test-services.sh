@@ -1,8 +1,7 @@
 #!/bin/bash
 source $CHAOS_TOOLS/common_util.sh
 start_test
-MDS_HOME=$CHAOS_PREFIX/chaosframework/ChaosMDSLite/
-rm -rf $MDS_HOME/mds_init.conf* >/dev/null
+MDS_TEST_CONF=$CHAOS_PREFIX/etc/mds_test_conf.cfg
 NUS=10
 NCU=20
 TESTCU=""
@@ -41,26 +40,26 @@ else
 fi
 cds_url="$execute_command"
 info_mesg "Building " "configuration"
-if ! build_mds_conf $NCU $NUS $MDS_HOME/mds_init.conf "$cds_url" "TEST_CU" "$TESTCU"; then
-    nok_mesg "MDS configuration created"
+if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
+    nok_mesg "MDS configuration created with cds url:$cds_url"
     end_test 1 "MDS configuration"
 else
-    ok_mesg "MDS configuration created"
+    ok_mesg "MDS configuration created with cds url:$cds_url"
 fi
 
 start_mds || end_test 1 "Starting MDS"
 
 
+if ChaosMDSCmd --mds-conf $MDS_TEST_CONF; then
+    ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
+else
+    nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
+    end_test 1
+fi
 status=0
 
-if execute_command_until_ok "wget localhost:8080/ChaosMDSLite -P wget_test1 >& /dev/null" 10 ;then
-    ok_mesg "MDS answer"
-else
-    nok_mesg "MDS answer"
-    end_test 1 "MDS answer"
-fi
-
-if execute_command_until_ok "wget localhost:8081/CU?dev=test -P wget_test1 >& /dev/null" 10 ;then
+info_mesg "Testing UI Server"
+if execute_command_until_ok "wget localhost:8081/CU?dev=TEST_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
     ok_mesg "CUI answer"
 else
     nok_mesg "CUI answer"
@@ -68,23 +67,17 @@ else
 fi
 sleep 1
 
-if execute_command_until_ok "[ -f \"$MDS_HOME/mds_init.conf.loaded\" ]" 10 ;then
-    ok_mesg "MDS configuration loaded"
-else
-    nok_mesg "MDS configuration loaded"
-    end_test 1 "MDS configuration"
-fi
 
 check_proc_then_kill "ChaosWANProxy"
 sleep 1
 echo "log-on-console=YES" > $CHAOS_PREFIX/etc/WanProxy.conf
 echo "log-level=debug" >> $CHAOS_PREFIX/etc/WanProxy.conf
-echo "cds_addresses=$cds_url">> $CHAOS_PREFIX/etc/WanProxy.conf
+echo "cds-addresses=$cds_url">> $CHAOS_PREFIX/etc/WanProxy.conf
 echo "metadata-server=localhost:5000">> $CHAOS_PREFIX/etc/WanProxy.conf
-echo "wi_interface=HTTP" >> $CHAOS_PREFIX/etc/WanProxy.conf
-echo "wi_json_param={\"HTTP_wi_port\":8082}" >> $CHAOS_PREFIX/etc/WanProxy.conf
+echo "wi-interface=HTTP" >> $CHAOS_PREFIX/etc/WanProxy.conf
+echo "wi-json-param={\"HTTP_wi_port\":8082}" >> $CHAOS_PREFIX/etc/WanProxy.conf
 
-if run_proc "$CHAOS_PREFIX/bin/ChaosWANProxy --conf_file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/ChaosWANProxy.log 2>&1 &" "ChaosWANProxy";then
+if run_proc "$CHAOS_PREFIX/bin/ChaosWANProxy --conf-file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/ChaosWANProxy.log 2>&1 &" "ChaosWANProxy";then
     ok_mesg "WAN Proxy started"
 else
     nok_mesg "WAN Proxy started"
@@ -103,13 +96,13 @@ else
     nok_mesg "CREST CU TEST"
     end_test 1 "CREST CU TEST"
 fi
-info_mesg "performing test retriving from CUIserver " "CREST UI"
-if $CHAOS_PREFIX/bin/chaos_crest_ui_test localhost:8081 "BTF_SIM/QDC0" > $CHAOS_PREFIX/log/crest_ui_test.log ;then
-    ok_mesg "CREST UI TEST"
-else
-    nok_mesg "CREST UI TEST"
-    end_test 1 "CREST UI TEST"
-fi
+# info_mesg "performing test retriving from CUIserver " "CREST UI"
+# if $CHAOS_PREFIX/bin/chaos_crest_ui_test localhost:8081 "BTF_SIM/QDC0" > $CHAOS_PREFIX/log/crest_ui_test.log ;then
+#     ok_mesg "CREST UI TEST"
+# else
+#     nok_mesg "CREST UI TEST"
+#     end_test 1 "CREST UI TEST"
+# fi
 
 end_test 0
 

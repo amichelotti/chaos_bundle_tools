@@ -62,7 +62,7 @@ start_mds(){
     info_mesg "starting MDS..."
     check_proc_then_kill "$MDS_EXEC"
     cd "$MDS_DIR"
-    run_proc "$MDS_BIN --conf-file $CHAOS_PREFIX/etc/mds.cfg --log-on-file --log-file $MDS_LOG > $CHAOS_PREFIX/log/ChaosMetadataService.std.out 2>&1 &" "$MDS_EXEC"
+    run_proc "$MDS_BIN --conf-file $CHAOS_PREFIX/etc/mds.cfg > $CHAOS_PREFIX/log/$MDS_EXEC.std.out 2>&1 &" "$MDS_EXEC"
     cd - > /dev/null
 }
 
@@ -70,13 +70,13 @@ start_cds(){
     cds_checks
     info_mesg "starting CDS..."
     check_proc_then_kill "$CDS_EXEC"
-    run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF --log-on-file --log-file $CHAOS_PREFIX/log/$CDS_EXEC.log > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
+    run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
 start_ui(){
     port=8081
     info_mesg "starting UI Server on port " "$port"
     check_proc_then_kill "$UI_EXEC"
-    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log --log-level debug > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
 }
 start_wan(){
     port=8082
