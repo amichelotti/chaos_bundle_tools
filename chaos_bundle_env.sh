@@ -26,7 +26,7 @@ fi;
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
-    export CHAOS_BOOST_VERSION=56
+    export CHAOS_BOOST_VERSION=55
 else
     export CHAOS_BOOST_VERSION=56
 fi;

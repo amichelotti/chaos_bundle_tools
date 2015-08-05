@@ -28,7 +28,7 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc:kx:n: opt; do
+while getopts t:o:w:b:p:hd:rsc:kx:n:f opt; do
     case $opt in
 	t)
 	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
@@ -99,12 +99,16 @@ while getopts t:o:w:b:p:hd:rsc:kx:n: opt; do
 	x)
 	    exclude_dir+=("$OPTARG")
 	    ;;
+	f)
+	    force_rebuild="true"
+	    info_mesg "force rebuild" " true"
+	    ;;
 
 	n) export NPROC=$OPTARG
 	    info_mesg "force to use " "$NPROC processors"
 	    ;;
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation";
+	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation\n-f:force rebuild all";
 	    exit 0;
 	    ;;
     esac
@@ -125,18 +129,23 @@ init_tgt_vars(){
 
 init_tgt_vars;
 
-if [ ! -d "$PREFIX" ];then
-    info_mesg "new configuration " "$PREFIX" 
-    $dir/chaos_clean.sh
-fi
 
 
 
 function compile(){
-  
     info_mesg "log on " "$log"
-    info_mesg "compiling " "$tgt ...."
-    echo -e '\n\n' | $dir/init_bundle.sh >& $log;
+
+    if [ ! -d "$PREFIX" ] || [ ! -z "$force_rebuild" ];then
+	info_mesg "new configuration $PREFIX " "clean all" 
+	$dir/chaos_clean.sh
+	rm -rf $PREFIX
+	info_mesg "compiling " "$tgt ...."
+
+	echo -e '\n\n' | $dir/init_bundle.sh >& $log;
+    else
+	echo -e '\n\n' | $dir/init_bundle.sh 1 >& $log;
+
+    fi
     
 }
 
@@ -165,7 +174,7 @@ for target in ${compile_target[@]} ; do
 	for build in ${compile_build[@]} ; do
 	    error=0
 	    init_tgt_vars;
-	    rm -rf $PREFIX
+
 	    mkdir -p $PREFIX
 	    unSetEnv
 
