@@ -28,37 +28,41 @@ git_checkout(){
     check_out_opt=""
     
     if git fetch; then
-	ok_mesg "fetching"
+	ok_mesg "[$dir] fetching"
     else
 	error_mesg "[$dir] cannot fetch"
 	return 1
     fi
-    if git branch -av |grep "origin/$git_arg";then
-	check_out_opt="-t -b $2 origin/$git_arg"
-    else
-	if git branch -av |grep "$git_arg";then
+    if git branch -a |grep "origin/$2";then
+	if git branch | grep "$2" ;then
 	    check_out_opt="$2"
 	else
-	    echo "branch $git_arg not found, do you want create?, empty skip:"
+	    check_out_opt="-t -b $2 origin/$2"
+	fi
+    else
+	if git branch |grep "$2";then
+	    check_out_opt="$2"
+	else
+	    echo "branch $2 not found, do you want create?, empty skip:"
 	    read mesg
 	    if [ -z "$mesg" ];then
 		return 1
 	    fi
-	    check_out_opt="-t -b $2 "
+	    check_out_opt="-t -b $2"
 	    
 	fi
     fi
-    
-    if git checkout "$check_out_opt" ; then
-	ok_mesg "$dir checkout $2"
+
+    if git checkout $check_out_opt ; then
+	ok_mesg "[$dir] checkout $2"
 	if git pull ;then
-	    ok_mesg "synchronize $dir"
+	    ok_mesg "[$dir] synchronize"
 	else
-	    nok_mesg "synchronize $dir"
+	    nok_mesg "[$dir] synchronize"
 	    return 1
 	fi
     else
-	error_mesg "checking out $2 in " "$dir"
+	error_mesg "[$dir] checking out $2"
 	return 1 
     fi
 
@@ -158,7 +162,7 @@ for dir in ${on_dir[@]}; do
 	    git pull
 	    tagname=$(echo "$git_arg" | tr ' ' '-')
 	    git tag -f -m "$mesg" $tagname
-	    git push
+	    git push --tags
 	    ;;
 	p)
 	    if git status | grep modified > /dev/null; then
