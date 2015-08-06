@@ -25,12 +25,31 @@ die(){
 
 git_checkout(){
     dir=$1
+    check_out_opt=""
+    
     if git fetch; then
+	ok_mesg "fetching"
+    else
 	error_mesg "[$dir] cannot fetch"
 	return 1
     fi
-
-    if git checkout "$2" ; then
+    if git branch -av |grep "origin/$git_arg";then
+	check_out_opt="-t -b $2 origin/$git_arg"
+    else
+	if git branch -av |grep "$git_arg";then
+	    check_out_opt="$2"
+	else
+	    echo "branch $git_arg not found, do you want create?, empty skip:"
+	    read mesg
+	    if [ -z "$mesg" ];then
+		return 1
+	    fi
+	    check_out_opt="-t -b $2 "
+	    
+	fi
+    fi
+    
+    if git checkout "$check_out_opt" ; then
 	ok_mesg "$dir checkout $2"
 	if git pull ;then
 	    ok_mesg "synchronize $dir"
@@ -52,8 +71,11 @@ git_cmd=""
 usage(){
     echo -e "Usage is $0 [-s] [-t <tag name>][ -c <checkout branch> ] [ -p <branch name> ] [-d <directory0>] [-d <directory1>] \n-c <branch name>: check out a given branch name in all subdirs\n-p <branch>:commit and push modifications of a given branch\n-s:retrive the branch status\n-t <tag name>:make an annotated tag to all\n-d <directory>: apply just to the specified directory\n-m <src branch> <dst branch>: merge src into dst branch\n"
 }
-while getopts t:c:p:hsd:m opt; do
+while getopts t:c:p:hsd:mr opt; do
     case $opt in
+	r)
+	    remote=1
+	    ;;
 	t) 
 	    echo -n "provide a tag message:"
 	    read mesg
