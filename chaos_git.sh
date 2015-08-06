@@ -183,6 +183,15 @@ for dir in ${on_dir[@]}; do
 			fi
 
 		fi
+	    else
+		if git status | grep ahead > /dev/null; then
+		    if git push > /dev/null; then
+			info_mesg "[$dir] push " "done"
+		    else
+			error_mesg "[$dir] cannot push"
+		    fi
+		
+		fi
 	    fi
 	    
 	    ;;
