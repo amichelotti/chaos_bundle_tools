@@ -11,7 +11,8 @@ source $CHAOS_TOOLS/common_util.sh
 ## performs cycles of init,start,stop,deinit
 ## leave the CUs in start (to verify memory occupation)
 ##
-./test-basic-core.sh 2 10 localhost:5000 UnitServer NOISE || exit 1
+## ./test-basic-core.sh 2 10 localhost:5000 UnitServer NOISE || exit 1
+./test-basic-core.sh 2 10 localhost:5000 UnitServer || exit 1
 
 ## prepare a configuration of sensors
 

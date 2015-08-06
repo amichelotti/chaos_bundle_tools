@@ -5,6 +5,7 @@ SCRIPTNAME=`basename $0`
 SCRIPTTESTPATH=$0
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
+
 if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
 fi
@@ -73,24 +74,39 @@ function setEnv(){
     local target=$2
     local build=$3
     local prefix=$4
-
-    
-    if [ "$type" == "static" ]; then
-	export CHAOS_STATIC=true
-    fi
-    if [ "$target" != "$ARCH" ]; then
-	export CHAOS_TARGET=$target
-    fi
-	    
-    if [ "$build" == "debug" ]; then
-	export CHAOS_DEVELOPMENT=true
-    fi
-    if [ -d "$prefix" ]; then
-	export CHAOS_PREFIX=$prefix
-	PREFIX=$prefix
+    if [ -z "$1" ]; then
+	## fetch from configuration file
+	if [ -e "$CHAOS_BUNDLE/.chaos_config" ]; then
+	    source $CHAOS_BUNDLE/.chaos_config
+	fi
     else
-	echo "## directory $prefix is invalid"
-	exit 1
+    
+	if [ "$type" == "static" ]; then
+	    export CHAOS_STATIC=true
+	fi
+	if [ "$target" != "$ARCH" ]; then
+	    export CHAOS_TARGET=$target
+	fi
+	
+	if [ "$build" == "debug" ]; then
+	    export CHAOS_DEVELOPMENT=true
+	fi
+	if [ -d "$prefix" ]; then
+	    export CHAOS_PREFIX=$prefix
+	    PREFIX=$prefix
+	else
+	    echo "## directory $prefix is invalid"
+	    exit 1
+	fi
+	if [ -e "$CHAOS_BUNDLE/.chaos_config" ]; then
+	    cat $CHAOS_BUNDLE/.chaos_config | sed 's/CHAOS_BUNDLE=.*//g'|sed 's/CHAOS_PREFIX=.*//g'|sed 's/CHAOS_BUNDLE=.*//g'|sed 's/CHAOS_STATIC=.*//g'|sed 's/CHAOS_TARGET=.*//g'|sed 's/CHAOS_DEVELOPMENT=.*//g' > /tmp/.chaos_config
+	    mv /tmp/.chaos_config $CHAOS_BUNDLE/.chaos_config
+	fi
+	echo "CHAOS_BUNDLE=$CHAOS_BUNDLE" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_PREFIX=$CHAOS_PREFIX" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_STATIC=$CHAOS_STATIC" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_TARGET=$CHAOS_TARGET" >> $CHAOS_BUNDLE/.chaos_config
+	echo "CHAOS_DEVELOPMENT=$CHAOS_DEVELOPMENT" >> $CHAOS_BUNDLE/.chaos_config
     fi
     info_mesg "CHAOS_BUNDLE  :" "$CHAOS_BUNDLE"
     info_mesg "Host Arch     :" "$ARCH"
@@ -100,7 +116,6 @@ function setEnv(){
     info_mesg "Prefix        :" "$prefix"
     info_mesg "OS            :" "$OS"
     if [ -n "$CHAOS_EXCLUDE_DIR" ]; then
-
 	info_mesg "Excluding :" "$CHAOS_EXCLUDE_DIR"
     fi
 
@@ -108,7 +123,9 @@ function setEnv(){
 	rm -rf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK/usr $CHAOS_FRAMEWORK/usr/local
 	mkdir -p $CHAOS_BUNDLE/usr
 	mkdir -p $CHAOS_FRAMEWORK/usr
+	info_mesg "linking $CHAOS_FRAMEWORK/usr/local to " "$PREFIX"
 	ln -sf $PREFIX $CHAOS_FRAMEWORK/usr/local
+	ln -sf $PREFIX $CHAOS_BUNDLE/usr/local
     else
 	return 1
     fi
@@ -507,12 +524,12 @@ chaos_cli_cmd(){
     if [ "$CHAOS_RUNTYPE" == "callgrind" ]; then
 	timeout=$((timeout * 10))
     fi
-    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --deviceid $cuname --timeout $timeout $param 2>&1`
+    cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --device-id $cuname --timeout $timeout $param 2>&1`
    
     if [ $? -eq 0 ]; then
 	return 0
     fi
-    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --deviceid $cuname --timeout $timeout $param \" returned:$cli_cmd"
+    error_mesg "Error \"$CHAOS_PREFIX/bin/ChaosCLI --metadata-server $meta --device-id $cuname --timeout $timeout $param \" returned:$cli_cmd"
     return 1
 
 }
@@ -539,9 +556,11 @@ get_timestamp_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
 	return 0
+    else
+	error_mesg "cannot get timestamp from: \"$cli_cmd\""
     fi
     
     return 1
@@ -559,7 +578,7 @@ get_dataset_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"dpck_ts\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
     else
 	return 1
@@ -691,7 +710,7 @@ launch_us_cu(){
 
     for ((us=0;us<$NUS;us++));do
 	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit_server_alias TEST_UNIT_$us --metadata-server $META --unit_server_enable true > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit-server-alias TEST_UNIT_$us --metadata-server $META > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else
@@ -711,6 +730,9 @@ launch_us_cu(){
     done
 }
 start_test(){
+    data=`date`
+    echo "======================================================================================================="
+    info_mesg "[ $data ] starting test " "$0"
     for ((cnt=0;cnt<4;cnt++));do
 	if [ -z "$__testinfo__[$cnt]" ];then
 	    __testinfo__[$cnt]=0

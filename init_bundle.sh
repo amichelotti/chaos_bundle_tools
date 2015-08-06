@@ -79,7 +79,7 @@ function cmake_compile(){
 	return 0;
     fi;
     echo "* entering in $dir"
-    rm -rf CMakeCache.txt
+
     echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	error_mesg "unable to create Makefile in $dir"
@@ -98,8 +98,7 @@ function cmake_compile(){
 
 
 
-
-rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
+# rm -rf $CHAOS_FRAMEWORK/CMakeFiles $CHAOS_FRAMEWORK/CMakeCache.txt
 if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     error_mesg "error bootstrapping quitting"
     exit 1

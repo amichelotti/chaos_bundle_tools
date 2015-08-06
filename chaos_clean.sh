@@ -13,5 +13,5 @@ cleandir $chaos_bundle/chaosframework/build
 if [ -n "$CHAOS_PREFIX" ]; then
     cleandir $CHAOS_PREFIX
 fi
-find $chaos_bundle -name "CMakeFiles" -exec rm -rf \{\} \;
-find $chaos_bundle -name "CMakeCache.txt" -exec rm -rf \{\} \;
+find $chaos_bundle -name "CMakeFiles" -exec rm -rf \{\} \; >& /dev/null
+find $chaos_bundle -name "CMakeCache.txt" -exec rm -rf \{\} \; >& /dev/null

@@ -104,6 +104,7 @@ info_mesg "found $test_found test(s).."
 error_list=()
 ok_list=()
 status=0
+
 for test in ${final_test_list[@]};do
     info_mesg "starting test $test ..."
     group_test=`dirname $test`
@@ -111,10 +112,11 @@ for test in ${final_test_list[@]};do
     test_name=`basename $test`
     pushd `dirname $test` >/dev/null
     start_profile_time
+    echo "----------------------------------------------------------"
     $test
     res=$?
     status=$(($status + $res))
-
+    echo "----------------------------------------------------------"
     exec_time=$(end_profile_time)
     popd >/dev/null
     if [ $res -eq 0 ]; then

@@ -22,7 +22,7 @@ cds_checks(){
 	error_mesg "$CDS_EXEC binary not found in $CHAOS_PREFIX/bin"
 	exit 1
     fi
-    
+
     if [ ! -f "$CHAOS_PREFIX/etc/$CDS_CONF" ]; then
 	error_mesg "CDS configuration file \"$CDS_CONF\" not found in $CHAOS_PREFIX/etc/"
 	exit 1
@@ -42,13 +42,13 @@ cds_checks(){
 }
 
 mds_checks(){
-    MDS_LOG=$CHAOS_PREFIX/log/mds.log
+    MDS_LOG=$CHAOS_PREFIX/log/ChaosMetadataService.log
     mkdir -p $CHAOS_PREFIX/log
     if [ -x "$CHAOS_PREFIX/bin/$MDS_EXEC" ]; then
-	MDS_BIN=$CHAOS_PREFIX/bin/$MDS_EXEC
+	     MDS_BIN=$CHAOS_PREFIX/bin/$MDS_EXEC
     else
-	error_mesg "$MDS_EXEC binary not found in $CHAOS_PREFIX/bin"
-	exit 1
+	     error_mesg "$MDS_EXEC binary not found in $CHAOS_PREFIX/bin"
+	      exit 1
     fi
 
 }
@@ -62,7 +62,7 @@ start_mds(){
     info_mesg "starting MDS..."
     check_proc_then_kill "$MDS_EXEC"
     cd "$MDS_DIR"
-    run_proc "$MDS_BIN --conf-file $CHAOS_PREFIX/etc/mds.cfg > $MDS_LOG 2>&1 &" "$MDS_EXEC"
+    run_proc "$MDS_BIN --conf-file $CHAOS_PREFIX/etc/mds.cfg > $CHAOS_PREFIX/log/$MDS_EXEC.std.out 2>&1 &" "$MDS_EXEC"
     cd - > /dev/null
 }
 
@@ -72,39 +72,38 @@ start_cds(){
     check_proc_then_kill "$CDS_EXEC"
     run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
-start_ui(){    
+start_ui(){
     port=8081
-    
     info_mesg "starting UI Server on port " "$port"
     check_proc_then_kill "$UI_EXEC"
-    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log --log-level debug > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
 }
 start_wan(){
     port=8082
-    info_mesg "starting WAN Server on port " "$port" 
+    info_mesg "starting WAN Server on port " "$port"
     check_proc_then_kill "$WAN_EXEC"
     if [ ! -e "$CHAOS_PREFIX/etc/WanProxy.conf" ]; then
-	warn_mesg "Wan proxy configuration file not found in \"$CHAOS_PREFIX/etc/WanProxy.conf\" " "start skipped"
-	return
+	     warn_mesg "Wan proxy configuration file not found in \"$CHAOS_PREFIX/etc/WanProxy.conf\" " "start skipped"
+	      return
     fi
     run_proc "$CHAOS_PREFIX/bin/$WAN_EXEC --conf-file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/$WAN_EXEC.std.out 2>&1 &" "$WAN_EXEC"
 }
 
 ui_stop()
-{    
+{
     info_mesg "stopping UI Server..."
     stop_proc "$UI_EXEC"
 }
 wan_stop()
-{    
+{
     info_mesg "stopping WAN Server..."
     stop_proc "$WAN_EXEC"
 }
 
 mds_stop()
-{    
+{
     info_mesg "stopping MDS..."
-    stop_proc "tomcat:run"
+    stop_proc "$MDS_EXEC"
 }
 
 cds_stop(){
@@ -114,9 +113,9 @@ cds_stop(){
 start_all(){
     local status=0
     info_mesg "start all chaos services..."
-    start_mds
-    status=$((status + $?))
     start_cds
+    status=$((status + $?))
+    start_mds
     status=$((status + $?))
     start_ui
     status=$((status + $?))
@@ -128,32 +127,28 @@ start_all(){
 stop_all(){
     local status=0
     info_mesg "stopping all chaos services..."
+    wan_stop
+    status=$((status + $?))
+    ui_stop
+    status=$((status + $?))
     mds_stop
     status=$((status + $?))
     cds_stop
     status=$((status + $?))
-    ui_stop
-    status=$((status + $?))
-    wan_stop
-    status=$((status + $?))
     if [ -n "$(get_pid $US_EXEC)" ];then
-	stop_proc "$US_EXEC"
-	status=$((status + $?))
+	     stop_proc "$US_EXEC"
+	      status=$((status + $?))
     fi
     exit $status
 }
 
 status(){
     local status=0
-    check_proc "mysqld"
-    status=$((status + $?))
     check_proc "mongod"
     status=$((status + $?))
-
     check_proc "epmd"
     status=$((status + $?))
-
-    check_proc "tomcat:run"
+    check_proc "$MDS_EXEC"
     status=$((status + $?))
     check_proc "$CDS_EXEC"
     status=$((status + $?))
@@ -198,12 +193,12 @@ case "$cmd" in
 		    start_wan
 		    exit 0
 		    ;;
-		*) 
+		*)
 		    error_mesg "\"$2\" no such service"
 		    usage
 		    ;;
 	    esac
-	    
+
 	fi
 
 	;;
@@ -228,12 +223,12 @@ case "$cmd" in
 		    ui_stop
 		    exit 0
 		    ;;
-		*) 
+		*)
 		    error_mesg "\"$2\" no such service"
 		    usage
 		    ;;
 	    esac
-	    
+
 	fi
 	;;
     *)
@@ -241,6 +236,3 @@ case "$cmd" in
 	exit 1
 	;;
 esac
-	
-
-
