@@ -14,14 +14,29 @@ create_deb_ver=""
 remove_working="false"
 log="$0.log"
 exclude_dir=()
+compile_target=( "$ARCH" )
+if arm-linux-gnueabihf-g++-4.8 -v |& grep version >& /dev/null; then
+    compile_target+=("armhf")
+fi
+
+if arm-infn-linux-gnueabi-g++ -v |& grep version >& /dev/null;then
+    compile_target+=("arm-linux-2.6")
+fi
+
+if i686-infn-linux-gnu-g++ -v |& grep version >& /dev/null;then
+    compile_target+=("linux-old")
+fi
+
+if arm-nilrt-linux-gnueabi-g++ -v |& grep version >& /dev/null;then
+      compile_target+=("crio90xx")
+fi
+
+compile_build=("release" "debug")
+
 if [ "$OS" == "Linux" ]; then
-    compile_type=( "dynamic" "static" );
-    compile_target=( "$ARCH" "armhf" "crio90xx" "arm-linux-2.6" "linux-old");
-    compile_build=("release" "debug")
+    compile_type=("dynamic static");
 else
     compile_type=("dynamic");
-    compile_target=("$ARCH");
-    compile_build=("release" "debug")
 fi
 
 type=${compile_type[0]}
