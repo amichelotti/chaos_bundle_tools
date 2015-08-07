@@ -326,3 +326,4 @@ if [ $err -gt 0 ]; then
     exit $err
 fi 
 ok_mesg "building"
+exit 0
