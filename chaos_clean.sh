@@ -7,6 +7,7 @@ function cleandir(){
     rm -rf $1
 }
 
+cleandir $chaos_bundle/external
 cleandir $chaos_bundle/chaosframwork/usr
 cleandir $chaos_bundle/chaosframework/bin
 cleandir $chaos_bundle/chaosframework/build
