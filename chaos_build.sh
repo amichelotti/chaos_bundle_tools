@@ -15,19 +15,19 @@ remove_working="false"
 log="$0.log"
 exclude_dir=()
 compile_target=( "$ARCH" )
-if arm-linux-gnueabihf-g++-4.8 -v |& grep version >& /dev/null; then
+if arm-linux-gnueabihf-g++-4.8 -v 2>&1 | grep version >& /dev/null; then
     compile_target+=("armhf")
 fi
 
-if arm-infn-linux-gnueabi-g++ -v |& grep version >& /dev/null;then
+if arm-infn-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
     compile_target+=("arm-linux-2.6")
 fi
 
-if i686-infn-linux-gnu-g++ -v |& grep version >& /dev/null;then
+if i686-infn-linux-gnu-g++ -v 2>&1 | grep version >& /dev/null;then
     compile_target+=("linux-old")
 fi
 
-if arm-nilrt-linux-gnueabi-g++ -v |& grep version >& /dev/null;then
+if arm-nilrt-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
       compile_target+=("crio90xx")
 fi
 
