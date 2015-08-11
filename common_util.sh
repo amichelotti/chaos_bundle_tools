@@ -556,7 +556,7 @@ get_timestamp_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"dpck_ats\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
 	return 0
     else
@@ -578,7 +578,7 @@ get_dataset_cu(){
 	return 1
     fi
 
-    if [[ "$cli_cmd" =~ \"ndk_heartbeat\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
+    if [[ "$cli_cmd" =~ \"dpck_ats\"\ \:\ \{\ \"\$[a-zA-Z]+\"\ \:\ \"([0-9]+)\" ]];then
 	timestamp_cu=${BASH_REMATCH[1]}
     else
 	return 1
