@@ -204,6 +204,8 @@ for target in ${compile_target[@]} ; do
 		error_mesg "Error $err compiling $tgt"
 		error=1
 	    else
+		## configure
+		chaos_configure
 		if [ "$OS" == "Linux" ]; then
 		info_mesg "generating " "Unit Server.."
 		echo "==== GENERATING UNIT SERVER ====" >> $log 2>&1 
@@ -269,7 +271,7 @@ for target in ${compile_target[@]} ; do
 	    if (($error == 0)); then
 		tt=$(end_profile_time)
 		info_mesg "compilation ($tt s) " "$tgt OK"
-		chaos_configure
+
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
 			info_mesg "Starting chaos testsuite (it takes some time), test report file " "test-$tgt.csv"

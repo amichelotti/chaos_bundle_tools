@@ -13,11 +13,16 @@ usage(){
 }
 
 
-while getopts u:c: opt;do 
+while getopts u:c:h opt;do 
     case $opt in
 	u) 
 	    user=$OPTARG
 	    ;;
+	h) 
+	    usage
+	    exit 0
+	    ;;
+
 	c)
 	    cmd="$OPTARG"
 	    ;;

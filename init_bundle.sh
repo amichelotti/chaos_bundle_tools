@@ -83,16 +83,16 @@ function cmake_compile(){
     echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	error_mesg "unable to create Makefile in $dir"
-	exit
+	return 1
     fi;
     if ! make -j $NPROC; then
 	error_mesg "compiling in $dir"
-	exit 1;
+	return 1
     fi;
 
     if ! make install; then
 	error_mesg "compiling in $dir"
-	exit 1;
+	return 1
     fi;
 }
 

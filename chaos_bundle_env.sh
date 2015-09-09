@@ -118,10 +118,10 @@ else
 		fi
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 		export CC="arm-nilrt-linux-gnueabi-gcc"
-		export CFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mfpu=neon --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
+		export CFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mno-unaligned-access -mfpu=neon --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
 
 		export CXX="arm-nilrt-linux-gnueabi-g++"
-		export CXXFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mfpu=neon --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
+		export CXXFLAGS="-march=armv7-a -mthumb-interwork -mfloat-abi=softfp -mfpu=neon -mno-unaligned-access --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
 
 		export LD="arm-nilrt-linux-gnueabi-ld --sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi"
 		export LDFLAGS="--sysroot=/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi -L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi"
