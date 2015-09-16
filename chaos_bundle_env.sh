@@ -62,10 +62,9 @@ if [ "$CHAOS_TARGET" == "armhf" ]; then
     #    export CHAOS_CMAKE_FLAGS="-DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX"
 else
     if [ "$CHAOS_TARGET" == "arm-linux-2.6" ]; then
-	if [ -x /usr/local/gcc46-arm-infn-linux26/bin/arm-infn-linux-gnueabi-gcc ]; then
+	if arm-infn-linux-gnueabi-g++ -v 2>&1 | grep version; then
 
 	    echo "* Cross compiling for ARM(soft float) platforms on linux 2.6"
-	    export PATH=/usr/local/gcc46-arm-infn-linux26/bin:$PATH
 	     export CC=arm-infn-linux-gnueabi-gcc
 	     export CXX=arm-infn-linux-gnueabi-g++
 	     export LD=arm-infn-linux-gnueabi-ld
@@ -137,6 +136,7 @@ fi
 
 export CXXFLAGS="$CXXFLAGS -DCHAOS"
 export CFLAGS="$CFLAGS -DCHAOS"
+
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
     export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
