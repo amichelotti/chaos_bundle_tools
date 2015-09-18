@@ -84,8 +84,8 @@ else
 	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	fi
 	export CHAOS_DISABLE_EVENTFD=true
-	export CFLAGS="$CFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
-	export CXXFLAGS="$CXXFLAGS -march=armv5te -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD"
+	export CFLAGS="$CFLAGS -march=armv5 -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -mno-unaligned-access -DDISABLE_COMPARE_AND_SWAP -mfloat-abi=softfp -mtune=arm9"
+	export CXXFLAGS="$CXXFLAGS -march=armv5 -msoft-float -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -mno-unaligned-access -DDISABLE_COMPARE_AND_SWAP -mfloat-abi=softfp -mtune=arm9"
 	export CHAOS_BOOST_VERSION=55
 	#
 	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
