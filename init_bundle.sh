@@ -114,6 +114,9 @@ for i in crest debug serial test modbus powersupply; do
 cmake_compile $CHAOS_BUNDLE/common/$i;
 done;
 
+## used in other drivers
+cmake_compile $CHAOS_BUNDLE/driver/misc;
+
 for i in $(ls  $CHAOS_BUNDLE/driver/) ; do
 cmake_compile $CHAOS_BUNDLE/driver/$i;
 done;
