@@ -4,7 +4,7 @@
 user="root"
 cmd=""
 dest=""
-
+slep=0
 
 usage(){
 
@@ -13,11 +13,16 @@ usage(){
 }
 
 
-while getopts u:c:h opt;do 
+while getopts s:u:c:h opt;do 
     case $opt in
 	u) 
 	    user=$OPTARG
 	    ;;
+
+	s) 
+	    slep=$OPTARG
+	    ;;
+
 	h) 
 	    usage
 	    exit 0
@@ -53,5 +58,8 @@ for s in $list;do
     else
 	echo "# FAIL"
 	
+    fi
+    if [ $slep -gt 0 ]; then
+	sleep $slep
     fi
 done
