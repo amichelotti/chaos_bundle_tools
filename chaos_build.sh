@@ -23,8 +23,8 @@ if arm-infn-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
     compile_target+=("arm-linux-2.6")
 fi
 
-if i686-infn-linux-gnu-g++ -v 2>&1 | grep version >& /dev/null;then
-    compile_target+=("linux-old")
+if i686-nptl-linux-gnu-g++ -v 2>&1 | grep version >& /dev/null;then
+    compile_target+=("i686-linux26")
 fi
 
 if arm-nilrt-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then

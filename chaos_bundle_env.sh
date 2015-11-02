@@ -90,13 +90,13 @@ else
 	#
 	export CHAOS_BOOST_FLAGS="toolset=gcc-arm target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
     else
-	if [ "$CHAOS_TARGET" == "linux-old" ] ; then
-	    echo "* Cross compiling for i686 platforms on linux <=2.6"
+	if [ "$CHAOS_TARGET" == "i686-linux26" ] ; then
+	    echo "* Cross compiling for i686 platforms on linux 2.6"
 	    export CHAOS_BOOST_VERSION=56
-	    export CC=i686-infn-linux-gnu-gcc
-	    export CXX=i686-infn-linux-gnu-g++
-	    export LD=i686-infn-linux-gnu-ld
-	    export CHAOS_CROSS_HOST=i686-infn-linux-gnu
+	    export CC=i686-nptl-linux-gnu-gcc
+	    export CXX=i686-nptl-linux-gnu-g++
+	    export LD=i686-nptl-linux-gnu-ld
+	    export CHAOS_CROSS_HOST=i686-nptl-linux-gnu
 	    if [ -z "$CHAOS_EXCLUDE_DIR" ];then
 
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
@@ -104,7 +104,7 @@ else
 	    export CHAOS_DISABLE_EVENTFD=true
 	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
-	    export CHAOS_BOOST_VERSION=55
+
 	    #
 	    export CHAOS_BOOST_FLAGS="target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
 
@@ -134,8 +134,8 @@ else
     fi;
 fi
 
-export CXXFLAGS="$CXXFLAGS -DCHAOS"
-export CFLAGS="$CFLAGS -DCHAOS"
+export CXXFLAGS="$CXXFLAGS -DCHAOS -fPIC"
+export CFLAGS="$CFLAGS -DCHAOS -fPIC"
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
@@ -149,12 +149,10 @@ else
 fi
 
 
-
+export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
 if [ -n "$CHAOS_STATIC" ]; then
-    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
+##    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
     export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DBUILD_FORCE_STATIC=true"
-else
-    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=shared"
 fi
 
 
