@@ -149,11 +149,7 @@ else
 fi
 
 
-export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
-if [ -n "$CHAOS_STATIC" ]; then
-##    export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
-    export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DBUILD_FORCE_STATIC=true"
-fi
+export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static cxxflags=-fPIC"
 
 
 if [ -n "$CHAOS32" ]; then
