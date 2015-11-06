@@ -18,9 +18,9 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
 if [ $(uname -s) == "Darwin" ]; then
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq mongoose jsoncpp dl pthread"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem memcached zmq.a mongoose jsoncpp dl pthread"
 else
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic memcached zmq mongoose jsoncpp dl pthread rt"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic memcached zmq.a mongoose jsoncpp dl pthread rt"
 fi;
 
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
@@ -134,8 +134,8 @@ else
     fi;
 fi
 
-export CXXFLAGS="$CXXFLAGS -DCHAOS -fPIC"
-export CFLAGS="$CFLAGS -DCHAOS -fPIC"
+export CXXFLAGS="$CXXFLAGS -DCHAOS"
+export CFLAGS="$CFLAGS -DCHAOS"
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
@@ -148,8 +148,15 @@ else
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Release "
 fi
 
+export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static"
 
-export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS link=static cxxflags=-fPIC"
+if [ -z "$CHAOS_STATIC" ]; then
+
+export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS cxxflags=-fPIC"
+export CXXFLAGS="$CXXFLAGS -fPIC"
+export CFLAGS="$CFLAGS -fPIC"
+fi
+
 
 
 if [ -n "$CHAOS32" ]; then
