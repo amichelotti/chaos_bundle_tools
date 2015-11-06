@@ -1,0 +1,6 @@
+chaost-cu1.chaos.lnf.infn.it
+chaost-webui1.chaos.lnf.infn.it
+chaost-mds1.chaos.lnf.infn.it
+chaost-cds1.chaos.lnf.infn.it
+chaost-cds2.chaos.lnf.infn.it
+chaost-cds3.chaos.lnf.infn.it
