@@ -83,7 +83,7 @@ else
 
 	    export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	fi
-	export CHAOS_DISABLE_EVENTFD=true
+	CHAOS_DISABLE_EVENTFD=true
 	export CFLAGS="$CFLAGS -mcpu=xscale -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -mno-unaligned-access -DDISABLE_COMPARE_AND_SWAP -mfloat-abi=soft"
 	export CXXFLAGS="$CXXFLAGS -mcpu=xscale -D__BSON_USEMEMCPY__ -DBOOST_ASIO_DISABLE_EVENTFD -mno-unaligned-access -DDISABLE_COMPARE_AND_SWAP -mfloat-abi=soft"
 	export CHAOS_BOOST_VERSION=55
@@ -101,7 +101,7 @@ else
 
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	    fi
-	    export CHAOS_DISABLE_EVENTFD=true
+	    CHAOS_DISABLE_EVENTFD=true
 	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 
@@ -183,3 +183,34 @@ fi
 
 export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS --prefix=$CHAOS_PREFIX --with-program_options --with-chrono --with-filesystem --with-iostreams --with-log --with-regex --with-random --with-system --with-thread --with-atomic --with-timer install"
 export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS $CHAOS_COMP_TYPE -DCMAKE_INSTALL_PREFIX:PATH=$CHAOS_PREFIX"
+
+CROSS_HOST_CONFIGURE=""
+if [ -n "$CHAOS_CROSS_HOST" ]; then
+    CROSS_HOST_CONFIGURE="--host=$CHAOS_CROSS_HOST"
+fi
+
+if [ -n "$CHAOS_STATIC" ]; then
+    STATIC_CONFIG="--enable-static"
+else
+    STATIC_CONFIG=""
+fi
+
+## ZMQ flags
+if [ -z "$CHAOS_DISABLE_EVENTFD" ];then
+    export CHAOS_ZMQ_CONFIGURE="$CROSS_HOST_CONFIGURE --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE --with-gnu-ld $STATIC_CONFIG"
+else
+    export CHAOS_ZMQ_CONFIGURE="$CROSS_HOST_CONFIGURE --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE --with-gnu-ld --disable-eventfd $STATIC_CONFIG"
+fi
+
+## LIBEVENT
+export CHAOS_LIBEVENT_CONFIGURE="--disable-openssl --prefix=$CHAOS_PREFIX $STATIC_CONFIG $CROSS_HOST_CONFIGURE"
+
+##MEMCACHED
+export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --disable-shared --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
+
+##COUCHBASE
+if [ -n "$CHAOS_STATIC" ]; then
+    export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_BUILD_STATIC=true -DLCB_NO_SSL=true"
+else
+    export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_NO_SSL=true -DLCB_BUILD_STATIC=true"
+fi
