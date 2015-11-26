@@ -176,6 +176,7 @@ if [ `echo $OS | tr '[:upper:]' '[:lower:]'` = `echo "Darwin" | tr '[:upper:]' '
     export CXXFLAGS="-stdlib=libstdc++"
     export LDFLAGS="-stdlib=libstdc++"
     export LD=clang
+    APPLE="true"
     ## 18, 16 doesnt compile
     export LMEM_VERSION=1.0.14
     export CHAOS_BOOST_FLAGS="$CHAOS_BOOST_FLAGS toolset=clang cxxflags=-stdlib=libstdc++ linkflags=-stdlib=libstdc++"
@@ -206,11 +207,18 @@ fi
 export CHAOS_LIBEVENT_CONFIGURE="--disable-openssl --prefix=$CHAOS_PREFIX $STATIC_CONFIG $CROSS_HOST_CONFIGURE"
 
 ##MEMCACHED
-export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --disable-shared --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
-
+if [ -z "$APPLE" ];then
+    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --disable-shared --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
+else
+    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
+fi
 ##COUCHBASE
 if [ -n "$CHAOS_STATIC" ]; then
-    export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_BUILD_STATIC=true -DLCB_NO_SSL=true"
+    export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_BUILD_STATIC=true -DLCB_NO_SSL=true -DLCB_NO_TESTS=true -DLCB_NO_TOOLS=true -DLCB_NO_PLUGINS=true"
 else
-    export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_NO_SSL=true -DLCB_BUILD_STATIC=true"
+    if [ -z "$APPLE" ];then
+	export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_NO_SSL=true -DLCB_BUILD_STATIC=true -DLCB_NO_TESTS=true -DLCB_NO_TOOLS=true -DLCB_NO_PLUGINS=true"
+    else
+	export CHAOS_CB_CONFIGURE="$CHAOS_CMAKE_FLAGS -DLCB_NO_SSL=true -DLCB_NO_TESTS=true -DLCB_NO_TOOLS=true -DLCB_NO_PLUGINS=true"
+    fi
 fi
