@@ -717,13 +717,14 @@ launch_us_cu(){
 	    nok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" started"
             return 1
 	fi
-	
+	start_profile_time;
 	for ((cu=0;cu<$NCU;cu++));do
 	    info_mesg "checking for CU TEST_UNIT_$us/TEST_CU_$cu registration"
 	    if execute_command_until_ok "grep -o \"TEST_UNIT_$us\/TEST_CU_$cu .\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null" 180; then
-		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"
+		t=$(end_profile_time)
+		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered in $t"
 	    else
-		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered"
+		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered $t"
 		return 1
 	    fi
 	done
