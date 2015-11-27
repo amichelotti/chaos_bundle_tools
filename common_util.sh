@@ -687,6 +687,7 @@ launch_us_cu(){
     local NUS=2
     local NCU=5
     local META="localhost:5000"
+    local ALIAS="TEST_UNIT"
     if [ -n "$1" ];then
 	NUS=$1
     fi
@@ -699,7 +700,10 @@ launch_us_cu(){
     if [ -n "$4" ];then
 	USNAME="$4"
     fi
-    check_proc_then_kill "$USNAME"
+    if [ -n "$5" ];then
+	ALIAS="$5"
+    fi
+#    check_proc_then_kill "$USNAME"
     if [ ! -x $CHAOS_PREFIX/bin/$USNAME ]; then
 	nok_mesg "Unit Server $USNAME not found, in $CHAOS_PREFIX/bin/$USNAME"
 	exit 1
@@ -710,24 +714,46 @@ launch_us_cu(){
 
     for ((us=0;us<$NUS;us++));do
 	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$us.log --unit-server-alias TEST_UNIT_$us --metadata-server $META > $CHAOS_PREFIX/log/$USNAME-$us.stdout 2>&1 &" "$USNAME"; then
-	    ok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" ($proc_pid) started"
+	if [ $NUS -eq 1 ]; then
+	    REAL_ALIAS=$ALIAS
+	else
+	    REAL_ALIAS=$ALIAS_$us
+	fi
+	FILE_NAME=`echo $REAL_ALIAS|sed 's/\//_/g'`
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS --metadata-server $META > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
+	    ok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else
-	    nok_mesg "UnitServer $USNAME \"TEST_UNIT_$us\" started"
+	    nok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" started"
             return 1
 	fi
 	start_profile_time;
-	for ((cu=0;cu<$NCU;cu++));do
-	    info_mesg "checking for CU TEST_UNIT_$us/TEST_CU_$cu registration"
-	    if execute_command_until_ok "grep -o \"TEST_UNIT_$us\/TEST_CU_$cu .\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null" 180; then
-		t=$(end_profile_time)
-		ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered in $t"
-	    else
-		nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered $t"
-		return 1
-	    fi
-	done
+	# for ((cu=0;cu<$NCU;cu++));do
+	#     if [ $NUS -eq 1 ]; then
+	# 	REAL_ALIAS=$ALIAS
+	#     else
+	# 	REAL_ALIAS=$ALIAS_$us
+	#     fi
+
+	#     info_mesg "checking for $REAL_ALIAS of $NCU registrations"
+	#     if execute_command_until_ok "grep -o \".\+ successfully registered\" $CHAOS_PREFIX/log/$USNAME-$REAL_ALIAS.log >& /dev/null" 180; then
+	# 	t=$(end_profile_time)
+	# 	ok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered in $t"
+	#     else
+	# 	nok_mesg "CU \"TEST_UNIT_$us/TEST_CU_$cu\" registered $t"
+	# 	return 1
+	#     fi
+	# done
+	var1="((\`grep \"successfully registered\" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l\` == $NCU))"
+	if execute_command_until_ok "$var1" 180; then
+	    t=$(end_profile_time)
+	    ok_mesg "$NCU  registered in $t"
+	else
+	    var=$((`grep "successfully registered" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l`))
+	    nok_mesg "$var CU registered in $t"
+	    return 1
+	fi
+
     done
 }
 start_test(){

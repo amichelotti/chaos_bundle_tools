@@ -1699,7 +1699,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1714,7 +1714,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1736,7 +1736,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1751,7 +1751,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1773,7 +1773,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1788,7 +1788,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1810,7 +1810,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1825,7 +1825,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1846,7 +1846,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1861,7 +1861,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1883,7 +1883,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "0"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
@@ -1898,7 +1898,7 @@
             {
               "DriverDescriptionName": "LiberaSoftDriver",
               "DriverDescriptionVersion": "1.0.0",
-              "DriverDescriptionInitParam": "1"
+              "DriverDescriptionInitParam": "3,RndWave:0:3000"
             }
           ],
           "AttrDesc": []
