@@ -29,10 +29,12 @@ fi
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "initializing MDS with configuration " "$1"
 
+check_proc_then_kill daqLiberaServer
+check_proc_then_kill BPMSync
+check_proc_then_kill UnitServer    
+
 if [[ "$mds" =~ "localhost:5000" ]];then
     chaos_services.sh stop
-    check_proc_then_kill daqLiberaServer
-    check_proc_then_kill BPMSync    
     sleep 1
     info_mesg "starting local mds"
     if chaos_services.sh start mds;then
@@ -74,10 +76,10 @@ else
     exit 1
 fi
 
-if launch_us_cu 1 1 $mds BPMSync ACCUMULATOR/BPM;then
-    ok_mesg "US BPMsync"
+if launch_us_cu 1 8 $mds UnitServer BTF;then
+    ok_mesg "US BTF"
 else
-    nok_mesg "US BPMSync"
+    nok_mesg "US BTF"
     exit 1
 fi
 

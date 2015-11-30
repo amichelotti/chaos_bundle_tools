@@ -749,7 +749,7 @@ launch_us_cu(){
 	# 	return 1
 	#     fi
 	# done
-	var1="((\`grep \"successfully registered\" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l\` == $NCU))"
+	var1="((\`grep \"successfully registered\" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l\` >= $NCU))"
 	if execute_command_until_ok "$var1" 180; then
 	    t=$(end_profile_time)
 	    ok_mesg "$NCU  registered in $t"
