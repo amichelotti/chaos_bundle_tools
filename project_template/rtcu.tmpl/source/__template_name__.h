@@ -20,7 +20,7 @@
 #ifndef ChaosRTControlUnit___template_name___h
 #define ChaosRTControlUnit___template_name___h
 
-#include <chaos/cu_toolkit/ControlManager/RTAbstractControlUnit.h>
+#include <chaos/cu_toolkit/control_manager/RTAbstractControlUnit.h>
 
 class __template_name__ : public chaos::cu::control_manager::RTAbstractControlUnit {
 	PUBLISHABLE_CONTROL_UNIT_INTERFACE(__template_name__)

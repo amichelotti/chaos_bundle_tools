@@ -21,7 +21,7 @@
 #ifndef ChaosSCControlUnit____template_name____
 #define ChaosSCControlUnit____template_name____
 
-#include <chaos/cu_toolkit/ControlManager/SCAbstractControlUnit.h>
+#include <chaos/cu_toolkit/control_manager/SCAbstractControlUnit.h>
 
 using namespace std;
 using namespace chaos;
