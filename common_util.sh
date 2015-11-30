@@ -191,8 +191,13 @@ function chaos_configure(){
     if [ -e  "$PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml" ];then	
 	cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
     fi
+    
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg ]; then
-	cp $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg $PREFIX/etc/mds.cfg
+	
+	logpath=`echo $PREFIX/log/mds.log|sed 's/\//\\\\\//g'`
+
+	cat $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg | sed s/_MDSSERVER_/localhost/|sed s/_MDSLOG_/$logpath/g > $PREFIX/etc/mds.cfg
+
     fi
 }
 

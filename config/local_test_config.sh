@@ -31,6 +31,9 @@ info_mesg "initializing MDS with configuration " "$1"
 
 if [[ "$mds" =~ "localhost:5000" ]];then
     chaos_services.sh stop
+    check_proc_then_kill daqLiberaServer
+    check_proc_then_kill BPMSync    
+    sleep 1
     info_mesg "starting local mds"
     if chaos_services.sh start mds;then
 	ok_mesg "starting mds "
@@ -55,10 +58,9 @@ else
     error_mesg "initilization"
     exit 2
 fi
-check_proc_then_kill daqLiberaServer
-check_proc_then_kill BPMSync
+
 for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09; do
-    if launch_us_cu 1 2 $mds daqLiberaServer $k;then
+    if launch_us_cu 1 2 "$mds --log-level debug" daqLiberaServer $k;then
 	ok_mesg "US $k"
     else
 	nok_mesg "US $k"

@@ -1,7 +1,7 @@
 {
     "data_servers": [
 	{
-    	    "hostname": "localhost:1674:30175|0",
+    	    "hostname": "localhost:1672:30175|0",
 	    "id_server": 0,
 	    "is_live": true
 	}
@@ -1411,7 +1411,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1448,7 +1448,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1485,7 +1485,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1522,7 +1522,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1558,7 +1558,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1595,7 +1595,7 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
 			}
 		    ],
 		    "AttrDesc": []

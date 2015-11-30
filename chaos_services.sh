@@ -34,7 +34,9 @@ cds_checks(){
 	ok_mesg "mongod check"
     fi
     if ! ps -fe |grep [e]pmd >/dev/null ;then
-	error_mesg "epmd (couchbase) not running" ; exit 1
+	if ! ps -fe |grep [m]emcached >/dev/null;then
+	    error_mesg "epmd (couchbase) nor memcached  running" ; exit 1
+	fi
     else
 	ok_mesg "couchbase check"
     fi
