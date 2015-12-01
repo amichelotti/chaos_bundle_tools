@@ -49,10 +49,19 @@ fi
 list=`cat $1`
 for s in $list;do
     echo "* copy $source in $user@$s:$dest ..."
-    if scp $source $user@$s:$dest;then
-	echo "* OK"
-    else
-	echo "# FAIL"
+    scp $source $user@$s:$dest >/dev/null &
+done
+error=0
+for job in `jobs -p`;do
+    echo "* waiting finishing $job"
+    wait $job || let "error+=1"
+    if [ $error != "0" ] ;then
+	echo "## error copying $error"
 	
     fi
 done
+
+if [ $error == "0" ] ;then
+    echo "* successfully copied"
+fi
+exit 1
