@@ -53,13 +53,23 @@ fi
 list=`cat $1`
 for s in $list;do
     echo "* perform \"$cmd\" in $user@$s ..."
-    if ssh -f $user@$s $cmd;then
-	echo "* OK"
-    else
-	echo "# FAIL"
-	
-    fi
+    ssh -f $user@$s $cmd > /dev/null &
     if [ $slep -gt 0 ]; then
 	sleep $slep
     fi
 done
+error=0
+for job in `jobs -p`; do
+    echo "waiting for command termination command id $job"
+    wait $job || let "$error+=1"
+    if [ $error != "0" ];then
+	echo "# an error occurred in command id $job"
+    fi
+done
+
+if [ $error == "0" ] ;then
+    echo "* successfully"
+else
+    exit 1
+fi
+

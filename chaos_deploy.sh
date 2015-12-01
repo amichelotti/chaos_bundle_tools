@@ -63,5 +63,7 @@ done
 
 if [ $error == "0" ] ;then
     echo "* successfully copied"
+else
+    exit 1
 fi
-exit 1
+
