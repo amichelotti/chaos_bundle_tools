@@ -1,7 +1,7 @@
 {
     "data_servers": [
 	{
-    	    "hostname": "localhost:1672:30175|0",
+    	    "hostname": "localhost:1700:32000|0",
 	    "id_server": 0,
 	    "is_live": true
 	}
@@ -1388,7 +1388,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA01",
-		    "cu_id": "LIBERA01/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPSA2001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1399,11 +1399,27 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		}
+		
+	    ]
+	},
+{
+	    "unit_server_alias": "LIBERA13",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
 		{
-		    "unit_server_alias": "LIBERA01",
-		    "cu_id": "LIBERA01/LIBERA_ACQUIRE1",
+		    "unit_server_alias": "LIBERA13",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA1002",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1411,11 +1427,143 @@
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		},
+{
+		    "unit_server_alias": "LIBERA13",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA2001",
+		    "cu_type": "::driver::daq::libera::SCLiberaCU",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "LiberaSoftDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			}
+		    ],
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
 		}
+		
+	    ]
+	},
+{
+	    "unit_server_alias": "LIBERA12",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "LIBERA12",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA4001",
+		    "cu_type": "::driver::daq::libera::SCLiberaCU",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "LiberaSoftDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			}
+		    ],
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		},
+		{
+		    "unit_server_alias": "LIBERA12",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA4002",
+		    "cu_type": "::driver::daq::libera::SCLiberaCU",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "LiberaSoftDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			}
+		    ],
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		},
+				{
+		    "unit_server_alias": "LIBERA12",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA3001",
+		    "cu_type": "::driver::daq::libera::SCLiberaCU",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "LiberaSoftDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			}
+		    ],
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		},
+				{
+		    "unit_server_alias": "LIBERA12",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA3002",
+		    "cu_type": "::driver::daq::libera::SCLiberaCU",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "LiberaSoftDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
+			}
+		    ],
+		    	    "AttrDesc": [
+			    {
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+		    ]
+		}
+		
 	    ]
 	},
 	{
@@ -1425,7 +1573,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA02",
-		    "cu_id": "LIBERA02/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA2002",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1436,22 +1584,15 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "LIBERA02",
-		    "cu_id": "LIBERA02/LIBERA_ACQUIRE1",
-		    "cu_type": "::driver::daq::libera::SCLiberaCU",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LiberaSoftDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
-			}
-		    ],
-		    "AttrDesc": []
+		    "AttrDesc": [
+		    	{
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+
+		    	    }
+		    ]
 		}
 	    ]
 	},
@@ -1462,7 +1603,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA03",
-		    "cu_id": "LIBERA03/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPSA4001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1473,22 +1614,16 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "LIBERA03",
-		    "cu_id": "LIBERA03/LIBERA_ACQUIRE1",
-		    "cu_type": "::driver::daq::libera::SCLiberaCU",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LiberaSoftDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
-			}
-		    ],
-		    "AttrDesc": []
+		    "AttrDesc": [
+		    		    	{
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+
+		    ]
 		}
 	    ]
 	},
@@ -1499,7 +1634,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA07",
-		    "cu_id": "LIBERA07/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPSA1001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1510,22 +1645,16 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "LIBERA07",
-		    "cu_id": "LIBERA07/LIBERA_ACQUIRE1",
-		    "cu_type": "::driver::daq::libera::SCLiberaCU",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LiberaSoftDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
-			}
-		    ],
-		    "AttrDesc": []
+		    "AttrDesc": [
+		    		    		    	{
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+
+		    ]
 		}
 	    ]
 	},{
@@ -1535,7 +1664,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA08",
-		    "cu_id": "LIBERA08/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPBA1001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1546,22 +1675,15 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "LIBERA08",
-		    "cu_id": "LIBERA08/LIBERA_ACQUIRE1",
-		    "cu_type": "::driver::daq::libera::SCLiberaCU",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LiberaSoftDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
-			}
-		    ],
-		    "AttrDesc": []
+		    "AttrDesc": [
+		    	{
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+
+		    	    }
+		    ]
 		}
 	    ]
 	},
@@ -1572,7 +1694,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LIBERA09",
-		    "cu_id": "LIBERA09/LIBERA_ACQUIRE0",
+		    "cu_id": "ACCUMULATOR/BPM/BPSA3001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -1583,22 +1705,16 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "LIBERA09",
-		    "cu_id": "LIBERA09/LIBERA_ACQUIRE1",
-		    "cu_type": "::driver::daq::libera::SCLiberaCU",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LiberaSoftDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "1,RndWave:0:3000"
-			}
-		    ],
-		    "AttrDesc": []
+		    "AttrDesc": [
+		    		    	{
+			    "ds_attr_name": "POLYTYPE",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+
+		    	    }
+
+		    ]
 		}
 	    ]
 	},
@@ -1627,30 +1743,6 @@
 	{
 
 
-	    "unit_server_alias": "ACCUMULATOR_SIM/BPM",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "ACCUMULATOR_SIM/BPM",
-		    "cu_id": "ACCUMULATOR_SIM/BPM/BPMSYNC",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "LIBERA01/LIBERA_ACQUIRE0 LIBERA07/LIBERA_ACQUIRE0 LIBERA09/LIBERA_ACQUIRE0 LIBERA03/LIBERA_ACQUIRE0 LIBERA08/LIBERA_ACQUIRE0 LIBERA02/LIBERA_ACQUIRE0 LIBERA13/LIBERA_ACQUIRE0 LIBERA12/LIBERA_ACQUIRE0",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "VBPMSync",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyxx"
-			}
-		    ],
-		    "AttrDesc": []
-		}
-	    ]
-	},
-	{
-
-
 	    "unit_server_alias": "ACCUMULATOR/BPM",
 	    "private_key": null,
 	    "public_key": null,
@@ -1665,7 +1757,7 @@
 			{
 			    "DriverDescriptionName": "remoteGroupAccessDriver",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "LIBERA07/LIBERA_ACQUIRE0/VA LIBERA07/LIBERA_ACQUIRE0/VB LIBERA07/LIBERA_ACQUIRE0/VC LIBERA07/LIBERA_ACQUIRE0/VD LIBERA07/LIBERA_ACQUIRE0/DD LIBERA07/LIBERA_ACQUIRE0/MODE LIBERA07/LIBERA_ACQUIRE0/SAMPLES LIBERA07/LIBERA_ACQUIRE0/ACQUISITION LIBERA07/LIBERA_ACQUIRE0/MT LIBERA01/LIBERA_ACQUIRE0/VA LIBERA01/LIBERA_ACQUIRE0/VB LIBERA01/LIBERA_ACQUIRE0/VC LIBERA01/LIBERA_ACQUIRE0/VD LIBERA01/LIBERA_ACQUIRE0/DD LIBERA01/LIBERA_ACQUIRE0/MODE LIBERA01/LIBERA_ACQUIRE0/SAMPLES LIBERA01/LIBERA_ACQUIRE0/ACQUISITION LIBERA01/LIBERA_ACQUIRE0/MT LIBERA09/LIBERA_ACQUIRE0/VA LIBERA09/LIBERA_ACQUIRE0/VB LIBERA09/LIBERA_ACQUIRE0/VC LIBERA09/LIBERA_ACQUIRE0/VD LIBERA09/LIBERA_ACQUIRE0/DD LIBERA09/LIBERA_ACQUIRE0/MODE LIBERA09/LIBERA_ACQUIRE0/SAMPLES LIBERA09/LIBERA_ACQUIRE0/ACQUISITION LIBERA09/LIBERA_ACQUIRE0/MT LIBERA03/LIBERA_ACQUIRE0/VA LIBERA03/LIBERA_ACQUIRE0/VB LIBERA03/LIBERA_ACQUIRE0/VC LIBERA03/LIBERA_ACQUIRE0/VD LIBERA03/LIBERA_ACQUIRE0/DD LIBERA03/LIBERA_ACQUIRE0/MODE LIBERA03/LIBERA_ACQUIRE0/SAMPLES LIBERA03/LIBERA_ACQUIRE0/ACQUISITION LIBERA03/LIBERA_ACQUIRE0/MT LIBERA08/LIBERA_ACQUIRE0/VA LIBERA08/LIBERA_ACQUIRE0/VB LIBERA08/LIBERA_ACQUIRE0/VC LIBERA08/LIBERA_ACQUIRE0/VD LIBERA08/LIBERA_ACQUIRE0/DD LIBERA08/LIBERA_ACQUIRE0/MODE LIBERA08/LIBERA_ACQUIRE0/SAMPLES LIBERA08/LIBERA_ACQUIRE0/ACQUISITION LIBERA08/LIBERA_ACQUIRE0/MT LIBERA02/LIBERA_ACQUIRE0/VA LIBERA02/LIBERA_ACQUIRE0/VB LIBERA02/LIBERA_ACQUIRE0/VC LIBERA02/LIBERA_ACQUIRE0/VD LIBERA02/LIBERA_ACQUIRE0/DD LIBERA02/LIBERA_ACQUIRE0/MODE LIBERA02/LIBERA_ACQUIRE0/SAMPLES LIBERA02/LIBERA_ACQUIRE0/ACQUISITION LIBERA02/LIBERA_ACQUIRE0/MT"
+			    "DriverDescriptionInitParam": "ACCUMULATOR/BPM/BPSA1001/VA ACCUMULATOR/BPM/BPSA1001/VB ACCUMULATOR/BPM/BPSA1001/VC ACCUMULATOR/BPM/BPSA1001/VD ACCUMULATOR/BPM/BPSA1001/X_ACQ ACCUMULATOR/BPM/BPSA1001/Y_ACQ ACCUMULATOR/BPM/BPSA1001/X ACCUMULATOR/BPM/BPSA1001/Y ACCUMULATOR/BPM/BPSA1001/MODE ACCUMULATOR/BPM/BPSA1001/SAMPLES ACCUMULATOR/BPM/BPSA1001/ACQUISITION ACCUMULATOR/BPM/BPSA1001/MT ACCUMULATOR/BPM/BPSA2001/VA ACCUMULATOR/BPM/BPSA2001/VB ACCUMULATOR/BPM/BPSA2001/VC ACCUMULATOR/BPM/BPSA2001/VD ACCUMULATOR/BPM/BPSA2001/X_ACQ ACCUMULATOR/BPM/BPSA2001/Y_ACQ ACCUMULATOR/BPM/BPSA2001/X ACCUMULATOR/BPM/BPSA2001/Y ACCUMULATOR/BPM/BPSA2001/MODE ACCUMULATOR/BPM/BPSA2001/SAMPLES ACCUMULATOR/BPM/BPSA2001/ACQUISITION ACCUMULATOR/BPM/BPSA2001/MT ACCUMULATOR/BPM/BPSA3001/VA ACCUMULATOR/BPM/BPSA3001/VB ACCUMULATOR/BPM/BPSA3001/VC ACCUMULATOR/BPM/BPSA3001/VD ACCUMULATOR/BPM/BPSA3001/X_ACQ ACCUMULATOR/BPM/BPSA3001/Y_ACQ ACCUMULATOR/BPM/BPSA3001/X ACCUMULATOR/BPM/BPSA3001/Y ACCUMULATOR/BPM/BPSA3001/MODE ACCUMULATOR/BPM/BPSA3001/SAMPLES ACCUMULATOR/BPM/BPSA3001/ACQUISITION ACCUMULATOR/BPM/BPSA3001/MT ACCUMULATOR/BPM/BPSA4001/VA ACCUMULATOR/BPM/BPSA4001/VB ACCUMULATOR/BPM/BPSA4001/VC ACCUMULATOR/BPM/BPSA4001/VD ACCUMULATOR/BPM/BPSA4001/X_ACQ ACCUMULATOR/BPM/BPSA4001/Y_ACQ ACCUMULATOR/BPM/BPSA4001/X ACCUMULATOR/BPM/BPSA4001/Y ACCUMULATOR/BPM/BPSA4001/MODE ACCUMULATOR/BPM/BPSA4001/SAMPLES ACCUMULATOR/BPM/BPSA4001/ACQUISITION ACCUMULATOR/BPM/BPSA4001/MT ACCUMULATOR/BPM/BPBA1001/VA ACCUMULATOR/BPM/BPBA1001/VB ACCUMULATOR/BPM/BPBA1001/VC ACCUMULATOR/BPM/BPBA1001/VD ACCUMULATOR/BPM/BPBA1001/X_ACQ ACCUMULATOR/BPM/BPBA1001/Y_ACQ ACCUMULATOR/BPM/BPBA1001/X ACCUMULATOR/BPM/BPBA1001/Y ACCUMULATOR/BPM/BPBA1001/MODE ACCUMULATOR/BPM/BPBA1001/SAMPLES ACCUMULATOR/BPM/BPBA1001/ACQUISITION ACCUMULATOR/BPM/BPBA1001/MT ACCUMULATOR/BPM/BPBA2002/VA ACCUMULATOR/BPM/BPBA2002/VB ACCUMULATOR/BPM/BPBA2002/VC ACCUMULATOR/BPM/BPBA2002/VD ACCUMULATOR/BPM/BPBA2002/X_ACQ ACCUMULATOR/BPM/BPBA2002/Y_ACQ ACCUMULATOR/BPM/BPBA2002/X ACCUMULATOR/BPM/BPBA2002/Y ACCUMULATOR/BPM/BPBA2002/MODE ACCUMULATOR/BPM/BPBA2002/SAMPLES ACCUMULATOR/BPM/BPBA2002/ACQUISITION ACCUMULATOR/BPM/BPBA2002/MT ACCUMULATOR/BPM/BPBA1002/VA ACCUMULATOR/BPM/BPBA1002/VB ACCUMULATOR/BPM/BPBA1002/VC ACCUMULATOR/BPM/BPBA1002/VD ACCUMULATOR/BPM/BPBA1002/X_ACQ ACCUMULATOR/BPM/BPBA1002/Y_ACQ ACCUMULATOR/BPM/BPBA1002/X ACCUMULATOR/BPM/BPBA1002/Y ACCUMULATOR/BPM/BPBA1002/MODE ACCUMULATOR/BPM/BPBA1002/SAMPLES ACCUMULATOR/BPM/BPBA1002/ACQUISITION ACCUMULATOR/BPM/BPBA1002/MT ACCUMULATOR/BPM/BPBA2001/VA ACCUMULATOR/BPM/BPBA2001/VB ACCUMULATOR/BPM/BPBA2001/VC ACCUMULATOR/BPM/BPBA2001/VD ACCUMULATOR/BPM/BPBA2001/X_ACQ ACCUMULATOR/BPM/BPBA2001/Y_ACQ ACCUMULATOR/BPM/BPBA2001/X ACCUMULATOR/BPM/BPBA2001/Y ACCUMULATOR/BPM/BPBA2001/MODE ACCUMULATOR/BPM/BPBA2001/SAMPLES ACCUMULATOR/BPM/BPBA2001/ACQUISITION ACCUMULATOR/BPM/BPBA2001/MT ACCUMULATOR/BPM/BPBA4001/VA ACCUMULATOR/BPM/BPBA4001/VB ACCUMULATOR/BPM/BPBA4001/VC ACCUMULATOR/BPM/BPBA4001/VD ACCUMULATOR/BPM/BPBA4001/X_ACQ ACCUMULATOR/BPM/BPBA4001/Y_ACQ ACCUMULATOR/BPM/BPBA4001/X ACCUMULATOR/BPM/BPBA4001/Y ACCUMULATOR/BPM/BPBA4001/MODE ACCUMULATOR/BPM/BPBA4001/SAMPLES ACCUMULATOR/BPM/BPBA4001/ACQUISITION ACCUMULATOR/BPM/BPBA4001/MT ACCUMULATOR/BPM/BPBA3001/VA ACCUMULATOR/BPM/BPBA3001/VB ACCUMULATOR/BPM/BPBA3001/VC ACCUMULATOR/BPM/BPBA3001/VD ACCUMULATOR/BPM/BPBA3001/X_ACQ ACCUMULATOR/BPM/BPBA3001/Y_ACQ ACCUMULATOR/BPM/BPBA3001/X ACCUMULATOR/BPM/BPBA3001/Y ACCUMULATOR/BPM/BPBA3001/MODE ACCUMULATOR/BPM/BPBA3001/SAMPLES ACCUMULATOR/BPM/BPBA3001/ACQUISITION ACCUMULATOR/BPM/BPBA3001/MT ACCUMULATOR/BPM/BPBA4002/VA ACCUMULATOR/BPM/BPBA4002/VB ACCUMULATOR/BPM/BPBA4002/VC ACCUMULATOR/BPM/BPBA4002/VD ACCUMULATOR/BPM/BPBA4002/X_ACQ ACCUMULATOR/BPM/BPBA4002/Y_ACQ ACCUMULATOR/BPM/BPBA4002/X ACCUMULATOR/BPM/BPBA4002/Y ACCUMULATOR/BPM/BPBA4002/MODE ACCUMULATOR/BPM/BPBA4002/SAMPLES ACCUMULATOR/BPM/BPBA4002/ACQUISITION ACCUMULATOR/BPM/BPBA4002/MT ACCUMULATOR/BPM/BPBA3002/VA ACCUMULATOR/BPM/BPBA3002/VB ACCUMULATOR/BPM/BPBA3002/VC ACCUMULATOR/BPM/BPBA3002/VD ACCUMULATOR/BPM/BPBA3002/X_ACQ ACCUMULATOR/BPM/BPBA3002/Y_ACQ ACCUMULATOR/BPM/BPBA3002/X ACCUMULATOR/BPM/BPBA3002/Y ACCUMULATOR/BPM/BPBA3002/MODE ACCUMULATOR/BPM/BPBA3002/SAMPLES ACCUMULATOR/BPM/BPBA3002/ACQUISITION ACCUMULATOR/BPM/BPBA3002/MT"
 			}
 		    ],
 		    "AttrDesc": []

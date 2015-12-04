@@ -61,11 +61,11 @@ else
     exit 2
 fi
 
-for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09; do
-    if launch_us_cu 1 2 "$mds --log-level debug" daqLiberaServer $k;then
-	ok_mesg "US $k"
+for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09 LIBERA12 LIBERA13; do
+    if launch_us_cu 1 1 "$mds --log-level debug" daqLiberaServer $k;then
+	ok_mesg "daqLiberaServer $k"
     else
-	nok_mesg "US $k"
+	nok_mesg "daqLiberaServer $k"
 	exit 1
     fi
 done
