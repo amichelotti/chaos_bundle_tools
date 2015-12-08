@@ -27,7 +27,7 @@ for ((cnt=0;cnt<4;cnt++));do
 done
 
 
-  
+
 
 info_mesg(){
     if [ -z "$2" ]; then
@@ -80,14 +80,14 @@ function setEnv(){
 	    source $CHAOS_BUNDLE/.chaos_config
 	fi
     else
-    
+
 	if [ "$type" == "static" ]; then
 	    export CHAOS_STATIC=true
 	fi
 	if [ "$target" != "$ARCH" ]; then
 	    export CHAOS_TARGET=$target
 	fi
-	
+
 	if [ "$build" == "debug" ]; then
 	    export CHAOS_DEVELOPMENT=true
 	fi
@@ -129,19 +129,23 @@ function setEnv(){
     else
 	return 1
     fi
-    
+
 }
 
 function saveEnv(){
-    
-    echo "echo \"* Environment $tgt\"" > $PREFIX/chaos_env.sh
+  echo "SOURCE=\"${BASH_SOURCE[0]}\"" > $PREFIX/chaos_env.sh
+  echo "pushd `dirname $SOURCE` > /dev/null" > $PREFIX/chaos_env.sh
+  echo "SCRIPTPATH=`pwd -P`" > $PREFIX/chaos_env.sh
+  echo "popd > /dev/null" > $PREFIX/chaos_env.sh
+
+  echo "echo \"* Environment $tgt\"" > $PREFIX/chaos_env.sh
     if [ -n "$CHAOS_DEVELOPMENT" ];then
-	echo "export CHAOS_DEVELOPMENT=true" >> $PREFIX/chaos_env.sh
+	     echo "export CHAOS_DEVELOPMENT=true" >> $PREFIX/chaos_env.sh
     fi
     if [ -n "$CHAOS_TARGET" ];then
-	echo "export CHAOS_TARGET=$CHAOS_TARGET" >> $PREFIX/chaos_env.sh
+	     echo "export CHAOS_TARGET=$CHAOS_TARGET" >> $PREFIX/chaos_env.sh
     fi
-    echo "export CHAOS_PREFIX=\$PWD" >> $PREFIX/chaos_env.sh
+    echo "export CHAOS_PREFIX=\$SCRIPTPATH" >> $PREFIX/chaos_env.sh
     echo "export CHAOS_TOOLS=\$CHAOS_PREFIX/tools" >> $PREFIX/chaos_env.sh
     echo "if [ -z \"\$CHAOS_BUNDLE\" ];then" >> $PREFIX/chaos_env.sh
     echo -e "\texport CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $PREFIX/chaos_env.sh
@@ -161,7 +165,7 @@ function saveEnv(){
 
     echo "export PATH=\$PATH:\$CHAOS_PREFIX/bin:\$CHAOS_PREFIX/tools" >> $PREFIX/chaos_env.sh
 
-    
+
 }
 
 
@@ -173,13 +177,13 @@ function chaos_configure(){
     fi
 
     saveEnv
-    
+
     cp -a $CHAOS_BUNDLE/tools $PREFIX
     mkdir -p $PREFIX/etc
     mkdir -p $PREFIX/vfs
     mkdir -p $PREFIX/log
     mkdir -p $PREFIX/chaosframework
-    
+
     path=`echo $PREFIX/vfs|sed 's/\//\\\\\//g'`
     logpath=`echo $PREFIX/log/cds.log|sed 's/\//\\\\\//g'`
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds_local.cfg
@@ -188,12 +192,12 @@ function chaos_configure(){
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMDSLite ]; then
 	ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
     fi
-    if [ -e  "$PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml" ];then	
+    if [ -e  "$PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml" ];then
 	cp $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context_template.xml $PREFIX/chaosframework/ChaosMDSLite/src/main/webapp/META-INF/context.xml
     fi
-    
+
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg ]; then
-	
+
 	logpath=`echo $PREFIX/log/mds.log|sed 's/\//\\\\\//g'`
 
 	cat $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg | sed s/_MDSSERVER_/localhost/|sed s/_MDSLOG_/$logpath/g > $PREFIX/etc/mds.cfg
@@ -204,7 +208,7 @@ function chaos_configure(){
 get_pid(){
     local execname=`echo $1 | sed 's/\(.\)/[\1]/'`
     ps -fe |grep -v "$SCRIPTNAME" |grep "$execname" | sed 's/\ \+/\ /g'| cut -d ' ' -f 2|tr '\n' ' '
-    
+
 }
 time_format="+%s.%N"
 if [ "$OS" == "Darwin" ]; then
@@ -221,7 +225,7 @@ stop_proc(){
 	    else
 		ok_mesg "process $1 ($p) killed"
 	    fi
-	
+
 	else
 	    warn_mesg "process $1 ($p) " "not running"
 	fi
@@ -232,7 +236,7 @@ stop_proc(){
 get_cpu_stat(){
     local cpu=0
     info=`ps -o pcpu $1| tail -1`
-    if [[ "$info" =~ ([0-9\.]+) ]]; then 
+    if [[ "$info" =~ ([0-9\.]+) ]]; then
 	cpu=${BASH_REMATCH[1]}
 	read -r -a __testinfo__ </tmp/__chaos_test_info__
 	__testinfo__[0]=`echo "(${__testinfo__[0]} + $cpu)"|bc`
@@ -248,7 +252,7 @@ get_cpu_stat(){
 get_mem_stat(){
     local mem=0
     info=`ps -o pmem $1| tail -1`
-    if [[ "$info" =~ ([0-9\.]+) ]]; then 
+    if [[ "$info" =~ ([0-9\.]+) ]]; then
 	mem=${BASH_REMATCH[1]}
 	read -r -a __testinfo__ </tmp/__chaos_test_info__
 	__testinfo__[2]=`echo "(${__testinfo__[2]} + $mem)"|bc`
@@ -280,7 +284,7 @@ check_proc(){
 	    else
 		mem="\x1B[1m$mem%\x1B[22m"
 	    fi
-	    
+
 	    ok_mesg "process \x1B[1m$1\x1B[22m is running with pid \x1B[1m$p\x1B[22m cpu $cpu, mem $mem"
 
 	    proc_list+=($p)
@@ -309,7 +313,7 @@ run_proc(){
     if [ $? -eq 0 ] && [ -n "$oldpid" ]; then
 	oldpidl=($oldpid)
     fi
-	
+
     if [ -z "$run_prefix" ];then
 	eval $command_line
     else
@@ -330,15 +334,15 @@ run_proc(){
 
 	if [ ${#pidl[@]} -gt ${#oldpidl[@]} ];then
 	    local p=${pidl[$((${#pidl[@]} -1))]}
-	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$p\", started" 
+	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$p\", started"
 	    proc_pid=$p
-	    
+
 	    return 0
 	else
 	    nok_mesg "process $process_name quitted unexpectly "
 	    exit 1
 	fi
-	
+
     else
 	error_mesg "error lunching $process_name"
 	exit 1
@@ -357,10 +361,10 @@ test_services(){
     fi
 }
 start_services(){
-    
+
     if $tools/chaos_services.sh start mds; then
 	ok_mesg "chaos start MDS"
-	
+
     else
 	nok_mesg "chaos start MDS"
 	return 1
@@ -368,7 +372,7 @@ start_services(){
 
     if $tools/chaos_services.sh start cds; then
 	ok_mesg "chaos start CDS"
-	
+
     else
 	nok_mesg "chaos start CDS"
 	return 1
@@ -376,7 +380,7 @@ start_services(){
 
     if $tools/chaos_services.sh start uis; then
 	ok_mesg "chaos start UIS"
-	
+
     else
 	nok_mesg "chaos start UIS"
 	return 1
@@ -402,16 +406,16 @@ test_prefix(){
 }
 
 get_abs_filename() {
- 
+
   echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
 }
 
 get_abs_dir() {
- 
+
   echo "$(cd "$1" && pwd)"
 }
 get_abs_parent_dir() {
- 
+
   echo "$(cd "$(dirname "$1")" && pwd)"
 }
 
@@ -455,13 +459,13 @@ build_mds_conf(){
 		if [[ $l =~ $ll ]];then
 		    lista_conf="$lista_conf -i $l -n $n"
 		    info_mesg "generating $n CU from " "$l"
-		fi 
+		fi
 	    done
 
-	   
+
 	fi
     done
-    
+
     local param="$lista_conf -j $nus -o $out"
     if [ -n "$dataserver" ];then
 	param="$param -d $dataserver"
@@ -511,9 +515,9 @@ execute_command_until_ok(){
    if [ $_cnt_ -lt $2 ]; then
        echo
    fi
-   if [ $_ok_ -eq 0 ]; then 
+   if [ $_ok_ -eq 0 ]; then
        return 1
-   
+
    fi
 
    return 0
@@ -530,7 +534,7 @@ chaos_cli_cmd(){
 	timeout=$((timeout * 10))
     fi
     cli_cmd=`$CHAOS_PREFIX/bin/ChaosCLI --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/ChaosCLI.log --metadata-server $meta --device-id $cuname --timeout $timeout $param 2>&1`
-   
+
     if [ $? -eq 0 ]; then
 	return 0
     fi
@@ -567,7 +571,7 @@ get_timestamp_cu(){
     else
 	error_mesg "cannot get timestamp from: \"$cli_cmd\""
     fi
-    
+
     return 1
 }
 
@@ -653,16 +657,16 @@ loop_cu_test(){
 	sleep 1
 	if get_timestamp_cu $meta $cuname;then
 	    ok_mesg "- $cnt get timestamp $timestamp_cu"
-	    
+
 	    if [ $t1 -gt 0 ];then
-		res=$((timestamp_cu -t1)) 
+		res=$((timestamp_cu -t1))
 		if [ $res -gt 0 ]; then
 		    info_mesg "cu $cuname is living loop time" " $res ms"
 		else
 		    warn_mesg "cu $cuname " "not progressing"
 		fi
 	    fi
-	    t1=$timestamp_cu	    
+	    t1=$timestamp_cu
 	else
 	    nok_mesg "- $cnt get timestamp $cuname"
 	    return 1
