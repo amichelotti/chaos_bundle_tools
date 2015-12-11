@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ulimit -u unlimited
 separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`
@@ -11,12 +11,11 @@ source $dir/../../common_util.sh
 
 if [ -z "$CHAOS_PREFIX" ];then
     echo "%% NO environment CHAOS_PREFIX defined, setting $prefix_tmp"
-else
     export CHAOS_PREFIX=$prefix_tmp
 fi
 
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
-
+info_mesg "using prefix " "$CHAOS_PREFIX"
 check_proc_then_kill daqLiberaServer
 check_proc_then_kill BPMSync
 check_proc_then_kill UnitServer    

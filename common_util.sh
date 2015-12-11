@@ -133,12 +133,12 @@ function setEnv(){
 }
 
 function saveEnv(){
-  echo "SOURCE=\"${BASH_SOURCE[0]}\"" > $PREFIX/chaos_env.sh
-  echo "pushd `dirname $SOURCE` > /dev/null" > $PREFIX/chaos_env.sh
-  echo "SCRIPTPATH=`pwd -P`" > $PREFIX/chaos_env.sh
-  echo "popd > /dev/null" > $PREFIX/chaos_env.sh
+  echo "SOURCE=\"\${BASH_SOURCE[0]}\"" > $PREFIX/chaos_env.sh
+  echo 'pushd `dirname $SOURCE` > /dev/null' >> $PREFIX/chaos_env.sh
+  echo 'SCRIPTPATH=`pwd -P`' >> $PREFIX/chaos_env.sh
+  echo "popd > /dev/null" >> $PREFIX/chaos_env.sh
 
-  echo "echo \"* Environment $tgt\"" > $PREFIX/chaos_env.sh
+  echo "echo \"* Environment $tgt\"" >> $PREFIX/chaos_env.sh
     if [ -n "$CHAOS_DEVELOPMENT" ];then
 	     echo "export CHAOS_DEVELOPMENT=true" >> $PREFIX/chaos_env.sh
     fi
@@ -186,9 +186,14 @@ function chaos_configure(){
 
     path=`echo $PREFIX/vfs|sed 's/\//\\\\\//g'`
     logpath=`echo $PREFIX/log/cds.log|sed 's/\//\\\\\//g'`
-    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds_local.cfg
-    ln -sf $PREFIX/etc/cds_local.cfg $PREFIX/etc/cds.cfg
-    sed 's/run_mode=.*/run_mode=1/' $PREFIX/etc/cds_local.cfg | sed 's/vfs_storage_driver_kvp=.*/vfs_storage_driver_kvp=posix_root_path:\/dev\/null/g' > $PREFIX/etc/cds_noidx.cfg
+    echo -e "metadata-server=localhost:5000\nlog-level=debug\nevent-disable=1\n" > $PREFIX/etc/cu-localhost.cfg
+    echo -e "metadata-server=localhost:5000\nlog-level=debug\nserver_port=8081\nevent-disable=1\n" > $PREFIX/etc/cuiserver-localhost.cfg
+
+    cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds-localhost.cfg
+    ln -sf $PREFIX/etc/cds-localhost.cfg $PREFIX/etc/cds.cfg
+    ln -sf $PREFIX/etc/cuiserver-localhost.cfg $PREFIX/etc/cuiserver.cfg
+    ln -sf $PREFIX/etc/cu-localhost.cfg $PREFIX/etc/cu.cfg
+    sed 's/run_mode=.*/run_mode=1/' $PREFIX/etc/cds-localhost.cfg | sed 's/vfs_storage_driver_kvp=.*/vfs_storage_driver_kvp=posix_root_path:\/dev\/null/g' > $PREFIX/etc/cds_noidx.cfg
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMDSLite ]; then
 	ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
     fi
@@ -267,9 +272,13 @@ get_mem_stat(){
     fi
 }
 check_proc(){
-    local status=0
+    local xstatus=0
     proc_list=()
     pid=`get_pid "$1"`
+    if [ -z "$pid" ]; then
+	nok_mesg "process \x1B[1m$1\x1B[22m is not running"
+	((xstatus++))
+    fi
     for p in $pid;do
 	if [ -n "$p" ]; then
 	    cpu=$(get_cpu_stat $p)
@@ -290,10 +299,10 @@ check_proc(){
 	    proc_list+=($p)
 	else
 	    nok_mesg "process \x1B[1m$1\x1B[22m is not running"
-	    ((status++))
+	    ((xstatus++))
 	fi
     done
-	return $status
+    return $xstatus
 }
 
 check_proc_then_kill(){
@@ -729,7 +738,7 @@ launch_us_cu(){
 	    REAL_ALIAS=$ALIAS_$us
 	fi
 	FILE_NAME=`echo $REAL_ALIAS|sed 's/\//_/g'`
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS --metadata-server $META > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else

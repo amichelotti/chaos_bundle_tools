@@ -19,6 +19,19 @@ if [ -z "$CHAOS_PREFIX" ];then
     echo "## NO environment CHAOS_PREFIX defined"
     exit 1
 fi
+servers=`cat $1`
+mds=""
+for i in $servers;do
+    if [[ "$i" =~ -mds[0-9]+ ]]; then
+	mds=$i
+	cat $CHAOS_PREFIX/etc/cu-localhost.cfg | sed "s/localhost/$mds/g" > $CHAOS_PREFIX/etc/cu-$mds.cfg
+	cat $CHAOS_PREFIX/etc/cuiserver-localhost.cfg | sed "s/localhost/$mds/g" > $CHAOS_PREFIX/etc/cuiserver-$mds.cfg
+	pushd $CHAOS_PREFIX/etc > /dev/null
+	ln -sf cu-$mds.cfg cu.cfg
+	ln -sf cuiserver-$mds.cfg cuiserver.cfg
+	popd > /dev/null
+    fi
+done
 name=`basename $CHAOS_PREFIX`
 info_mesg "generating tarball $name.tgz"
 rm -f /tmp/$name.tgz > /dev/null
@@ -28,7 +41,7 @@ else
     nok_mesg "$name created"
     exit 1
 fi
-servers=`cat $1`
+
 info_mesg "copy on the destination servers: " "$servers"
 if $dir/../chaos_deploy.sh -u chaos -s /tmp/$name.tgz $1;then
     ok_mesg "copy done"
@@ -49,7 +62,7 @@ for i in $servers;do
 	    nok_mesg "stopping chaos-$j services on $i"
 	fi
 	
-	if ssh chaos@$i "tar xfz $name.tgz;ln -sf chaos-x86_64-distrib $name"; then
+	if ssh chaos@$i "tar xfz $name.tgz;ln -sf $name chaos-x86_64-distrib "; then
 	    ok_mesg "extracting $name in $i"
 	else
 	    nok_mesg "extracting $name in $i"

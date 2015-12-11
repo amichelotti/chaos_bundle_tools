@@ -1,0 +1,14 @@
+{
+    "data_servers": [
+	{
+    	    "hostname": "chaosdev-cds1.chaos.lnf.infn.it:1672:30175|0",
+	    "id_server": 0,
+	    "is_live": true
+	},
+	{
+    	    "hostname": "chaosdev-cds2.chaos.lnf.infn.it:1672:30175|0",
+	    "id_server": 1,
+	    "is_live": true
+	}
+
+    ],
