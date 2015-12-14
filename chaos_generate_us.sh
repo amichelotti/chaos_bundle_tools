@@ -141,7 +141,21 @@ for c in $listcmake;do
 	echo "* skipping $c"
 	continue;
     fi
+    project_name_tmp=`grep -i project $c`
+    project_name=""
     cmake_things+="##### from $startdir/$c ###### \n"
+    if [[ "$project_name_tmp" =~ \(([a-zA-Z0-9_]+)\) ]];then
+	project_name=${BASH_REMATCH[1]}
+       
+	cat $c| sed "s/\${PROJECT_NAME}/$project_name/g" > /tmp/_cmakelist.txt
+	c="/tmp/_cmakelist.txt"
+	echo "replacing $project_name"
+    fi
+    
+
+
+
+
 #    cmake_include="$(grep INCLUDE_DIRECTORIES $c)"
 #    if [ -n "$cmake_include" ]; then
 #	cmake_things+="$cmake_include\n"
@@ -166,17 +180,21 @@ for c in $listcmake;do
 	    if [[ "$var" =~ .+\((.+) ]];then
 		if [ -n "${BASH_REMATCH[1]}" ];then
 		    mylib=${BASH_REMATCH[1]}
+		 #   echo "-->$mylib"
 		    lista_lib="$lista_lib $mylib";
 		    varlink=`grep -i "target_link_libraries\ *(\ *$mylib" $c | tail -1`;
+
 		    patt="\($mylib\ +(.+)\ *\)"
 		    if [[ "$varlink" =~ $patt ]]; then
+			echo "---link-->${BASH_REMATCH[1]}"
 			if [ -z "$listadep" ]; then
 			    listadep="${BASH_REMATCH[1]}";
+		#	   
 			else
 			    listadep="$listadep ${BASH_REMATCH[1]}";
 			fi
+			echo "---dep-->$listadep"
 
-						
 		    fi
 		fi
 	    fi
