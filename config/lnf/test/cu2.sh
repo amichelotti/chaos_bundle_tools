@@ -16,21 +16,10 @@ fi
 
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "using prefix " "$CHAOS_PREFIX"
-check_proc_then_kill daqLiberaServer
 check_proc_then_kill BPMSync
-check_proc_then_kill UnitServer    
+
 procid=()
 cuid=()
-for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09 LIBERA12 LIBERA13; do
-    if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" daqLiberaServer $k;then
-	ok_mesg "daqLiberaServer $k $!"
-	procid+=($!)
-	cuid+=($k)
-    else
-	nok_mesg "daqLiberaServer $k"
-	exit 1
-    fi
-done
 
 if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
     ok_mesg "US BPMsync $!"
@@ -38,15 +27,6 @@ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/B
     cuid+=("ACCUMULATOR/BPM")
 else
     nok_mesg "US BPMSync"
-    exit 1
-fi
-
-if launch_us_cu 1 8 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF;then
-    ok_mesg "US BTF $!"
-    procid+=($!)
-    cuid+=("BTF")
-else
-    nok_mesg "US BTF"
     exit 1
 fi
 

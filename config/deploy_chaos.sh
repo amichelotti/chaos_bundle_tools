@@ -20,6 +20,10 @@ if [ -z "$CHAOS_PREFIX" ];then
     exit 1
 fi
 servers=`cat $1`
+cudir=`dirname $1`
+cuconfig=`basename $cudir`
+info_mesg "working on " "$cuconfig"
+
 mds=""
 for i in $servers;do
     if [[ "$i" =~ -mds[0-9]+ ]]; then
@@ -32,6 +36,8 @@ for i in $servers;do
 	popd > /dev/null
     fi
 done
+
+
 name=`basename $CHAOS_PREFIX`
 info_mesg "generating tarball $name.tgz"
 rm -f /tmp/$name.tgz > /dev/null
@@ -54,7 +60,7 @@ fi
 
 for i in $servers;do
     info_mesg "installing in " "$i"
-    if [[ "$i" =~ -([a-zA-Z]+)[0-9]+ ]];then
+    if [[ "$i" =~ -([a-zA-Z]+)([0-9]+) ]];then
 	j=${BASH_REMATCH[1]}
 	if ssh chaos@$i "sudo service chaos-$j stop" ;then
 	    ok_mesg "stopping chaos-$j services on $i"
@@ -68,7 +74,14 @@ for i in $servers;do
 	    nok_mesg "extracting $name in $i"
 	    exit 1
 	fi
-	
+
+	if [ "$j" == "cu" ];then
+	    if ssh chaos@$i "cd chaos-x86_64-distrib/tools/config/lnf;ln -sf $cuconfig/cu${BASH_REMATCH[2]}.sh cu.sh";then
+		ok_mesg "linking chaos-x86_64-distrib/tools/config/lnf/$cuconfig/cu${BASH_REMATCH[2]}.sh"
+	    else
+		nok_mesg "linking chaos-x86_64-distrib/tools/config/lnf/$cuconfig/cu${BASH_REMATCH[2]}.sh"
+	    fi
+	fi
 	
 	if ssh chaos@$i "sudo service chaos-$j start" ;then
 	    ok_mesg "starting chaos-$j services on $i"
