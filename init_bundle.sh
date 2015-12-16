@@ -110,7 +110,7 @@ if [ -n "$CHAOS_DEVELOPMENT" ]; then
     ln -sf  $CHAOS_FRAMEWORK/chaos $CHAOS_BUNDLE/usr/local/include/chaos
 fi
 
-for i in crest debug serial test modbus powersupply misc; do
+for i in crest debug vme serial test modbus powersupply misc; do
 cmake_compile $CHAOS_BUNDLE/common/$i;
 done;
 
