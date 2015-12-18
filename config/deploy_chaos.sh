@@ -19,7 +19,7 @@ if [ -z "$CHAOS_PREFIX" ];then
     echo "## NO environment CHAOS_PREFIX defined"
     exit 1
 fi
-servers=`cat $1`
+servers=`cat $1 | sed "s/#.*//g"`
 cudir=`dirname $1`
 cuconfig=`basename $cudir`
 info_mesg "working on " "$cuconfig"

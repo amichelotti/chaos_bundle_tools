@@ -25,9 +25,9 @@ cuid=()
 if launch_us_cu 1 2 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_UNIT;then
      ok_mesg "US TEST_UNIT $!"
      procid+=($!)
-     cuid+=("BTF")
+     cuid+=("TEST_UNIT")
  else
-     nok_mesg "US BTF"
+     nok_mesg "TEST_UNIT"
      exit 1
  fi
 
