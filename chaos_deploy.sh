@@ -1,70 +1,105 @@
 #!/bin/bash
 
+separator='-'
+pushd `dirname $0` > /dev/null
+dir=`pwd -P`
+popd > /dev/null
 
-user="root"
-source=""
-dest=""
+source $dir/common_util.sh
 
-
-usage(){
-
-    echo "Usage is $0  [-u <ssh user ($user)> ] -s <local source> [-d <remote destination>] <server lists file >"
-    
+Usage(){
+    echo "$0 <file with servers>"
 }
 
-
-while getopts u:d:s:h opt;do 
-    case $opt in
-	u) 
-	    user=$OPTARG
-	    ;;
-	d)
-	    dest=$OPTARG
-	    ;;
-	h)
-	    usage
-	    exit 0
-	    ;;
-	s)
-	    source=$OPTARG
-	    ;;
-    esac
-    
-done
-
-
-shift $((OPTIND -1))
-
-if [ ! -e "$1" ];then
-    echo "## you must specify a valid list of servers file"
+if [ ! -e "$1" ]; then
+    nok_mesg "You must specify a valid file for deployment"
     exit 1
 fi
-
-if [ ! -e "$source" ];then
-    echo "## you must specify an existing binary, \"$source\" doesn't exists"
+if [ -z "$CHAOS_PREFIX" ];then
+    echo "## NO environment CHAOS_PREFIX defined"
     exit 1
 fi
+servers=`cat $1 | sed "s/#.*//g"`
+cudir=`dirname $1`
+cuconfig=`basename $cudir`
+info_mesg "working on " "$cuconfig"
 
- 
-list=`cat $1`
-for s in $list;do
-    scp $source $user@$s:$dest >/dev/null &
-    echo "* copying $source in $user@$s:$dest id $! ..."
+mds=""
+for i in $servers;do
+    if [[ "$i" =~ -mds[0-9]+ ]]; then
+	mds=$i
+	cat $CHAOS_PREFIX/etc/cu-localhost.cfg | sed "s/localhost/$mds/g" > $CHAOS_PREFIX/etc/cu-$mds.cfg
+	cat $CHAOS_PREFIX/etc/cuiserver-localhost.cfg | sed "s/localhost/$mds/g" > $CHAOS_PREFIX/etc/cuiserver-$mds.cfg
+	pushd $CHAOS_PREFIX/etc > /dev/null
+	ln -sf cu-$mds.cfg cu.cfg
+	ln -sf cuiserver-$mds.cfg cuiserver.cfg
+	popd > /dev/null
+    fi
 
-done
-error=0
-for job in `jobs -p`;do
-    echo "* waiting finishing id $job"
-    wait $job || let "error+=1"
-    if [ $error != "0" ] ;then
-	echo "## error copying $error"
+    if [[ "$i" =~ -webui[0-9]+ ]]; then
+	webui=$i
+	pushd $CHAOS_PREFIX/
+	cp -r $CHAOS_PREFIX/www $CHAOS_PREFIX/www-$webui
+	find $CHAOS_PREFIX/www-$webui -name "*" -exec  sed -i s/__template__webuiulr__/$webui/g \{\} >& /dev/null \; 
 	
+	popd > /dev/null
     fi
 done
 
-if [ $error == "0" ] ;then
-    echo "* successfully copied"
-else
+
+name=`basename $CHAOS_PREFIX`
+info_mesg "generating tarball $name.tgz"
+rm -f /tmp/$name.tgz > /dev/null
+if tar cfz /tmp/$name.tgz -C $CHAOS_PREFIX/.. $name ;then
+    ok_mesg "$name created"
+else 
+    nok_mesg "$name created"
     exit 1
 fi
+
+info_mesg "copy on the destination servers: " "$servers"
+if $dir/chaos_remote_copy.sh -u chaos -s /tmp/$name.tgz $1;then
+    ok_mesg "copy done"
+else
+    nok_mesg "copy done"
+    exit 1
+fi
+
+
+
+for i in $servers;do
+    info_mesg "installing in " "$i"
+    if [[ "$i" =~ -([a-zA-Z]+)([0-9]+) ]];then
+	j=${BASH_REMATCH[1]}
+	if ssh chaos@$i "sudo service chaos-$j stop" ;then
+	    ok_mesg "stopping chaos-$j services on $i"
+	else
+	    nok_mesg "stopping chaos-$j services on $i"
+	fi
+	
+	if ssh chaos@$i "tar xfz $name.tgz;ln -sf $name chaos-x86_64-distrib "; then
+	    ok_mesg "extracting $name in $i"
+	else
+	    nok_mesg "extracting $name in $i"
+	    exit 1
+	fi
+
+	if [ "$j" == "cu" ];then
+	    if ssh chaos@$i "cd chaos-x86_64-distrib/tools/config/lnf;ln -sf $cuconfig/cu${BASH_REMATCH[2]}.sh cu.sh";then
+		ok_mesg "linking chaos-x86_64-distrib/tools/config/lnf/$cuconfig/cu${BASH_REMATCH[2]}.sh"
+	    else
+		nok_mesg "linking chaos-x86_64-distrib/tools/config/lnf/$cuconfig/cu${BASH_REMATCH[2]}.sh"
+	    fi
+	fi
+	
+	if ssh chaos@$i "sudo service chaos-$j start" ;then
+	    ok_mesg "starting chaos-$j services on $i"
+	else
+	    nok_mesg "starting chaos-$j services on $i"
+	    exit 1
+	fi
+    fi
+	
+    
+done
 

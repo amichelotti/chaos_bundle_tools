@@ -12,101 +12,15 @@
 	}
 
     ],
-    "device_classes": [
-	{
-	    "device_class_alias": "SCPowerSupplyControlUnit",
-	    "device_class": "::driver::powersupply::SCPowerSupplyControlUnit",
-	    "device_class_interface": "::driver::powersupply",
-	    "device_source": "TEST"
-	},
-	{
-	    "device_class_alias": "::driver::daq::qdc",
-	    "device_class": "::driver::daq::qdc",
-	    "device_class_interface": "uknown",
-	    "device_source": "pre-existent CU"
-	},
-	{
-	    "device_class_alias": "::driver::daq::scaler",
-	    "device_class": "::driver::daq::scaler",
-	    "device_class_interface": "uknown",
-	    "device_source": "pre-existent CU"
-	},
-	{
-	    "device_class_alias": "RTWorkerCU",
-	    "device_class": "RTWorkerCU",
-	    "device_class_interface": "uknown",
-	    "device_source": "pre-existent CU"
-	},
-	{
-	    "device_class_alias": "BasicSensor",
-	    "device_class": "BasicSensor",
-	    "device_class_interface": "uknown",
-	    "device_source": "pre-existent CU"
-	},
-	{
-	    "device_class_alias": "chaos::driver::modbus::ModbusControlUnit",
-	    "device_class": "chaos::driver::modbus::ModbusControlUnit",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "chaos::driver::modbus::ModbusFemtoUnit",
-	    "device_class": "chaos::driver::modbus::ModbusFemtoUnit",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "S7ControlUnit",
-	    "device_class": "S7ControlUnit",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "Tektronicks",
-	    "device_class": "Tektronicks",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "SCWorkerCU",
-	    "device_class": "SCWorkerCU",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "ChaosMESS",
-	    "device_class": "ChaosMESS",
-	    "device_class_interface": "uknown",
-	    "device_source": "pre-existent CU"
-	},
-	{
-	    "device_class_alias": "DataImport",
-	    "device_class": "DataImport",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	},
-	{
-	    "device_class_alias": "IOCU",
-	    "device_class": "IOCU",
-	    "device_class_interface": "IO",
-	    "device_source": "MDS"
-	},
-	{
-	    "device_class_alias": "::driver::daq::libera::SCLiberaCU",
-	    "device_class": "::driver::daq::libera::SCLiberaCU",
-	    "device_class_interface": null,
-	    "device_source": "pre-existent"
-	}
-    ],
     "us": [
 	{
-	    "unit_server_alias": "AULA_TOUSCHEK",
+	    "unit_server_alias": "AULA_TOUSHECK",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_C0101",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_C0101",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -114,14 +28,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeC",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0101"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_C0301",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_C0301",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -129,14 +43,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeC",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0301"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_C0501",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_C0501",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -144,14 +58,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeC",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0501"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0101",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0101",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -159,14 +73,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0101"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0102",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0102",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -174,14 +88,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0102"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0102"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0103",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0103",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -189,336 +103,14 @@
 			{
 			    "DriverDescriptionName": "ZBSensorNodeD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0103"
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0103"
 			}
 		    ],
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0201",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0201"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0202",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0202"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0203",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0203"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0301",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0301"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0302",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0302"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0303",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0303"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0304",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0304"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0401",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0401"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0402",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0402"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0403",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0403"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0404",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0404"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0501",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0501"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_D0502",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0502"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0101",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0101"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0102",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0102"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0201",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0201"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0202",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0202"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0301",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0301"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0401",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0401"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0501",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0501"
-			}
-		    ],
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK",
-		    "cu_id": "AULA_TOUSCHEK/ZB_SENSOR_S0502",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0:0x0502"
-			}
-		    ],
-		    "AttrDesc": []
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "AULA_TOUSCHEK_SIM",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "AULA_TOUSCHEK_SIM",
-		    "cu_id": "AULA_TOUSCHEK_SIM/ZB_SENSOR_D0201",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0201",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -532,8 +124,8 @@
 		    "AttrDesc": []
 		},
 		{
-		    "unit_server_alias": "AULA_TOUSCHEK_SIM",
-		    "cu_id": "AULA_TOUSCHEK_SIM/ZB_SENSOR_D0202",
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0202",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -542,6 +134,291 @@
 			    "DriverDescriptionName": "ZBSensorNodeD",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0202"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0203",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0203"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0301",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0302",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0302"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0303",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0303"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0304",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0304"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0401",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0401"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0402",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0402"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0403",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0403"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0404",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0404"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0501",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0502",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0502"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0101",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0102",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0102"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0201",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0201"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0202",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0202"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0301",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0401",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0401"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0501",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "AULA_TOUSHECK",
+		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_S0502",
+		    "cu_type": "BasicSensor",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0502"
 			}
 		    ],
 		    "AttrDesc": []
@@ -863,42 +740,27 @@
 	    ]
 	},
 	{
-	    "unit_server_alias": "bis_server",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
-	},
-	{
-	    "unit_server_alias": "BTF",
+	    "unit_server_alias": "BTF/DAQ",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "BTF",
-		    "cu_id": "BTF/DAQ/QDC0",
-		    "cu_type": "::driver::daq::qdc",
+		    "unit_server_alias": "BTF/DAQ",
+		    "cu_id": "BTF/DAQ",
+		    "cu_type": "::driver::daq::btfdaq",
 		    "cu_param": "",
-		    "auto_load": true,
+		    "auto_load": false,
 		    "AttrDesc": []
-		},
+		}
+	    ]
+	},
+	{
+	    "unit_server_alias": "BTF/TRXLINE",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
 		{
-		    "unit_server_alias": "BTF",
-		    "cu_id": "BTF/DAQ/QDC1",
-		    "cu_type": "::driver::daq::qdc",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "BTF",
-		    "cu_id": "BTF/DAQ/SCALER",
-		    "cu_type": "::driver::daq::scaler",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "AttrDesc": []
-		},
-		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/DHSTB001",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -932,7 +794,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/DHSTB002",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -966,7 +828,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB001",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1000,7 +862,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB002",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1034,7 +896,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB003",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1068,7 +930,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB004",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1102,7 +964,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB101",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1136,7 +998,7 @@
 		    ]
 		},
 		{
-		    "unit_server_alias": "BTF",
+		    "unit_server_alias": "BTF/TRXLINE",
 		    "cu_id": "BTF/QUATB102",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
@@ -1172,12 +1034,151 @@
 	    ]
 	},
 	{
-	    "unit_server_alias": "btw-transfer-line",
+	    "unit_server_alias": "BTF/CORRECTORS",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc":[{
+		"unit_server_alias": "BTF/CORRECTORS",
+		"cu_id": "BTF/CHHTB001",
+		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		"cu_param": "",
+		"auto_load": true,
+		"DriverDescription": [
+		    {
+			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+		    }
+		],
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "max_current",
+			"ds_max_range": "",
+			"ds_min_range": "",
+			"ds_default_value": "700"
+		    },
+		    {
+			"ds_attr_name": "slope_down",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    },
+		    {
+			"ds_attr_name": "slope_up",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    }
+		]
+	    },{
+		"unit_server_alias": "BTF/CORRECTORS",
+		"cu_id": "BTF/CVVTB001",
+		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		"cu_param": "",
+		"auto_load": true,
+		"DriverDescription": [
+		    {
+			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+		    }
+		],
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "max_current",
+			"ds_max_range": "",
+			"ds_min_range": "",
+			"ds_default_value": "700"
+		    },
+		    {
+			"ds_attr_name": "slope_down",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    },
+		    {
+			"ds_attr_name": "slope_up",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    }
+		]
+	    },{
+		"unit_server_alias": "BTF/CORRECTORS",
+		"cu_id": "BTF/CHHTB002",
+		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		"cu_param": "",
+		"auto_load": true,
+		"DriverDescription": [
+		    {
+			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+		    }
+		],
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "max_current",
+			"ds_max_range": "",
+			"ds_min_range": "",
+			"ds_default_value": "700"
+			},
+		    {
+			"ds_attr_name": "slope_down",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    },
+		    {
+			"ds_attr_name": "slope_up",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    }
+		]
+	    },{
+		"unit_server_alias": "BTF/CORRECTORS",
+		"cu_id": "BTF/CVVTB002",
+		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		"cu_param": "",
+		"auto_load": true,
+		"DriverDescription": [
+		    {
+			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+		    }
+		],
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "max_current",
+			"ds_max_range": "",
+			"ds_min_range": "",
+			"ds_default_value": "700"
+		    },
+		    {
+			"ds_attr_name": "slope_down",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    },
+		    {
+			"ds_attr_name": "slope_up",
+			"ds_max_range": "10",
+			"ds_min_range": "1",
+			"ds_default_value": "1"
+		    }
+		]
+	    }
+	    ]
+	},
+	{
+	    "unit_server_alias": "TEST_BIS",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "btw-transfer-line",
+		    "unit_server_alias": "TEST_BIS",
 		    "cu_id": "rt_sin_a",
 		    "cu_type": "RTWorkerCU",
 		    "cu_param": "",
@@ -1271,13 +1272,13 @@
 	    ]
 	},
 	{
-	    "unit_server_alias": "TEST_US",
+	    "unit_server_alias": "TEST_MIKE",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "TEST_US",
-		    "cu_id": "TEST_US/SUPPLY",
+		    "unit_server_alias": "TEST_MIKE",
+		    "cu_id": "TEST_MIKE/SUPPLY",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,

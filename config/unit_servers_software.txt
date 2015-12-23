@@ -1154,7 +1154,144 @@
 			    "ds_default_value": "1"
 			}
 		    ]
+		},
+{
+		    "unit_server_alias": "BTF",
+		    "cu_id": "BTF/CHHTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "max_current",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+{
+		    "unit_server_alias": "BTF",
+		    "cu_id": "BTF/CVVTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "max_current",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+{
+		    "unit_server_alias": "BTF",
+		    "cu_id": "BTF/CHHTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "max_current",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+{
+		    "unit_server_alias": "BTF",
+		    "cu_id": "BTF/CVVTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "max_current",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
 		}
+
 	    ]
 	},
 	{
