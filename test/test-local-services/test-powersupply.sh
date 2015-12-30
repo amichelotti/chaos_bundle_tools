@@ -35,7 +35,7 @@ for ((us=0;us<$NUS;us++));do
     for ((cu=0;cu<$NCU;cu++));do      
 	info_mesg "starting \"TEST_UNIT_$us/TEST_CU_$cu\" powersupply test"
 	rm -rf $CHAOS_PREFIX/log/$TESTEXE-$us-$cu.* >/dev/null
-	if run_proc "$CHAOS_PREFIX/bin/$TESTEXE --log-on-file --log-file $CHAOS_PREFIX/log/$TESTEXE-$us-$cu.log --metadata-server $META -s TEST_UNIT_$us/TEST_CU_$cu -l 1 > /dev/null 2>&1 &" "$TESTEXE"; then
+	if run_proc "$CHAOS_PREFIX/bin/$TESTEXE --log-on-file --log-file $CHAOS_PREFIX/log/$TESTEXE-$us-$cu.log --metadata-server $META -s TEST_UNIT_$us/TEST_CU_$cu -l 1 > $CHAOS_PREFIX/log/$TESTEXE-$us-$cu.stdout.log 2>&1 &" "$TESTEXE"; then
 	    ok_mesg "Test $TESTEXE started on \"TEST_UNIT_$us/TEST_CU_$cu\""
 	else
 	    nok_mesg "Test $TESTEXE started on \"TEST_UNIT_$us/TEST_CU_$cu\""

@@ -83,16 +83,16 @@ function cmake_compile(){
     echo "* cmake flags $CHAOS_CMAKE_FLAGS"
     if ! cmake $CHAOS_CMAKE_FLAGS .; then
 	error_mesg "unable to create Makefile in $dir"
-	exit
+	return 1
     fi;
     if ! make -j $NPROC; then
 	error_mesg "compiling in $dir"
-	exit 1;
+	return 1
     fi;
 
     if ! make install; then
 	error_mesg "compiling in $dir"
-	exit 1;
+	return 1
     fi;
 }
 
@@ -110,9 +110,12 @@ if [ -n "$CHAOS_DEVELOPMENT" ]; then
     ln -sf  $CHAOS_FRAMEWORK/chaos $CHAOS_BUNDLE/usr/local/include/chaos
 fi
 
-for i in crest debug serial test modbus powersupply; do
+for i in crest debug vme serial test modbus powersupply misc; do
 cmake_compile $CHAOS_BUNDLE/common/$i;
 done;
+
+## used in other drivers
+cmake_compile $CHAOS_BUNDLE/driver/misc;
 
 for i in $(ls  $CHAOS_BUNDLE/driver/) ; do
 cmake_compile $CHAOS_BUNDLE/driver/$i;

@@ -21,7 +21,7 @@
 #ifndef ____template_type_____template_name__ControlUnit_h__
 #define ____template_type_____template_name__ControlUnit_h__
 
-#include <chaos/cu_toolkit/ControlManager/RTAbstractControlUnit.h>
+#include <chaos/cu_toolkit/control_manager/RTAbstractControlUnit.h>
 
 namespace __template_type__ {
 	namespace __template_name__ {

@@ -21,7 +21,7 @@
 #ifndef __ControlUnitTest____template_name__CommandSample__
 #define __ControlUnitTest____template_name__CommandSample__
 
-#include <chaos/cu_toolkit/ControlManager/slow_command/SlowCommand.h>
+#include <chaos/cu_toolkit/control_manager/slow_command/SlowCommand.h>
 #include "__template_name__Interface.h"
 using namespace chaos;
 

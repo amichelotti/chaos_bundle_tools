@@ -34,7 +34,9 @@ cds_checks(){
 	ok_mesg "mongod check"
     fi
     if ! ps -fe |grep [e]pmd >/dev/null ;then
-	error_mesg "epmd (couchbase) not running" ; exit 1
+	if ! ps -fe |grep [m]emcached >/dev/null;then
+	    error_mesg "epmd (couchbase) nor memcached  running" ; exit 1
+	fi
     else
 	ok_mesg "couchbase check"
     fi
@@ -76,7 +78,7 @@ start_ui(){
     port=8081
     info_mesg "starting UI Server on port " "$port"
     check_proc_then_kill "$UI_EXEC"
-    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log --log-level debug > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
+    run_proc "$CHAOS_PREFIX/bin/$UI_EXEC --direct-io-priority-server-port 1690 --direct-io-service-server-port 30200 --server_port $port --log-on-file --log-file $CHAOS_PREFIX/log/$UI_EXEC.log --log-level debug > $CHAOS_PREFIX/log/$UI_EXEC.std.out 2>&1 &" "$UI_EXEC"
 }
 start_wan(){
     port=8082

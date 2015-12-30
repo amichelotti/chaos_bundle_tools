@@ -21,7 +21,7 @@
 #ifndef __ControlUnitTest__DefaultCommand__
 #define __ControlUnitTest__DefaultCommand__
 
-#include <chaos/cu_toolkit/ControlManager/slow_command/SlowCommand.h>
+#include <chaos/cu_toolkit/control_manager/slow_command/SlowCommand.h>
 
 using namespace chaos;
 

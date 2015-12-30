@@ -14,14 +14,29 @@ create_deb_ver=""
 remove_working="false"
 log="$0.log"
 exclude_dir=()
+compile_target=( "$ARCH" )
+if arm-linux-gnueabihf-g++-4.8 -v 2>&1 | grep version >& /dev/null; then
+    compile_target+=("armhf")
+fi
+
+if arm-infn-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
+    compile_target+=("arm-linux-2.6")
+fi
+
+if i686-nptl-linux-gnu-g++ -v 2>&1 | grep version >& /dev/null;then
+    compile_target+=("i686-linux26")
+fi
+
+if arm-nilrt-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
+      compile_target+=("crio90xx")
+fi
+
+compile_build=("release" "debug")
+
 if [ "$OS" == "Linux" ]; then
-    compile_type=( "dynamic" "static" );
-    compile_target=( "$ARCH" "armhf" "crio90xx" "arm-linux-2.6" "linux-old");
-    compile_build=("release" "debug")
+    compile_type=("dynamic static");
 else
     compile_type=("dynamic");
-    compile_target=("$ARCH");
-    compile_build=("release" "debug")
 fi
 
 type=${compile_type[0]}
@@ -189,6 +204,8 @@ for target in ${compile_target[@]} ; do
 		error_mesg "Error $err compiling $tgt"
 		error=1
 	    else
+		## configure
+		chaos_configure
 		if [ "$OS" == "Linux" ]; then
 		info_mesg "generating " "Unit Server.."
 		echo "==== GENERATING UNIT SERVER ====" >> $log 2>&1 
@@ -254,7 +271,7 @@ for target in ${compile_target[@]} ; do
 	    if (($error == 0)); then
 		tt=$(end_profile_time)
 		info_mesg "compilation ($tt s) " "$tgt OK"
-		chaos_configure
+
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
 			info_mesg "Starting chaos testsuite (it takes some time), test report file " "test-$tgt.csv"
@@ -311,3 +328,4 @@ if [ $err -gt 0 ]; then
     exit $err
 fi 
 ok_mesg "building"
+exit 0

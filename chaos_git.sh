@@ -173,7 +173,7 @@ for dir in ${on_dir[@]}; do
 		if [ -n "$mesg" ]; then
 			if git commit -m "$mesg" .;then
 			    info_mesg "[$dir] commit " "done"
-			    if git push > /dev/null; then
+			    if git push origin $git_arg > /dev/null; then
 				info_mesg "[$dir] push " "done"
 			    else
 				error_mesg "[$dir] cannot push"
