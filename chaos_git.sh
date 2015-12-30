@@ -26,7 +26,7 @@ die(){
 git_checkout(){
     dir=$1
     check_out_opt=""
-    
+
     if git fetch; then
 	ok_mesg "[$dir] fetching"
     else
@@ -49,7 +49,7 @@ git_checkout(){
 		return 1
 	    fi
 	    check_out_opt="-t -b $2"
-	    
+
 	fi
     fi
 
@@ -63,11 +63,11 @@ git_checkout(){
 	fi
     else
 	error_mesg "[$dir] checking out $2"
-	return 1 
+	return 1
     fi
 
     return 0
-   
+
 }
 git_arg=()
 git_cmd=""
@@ -75,34 +75,40 @@ git_cmd=""
 usage(){
     echo -e "Usage is $0 [-s] [-t <tag name>][ -c <checkout branch> ] [ -p <branch name> ] [-d <directory0>] [-d <directory1>] \n-c <branch name>: check out a given branch name in all subdirs\n-p <branch>:commit and push modifications of a given branch\n-s:retrive the branch status\n-t <tag name>:make an annotated tag to all\n-d <directory>: apply just to the specified directory\n-m <src branch> <dst branch>: merge src into dst branch\n"
 }
-while getopts t:c:p:hsd:mr opt; do
+while getopts t:c:p:hsd:mr:b opt; do
     case $opt in
 	r)
 	    remote=1
 	    ;;
-	t) 
+	t)
 	    echo -n "provide a tag message:"
 	    read mesg
 	    git_cmd=t
 	    git_arg=$OPTARG
 	    ;;
-	d) 
+	d)
 	    on_dir+=($OPTARG)
 	    ;;
-	s) 
+	s)
 	    git_cmd=s
 	    ;;
-	c) 
+	c)
 	    git_cmd=c
 	    git_arg=$OPTARG
 	    ;;
-	p) 
+	p)
 	    git_cmd=p
 	    git_arg=$OPTARG
 	    ;;
 	m)  git_cmd=m
-	    
+
 	    ;;
+
+  b)
+      git_cmd=b
+      git_arg=$OPTARG
+
+      ;;
 	h)
 	    usage
 	    exit 0
@@ -133,14 +139,14 @@ for dir in ${on_dir[@]}; do
 	s)
 	    git fetch
 	    info_mesg "directory " "$dir"
-	    git status 
+	    git status
 	    ;;
-	
+
 	c)
 	    git_checkout $dir $git_arg
 	    ;;
-	m)  
-	    
+	m)
+
 	    if [ -z "$1" ] || [ -z "$2" ];then
 		echo "## expected source branch and destination branch"
 		usage
@@ -158,6 +164,25 @@ for dir in ${on_dir[@]}; do
 		fi
 	    fi
 	    ;;
+  b)
+
+    	    if [ -z "$1" ] || [ -z "$2" ];then
+    		echo "## expected source branch and destination branch"
+    		usage
+    		exit 1
+    	    fi
+    	    echo -n "[$dir] rebase branch:\"$1\" against:\"$2\", empty charracter to skip:"
+    	    read mesg
+    	    if [ -n "$mesg" ]; then
+    		if git_checkout $dir $1; then
+    		    if git rebase $2;then
+    			info_mesg "[$dir] rebase rebasing $1 against $2" "done"
+    		    else
+    			error_mesg "[$dir] error rebasing $1 against $2, skipping rebase"
+    		    fi
+    		fi
+    	    fi
+    	    ;;
 	t)
 	    git fetch
 	    git pull
@@ -190,13 +215,12 @@ for dir in ${on_dir[@]}; do
 		    else
 			error_mesg "[$dir] cannot push"
 		    fi
-		
+
 		fi
 	    fi
-	    
+
 	    ;;
     esac
 
     popd > /dev/null
 done
-
