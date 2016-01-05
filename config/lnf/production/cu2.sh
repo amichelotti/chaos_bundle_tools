@@ -17,7 +17,8 @@ fi
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "using prefix " "$CHAOS_PREFIX"
 check_proc_then_kill BPMSync
-
+check_proc_then_kill daqLiberaServer
+check_proc_then_kill UnitServer    
 procid=()
 cuid=()
 

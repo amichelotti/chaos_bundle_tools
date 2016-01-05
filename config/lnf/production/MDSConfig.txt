@@ -2203,7 +2203,7 @@
 			   {
 			       "DriverDescriptionName": "OcemDD",
 			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "OcemE642X:/dev/ttr18,10,280:10"
+			       "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr18,10,280:10"
 			   }
 		       ],
 		       "AttrDesc":[
