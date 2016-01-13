@@ -22,29 +22,160 @@
 	"cu_desc": [
 	    {
 		"unit_server_alias": "BTF/DAQ",
-		"cu_id": "BTF/DAQ",
-		"cu_type": "::driver::daq::btfdaq",
-		"cu_param": "",
-		"auto_load": false,
-		"AttrDesc": []
+		"cu_id": "BTF/DAQ2",
+		"cu_type": "::driver::daq::btf::RTBTFdaqCU",
+		"cu_param": "senza veto",
+		"auto_load": true,
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "scaleradd",
+			"ds_max_range": "0x38390000",
+			"ds_min_range": "0x38380000",
+			"ds_default_value": "0x38380000"
+		    },
+		    {
+			"ds_attr_name": "qdc965add",
+			"ds_max_range": "0xb7650000",
+			"ds_min_range": "0xb7640000",
+			"ds_default_value": "0xb7640000"
+		    },
+		    {
+			"ds_attr_name": "qdc792add",
+			"ds_max_range": "0xEE550000",
+			"ds_min_range": "0xEE540000",
+			"ds_default_value": "0xEE540000"
+		    },
+		    {
+			"ds_attr_name": "caen513add",
+			"ds_max_range": "0x44210000",
+			"ds_min_range": "0x44200000",
+			"ds_default_value": "0x44200000"
+		    }
+		]
 	    }
 	]
     },{
-	"unit_server_alias": "BTF/TRXLINE",
+	"unit_server_alias": "BTF/TRXLINE0",
+	"private_key": null,
+	"public_key": null,
+	"cu_desc": [{
+	    "unit_server_alias": "BTF/TRXLINE0",
+	    "cu_id": "BTF/DHSTB002",
+	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+	    "cu_param": "",
+	    "auto_load": false,
+	    "DriverDescription": [
+		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,6,700:10"
+
+		}
+	    ],
+	    "AttrDesc": [
+		{
+		    "ds_attr_name": "max_current",
+		    "ds_max_range": "",
+		    "ds_min_range": "",
+		    "ds_default_value": "700"
+		},
+		{
+		    "ds_attr_name": "slope_down",
+		    "ds_max_range": "70",
+		    "ds_min_range": "7",
+		    "ds_default_value": "35"
+		},
+		{
+		    "ds_attr_name": "slope_up",
+		    "ds_max_range": "70",
+		    "ds_min_range": "7",
+		    "ds_default_value": "35"
+		}
+	    ]
+	},{
+	    "unit_server_alias": "BTF/TRXLINE0",
+	    "cu_id": "BTF/QUATB003",
+	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+	    "cu_param": "",
+	    "auto_load": false,
+	    "DriverDescription": [
+		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr16,5,100:10"
+		}
+	    ],
+	    "AttrDesc": [
+		{
+		    "ds_attr_name": "max_current",
+		    "ds_max_range": "",
+		    "ds_min_range": "",
+		    "ds_default_value": "100"
+		},
+		{
+		    "ds_attr_name": "slope_down",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "5"
+		},
+		{
+		    "ds_attr_name": "slope_up",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "5"
+		}
+	    ]
+	},{
+	    "unit_server_alias": "BTF/TRXLINE0",
+	    "cu_id": "BTF/QUATB004",
+	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+	    "cu_param": "",
+	    "auto_load": false,
+	    "DriverDescription": [
+		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,4,100:10"
+		}
+	    ],
+	    "AttrDesc": [
+		{
+		    "ds_attr_name": "max_current",
+		    "ds_max_range": "",
+		    "ds_min_range": "",
+		    "ds_default_value": "100"
+		},
+		{
+		    "ds_attr_name": "slope_down",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "5"
+		},
+		{
+		    "ds_attr_name": "slope_up",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "5"
+		}
+	    ]
+	}
+		   ]
+    },{
+	"unit_server_alias": "BTF/TRXLINE1",
 	"private_key": null,
 	"public_key": null,
 	"cu_desc": [
 	    {
-		"unit_server_alias": "BTF/TRXLINE",
+		"unit_server_alias": "BTF/TRXLINE1",
 		"cu_id": "BTF/DHSTB001",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
 		"DriverDescription": [
 		    {
-			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,4,700:10"
 		    }
 		],
 		"AttrDesc": [
@@ -56,61 +187,28 @@
 		    },
 		    {
 			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_max_range": "70",
+			"ds_min_range": "7",
+			"ds_default_value": "35"
 		    },
 		    {
 			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_max_range": "70",
+			"ds_min_range": "7",
+			"ds_default_value": "35"
 		    }
 		]
 	    },{
-		"unit_server_alias": "BTF/TRXLINE",
-		"cu_id": "BTF/DHSTB002",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr4,30,100:200,200:300,700:300"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "700"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "BTF/TRXLINE",
+		"unit_server_alias": "BTF/TRXLINE1",
 		"cu_id": "BTF/QUATB001",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
 		"DriverDescription": [
 		    {
-			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,9,100:200,200:300,100:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,9,100:10"
 		    }
 		],
 		"AttrDesc": [
@@ -124,26 +222,26 @@
 			"ds_attr_name": "slope_down",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    },
 		    {
 			"ds_attr_name": "slope_up",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    }
 		]
 	    },{
-		"unit_server_alias": "BTF/TRXLINE",
+		"unit_server_alias": "BTF/TRXLINE1",
 		"cu_id": "BTF/QUATB002",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
 		"DriverDescription": [
 		    {
-			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,11,100:200,200:300,100:10"
+			"DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr08,11,100:10"
 		    }
 		],
 		"AttrDesc": [
@@ -157,92 +255,26 @@
 			"ds_attr_name": "slope_down",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    },
 		    {
 			"ds_attr_name": "slope_up",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    }
 		]
 	    },{
-		"unit_server_alias": "BTF/TRXLINE",
-		"cu_id": "BTF/QUATB003",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,5,100:200,200:300,100:10"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "100"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "BTF/TRXLINE",
-		"cu_id": "BTF/QUATB004",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,4,100:200,200:300,100:10"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "100"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "BTF/TRXLINE",
+		"unit_server_alias": "BTF/TRXLINE1",
 		"cu_id": "BTF/QUATB101",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
 		"DriverDescription": [
 		    {
-			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,3,100:200,200:300,100:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,3,100:10"
 		    }
 		],
 		"AttrDesc": [
@@ -256,26 +288,26 @@
 			"ds_attr_name": "slope_down",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    },
 		    {
 			"ds_attr_name": "slope_up",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    }
 		]
 	    },{
-		"unit_server_alias": "BTF/TRXLINE",
+		"unit_server_alias": "BTF/TRXLINE1",
 		"cu_id": "BTF/QUATB102",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
 		"DriverDescription": [
 		    {
-			"DriverDescriptionName": "PowerSimDD",
+			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,0,100:200,200:300,100:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,0,100:10"
 		    }
 		],
 		"AttrDesc": [
@@ -289,13 +321,13 @@
 			"ds_attr_name": "slope_down",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    },
 		    {
 			"ds_attr_name": "slope_up",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
-			"ds_default_value": "1"
+			"ds_default_value": "5"
 		    }
 		]
 	    }
@@ -885,43 +917,6 @@
 	]
     },
 	   {
-	       "unit_server_alias": "AULA_TOUSCHEK_SIM",
-	       "private_key": null,
-	       "public_key": null,
-	       "cu_desc": [
-		   {
-		       "unit_server_alias": "AULA_TOUSCHEK_SIM",
-		       "cu_id": "AULA_TOUSCHEK_SIM/ZB_SENSOR_D0201",
-		       "cu_type": "BasicSensor",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "ZBSensorNodeD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "/dev/ttyACM0:0x0201"
-			   }
-		       ],
-		       "AttrDesc": []
-		   },
-		   {
-		       "unit_server_alias": "AULA_TOUSCHEK_SIM",
-		       "cu_id": "AULA_TOUSCHEK_SIM/ZB_SENSOR_D0202",
-		       "cu_type": "BasicSensor",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "ZBSensorNodeD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "/dev/ttyACM0:0x0202"
-			   }
-		       ],
-		       "AttrDesc": []
-		   }
-	       ]
-	   },
-	   {
 	       "unit_server_alias": "BENCHMARK_UNIT_0",
 	       "private_key": null,
 	       "public_key": null,
@@ -1240,369 +1235,6 @@
 	       "private_key": null,
 	       "public_key": null,
 	       "cu_desc": []
-	   },
-	   {
-	       "unit_server_alias": "BTF",
-	       "private_key": null,
-	       "public_key": null,
-	       "cu_desc": [
-
-	       ]
-	   },
-	   {
-	       "unit_server_alias": "BTF_SIM",
-	       "private_key": null,
-	       "public_key": null,
-	       "cu_desc": [
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/DAQ/QDC0",
-		       "cu_type": "::driver::daq::qdc",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "AttrDesc": []
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/DAQ/QDC1",
-		       "cu_type": "::driver::daq::qdc",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "AttrDesc": []
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/DAQ/SCALER",
-		       "cu_type": "::driver::daq::scaler",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "AttrDesc": []
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/DHSTB001",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "700"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/DHSTB002",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr4,30,100:200,200:300,700:300"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "700"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB001",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,9,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB002",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,11,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB003",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,5,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB004",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,4,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB101",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,3,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   },
-		   {
-		       "unit_server_alias": "BTF_SIM",
-		       "cu_id": "BTF_SIM/QUATB102",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "GenericPowerSupplyDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,0,100:200,200:300,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "max_current",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "100"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "1"
-			   }
-		       ]
-		   }
-	       ]
-	   },
-	   {
-	       "unit_server_alias": "btw-transfer-line",
-	       "private_key": null,
-	       "public_key": null,
-	       "cu_desc": [
-		   {
-		       "unit_server_alias": "btw-transfer-line",
-		       "cu_id": "rt_sin_a",
-		       "cu_type": "RTWorkerCU",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "bias",
-			       "ds_max_range": "10",
-			       "ds_min_range": "0",
-			       "ds_default_value": "0"
-			   },
-			   {
-			       "ds_attr_name": "frequency",
-			       "ds_max_range": "10",
-			       "ds_min_range": "0",
-			       "ds_default_value": "1"
-			   },
-			   {
-			       "ds_attr_name": "gain",
-			       "ds_max_range": "10",
-			       "ds_min_range": "0",
-			       "ds_default_value": "5"
-			   },
-			   {
-			       "ds_attr_name": "gain_noise",
-			       "ds_max_range": "10",
-			       "ds_min_range": "0",
-			       "ds_default_value": "0.5"
-			   },
-			   {
-			       "ds_attr_name": "phase",
-			       "ds_max_range": "10",
-			       "ds_min_range": "0",
-			       "ds_default_value": "0"
-			   },
-			   {
-			       "ds_attr_name": "points",
-			       "ds_max_range": "3000",
-			       "ds_min_range": "10",
-			       "ds_default_value": "30"
-			   }
-		       ]
-		   }
-	       ]
 	   },
 	   {
 	       "unit_server_alias": "c8:1f:66:b1:27:48",
@@ -2102,28 +1734,6 @@
 		    	   }
 
 		       ]
-		   }
-	       ]
-	   },
-	   {
-	       "unit_server_alias": "SENSORS_SIM",
-	       "private_key": null,
-	       "public_key": null,
-	       "cu_desc": [
-		   {
-		       "unit_server_alias": "SENSOR_SIM",
-		       "cu_id": "SENSOR_SIM/VTEMP",
-		       "cu_type": "BasicSensor",
-		       "cu_param": "",
-		       "auto_load": true,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "VTemperatureDriver",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "/dev/ttyxx"
-			   }
-		       ],
-		       "AttrDesc": []
 		   }
 	       ]
 	   },

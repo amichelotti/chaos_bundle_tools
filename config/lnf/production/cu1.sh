@@ -25,13 +25,23 @@ procid=()
 cuid=()
 
 ## Transfer line
-if launch_us_cu 1 8 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE;then
+if launch_us_cu 1 8 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE0;then
     procid+=($!)
-    cuid+=("BTF/TRXLINE")
-    ok_mesg "US BTF/TRXLINE $!"
+    cuid+=("BTF/TRXLINE0")
+    ok_mesg "US BTF/TRXLINE0 $!"
 
 else
-    nok_mesg "US BTF/TRXLINE"
+    nok_mesg "US BTF/TRXLINE0"
+    exit 1
+fi
+
+if launch_us_cu 1 8 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE1;then
+    procid+=($!)
+    cuid+=("BTF/TRXLINE1")
+    ok_mesg "US BTF/TRXLINE1 $!"
+
+else
+    nok_mesg "US BTF/TRXLINE1"
     exit 1
 fi
 

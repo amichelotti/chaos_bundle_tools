@@ -21,16 +21,15 @@ check_proc_then_kill daqLiberaServer
 check_proc_then_kill UnitServer    
 procid=()
 cuid=()
-
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/DAQ;then
-#     ok_mesg "US BTF/DAQ $!"
-#     procid+=($!)
-#     cuid+=("BTF/DAQ")
-# else
-#     nok_mesg "US BTF/DAQ"
-#     exit 1
-# fi
-
+## runs on the VMIC
+ # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/DAQ;then
+ #     ok_mesg "US BTF/DAQ $!"
+ #     procid+=($!)
+ #     cuid+=("BTF/DAQ")
+ # else
+ #     nok_mesg "US BTF/DAQ"
+ #     exit 1
+ # fi
 
 if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
     ok_mesg "US BPMsync $!"
@@ -40,6 +39,8 @@ else
     nok_mesg "US BPMSync"
     exit 1
 fi
+
+
 
 
 info_mesg "monitoring cus"
