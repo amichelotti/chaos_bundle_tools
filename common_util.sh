@@ -742,6 +742,11 @@ launch_us_cu(){
     if [ -n "$5" ];then
 	ALIAS="$5"
     fi
+
+    if [ -n "$6" ];then
+	CHECK_REGISTRATION="$6"
+    fi
+
 #    check_proc_then_kill "$USNAME"
     if [ ! -x $CHAOS_PREFIX/bin/$USNAME ]; then
 	nok_mesg "Unit Server $USNAME not found, in $CHAOS_PREFIX/bin/$USNAME"
@@ -783,16 +788,17 @@ launch_us_cu(){
 	# 	return 1
 	#     fi
 	# done
-	var1="((\`grep \"successfully registered\" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l\` >= $NCU))"
-	if execute_command_until_ok "$var1" 180; then
-	    t=$(end_profile_time)
-	    ok_mesg "$NCU  registered in $t"
-	else
-	    var=$((`grep "successfully registered" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l`))
-	    nok_mesg "$var CU registered in $t"
-	    return 1
+	if [ -z "$CHECK_REGISTRATION" ];then
+	    var1="((\`grep \"successfully registered\" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l\` >= $NCU))"
+	    if execute_command_until_ok "$var1" 180; then
+		t=$(end_profile_time)
+		ok_mesg "$NCU  registered in $t"
+	    else
+		var=$((`grep "successfully registered" $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log |wc -l`))
+		nok_mesg "$var CU registered in $t"
+		return 1
+	    fi
 	fi
-
     done
 }
 start_test(){
