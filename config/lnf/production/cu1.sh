@@ -45,16 +45,6 @@ cuid=()
      exit 1
  fi
 
-## Transfer line
-if launch_us_cu 1 4 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/CORRECTORS;then
-    procid+=($!)
-    cuid+=("BTF/CORRECTORS")
-    ok_mesg "US BTF/CORRECTORS $!"
-
-else
-    nok_mesg "US BTF/CORRECTORS"
-    exit 1
-fi
 
 ## DAQ
 

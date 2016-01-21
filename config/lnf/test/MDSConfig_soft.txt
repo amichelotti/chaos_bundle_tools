@@ -769,7 +769,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10,5"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10,0"
 			}
 		    ],
 		    "AttrDesc": [
@@ -781,15 +781,15 @@
 			},
 			{
 			    "ds_attr_name": "slope_down",
-			    "ds_max_range": "10",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			},
 			{
 			    "ds_attr_name": "slope_up",
-			    "ds_max_range": "10",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			}
 		    ]
 		},
@@ -803,7 +803,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr4,30,100:200,200:300,700:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr5,30,100:200,200:300,700:300,0"
 			}
 		    ],
 		    "AttrDesc": [
@@ -815,15 +815,15 @@
 			},
 			{
 			    "ds_attr_name": "slope_down",
-			    "ds_max_range": "10",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			},
 			{
 			    "ds_attr_name": "slope_up",
-			    "ds_max_range": "10",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			}
 		    ]
 		},
@@ -851,13 +851,13 @@
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "5"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "5"
 			}
 		    ]
 		},
@@ -871,7 +871,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,11,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr1,11,100:200,200:300,100:10,0"
 			}
 		    ],
 		    "AttrDesc": [
@@ -885,13 +885,13 @@
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "5"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "5"
 			}
 		    ]
 		},
@@ -918,13 +918,13 @@
 			{
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			}
 		    ]
@@ -952,13 +952,13 @@
 			{
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			}
 		    ]
@@ -986,13 +986,13 @@
 			{
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			}
 		    ]
@@ -1020,13 +1020,13 @@
 			{
 			    "ds_attr_name": "slope_down",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "slope_up",
 			    "ds_max_range": "10",
-			    "ds_min_range": "1",
+			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			}
 		    ]
