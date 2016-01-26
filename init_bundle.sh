@@ -135,7 +135,7 @@ fi
 
 #make the documentation
 cd $CHAOS_FRAMEWORK
-doxygen Documentation/chaosdocs
+#doxygen Documentation/chaosdocs
 cd ..
 ln -sf $CHAOS_FRAMEWORK/Documentation/html Documentation
 chaos_configure
