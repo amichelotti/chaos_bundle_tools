@@ -769,15 +769,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "700"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -803,15 +803,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr5,30,100:200,200:300,700:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,6,1,0:700,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "700"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -837,15 +837,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,9,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,9,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -871,15 +871,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr1,11,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,4,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -905,15 +905,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,5,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,1,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -939,15 +939,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,4,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,3,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -973,15 +973,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,3,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,14,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1007,15 +1007,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr14,0,100:200,200:300,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr02,4,1,0:100,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1047,15 +1047,15 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,100:200,200:300,700:10,0"
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
 		    }
 		],
 		"AttrDesc": [
 		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "700"
+			"ds_attr_name": "currentSP",
+			"ds_max_range": "9.995",
+			"ds_min_range": "-10",
+			"ds_default_value": "0"
 		    },
 		    {
 			"ds_attr_name": "slope_down",
@@ -1080,15 +1080,15 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,100:200,200:300,700:10,0"
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0"
 		    }
 		],
 		"AttrDesc": [
 		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "700"
+			"ds_attr_name": "currentSP",
+			"ds_max_range": "9.995",
+			"ds_min_range": "-10",
+			"ds_default_value": "0"
 		    },
 		    {
 			"ds_attr_name": "slope_down",
@@ -1113,15 +1113,15 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,100:200,200:300,700:10,0"
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0"
 		    }
 		],
 		"AttrDesc": [
 		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "700"
+			"ds_attr_name": "currentSP",
+			"ds_max_range": "9.995",
+			"ds_min_range": "-10",
+			"ds_default_value": "0"
 			},
 		    {
 			"ds_attr_name": "slope_down",
@@ -1146,15 +1146,15 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,7,100:200,200:300,700:10,0"
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
 		    }
 		],
 		"AttrDesc": [
 		    {
-			"ds_attr_name": "max_current",
-			"ds_max_range": "",
-			"ds_min_range": "",
-			"ds_default_value": "700"
+			"ds_attr_name": "currentSP",
+			"ds_max_range": "9.995",
+			"ds_min_range": "-10",
+			"ds_default_value": "0"
 		    },
 		    {
 			"ds_attr_name": "slope_down",
@@ -1169,7 +1169,40 @@
 			"ds_default_value": "1"
 		    }
 		]
-	    }
+	    },{
+	    "unit_server_alias": "BTF/CORRECTORS",
+	    "cu_id": "BTF/CTMAIN0",
+	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+	    "cu_param": "",
+	    "auto_load": true,
+	    "DriverDescription": [
+		{
+		    "DriverDescriptionName": "PowerSimDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+		}
+	    ],
+	    "AttrDesc": [
+		{
+		    "ds_attr_name": "currentSP",
+		    "ds_max_range": "0",
+		    "ds_min_range": "0",
+		    "ds_default_value": "0"
+		},
+		{
+		    "ds_attr_name": "slope_down",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "1"
+		},
+		{
+		    "ds_attr_name": "slope_up",
+		    "ds_max_range": "10",
+		    "ds_min_range": "1",
+		    "ds_default_value": "1"
+		}
+	    ]
+	}
 	    ]
 	},
 	{
@@ -1245,15 +1278,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyXX,11,100:200,200:300,700:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "700"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1286,15 +1319,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyXX,11,100:200,200:300,700:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "700"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1327,15 +1360,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyXX,11,100:200,200:300,700:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "700"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1786,15 +1819,15 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,4,100000:200000,200000:300000,100:10,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "max_current",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "100"
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
 			    "ds_attr_name": "slope_down",
@@ -1820,7 +1853,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyXX,10,100:200,200:300,280:10,0" 
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,0:100,0:10,100:200,200:300,0" 
 			}
 		    ],
 		    "AttrDesc": []
