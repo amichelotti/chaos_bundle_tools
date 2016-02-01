@@ -504,10 +504,7 @@
 	}
 
 		  ]
-    },
-
-====
-{
+    },{
 	"unit_server_alias": "BTF/GLUE",
 	"private_key": null,
 	"public_key": null,
@@ -515,18 +512,44 @@
 	    "unit_server_alias": "BTF/GLUE",
 	    "cu_id": "BTF/MEDIPIX_IMPORT",
 	    "cu_type": "DataImport",
-	    "cu_param": "",
+	    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
 	    "auto_load": true,
 	    "DriverDescription": [
 		{
 		    "DriverDescriptionName": "MemcachedDataImporterDriver",
 		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": ""
+		    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
 		}
 	    ],
 	    "AttrDesc": [
 	    ]
-	}]},
+	},
+{
+	    "unit_server_alias": "BTF/GLUE",
+	    "cu_id": "BTF/MEMCACHE_PRESENTER",
+	    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
+	    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
+	    "auto_load": true,
+	    "DriverDescription": [],
+	    "AttrDesc": [
+			   {
+			       "ds_attr_name": "memcacheurl",
+			       "ds_max_range": "",
+			       "ds_min_range": "",
+			       "ds_default_value": "testchaos.lnf.infn.it:11211"
+			   },
+			   {
+			       "ds_attr_name": "memcachekey",
+			       "ds_max_range": "",
+			       "ds_min_range": "",
+			       "ds_default_value": "btfchaosdata"
+			   }
+
+	    ]
+	}
+
+
+]},
 {
 	"unit_server_alias": "AULA_TOUSCHEK",
 	"private_key": null,
@@ -1792,40 +1815,6 @@
 	       "private_key": null,
 	       "public_key": null,
 	       "cu_desc": [
-		   {
-		       "unit_server_alias": "TEST_UNIT",
-		       "cu_id": "simpower",
-		       "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		       "cu_param": "",
-		       "auto_load": false,
-		       "DriverDescription": [
-			   {
-			       "DriverDescriptionName": "PowerSimDD",
-			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr12,4,100000:200000,200000:300000,100:10"
-			   }
-		       ],
-		       "AttrDesc": [
-			   {
-			       "ds_attr_name": "currentSP",
-			       "ds_max_range": "100",
-			       "ds_min_range": "0",
-			       "ds_default_value": "0"
-			   },
-			   {
-			       "ds_attr_name": "slope_down",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "2"
-			   },
-			   {
-			       "ds_attr_name": "slope_up",
-			       "ds_max_range": "10",
-			       "ds_min_range": "1",
-			       "ds_default_value": "2"
-			   }
-		       ]
-		   },
 		   {
 		       "unit_server_alias": "TEST_UNIT",
 		       "cu_id": "TEST_UNIT/IUNGO",
