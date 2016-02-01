@@ -48,6 +48,16 @@ fi
 #     nok_mesg "TEST_BIS"
 #     exit 1
 # fi
+if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+    procid+=($!)
+    cuid+=("BTF/GLUE")
+    ok_mesg "US BTF/GLUE $!"
+
+else
+    nok_mesg "US BTF/GLUE"
+    exit 1
+fi
+
 
 if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_MIKE;then
     ok_mesg "US TEST_MIKE $!"

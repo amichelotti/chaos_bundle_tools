@@ -1,0 +1,8 @@
+chaosdev-mds1.chaos.lnf.infn.it
+chaosdev-cds1.chaos.lnf.infn.it
+chaosdev-cds2.chaos.lnf.infn.it
+chaosdev-cu1.chaos.lnf.infn.it
+chaosdev-cu2.chaos.lnf.infn.it
+chaosdev-cu3.chaos.lnf.infn.it
+chaosdev-webui1.chaos.lnf.infn.it
+

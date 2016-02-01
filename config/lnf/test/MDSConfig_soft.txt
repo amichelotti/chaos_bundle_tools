@@ -769,7 +769,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,1,0:100,0:10,100:200,200:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,1,0:700,0:10,100:200,200:300,0"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1257,6 +1257,92 @@
 		}
 	    ]
 	},
+{
+	"unit_server_alias": "BTF/DAQ",
+	"private_key": null,
+	"public_key": null,
+	"cu_desc": [
+	    {
+		"unit_server_alias": "BTF/DAQ",
+		"cu_id": "BTF/DAQ2",
+		"cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
+		"cu_param": "senza veto",
+		"auto_load": true,
+		"AttrDesc": [
+		    {
+			"ds_attr_name": "scaleradd",
+			"ds_max_range": "0x38390000",
+			"ds_min_range": "0x38380000",
+			"ds_default_value": "0x38380000"
+		    },
+		    {
+			"ds_attr_name": "qdc965add",
+			"ds_max_range": "0xb7650000",
+			"ds_min_range": "0xb7640000",
+			"ds_default_value": "0xb7640000"
+		    },
+		    {
+			"ds_attr_name": "qdc792add",
+			"ds_max_range": "0xEE550000",
+			"ds_min_range": "0xEE540000",
+			"ds_default_value": "0xEE540000"
+		    },
+		    {
+			"ds_attr_name": "caen513add",
+			"ds_max_range": "0x44210000",
+			"ds_min_range": "0x44200000",
+			"ds_default_value": "0x44200000"
+		    }
+		]
+	    }
+	]
+    },
+{
+	"unit_server_alias": "BTF/GLUE",
+	"private_key": null,
+	"public_key": null,
+	"cu_desc":[{
+	    "unit_server_alias": "BTF/GLUE",
+	    "cu_id": "BTF/MEDIPIX_IMPORT",
+	    "cu_type": "DataImport",
+	    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
+	    "auto_load": true,
+	    "DriverDescription": [
+		{
+		    "DriverDescriptionName": "MemcachedDataImporterDriver",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
+		}
+	    ],
+	    "AttrDesc": [
+	    ]
+	},
+{
+	    "unit_server_alias": "BTF/GLUE",
+	    "cu_id": "BTF/MEMCACHE_PRESENTER",
+	    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
+	    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
+	    "auto_load": true,
+	    "DriverDescription": [],
+	    "AttrDesc": [
+			   {
+			       "ds_attr_name": "memcacheurl",
+			       "ds_max_range": "",
+			       "ds_min_range": "",
+			       "ds_default_value": "testchaos.lnf.infn.it:11211"
+			   },
+			   {
+			       "ds_attr_name": "memcachekey",
+			       "ds_max_range": "",
+			       "ds_min_range": "",
+			       "ds_default_value": "btfchaosdata"
+			   }
+
+	    ]
+	}
+
+
+]},
 	{
 	    "unit_server_alias": "c8:1f:66:b1:27:48",
 	    "private_key": null,
