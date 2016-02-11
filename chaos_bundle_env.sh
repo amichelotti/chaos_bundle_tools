@@ -100,6 +100,7 @@ else
 
 		export CHAOS_EXCLUDE_DIR="oscilloscopes mongo chaos_services"
 	    fi
+
 	    CHAOS_DISABLE_EVENTFD=true
 	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
 	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
@@ -208,9 +209,9 @@ export CHAOS_LIBEVENT_CONFIGURE="--disable-openssl --prefix=$CHAOS_PREFIX $STATI
 
 ##MEMCACHED
 if [ -z "$APPLE" ];then
-    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --disable-shared --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
+    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --disable-shared --without-libtest --disable-memaslap --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
 else
-    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --without-libtest --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
+    export CHAOS_LIBMEMCACHED_CONFIGURE="--without-memcached $STATIC_CONFIG --with-pic --without-libtest --disable-memaslap --disable-sasl --prefix=$CHAOS_PREFIX $CROSS_HOST_CONFIGURE"
 fi
 ##COUCHBASE
 if [ -n "$CHAOS_STATIC" ]; then
