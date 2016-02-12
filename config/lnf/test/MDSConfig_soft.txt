@@ -746,8 +746,8 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "BTF/DAQ",
-		    "cu_id": "BTF/DAQ",
-		    "cu_type": "::driver::daq::btfdaq",
+		    "cu_id": "BTF/DAQ2",
+		    "cu_type":"::driver::daq::btf::RTBTFdaqSimCU",
 		    "cu_param": "",
 		    "auto_load": false,
 		    "AttrDesc": []
