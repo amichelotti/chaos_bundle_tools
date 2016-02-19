@@ -136,11 +136,14 @@ fi
 
 export CXXFLAGS="$CXXFLAGS -DCHAOS"
 export CFLAGS="$CFLAGS -DCHAOS"
-
+PROF=""
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
     export CHAOS_COMP_TYPE=" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-DDEBUG=1 "
     export CXXFLAGS="$CXXFLAGS -g" ## force debug everywhere
     export CFLAGS="$CFLAGS -g"
+    if [ "$CHAOS_DEVELOPMENT" == "profile" ];then
+	PROF="-pg"
+    fi
     #	export CXXFLAGS="$CXXFLAGS -fPIC -fsanitize=thread"
     #	export CFLAGS="$CFLAGS -fPIC -fsanitize=thread"
     #	export LDFLAGS="-pie -ltsan"

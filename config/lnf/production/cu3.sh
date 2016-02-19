@@ -23,7 +23,7 @@ procid=()
 cuid=()
 
 
-## Transfer line
+# ## Transfer line
 if launch_us_cu 1 4 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/CORRECTORS;then
     procid+=($!)
     cuid+=("BTF/CORRECTORS")

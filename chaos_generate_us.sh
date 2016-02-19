@@ -53,7 +53,8 @@ incdir_list=""
 # if [ "$parent" != "." ] && [ "$parent" != ".." ]; then  
 #     prefix="$(basename $parent)\/$prefix"
 # fi
-
+lista_ignore=$(dirname `find . -name UnitServerIgnore`)
+CHAOS_EXCLUDE_DIR="$CHAOS_EXCLUDE_DIR $lista_ignore"
 function to_skip(){
 
     for s in ${skipdir[@]} $CHAOS_EXCLUDE_DIR; do

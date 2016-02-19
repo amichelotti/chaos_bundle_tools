@@ -107,8 +107,12 @@ function setEnv(){
 	fi
 
 	if [ "$build" == "debug" ]; then
-	    export CHAOS_DEVELOPMENT=true
+	    export CHAOS_DEVELOPMENT="debug"
 	fi
+	if [ "$build" == "profile" ]; then
+	    export CHAOS_DEVELOPMENT="profile"
+	fi
+
 	if [ -d "$prefix" ]; then
 	    export CHAOS_PREFIX=$prefix
 	    PREFIX=$prefix

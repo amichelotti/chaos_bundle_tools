@@ -58,7 +58,6 @@ if [ -n "$CHAOS_EXCLUDE_DIR" ]; then
     info_mesg "excluding from build     :" "$CHAOS_EXCLUDE_DIR"
 fi
 
-
 info_mesg "!Chaos Target            :" "$CHAOS_TARGET"
 
 info_mesg "press any key to continue"
@@ -102,6 +101,9 @@ function cmake_compile(){
 if ! ( $CHAOS_FRAMEWORK/bootstrap.sh ) ; then
     error_mesg "error bootstrapping quitting"
     exit 1
+fi
+if [ "$CHAOS_DEVELOPMENT" == "profile" ];then
+	export CXXFLAGS="$CXXFLAGS -pg"
 fi
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then

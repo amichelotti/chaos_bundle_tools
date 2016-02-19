@@ -31,7 +31,7 @@ if arm-nilrt-linux-gnueabi-g++ -v 2>&1 | grep version >& /dev/null;then
       compile_target+=("crio90xx")
 fi
 
-compile_build=("release" "debug")
+compile_build=("release" "debug" "profile")
 
 if [ "$OS" == "Linux" ]; then
     compile_type=("dynamic static");

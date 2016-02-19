@@ -46,13 +46,22 @@ cuid=()
  #     exit 1
  # fi
 
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
-    procid+=($!)
-    cuid+=("BTF/GLUE")
-    ok_mesg "US BTF/GLUE $!"
+# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+#     procid+=($!)
+#     cuid+=("BTF/GLUE")
+#     ok_mesg "US BTF/GLUE $!"
 
+# else
+#     nok_mesg "US BTF/GLUE"
+#     exit 1
+# fi
+
+if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
+    ok_mesg "US BPMsync $!"
+    procid+=($!)
+    cuid+=("ACCUMULATOR/BPM")
 else
-    nok_mesg "US BTF/GLUE"
+    nok_mesg "US BPMSync"
     exit 1
 fi
 

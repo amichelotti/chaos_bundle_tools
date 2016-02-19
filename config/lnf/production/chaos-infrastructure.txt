@@ -2,8 +2,6 @@ chaost-mds1.chaos.lnf.infn.it
 chaost-cds1.chaos.lnf.infn.it
 chaost-cds2.chaos.lnf.infn.it
 chaost-cds3.chaos.lnf.infn.it
-chaost-cu1.chaos.lnf.infn.it
-chaost-cu2.chaos.lnf.infn.it
-chaost-cu3.chaos.lnf.infn.it
+chaost-cu1.chaos.lnf.infn.it 
 chaost-webui1.chaos.lnf.infn.it
 
