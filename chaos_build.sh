@@ -15,6 +15,7 @@ remove_working="false"
 log="$0.log"
 exclude_dir=()
 compile_target=( "$ARCH" )
+TEMP_PREFIX="/tmp/""$USER"
 if arm-linux-gnueabihf-g++-4.8 -v 2>&1 | grep version >& /dev/null; then
     compile_target+=("armhf")
 fi
@@ -237,11 +238,11 @@ for target in ${compile_target[@]} ; do
 
 		for i in sccu rtcu common driver;do
 		    info_mesg "testing template " "$i"
-		    rm -rf /tmp/_prova_"$i"_
+		    rm -rf $TEMP_PREFIX/_prova_"$i"_
 		    echo "==== TESTING TEMPLATE $i ====" >> $log 2>&1 
-		    if  $dir/chaos_create_template.sh -o /tmp -n _prova_"$i"_ $i >> $log 2>&1 ;then
-			mkdir -p /tmp/_prova_"$i"_
-			pushd /tmp/_prova_"$i"_ >/dev/null
+		    if  $dir/chaos_create_template.sh -o "$TEMP_PREFIX" -n _prova_"$i"_ $i >> $log 2>&1 ;then
+			mkdir -p "$TEMP_PREFIX""/_prova_$i"_
+			pushd "$TEMP_PREFIX"/_prova_"$i"_ >/dev/null
 			if cmake .  >> $log 2>&1 ; then
 			    if ! make -j $NPROC >> $log 2>&1 ;then 
 				error_mesg "error during compiling $i template"
@@ -257,7 +258,7 @@ for target in ${compile_target[@]} ; do
 			    error=1
 			fi
 			popd >/dev/null
-			rm -rf /tmp/_prova_"$i"_
+			rm -rf "$TEMP_PREFIX""/_prova_$i"_
 		    else
 			error_mesg "error during generation of $i template"
 			((err++))

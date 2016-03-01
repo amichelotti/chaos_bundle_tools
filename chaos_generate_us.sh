@@ -13,6 +13,7 @@ lista_h=();
 lista_hd=();
 lista_lib=""
 skipdir=();
+TEMP_CMAKE="/tmp/""$USER""_cmakelist.txt"
 while getopts i:o:n:hs: opt; do
     case $opt in
 	i) startdir=$OPTARG
@@ -148,8 +149,8 @@ for c in $listcmake;do
     if [[ "$project_name_tmp" =~ \(([a-zA-Z0-9_]+)\) ]];then
 	project_name=${BASH_REMATCH[1]}
        
-	cat $c| sed "s/\${PROJECT_NAME}/$project_name/g" > /tmp/_cmakelist.txt
-	c="/tmp/_cmakelist.txt"
+	cat $c| sed "s/\${PROJECT_NAME}/$project_name/g" > $TEMP_CMAKE
+	c="$TEMP_CMAKE"
 	echo "replacing $project_name"
     fi
     

@@ -5,7 +5,8 @@ SCRIPTNAME=`basename $0`
 SCRIPTTESTPATH=$0
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
-
+PID=$$
+TEST_INFO_NAME="/tmp/""$USER""__chaos_test_info__"
 if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
 fi
@@ -22,7 +23,7 @@ declare -a __testinfo__
 for ((cnt=0;cnt<4;cnt++));do
     if [ -z "${__testinfo__[$cnt]}" ];then
 	__testinfo__[$cnt]=0
-	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+	echo "${__testinfo__[@]}" > $TEST_INFO_NAME
     fi
 done
 
@@ -268,10 +269,10 @@ get_cpu_stat(){
     info=`ps -o pcpu $1| tail -1`
     if [[ "$info" =~ ([0-9\.]+) ]]; then
 	cpu=${BASH_REMATCH[1]}
-	read -r -a __testinfo__ </tmp/__chaos_test_info__
+	read -r -a __testinfo__ <$TEST_INFO_NAME
 	__testinfo__[0]=`echo "(${__testinfo__[0]} + $cpu)"|bc`
 	((__testinfo__[1]++))
-	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+	echo "${__testinfo__[@]}" >$TEST_INFO_NAME
 	echo "$cpu"
 	return 0
     else
@@ -284,11 +285,11 @@ get_mem_stat(){
     info=`ps -o pmem $1| tail -1`
     if [[ "$info" =~ ([0-9\.]+) ]]; then
 	mem=${BASH_REMATCH[1]}
-	read -r -a __testinfo__ </tmp/__chaos_test_info__
+	read -r -a __testinfo__ <$TEST_INFO_NAME
 	__testinfo__[2]=`echo "(${__testinfo__[2]} + $mem)"|bc`
 	((__testinfo__[3]++))
 
-	echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+	echo "${__testinfo__[@]}" >$TEST_INFO_NAME
 	echo "$mem"
 	return 0
     else
@@ -814,7 +815,7 @@ start_test(){
 	    __testinfo__[$cnt]=0
 	fi
     done
-    echo "${__testinfo__[@]}" >/tmp/__chaos_test_info__
+    echo "${__testinfo__[@]}" >$TEST_INFO_NAME
     __start_test_time__=`date $time_format`
 
 }
@@ -828,7 +829,7 @@ end_test(){
     local __start_test_group__=$(get_abs_parent_dir $SCRIPTTESTPATH)
     local __start_test_group__=`basename $__start_test_group__`
     local exec_time=`echo "scale=3;($__end_test_time__ - $__start_test_time__ )" |bc`
-    read -r -a __testinfo__ </tmp/__chaos_test_info__
+    read -r -a __testinfo__ <$TEST_INFO_NAME
 
     if [ ${__testinfo__[1]} -gt 0 ];then
 	pcpu=`echo "scale=2;${__testinfo__[0]} / ${__testinfo__[1]}" |bc -l`
