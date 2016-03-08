@@ -1944,15 +1944,15 @@
 		},
 {		
 		    "unit_server_alias": "TEST_UNIT",
-		    "cu_id": "TEST_UNIT/TEST_SCRAPER",
+		    "cu_id": "TEST_UNIT/TEST_TECHNOSOFT",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ChaosActuatorDD",
+			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,0:100,0:10,100:200,200:300,0" 
+			    "DriverDescriptionInitParam": "/dev/ttyr1c,myslit,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip,14"
 			}
 		    ],
 		    "AttrDesc": []
@@ -1968,7 +1968,7 @@
 		{
 		    "unit_server_alias": "LUMINOMETER",
 		    "cu_id": "LUMINOMETER/CAEN775",
-		    "cu_type": "::driver::daq::RTCAEN775",
+		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
 		    "DriverDescription": [],
@@ -1986,6 +1986,12 @@
 			    "ds_default_value": "16"
 			},
 			{
+			    "ds_attr_name": "CRATE_NUM",
+			    "ds_max_range": "16",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
 			    "ds_attr_name": "TIMEOUT",
 			    "ds_max_range": "3600000",
 			    "ds_min_range": "0",
@@ -1996,7 +2002,7 @@
 		{
 		    "unit_server_alias": "LUMINOMETER",
 		    "cu_id": "LUMINOMETER/CAEN965",
-		    "cu_type": "::driver::daq::RTCAEN965",
+		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
 		    "auto_load": false,
 		    "DriverDescription": [],
@@ -2012,6 +2018,12 @@
 			    "ds_max_range": "16",
 			    "ds_min_range": "16",
 			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "CRATE_NUM",
+			    "ds_max_range": "16",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "TIMEOUT",
