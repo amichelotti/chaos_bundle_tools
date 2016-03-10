@@ -25,7 +25,7 @@
 
 using namespace chaos::common::data;
 using namespace chaos::cu::driver_manager::driver;
-using namespace __template_type__::__template_name__;
+using namespace ::__template_type__::__template_name__;
 
 
 PUBLISHABLE_CONTROL_UNIT_IMPLEMENTATION(__template_name__ControlUnit)

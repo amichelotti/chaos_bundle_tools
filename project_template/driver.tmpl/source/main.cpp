@@ -40,7 +40,7 @@
 using namespace std;
 using namespace chaos;
 using namespace chaos::cu;
-using namespace __template_type__::__template_name__;
+using namespace ::__template_type__::__template_name__;
 
 
 namespace common_plugin = chaos::common::plugin;
@@ -67,7 +67,7 @@ int main (int argc, char* argv[] )
 		//! [CUTOOLKIT Init]
 		
 		//! [Driver Registration]
-		REGISTER_DRIVER(__template_type__::__template_name__, __template_name__Driver);
+		REGISTER_DRIVER(::__template_type__::__template_name__, __template_name__Driver);
 
 
 		//! [Starting the Framework]

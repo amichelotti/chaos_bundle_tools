@@ -31,16 +31,16 @@
 
 //GET_PLUGIN_CLASS_DEFINITION
 //we need only to define the driver because we don't are makeing a plugin
-OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(__template_name__Driver, 1.0.0, __template_type__::__template_name__::__template_name__Driver)
+OPEN_CU_DRIVER_PLUGIN_CLASS_DEFINITION(__template_name__Driver, 1.0.0, ::__template_type__::__template_name__::__template_name__Driver)
 REGISTER_CU_DRIVER_PLUGIN_CLASS_INIT_ATTRIBUTE(__template_name__Driver, http_address/dnsname:port)
 CLOSE_CU_DRIVER_PLUGIN_CLASS_DEFINITION
 
 //register the two plugin
 OPEN_REGISTER_PLUGIN
-REGISTER_PLUGIN(__template_type__::__template_name__::__template_name__Driver)
+REGISTER_PLUGIN(::__template_type__::__template_name__::__template_name__Driver)
 CLOSE_REGISTER_PLUGIN
 
-using namespace __template_type__::__template_name__;
+  using namespace ::__template_type__::__template_name__;
 
 //default constructor definition
 DEFAULT_CU_DRIVER_PLUGIN_CONSTRUCTOR_WITH_NS(__template_type__::__template_name__, __template_name__Driver) {
