@@ -40,9 +40,23 @@ if [ ! -d "$startdir" ]; then
     exit 1
 fi
 pushd $startdir > /dev/null
+curr=`pwd -P`
+findopt=""
+listaMake=`find . -iname Makefile`;
+for m in $listaMake;do
+    dir=`dirname $m`
+    echo "* testing for compilation $dir"
+    if ! make -C $dir >& /dev/null;then
 
-listah=`find . -name "*.h"`;
-listacpp=`find . -name "*.cpp"`;
+	p=`echo $dir|sed 's/\./\*/g'`
+	echo "skipping $p because does not compile"
+	findopt="$findopt -not -path $p*"
+    fi
+done
+
+listah=`find . -name "*.h" $findopt`;
+listacpp=`find . -name "*.cpp" $findopt`;
+
 project_dir=$outdir/$pname
 echo "* creating $project_dir"
 mkdir -p $project_dir
@@ -54,8 +68,10 @@ incdir_list=""
 # if [ "$parent" != "." ] && [ "$parent" != ".." ]; then  
 #     prefix="$(basename $parent)\/$prefix"
 # fi
-lista_ignore=$(dirname `find . -name UnitServerIgnore`)
-CHAOS_EXCLUDE_DIR="$CHAOS_EXCLUDE_DIR $lista_ignore"
+
+lista_ignore=$(dirname `find $curr -name UnitServerIgnore`)
+
+CHAOS_EXCLUDE_DIR="$CHAOS_EXCLUDE_DIR"
 function to_skip(){
 
     for s in ${skipdir[@]} $CHAOS_EXCLUDE_DIR; do
@@ -83,6 +99,7 @@ for c in $listah; do
     if [ "$bb" != "." ] && [ "$bb" != "$oldbb" ]; then
 
 	incdir_list+=" $startdir/$bb"
+#	incdir_list+=" $bb"
     fi
     
     for n in $namespace; do
@@ -134,7 +151,7 @@ done
 #     fi
  done;
 
-listcmake=`find . -name "CMakeLists.txt"`;
+listcmake=`find . -name "CMakeLists.txt" $findopt`;
 listadep=""
 cmake_things=""
 
@@ -143,6 +160,11 @@ for c in $listcmake;do
 	echo "* skipping $c"
 	continue;
     fi
+  # dir=`dirname $c`
+  # if ! make -C $dir >& /dev/null;then
+  # 	echo "skipping $dir because does not compile"
+  # 	continue;
+  # fi
     project_name_tmp=`grep -i project $c`
     project_name=""
     cmake_things+="##### from $startdir/$c ###### \n"
