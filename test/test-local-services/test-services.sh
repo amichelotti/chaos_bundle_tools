@@ -20,13 +20,15 @@ fi
 if [ -n "$4" ];then
     CDSMODE="$4"
 fi
+# rm $CHAOS_PREFIX/etc/cds.cfg
 
-if [ "$CDSMODE" == 1 ];then
-    ln -sf $CHAOS_PREFIX/etc/cds_noidx.cfg $CHAOS_PREFIX/etc/cds.cfg
-else
-    ln -sf $CHAOS_PREFIX/etc/cds_local.cfg $CHAOS_PREFIX/etc/cds.cfg
+
+ if [ "$CDSMODE" == 1 ];then
+     cp $CHAOS_PREFIX/etc/cds_noidx.cfg $CHAOS_PREFIX/etc/cds.cfg
+ else
+     cp $CHAOS_PREFIX/etc/cds_local.cfg $CHAOS_PREFIX/etc/cds.cfg
     
-fi
+ fi
 
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
@@ -50,7 +52,7 @@ fi
 start_mds || end_test 1 "Starting MDS"
 
 
-if ChaosMDSCmd --mds-conf $MDS_TEST_CONF >& /dev/null; then
+if ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF >& /dev/null; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
@@ -85,7 +87,6 @@ fi
 rm -rf wget_test1
 check_proc ChaosDataService || end_test 1 "ChaosDataService not running"
 check_proc CUIserver || end_test 1 "CUIserver not running"
-check_proc "tomcat:run" || end_test 1 "MDS not running"
 check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 info_mesg "performing test pushing on ChaosWANProxy " "CREST CU"

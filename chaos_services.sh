@@ -23,10 +23,10 @@ cds_checks(){
 	exit 1
     fi
 
-    if [ ! -f "$CHAOS_PREFIX/etc/$CDS_CONF" ]; then
-	error_mesg "CDS configuration file \"$CDS_CONF\" not found in $CHAOS_PREFIX/etc/"
-	exit 1
-    fi
+     if [ ! -e "$CHAOS_PREFIX/etc/$CDS_CONF" ]; then
+     	error_mesg "# CDS configuration file \"$CDS_CONF\" not found in $CHAOS_PREFIX/etc/$CDS_CONF"
+     	exit 1
+     fi
 
     if ! ps -fe |grep [m]ongod >/dev/null ;then
 	error_mesg "mongod not running" ; exit 1
@@ -72,7 +72,8 @@ start_cds(){
     cds_checks
     info_mesg "starting CDS..."
     check_proc_then_kill "$CDS_EXEC"
-    run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF > $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
+    echo "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF" > $CHAOS_PREFIX/log/$CDS_EXEC.std.out
+    run_proc "$CDS_BIN --conf-file $CHAOS_PREFIX/etc/$CDS_CONF >> $CHAOS_PREFIX/log/$CDS_EXEC.std.out 2>&1 &" "$CDS_EXEC"
 }
 start_ui(){
     port=8081
