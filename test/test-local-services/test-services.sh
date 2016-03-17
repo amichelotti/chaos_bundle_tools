@@ -41,7 +41,7 @@ else
     end_test 1 "CDS not bind a valid url"
 fi
 cds_url="$execute_command"
-info_mesg "Building " "configuration"
+info_mesg "Building " "configuration for $TESTCU"
 if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
     nok_mesg "MDS configuration created with cds url:$cds_url"
     end_test 1 "MDS configuration"

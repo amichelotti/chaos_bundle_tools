@@ -5,13 +5,13 @@ pushd `dirname $0` > /dev/null
 dir=`pwd -P`
 popd > /dev/null
 
-prefix_tmp=$dir/../../../
-source $dir/../../common_util.sh
-
-
 if [ -z "$CHAOS_PREFIX" ];then
     echo "%% NO environment CHAOS_PREFIX defined, setting $prefix_tmp"
+    prefix_tmp=$dir/../../../
     export CHAOS_PREFIX=$prefix_tmp
+    source $dir/../../common_util.sh
+else
+    source $CHAOS_PREFIX/tools/common_util.sh
 fi
 
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib

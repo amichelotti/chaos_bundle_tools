@@ -26,7 +26,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeC",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
 			}
@@ -41,7 +41,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeC",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
 			}
@@ -56,7 +56,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeC",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
 			}
@@ -71,7 +71,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
 			}
@@ -86,7 +86,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0102"
 			}
@@ -101,7 +101,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0103"
 			}
@@ -116,7 +116,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0201"
 			}
@@ -131,7 +131,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0202"
 			}
@@ -146,7 +146,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0203"
 			}
@@ -161,7 +161,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
 			}
@@ -176,7 +176,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0302"
 			}
@@ -191,7 +191,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0303"
 			}
@@ -206,7 +206,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0304"
 			}
@@ -221,7 +221,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0401"
 			}
@@ -236,7 +236,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0402"
 			}
@@ -251,7 +251,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0403"
 			}
@@ -266,7 +266,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0404"
 			}
@@ -281,7 +281,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
 			}
@@ -296,7 +296,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeD",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0502"
 			}
@@ -311,7 +311,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0101"
 			}
@@ -326,7 +326,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0102"
 			}
@@ -341,7 +341,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0201"
 			}
@@ -356,7 +356,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0202"
 			}
@@ -371,7 +371,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0301"
 			}
@@ -386,7 +386,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0401"
 			}
@@ -401,7 +401,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0501"
 			}
@@ -416,7 +416,7 @@
 		    "auto_load": true,
 		    "DriverDescription": [
 			{
-			    "DriverDescriptionName": "ZBSensorNodeS",
+			    "DriverDescriptionName": "VTemperatureDriver",
 			    "DriverDescriptionVersion": "1.0.0",
 			    "DriverDescriptionInitParam": "/dev/ttyACM0:0x0502"
 			}
