@@ -1,6 +1,0 @@
-tools/config/lnf/test//cu2.sh: line 2: ulimit: max user processes: cannot modify limit: Operation not permitted
-* [1musing prefix [32m/home/michelo/chaos_bundle_x86_64/chaos-x86_64-dynamic-release[39m[22m
-% [1mprocess daqLiberaServer is running with pid "21412 21413 " [33mkilling[39m[22m
-* [1mlaunching [32m1 BPMSync with 1 CU[39m[22m
-* [1mlaunching US[0] alias [32mACCUMULATOR/BPM[39m[22m
-* process BPMSync quitted unexpectly  [31m[1mNOK[22m[39m
