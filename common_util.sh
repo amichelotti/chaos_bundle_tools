@@ -759,17 +759,21 @@ launch_us_cu(){
     fi
 
     us_proc=()
+
     info_mesg "launching " "$NUS $USNAME with $NCU CU"
 
     for ((us=0;us<$NUS;us++));do
-	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
-	if [ $NUS -eq 1 ]; then
+	if [ $NUS -eq 1 ] && [ "$ALIAS" != "TEST_UNIT" ]; then
 	    REAL_ALIAS=$ALIAS
 	else
-	    REAL_ALIAS=$ALIAS_$us
+	    REAL_ALIAS="$ALIAS"_$us
 	fi
+	info_mesg "launching US[$us] alias " "$REAL_ALIAS"
+	rm $CHAOS_PREFIX/log/$USNAME-$us.log >& /dev/null
+
 	FILE_NAME=`echo $REAL_ALIAS|sed 's/\//_/g'`
-	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
+	echo "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META"  > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout
+	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META >> $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
 	    ok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else

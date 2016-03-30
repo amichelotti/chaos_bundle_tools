@@ -26,7 +26,7 @@ fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 
-if launch_us_cu $NUS $NCU $META $USNAME;then
+if launch_us_cu $NUS $NCU $META $USNAME TEST_UNIT 1;then
     if ! check_proc $USNAME;then
 	error_mesg "$USNAME quitted"
 	end_test 1 "$USNAME quitted"
@@ -39,9 +39,10 @@ fi
 
 sched=5000
 # for ((sched=10000;sched>=0;sched-=1000));do
-while ((sched>=0));do
+while ((sched>0));do
 info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-	if $CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched > $CHAOS_PREFIX/log/MessClient-$sched.stdout 2>&1 ;then
+echo "$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched" > $CHAOS_PREFIX/log/MessClient-$sched.stdout 
+	if $CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched >> $CHAOS_PREFIX/log/MessClient-$sched.stdout 2>&1 ;then
 	    if [ -x /usr/bin/gnuplot ];then
 		info_mesg "generating benchmark plots..."
 		pushd $CHAOS_PREFIX/log > /dev/null
