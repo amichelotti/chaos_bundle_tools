@@ -102,8 +102,8 @@ else
 	    fi
 
 	    CHAOS_DISABLE_EVENTFD=true
-	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
-	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align"
+	    export CFLAGS="$CFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align -static-libgcc"
+	    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_EVENTFD -Wcast-align  -static-libstdc++ -static-libgcc"
 
 	    #
 	    export CHAOS_BOOST_FLAGS="target-os=linux cxxflags=-DBOOST_ASIO_DISABLE_EVENTFD"
