@@ -96,11 +96,11 @@ for c in $listah; do
 #`grep -o 'namespace\s\+\w\+' $c | sed 's/namespace\ *//g' | tr '\n' ' '`;
     oldbb=$bb
     bb=$(dirname $c)
-    if [ "$bb" != "." ] && [ "$bb" != "$oldbb" ]; then
+   # if [ "$bb" != "." ] && [ "$bb" != "$oldbb" ]; then
 
-	incdir_list+=" $startdir/$bb"
-#	incdir_list+=" $bb"
-    fi
+   # 	incdir_list+=" $startdir/$bb"
+   # 	incdir_list+=" $bb"
+   # fi
     
     for n in $namespace; do
 	if [ -z "$filenamespace" ];then
@@ -160,7 +160,8 @@ for c in $listcmake;do
 	echo "* skipping $c"
 	continue;
     fi
-  # dir=`dirname $c`
+    CL=$c
+    dir=`dirname $c`
   # if ! make -C $dir >& /dev/null;then
   # 	echo "skipping $dir because does not compile"
   # 	continue;
@@ -168,11 +169,12 @@ for c in $listcmake;do
     project_name_tmp=`grep -i project $c`
     project_name=""
     cmake_things+="##### from $startdir/$c ###### \n"
+    
     if [[ "$project_name_tmp" =~ \(([a-zA-Z0-9_]+)\) ]];then
 	project_name=${BASH_REMATCH[1]}
        
 	cat $c| sed "s/\${PROJECT_NAME}/$project_name/g" > $TEMP_CMAKE
-	c="$TEMP_CMAKE"
+	CL="$TEMP_CMAKE"
 	echo "replacing $project_name"
     fi
     
@@ -180,22 +182,36 @@ for c in $listcmake;do
 
 
 
-#    cmake_include="$(grep INCLUDE_DIRECTORIES $c)"
-#    if [ -n "$cmake_include" ]; then
-#	cmake_things+="$cmake_include\n"
-#    fi
+    cmake_include="$(grep INCLUDE_DIRECTORIES $c)"
+    if [ -n "$cmake_include" ]; then
+	if [[ "$cmake_include" =~ .+\((.+)\) ]];then
+	    myinclude=${BASH_REMATCH[1]}
+	    cmake_things+="INCLUDE_DIRECTORIES("
+	    for d in $myinclude;do
+		echo "=== adding $startdir/$dir/$d"
+		cmake_things+=" $startdir/$dir/$d"
+	    done
+	    cmake_things+=")\n"
+	fi
+    fi
+    
+    # if [ -n "$cmake_include" ]; then
+    # 	cmake_things+="$cmake_include\n"
+    # fi
+
     cmake_include="$(grep ADD_DEFINITIONS $c)"
     if [ -n "$cmake_include" ]; then
 	cmake_things+="$cmake_include\n"
     fi
     cmake_things+="#########################\n"
-    varl=`grep -i add_library $c | grep SHARED`;
+    varl=`grep -i add_library $CL | grep SHARED`;
     incdir=`dirname $startdir/$c | sed 's/\.\///g'`
 
     parent=`dirname $incdir`
 
     path=`basename $parent`/`basename $incdir`
     incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$path"
+#    incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$c"
 #    echo "start dir $startdir"
 #    for h in `find $startdir -name "*.h"`; do
 #    done
@@ -206,7 +222,7 @@ for c in $listcmake;do
 		    mylib=${BASH_REMATCH[1]}
 		 #   echo "-->$mylib"
 		    lista_lib="$lista_lib $mylib";
-		    varlink=`grep -i "target_link_libraries\ *(\ *$mylib" $c | tail -1`;
+		    varlink=`grep -i "target_link_libraries\ *(\ *$mylib" $CL | tail -1`;
 
 		    patt="\($mylib\ +(.+)\ *\)"
 		    if [[ "$varlink" =~ $patt ]]; then
@@ -267,7 +283,7 @@ echo "include(\$ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)" >>  $p
 echo "SET(src main.cpp )" >>  $project_dir/CMakeLists.txt
 echo -e "$cmake_things" >> $project_dir/CMakeLists.txt
 if [ -n "$incdir_list" ]; then
-    echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} $incdir_list)" >> $project_dir/CMakeLists.txt
+    echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} \${CHAOS_PREFIX}/include $incdir_list)" >> $project_dir/CMakeLists.txt
 fi
 echo -e "IF(BUILD_FORCE_STATIC)\nSET(CMAKE_EXE_LINKER_FLAGS \"-static -Wl,--whole-archive -lchaos_common -Wl,--no-whole-archive\")\nENDIF()\n" >>  $project_dir/CMakeLists.txt
 echo "ADD_EXECUTABLE($pname \${src})" >>  $project_dir/CMakeLists.txt
