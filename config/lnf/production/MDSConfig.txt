@@ -1850,6 +1850,200 @@
 		       ]
 		   }
 	       ]
-	   }
+	   },
+{
+	    "unit_server_alias": "LUMINOMETER",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "LUMINOMETER",
+		    "cu_id": "LUMINOMETER/CAEN775",
+		    "cu_type": "::driver::daq::caen::RTCAEN775",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "VME_BASE",
+			    "ds_max_range": "0x66330000",
+			    "ds_min_range": "0x66330000",
+			    "ds_default_value": "0x66330000"
+			},
+			{
+			    "ds_attr_name": "CHANNELS",
+			    "ds_max_range": "16",
+			    "ds_min_range": "16",
+			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "CRATE_NUM",
+			    "ds_max_range": "16",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "TIMEOUT",
+			    "ds_max_range": "3600000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100000"
+			},
+			{
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1C38"
+			},
+			{
+			    "ds_attr_name": "FSR",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1E"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "LUMINOMETER",
+		    "cu_id": "LUMINOMETER/CAEN965",
+		    "cu_type": "::driver::daq::caen::RTCAEN965",
+		    "cu_param": "",
+		    "auto_load": false,
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "VME_BASE",
+			    "ds_max_range": "0x44220000",
+			    "ds_min_range": "0x44220000",
+			    "ds_default_value": "0x44220000"
+			},
+			{
+			    "ds_attr_name": "CHANNELS",
+			    "ds_max_range": "16",
+			    "ds_min_range": "16",
+			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "CRATE_NUM",
+			    "ds_max_range": "16",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "TIMEOUT",
+			    "ds_max_range": "3600000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100000"
+			},
+{
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1C38"
+			}
+		    ]
+
+		}
+	    ]
+	},{ "unit_server_alias": "ASTRA",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "ASTRA",
+		    "cu_id": "ASTRA/CAEN775",
+		    "cu_type": "::driver::daq::RTCAEN775",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "VME_DRIVER",
+			    "ds_max_range": "3",
+			    "ds_min_range": "0",
+			    "ds_default_value": "3"
+			},
+			{
+			    "ds_attr_name": "VME_BASE",
+			    "ds_max_range": "0x66330000",
+			    "ds_min_range": "0x66330000",
+			    "ds_default_value": "0x66330000"
+			},
+			{
+			    "ds_attr_name": "CHANNELS",
+			    "ds_max_range": "16",
+			    "ds_min_range": "16",
+			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "TIMEOUT",
+			    "ds_max_range": "3600000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100000"
+			},
+			{			
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1C38"
+			},
+			{
+			    "ds_attr_name": "FSR",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1E"
+			}
+			
+		    ]
+		},
+		{
+		    "unit_server_alias": "ASTRA",
+		    "cu_id": "ASTRA/CAEN965",
+		    "cu_type": "::driver::daq::RTCAEN965",
+		    "cu_param": "",
+		    "auto_load": false,
+		    "DriverDescription": [],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "VME_DRIVER",
+			    "ds_max_range": "3",
+			    "ds_min_range": "0",
+			    "ds_default_value": "3"
+			},
+			{
+			    "ds_attr_name": "VME_BASE",
+			    "ds_max_range": "0x44220000",
+			    "ds_min_range": "0x44220000",
+			    "ds_default_value": "0x44220000"
+			},
+			{
+			    "ds_attr_name": "CHANNELS",
+			    "ds_max_range": "16",
+			    "ds_min_range": "16",
+			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "CRATE_NUM",
+			    "ds_max_range": "16",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "TIMEOUT",
+			    "ds_max_range": "3600000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100000"
+			},
+			{
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0xffffffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1C38"
+			}
+		    ]
+
+		}
+
+	    ]
+	}
 	  ]
 }
