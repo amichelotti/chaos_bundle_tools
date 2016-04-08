@@ -1864,6 +1864,12 @@
 		    "auto_load": true,
 		    "DriverDescription": [],
 		    "AttrDesc": [
+		    	{
+			    "ds_attr_name": "VME_DRIVER",
+			    "ds_max_range": "3",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
 			    "ds_attr_name": "VME_BASE",
 			    "ds_max_range": "0x66330000",
@@ -1910,6 +1916,12 @@
 		    "auto_load": false,
 		    "DriverDescription": [],
 		    "AttrDesc": [
+		    	{
+			    "ds_attr_name": "VME_DRIVER",
+			    "ds_max_range": "3",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
 			    "ds_attr_name": "VME_BASE",
 			    "ds_max_range": "0x44220000",
@@ -1951,7 +1963,7 @@
 		{
 		    "unit_server_alias": "ASTRA",
 		    "cu_id": "ASTRA/CAEN775",
-		    "cu_type": "::driver::daq::RTCAEN775",
+		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
 		    "DriverDescription": [],
@@ -1998,7 +2010,7 @@
 		{
 		    "unit_server_alias": "ASTRA",
 		    "cu_id": "ASTRA/CAEN965",
-		    "cu_type": "::driver::daq::RTCAEN965",
+		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
 		    "auto_load": false,
 		    "DriverDescription": [],
