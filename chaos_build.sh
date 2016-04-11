@@ -214,7 +214,7 @@ for target in ${compile_target[@]} ; do
 		if [ "$OS" == "Linux" ]; then
 		info_mesg "generating " "Unit Server.."
 		echo "==== GENERATING UNIT SERVER ====" >> $log 2>&1 
-		if $dir/chaos_generate_us.sh -i $dir/../driver -o $PREFIX -n UnitServer >> $log 2>&1 ; then
+		if $dir/chaos_generate_us.sh -i $CHAOS_BUNDLE/driver -o $PREFIX -n UnitServer >> $log 2>&1 ; then
 		    pushd $PREFIX/UnitServer > /dev/null
 		    if cmake . >> $log ; then
 			
@@ -282,10 +282,10 @@ for target in ${compile_target[@]} ; do
 		    STRIP_CMD=strip
 		fi
 		if [ -n "$STRIP_SYMBOLS" ];then
-		    info_mesg "stripping " "$PREFIX/bin"
-		    $STRIP_CMD $PREFIX/bin/*
-		    info_mesg "stripping " "$PREFIX/lib"
-		    $STRIP_CMD $PREFIX/lib/*
+		    info_mesg "stripping " " $STRIP_CMD $PREFIX/bin"
+		    $STRIP_CMD $PREFIX/bin/* >& /dev/null
+		    info_mesg "stripping " " $STRIP_CMD $PREFIX/lib"
+		    $STRIP_CMD $PREFIX/lib/* >& /dev/null
 		fi
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then

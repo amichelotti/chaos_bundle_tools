@@ -56,7 +56,7 @@ fi
 if [ -z "$CONFIGURATION" ]; then 
     CONFIGURATION="release"
 fi
-if [ "$FORCE_REBUILD" == "YES" ]; then 
+if [ "$FORCE_REBUILD" == "ON" ]; then 
     OPT="-f"
 fi
 if [ "$DEPLOY_STRIP" == "ON" ];then
@@ -134,7 +134,9 @@ if [ -z "$DEPLOY_EXPORT_DIR" ];then
     $dir/chaos_remote_copy.sh -u $USER -s $BASE.tar.gz -d $DEPLOY_TARGET_DIR $DEPLOY_TARGET_LIST
 fi
 $dir/chaos_remote_command.sh -u $USER -c "$CMD_STOP" $DEPLOY_TARGET_LIST
-$dir/chaos_remote_command.sh -u $USER -c "cd $DEPLOY_TARGET_DIR;tar xvfz $BASE.tar.gz" $DEPLOY_TARGET_LIST
+if [ -z "$DEPLOY_EXPORT_DIR" ];then
+    $dir/chaos_remote_command.sh -u $USER -c "cd $DEPLOY_TARGET_DIR;tar xvfz $BASE.tar.gz" $DEPLOY_TARGET_LIST
+fi
 $dir/chaos_remote_command.sh -u $USER -c "$CMD_START" $DEPLOY_TARGET_LIST 
 
 echo "$confdir successfully installed"

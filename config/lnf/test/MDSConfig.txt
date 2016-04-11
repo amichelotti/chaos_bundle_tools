@@ -1932,7 +1932,7 @@
 		    "cu_id": "TEST_UNIT/IUNGO",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
+		    "auto_load": false,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "PowerSimDD",
