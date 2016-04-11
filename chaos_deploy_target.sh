@@ -59,6 +59,9 @@ fi
 if [ "$FORCE_REBUILD" == "YES" ]; then 
     OPT="-f"
 fi
+if [ "$DEPLOY_STRIP" == "ON" ];then
+    OPT="-e $OPT"
+fi
 
 if [ -z "$DEPLOY_METHOD" ]; then 
     DEPLOY_METHOD="sysctl"
@@ -107,7 +110,7 @@ fi
 BASE=chaos-$TARGET-$RELEASE-$CONFIGURATION
 
 $dir/chaos_build.sh -t $TARGET -o $RELEASE -b $CONFIGURATION $OPT 
- info_mesg "creating tar " "$BASE.tar.gz"
+info_mesg "creating tar " "$BASE.tar.gz"
  
 if [ "$RELEASE" == "dynamic" ];then
     info_mesg "creating " "$BASE.tar.gz"
@@ -118,11 +121,18 @@ else
 	LIST_FILES="$BASE/bin/$ff $LIST_FILES"
 	info_mesg "adding " "$ff"
     done
-    tar cfz $BASE.tar.gz $LIST_FILES
+    if [ -n "$DEPLOY_EXPORT_DIR" ];then
+	info_mesg "* copying to local directory " "$DEPLOY_EXPORT_DIR"
+	
+	cp  $LIST_FILES $DEPLOY_EXPORT_DIR
+    else
+	tar cfz $BASE.tar.gz $LIST_FILES
+    fi
 fi
 
-
-$dir/chaos_remote_copy.sh -u $USER -s $BASE.tar.gz -d $DEPLOY_TARGET_DIR $DEPLOY_TARGET_LIST
+if [ -z "$DEPLOY_EXPORT_DIR" ];then
+    $dir/chaos_remote_copy.sh -u $USER -s $BASE.tar.gz -d $DEPLOY_TARGET_DIR $DEPLOY_TARGET_LIST
+fi
 $dir/chaos_remote_command.sh -u $USER -c "$CMD_STOP" $DEPLOY_TARGET_LIST
 $dir/chaos_remote_command.sh -u $USER -c "cd $DEPLOY_TARGET_DIR;tar xvfz $BASE.tar.gz" $DEPLOY_TARGET_LIST
 $dir/chaos_remote_command.sh -u $USER -c "$CMD_START" $DEPLOY_TARGET_LIST 

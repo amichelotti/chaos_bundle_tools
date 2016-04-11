@@ -44,7 +44,7 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc:kx:n:f opt; do
+while getopts t:o:w:b:p:hd:rsc:kx:n:fe opt; do
     case $opt in
 	t)
 	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
@@ -54,6 +54,10 @@ while getopts t:o:w:b:p:hd:rsc:kx:n:f opt; do
 		error_mesg "compile targets one of: ${compile_target[@]}"
 		exit 1
 	    fi
+	    ;;
+	e)
+	    STRIP_SYMBOLS=ON
+	    info_mesg "stripping symbols"
 	    ;;
 	o) 
 	    if [[ ${compile_type[@]} =~ $OPTARG ]]; then 
@@ -124,7 +128,7 @@ while getopts t:o:w:b:p:hd:rsc:kx:n:f opt; do
 	    info_mesg "force to use " "$NPROC processors"
 	    ;;
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation\n-f:force rebuild all";
+	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-e] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation\n-f:force rebuild all\n-e:strip all symbols";
 	    exit 0;
 	    ;;
     esac
@@ -272,7 +276,17 @@ for target in ${compile_target[@]} ; do
 	    if (($error == 0)); then
 		tt=$(end_profile_time)
 		info_mesg "compilation ($tt s) " "$tgt OK"
-
+		if [ -n "$CHAOS_CROSS_HOST" ]; then
+		    STRIP_CMD=$CHAOS_CROSS_HOST-strip
+		else
+		    STRIP_CMD=strip
+		fi
+		if [ -n "$STRIP_SYMBOLS" ];then
+		    info_mesg "stripping " "$PREFIX/bin"
+		    $STRIP_CMD $PREFIX/bin/*
+		    info_mesg "stripping " "$PREFIX/lib"
+		    $STRIP_CMD $PREFIX/lib/*
+		fi
 		if [ -n "$perform_test" ];then
 		    if [ "$ARCH" == "$target" ];then
 			info_mesg "Starting chaos testsuite (it takes some time), test report file " "test-$tgt.csv"
