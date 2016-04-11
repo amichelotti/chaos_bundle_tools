@@ -8,8 +8,10 @@ ARCH=$(uname -m)
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 
-export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
-
+if [ -z "$CHAOS_BUNDLE" ]; then
+    export CHAOS_BUNDLE="$(dirname "$SCRIPTPATH")"
+    echo "% CHAOS_BUNDLE UNDEFINED SET TO $CHAOS_BUNDLE"
+fi
 
 #boostrap !CHAOS Framework in development mode
 export CHAOS_FRAMEWORK=$CHAOS_BUNDLE/chaosframework

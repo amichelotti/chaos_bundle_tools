@@ -52,8 +52,8 @@ fi
  
 list=`cat $1`
 for s in $list;do
-    echo "* perform \"$cmd\" in $user@$s ..."
-    ssh -f $user@$s $cmd > /dev/null &
+    echo "* perform \"$cmd\" in $user@$s ... "
+    ssh -t $user@$s $cmd >& /dev/null &
     if [ $slep -gt 0 ]; then
 	sleep $slep
     fi
@@ -61,9 +61,9 @@ done
 error=0
 for job in `jobs -p`; do
     echo "waiting for command termination command id $job"
-    wait $job || let "$error+=1"
+    wait $job || let "error+=1"
     if [ $error != "0" ];then
-	echo "# an error occurred in command id $job"
+	echo "# an error occurred exucuting \"$cmd\" id $job"
     fi
 done
 

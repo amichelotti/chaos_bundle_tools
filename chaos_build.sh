@@ -9,7 +9,7 @@ source $dir/common_util.sh
 err=0
 
 prefix_build=chaos
-outbase=$dir/../
+outbase=$PWD
 create_deb_ver=""
 remove_working="false"
 log="$0.log"

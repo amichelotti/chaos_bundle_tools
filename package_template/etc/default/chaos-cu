@@ -1,7 +1,7 @@
 log-on-file=yes
-log-file=/root/touschek-cu.log
+log-file=__prefix_dir__/__cu_alias__.log
 #log-level=debug
 metadata-server=192.168.150.31:5000
-unit-server-alias=AULA_TOUSCHEK
+unit-server-alias=__cu_alias__
 log-max-size=5
 event-disable=1

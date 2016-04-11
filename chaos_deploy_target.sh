@@ -10,13 +10,19 @@ OPT=""
 Usage(){
     echo "$0 <configuration of the target>"
 }
-if [ ! -f "$1" ];then
-    error_mesg "you must specify a valid configuration name"
+confdir=$1
+if [ "${confdir:0:1}" != "/" ];then
+    confdir=$PWD/$confdir
+fi
+
+if [ ! -f "$confdir" ];then
+    error_mesg "cannot find \"$confdir\" you must specify a valid configuration name "
     Usage;
     exit 1
 fi
-confdir=`dirname $1`
-source $1
+unset CHAOS_BUNDLE
+unset CHAOS_PREFIX
+source $confdir
 
 if [ -z "$CHAOS_BUNDLE" ]; then 
     error_mesg "a CHAOS_BUNDLE source directory must be defined"
@@ -38,9 +44,15 @@ if [ -z "$DEPLOY_TARGET_LIST" ]; then
     error_mesg "a DEPLOY_TARGET_LIST (list of targets) must be defined"
     exit 1
 else
-    DEPLOY_TARGET_LIST=$confdir/$DEPLOY_TARGET_LIST
-fi
+    if [ ${DEPLOY_TARGET_LIST:0:1} != "/" ];then
+	DEPLOY_TARGET_LIST=$PWD/$DEPLOY_TARGET_LIST
+    fi
 
+fi
+if [ ! -f "$DEPLOY_TARGET_LIST" ];then
+    error_mesg "cannot find \"$DEPLOY_TARGET_LIST\" please specify a valid list"
+    exit 1
+fi
 if [ -z "$CONFIGURATION" ]; then 
     CONFIGURATION="release"
 fi
@@ -50,6 +62,9 @@ fi
 
 if [ -z "$DEPLOY_METHOD" ]; then 
     DEPLOY_METHOD="sysctl"
+fi
+if [ -z "$DEPLOY_FILE_LIST" ]; then 
+    DEPLOY_FILE_LIST="UnitServer"
 fi
 if [ -z "$USER" ];then
     USER=root
@@ -73,18 +88,26 @@ case $DEPLOY_METHOD in
 	CMD_STOP="/etc/init.d/$DEPLOY_METHOD stop"
 	;;
     esac;
+export CHAOS_BUNDLE=$CHAOS_BUNDLE
 
-echo "* using $CHAOS_BUNDLE"
+info_mesg "using " "$1"
+info_mesg "chaos bundle dir " "$CHAOS_BUNDLE"
+info_mesg "deploy list " "$DEPLOY_TARGET_LIST"
 
 cd $CHAOS_BUNDLE
+info_mesg "synchronizing with repo " "$CHAOS_BUNDLE"
+if ! repo sync >& /dev/null;then
+    echo "## error synchronizing with repository"
+    exit 1
+fi
 if [ -n "$CROSS_TOOL_PATH" ];then
     info_mesg "using cross tool compiler in $CROSS_TOOL_PATH"
     PATH=$CROSS_TOOL_PATH/bin:$PATH
 fi
 BASE=chaos-$TARGET-$RELEASE-$CONFIGURATION
 
-./tools/chaos_build.sh -t $TARGET -o $RELEASE -b $CONFIGURATION $OPT 
-info_mesg "creating tar " "$BASE.tar.gz"
+$dir/chaos_build.sh -t $TARGET -o $RELEASE -b $CONFIGURATION $OPT 
+ info_mesg "creating tar " "$BASE.tar.gz"
  
 if [ "$RELEASE" == "dynamic" ];then
     info_mesg "creating " "$BASE.tar.gz"
@@ -97,12 +120,12 @@ else
     done
     tar cfz $BASE.tar.gz $LIST_FILES
 fi
-info_mesg "deploy list " "$DEPLOY_TARGET_LIST"
 
-./tools/chaos_remote_copy.sh -u $USER -s $BASE.tar.gz -d $DEPLOY_TARGET_DIR $DEPLOY_TARGET_LIST
-./tools/chaos_remote_command.sh -u $USER -c "$CMD_STOP" $DEPLOY_TARGET_LIST
-./tools/chaos_remote_command.sh -u $USER -c "cd $DEPLOY_TARGET_DIR;tar xvfz $BASE.tar.gz" $DEPLOY_TARGET_LIST
-./tools/chaos_remote_command.sh -u root -c "$CMD_START" $DEPLOY_TARGET_LIST 
+
+$dir/chaos_remote_copy.sh -u $USER -s $BASE.tar.gz -d $DEPLOY_TARGET_DIR $DEPLOY_TARGET_LIST
+$dir/chaos_remote_command.sh -u $USER -c "$CMD_STOP" $DEPLOY_TARGET_LIST
+$dir/chaos_remote_command.sh -u $USER -c "cd $DEPLOY_TARGET_DIR;tar xvfz $BASE.tar.gz" $DEPLOY_TARGET_LIST
+$dir/chaos_remote_command.sh -u $USER -c "$CMD_START" $DEPLOY_TARGET_LIST 
 
 echo "$confdir successfully installed"
 

@@ -48,7 +48,7 @@ fi
  
 list=`cat $1`
 for s in $list;do
-    scp $source $user@$s:$dest >/dev/null &
+    scp $source $user@$s:$dest >& /dev/null &
     echo "* copying $source in $user@$s:$dest id $! ..."
 
 done
