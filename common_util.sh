@@ -3,6 +3,10 @@ OS=`uname -s`
 ARCH=`uname -m`
 SCRIPTNAME=`basename $0`
 SCRIPTTESTPATH=$0
+pushd `dirname $0` > /dev/null
+SCRIPTTESTABSPATH=`pwd -P`
+popd > /dev/null
+
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 PID=$$
@@ -12,7 +16,8 @@ if [ -z "$NPROC" ];then
 fi
 
 if [ -z "$CHAOS_BUNDLE" ];then
-    export CHAOS_BUNDLE="$(dirname $SCRIPTTESTPATH)"
+    export CHAOS_BUNDLE="$(dirname $SCRIPTTESTABSPATH)"
+    echo "* setting CHAOS_BUNDLE to $CHAOS_BUNDLE"
 fi
 
 if [ -n "$CHAOS_PREFIX" ];then
