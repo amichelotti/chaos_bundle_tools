@@ -1976,9 +1976,9 @@
 			},
 			{
 			    "ds_attr_name": "VME_BASE",
-			    "ds_max_range": "0x66330000",
-			    "ds_min_range": "0x66330000",
-			    "ds_default_value": "0x66330000"
+			    "ds_max_range": "0xA0000000",
+			    "ds_min_range": "0xA0000000",
+			    "ds_default_value": "0xA0000000"
 			},
 			{
 			    "ds_attr_name": "CHANNELS",

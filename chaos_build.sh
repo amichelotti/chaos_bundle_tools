@@ -44,8 +44,10 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 
-while getopts t:o:w:b:p:hd:rsc:kx:n:fe opt; do
+while getopts t:o:w:b:p:hd:rsc:kx:n:fei: opt; do
     case $opt in
+	i) DEPLOY_SERVER="$OPTARG"
+	    ;;
 	t)
 	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
 		compile_target=($OPTARG);
@@ -128,7 +130,7 @@ while getopts t:o:w:b:p:hd:rsc:kx:n:fe opt; do
 	    info_mesg "force to use " "$NPROC processors"
 	    ;;
 	h)
-	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-e] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation\n-f:force rebuild all\n-e:strip all symbols";
+	    echo -e "Usage is $0 [-w <work directory>] [-k] [-s] [-e] [-t <armhf|$ARCH>] [-o <static|dynamic> [-b <debug|release>] [-p <build prefix>] [-d <deb version>] [-r] [-c <directory to configure>] [-i <dst copy of compilation tree>]\n-w <work directory>: where directories are generated [$outbase]\n-t <target>: cross compilation target [${compile_target[@]}]\n-o <static|dynamic>: enable static or dynamic compilations [${compile_type[@]}]\n-b <build type> build type [${compile_build[@]}]\n-p <build prefix>: prefix to add to working directory [$prefix_build]\n-d <version>: create a deb package of the specified version\n-r: remove working directory after compilation\n-s:switch environment to precompiled one (skip compilation) [$tgt]\n-c <dir>:configure installation directory (etc,env,tools)\n-k:perform test suite after build\n-x <exclude dir>: exclude the specified directory/library from compilation\n-f:force rebuild all\n-e:strip all symbols\n-i <dstcopy>: generate a tar of the distrib and copy on dstcopy";
 	    exit 0;
 	    ;;
     esac
@@ -325,6 +327,20 @@ for target in ${compile_target[@]} ; do
 		    info_mesg "creating debian package " "devel"
 		    if $dir/chaos_debianizer.sh $extra  -a >> $log 2>&1; then
 			ok_mesg "debian package generated"
+		    fi
+		else
+		    if [ -n "$DEPLOY_SERVER" ];then
+			str=`date +%H-%M-%Y-%h-%d`
+			info_mesg "creating tar " "$PREFIX.$str.tar.gz"
+			if tar cfz $PREFIX.$str.tar.gz $PREFIX;then
+			    if scp $PREFIX.$str.tar.gz $DEPLOY_SERVER;then
+				ok_mesg "copied to " "$DEPLOY_SERVER"
+			    else
+				nok_mesg "copied to " "$DEPLOY_SERVER"
+			    fi
+			else
+			    nok_mesg "creating tar " "$PREFIX.$str.tar.gz"
+			fi
 		    fi
 		fi
 	    fi
