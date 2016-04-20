@@ -10,7 +10,8 @@ popd > /dev/null
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 PID=$$
-TEST_INFO_NAME="/tmp/""$USER""__chaos_test_info__"
+TEST_INFO_NAME="/tmp/""$USER""/__chaos_test_info__"
+mkdir -p /tmp/$USER >& /dev/null
 if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
 fi
@@ -175,9 +176,9 @@ function saveEnv(){
     fi
     echo "export CHAOS_PREFIX=\$SCRIPTPATH" >> $PREFIX/chaos_env.sh
     echo "export CHAOS_TOOLS=\$CHAOS_PREFIX/tools" >> $PREFIX/chaos_env.sh
-    echo "if [ -z \"\$CHAOS_BUNDLE\" ];then" >> $PREFIX/chaos_env.sh
-    echo -e "\texport CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $PREFIX/chaos_env.sh
-    echo "fi" >> $PREFIX/chaos_env.sh
+#    echo "if [ -z \"\$CHAOS_BUNDLE\" ];then" >> $PREFIX/chaos_env.sh
+#    echo -e "\texport CHAOS_BUNDLE=\$CHAOS_PREFIX" >> $PREFIX/chaos_env.sh
+#    echo "fi" >> $PREFIX/chaos_env.sh
     if [ -n "$CHAOS_STATIC" ];then
 	echo "export CHAOS_STATIC=true" >> $PREFIX/chaos_env.sh
     else
