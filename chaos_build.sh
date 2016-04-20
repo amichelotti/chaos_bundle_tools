@@ -15,7 +15,7 @@ remove_working="false"
 log="$0.log"
 exclude_dir=()
 compile_target=( "$ARCH" )
-TEMP_PREFIX="/tmp/""$USER"
+
 if arm-linux-gnueabihf-g++-4.8 -v 2>&1 | grep version >& /dev/null; then
     compile_target+=("armhf")
 fi
@@ -140,7 +140,7 @@ type=${compile_type[0]}
 target=${compile_target[0]}
 build=${compile_build[0]}
 export CHAOS_EXCLUDE_DIR="${exclude_dir[@]}"
-
+TEMP_PREFIX="/tmp/""$USER/""$target""$separator""$type""$separator""$build"
 init_tgt_vars(){
     tgt="$prefix_build""$separator""$target""$separator""$type""$separator""$build"
 

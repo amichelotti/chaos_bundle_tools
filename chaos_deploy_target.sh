@@ -7,19 +7,21 @@ popd > /dev/null
 
 source $dir/common_util.sh
 OPT=""
+
 Usage(){
     echo "$0 <configuration of the target>"
 }
 confdir=$1
-if [ "${confdir:0:1}" != "/" ];then
-    confdir=$PWD/$confdir
-fi
-
 if [ ! -f "$confdir" ];then
     error_mesg "cannot find \"$confdir\" you must specify a valid configuration name "
     Usage;
     exit 1
 fi
+if [ "${confdir:0:1}" != "/" ];then
+    confdir=$PWD/$confdir
+fi
+
+
 unset CHAOS_BUNDLE
 unset CHAOS_PREFIX
 source $confdir
