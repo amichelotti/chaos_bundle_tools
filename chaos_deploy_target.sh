@@ -27,9 +27,54 @@ unset CHAOS_PREFIX
 source $confdir
 
 if [ -z "$CHAOS_BUNDLE" ]; then 
-    error_mesg "a CHAOS_BUNDLE source directory must be defined"
+
+    error_mesg "a CHAOS_BUNDLE source directory must be defined in \"$confdir\""
     exit 1
 fi
+if [ -z "$DEPLOY_TARGET_DIR" ];then
+    DEPLOY_TARGET_DIR=/root
+fi
+
+if [ -z "$TARGET" ]; then 
+    error_mesg "a TARGET platform must be defined"
+    exit 1
+fi
+if [ -z "$RELEASE" ]; then 
+    error_mesg "a RELEASE (dynamic static) must be defined"
+    exit 1
+fi
+if [ -z "$DEPLOY_TARGET_LIST" ]; then 
+    error_mesg "a DEPLOY_TARGET_LIST (list of targets) must be defined"
+    exit 1
+else
+    if [ ${DEPLOY_TARGET_LIST:0:1} != "/" ];then
+	DEPLOY_TARGET_LIST=$PWD/$DEPLOY_TARGET_LIST
+    fi
+
+fi
+if [ ! -f "$DEPLOY_TARGET_LIST" ];then
+    error_mesg "cannot find \"$DEPLOY_TARGET_LIST\" please specify a valid list"
+    exit 1
+fi
+if [ -z "$CONFIGURATION" ]; then 
+    CONFIGURATION="release"
+fi
+if [ "$FORCE_REBUILD" == "ON" ]; then 
+    OPT="-f"
+fi
+if [ "$DEPLOY_STRIP" == "ON" ];then
+    OPT="-e $OPT"
+fi
+if [ -n "$DEPLOY_WEB_SERVER" ]; then 
+        OPT="-i $DEPLOY_WEB_SERVER $OPT"
+fi
+if [ -z "$DEPLOY_METHOD" ]; then 
+    DEPLOY_METHOD="sysctl"
+fi
+if [ -z "$DEPLOY_FILE_LIST" ]; then 
+    DEPLOY_FILE_LIST="UnitServer"
+fi
+
 if [ -z "$DEPLOY_TARGET_DIR" ];then
     DEPLOY_TARGET_DIR=/root
 fi
@@ -68,9 +113,7 @@ fi
 if [ -z "$DEPLOY_METHOD" ]; then 
     DEPLOY_METHOD="sysctl"
 fi
-if [ -z "$DEPLOY_FILE_LIST" ]; then 
-    DEPLOY_FILE_LIST="UnitServer"
-fi
+
 if [ -z "$USER" ];then
     USER=root
 fi

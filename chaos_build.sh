@@ -47,6 +47,7 @@ build=${compile_build[0]}
 while getopts t:o:w:b:p:hd:rsc:kx:n:fei: opt; do
     case $opt in
 	i) DEPLOY_SERVER="$OPTARG"
+	    info_mesg "deploy server " "$DEPLOY_SERVER"
 	    ;;
 	t)
 	    if [[ ${compile_target[@]} =~ $OPTARG ]]; then 
@@ -333,7 +334,7 @@ for target in ${compile_target[@]} ; do
 			str=`date +%H-%M-%Y-%h-%d`
 			info_mesg "creating tar " "$PREFIX.$str.tar.gz"
 			if tar cfz $PREFIX.$str.tar.gz $PREFIX;then
-			    if scp $PREFIX.$str.tar.gz $DEPLOY_SERVER;then
+			    if scp $PREFIX.$str.tar.gz "$DEPLOY_SERVER";then
 				ok_mesg "copied to " "$DEPLOY_SERVER"
 			    else
 				nok_mesg "copied to " "$DEPLOY_SERVER"

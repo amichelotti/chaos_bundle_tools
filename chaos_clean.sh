@@ -1,6 +1,10 @@
 #!/bin/bash
 dir=`dirname $0`
-chaos_bundle=$dir/..
+if [ -n "$CHAOS_BUNDLE" ];then
+    chaos_bundle="$CHAOS_BUNDLE"
+else
+    chaos_bundle=$dir/..
+fi
 
 function cleandir(){
     echo "* cleaning $1"
