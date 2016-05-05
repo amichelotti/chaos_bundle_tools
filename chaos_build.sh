@@ -169,6 +169,7 @@ function compile(){
 	echo -e '\n\n' | $dir/init_bundle.sh 1 >& $log;
 
     fi
+    grep "error:" $log
     
 }
 

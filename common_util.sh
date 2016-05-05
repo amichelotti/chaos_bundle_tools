@@ -219,7 +219,7 @@ function chaos_configure(){
     logpath=`echo $PREFIX/log/cds.log|sed 's/\//\\\\\//g'`
     echo -e "metadata-server=localhost:5000\nlog-level=debug\nevent-disable=1\n" > $PREFIX/etc/cu-localhost.cfg
     echo -e "metadata-server=localhost:5000\nlog-level=debug\nserver_port=8081\nevent-disable=1\n" > $PREFIX/etc/cuiserver-localhost.cfg
-    cp -r $CHAOS_BUNDLE/chaosframework/Documentation/html $PREFIX/doc/
+    cp -r $CHAOS_BUNDLE/chaosframework/Documentation/html $PREFIX/doc/ >& /dev/null
     cp -r $CHAOS_BUNDLE/service/webgui/w3chaos/public_html/* $PREFIX/www/html
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds-localhost.cfg
     ln -sf $PREFIX/etc/cds-localhost.cfg $PREFIX/etc/cds.cfg

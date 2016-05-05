@@ -42,14 +42,24 @@ fi
 pushd $startdir > /dev/null
 curr=`pwd -P`
 findopt=""
-listaMake=`find . -iname Makefile`;
+
+lista_ignore=`find . -name UnitServerIgnore`
+for m in $lista_ignore;do
+    p=`dirname $m|sed 's/\./\*/g'`
+    echo "* skipping $p because of UnitServerIgnore"
+    findopt="$findopt -not -path $p*"
+
+done
+echo "==> $findopt"
+listaMake=`find . -iname "Makefile" $findopt`;
+
 for m in $listaMake;do
     dir=`dirname $m`
     echo "* testing for compilation $dir"
     if ! make -C $dir >& /dev/null;then
 
 	p=`echo $dir|sed 's/\./\*/g'`
-	echo "skipping $p because does not compile"
+	echo "* skipping $p because does not compile"
 	findopt="$findopt -not -path $p*"
     fi
 done
@@ -69,7 +79,7 @@ incdir_list=""
 #     prefix="$(basename $parent)\/$prefix"
 # fi
 
-lista_ignore=$(dirname `find $curr -name UnitServerIgnore`)
+
 
 CHAOS_EXCLUDE_DIR="$CHAOS_EXCLUDE_DIR"
 function to_skip(){
@@ -204,7 +214,7 @@ for c in $listcmake;do
 	cmake_things+="$cmake_include\n"
     fi
     cmake_things+="#########################\n"
-    varl=`grep -i add_library $CL | grep SHARED`;
+    varl=`grep -i add_library $CL` # | grep SHARED`;
     incdir=`dirname $startdir/$c | sed 's/\.\///g'`
 
     parent=`dirname $incdir`
@@ -223,7 +233,7 @@ for c in $listcmake;do
 		 #   echo "-->$mylib"
 		    lista_lib="$lista_lib $mylib";
 		    varlink=`grep -i "target_link_libraries\ *(\ *$mylib" $CL | tail -1`;
-
+		    
 		    patt="\($mylib\ +(.+)\ *\)"
 		    if [[ "$varlink" =~ $patt ]]; then
 			echo "---link-->${BASH_REMATCH[1]}"
