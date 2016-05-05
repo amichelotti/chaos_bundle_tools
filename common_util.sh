@@ -16,6 +16,9 @@ if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
 fi
 
+if [ ! -x "$CHAOS_BUNDLE/chaosframework/bootstrap.sh" ];then
+    unset CHAOS_BUNDLE
+fi
 if [ -z "$CHAOS_BUNDLE" ];then
     export CHAOS_BUNDLE="$(dirname $SCRIPTTESTABSPATH)"
     echo "* setting CHAOS_BUNDLE to $CHAOS_BUNDLE"

@@ -23,6 +23,10 @@ if [ ! -n "$CHAOS_LINK_LIBRARY" ] ; then
     exit 1;
 fi
 
+if [ ! -x $CHAOS_FRAMEWORK/bootstrap.sh ];then
+    error_mesg "not found \"$CHAOS_FRAMEWORK/bootstrap.sh\", please unset CHAOS_BUNDLE"
+    exit 1;
+fi
 info_mesg "!CHAOS initialization script"
 
 
