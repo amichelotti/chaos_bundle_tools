@@ -22,6 +22,15 @@ check_proc_then_kill UnitServer
 procid=()
 cuid=()
 
+
+if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
+    ok_mesg "US DAFNE_IMPORT $!"
+    procid+=($!)
+    cuid+=("DAFNE_IMPORT")
+else
+    nok_mesg "US DAFNE_IMPORT"
+    exit 1
+fi
 if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
     ok_mesg "US AULA_TOUSHECK $!"
     procid+=($!)
