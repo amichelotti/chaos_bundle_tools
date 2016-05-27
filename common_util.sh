@@ -202,7 +202,7 @@ function saveEnv(){
 
 
 function chaos_configure(){
-
+    info_mesg "configuring"
     if [ -z "$CHAOS_BUNDLE" ] || [ -z "$CHAOS_PREFIX" ]; then
 	error_mesg "CHAOS_BUNDLE (sources) and CHAOS_PREFIX (install dir) environments must be set"
 	exit 1

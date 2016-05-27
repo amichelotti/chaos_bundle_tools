@@ -111,7 +111,7 @@ if [ "$CHAOS_DEVELOPMENT" == "profile" ];then
 fi
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
-    info_mesg "linking" "$CHAOS_BUNDLE/usr/local/include/chaos in $CHAOS_FRAMEWORK/chaos"
+    info_mesg "linking" " $CHAOS_BUNDLE/usr/local/include/chaos in $CHAOS_FRAMEWORK/chaos"
     rm -rf $CHAOS_BUNDLE/usr/local/include/chaos
     ln -sf  $CHAOS_FRAMEWORK/chaos $CHAOS_BUNDLE/usr/local/include/chaos
 fi
@@ -135,8 +135,8 @@ done;
 cmake_compile $WEB_UI_SERVICE;
 
 if [ -n "$CHAOS_DEVELOPMENT" ]; then
-    info_mesg "linking" "$CHAOS_BUNDLE/usr in $CHAOS_FRAMEWORK"
-    ln -sf $CHAOS_BUNDLE/usr $CHAOS_FRAMEWORK
+    info_mesg "linking" " $CHAOS_FRAMEWORK in $CHAOS_BUNDLE/usr" 
+    ln -sf $CHAOS_FRAMEWORK $CHAOS_BUNDLE/usr 
 fi
 
 #make the documentation

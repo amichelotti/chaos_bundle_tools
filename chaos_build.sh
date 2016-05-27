@@ -170,7 +170,7 @@ function compile(){
 
     fi
     grep "error:" $log
-    
+    return 0
 }
 
 
