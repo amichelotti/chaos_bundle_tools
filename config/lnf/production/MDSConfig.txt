@@ -1512,7 +1512,7 @@
 			   {
 			       "DriverDescriptionName": "LiberaBrilliancePlusDriver",
 			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "boards.rfa3"
+			       "DriverDescriptionInitParam": "boards.raf3"
 			   }
 		       ],
 		       "AttrDesc": [
@@ -1535,7 +1535,7 @@
 			   {
 			       "DriverDescriptionName": "LiberaBrilliancePlusDriver",
 			       "DriverDescriptionVersion": "1.0.0",
-			       "DriverDescriptionInitParam": "boards.rfa4"
+			       "DriverDescriptionInitParam": "boards.raf4"
 			   }
 		       ],
 		       "AttrDesc": [
