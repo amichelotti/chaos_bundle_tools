@@ -225,9 +225,17 @@ function chaos_configure(){
     cp -r $CHAOS_BUNDLE/chaosframework/Documentation/html $PREFIX/doc/ >& /dev/null
     cp -r $CHAOS_BUNDLE/service/webgui/w3chaos/public_html/* $PREFIX/www/html
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds-localhost.cfg
-    ln -sf $PREFIX/etc/cds-localhost.cfg $PREFIX/etc/cds.cfg
-    ln -sf $PREFIX/etc/cuiserver-localhost.cfg $PREFIX/etc/cuiserver.cfg
-    ln -sf $PREFIX/etc/cu-localhost.cfg $PREFIX/etc/cu.cfg
+    pushd $PREFIX/etc > /dev/null
+    ln -sf cds-localhost.cfg cds.cfg
+    ln -sf cuiserver-localhost.cfg webui.cfg
+    ln -sf cu-localhost.cfg cu.cfg
+    
+    popd > /dev/null
+    pushd $PREFIX/bin > /dev/null
+    ln -sf CUIserver webui
+    ln -sf ChaosDataService cds
+    ln -sf ChaosMetadataService mds
+    popd > /dev/null
     sed 's/run_mode=.*/run_mode=1/' $PREFIX/etc/cds-localhost.cfg | sed 's/vfs_storage_driver_kvp=.*/vfs_storage_driver_kvp=posix_root_path:\/dev\/null/g' > $PREFIX/etc/cds_noidx.cfg
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMDSLite ]; then
 	ln -sf $CHAOS_BUNDLE/chaosframework/ChaosMDSLite $PREFIX/chaosframework
@@ -237,10 +245,11 @@ function chaos_configure(){
     fi
 
     if [ -e $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg ]; then
+	
 
 	logpath=`echo $PREFIX/log/mds.log|sed 's/\//\\\\\//g'`
 
-	cat $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg | sed s/_MDSSERVER_/localhost/|sed s/_MDSLOG_/$logpath/g > $PREFIX/etc/mds.cfg
+	cat $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg | sed s/_MDSSERVER_/localhost/|sed s/_MDSLOG_/mds.log/g > $PREFIX/etc/mds.cfg
 
     fi
 }
