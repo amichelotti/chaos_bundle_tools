@@ -10,7 +10,8 @@ popd > /dev/null
 KERNEL_VER=$(uname -r)
 KERNEL_SHORT_VER=$(uname -r|cut -d\- -f1|tr -d '.'| tr -d '[A-Z][a-z]')
 PID=$$
-TEST_INFO_NAME="/tmp/""$USER""/__chaos_test_info__"
+CHAOSTMP="/tmp/""$USER"
+TEST_INFO_NAME=$CHAOSTMP"/__chaos_test_info__"
 mkdir -p /tmp/$USER >& /dev/null
 if [ -z "$NPROC" ];then
     NPROC=$(getconf _NPROCESSORS_ONLN)
@@ -37,10 +38,25 @@ for ((cnt=0;cnt<4;cnt++));do
 done
 
 
-
+kill_monitor_process(){
+    if [ -f $CHAOSTMP/monitor_process ];then
+	l=`cat  $CHAOSTMP/monitor_process`
+	for i in $l;do
+	    info_mesg "killing process " "$i"
+	    kill -9 $i
+	done
+    else
+	info_mesg "no process to kill"
+    fi
+	
+}
 monitor_processes(){
     procid=$1
     cuid=$2
+    echo > $CHAOSTMP/monitor_process
+    for i in ${procid[@]};do
+	echo $i >> $CHAOSTMP/monitor_process
+    done
     while true ;do
 	cnt=0
 	for i in ${procid[@]};do
@@ -392,7 +408,7 @@ run_proc(){
 
 	    return 0
 	else
-	    nok_mesg "process $process_name quitted unexpectly "
+	    nok_mesg "process $process_name ($command_line) quitted unexpectly "
 	    exit 1
 	fi
 
@@ -792,10 +808,10 @@ launch_us_cu(){
 	FILE_NAME=`echo $REAL_ALIAS|sed 's/\//_/g'`
 	echo "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META"  > $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout
 	if run_proc "$CHAOS_PREFIX/bin/$USNAME --log-on-file $CHAOS_TEST_DEBUG --log-file $CHAOS_PREFIX/log/$USNAME-$FILE_NAME.log --unit-server-alias $REAL_ALIAS $META >> $CHAOS_PREFIX/log/$USNAME-$FILE_NAME-$us.stdout 2>&1 &" "$USNAME"; then
-	    ok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" ($proc_pid) started"
+	    ok_mesg "$USNAME \"$REAL_ALIAS\" ($proc_pid) started"
 	    us_proc+=($proc_pid)
 	else
-	    nok_mesg "UnitServer $USNAME \"$REAL_ALIAS\" started"
+	    nok_mesg "$USNAME \"$REAL_ALIAS\" started"
             return 1
 	fi
 	start_profile_time;

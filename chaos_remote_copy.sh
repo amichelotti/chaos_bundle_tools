@@ -12,7 +12,7 @@ usage(){
     
 }
 
-
+dest=""
 while getopts u:d:s:h opt;do 
     case $opt in
 	u) 
@@ -47,9 +47,22 @@ fi
 
  
 list=`cat $1`
+md5=`md5sum $source | cut -d ' ' -f 1`
+base_source=`basename $source`
+echo "* md5: $md5"
 for s in $list;do
-    scp $source $user@$s:$dest >& /dev/null &
-    echo "* copying $source in $user@$s:$dest id $! ..."
+    if [ -n "$dest" ];then
+	rmd5=`ssh $user@$s "md5sum $dest/$base_source|cut -d ' ' -f 1"`
+    else
+	rmd5=`ssh $user@$s "md5sum $base_source|cut -d ' ' -f 1"`
+
+    fi
+    if ! [ "$rmd5" == "$md5" ];then
+	scp $source $user@$s:$dest >& /dev/null &
+	echo "* copying $source in $user@$s:$dest id $! ..."
+    else
+	echo "* skipping copy an existing copy esists with the same MD5 $rmd5"
+    fi
 
 done
 error=0

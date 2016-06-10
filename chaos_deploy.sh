@@ -28,6 +28,7 @@ mkdir -p $TMPDIR
 cudir=`dirname $1`
 cuconfig=`basename $cudir`
 
+
 ## MDS ##
 if [ -z "$MDS_SERVER" ]; then
     info_mesg "MDS_SERVER " "not specified"
@@ -55,7 +56,7 @@ if [ -z "$WEBUI_SERVER" ]; then
 else
     webui="$WEBUI_SERVER"
 
-    pushd $CHAOS_PREFIX/
+    pushd $CHAOS_PREFIX > /dev/null
     cp -r $CHAOS_PREFIX/www $CHAOS_PREFIX/www-$webui
     find $CHAOS_PREFIX/www-$webui -name "*" -exec  sed -i s/__template__webuiulr__/$webui/g \{\} >& /dev/null \; 
     if [ ! -f $cudir/webui.cfg ];then
@@ -101,7 +102,7 @@ fi
 
 
 name=`basename $CHAOS_PREFIX`
-info_mesg "generating tarball $name.tgz"
+info_mesg "generating tarball " "$name.tgz"
 if tar cfz $TMPDIR/$name.tgz -C $CHAOS_PREFIX/.. $name ;then
     ok_mesg "$name created"
 else 
@@ -136,31 +137,49 @@ else
     exit 1
 fi
 
+md5=`md5sum $TMPDIR/$name.tgz | cut -d ' ' -f 1`
 
-
+start_stop_service(){
+    host=$1
+    type=$2
+    op=$3
+## new 
+    if ssh chaos@$host "test -f /etc/init/chaos-service.conf";then
+	if ssh chaos@$host "sudo service chaos-service $op NODE=$type" ;then
+	    ok_mesg "[$host] chaos-service $op $type"
+	else
+	    nok_mesg "[$host] chaos-service $op $type"
+	fi
+    else
+	if ssh chaos@$host "sudo service chaos-$type $op" ;then
+	    ok_mesg "[$host] chaos-$type $op"
+	else
+	    nok_mesg "[$host] chaos-$type $op"
+	fi  
+	
+    fi
+}
 deploy_install(){
     host=$1
     type=$2
     subtype=""
-    if [[ "$type" =~ -([a-zA-Z]+)([0-9]+) ]];then
+    if [[ "$type" =~ ([a-zA-Z]+)([0-9]+) ]];then
 	type=${BASH_REMATCH[1]}
 	subtype=${BASH_REMATCH[2]}
 	
     fi
     info_mesg "installing $type$subtype in " "$host"
     ## STOP
-    if ssh chaos@$host "sudo service chaos-service stop NODE=$type" ;then
-	ok_mesg "stopping chaos-service NODE=$type on $host "
-    else
-	nok_mesg "stopping chaos-service NODE=$type on $host "
-    fi
+    start_stop_service $host $type stop
 
-    if ssh chaos@$host "tar xfz $name.tgz;ln -sf $name $dest_prefix "; then
-	ok_mesg "extracting $name in $host"
-    else
-	nok_mesg "extracting $name in $host"
+    if ssh chaos@$host "test -f $name.tgz"; then
+	ver="installed "`date`" MD5:$md5"
+	if ssh chaos@$host "tar xfz $name.tgz;ln -sf $name $dest_prefix;rm $name.tgz;echo \"$ver\" > README.install"; then
+	    ok_mesg "extracting $name in $host"
+	else
+	    nok_mesg "extracting $name in $host"
+	fi
     fi
-
 
     if ssh chaos@$host "cd $dest_prefix;ln -sf \$PWD/tools/config/lnf/$cuconfig/$type.cfg etc/";then
 	ok_mesg "$type configuration"
@@ -170,8 +189,8 @@ deploy_install(){
     
 
     if [ "$type" == "cu" ];then
-	if ssh chaos@$host "cd $dest_prefix/;ln -sf tools/config/lnf/$cuconfig/cu$subtype.sh bin/cu";then
-	    ok_mesg "linking $dest_prefix/tools/config/lnf/$cuconfig/cu$subtype.sh in $dest_prefix/bin/cu"
+	if ssh chaos@$host "cd $dest_prefix/;ln -sf \$PWD/tools/config/lnf/$cuconfig/cu$subtype.sh bin/cu";then
+	    ok_mesg "linking $dest_prefix/tools/config/lnf/$cuconfig/cu$subtchype.sh in $dest_prefix/bin/cu"
 	else
 	    nok_mesg "linking $dest_prefix/tools/config/lnf/$cuconfig/cu$subtype.sh in $dest_prefix/bin/cu"
 	    
@@ -179,12 +198,7 @@ deploy_install(){
     fi
 
     
-
-    if ssh chaos@$host "sudo service chaos-service start NODE=$type" ;then
-	ok_mesg "starting chaos-service NODE=$type on $host "
-    else
-	nok_mesg "starting chaos-service NODE=$type on $host "
-    fi
+    start_stop_service $host $type start
 
 
 }
@@ -201,7 +215,18 @@ if [ -n "$WEBUI_SERVER" ]; then
     deploy_install "$WEBUI_SERVER" webui
 fi
 
-k=0
+if [ -f "$cudir/$MDS_CONFIG" ]; then
+    info_mesg "applying MDS CONFIGURATION " "$cudir/$MDS_CONFIG"
+    if LD_LIBRARY_PATH=$CHAOS_PREFIX/lib $CHAOS_PREFIX/bin/ChaosMDSCmd --mds-conf $cudir/$MDS_CONFIG --metadata-server $MDS_SERVER:5000 -r 1 >  /dev/null;then
+	ok_mesg "configuration applied"
+    else
+	nok_mesg "configuration applied"
+    fi
+    
+fi
+
+
+k=1
 
 for i in $CU_SERVERS;do
     deploy_install "$i" cu$k

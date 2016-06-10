@@ -21,9 +21,7 @@ fi
 
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "using prefix " "$CHAOS_PREFIX"
-check_proc_then_kill daqLiberaServer
-check_proc_then_kill UnitServer    
-check_proc_then_kill BPMSync
+kill_monitor_process
 
 procid=()
 cuid=()
@@ -60,7 +58,25 @@ else
     exit 1
 fi
 
+
 ## DAQ
+if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
+    ok_mesg "US DAFNE_IMPORT $!"
+    procid+=($!)
+    cuid+=("DAFNE_IMPORT")
+else
+    nok_mesg "US DAFNE_IMPORT"
+    exit 1
+fi
+
+if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
+    ok_mesg "US BPMsync $!"
+    procid+=($!)
+    cuid+=("ACCUMULATOR/BPM")
+else
+    nok_mesg "US BPMSync"
+    exit 1
+fi
 
 
 info_mesg "monitoring cus"
