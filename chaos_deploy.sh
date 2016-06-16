@@ -55,16 +55,16 @@ if [ -z "$WEBUI_SERVER" ]; then
     info_mesg "WEBUI_SERVER " "not specified"
 else
     webui="$WEBUI_SERVER"
-
-    pushd $CHAOS_PREFIX > /dev/null
-    cp -r $CHAOS_PREFIX/www $CHAOS_PREFIX/www-$webui
-    find $CHAOS_PREFIX/www-$webui -name "*" -exec  sed -i s/__template__webuiulr__/$webui/g \{\} >& /dev/null \; 
-    if [ ! -f $cudir/webui.cfg ];then
+    if [ ! -f "$cudir/webui.cfg" ];then
 	error_mesg "missing configuration " "$cudir/webui.cfg"
 	exit 1
     else
 	info_mesg "using configuration " "$cudir/webui.cfg"
     fi
+
+    pushd $CHAOS_PREFIX > /dev/null
+    cp -r $CHAOS_PREFIX/www $CHAOS_PREFIX/www-$webui
+    find $CHAOS_PREFIX/www-$webui -name "*" -exec  sed -i s/__template__webuiulr__/$webui/g \{\} >& /dev/null \; 
 
     popd > /dev/null
     if [ "$MDS_SERVER" != "$WEBUI_SERVER" ]; then
