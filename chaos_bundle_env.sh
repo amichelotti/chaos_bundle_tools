@@ -27,7 +27,7 @@ fi;
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
 
 if [ $(uname -s) == "Linux" ]; then
-    export CHAOS_BOOST_VERSION=56
+    export CHAOS_BOOST_VERSION=55
 else
     export CHAOS_BOOST_VERSION=56
 fi;
@@ -130,7 +130,7 @@ else
 		export CHAOS_CROSS_HOST="arm-nilrt-linux-gnueabi"
 		export CHAOS_CMAKE_FLAGS="$CHAOS_CMAKE_FLAGS -DCMAKE_EXE_LINKER_FLAGS=-L/usr/local/oecore-x86_64/sysroots/armv7a-vfp-neon-nilrt-linux-gnueabi/lib"
 	    else
-		export CHAOS_TARGET=$OS
+		export CHAOS_TARGET=$OS-$ARCH
 	    fi
 	fi
     fi;

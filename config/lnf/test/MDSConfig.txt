@@ -1908,8 +1908,7 @@
 		    "AttrDesc": []
 		}
 	    ]
-	},{
-	    "unit_server_alias": "TEST_UNIT",
+	},{ "unit_server_alias": "TEST_UNIT",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
@@ -1962,7 +1961,7 @@
 		    ],
 		    "AttrDesc": []
 		},
-{		
+		{		
 		    "unit_server_alias": "TEST_UNIT",
 		    "cu_id": "TEST_UNIT/TEST_TECHNOSOFT",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
@@ -1972,11 +1971,28 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyr1c,myslit,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip,14"
+			    "DriverDescriptionInitParam": "/dev/ttyr1c,myslit,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip,14,14"
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{		
+		    "unit_server_alias": "TEST_UNIT",
+		    "cu_id": "TEST_UNIT/TEST_TECHNOSOFT2",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "TechnosoftMotor",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "/dev/ttyr1c,myslit,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip,15,14"
 			}
 		    ],
 		    "AttrDesc": []
 		}
+	    ]
+	}
 	    ]
 	}, { "unit_server_alias": "LUMINOMETER",
 	    "private_key": null,

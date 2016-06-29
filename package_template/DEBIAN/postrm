@@ -1,8 +1,5 @@
-echo "* uninstalling !CHAOS and service from $INSTDIR"
+echo "* uninstalling $PACKAGE_NAME and service from $INSTDIR"
+rm -rf $INSTDIR_ALIAS >/dev/null
 rm -rf $INSTDIR > /dev/null
-rm -f /etc/init/chaos-us.conf > /dev/null
-rm -f /etc/init/chaos-cuiserver.conf > /dev/null
-rm -f /etc/init/chaos-wanproxy.conf > /dev/null
-update-rc.d -f chaos.sh remove > /dev/null
-rm -rf /usr/bin/UnitServer > /dev/null 
-rm -f /etc/ld.so.conf.d/chaos.conf
+rm -f /etc/init/chaos-service.conf
+#db_purge

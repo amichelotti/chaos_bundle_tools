@@ -1,0 +1,46 @@
+#!/bin/bash
+
+. /usr/share/debconf/confmodule
+db_get  $PACKAGE_NAME/ask_mds
+MDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_cds
+CDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_webui
+WEBUI_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_us
+US_ENABLE=$RET
+
+if [ -e /etc/init/chaos-cu.conf ]; then 
+    if [ "$US_ENABLE" == "true" ];then 
+	echo "* stopping cu"
+	service chaos-service stop NODE=cu
+    fi
+fi
+
+if [ -e /etc/init/chaos-cds.conf ];then 
+    if [ "$CDS_ENABLE" == "true" ]; then
+	echo "* stopping cds"
+	service chaos-service stop NODE=cds
+
+    fi
+fi
+
+if [ -e /etc/init/chaos-webui.conf ]; then
+    if [ "$WEBUI_ENABLE" == "true" ]; then
+	echo "* stopping webui"
+	service chaos-service stop NODE=webui
+	
+    fi
+fi
+
+if [ -e /etc/init/chaos-mds.conf ];then 
+    if [ "$MDS_ENABLE" == "true" ]; then
+	echo "* stopping mds"
+	service chaos-service stop NODE=mds
+
+    fi
+fi
+
+
+
+

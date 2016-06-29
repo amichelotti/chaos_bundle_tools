@@ -1,40 +1,156 @@
-echo "* installing !CHAOS and services in $INSTDIR"
-chaoslist=`ls /etc/init/__chaos*`
-if cat /sys/class/net/eth0/address > /dev/null;then
-	USNAME=`cat /sys/class/net/eth0/address`
-else
-	USNAME=`hostname`
+. /usr/share/debconf/confmodule
+
+echo "* installing $PACKAGE_NAME and services in $INSTDIR"
+db_get  $PACKAGE_NAME/ask_mds
+MDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_cds
+CDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_webui
+WEBUI_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_us
+US_ENABLE=$RET
+mkdir -p $INSTDIR/etc/
+mkdir -p $INSTDIR/log
+cu_cfg=$INSTDIR/etc/cu.cfg
+mds_cfg=$INSTDIR/etc/mds.cfg
+cds_cfg=$INSTDIR/etc/cds.cfg
+webui_cfg=$INSTDIR/etc/webui.cfg
+
+    db_get  $PACKAGE_NAME/ask_mongo
+    MONGO_SERVERS="$RET"
+
+    db_get  $PACKAGE_NAME/ask_dbuser
+    DBUSER="$RET"
+
+    db_get  $PACKAGE_NAME/ask_dbpass
+    DBPASS="$RET"
+
+    db_get  $PACKAGE_NAME/ask_couchbase
+    COUCHBASE_SERVERS="$RET"
+    db_get  $PACKAGE_NAME/ask_mdsurl
+    MDS_SERVER="$RET"
+
+    db_get  $PACKAGE_NAME/ask_mdstest
+    MDS_TEST="$RET"
+
+    db_get  $PACKAGE_NAME/ask_usalias
+    US_ALIAS="$RET"
+
+if [ -n "$MONGO_SERVERS" ];then
+    dblist=`echo $MONGO_SERVERS | tr ',' '\n'`
 fi
-FORSED=$(echo $INSTDIR|sed 's/\//\\\//g')
-echo "* default USNAME $USNAME, $FORSED"
 
-for i in $chaoslist;do
-    name=`echo $i|sed s/__chaos/chaos/`
-    if cat $i | sed s/__prefix_dir__/$FORSED/g | sed s/__server_alias__/$USNAME/g > $name;then
-	echo "* generating configuration script $name"
-    else
-	echo "# generation failed of configuration script $name"
+if [ -n "$COUCHBASE_SERVERS" ];then
+    cachelist=`echo $COUCHBASE_SERVERS | tr ',' '\n'`
+fi
+
+if [ "$MDS_ENABLE" == "true" ]; then
+  mv /etc/default/__mds.cfg $mds_cfg
+  mv /etc/init/__chaos-mds.conf /etc/init/chaos-mds.conf
+fi
+if [ "$CDS_ENABLE" == "true" ]; then
+    mv /etc/default/__cds.cfg $cds_cfg
+    mv /etc/init/__chaos-cds.conf /etc/init/chaos-cds.conf
+fi
+if [ "$WEBUI_ENABLE" == "true" ]; then
+    mv /etc/default/__webui.cfg $webui_cfg
+    mv /etc/init/__chaos-webui.conf /etc/init/chaos-webui.conf
+    cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.saved
+    echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
+    echo "        ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-default.conf
+    echo "        DocumentRoot $INSTDIR/html" >> /etc/apache2/sites-available/000-default.conf
+    echo "        ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-default.conf
+    echo "        CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-default.conf
+    echo " <Directory \"$INSTDIR/html\">" >> /etc/apache2/sites-available/000-default.conf
+    echo "    Require all granted " >> /etc/apache2/sites-available/000-default.conf
+    echo " </Directory>" >> /etc/apache2/sites-available/000-default.conf
+
+    echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
+    sudo chmod -R 755 $INSTDIR/html
+
+fi
+
+if [ "$US_ENABLE" == "true" ];then 
+    mv /etc/default/__cu.cfg $cu_cfg
+    mv /etc/init/__chaos-cu.conf /etc/init/chaos-cu.conf
+fi
+
+chown -R chaos.chaos $INSTDIR/
+
+if [ "$MDS_ENABLE" == "true" ]; then
+    
+    for i in $dblist;do
+	echo "persistence-servers=$i" >> $mds_cfg
+    done
+    echo "persistence-kv-param=user:$DBUSER" >> $mds_cfg
+    echo "persistence-kv-param=pwd:$DBPASS" >> $mds_cfg
+
+    echo "persistence-kv-param=db:chaos" >> $mds_cfg
+    echo "log-file=$INSTDIR/log/mds.log" >> $mds_cfg
+    service chaos-service start NODE=mds
+    if [ "$MDS_TEST" == "true" ]; then
+	sleep 1
+
+	export LD_LIBRARY_PATH=$INSTDIR/lib
+	if [ -n "$US_ALIAS" ]; then
+	    cmd="sed -i 's/\"unit_server_alias\": \"TEST\"/\"unit_server_alias\": \"$US_ALIAS\"/' $INSTDIR/tools/config/lnf/development/config1US.txt"
+	    eval $cmd
+	    echo "* initializing a TEST configuration with 1 unit server with name $US_ALIAS"
+	fi
+
+	if ! $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/development/config1US.txt > /dev/null;then
+	    echo "* initialization of MDS failed"
+	fi
+	  db_unregister $PACKAGE_NAME/ask_mdstest
     fi
-    rm -f $i > /dev/null
-done
+    
+fi
 
-chaoslist=`ls /etc/default/__*.cfg`
-mkdir $INSTDIR/etc/
-mkdir $INSTDIR/log
+if [ "$CDS_ENABLE" == "true" ]; then
+  
 
-for i in $chaoslist;do
-    name=`echo $i|sed s/__//`
-    bname=`basename $name`
-    if cat $i | sed s/__prefix_dir__/$FORSED/g | sed s/__server_alias__/$USNAME/g > $INSTDIR/etc/$bname;then
-	echo "* generating configuration file $INSTDIR/etc/$bname"
+    echo "metadata-server=$MDS_SERVER" >> $cds_cfg
+
+    for i in $dblist;do
+	echo "db-servers=$i" >> $cds_cfg
+    done
+
+    echo "db-driver-kvp=user:$DBUSER" >> $cds_cfg
+    echo "db-driver-kvp=pwd:$DBPASS" >> $cds_cfg
+
+    echo "db-driver-kvp=db:chaos" >> $cds_cfg
+
+    for i in $cachelist;do
+	echo "cache-servers=$i" >> $cds_cfg
+    done
+    echo "log-file=$INSTDIR/log/cds.log" >> $cds_cfg
+    service chaos-service start NODE=cds
+fi
+
+if [ "$WEBUI_ENABLE" == "true" ]; then
+    echo "metadata-server=$MDS_SERVER" >> $webui_cfg 
+    echo "log-file=$INSTDIR/log/webui.log" >> $webui_cfg
+    service chaos-service start NODE=webui
+    service apache2 restart
+fi
+
+if [ "$US_ENABLE" == "true" ];then 
+
+    echo "metadata-server=$MDS_SERVER" >> $cu_cfg
+
+    if [ -n "$US_ALIAS" ];then
+	echo "unit-server-alias=$US_ALIAS" >> $cu_cfg
+	name=`echo $US_ALIAS|sed 's/\//_/g'`
+	echo "log-file=$INSTDIR/log/$name.log" >> $cu_cfg
     else
-	echo "# generation failed of $INSTDIR/etc/$bname"
+	echo "log-file=$INSTDIR/log/cu.log" >> $cu_cfg
     fi
-    rm -f $i > /dev/null
-done
+    service chaos-service start NODE=cu
+fi
 
-echo "* done"
-update-rc.d chaos.sh start 90 5 . stop 90 0 1 6 .
 
-ln -sf /usr/local/chaos-dyn-client-amd64-0.1/bin/UnitServer /usr/bin
-ldconfig
+
+rm -f /etc/default/__*.cfg
+rm -f /etc/default/__chaos-*.conf
+db_stop
+

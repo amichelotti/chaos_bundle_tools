@@ -1,0 +1,48 @@
+
+# Source debconf library.
+if ! getent passwd chaos > /dev/null;then
+    echo "* creating user chaos"
+    adduser --system chaos
+fi
+if ! getent group chaos > /dev/null;then
+    echo "* creating group chaos"
+    addgroup --system chaos
+fi
+db_get  $PACKAGE_NAME/ask_mds
+MDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_cds
+CDS_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_webui
+WEBUI_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_us
+US_ENABLE=$RET
+if [ "$MDS_ENABLE" == "true" ] || [ "$CDS_ENABLE" == "true" ];then
+    
+    db_input high $PACKAGE_NAME/ask_mongo || true
+    db_input high $PACKAGE_NAME/ask_dbuser || true
+    db_input high $PACKAGE_NAME/ask_dbpass || true
+    db_input high $PACKAGE_NAME/ask_couchbase || true
+    db_go || true
+fi
+
+if [ "$MDS_ENABLE" == "true" ] || [ "$CDS_ENABLE" == "true" ] || [ "$US_ENABLE" == "true" ] || [ "$WEBUI_ENABLE" == "true" ];then
+    db_input high $PACKAGE_NAME/ask_mdsurl || true
+    db_go || true
+  
+fi
+
+if [ "$MDS_ENABLE" == "true" ];then
+    db_get  $PACKAGE_NAME/ask_mdsurl
+    MDS_SERVER="$RET"
+    if echo $MDS_SERVER | grep localhost;then
+        db_input high $PACKAGE_NAME/ask_mdstest || true
+    	db_go || true
+    fi   
+fi
+
+if [ "$US_ENABLE" == "true" ];then 
+    db_input high $PACKAGE_NAME/ask_usalias || true
+    db_go || true
+fi
+ 
+

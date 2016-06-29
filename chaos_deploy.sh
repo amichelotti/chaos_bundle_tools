@@ -182,9 +182,9 @@ deploy_install(){
     fi
 
     if ssh chaos@$host "cd $dest_prefix;ln -sf \$PWD/tools/config/lnf/$cuconfig/$type.cfg etc/";then
-	ok_mesg "$type configuration"
+	ok_mesg "$type configuration $dest_prefix/tools/config/lnf/$cuconfig/$type.cfg"
     else
-	ok_mesg "$type configuration"
+	ok_mesg "$type configuration $dest_prefix/tools/config/lnf/$cuconfig/$type.cfg"
     fi    
     
 

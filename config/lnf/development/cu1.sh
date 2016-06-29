@@ -1,5 +1,5 @@
 #!/bin/bash
-ulimit -u unlimited
+
 separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`

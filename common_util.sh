@@ -61,7 +61,8 @@ monitor_processes(){
 	cnt=0
 	for i in ${procid[@]};do
 	    info_mesg "monitoring " "${cuid[$cnt]}"
-	    if ! check_proc $i; then
+	    
+	    if ! ps -fe |grep $i > /dev/null; then
 		nok_mesg "process $i [ ${cuid[$cnt]} ]"
 		info_mesg "exiting..."
 		return 1
@@ -201,7 +202,7 @@ function saveEnv(){
     if [ -n "$CHAOS_STATIC" ];then
 	echo "export CHAOS_STATIC=true" >> $PREFIX/chaos_env.sh
     else
-	if [ "$CHAOS_TARGET" == "Linux" ];then
+	if [[ "$CHAOS_TARGET" =~ Linux ]];then
 	    echo "export LD_LIBRARY_PATH=\$CHAOS_PREFIX/lib" >> $PREFIX/chaos_env.sh
 	else
 	    echo "export LD_LIBRARY_PATH=\$CHAOS_PREFIX/lib" >> $PREFIX/chaos_env.sh
@@ -391,18 +392,21 @@ run_proc(){
 	    run_prefix="$run_prefix $CHAOS_RUNOUTPREFIX$CHAOS_PREFIX/log/data_$process_name.log"
 	fi
 	eval "$run_prefix $command_line"
+	
     fi
-
+   
     if [ $? -eq 0 ]; then
+	pid=$!
 	sleep 1
 	local pidl=()
-	pid=`get_pid $process_name`
+#	pid=`get_pid $process_name`
 	if [ $? -eq 0 ] && [ -n "$pid" ]; then
 	    pidl=($pid)
 	fi
 
-	if [ ${#pidl[@]} -gt ${#oldpidl[@]} ];then
-	    local p=${pidl[$((${#pidl[@]} -1))]}
+	if [ -n $pid ];then
+#	    local p=${pidl[$((${#pidl[@]} -1))]}
+	    p=$pid
 	    ok_mesg "process \x1B[32m\x1B[1m$process_name\x1B[21m\x1B[39m with pid \"$p\", started"
 	    proc_pid=$p
 
