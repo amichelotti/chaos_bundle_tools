@@ -26,7 +26,7 @@ Usage(){
     echo -e "Usage is $0 -i <source dir> [-p <package name > ] [-v <version> ] [-c] [-s] [-d] [-a]\n-i <source dir>: a valid source chaos distribution [$SOURCE_DIR]\n-p <package name>: is the package name prefix [$PACKAGE_NAME]\n-v <version>:a version of the package distribution [$VERSION]\n-c: client distribution (i.e US) [$CLIENT]\n-s: server distribution (CDS,MDS..)\n-a: development with all (client, server and includes)\n-r:copy to remote apt server"
     exit 1
 }
-DEPENDS="bash (>= 3), bc"
+DEPENDS="bash (>= 3), bc, upstart-sysv"
 while getopts p:i:v:dt:sac,r opt; do
     case $opt in
 	p) PACKAGE_NAME=$OPTARG

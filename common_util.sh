@@ -896,12 +896,3 @@ end_test(){
     exit $status
 }
 
-chaos_exclude(){
-    name=$1
-    for i in $CHAOS_EXCLUDE_DIR;do
-	if [ "$name" == "$i" ]; then
-	    return 0;
-	fi
-    done
-    return 1
-}
