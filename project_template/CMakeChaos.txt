@@ -4,7 +4,62 @@ cmake_policy(SET CMP0011 NEW)
 
 option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
 option(BUILD_FORCE_STATIC "Set static compilation" OFF)
+MESSAGE(STATUS "Chaos Generic settings project dir ${CMAKE_CURRENT_SOURCE_DIR}")
+IF( DEFINED ENV{CHAOS_CROSS_HOST})
+  SET( CROSS_HOST "--host=$ENV{CHAOS_CROSS_HOST}")
+ELSE()
+  SET( CROSS_HOST "")
+ENDIF()
+MESSAGE(STATUS "cross parameters ${CROSS_HOST} CMAKE: ${CMAKE_CHAOS}")
+IF(NOT DEFINED PROCESSOR_COUNT)
+  SET(PROCESSOR_COUNT 4)
+ENDIF()
+macro (GitClone arg)
+  message(STATUS "[${arg}] Cloning into ${CMAKE_CURRENT_SOURCE_DIR}/external")
+  file(REMOVE_RECURSE  ${CMAKE_CURRENT_SOURCE_DIR}/external)
+  file(MAKE_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external)
+  execute_process( 
+    COMMAND git clone https://github.com/amichelotti/${arg}.git 
+    WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE mod
+    )
+  if( err)
+    message(FATAL_ERROR "[${arg}] cloning  error: ${err}")
+  endif()
+endmacro()
 
+macro (ConfigureAndBuild arg arg1)
+#  SET(CONFPARM ./configure ${CROSS_HOST} ${arg1} --prefix=${CMAKE_INSTALL_PREFIX})
+  SET(CONFPARM ./configure --prefix=${CMAKE_INSTALL_PREFIX} ${arg1} ${CROSS_HOST})
+  separate_arguments(CONFPARM)
+  message(STATUS "[${arg}] configuring with \"${CONFPARM}\"")
+
+  execute_process( 
+    COMMAND ${CONFPARM}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE out
+    )
+
+  if( err)
+    message(FATAL_ERROR "[${arg}] configuring ${arg} :${err}")
+  endif()
+
+  message(STATUS "[${arg}] compiling (${PROCESSOR_COUNT})")
+  execute_process( 
+    COMMAND make install -j ${PROCESSOR_COUNT}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err2
+    OUTPUT_VARIABLE out2
+    )
+
+  if( err2)
+    message(FATAL_ERROR "[${arg}] compiling ${out2}: ${err2}")
+  endif()
+
+
+endmacro()
 
 IF( ( DEFINED ENV{CHAOS32}) OR BUILD_FORCE_32 )
     MESSAGE(STATUS "Enabling 32 bit Compilation")
@@ -14,7 +69,7 @@ IF( ( DEFINED ENV{CHAOS32}) OR BUILD_FORCE_32 )
     set (CMAKE_LINK_FLAGS "-m32")
 ENDIF()
 if( DEFINED ENV{CHAOS_BUNDLE} )
-    MESSAGE(STATUS "Using $ENV{CHAOS_BUNDLE}")
+    MESSAGE(STATUS "Using Chaos Bundle Dir $ENV{CHAOS_BUNDLE}")
     set (PROJECT_SOURCE_DIR $ENV{CHAOS_BUNDLE})
 ELSE()
     MESSAGE(FATAL_ERROR "Please set CHAOS_BUNDLE environment")
@@ -29,6 +84,7 @@ ENDIF()
  	MESSAGE(STATUS "Setting CC compiler ${CHAOS_CC_COMPILER}")
  	SET(CMAKE_CXX_COMPILER ${CHAOS_CC_COMPILER})
  ENDIF()
+SET( CMAKE_CHAOS  $ENV{CHAOS_CMAKE_FLAGS})
 
 ADD_DEFINITIONS(-g -O2)
 if( DEBUG OR DEFINED ENV{CHAOS_DEVELOPMENT} )
