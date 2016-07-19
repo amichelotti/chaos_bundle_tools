@@ -14,6 +14,7 @@ MESSAGE(STATUS "cross parameters ${CROSS_HOST} CMAKE: ${CMAKE_CHAOS}")
 IF(NOT DEFINED PROCESSOR_COUNT)
   SET(PROCESSOR_COUNT 4)
 ENDIF()
+
 macro (GitClone arg)
   message(STATUS "[${arg}] Cloning into ${CMAKE_CURRENT_SOURCE_DIR}/external")
   file(REMOVE_RECURSE  ${CMAKE_CURRENT_SOURCE_DIR}/external)
@@ -29,7 +30,33 @@ macro (GitClone arg)
   endif()
 endmacro()
 
+macro (GitCheckout arg arg1)
+  message(STATUS "[${arg}] Checkout branch ${arg1}")
+  
+  execute_process( 
+    COMMAND git checkout ${arg1}
+    WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE out)
+  if( err)
+    message(FATAL_ERROR "[${arg}] checkout  error: ${err}")
+  endif()
+endmacro()
+
 macro (ConfigureAndBuild arg arg1)
+   IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/autogen.sh")
+     message(STATUS "[${arg}] generation of configuration")
+     execute_process( 
+       COMMAND ./autogen.sh
+       WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+       RESULT_VARIABLE err
+       OUTPUT_VARIABLE mod
+       )
+   
+     if( err)
+       message(FATAL_ERROR "[${arg}] performing generation of configuration: ${err}")
+     endif()
+   ENDIF()
 #  SET(CONFPARM ./configure ${CROSS_HOST} ${arg1} --prefix=${CMAKE_INSTALL_PREFIX})
   SET(CONFPARM ./configure --prefix=${CMAKE_INSTALL_PREFIX} ${arg1} ${CROSS_HOST})
   separate_arguments(CONFPARM)
@@ -71,6 +98,7 @@ ENDIF()
 if( DEFINED ENV{CHAOS_BUNDLE} )
     MESSAGE(STATUS "Using Chaos Bundle Dir $ENV{CHAOS_BUNDLE}")
     set (PROJECT_SOURCE_DIR $ENV{CHAOS_BUNDLE})
+    INCLUDE_DIRECTORIES($ENV{CHAOS_BUNDLE}/chaosframework)
 ELSE()
     MESSAGE(FATAL_ERROR "Please set CHAOS_BUNDLE environment")
 ENDIF()
