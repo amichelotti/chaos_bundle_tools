@@ -233,14 +233,17 @@ function chaos_configure(){
     mkdir -p $PREFIX/log
     mkdir -p $PREFIX/chaosframework
     mkdir -p $PREFIX/doc
-    mkdir -p $PREFIX/www/html
 
+    mkdir -p $PREFIX/www/html
+    
     path=`echo $PREFIX/vfs|sed 's/\//\\\\\//g'`
     logpath=`echo $PREFIX/log/cds.log|sed 's/\//\\\\\//g'`
     echo -e "metadata-server=localhost:5000\nlog-level=debug\nevent-disable=1\n" > $PREFIX/etc/cu-localhost.cfg
     echo -e "metadata-server=localhost:5000\nlog-level=debug\nserver_port=8081\nevent-disable=1\n" > $PREFIX/etc/cuiserver-localhost.cfg
+
     cp -r $CHAOS_BUNDLE/chaosframework/Documentation/html $PREFIX/doc/ >& /dev/null
     cp -r $CHAOS_BUNDLE/service/webgui/w3chaos/public_html/* $PREFIX/www/html
+    
     cat $CHAOS_BUNDLE/chaosframework/ChaosDataService/__template__cds.conf | sed s/_CACHESERVER_/localhost/|sed s/_DOMAIN_/$tgt/|sed s/_VFSPATH_/$path/g |sed s/_CDSLOG_/$logpath/g > $PREFIX/etc/cds-localhost.cfg
     pushd $PREFIX/etc > /dev/null
     ln -sf cds-localhost.cfg cds.cfg
@@ -269,6 +272,7 @@ function chaos_configure(){
 	cat $CHAOS_BUNDLE/chaosframework/ChaosMetadataService/__template_mds.cfg | sed s/_MDSSERVER_/localhost/|sed s/_MDSLOG_/mds.log/g > $PREFIX/etc/mds.cfg
 
     fi
+    find $PREFIX -name ".git" -exec rm -rf \{\} \; >& /dev/null
 }
 
 get_pid(){

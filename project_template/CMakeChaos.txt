@@ -4,6 +4,8 @@ cmake_policy(SET CMP0011 NEW)
 
 option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
 option(BUILD_FORCE_STATIC "Set static compilation" OFF)
+
+SET(GITSOURCE https://github.com/amichelotti)
 MESSAGE(STATUS "Chaos Generic settings project dir ${CMAKE_CURRENT_SOURCE_DIR}")
 IF( DEFINED ENV{CHAOS_CROSS_HOST})
   SET( CROSS_HOST "--host=$ENV{CHAOS_CROSS_HOST}")
@@ -20,7 +22,7 @@ macro (GitClone arg)
   file(REMOVE_RECURSE  ${CMAKE_CURRENT_SOURCE_DIR}/external)
   file(MAKE_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external)
   execute_process( 
-    COMMAND git clone https://github.com/amichelotti/${arg}.git 
+    COMMAND git clone ${GITSOURCE}/${arg}.git 
     WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external
     RESULT_VARIABLE err
     OUTPUT_VARIABLE mod
@@ -99,8 +101,6 @@ if( DEFINED ENV{CHAOS_BUNDLE} )
     MESSAGE(STATUS "Using Chaos Bundle Dir $ENV{CHAOS_BUNDLE}")
     set (PROJECT_SOURCE_DIR $ENV{CHAOS_BUNDLE})
     INCLUDE_DIRECTORIES($ENV{CHAOS_BUNDLE}/chaosframework)
-ELSE()
-    MESSAGE(FATAL_ERROR "Please set CHAOS_BUNDLE environment")
 ENDIF()
 
  IF(CHAOS_C_COMPILER)
@@ -109,12 +109,13 @@ ENDIF()
  ENDIF()
 
  IF(CHAOS_CC_COMPILER)
- 	MESSAGE(STATUS "Setting CC compiler ${CHAOS_CC_COMPILER}")
- 	SET(CMAKE_CXX_COMPILER ${CHAOS_CC_COMPILER})
+   MESSAGE(STATUS "Setting CC compiler ${CHAOS_CC_COMPILER}")
+   SET(CMAKE_CXX_COMPILER ${CHAOS_CC_COMPILER})
  ENDIF()
-SET( CMAKE_CHAOS  $ENV{CHAOS_CMAKE_FLAGS})
 
-ADD_DEFINITIONS(-g -O2)
+ SET( CMAKE_CHAOS  $ENV{CHAOS_CMAKE_FLAGS})
+
+ ADD_DEFINITIONS(-g -O2)
 if( DEBUG OR DEFINED ENV{CHAOS_DEVELOPMENT} )
     MESSAGE(STATUS "Enabling DEBUG MACRO")
     ADD_DEFINITIONS(-DDEBUG)
