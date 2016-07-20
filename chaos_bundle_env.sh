@@ -19,9 +19,9 @@ export PATH=$CHAOS_BUNDLE/tools:$CHAOS_BUNDLE/usr/local/bin:$PATH
 
 #set default compile lib
 if [ $(uname -s) == "Darwin" ]; then
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem zmq mongoose jsoncpp pthread dl"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system boost_thread boost_chrono boost_regex boost_log_setup boost_log boost_filesystem zmq.a mongoose jsoncpp pthread dl"
 else
-    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic zmq mongoose jsoncpp pthread rt dl"
+    export CHAOS_LINK_LIBRARY="boost_program_options boost_date_time boost_system  boost_chrono boost_regex boost_log_setup boost_log boost_filesystem boost_thread boost_atomic zmq.a mongoose jsoncpp pthread rt dl"
 fi;
 
 export WEB_UI_SERVICE=$CHAOS_BUNDLE/service/webgui/CUiserver
