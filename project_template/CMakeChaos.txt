@@ -46,24 +46,29 @@ macro (GitCheckout arg arg1)
 endmacro()
 
 macro (ConfigureAndBuild arg arg1)
-   IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/autogen.sh")
-     message(STATUS "[${arg}] generation of configuration")
-     execute_process( 
-       COMMAND ./autogen.sh
-       WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
-       RESULT_VARIABLE err
-       OUTPUT_VARIABLE mod
-       )
-   
-     if( err)
-       message(FATAL_ERROR "[${arg}] performing generation of configuration: ${err}")
-     endif()
-   ENDIF()
-#  SET(CONFPARM ./configure ${CROSS_HOST} ${arg1} --prefix=${CMAKE_INSTALL_PREFIX})
-  SET(CONFPARM ./configure --prefix=${CMAKE_INSTALL_PREFIX} ${arg1} ${CROSS_HOST})
-  separate_arguments(CONFPARM)
-  message(STATUS "[${arg}] configuring with \"${CONFPARM}\"")
+  IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/CMakeLists.txt")
+    SET(CONFPARM cmake ${arg1} ${CMAKE_CHAOS} .)
+  ELSE()
+    IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/autogen.sh")
+      message(STATUS "[${arg}] generation of configuration")
+      execute_process( 
+	COMMAND ./autogen.sh
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+	RESULT_VARIABLE err
+	OUTPUT_VARIABLE mod
+	)
+      
+      IF( err)
+	message(FATAL_ERROR "[${arg}] performing generation of configuration: ${err}")
+      ENDIF()
+    ENDIF()
+    SET(CONFPARM ./configure --prefix=${CMAKE_INSTALL_PREFIX} ${arg1} ${CROSS_HOST})
+  ENDIF()
+   #  SET(CONFPARM ./configure ${CROSS_HOST} ${arg1} --prefix=${CMAKE_INSTALL_PREFIX})
 
+   separate_arguments(CONFPARM)
+   message(STATUS "[${arg}] configuring with \"${CONFPARM}\"")
+   
   execute_process( 
     COMMAND ${CONFPARM}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
@@ -123,6 +128,7 @@ ENDIF()
 
 set(FrameworkLib $ENV{CHAOS_LINK_LIBRARY})
 separate_arguments(FrameworkLib)
+SET(CMAKE_EXE_LINKER_FLAGS "-static-libstdc++")
 
 IF( (DEFINED ENV{CHAOS_STATIC}) OR BUILD_FORCE_STATIC )
 	MESSAGE(STATUS "Enabling Static compilation")

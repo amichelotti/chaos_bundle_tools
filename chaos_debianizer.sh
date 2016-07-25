@@ -26,7 +26,7 @@ Usage(){
     echo -e "Usage is $0 -i <source dir> [-p <package name > ] [-v <version> ] [-c] [-s] [-d] [-a]\n-i <source dir>: a valid source chaos distribution [$SOURCE_DIR]\n-p <package name>: is the package name prefix [$PACKAGE_NAME]\n-v <version>:a version of the package distribution [$VERSION]\n-c: client distribution (i.e US) [$CLIENT]\n-s: server distribution (CDS,MDS..)\n-a: development with all (client, server and includes)\n-r:copy to remote apt server"
     exit 1
 }
-DEPENDS="bash (>= 3), bc, upstart-sysv"
+DEPENDS="bash (>= 3), bc"
 while getopts p:i:v:dt:sac,r opt; do
     case $opt in
 	p) PACKAGE_NAME=$OPTARG
@@ -162,9 +162,11 @@ if [ -n "$DYNAMIC" ]; then
 fi
 
 PACKAGE_NAME=$PACKAGE_NAME-$EXT
+TS=`date +%s`
 echo "Package: $PACKAGE_NAME" > $DEBIAN_DIR/control
 echo "Filename: $NAME.deb" >> $DEBIAN_DIR/control
-echo "Version: $VERSION" >> $DEBIAN_DIR/control
+echo "Version: $TS:$VERSION" >> $DEBIAN_DIR/control
+echo "Date: " `date -R ` >> $DEBIAN_DIR/control
 echo "Section: base" >> $DEBIAN_DIR/control
 echo "Priority: optional" >> $DEBIAN_DIR/control
 echo "Architecture: $ARCH" >> $DEBIAN_DIR/control
