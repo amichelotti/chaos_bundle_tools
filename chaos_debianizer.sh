@@ -166,7 +166,7 @@ TS=`date +%s`
 echo "Package: $PACKAGE_NAME" > $DEBIAN_DIR/control
 echo "Filename: $NAME.deb" >> $DEBIAN_DIR/control
 echo "Version: $TS:$VERSION" >> $DEBIAN_DIR/control
-echo "Date: " `date -R ` >> $DEBIAN_DIR/control
+# echo "Date: " `date -R ` >> $DEBIAN_DIR/control
 echo "Section: base" >> $DEBIAN_DIR/control
 echo "Priority: optional" >> $DEBIAN_DIR/control
 echo "Architecture: $ARCH" >> $DEBIAN_DIR/control
@@ -218,11 +218,13 @@ cp "$SOURCE_DIR/tools/package_template/DEBIAN/preinst" DEBIAN/
 cat "$SOURCE_DIR/tools/package_template/DEBIAN/prerm" >> DEBIAN/prerm
 cat "$SOURCE_DIR/tools/package_template/DEBIAN/postrm" >> DEBIAN/postrm
 cat "$SOURCE_DIR/tools/package_template/DEBIAN/postinst" >> DEBIAN/postinst
-echo "ln -sf $PACKAGE_INSTALL_DIR/bin/ccs /usr/bin" >> DEBIAN/postinst
+echo "ln -sf $PACKAGE_INSTALL_DIR/bin/ccs.sh /usr/bin/ccs" >> DEBIAN/postinst
+echo "rm -f /usr/bin/ccs" >> DEBIAN/postrm
+
 cmd="sed -i 's/chaos\//$PACKAGE_NAME\//g' DEBIAN/templates"
 
 eval $cmd 
-echo "rm -f /usr/bin/ccs" >> DEBIAN/postrm
+
 
 # listabin=`ls $PACKAGE_DEST/bin`
 #for i in $listabin;do

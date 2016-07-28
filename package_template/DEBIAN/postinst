@@ -55,17 +55,23 @@ fi
 if [ "$WEBUI_ENABLE" == "true" ]; then
     mv /etc/default/__webui.cfg $webui_cfg
     mv /etc/init/__chaos-webui.conf /etc/init/chaos-webui.conf
-    cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.saved
-    echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
-    echo "        ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-default.conf
-    echo "        DocumentRoot $INSTDIR/html" >> /etc/apache2/sites-available/000-default.conf
-    echo "        ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-default.conf
-    echo "        CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-default.conf
-    echo " <Directory \"$INSTDIR/html\">" >> /etc/apache2/sites-available/000-default.conf
-    echo "    Require all granted " >> /etc/apache2/sites-available/000-default.conf
-    echo " </Directory>" >> /etc/apache2/sites-available/000-default.conf
+    if [ -e /etc/apache2/sites-available/000-default.conf ];then
 
-    echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
+	echo "* backupping original 000-default.conf in /etc/apache2/sites-available/000-default.chaos.saved"
+	mv /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.chaos.saved 
+    fi
+
+    echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-chaos.conf
+    echo "        ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-chaos.conf
+    echo "        DocumentRoot $INSTDIR/html" >> /etc/apache2/sites-available/000-chaos.conf
+    echo "        ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-chaos.conf
+    echo "        CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-chaos.conf
+    echo " <Directory \"$INSTDIR/html\">" >> /etc/apache2/sites-available/000-chaos.conf
+    echo "    Require all granted " >> /etc/apache2/sites-available/000-chaos.conf
+    echo " </Directory>" >> /etc/apache2/sites-available/000-chaos.conf
+
+    echo "</VirtualHost>" >> /etc/apache2/sites-available/000-chaos.conf
+    ln -sf /etc/apache2/sites-available/000-chaos.conf /etc/apache2/sites-available/000-default.conf
     sudo chmod -R 755 $INSTDIR/html
 
 fi
@@ -87,21 +93,22 @@ if [ "$MDS_ENABLE" == "true" ]; then
 
     echo "persistence-kv-param=db:chaos" >> $mds_cfg
     echo "log-file=$INSTDIR/log/mds.log" >> $mds_cfg
-    service chaos-service start NODE=mds
-    if [ "$MDS_TEST" == "true" ]; then
-	sleep 1
+    if service chaos-service start NODE=mds;then
+        if [ "$MDS_TEST" == "true" ]; then
+	    sleep 1
+		
+	    export LD_LIBRARY_PATH=$INSTDIR/lib
+	    if [ -n "$US_ALI	AS" ]; then
+		cmd="sed -i 's/\"unit_server_alias\": \"TEST\"/\"unit_server_alias\": \"$US_ALIAS\"/' $INSTDIR/tools/config/lnf/development/config1US.txt"
+		eval $cmd
+		echo "* initializing a TEST configuration with 1 unit server with name $US_ALIAS"
+	    fi
 
-	export LD_LIBRARY_PATH=$INSTDIR/lib
-	if [ -n "$US_ALIAS" ]; then
-	    cmd="sed -i 's/\"unit_server_alias\": \"TEST\"/\"unit_server_alias\": \"$US_ALIAS\"/' $INSTDIR/tools/config/lnf/development/config1US.txt"
-	    eval $cmd
-	    echo "* initializing a TEST configuration with 1 unit server with name $US_ALIAS"
-	fi
-
-	if ! $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/development/config1US.txt > /dev/null;then
-	    echo "* initialization of MDS failed"
-	fi
+	    if ! $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/development/config1US.txt > /dev/null;then
+		echo "* initialization of MDS failed"
+	    fi
 	  db_unregister $PACKAGE_NAME/ask_mdstest
+	fi
     fi
     
 fi
