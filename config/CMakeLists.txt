@@ -24,6 +24,6 @@ ADD_SUBDIRECTORY(driver/plc)
 ADD_SUBDIRECTORY(driver/oscilloscopes)
 ADD_SUBDIRECTORY(driver/daq)
 ADD_SUBDIRECTORY(driver/data-import)
-ADD_SUBDIRECTORY(driver/chaos-kess)
+ADD_SUBDIRECTORY(driver/chaos-mess)
 ADD_SUBDIRECTORY(driver/modbus)
 
