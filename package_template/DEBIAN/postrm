@@ -1,9 +1,0 @@
-echo "* uninstalling $PACKAGE_NAME and service from $INSTDIR"
-rm -rf $INSTDIR_ALIAS >/dev/null
-rm -rf $INSTDIR > /dev/null
-rm -f /etc/init/chaos-service.conf
-if [ -e /etc/apache2/sites-available/000-default.chaos.saved ];then
-    echo "* restore /etc/apache2/sites-available/000-default.conf "
-    mv /etc/apache2/sites-available/000-default.chaos.saved /etc/apache2/sites-available/000-default.conf 
-fi 
-#db_purge
