@@ -3,6 +3,7 @@
 cmake_minimum_required(VERSION 2.8)
 project (chaos_bundle)
 include(chaosframework/config/CMakeChaos.txt)
+ADD_DEFINITIONS(-DCHAOS)
 ### framework
 ADD_SUBDIRECTORY(chaosframework)
 
@@ -15,6 +16,7 @@ ADD_SUBDIRECTORY(common/serial)
 ADD_SUBDIRECTORY(common/modbus)
 ADD_SUBDIRECTORY(common/powersupply)
 ADD_SUBDIRECTORY(common/actuators)
+ADD_SUBDIRECTORY(common/test)
 
 ## DRIVERS
 ADD_SUBDIRECTORY(driver/misc)
