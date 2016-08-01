@@ -1,8 +1,9 @@
 ## Andrea Michelotti
 ## 29/8/2016
 cmake_minimum_required(VERSION 2.8)
-project (chaos_bundle)
 include(chaosframework/config/CMakeChaos.txt)
+
+
 ADD_DEFINITIONS(-DCHAOS)
 ### framework
 ADD_SUBDIRECTORY(chaosframework)
