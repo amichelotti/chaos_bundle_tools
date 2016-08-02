@@ -43,8 +43,13 @@ fi
 cds_url="$execute_command"
 info_mesg "Building " "configuration for $TESTCU"
 if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
-    nok_mesg "MDS configuration created with cds url:$cds_url"
-    end_test 1 "MDS configuration"
+    if [ -e $CHAOS_TOOLS/test/config/MDSConfig.txt ]; then
+	info_mesg "using configuration " "$CHAOS_TOOLS/test/config/MDSConfig.txt"
+	MDS_TEST_CONF=$CHAOS_TOOLS/test/config/MDSConfig.txt
+    else
+	nok_mesg "MDS configuration created with cds url:$cds_url"
+	end_test 1 "MDS configuration"
+    fi
 else
     ok_mesg "MDS configuration created with cds url:$cds_url"
 fi
