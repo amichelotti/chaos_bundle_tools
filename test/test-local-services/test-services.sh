@@ -66,6 +66,7 @@ fi
 status=0
 
 info_mesg "Testing UI Server"
+unset http_proxy
 if execute_command_until_ok "wget localhost:8081/CU?dev=TEST_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
     ok_mesg "CUI answer"
 else
