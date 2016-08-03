@@ -30,4 +30,6 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(driver/data-import)
  ADD_SUBDIRECTORY(driver/chaos-mess)
  ADD_SUBDIRECTORY(driver/modbus)
-# RETURN()
+ ###
+ ADD_SUBDIRECTORY(service/webgui/CUiserver)
+ InstallChaos()

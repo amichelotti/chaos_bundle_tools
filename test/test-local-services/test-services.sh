@@ -23,18 +23,18 @@ fi
 # rm $CHAOS_PREFIX/etc/cds.cfg
 
 
- if [ "$CDSMODE" == 1 ];then
-     cp $CHAOS_PREFIX/etc/cds_noidx.cfg $CHAOS_PREFIX/etc/cds.cfg
- else
-     cp $CHAOS_PREFIX/etc/cds_local.cfg $CHAOS_PREFIX/etc/cds.cfg
+ # if [ "$CDSMODE" == 1 ];then
+ #     cp $CHAOS_PREFIX/etc/cds_noidx.cfg $CHAOS_PREFIX/etc/cds.cfg
+ # else
+ #     cp $CHAOS_PREFIX/etc/cds_local.cfg $CHAOS_PREFIX/etc/cds.cfg
     
- fi
+ # fi
 
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
 
-if execute_command_until_ok "grep -o \"with url:.\+\" $PREFIX/log/cds.log  |sed 's/with url: //g'" 15; then
+if execute_command_until_ok "grep -o \"with url:.\+\" $CHAOS_PREFIX/log/cds.log  |sed 's/with url: //g'" 15; then
     ok_mesg "CDS on $execute_command"
 else
     nok_mesg "CDS not bind a valid url"
@@ -43,9 +43,9 @@ fi
 cds_url="$execute_command"
 info_mesg "Building " "configuration for $TESTCU"
 if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
-    if [ -e $CHAOS_TOOLS/test/config/MDSConfig.txt ]; then
-	info_mesg "using configuration " "$CHAOS_TOOLS/test/config/MDSConfig.txt"
-	MDS_TEST_CONF=$CHAOS_TOOLS/test/config/MDSConfig.txt
+    if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.txt ]; then
+	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.txt"
+	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.txt
     else
 	nok_mesg "MDS configuration created with cds url:$cds_url"
 	end_test 1 "MDS configuration"
@@ -57,7 +57,7 @@ fi
 start_mds || end_test 1 "Starting MDS"
 
 
-if ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF >& /dev/null; then
+if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
