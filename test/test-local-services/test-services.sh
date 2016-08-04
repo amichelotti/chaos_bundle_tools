@@ -34,7 +34,7 @@ fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
 
-if execute_command_until_ok "grep -o \"with url:.\+\" $CHAOS_PREFIX/log/cds.log  |sed 's/with url: //g'" 15; then
+if execute_command_until_ok "grep -o \"with url:.\+\" $CHAOS_PREFIX/log/ChaosDataService.log  |sed 's/with url: //g'" 15; then
     ok_mesg "CDS on $execute_command"
 else
     nok_mesg "CDS not bind a valid url"
@@ -57,7 +57,7 @@ fi
 start_mds || end_test 1 "Starting MDS"
 
 
-if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
+if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 $CHAOS_OVERALL_OPT --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
@@ -85,7 +85,7 @@ echo "metadata-server=localhost:5000">> $CHAOS_PREFIX/etc/WanProxy.conf
 echo "wi-interface=HTTP" >> $CHAOS_PREFIX/etc/WanProxy.conf
 echo "wi-json-param={\"HTTP_wi_port\":8082}" >> $CHAOS_PREFIX/etc/WanProxy.conf
 
-if run_proc "$CHAOS_PREFIX/bin/ChaosWANProxy --conf-file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/ChaosWANProxy.log 2>&1 &" "ChaosWANProxy";then
+if run_proc "$CHAOS_PREFIX/bin/ChaosWANProxy $CHAOS_OVERALL_OPT --conf-file $CHAOS_PREFIX/etc/WanProxy.conf > $CHAOS_PREFIX/log/ChaosWANProxy.log 2>&1 &" "ChaosWANProxy";then
     ok_mesg "WAN Proxy started"
 else
     nok_mesg "WAN Proxy started"
