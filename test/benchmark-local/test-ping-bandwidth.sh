@@ -43,20 +43,21 @@ while ((sched>0));do
 info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
 echo "$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched" > $CHAOS_PREFIX/log/MessClient-$sched.stdout 
 	if $CHAOS_PREFIX/bin/MessClient $CHAOS_OVERALL_OPT --max $MAXBUFFER --mess_device_id TEST_UNIT_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-bd-$sched >> $CHAOS_PREFIX/log/MessClient-$sched.stdout 2>&1 ;then
-	    if [ -x /usr/bin/gnuplot ];then
-		info_mesg "generating benchmark plots..."
-		pushd $CHAOS_PREFIX/log > /dev/null
-		cat  $CHAOS_PREFIX/etc/chaos-mess/benchmark.gnuplot | sed s/__report_bp__/"report-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
-		chmod a+x benchmark.gnuplot
-		if ./benchmark.gnuplot >& /dev/null ;then
-		    info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-bd-$sched""_bandwidth_test.csv.png"
-		fi
-		popd > /dev/null
-	    fi
-
+	    ok_mesg "MessClient process with $sched"
 	else
 	    nok_mesg "MessClient process with $sched"
 	fi
+	if [ -x /usr/bin/gnuplot ];then
+	    info_mesg "generating benchmark plots..."
+	    pushd $CHAOS_PREFIX/log > /dev/null
+	    cat  $CHAOS_PREFIX/etc/chaos-mess/benchmark.gnuplot | sed s/__report_bp__/"report-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
+	    chmod a+x benchmark.gnuplot
+	    if ./benchmark.gnuplot >& /dev/null ;then
+		info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-bd-$sched""_bandwidth_test.csv.png"
+	    fi
+	    popd > /dev/null
+	fi
+	
 	sleep 1
 	if ! check_proc ChaosDataService;then
 	    nok_mesg "Chaos DataService is unexpectly dead!!"
