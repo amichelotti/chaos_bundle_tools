@@ -50,7 +50,7 @@ echo "$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id TEST_UNIT_0
 	if [ -x /usr/bin/gnuplot ];then
 	    info_mesg "generating benchmark plots..."
 	    pushd $CHAOS_PREFIX/log > /dev/null
-	    cat  $CHAOS_PREFIX/etc/chaos-mess/benchmark.gnuplot | sed s/__report_bp__/"report-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
+	    cat  $CHAOS_PREFIX/etc/chaos_driver_misc_benchmark/benchmark.gnuplot | sed s/__report_bp__/"report-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
 	    chmod a+x benchmark.gnuplot
 	    if ./benchmark.gnuplot >& /dev/null ;then
 		info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-bd-$sched""_bandwidth_test.csv.png"

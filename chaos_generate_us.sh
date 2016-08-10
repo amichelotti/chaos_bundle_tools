@@ -220,7 +220,7 @@ for c in $listcmake;do
     parent=`dirname $incdir`
 
     path=`basename $parent`/`basename $incdir`
-    incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$path"
+    incdir_list="$incdir_list \${CMAKE_INSTALL_PREFIX}/include/$path"
 #    incdir_list="$incdir_list \${CHAOS_PREFIX}/include/$c"
 #    echo "start dir $startdir"
 #    for h in `find $startdir -name "*.h"`; do
@@ -288,12 +288,12 @@ echo -e "\t\tchaos::cu::ChaosCUToolkit::getInstance()->start();" >> $project_dir
 
 echo -e "\t} catch (CException& e) {\n\t\tstd::cerr<<\"Exception:\"<<std::endl;\n\t\tstd::cerr<< \"domain	:\"<<e.errorDomain << std::endl;\n\t\tstd::cerr<< \"cause	:\"<<e.errorMessage << std::endl;return -1;\n\t} catch (program_options::error &e){\n\t\tstd::cerr << "\"Unable to parse command line: \"" << e.what() << std::endl;return -2;\n\t} catch (...){\n\t\tstd::cerr << \"unexpected exception caught.. \" << std::endl;return -3;\n\t}return 0;\n}\n" >> $project_dir/main.cpp
 
-echo "cmake_minimum_required(VERSION 2.6)" > $project_dir/CMakeLists.txt
-echo "include(\$ENV{CHAOS_BUNDLE}/tools/project_template/CMakeChaos.txt)" >>  $project_dir/CMakeLists.txt
+echo "cmake_minimum_required(VERSION 2.8)" > $project_dir/CMakeLists.txt
+
 echo "SET(src main.cpp )" >>  $project_dir/CMakeLists.txt
 echo -e "$cmake_things" >> $project_dir/CMakeLists.txt
 if [ -n "$incdir_list" ]; then
-    echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} \${CHAOS_PREFIX}/include $incdir_list)" >> $project_dir/CMakeLists.txt
+    echo "INCLUDE_DIRECTORIES(\${CMAKE_INCLUDE_PATH} \${CMAKE_INSTALL_PREFIX}/include $incdir_list)" >> $project_dir/CMakeLists.txt
 fi
 echo -e "IF(BUILD_FORCE_STATIC)\nSET(CMAKE_EXE_LINKER_FLAGS \"-static -Wl,--whole-archive -lchaos_common -Wl,--no-whole-archive\")\nENDIF()\n" >>  $project_dir/CMakeLists.txt
 echo "ADD_EXECUTABLE($pname \${src})" >>  $project_dir/CMakeLists.txt
