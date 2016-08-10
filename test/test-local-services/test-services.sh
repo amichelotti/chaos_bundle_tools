@@ -96,12 +96,17 @@ check_proc CUIserver || end_test 1 "CUIserver not running"
 check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 info_mesg "performing test pushing on ChaosWANProxy " "CREST CU"
-if $CHAOS_PREFIX/bin/crest_test localhost:8082 10000 > $CHAOS_PREFIX/log/crest_test.log ;then
+if [ $OS == "Darwin" ];then
+    info_mesg " CREST test disabled on " " Darwin"
+else
+    
+    if $CHAOS_PREFIX/bin/crest_test localhost:8082 10000 > $CHAOS_PREFIX/log/crest_test.log ;then
     ok_mesg "CREST CU TEST"
     cat $CHAOS_PREFIX/log/crest_test.log |grep average
-else
-    nok_mesg "CREST CU TEST"
-    end_test 1 "CREST CU TEST"
+    else
+	nok_mesg "CREST CU TEST"
+	end_test 1 "CREST CU TEST"
+    fi
 fi
 # info_mesg "performing test retriving from CUIserver " "CREST UI"
 # if $CHAOS_PREFIX/bin/chaos_crest_ui_test localhost:8081 "BTF_SIM/QDC0" > $CHAOS_PREFIX/log/crest_ui_test.log ;then
