@@ -29,7 +29,7 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(driver/daq)
  ADD_SUBDIRECTORY(driver/data-import)
  ADD_SUBDIRECTORY(driver/modbus)
- ADD_SUBDIRECTORY(driver/actuators)
+ ADD_SUBDIRECTORY(driver/actuator)
  ###
  ADD_SUBDIRECTORY(service/webgui/CUiserver)
  InstallChaos()
