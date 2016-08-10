@@ -740,6 +740,163 @@
 	    ]
 	},
 	{
+	    "unit_server_alias": "BENCHMARK_UNIT_2",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_0",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_1",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_2",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_3",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_4",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_5",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_6",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_7",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_8",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		},
+		{
+		    "unit_server_alias": "BENCHMARK_UNIT_2",
+		    "cu_id": "BENCHMARK_UNIT_2/TEST_CU_9",
+		    "cu_type": "ChaosMESS",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "DummyDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": ""
+			}
+		    ],
+		    "AttrDesc": []
+		}
+	    ]
+	},
+	{
 	    "unit_server_alias": "BTF/DAQ",
 	    "private_key": null,
 	    "public_key": null,

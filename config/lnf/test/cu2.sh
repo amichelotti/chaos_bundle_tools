@@ -32,12 +32,24 @@ cuid=()
 # fi
 
 
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
-    ok_mesg "US BPMsync $!"
+# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
+#     ok_mesg "US BPMsync $!"
+#     procid+=($!)
+#     cuid+=("ACCUMULATOR/BPM")
+# else
+#     nok_mesg "US BPMSync"
+#     exit 1
+# fi
+
+
+
+## BENCHMARK
+if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_1;then
+    ok_mesg "US Benchmark Unit $!"
     procid+=($!)
-    cuid+=("ACCUMULATOR/BPM")
+    cuid+=("BENCHMARK_UNIT_1")
 else
-    nok_mesg "US BPMSync"
+    nok_mesg "BENCHMARK_UNIT_1"
     exit 1
 fi
 

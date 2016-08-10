@@ -78,6 +78,15 @@ else
     exit 1
 fi
 
+if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_0;then
+    ok_mesg "US Benchmark Unit $!"
+    procid+=($!)
+    cuid+=("BENCHMARK_UNIT_0")
+else
+    nok_mesg "BENCHMARK_UNIT_0"
+    exit 1
+fi
+
 
 info_mesg "monitoring cus"
 

@@ -20,57 +20,60 @@ procid=()
 cuid=()
 
 
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
-    ok_mesg "US DAFNE_IMPORT $!"
-    procid+=($!)
-    cuid+=("DAFNE_IMPORT")
-else
-    nok_mesg "US DAFNE_IMPORT"
-    exit 1
-fi
-if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
-    ok_mesg "US AULA_TOUSHECK $!"
-    procid+=($!)
-    cuid+=("AULA_TOUSHECK")
-else
-    nok_mesg "US AULA_TOUSHECK"
-    exit 1
-fi
-
-if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_1;then
-    ok_mesg "US BENCHMARK_UNIT_1 $!"
-    procid+=($!)
-    cuid+=("BENCHMARK_UNIT_1")
-else
-    nok_mesg "US BENCHMARK_UNIT_1"
-    exit 1
-fi
-
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_BIS;then
-#     ok_mesg "US TEST_BIS $!"
+# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
+#     ok_mesg "US DAFNE_IMPORT $!"
 #     procid+=($!)
-#     cuid+=("TEST_BIS")
+#     cuid+=("DAFNE_IMPORT")
 # else
-#     nok_mesg "TEST_BIS"
+#     nok_mesg "US DAFNE_IMPORT"
 #     exit 1
 # fi
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+# if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
+#     ok_mesg "US AULA_TOUSHECK $!"
+#     procid+=($!)
+#     cuid+=("AULA_TOUSHECK")
+# else
+#     nok_mesg "US AULA_TOUSHECK"
+#     exit 1
+# fi
+
+
+# # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_BIS;then
+# #     ok_mesg "US TEST_BIS $!"
+# #     procid+=($!)
+# #     cuid+=("TEST_BIS")
+# # else
+# #     nok_mesg "TEST_BIS"
+# #     exit 1
+# # fi
+# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+#     procid+=($!)
+#     cuid+=("BTF/GLUE")
+#     ok_mesg "US BTF/GLUE $!"
+
+# else
+#     nok_mesg "US BTF/GLUE"
+#     exit 1
+# fi
+
+
+# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_MIKE;then
+#     ok_mesg "US TEST_MIKE $!"
+#     procid+=($!)
+#     cuid+=("TEST_MIKE")
+# else
+#     nok_mesg "TEST_MIKE"
+#     exit 1
+# fi
+
+### Benchmark
+
+if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_2;then
+    ok_mesg "US BENCHMARK_UNIT_2 $!"
     procid+=($!)
-    cuid+=("BTF/GLUE")
-    ok_mesg "US BTF/GLUE $!"
-
+    cuid+=("BENCHMARK_UNIT_2")
 else
-    nok_mesg "US BTF/GLUE"
-    exit 1
-fi
-
-
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_MIKE;then
-    ok_mesg "US TEST_MIKE $!"
-    procid+=($!)
-    cuid+=("TEST_MIKE")
-else
-    nok_mesg "TEST_MIKE"
+    nok_mesg "US BENCHMARK_UNIT_2"
     exit 1
 fi
 
