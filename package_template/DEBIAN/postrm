@@ -1,0 +1,5 @@
+echo "* uninstalling $PACKAGE_NAME and service from $INSTDIR"
+rm -rf $INSTDIR_ALIAS >/dev/null
+rm -rf $INSTDIR > /dev/null
+rm -f /etc/init/chaos-service.conf
+#db_purge
