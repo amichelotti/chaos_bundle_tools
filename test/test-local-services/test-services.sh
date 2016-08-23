@@ -65,13 +65,17 @@ else
 fi
 status=0
 
-info_mesg "Testing UI Server"
-unset http_proxy
-if execute_command_until_ok "wget localhost:8081/CU?dev=TEST_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
-    ok_mesg "CUI answer"
+if which wget >& /dev/null ;then 
+    info_mesg "Testing UI Server"
+    unset http_proxy
+    if execute_command_until_ok "wget localhost:8081/CU?dev=TEST_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
+	ok_mesg "CUI answer"
+    else
+	nok_mesg "CUI answer"
+	end_test 1 "CUI answer"
+    fi
 else
-    nok_mesg "CUI answer"
-    end_test 1 "CUI answer"
+    info_mesg "skipping CUI test because wget is " "missing"
 fi
 sleep 1
 

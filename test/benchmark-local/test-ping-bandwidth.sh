@@ -56,12 +56,12 @@ while ((sched>0));do
 	else
 	    nok_mesg "MessClient process with $sched"
 	fi
-	if [ -x /usr/bin/gnuplot ];then
+	if which gnuplot >& /dev/null;then
 	    info_mesg "generating benchmark plots..."
 	    pushd $CHAOS_PREFIX/log > /dev/null
 	    cat  $CHAOS_PREFIX/etc/chaos_driver_misc_benchmark/benchmark.gnuplot | sed s/__report_bp__/"report-$US_TEST-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
 	    chmod a+x benchmark.gnuplot
-	    if ./benchmark.gnuplot >& /dev/null ;then
+	    if gnuplot < ./benchmark.gnuplot >& /dev/null ;then
 		info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-$US_TEST-bd-$sched""_bandwidth_test.csv.png"
 	    fi
 	    popd > /dev/null
