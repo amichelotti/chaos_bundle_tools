@@ -26,6 +26,7 @@ fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 if [[ $META =~ localhost ]];then
+    check_proc_then_kill "$USNAME"
     if launch_us_cu $NUS $NCU $META $USNAME TEST_UNIT 1;then
 	if ! check_proc $USNAME;then
 	    error_mesg "$USNAME quitted"
