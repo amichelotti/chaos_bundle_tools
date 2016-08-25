@@ -1,5 +1,6 @@
 source $CHAOS_TOOLS/common_util.sh
 start_test
+### <> 1 1 localhost:5000 524288 UnitServer BENCHMARK_UNIT_0
 USNAME=UnitServer
 NUS=5
 NCU=10
@@ -22,11 +23,14 @@ if [ -n "$5" ];then
     USNAME="$5"
 fi
 
+if [ -n "$6" ];then
+    US_TEST="$6"
+fi
+
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 if [[ $META =~ localhost ]];then
-    check_proc_then_kill "$USNAME"
     if launch_us_cu $NUS $NCU $META $USNAME TEST_UNIT 1;then
 	if ! check_proc $USNAME;then
 	    error_mesg "$USNAME quitted"
@@ -38,30 +42,38 @@ if [[ $META =~ localhost ]];then
 	stop_proc $USNAME
 	end_test 1 "registration failed"
     fi
-    US_TEST=TEST_UNIT
+    if [ -z "$US_TEST" ];then
+	US_TEST=TEST_UNIT_0
+    fi
     
 else
     ## remote test
-    info_mesg "testing " "remote"
-    US_TEST=BENCHMARK_UNIT
+
+    if [ -z "$US_TEST" ];then
+	US_TEST=BENCHMARK_UNIT_0
+    fi
+    info_mesg "testing remote " "$US_TEST"
 fi
 sched=5000
 # for ((sched=10000;sched>=0;sched-=1000));do
+rm -f $CHAOS_PREFIX/log/*.csv
+rm -f $CHAOS_PREFIX/log/*.png
+
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id ""$US_TEST""_0/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
+    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id ""$US_TEST""/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
     echo "$cmd" > $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 
     if eval $cmd >> $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 2>&1 ;then
 	    ok_mesg "MessClient process with $sched"
 	else
 	    nok_mesg "MessClient process with $sched"
 	fi
-	if which gnuplot >& /dev/null;then
+	if which gnuplot >& /dev/null ;then
 	    info_mesg "generating benchmark plots..."
 	    pushd $CHAOS_PREFIX/log > /dev/null
 	    cat  $CHAOS_PREFIX/etc/chaos_driver_misc_benchmark/benchmark.gnuplot | sed s/__report_bp__/"report-$US_TEST-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
-	    chmod a+x benchmark.gnuplot
-	    if gnuplot < ./benchmark.gnuplot >& /dev/null ;then
+
+	    if gnuplot < ./benchmark.gnuplot ;then
 		info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-$US_TEST-bd-$sched""_bandwidth_test.csv.png"
 	    fi
 	    popd > /dev/null
@@ -80,6 +92,11 @@ while ((sched>0));do
 	    ((sched-=1000))
 	fi
 done
+pushd $CHAOS_PREFIX/log > /dev/null
+cat /proc/cpuinfo /proc/meminfo > benchmark-`hostname`-info.txt
+tar cfz benchmark-`hostname`.tar.gz benchmark-`hostname`-info.txt *.csv
+popd >& /dev/null
+
 # for ((us=0;us<$NUS;us++));do
 #     for ((cu=0;cu<$NCU;cu++));do
 
