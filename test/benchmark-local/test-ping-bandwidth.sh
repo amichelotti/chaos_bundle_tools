@@ -30,8 +30,12 @@ fi
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
-if [[ $META =~ localhost ]];then
-    if launch_us_cu $NUS $NCU $META $USNAME TEST_UNIT 1;then
+if [[ $META =~ localhost ]] || [[ $US_TEST =~ BENCHMARK ]];then
+    if [ -z "$US_TEST" ];then
+	US_TEST=TEST_UNIT_0
+    fi
+
+    if launch_us_cu $NUS $NCU "--metadata-server $META" $USNAME $US_TEST 1;then
 	if ! check_proc $USNAME;then
 	    error_mesg "$USNAME quitted"
 	    end_test 1 "$USNAME quitted"
@@ -42,9 +46,7 @@ if [[ $META =~ localhost ]];then
 	stop_proc $USNAME
 	end_test 1 "registration failed"
     fi
-    if [ -z "$US_TEST" ];then
-	US_TEST=TEST_UNIT_0
-    fi
+
     
 else
     ## remote test
@@ -61,7 +63,7 @@ rm -f $CHAOS_PREFIX/log/*.png
 
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id ""$US_TEST""/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
+    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
     echo "$cmd" > $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 
     if eval $cmd >> $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 2>&1 ;then
 	    ok_mesg "MessClient process with $sched"
