@@ -27,10 +27,14 @@ if [ -n "$6" ];then
     US_TEST="$6"
 fi
 
+if [ -n "$7" ];then
+    US_LOCAL="true"
+fi
+
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
-if [[ $META =~ localhost ]] || [[ $US_TEST =~ BENCHMARK ]];then
+if [[ $META =~ localhost ]] || [ -n "$US_LOCAL" ];then
     if [ -z "$US_TEST" ];then
 	US_TEST=TEST_UNIT_0
     fi
