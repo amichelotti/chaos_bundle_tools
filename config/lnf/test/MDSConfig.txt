@@ -3234,6 +3234,24 @@
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
 			    "ds_default_value": "14"
+			},
+                        {
+			    "ds_attr_name": "__positionWarningTHR",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.01"
+			},
+                        {
+			    "ds_attr_name": "__positionWarningTHR_Timeout",
+			    "ds_max_range": "10000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+                        {
+			    "ds_attr_name": "__mov_rel/offset_mm",
+			    "ds_max_range": "1000",
+			    "ds_min_range": "-1000",
+			    "ds_default_value": "0"
 			}
 		    ]
 		},{		
@@ -3261,7 +3279,53 @@
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
 			    "ds_default_value": "15"
+			},
+                        {
+			    "ds_attr_name": "__positionWarningTHR",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.01"
+			},
+                        {
+			    "ds_attr_name": "__positionWarningTHR_Timeout",
+			    "ds_max_range": "10000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+                        {
+			    "ds_attr_name": "__mov_rel/offset_mm",
+			    "ds_max_range": "1000",
+			    "ds_min_range": "-1000",
+			    "ds_default_value": "0"
 			}
+		    ]
+		},{		
+		    "unit_server_alias": "TEST_UNIT",
+		    "cu_id": "TEST_UNIT/TEST_TECHNOSOFT_SIMUL",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "16,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "16"
+			}
+          
 		    ]
 		}
 		
