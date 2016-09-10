@@ -60,7 +60,7 @@ else
     fi
     info_mesg "testing remote " "$US_TEST"
 fi
-sched=5000
+sched=1
 # for ((sched=10000;sched>=0;sched-=1000));do
 rm -f $CHAOS_PREFIX/log/*.csv
 rm -f $CHAOS_PREFIX/log/*.png
@@ -94,6 +94,9 @@ while ((sched>0));do
 	fi
 	if((sched<=1000));then
 	    ((sched-=200))
+	    if((sched==0));then
+		sched=1
+	    fi
 	else
 	    ((sched-=1000))
 	fi
