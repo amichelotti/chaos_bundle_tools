@@ -3293,7 +3293,7 @@
 			    "ds_default_value": "1"
 			},
                         {
-			    "ds_attr_name": "__mov_rel/offset_mm",
+			    "ds_attr_name": "mov_rel/offset_mm",
 			    "ds_max_range": "1000",
 			    "ds_min_range": "-1000",
 			    "ds_default_value": "0"
