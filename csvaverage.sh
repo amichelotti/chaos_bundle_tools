@@ -30,7 +30,8 @@ for row in `seq 2 $lines`;do
     done
     line=""
     for col in `seq 0 $nelems`;do
-	v=`echo "scale=3; ${val[$col]}/($ncsv)" | bc -l|sed s/\.000//g`
+	v=`echo "scale=3; ${val[$col]}/($ncsv)" | bc -l|sed 's/\.000//g'`
+
 	if [ $col -eq "0" ];then
 	    line="$v" 
 	else
@@ -38,5 +39,6 @@ for row in `seq 2 $lines`;do
 	fi
 
     done
+
     echo "$line" |sed 's/,\./,0\./g' >> average.csv
 done
