@@ -20,22 +20,22 @@ procid=()
 cuid=()
 
 
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
-#     ok_mesg "US DAFNE_IMPORT $!"
-#     procid+=($!)
-#     cuid+=("DAFNE_IMPORT")
-# else
-#     nok_mesg "US DAFNE_IMPORT"
-#     exit 1
-# fi
-# if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
-#     ok_mesg "US AULA_TOUSHECK $!"
-#     procid+=($!)
-#     cuid+=("AULA_TOUSHECK")
-# else
-#     nok_mesg "US AULA_TOUSHECK"
-#     exit 1
-# fi
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
+     ok_mesg "US DAFNE_IMPORT $!"
+     procid+=($!)
+     cuid+=("DAFNE_IMPORT")
+ else
+     nok_mesg "US DAFNE_IMPORT"
+     exit 1
+ fi
+ if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
+     ok_mesg "US AULA_TOUSHECK $!"
+     procid+=($!)
+     cuid+=("AULA_TOUSHECK")
+ else
+     nok_mesg "US AULA_TOUSHECK"
+     exit 1
+ fi
 
 
 # # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_BIS;then
@@ -46,25 +46,25 @@ cuid=()
 # #     nok_mesg "TEST_BIS"
 # #     exit 1
 # # fi
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
-#     procid+=($!)
-#     cuid+=("BTF/GLUE")
-#     ok_mesg "US BTF/GLUE $!"
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+     procid+=($!)
+     cuid+=("BTF/GLUE")
+     ok_mesg "US BTF/GLUE $!"
 
-# else
-#     nok_mesg "US BTF/GLUE"
-#     exit 1
-# fi
+ else
+     nok_mesg "US BTF/GLUE"
+     exit 1
+ fi
 
 
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_MIKE;then
-#     ok_mesg "US TEST_MIKE $!"
-#     procid+=($!)
-#     cuid+=("TEST_MIKE")
-# else
-#     nok_mesg "TEST_MIKE"
-#     exit 1
-# fi
+ # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_UNIT;then
+ #     ok_mesg "US TEST_UNI $!"
+ #     procid+=($!)
+ #     cuid+=("TEST_UNIT")
+ # else
+ #     nok_mesg "TEST_UNIT"
+ #     exit 1
+ # fi
 
 ### Benchmark
 
