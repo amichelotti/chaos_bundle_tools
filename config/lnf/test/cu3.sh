@@ -20,12 +20,12 @@ procid=()
 cuid=()
 
 
- if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
-     ok_mesg "US DAFNE_IMPORT $!"
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/DAQ;then
+     ok_mesg "US BTF/DAQ $!"
      procid+=($!)
-     cuid+=("DAFNE_IMPORT")
+     cuid+=("BTF/DAQ")
  else
-     nok_mesg "US DAFNE_IMPORT"
+     nok_mesg "US BTF/DAQ"
      exit 1
  fi
 

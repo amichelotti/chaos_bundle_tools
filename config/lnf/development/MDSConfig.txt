@@ -1339,49 +1339,20 @@
 
 ]},
 	{
-	    "unit_server_alias": "c8:1f:66:b1:27:48",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
-	},
-	{
-	    "unit_server_alias": "LNF/TEST/CRIO0",
+	    "unit_server_alias": "IMA",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "LNF/TEST/CRIO0",
-		    "cu_id": "LNF/TEST/CRIO0/SUPPLY",
-		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "unit_server_alias": "IMA",
+		    "cu_id": "IMA/DAQ",
+		    "cu_type": "",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "PowerSimDD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0"
-			}
-		    ],
-		    "AttrDesc": [
-			{
-			    "ds_attr_name": "currentSP",
-			    "ds_max_range": "700",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
-			},
-			{
-			    "ds_attr_name": "slope_down",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			},
-			{
-			    "ds_attr_name": "slope_up",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			}
-		    ]
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [],
+		    "AttrDesc": []
 		}
 	    ]
 	},{
