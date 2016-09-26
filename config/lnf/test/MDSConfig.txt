@@ -2600,7 +2600,9 @@
 		    "cu_id": "IMA/DAQ",
 		    "cu_type": "",
 		    "cu_param": "",
-		    "auto_load": true,
+		    "auto_load": false,
+		    "auto_start": false,
+		    "auto_init": false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [],
@@ -2805,6 +2807,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
@@ -3237,6 +3241,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
@@ -3282,6 +3288,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
@@ -3327,6 +3335,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
