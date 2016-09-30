@@ -13,7 +13,7 @@ fi
 if [ "$TEMPLATE" == "localhost" ] || [ "$TEMPLATE" == "dev" ];then
     echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
     
-    if [ ! dpkg -l |grep couchbase-server ];then
+    if ! dpkg -l |grep couchbase-server;then
 	echo "* downloading chouchbase server"
 	wget http://packages.couchbase.com/releases/3.0.1/couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
 	dpkg -i couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
@@ -22,29 +22,29 @@ if [ "$TEMPLATE" == "localhost" ] || [ "$TEMPLATE" == "dev" ];then
     fi
 fi
 
-
-db_get  $PACKAGE_NAME/ask_mds
-MDS_ENABLE=$RET
-db_get  $PACKAGE_NAME/ask_cds
-CDS_ENABLE=$RET
-db_get  $PACKAGE_NAME/ask_webui
-WEBUI_ENABLE=$RET
-db_get  $PACKAGE_NAME/ask_us
-US_ENABLE=$RET
-
-	
-db_input high $PACKAGE_NAME/ask_mongo || true
-db_input high $PACKAGE_NAME/ask_dbuser || true
-db_input high $PACKAGE_NAME/ask_dbpass || true
-db_input high $PACKAGE_NAME/ask_couchbase || true
-db_input high $PACKAGE_NAME/ask_mdsurl || true
-if [ "$US_ENABLE" == "true" ];then 
-    db_input high $PACKAGE_NAME/ask_usalias || true
+if [ "$TEMPLATE" == "server" ] || [ "$TEMPLATE" == "dev" ] || [ "$TEMPLATE" == "client" ];then
+    db_get  $PACKAGE_NAME/ask_mds
+    MDS_ENABLE=$RET
+    db_get  $PACKAGE_NAME/ask_cds
+    CDS_ENABLE=$RET
+    db_get  $PACKAGE_NAME/ask_webui
+    WEBUI_ENABLE=$RET
+    db_get  $PACKAGE_NAME/ask_us
+    US_ENABLE=$RET
+    
+    
+    db_input high $PACKAGE_NAME/ask_mongo || true
+    db_input high $PACKAGE_NAME/ask_dbuser || true
+    db_input high $PACKAGE_NAME/ask_dbpass || true
+    db_input high $PACKAGE_NAME/ask_couchbase || true
+    db_input high $PACKAGE_NAME/ask_mdsurl || true
+    if [ "$US_ENABLE" == "true" ];then 
+	db_input high $PACKAGE_NAME/ask_usalias || true
+	db_go || true
+    fi
+    
     db_go || true
 fi
-
-db_go || true
-
 
 
 

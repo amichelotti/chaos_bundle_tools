@@ -39,6 +39,8 @@ db_get  $PACKAGE_NAME/ask_usalias
 US_ALIAS="$RET"
 
 mkdir -p /var/log/chaos
+chmod -R 755 /var/log/chaos
+
 if [ -n "$MONGO_SERVERS" ];then
     dblist=`echo $MONGO_SERVERS | tr ',' '\n'`
 fi
@@ -46,6 +48,7 @@ fi
 if [ -n "$COUCHBASE_SERVERS" ];then
     cachelist=`echo $COUCHBASE_SERVERS | tr ',' '\n'`
 fi
+
 
 # if [ "$MDS_ENABLE" == "true" ]; then
 #  mv /etc/default/__mds.cfg $mds_cfg
@@ -55,23 +58,21 @@ fi
 #  #   mv /etc/default/__cds.cfg $cds_cfg
 #  #   mv /etc/init/__chaos-cds.conf /etc/init/chaos-cds.conf
 # fi
-# if [ "$WEBUI_ENABLE" == "true" ]; then
-#     mv /etc/default/__webui.cfg $webui_cfg
-#     mv /etc/init/__chaos-webui.conf /etc/init/chaos-webui.conf
-#     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.saved
-#     echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
-#     echo "        ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-default.conf
-#     echo "        DocumentRoot $INSTDIR/html" >> /etc/apache2/sites-available/000-default.conf
-#     echo "        ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-default.conf
-#     echo "        CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-default.conf
-#     echo " <Directory \"$INSTDIR/html\">" >> /etc/apache2/sites-available/000-default.conf
-#     echo "    Require all granted " >> /etc/apache2/sites-available/000-default.conf
-#     echo " </Directory>" >> /etc/apache2/sites-available/000-default.conf
 
-#     echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
-#     sudo chmod -R 755 $INSTDIR/html
+ if [ "$WEBUI_ENABLE" == "true" ]; then
 
-# fi
+     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.saved
+     echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
+     echo "        ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-default.conf
+     echo "        DocumentRoot $INSTDIR/html" >> /etc/apache2/sites-available/000-default.conf
+     echo "        ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-default.conf
+     echo "        CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-default.conf
+     echo " <Directory \"$INSTDIR/html\">" >> /etc/apache2/sites-available/000-default.conf
+     echo "    Require all granted " >> /etc/apache2/sites-available/000-default.conf
+     echo " </Directory>" >> /etc/apache2/sites-available/000-default.conf
+     echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
+     sudo chmod -R 755 $INSTDIR/html
+ fi
 
 # if [ "$US_ENABLE" == "true" ];then 
 #     mv /etc/default/__cu.cfg $cu_cfg
@@ -151,8 +152,18 @@ fi
 #     service chaos-service start NODE=cu
 # fi
 
+echo "* MDS     : $MDS_ENABLE"
+echo "* CDS     : $CDS_ENABLE"
+echo "* WEBUI   : $WEBUI_ENABLE"
+echo "* WAN     : $WAN_ENABLE"
+echo "* US      : $US_ENABLE"
+echo "* MDSTEST : $MDS_TEST"
+echo "* DB      : $MONGO_SERVERS"
+echo "* LIVE    : $COUCHBASE_SERVERS"
+
 if [ "$TEMPLATE" != "docker" ];then
     if [ "$MDS_ENABLE" == "true" ]; then
+       
 	service chaos-mds start
     fi
     if [ "$CDS_ENABLE" == "true" ]; then
@@ -168,9 +179,14 @@ if [ "$TEMPLATE" != "docker" ];then
 	service chaos-cu start
     fi
     
+    if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
+        if  $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt > /dev/null;then
+ 	    echo "* initialization of MDS $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
+	else
+	    echo "# initialization of MDS failed, $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
+ 	fi
+    fi
 fi
 
-rm -f /etc/default/__*.cfg
-rm -f /etc/default/__chaos-*.conf
-db_stop
+
 
