@@ -162,16 +162,17 @@ echo "* DB      : $MONGO_SERVERS"
 echo "* LIVE    : $COUCHBASE_SERVERS"
 
 if [ "$TEMPLATE" != "docker" ];then
+    service couchbase-server restart
+    service mongod restart
+
     if [ "$MDS_ENABLE" == "true" ]; then
        
 	service chaos-mds start
     fi
-    if [ "$TEMPLATE" == "localhost" ];then
-	echo "* starting couchbase"
-	 /etc/init.d/couchbase-server restart
-	 echo "* starting mongod"
-	 /etc/init.d/mongod restart
-    fi 
+    # if [ "$TEMPLATE" == "localhost" ];then
+    # 	echo "* starting couchbase"
+    # 	 /etc/init.d/couchbase-server restart
+    # fi 
     if [ "$CDS_ENABLE" == "true" ]; then
 	service chaos-cds start
     fi
@@ -181,9 +182,9 @@ if [ "$TEMPLATE" != "docker" ];then
     if [ "$WAN_ENABLE" == "true" ]; then
 	service chaos-wan start
     fi
-    if [ "$US_ENABLE" == "true" ]; then
-	service chaos-cu start
-    fi
+#    if [ "$US_ENABLE" == "true" ]; then
+#	service chaos-cu start
+#    fi
     
     if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
  	export LD_LIBRARY_PATH=$INSTDIR/lib
@@ -195,5 +196,5 @@ if [ "$TEMPLATE" != "docker" ];then
     fi
 fi
 
-
+db_stop
 
