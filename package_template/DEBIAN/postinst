@@ -168,9 +168,9 @@ if [ "$TEMPLATE" != "docker" ];then
     fi
     if [ "$TEMPLATE" == "localhost" ];then
 	echo "* starting couchbase"
-	 /etc/init.d/couchbase-server start
+	 /etc/init.d/couchbase-server restart
 	 echo "* starting mongod"
-	 /etc/init.d/mongod start
+	 /etc/init.d/mongod restart
     fi 
     if [ "$CDS_ENABLE" == "true" ]; then
 	service chaos-cds start

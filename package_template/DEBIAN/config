@@ -11,15 +11,21 @@ fi
 
 
 if [ "$TEMPLATE" == "localhost" ] || [ "$TEMPLATE" == "dev" ];then
-    echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-    
-    if ! dpkg -l |grep couchbase-server;then
+    if [ -e /etc/init.d/mongod ];then
+#	echo "* installing mongodb-org"
+#	echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+#	apt-get update
+#	apt-get install mongodb-org    
+	echo -e "db.createUser({user:\"chaos_admin\", pwd: \"chaos_admin\", roles:[]})\ndb.daq.createIndex({\"ndk_uid\" : 1, \"dpck_ats\":1,\"data.dpck_seq_id\":1}, {name:\"paged_daq_search_index\",unique:1})\nexit\n"|mongo
+    fi
+    if [ -e /etc/init.d/couchbase-server ];then
 	echo "* downloading chouchbase server"
-	wget http://packages.couchbase.com/releases/3.0.1/couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
-	dpkg -i couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
+#	wget http://packages.couchbase.com/releases/3.0.1/couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
+#	dpkg -i couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
 	/opt/couchbase/bin/couchbase-cli cluster-init -c 127.0.0.1:8091 --user=Administrator --password=chaos2015 --cluster-ramsize=1024
 	/opt/couchbase/bin/couchbase-cli bucket-create -c 127.0.0.1:8091 --user=Administrator --password=chaos2015 --bucket=chaos --bucket-type=memcache --bucket-password=chaos --bucket-ramsize=512 --bucket-replica=0
     fi
+    
 fi
 
 if [ "$TEMPLATE" == "server" ] || [ "$TEMPLATE" == "dev" ] || [ "$TEMPLATE" == "client" ];then
