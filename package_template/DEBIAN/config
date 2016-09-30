@@ -10,8 +10,9 @@ if ! getent group chaos > /dev/null;then
 fi
 
 
-if [ -n "$LOCALHOST" ];then
-    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.0.list   
+if [ "$TEMPLATE" == "localhost" ] || [ "$TEMPLATE" == "dev" ];then
+    echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+    
     if [ ! dpkg -l |grep couchbase-server ];then
 	echo "* downloading chouchbase server"
 	wget http://packages.couchbase.com/releases/3.0.1/couchbase-server-community_3.0.1-ubuntu12.04_amd64.deb
@@ -19,7 +20,9 @@ if [ -n "$LOCALHOST" ];then
 	/opt/couchbase/bin/couchbase-cli cluster-init -c 127.0.0.1:8091 --user=Administrator --password=chaos2015 --cluster-ramsize=1024
 	/opt/couchbase/bin/couchbase-cli bucket-create -c 127.0.0.1:8091 --user=Administrator --password=chaos2015 --bucket=chaos --bucket-type=memcache --bucket-password=chaos --bucket-ramsize=512 --bucket-replica=0
     fi
-fi 
+fi
+
+
 db_get  $PACKAGE_NAME/ask_mds
 MDS_ENABLE=$RET
 db_get  $PACKAGE_NAME/ask_cds
@@ -28,33 +31,22 @@ db_get  $PACKAGE_NAME/ask_webui
 WEBUI_ENABLE=$RET
 db_get  $PACKAGE_NAME/ask_us
 US_ENABLE=$RET
-if [ "$MDS_ENABLE" == "true" ] || [ "$CDS_ENABLE" == "true" ];then
-    
-    db_input high $PACKAGE_NAME/ask_mongo || true
-    db_input high $PACKAGE_NAME/ask_dbuser || true
-    db_input high $PACKAGE_NAME/ask_dbpass || true
-    db_input high $PACKAGE_NAME/ask_couchbase || true
-    db_go || true
-fi
 
-if [ "$MDS_ENABLE" == "true" ] || [ "$CDS_ENABLE" == "true" ] || [ "$US_ENABLE" == "true" ] || [ "$WEBUI_ENABLE" == "true" ];then
-    db_input high $PACKAGE_NAME/ask_mdsurl || true
-    db_go || true
-  
-fi
-
-if [ "$MDS_ENABLE" == "true" ];then
-    db_get  $PACKAGE_NAME/ask_mdsurl
-    MDS_SERVER="$RET"
-    if echo $MDS_SERVER | grep localhost;then
-        db_input high $PACKAGE_NAME/ask_mdstest || true
-    	db_go || true
-    fi   
-fi
-
+	
+db_input high $PACKAGE_NAME/ask_mongo || true
+db_input high $PACKAGE_NAME/ask_dbuser || true
+db_input high $PACKAGE_NAME/ask_dbpass || true
+db_input high $PACKAGE_NAME/ask_couchbase || true
+db_input high $PACKAGE_NAME/ask_mdsurl || true
 if [ "$US_ENABLE" == "true" ];then 
     db_input high $PACKAGE_NAME/ask_usalias || true
     db_go || true
 fi
+
+db_go || true
+
+
+
+
  
 

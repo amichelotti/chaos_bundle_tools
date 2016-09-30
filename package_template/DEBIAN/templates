@@ -16,6 +16,12 @@ Default: false
 Description: Do you want to setup a WEBUI node?
 	     This will setup a CHAOS WEB server (need to know a MDS server).
 
+Template: chaos/ask_wan
+Type: Boolean
+Default: false
+Description: Do you want to setup a WAN node?
+	     This will setup a WAN server (need to know a MDS server).
+
 Template: chaos/ask_us
 Type: Boolean
 Default: false

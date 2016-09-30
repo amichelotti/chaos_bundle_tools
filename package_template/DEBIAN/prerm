@@ -9,33 +9,41 @@ db_get  $PACKAGE_NAME/ask_cds
 CDS_ENABLE=$RET
 db_get  $PACKAGE_NAME/ask_webui
 WEBUI_ENABLE=$RET
+db_get  $PACKAGE_NAME/ask_wan
+WASN_ENABLE=$RET
 db_get  $PACKAGE_NAME/ask_us
 US_ENABLE=$RET
 
 
 if [ "$US_ENABLE" == "true" ];then 
     echo "* stopping cu"
-    service chaos-service stop NODE=cu
+    service chaos-cu stop
     rm -f /etc/init/chaos-cu.conf
 fi
 
 
 if [ "$CDS_ENABLE" == "true" ]; then
     echo "* stopping cds"
-    service chaos-service stop NODE=cds
+    service chaos-cds stop
     rm -f /etc/init/chaos-cds.conf
 fi
 
 if [ "$WEBUI_ENABLE" == "true" ]; then
     echo "* stopping webui"
-    service chaos-service stop NODE=webui
+    service chaos-webui stop
     cp /etc/apache2/sites-enabled/000-default.saved /etc/apache2/sites-enabled/000-default.conf
     rm -f /etc/init/chaos-webui.conf
+fi
+if [ "$WAN_ENABLE" == "true" ]; then
+    echo "* stopping wan"
+    service chaos-wan stop
+    cp /etc/apache2/sites-enabled/000-default.saved /etc/apache2/sites-enabled/000-default.conf
+    rm -f /etc/init/chaos-wan.conf
 fi
 
 if [ "$MDS_ENABLE" == "true" ]; then
     echo "* stopping mds"
-    service chaos-service stop NODE=mds
+    service chaos-mds stop
     rm -f /etc/init/chaos-mds.conf
 fi
 
