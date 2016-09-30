@@ -40,7 +40,7 @@ US_ALIAS="$RET"
 
 mkdir -p /var/log/chaos
 chmod -R 755 /var/log/chaos
-
+chown -R chaos.chaos $INSTDIR/
 if [ -n "$MONGO_SERVERS" ];then
     dblist=`echo $MONGO_SERVERS | tr ',' '\n'`
 fi
@@ -166,6 +166,12 @@ if [ "$TEMPLATE" != "docker" ];then
        
 	service chaos-mds start
     fi
+    if [ "$TEMPLATE" == "localhost" ];then
+	echo "* starting couchbase"
+	 /etc/init.d/couchbase-server start
+	 echo "* starting mongod"
+	 /etc/init.d/mongod start
+    fi 
     if [ "$CDS_ENABLE" == "true" ]; then
 	service chaos-cds start
     fi
@@ -180,6 +186,7 @@ if [ "$TEMPLATE" != "docker" ];then
     fi
     
     if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
+ 	export LD_LIBRARY_PATH=$INSTDIR/lib
         if  $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt > /dev/null;then
  	    echo "* initialization of MDS $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
 	else

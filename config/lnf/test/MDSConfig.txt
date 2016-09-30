@@ -3362,8 +3362,6 @@
 		}
 		
 	    ]
-	}
-	    ]
 	}, { "unit_server_alias": "LUMINOMETER",
 	    "private_key": null,
 	    "public_key": null,
@@ -3550,7 +3548,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "100000"
 			},
-{
+			{
 			    "ds_attr_name": "BITSET2",
 			    "ds_max_range": "0x0000ffff",
 			    "ds_min_range": "0",
