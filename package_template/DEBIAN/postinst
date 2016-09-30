@@ -18,26 +18,27 @@ mds_cfg=$INSTDIR/etc/mds.cfg
 cds_cfg=$INSTDIR/etc/cds.cfg
 webui_cfg=$INSTDIR/etc/webui.cfg
 
-    db_get  $PACKAGE_NAME/ask_mongo
-    MONGO_SERVERS="$RET"
+db_get  $PACKAGE_NAME/ask_mongo
+MONGO_SERVERS="$RET"
 
-    db_get  $PACKAGE_NAME/ask_dbuser
-    DBUSER="$RET"
+db_get  $PACKAGE_NAME/ask_dbuser
+DBUSER="$RET"
 
-    db_get  $PACKAGE_NAME/ask_dbpass
-    DBPASS="$RET"
+db_get  $PACKAGE_NAME/ask_dbpass
+DBPASS="$RET"
 
-    db_get  $PACKAGE_NAME/ask_couchbase
-    COUCHBASE_SERVERS="$RET"
-    db_get  $PACKAGE_NAME/ask_mdsurl
-    MDS_SERVER="$RET"
+db_get  $PACKAGE_NAME/ask_couchbase
+COUCHBASE_SERVERS="$RET"
+db_get  $PACKAGE_NAME/ask_mdsurl
+MDS_SERVER="$RET"
 
-    db_get  $PACKAGE_NAME/ask_mdstest
-    MDS_TEST="$RET"
+db_get  $PACKAGE_NAME/ask_mdstest
+MDS_TEST="$RET"
 
-    db_get  $PACKAGE_NAME/ask_usalias
-    US_ALIAS="$RET"
+db_get  $PACKAGE_NAME/ask_usalias
+US_ALIAS="$RET"
 
+mkdir -p /var/log/chaos
 if [ -n "$MONGO_SERVERS" ];then
     dblist=`echo $MONGO_SERVERS | tr ',' '\n'`
 fi
@@ -80,7 +81,7 @@ fi
 # chown -R chaos.chaos $INSTDIR/
 
 # if [ "$MDS_ENABLE" == "true" ]; then
-    
+
 #     # for i in $dblist;do
 #     # 	echo "persistence-servers=$i" >> $mds_cfg
 #     # done
@@ -105,11 +106,11 @@ fi
 # 	fi
 # 	  db_unregister $PACKAGE_NAME/ask_mdstest
 #     fi
-    
+
 # fi
 
 # if [ "$CDS_ENABLE" == "true" ]; then
-  
+
 
 #     echo "metadata-server=$MDS_SERVER" >> $cds_cfg
 

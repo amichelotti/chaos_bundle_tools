@@ -1819,6 +1819,8 @@
 		       "cu_type": "SCDafneAccumulatorBPMSync",
 		       "cu_param": "",
 		       "auto_load": true,
+		       "storage_type": 2,
+		       "storage_ageing": 36000,
 		       "DriverDescription": [
 			   {
 			       "DriverDescriptionName": "remoteGroupAccessDriver",
@@ -1885,6 +1887,8 @@
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    	{
@@ -1937,6 +1941,8 @@
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
 		    "auto_load": false,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    	{
@@ -1989,6 +1995,8 @@
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    {		    
@@ -2036,6 +2044,8 @@
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
 		    "auto_load": false,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    {		    
