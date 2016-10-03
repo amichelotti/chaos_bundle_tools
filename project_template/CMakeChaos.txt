@@ -5,6 +5,95 @@ cmake_policy(SET CMP0011 NEW)
 option(BUILD_FORCE_32 "Set to ON to enable 32 bit compilation" OFF)
 option(BUILD_FORCE_STATIC "Set static compilation" OFF)
 
+SET(GITSOURCE https://github.com/amichelotti)
+MESSAGE(STATUS "Chaos Generic settings project dir ${CMAKE_CURRENT_SOURCE_DIR}")
+IF( DEFINED ENV{CHAOS_CROSS_HOST})
+  SET( CROSS_HOST "--host=$ENV{CHAOS_CROSS_HOST}")
+ELSE()
+  SET( CROSS_HOST "")
+ENDIF()
+MESSAGE(STATUS "cross parameters ${CROSS_HOST} CMAKE: ${CMAKE_CHAOS}")
+IF(NOT DEFINED PROCESSOR_COUNT)
+  SET(PROCESSOR_COUNT 4)
+ENDIF()
+
+macro (GitClone arg)
+  message(STATUS "[${arg}] Cloning into ${CMAKE_CURRENT_SOURCE_DIR}/external")
+  file(REMOVE_RECURSE  ${CMAKE_CURRENT_SOURCE_DIR}/external)
+  file(MAKE_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external)
+  execute_process( 
+    COMMAND git clone ${GITSOURCE}/${arg}.git 
+    WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE mod
+    )
+  if( err)
+    message(FATAL_ERROR "[${arg}] cloning  error: ${err}")
+  endif()
+endmacro()
+
+macro (GitCheckout arg arg1)
+  message(STATUS "[${arg}] Checkout branch ${arg1}")
+  
+  execute_process( 
+    COMMAND git checkout ${arg1}
+    WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE out)
+  if( err)
+    message(FATAL_ERROR "[${arg}] checkout  error: ${err}")
+  endif()
+endmacro()
+
+macro (ConfigureAndBuild arg arg1)
+  IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/CMakeLists.txt")
+    SET(CONFPARM cmake ${arg1} ${CMAKE_CHAOS} .)
+  ELSE()
+    IF (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}/autogen.sh")
+      message(STATUS "[${arg}] generation of configuration")
+      execute_process( 
+	COMMAND ./autogen.sh
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+	RESULT_VARIABLE err
+	OUTPUT_VARIABLE mod
+	)
+      
+      IF( err)
+	message(FATAL_ERROR "[${arg}] performing generation of configuration: ${err}")
+      ENDIF()
+    ENDIF()
+    SET(CONFPARM ./configure --prefix=${CMAKE_INSTALL_PREFIX} ${arg1} ${CROSS_HOST})
+  ENDIF()
+   #  SET(CONFPARM ./configure ${CROSS_HOST} ${arg1} --prefix=${CMAKE_INSTALL_PREFIX})
+
+   separate_arguments(CONFPARM)
+   message(STATUS "[${arg}] configuring with \"${CONFPARM}\"")
+   
+  execute_process( 
+    COMMAND ${CONFPARM}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err
+    OUTPUT_VARIABLE out
+    )
+
+  if( err)
+    message(FATAL_ERROR "[${arg}] configuring ${arg} :${err}")
+  endif()
+
+  message(STATUS "[${arg}] compiling (${PROCESSOR_COUNT})")
+  execute_process( 
+    COMMAND make install -j ${PROCESSOR_COUNT}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/external/${arg}
+    RESULT_VARIABLE err2
+    OUTPUT_VARIABLE out2
+    )
+
+  if( err2)
+    message(FATAL_ERROR "[${arg}] compiling ${out2}: ${err2}")
+  endif()
+
+
+endmacro()
 
 IF( ( DEFINED ENV{CHAOS32}) OR BUILD_FORCE_32 )
     MESSAGE(STATUS "Enabling 32 bit Compilation")
@@ -14,10 +103,9 @@ IF( ( DEFINED ENV{CHAOS32}) OR BUILD_FORCE_32 )
     set (CMAKE_LINK_FLAGS "-m32")
 ENDIF()
 if( DEFINED ENV{CHAOS_BUNDLE} )
-    MESSAGE(STATUS "Using $ENV{CHAOS_BUNDLE}")
+    MESSAGE(STATUS "Using Chaos Bundle Dir $ENV{CHAOS_BUNDLE}")
     set (PROJECT_SOURCE_DIR $ENV{CHAOS_BUNDLE})
-ELSE()
-    MESSAGE(FATAL_ERROR "Please set CHAOS_BUNDLE environment")
+    INCLUDE_DIRECTORIES($ENV{CHAOS_BUNDLE}/chaosframework)
 ENDIF()
 
  IF(CHAOS_C_COMPILER)
@@ -26,14 +114,16 @@ ENDIF()
  ENDIF()
 
  IF(CHAOS_CC_COMPILER)
- 	MESSAGE(STATUS "Setting CC compiler ${CHAOS_CC_COMPILER}")
- 	SET(CMAKE_CXX_COMPILER ${CHAOS_CC_COMPILER})
+   MESSAGE(STATUS "Setting CC compiler ${CHAOS_CC_COMPILER}")
+   SET(CMAKE_CXX_COMPILER ${CHAOS_CC_COMPILER})
  ENDIF()
 
-ADD_DEFINITIONS(-g -O2)
+ SET( CMAKE_CHAOS  $ENV{CHAOS_CMAKE_FLAGS})
+
+ ADD_DEFINITIONS(-O3)
 if( DEBUG OR DEFINED ENV{CHAOS_DEVELOPMENT} )
     MESSAGE(STATUS "Enabling DEBUG MACRO")
-    ADD_DEFINITIONS(-DDEBUG)
+    ADD_DEFINITIONS(-DDEBUG -g)
 ENDIF()
 
 set(FrameworkLib $ENV{CHAOS_LINK_LIBRARY})
@@ -64,12 +154,12 @@ IF ( NOT DEFINED CMAKE_INSTALL_PREFIX )
    set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/usr/local)
    MESSAGE(STATUS "Setting Install Dir ${CMAKE_INSTALL_PREFIX}")
 ENDIF()
-
+message(STATUS "Using ${BUILD_PREFIX} as installation directory")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 
-INCLUDE_DIRECTORIES(. ../.. ../ ${CMAKE_INSTALL_PREFIX}/include)
+INCLUDE_DIRECTORIES(. ../.. ../ ${PROJECT_SOURCE_DIR} ${CMAKE_INSTALL_PREFIX}/include)
 LINK_DIRECTORIES(${CMAKE_BINARY_DIR}/build ${CMAKE_INSTALL_PREFIX}/lib)
 
 string (REGEX MATCH "[a-zA-Z_\\.]+/[a-zA-Z_\\.]+$" PROJECT_OUT_H  ${CMAKE_CURRENT_SOURCE_DIR})

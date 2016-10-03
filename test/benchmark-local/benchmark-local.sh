@@ -5,8 +5,12 @@ mkdir $CHAOS_PREFIX/vfs
 ## test local services (MDS,CDS) and test configuration generation
 ## prepare a local random configuration for
 ## 2 US and 10 CU and CDS MODE 1 
-../test-local-services/test-services.sh 2 10 "chaos-mess" 1 || exit 1
-## 1 US, 1 CU, MDS, MAX BUF
-./test-ping-bandwidth.sh 1 1 localhost:5000 524288 || exit 
+if [ -z "$CHAOS_MDS" ]; then
+    ../test-local-services/test-services.sh 2 10 "benchmark" 1 || exit 1
+    ./test-ping-bandwidth.sh 1 1 localhost:5000 1048576 MessMonitor || exit 
+else
+    ./test-ping-bandwidth.sh 1 1 $CHAOS_MDS:5000 1048576 MessMonitor || exit 
+fi
+
 rm -rf $CHAOS_PREFIX/vfs
 mkdir $CHAOS_PREFIX/vfs

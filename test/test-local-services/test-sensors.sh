@@ -25,7 +25,7 @@ fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 
-if launch_us_cu $NUS $NCU $META $USNAME;then
+if launch_us_cu $NUS $NCU "--metadata-server $META" $USNAME;then
     if ! check_proc $USNAME;then
 	error_mesg "$USNAME quitted"
 	end_test 1 "$USNAME quitted"

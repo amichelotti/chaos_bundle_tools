@@ -1,0 +1,70 @@
+Template: chaos/ask_mds
+Type: Boolean
+Default: false
+Description: Do you want to setup a MDS node?
+	     This will setup a MDS server (need to know persistent DB MONGO servers).
+
+Template: chaos/ask_cds
+Type: Boolean
+Default: false
+Description: Do you want to setup a CDS node?
+	     This will setup a CDS server (need to know persistent DB MONGO servers and MDS).
+
+Template: chaos/ask_webui
+Type: Boolean
+Default: false
+Description: Do you want to setup a WEBUI node?
+	     This will setup a CHAOS WEB server (need to know a MDS server).
+
+Template: chaos/ask_wan
+Type: Boolean
+Default: false
+Description: Do you want to setup a WAN node?
+	     This will setup a WAN server (need to know a MDS server).
+
+Template: chaos/ask_us
+Type: Boolean
+Default: false
+Description: Do you want to setup a Chaos Unit Server node?
+	     This will setup a CHAOS Unit Server (need to know a MDS server).
+
+Template: chaos/ask_mongo
+Type: String
+Default: localhost
+Description: Specify a comma separated lists of mongo servers
+	     This will setup the mongo backend.
+
+Template: chaos/ask_couchbase
+Type: String
+Default: localhost
+Description: Specify a comma separated lists of couchbase servers
+	     This will setup the couchbase backend.
+
+Template: chaos/ask_dbuser
+Type: String
+Default: chaos
+Description: Specify the DB user
+	     This will setup the DB username.
+
+Template: chaos/ask_dbpass
+Type: Password
+Default: chaos
+Description: Specify the DB password
+	     This will setup the DB password.
+
+Template: chaos/ask_mdsurl
+Type: String
+Default: localhost:5000
+Description: Specify the MDS url (ip:port)
+	     This will setup the MDS server.
+
+Template: chaos/ask_usalias
+Type: String
+Description: Specify the Unit Server UID
+	     This will setup an UnitServer with the specified UID.
+
+Template: chaos/ask_mdstest
+Type: Boolean
+Default: true
+Description: Do you want to initialize MDS with a TEST configuration?
+	     This will setup a MDS TEST configuration.

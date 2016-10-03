@@ -31,7 +31,7 @@ if [ -n "$5" ];then
     fi
 fi
 
-if launch_us_cu $NUS $NCU $META $USNAME;then
+if launch_us_cu $NUS $NCU "--metadata-server $META" $USNAME TEST_UNIT 1;then
     if ! check_proc $USNAME;then
 	error_mesg "$USNAME quitted"
 	stop_proc "create-noise-requests.sh"

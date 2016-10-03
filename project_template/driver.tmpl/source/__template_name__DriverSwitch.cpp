@@ -25,7 +25,7 @@
 #include <chaos/cu_toolkit/driver_manager/driver/AbstractDriverPlugin.h>
 
 
-using namespace __template_type__::__template_name__;
+using namespace ::__template_type__::__template_name__;
 
 
 //! Execute a command
