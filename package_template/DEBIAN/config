@@ -17,7 +17,7 @@ fi
 # #	echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 # #	apt-get update
 # #	apt-get install mongodb-org    
-# #	echo -e "db.createUser({user:\"chaos_admin\", pwd: \"chaos_admin\", roles:[]})\ndb.daq.createIndex({\"ndk_uid\" : 1, \"dpck_ats\":1,\"data.dpck_seq_id\":1}, {name:\"paged_daq_search_index\",unique:1})\nexit\n"|mongo
+# #	echo -e "db.createUser({user:\"chaos\", pwd: \"chaos\", roles:[]})\ndb.daq.createIndex({\"ndk_uid\" : 1, \"dpck_ats\":1,\"data.dpck_seq_id\":1}, {name:\"paged_daq_search_index\",unique:1})\nexit\n"|mongo
 #     fi
 #     if [ -e /etc/init.d/couchbase-server ];then
 # #	 /etc/init.d/couchbase-server restart

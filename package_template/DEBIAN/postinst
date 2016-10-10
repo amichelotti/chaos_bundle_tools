@@ -182,9 +182,9 @@ if [ "$TEMPLATE" != "docker" ];then
     if [ "$WAN_ENABLE" == "true" ]; then
 	service chaos-wan start
     fi
-#    if [ "$US_ENABLE" == "true" ]; then
-#	service chaos-cu start
-#    fi
+    if [ "$US_ENABLE" == "true" ]; then
+	service chaos-cu start
+    fi
     
     if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
  	export LD_LIBRARY_PATH=$INSTDIR/lib
