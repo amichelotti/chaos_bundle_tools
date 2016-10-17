@@ -167,33 +167,58 @@ if [ "$TEMPLATE" != "docker" ];then
 
     if [ "$MDS_ENABLE" == "true" ]; then
        
-	service chaos-mds start
+	if ! service chaos-mds start;then
+	    echo "## MDS service not starting"
+	    db_stop
+	    exit 1
+	fi
+    fi
+
+    if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
+ 	export LD_LIBRARY_PATH=$INSTDIR/lib
+ 	echo "* initializing of MDS ($MDS_SERVER) $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
+	sleep 1
+        if  $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt -r 1 > /dev/null;then
+	    echo "* OK"
+	else
+	    echo "# initialization of MDS ($MDS_SERVER) failed, $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
+ 	fi
     fi
     # if [ "$TEMPLATE" == "localhost" ];then
     # 	echo "* starting couchbase"
     # 	 /etc/init.d/couchbase-server restart
     # fi 
     if [ "$CDS_ENABLE" == "true" ]; then
-	service chaos-cds start
+	if ! service chaos-cds start;then
+	    echo "## CDS service not starting"
+	    db_stop
+	    exit 1
+	fi
     fi
     if [ "$WEBUI_ENABLE" == "true" ]; then
-	service chaos-webui start
+	if ! service chaos-webui start;then
+	    echo "## WEBUI service not starting"
+	    db_stop
+	    exit 1
+	fi
     fi
     if [ "$WAN_ENABLE" == "true" ]; then
-	service chaos-wan start
+	if ! service chaos-wan start;then
+	    echo "## WAN service not starting"
+	    db_stop
+	    exit 1
+	fi
+	
     fi
     if [ "$US_ENABLE" == "true" ]; then
-	service chaos-cu start
+	if ! service chaos-cu start;then
+	    echo "## UNIT SERVER not starting"
+	    db_stop
+	    exit 1
+	fi
     fi
     
-    if [ "$MDS_TEST" == "true" ] && [ -n "$MDS_SERVER" ]; then
- 	export LD_LIBRARY_PATH=$INSTDIR/lib
-        if  $INSTDIR/bin/ChaosMDSCmd --metadata-server $MDS_SERVER --mds-conf $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt > /dev/null;then
- 	    echo "* initialization of MDS $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
-	else
-	    echo "# initialization of MDS failed, $INSTDIR/tools/config/lnf/$TEMPLATE/MDSConfig.txt"
- 	fi
-    fi
+
 fi
 
 db_stop

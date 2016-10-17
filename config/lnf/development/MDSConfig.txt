@@ -37,8 +37,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start":true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -75,8 +75,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -113,8 +113,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -152,8 +152,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -190,8 +190,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -228,8 +228,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -266,8 +266,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -304,8 +304,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -336,307 +336,307 @@
 			}
 		    ]
 		},
-	    {
-		"unit_server_alias": "TEST",
-		"cu_id": "BTF/BIPOLE/CHHTB001",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/BIPOLE/CHHTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST",
-		"cu_id": "BTF/BIPOLE/CVVTB001",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST",
-		"cu_id": "BTF/BIPOLE/CHHTB002",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
 			},
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST",
-		"cu_id": "BTF/BIPOLE/CVVTB002",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/BIPOLE/CVVTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/BIPOLE/CHHTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/BIPOLE/CVVTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/BIPOLE/CTMAIN0",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "0",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/DAQ2",
+		    "cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
+		    "cu_param": "senza veto",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "scaleradd",
+			    "ds_max_range": "0x38390000",
+			    "ds_min_range": "0x38380000",
+			    "ds_default_value": "0x38380000"
+			},
+			{
+			    "ds_attr_name": "qdc965add",
+			    "ds_max_range": "0xb7650000",
+			    "ds_min_range": "0xb7640000",
+			    "ds_default_value": "0xb7640000"
+			},
+			{
+			    "ds_attr_name": "qdc792add",
+			    "ds_max_range": "0xEE550000",
+			    "ds_min_range": "0xEE540000",
+			    "ds_default_value": "0xEE540000"
+			},
+			{
+			    "ds_attr_name": "caen513add",
+			    "ds_max_range": "0x44210000",
+			    "ds_min_range": "0x44200000",
+			    "ds_default_value": "0x44200000"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/MEDIPIX_IMPORT",
+		    "cu_type": "DataImport",
+		    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
+		    "auto_load": true,
 		    "auto_start": false,
 		    "auto_init": false,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-	    "unit_server_alias": "TEST",
-	    "cu_id": "BTF/BIPOLE/CTMAIN0",
-	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-	    "cu_param": "",
-	    "auto_load": true,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "MemcachedDataImporterDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
+			}
+		    ],
+		    "AttrDesc": [
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "BTF/MEMCACHE_PRESENTER",
+		    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
+		    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
+		    "auto_load": true,
 		    "auto_start": false,
 		    "auto_init": false,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "PowerSimDD",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		}
-	    ],
-	    "AttrDesc": [
-		{
-		    "ds_attr_name": "currentSP",
-		    "ds_max_range": "0",
-		    "ds_min_range": "0",
-		    "ds_default_value": "0"
-		},
-		{
-		    "ds_attr_name": "slope_down",
-		    "ds_max_range": "10",
-		    "ds_min_range": "1",
-		    "ds_default_value": "1"
-		},
-		{
-		    "ds_attr_name": "slope_up",
-		    "ds_max_range": "10",
-		    "ds_min_range": "1",
-		    "ds_default_value": "1"
-		}
-	    ]
-	},{
-		"unit_server_alias": "TEST",
-		"cu_id": "BTF/DAQ2",
-		"cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
-		"cu_param": "senza veto",
-		"auto_load": true,
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "testchaos.lnf.infn.it:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "btfchaosdata"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "DAFNE/STATUS",
+		    "cu_type": "DataImport",
+		    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
+		    "auto_load": true,
 		    "auto_start": false,
 		    "auto_init": false,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "scaleradd",
-			"ds_max_range": "0x38390000",
-			"ds_min_range": "0x38380000",
-			"ds_default_value": "0x38380000"
-		    },
-		    {
-			"ds_attr_name": "qdc965add",
-			"ds_max_range": "0xb7650000",
-			"ds_min_range": "0xb7640000",
-			"ds_default_value": "0xb7640000"
-		    },
-		    {
-			"ds_attr_name": "qdc792add",
-			"ds_max_range": "0xEE550000",
-			"ds_min_range": "0xEE540000",
-			"ds_default_value": "0xEE540000"
-		    },
-		    {
-			"ds_attr_name": "caen513add",
-			"ds_max_range": "0x44210000",
-			"ds_min_range": "0x44200000",
-			"ds_default_value": "0x44200000"
-		    }
-		]
-	    },{
-	    "unit_server_alias": "TEST",
-	    "cu_id": "BTF/MEDIPIX_IMPORT",
-	    "cu_type": "DataImport",
-	    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "MemcachedDataImporterDriver",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
-		}
-	    ],
-	    "AttrDesc": [
-	    ]
-	},{
-	    "unit_server_alias": "TEST",
-	    "cu_id": "BTF/MEMCACHE_PRESENTER",
-	    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
-	    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "testchaos.lnf.infn.it:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "btfchaosdata"
-			   }
-
-	    ]
-	},{
-	    "unit_server_alias": "TEST",
-	    "cu_id": "DAFNE/STATUS",
-	    "cu_type": "DataImport",
-	    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "FilePosixDataImporterDriver",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "{\"file_name\":\"/home/chaos/newdafne.stat\",\"separator\":\" \"}"
-		}
-	    ],
-	    "AttrDesc": [
-	    ]
-	},{
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "FilePosixDataImporterDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{\"file_name\":\"/home/chaos/newdafne.stat\",\"separator\":\" \"}"
+			}
+		    ],
+		    "AttrDesc": [
+		    ]
+		},{
 		    "unit_server_alias": "TEST",
 		    "cu_id": "ACCUMULATOR/BPM/BPSA2001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -647,14 +647,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST",
@@ -662,8 +662,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -674,22 +674,22 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }]
+		    	}]
 		},{
 		    "unit_server_alias": "TEST",
 		    "cu_id": "ACCUMULATOR/BPM/BPBA2001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -700,14 +700,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST",
@@ -715,8 +715,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -727,14 +727,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -743,8 +743,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -755,14 +755,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -771,8 +771,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -783,14 +783,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -799,8 +799,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -811,14 +811,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -827,8 +827,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -846,7 +846,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST",
@@ -854,8 +854,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -867,13 +867,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},{
@@ -882,8 +882,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -895,13 +895,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},{
@@ -910,8 +910,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -929,7 +929,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST",
@@ -937,8 +937,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -950,13 +950,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},
@@ -966,8 +966,8 @@
 		    "cu_type": "SCDafneAccumulatorBPMSync",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -979,64 +979,10 @@
 		    ],
 		    "AttrDesc": []
 		},{
-	    "unit_server_alias": "TEST",
-	    "cu_id": "ACCUMULATOR/BPM/ORBIT_E",
-	    "cu_type": "::driver::data_import::RTChaos2Memcache",
-	    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "192.168.192.107:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "ACCORB_E"
-			   }
-
-	    ]
-	},{
-	    "unit_server_alias": "ACCUMULATOR/BPM",
-	    "cu_id": "ACCUMULATOR/BPM/ORBIT_P",
-	    "cu_type": "::driver::data_import::RTChaos2Memcache",
-	    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "192.168.192.107:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "ACCORB_P"
-			   }
-
-	    ]
-	},{
 		    "unit_server_alias": "TEST",
-		    "cu_id": "LUMINOMETER/CAEN775",
-		    "cu_type": "::driver::daq::caen::RTCAEN775",
-		    "cu_param": "",
+		    "cu_id": "ACCUMULATOR/BPM/ORBIT_E",
+		    "cu_type": "::driver::data_import::RTChaos2Memcache",
+		    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y",
 		    "auto_load": true,
 		    "auto_start": false,
 		    "auto_init": false,
@@ -1045,7 +991,61 @@
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "192.168.192.107:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "ACCORB_E"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "ACCUMULATOR/BPM",
+		    "cu_id": "ACCUMULATOR/BPM/ORBIT_P",
+		    "cu_type": "::driver::data_import::RTChaos2Memcache",
+		    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y",
+		    "auto_load": true,
+		    "auto_start": false,
+		    "auto_init": false,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "192.168.192.107:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "ACCORB_P"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "TEST",
+		    "cu_id": "LUMINOMETER/CAEN775",
+		    "cu_type": "::driver::daq::caen::RTCAEN775",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -1094,15 +1094,15 @@
 		    "cu_id": "LUMINOMETER/CAEN965",
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -1145,14 +1145,14 @@
 		    "cu_type": "::driver::daq::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -1195,15 +1195,15 @@
 		    "cu_id": "ASTRA/CAEN965",
 		    "cu_type": "::driver::daq::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -1233,7 +1233,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "100000"
 			},
-{
+			{
 			    "ds_attr_name": "BITSET2",
 			    "ds_max_range": "0xffffffff",
 			    "ds_min_range": "0",
@@ -1253,8 +1253,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1273,8 +1273,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1293,8 +1293,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1313,8 +1313,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1333,8 +1333,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -1352,8 +1352,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1372,8 +1372,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1392,8 +1392,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1412,8 +1412,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1432,8 +1432,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1452,8 +1452,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1472,8 +1472,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1492,8 +1492,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1511,8 +1511,8 @@
 		    "cu_id": "AULA_TOUSHECK/ZB_SENSOR_D0401",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "auto_load": true,
@@ -1531,8 +1531,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1551,8 +1551,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1571,8 +1571,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1591,8 +1591,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1611,8 +1611,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1631,8 +1631,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1651,8 +1651,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1671,8 +1671,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1691,8 +1691,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1711,8 +1711,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1731,8 +1731,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1751,8 +1751,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1771,8 +1771,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -1800,7 +1800,7 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
@@ -1812,7 +1812,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "16"
 			}
-          
+			
 		    ]
 		},{		
 		    "unit_server_alias": "TEST",
@@ -1830,7 +1830,7 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
@@ -1863,7 +1863,7 @@
 		    ]
 		}
 	    ]
-	},{
+	} , {
 	    "unit_server_alias": "TEST_DEVEL",
 	    "private_key": null,
 	    "public_key": null,
@@ -1892,8 +1892,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -1930,8 +1930,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -1968,8 +1968,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2007,8 +2007,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2045,8 +2045,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2083,8 +2083,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2121,8 +2121,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2159,8 +2159,8 @@
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2191,307 +2191,307 @@
 			}
 		    ]
 		},
-	    {
-		"unit_server_alias": "TEST_DEVEL",
-		"cu_id": "TEST_DEVEL/BTF/BIPOLE/CHHTB001",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CHHTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST_DEVEL",
-		"cu_id": "TEST_DEVEL/BTF/BIPOLE/CVVTB001",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST_DEVEL",
-		"cu_id": "TEST_DEVEL/BTF/BIPOLE/CHHTB002",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
 			},
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-		"unit_server_alias": "TEST_DEVEL",
-		"cu_id": "TEST_DEVEL/BTF/BIPOLE/CVVTB002",
-		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		"cu_param": "",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CVVTB001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-		"DriverDescription": [
-		    {
-			"DriverDescriptionName": "PowerSimDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		    }
-		],
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "currentSP",
-			"ds_max_range": "9.995",
-			"ds_min_range": "-10",
-			"ds_default_value": "0"
-		    },
-		    {
-			"ds_attr_name": "slope_down",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    },
-		    {
-			"ds_attr_name": "slope_up",
-			"ds_max_range": "10",
-			"ds_min_range": "1",
-			"ds_default_value": "1"
-		    }
-		]
-	    },{
-	    "unit_server_alias": "TEST_DEVEL",
-	    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CTMAIN0",
-	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-	    "cu_param": "",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CHHTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "PowerSimDD",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
-		}
-	    ],
-	    "AttrDesc": [
-		{
-		    "ds_attr_name": "currentSP",
-		    "ds_max_range": "0",
-		    "ds_min_range": "0",
-		    "ds_default_value": "0"
-		},
-		{
-		    "ds_attr_name": "slope_down",
-		    "ds_max_range": "10",
-		    "ds_min_range": "1",
-		    "ds_default_value": "1"
-		},
-		{
-		    "ds_attr_name": "slope_up",
-		    "ds_max_range": "10",
-		    "ds_min_range": "1",
-		    "ds_default_value": "1"
-		}
-	    ]
-	},{
-		"unit_server_alias": "TEST_DEVEL",
-		"cu_id": "TEST_DEVEL/BTF/DAQ2",
-		"cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
-		"cu_param": "senza veto",
-		"auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CVVTB002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-		"AttrDesc": [
-		    {
-			"ds_attr_name": "scaleradd",
-			"ds_max_range": "0x38390000",
-			"ds_min_range": "0x38380000",
-			"ds_default_value": "0x38380000"
-		    },
-		    {
-			"ds_attr_name": "qdc965add",
-			"ds_max_range": "0xb7650000",
-			"ds_min_range": "0xb7640000",
-			"ds_default_value": "0xb7640000"
-		    },
-		    {
-			"ds_attr_name": "qdc792add",
-			"ds_max_range": "0xEE550000",
-			"ds_min_range": "0xEE540000",
-			"ds_default_value": "0xEE540000"
-		    },
-		    {
-			"ds_attr_name": "caen513add",
-			"ds_max_range": "0x44210000",
-			"ds_min_range": "0x44200000",
-			"ds_default_value": "0x44200000"
-		    }
-		]
-	    },{
-	    "unit_server_alias": "TEST_DEVEL",
-	    "cu_id": "TEST_DEVEL/BTF/MEDIPIX_IMPORT",
-	    "cu_type": "DataImport",
-	    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "9.995",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/BIPOLE/CTMAIN0",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "MemcachedDataImporterDriver",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
-		}
-	    ],
-	    "AttrDesc": [
-	    ]
-	},{
-	    "unit_server_alias": "TEST_DEVEL",
-	    "cu_id": "TEST_DEVEL/BTF/MEMCACHE_PRESENTER",
-	    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
-	    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0"
+			}
+		    ],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "currentSP",
+			    "ds_max_range": "0",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "slope_down",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "slope_up",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/DAQ2",
+		    "cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
+		    "cu_param": "senza veto",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "testchaos.lnf.infn.it:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "btfchaosdata"
-			   }
-
-	    ]
-	},{
-	    "unit_server_alias": "TEST_DEVEL",
-	    "cu_id": "TEST_DEVEL/DAFNE/STATUS",
-	    "cu_type": "DataImport",
-	    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "scaleradd",
+			    "ds_max_range": "0x38390000",
+			    "ds_min_range": "0x38380000",
+			    "ds_default_value": "0x38380000"
+			},
+			{
+			    "ds_attr_name": "qdc965add",
+			    "ds_max_range": "0xb7650000",
+			    "ds_min_range": "0xb7640000",
+			    "ds_default_value": "0xb7640000"
+			},
+			{
+			    "ds_attr_name": "qdc792add",
+			    "ds_max_range": "0xEE550000",
+			    "ds_min_range": "0xEE540000",
+			    "ds_default_value": "0xEE540000"
+			},
+			{
+			    "ds_attr_name": "caen513add",
+			    "ds_max_range": "0x44210000",
+			    "ds_min_range": "0x44200000",
+			    "ds_default_value": "0x44200000"
+			}
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/MEDIPIX_IMPORT",
+		    "cu_type": "DataImport",
+		    "cu_param": "{\"dataset\": [{\"name\": \"image\",\"description\": \"medipix_image\",\"type\": \"binary\",\"offset\": 0,\"len\": 65536}]}",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
-	    "DriverDescription": [
-		{
-		    "DriverDescriptionName": "FilePosixDataImporterDriver",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "{\"file_name\":\"/home/chaos/newdafne.stat\",\"separator\":\" \"}"
-		}
-	    ],
-	    "AttrDesc": [
-	    ]
-	},{
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "MemcachedDataImporterDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{\"server_url\":[\"testchaos.lnf.infn.it:11211\"],\"data_key\":\"meddata\",\"data_pack_len\":65536}"
+			}
+		    ],
+		    "AttrDesc": [
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/BTF/MEMCACHE_PRESENTER",
+		    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
+		    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "testchaos.lnf.infn.it:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "btfchaosdata"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/DAFNE/STATUS",
+		    "cu_type": "DataImport",
+		    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "FilePosixDataImporterDriver",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{\"file_name\":\"/home/chaos/newdafne.stat\",\"separator\":\" \"}"
+			}
+		    ],
+		    "AttrDesc": [
+		    ]
+		},{
 		    "unit_server_alias": "TEST_DEVEL",
 		    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/BPSA2001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2502,14 +2502,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST_DEVEL",
@@ -2517,8 +2517,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2529,22 +2529,22 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }]
+		    	}]
 		},{
 		    "unit_server_alias": "TEST_DEVEL",
 		    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/BPBA2001",
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2555,14 +2555,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST_DEVEL",
@@ -2570,8 +2570,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2582,14 +2582,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -2598,8 +2598,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2610,14 +2610,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -2626,8 +2626,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2638,14 +2638,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -2654,8 +2654,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2666,14 +2666,14 @@
 			    "DriverDescriptionInitParam": "3,RndWave:0:3000"
 			}
 		    ],
-		    	    "AttrDesc": [
-			    {
+		    "AttrDesc": [
+			{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -2682,8 +2682,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2701,7 +2701,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST_DEVEL",
@@ -2709,8 +2709,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2722,13 +2722,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},{
@@ -2737,8 +2737,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2750,13 +2750,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},{
@@ -2765,8 +2765,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2784,7 +2784,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 
-		    	    }
+		    	}
 		    ]
 		},{
 		    "unit_server_alias": "TEST_DEVEL",
@@ -2792,8 +2792,8 @@
 		    "cu_type": "::driver::daq::libera::SCLiberaCU",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -2805,13 +2805,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    	{
+		    	{
 			    "ds_attr_name": "POLYTYPE",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 
-		    	    }
+		    	}
 
 		    ]
 		},
@@ -2821,8 +2821,8 @@
 		    "cu_type": "SCDafneAccumulatorBPMSync",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -2834,73 +2834,73 @@
 		    ],
 		    "AttrDesc": []
 		},{
-	    "unit_server_alias": "TEST_DEVEL",
-	    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/ORBIT_E",
-	    "cu_type": "::driver::data_import::RTChaos2Memcache",
-	    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "192.168.192.107:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "ACCORB_E"
-			   }
-
-	    ]
-	},{
-	    "unit_server_alias": "ACCUMULATOR/BPM",
-	    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/ORBIT_P",
-	    "cu_type": "::driver::data_import::RTChaos2Memcache",
-	    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y",
-	    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
-		    "storage_type": 2,
-		    "storage_ageing": 3600,
-
-	    "DriverDescription": [],
-	    "AttrDesc": [
-			   {
-			       "ds_attr_name": "memcacheurl",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "192.168.192.107:11211"
-			   },
-			   {
-			       "ds_attr_name": "memcachekey",
-			       "ds_max_range": "",
-			       "ds_min_range": "",
-			       "ds_default_value": "ACCORB_P"
-			   }
-
-	    ]
-	},{
 		    "unit_server_alias": "TEST_DEVEL",
-		    "cu_id": "TEST_DEVEL/LUMINOMETER/CAEN775",
-		    "cu_type": "::driver::daq::caen::RTCAEN775",
-		    "cu_param": "",
+		    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/ORBIT_E",
+		    "cu_type": "::driver::data_import::RTChaos2Memcache",
+		    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "192.168.192.107:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "ACCORB_E"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "ACCUMULATOR/BPM",
+		    "cu_id": "TEST_DEVEL/ACCUMULATOR/BPM/ORBIT_P",
+		    "cu_type": "::driver::data_import::RTChaos2Memcache",
+		    "cu_param": "ACCUMULATOR/BPM/BPMSYNC/BPBA2002/X ACCUMULATOR/BPM/BPMSYNC/BPSA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1002/X ACCUMULATOR/BPM/BPMSYNC/BPSA1001/X ACCUMULATOR/BPM/BPMSYNC/BPBA1001/X ACCUMULATOR/BPM/BPMSYNC/BPSA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA4002/X ACCUMULATOR/BPM/BPMSYNC/BPBA4001/X ACCUMULATOR/BPM/BPMSYNC/BPBA3002/X ACCUMULATOR/BPM/BPMSYNC/BPBA3001/X ACCUMULATOR/BPM/BPMSYNC/BPSA3001/X ACCUMULATOR/BPM/BPMSYNC/BPBA2002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA2001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1002/Y ACCUMULATOR/BPM/BPMSYNC/BPSA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA1001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA4001/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3002/Y ACCUMULATOR/BPM/BPMSYNC/BPBA3001/Y ACCUMULATOR/BPM/BPMSYNC/BPSA3001/Y",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "memcacheurl",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "192.168.192.107:11211"
+			},
+			{
+			    "ds_attr_name": "memcachekey",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "ACCORB_P"
+			}
+
+		    ]
+		},{
+		    "unit_server_alias": "TEST_DEVEL",
+		    "cu_id": "TEST_DEVEL/LUMINOMETER/CAEN775",
+		    "cu_type": "::driver::daq::caen::RTCAEN775",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600,
+
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -2949,15 +2949,15 @@
 		    "cu_id": "TEST_DEVEL/LUMINOMETER/CAEN965",
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -3000,14 +3000,14 @@
 		    "cu_type": "::driver::daq::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -3050,15 +3050,15 @@
 		    "cu_id": "TEST_DEVEL/ASTRA/CAEN965",
 		    "cu_type": "::driver::daq::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_load": true,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
 		    "DriverDescription": [],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "VME_DRIVER",
 			    "ds_max_range": "3",
 			    "ds_min_range": "0",
@@ -3088,7 +3088,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "100000"
 			},
-{
+			{
 			    "ds_attr_name": "BITSET2",
 			    "ds_max_range": "0xffffffff",
 			    "ds_min_range": "0",
@@ -3108,8 +3108,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3128,8 +3128,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3148,8 +3148,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3168,8 +3168,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3188,8 +3188,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "DriverDescription": [
@@ -3207,8 +3207,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3227,8 +3227,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3247,8 +3247,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3267,8 +3267,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3287,8 +3287,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3307,8 +3307,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3327,8 +3327,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3347,8 +3347,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3366,8 +3366,8 @@
 		    "cu_id": "TEST_DEVEL/AULA_TOUSHECK/ZB_SENSOR_D0401",
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 		    "auto_load": true,
@@ -3386,8 +3386,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3406,8 +3406,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3426,8 +3426,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3446,8 +3446,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3466,8 +3466,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3486,8 +3486,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3506,8 +3506,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3526,8 +3526,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3546,8 +3546,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3566,8 +3566,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3586,8 +3586,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3606,8 +3606,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3626,8 +3626,8 @@
 		    "cu_type": "BasicSensor",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start": false,
-		    "auto_init": false,
+		    "auto_start": true,
+		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600,
 
@@ -3655,7 +3655,7 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
@@ -3667,7 +3667,7 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "16"
 			}
-          
+			
 		    ]
 		},{		
 		    "unit_server_alias": "TEST_DEVEL",
@@ -3685,7 +3685,7 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    {		    
+			{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
@@ -3718,10 +3718,7 @@
 		    ]
 		}
 	    ]
-	},
-
-
-{
+	},{
 	    "unit_server_alias": "IMA",
 	    "private_key": null,
 	    "public_key": null,
@@ -3731,7 +3728,7 @@
 		    "cu_id": "IMA/DAQ",
 		    "cu_type": "",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start": false,
 		    "auto_init": false,
 		    "storage_type": 2,
