@@ -2580,7 +2580,7 @@
 	"cu_desc": [
 	    {
 		"unit_server_alias": "BTF/DAQ",
-		"cu_id": "BTF/DAQ2",
+		"cu_id": "BTF/DAQ",
 		"cu_type": "::driver::daq::btf::RTBTFdaqSimCU",
 		"cu_param": "senza veto",
 		"auto_load": true,
