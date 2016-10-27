@@ -15,7 +15,7 @@ if [ -e /etc/init/chaos-cu.conf ]; then
 	echo "* stopping cu"
 	service chaos-cu stop
     fi
-    rm /etc/init/chaos-cu.conf
+    rm -f /etc/init/chaos-cu.conf >& /dev/null
 fi
 
 if [ -e /etc/init/chaos-cds.conf ];then 
@@ -24,7 +24,7 @@ if [ -e /etc/init/chaos-cds.conf ];then
 	service chaos-cds stop
 
     fi
-    rm /etc/init/chaos-cds.conf
+    rm -f /etc/init/chaos-cds.conf
 fi
 
 if [ -e /etc/init/chaos-webui.conf ]; then
@@ -33,7 +33,7 @@ if [ -e /etc/init/chaos-webui.conf ]; then
 	service chaos-webui stop
 	
     fi
-    rm /etc/init/chaos-webui.conf
+    rm -f /etc/init/chaos-webui.conf
 fi
 
 if [ -e /etc/init/chaos-mds.conf ];then 
@@ -42,10 +42,12 @@ if [ -e /etc/init/chaos-mds.conf ];then
 	service chaos-mds stop
 
     fi
-    rm /etc/init/chaos-mds.conf
+    rm -f /etc/init/chaos-mds.conf
 fi
 
-rm /etc/init/chaos-service.conf
+if [ -e /etc/init/chaos-service.conf ];then 
+    rm -f /etc/init/chaos-service.conf
+fi
 
 
 
