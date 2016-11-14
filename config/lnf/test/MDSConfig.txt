@@ -2030,20 +2030,116 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "700",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "70",
 			    "ds_min_range": "1",
 			    "ds_default_value": "35"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "70",
 			    "ds_min_range": "1",
 			    "ds_default_value": "35"
@@ -2069,20 +2165,116 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "700",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "70",
 			    "ds_min_range": "1",
 			    "ds_default_value": "35"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "70",
 			    "ds_min_range": "1",
 			    "ds_default_value": "35"
@@ -2108,23 +2300,119 @@
 			}
 		    ],
 		    "AttrDesc": [
-			{
-			    "ds_attr_name": "currentSP",
-			    "ds_max_range": "100",
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "5"
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_up",
-			    "ds_max_range": "10",
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
 			    "ds_min_range": "1",
-			    "ds_default_value": "5"
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "70",
+			    "ds_min_range": "1",
+			    "ds_default_value": "35"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "70",
+			    "ds_min_range": "1",
+			    "ds_default_value": "35"
 			}
 		    ]
 		},
@@ -2146,25 +2434,121 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "5"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "5"
 			}
-		    ]
+			]
 		},
 		{
 		    "unit_server_alias": "BTF/TRXLINE",
@@ -2185,20 +2569,146 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
@@ -2224,20 +2734,116 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
@@ -2263,20 +2869,116 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
@@ -2302,20 +3004,116 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "5",
 			    "ds_default_value": "1"
@@ -2347,20 +3145,116 @@
 		    }
 		],
 		"AttrDesc": [
+		  		{
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "0",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "-10"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
 		    {
-			"ds_attr_name": "currentSP",
+			"ds_attr_name": "current",
 			"ds_max_range": "9.995",
 			"ds_min_range": "-10",
 			"ds_default_value": "0"
 		    },
 		    {
-			"ds_attr_name": "slope_down",
+			"ds_attr_name": "rampDownRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
 		    },
 		    {
-			"ds_attr_name": "slope_up",
+			"ds_attr_name": "rampUpRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
@@ -2385,20 +3279,117 @@
 		    }
 		],
 		"AttrDesc": [
+		  		{
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "0",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "-10"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+
 		    {
-			"ds_attr_name": "currentSP",
+			"ds_attr_name": "current",
 			"ds_max_range": "9.995",
 			"ds_min_range": "-10",
 			"ds_default_value": "0"
 		    },
 		    {
-			"ds_attr_name": "slope_down",
+			"ds_attr_name": "rampDownRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
 		    },
 		    {
-			"ds_attr_name": "slope_up",
+			"ds_attr_name": "rampUpRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
@@ -2423,20 +3414,116 @@
 		    }
 		],
 		"AttrDesc": [
+		  		{
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "0",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "-10"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
 		    {
-			"ds_attr_name": "currentSP",
+			"ds_attr_name": "current",
 			"ds_max_range": "9.995",
 			"ds_min_range": "-10",
 			"ds_default_value": "0"
 			},
 		    {
-			"ds_attr_name": "slope_down",
+			"ds_attr_name": "rampDownRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
 		    },
 		    {
-			"ds_attr_name": "slope_up",
+			"ds_attr_name": "rampUpRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
@@ -2461,20 +3548,116 @@
 		    }
 		],
 		"AttrDesc": [
+		  		{
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "0",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "-10"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
 		    {
-			"ds_attr_name": "currentSP",
+			"ds_attr_name": "current",
 			"ds_max_range": "9.995",
 			"ds_min_range": "-10",
 			"ds_default_value": "0"
 		    },
 		    {
-			"ds_attr_name": "slope_down",
+			"ds_attr_name": "rampDownRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
 		    },
 		    {
-			"ds_attr_name": "slope_up",
+			"ds_attr_name": "rampUpRate",
 			"ds_max_range": "10",
 			"ds_min_range": "1",
 			"ds_default_value": "1"
@@ -2499,20 +3682,116 @@
 		}
 	    ],
 	    "AttrDesc": [
+		  		{
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "0",
+			    "ds_min_range": "-10",
+			    "ds_default_value": "-10"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
 		{
-		    "ds_attr_name": "currentSP",
+		    "ds_attr_name": "current",
 		    "ds_max_range": "0",
 		    "ds_min_range": "0",
 		    "ds_default_value": "0"
 		},
 		{
-		    "ds_attr_name": "slope_down",
+		    "ds_attr_name": "rampDownRate",
 		    "ds_max_range": "10",
 		    "ds_min_range": "1",
 		    "ds_default_value": "1"
 		},
 		{
-		    "ds_attr_name": "slope_up",
+		    "ds_attr_name": "rampUpRate",
 		    "ds_max_range": "10",
 		    "ds_min_range": "1",
 		    "ds_default_value": "1"
@@ -2747,19 +4026,19 @@
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "current",
 			    "ds_max_range": "700",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "1"
@@ -2788,19 +4067,19 @@
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "current",
 			    "ds_max_range": "700",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
+			    "ds_attr_name": "rampDownRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "1"
 			},
 			{
-			    "ds_attr_name": "slope_up",
+			    "ds_attr_name": "rampUpRate",
 			    "ds_max_range": "10",
 			    "ds_min_range": "1",
 			    "ds_default_value": "1"
@@ -2829,22 +4108,22 @@
 		    ],
 		    "AttrDesc": [
 			{
-			    "ds_attr_name": "currentSP",
+			    "ds_attr_name": "current",
 			    "ds_max_range": "700",
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
 			{
-			    "ds_attr_name": "slope_down",
-			    "ds_max_range": "10",
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			},
 			{
-			    "ds_attr_name": "slope_up",
-			    "ds_max_range": "10",
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "70",
 			    "ds_min_range": "1",
-			    "ds_default_value": "1"
+			    "ds_default_value": "35"
 			}
 		    ]
 		}
