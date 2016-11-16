@@ -58,12 +58,12 @@ cuid=()
  fi
 
 
- if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_UNIT;then
-     ok_mesg "US TEST_UNI $!"
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTFSCRAPERS;then
+     ok_mesg "US BTFSCRAPERS $!"
      procid+=($!)
-     cuid+=("TEST_UNIT")
+     cuid+=("BTFSCRAPERS")
  else
-     nok_mesg "TEST_UNIT"
+     nok_mesg "BTFSCRAPERS"
      exit 1
  fi
 

@@ -3128,7 +3128,7 @@
 	    "public_key": null,
 	    "cu_desc":[{
 		"unit_server_alias": "BTF/CORRECTORS",
-		"cu_id": "BTF/BIPOLE/CHHTB001",
+		"cu_id": "BTF/CORRECTOR/CHHTB001",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
@@ -3262,7 +3262,7 @@
 		]
 	    },{
 		"unit_server_alias": "BTF/CORRECTORS",
-		"cu_id": "BTF/BIPOLE/CVVTB001",
+		"cu_id": "BTF/CORRECTOR/CVVTB001",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
@@ -3397,7 +3397,7 @@
 		]
 	    },{
 		"unit_server_alias": "BTF/CORRECTORS",
-		"cu_id": "BTF/BIPOLE/CHHTB002",
+		"cu_id": "BTF/CORRECTOR/CHHTB002",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
@@ -3531,7 +3531,7 @@
 		]
 	    },{
 		"unit_server_alias": "BTF/CORRECTORS",
-		"cu_id": "BTF/BIPOLE/CVVTB002",
+		"cu_id": "BTF/CORRECTOR/CVVTB002",
 		"cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		"cu_param": "",
 		"auto_load": true,
@@ -3665,7 +3665,7 @@
 		]
 	    },{
 	    "unit_server_alias": "BTF/CORRECTORS",
-	    "cu_id": "BTF/BIPOLE/CTMAIN0",
+	    "cu_id": "BTF/CORRECTOR/CTMAIN0",
 	    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 	    "cu_param": "",
 	    "auto_load": true,
@@ -4549,12 +4549,13 @@
 		    "AttrDesc": []
 		}
 	    ]
-	},{ "unit_server_alias": "TEST_UNIT",
+	},{ "unit_server_alias": "BTFSCRAPERS",
 	    "private_key": null,
 	    "public_key": null,
-	    "cu_desc": [{		
-		    "unit_server_alias": "TEST_UNIT",
-		    "cu_id": "BTF/SCRAPERS/SLIT0",
+	    "cu_desc": [
+	    {		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB4_RIGHT",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -4584,8 +4585,271 @@
 			}
           
 		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB4_LEFT",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "17,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "17"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB2_RIGHT",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "18,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "18,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "18"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB2_LEFT",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "19,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "19"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB3_UP",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "20,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "20"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB3_DOWN",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "21,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "21,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "21"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB01_UP",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "22,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "22"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TB01_DOWN",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "23,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "23"
+			}
+          
+		    ]
+		},
+{		
+		    "unit_server_alias": "BTFSCRAPERS",
+		    "cu_id": "BTF/SCRAPER/TARGETTONE",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "16,0,115200,/dev/ttyr1c"
+			}
+		    ],
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "ConfigString",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "24,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "24"
+			}
+          
+		    ]
 		}
-		
 	    ]
 	}, { "unit_server_alias": "LUMINOMETER",
 	    "private_key": null,
