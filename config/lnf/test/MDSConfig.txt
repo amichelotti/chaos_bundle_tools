@@ -2296,7 +2296,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,9,1,0:100,0:10,100:200,200:300,0"
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,9,1,0:100,0:10,100:200,200:300,1"
 			}
 		    ],
 		    "AttrDesc": [
