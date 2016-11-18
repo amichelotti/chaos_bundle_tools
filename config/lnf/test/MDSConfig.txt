@@ -4596,25 +4596,25 @@
 	            },
 		    {
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "20"
 	            },
 		    {
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1.5"
 	            },
 	            {
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "800"
 	            },
 	 	    {
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "28.5"
 	            },
@@ -4680,13 +4680,13 @@
 	            },
 		    {
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            },
 		    {
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            },
@@ -4766,25 +4766,25 @@
 	            },
 		    {
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "20"
 	            },
 		    {
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1.5"
 	            },
 	            {
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "800"
 	            },
 	 	    {
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "28.5"
 	            },
@@ -4850,13 +4850,13 @@
 	            },
 		    {
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            },
 		    {
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            },
@@ -4941,25 +4941,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "20"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1.5"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "800"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "24"
 	            	},
@@ -5025,13 +5025,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5116,25 +5116,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "20"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1.5"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "800"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "27.5"
 	            	},
@@ -5200,13 +5200,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5291,25 +5291,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "20"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1.5"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "800"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "27.4"
 	            	},
@@ -5375,13 +5375,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5466,25 +5466,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1600"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "26.2"
 	            	},
@@ -5550,13 +5550,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5641,25 +5641,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1600"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "27.3"
 	            	},
@@ -5725,13 +5725,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5816,25 +5816,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1600"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "25"
 	            	},
@@ -5900,13 +5900,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
@@ -5991,25 +5991,25 @@
 	            	},
 		    	{
 			    "ds_attr_name": "fixednumberofrounds",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 		    	{
 			    "ds_attr_name": "lineardisplacement[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1"
 	            	},
 	            	{
 			    "ds_attr_name": "numencoderlines",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "1600"
 	            	},
 	 	    	{
 			    "ds_attr_name": "range_slit[mm]",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "24.2"
 	            	},
@@ -6075,13 +6075,13 @@
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "256"
 	            	},
 		    	{
 			    "ds_attr_name": "stepsperround",
-			    "ds_max_range": "4294967295",
+			    "ds_max_range": "10000000",
 			    "ds_min_range": "0.000000001",
 			    "ds_default_value": "200"
 	            	},
