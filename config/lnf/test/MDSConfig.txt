@@ -4652,7 +4652,7 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "3,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse3.t.zip"
+			    "ds_default_value": "3,asse3.t.zip"
 		    },
 		    {
 			    "ds_attr_name": "axisID",
