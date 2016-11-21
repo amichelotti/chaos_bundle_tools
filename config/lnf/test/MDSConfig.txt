@@ -4555,7 +4555,7 @@
 	    "cu_desc": [
 	    {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB4_RIGHT",
+		    "cu_id": "BTF/SCRAPER/SLTB004R",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -4900,7 +4900,7 @@
 		},
 		{		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB4_LEFT",
+		    "cu_id": "BTF/SCRAPER/SLTB004L",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5075,7 +5075,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB2_RIGHT",
+		    "cu_id": "BTF/SCRAPER/SLTB002R",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5250,7 +5250,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB2_LEFT",
+		    "cu_id": "BTF/SCRAPER/SLTB002L",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5425,7 +5425,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB3_UP",
+		    "cu_id": "BTF/SCRAPER/SLTB003U",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5600,7 +5600,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB3_DOWN",
+		    "cu_id": "BTF/SCRAPER/SLTB003D",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5775,7 +5775,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB01_UP",
+		    "cu_id": "BTF/SCRAPER/SLTB001U",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -5950,7 +5950,7 @@
 		},
 {		
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/TB01_DOWN",
+		    "cu_id": "BTF/SCRAPER/SLTB001D",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
