@@ -2023,6 +2023,11 @@
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
+		    		    {
+			"DriverDescriptionName": "OcemDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,4,700:10"
+		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2058,7 +2063,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2158,6 +2163,12 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,6,700:10"
+
+		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2193,7 +2204,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2293,6 +2304,11 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		    {
+			"DriverDescriptionName": "OcemDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,9,100:10"
+		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2328,7 +2344,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2427,6 +2443,11 @@
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
+		    		    {
+			"DriverDescriptionName": "OcemDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr08,11,100:10"
+		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2462,7 +2483,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2562,6 +2583,11 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr16,5,100:10"
+		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2597,7 +2623,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2693,7 +2719,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "current",
@@ -2727,6 +2753,11 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		{
+		    "DriverDescriptionName": "OcemDD",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,4,100:10"
+		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2762,7 +2793,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2862,6 +2893,11 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		    {
+			"DriverDescriptionName": "OcemDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,3,100:10"
+		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2897,7 +2933,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -2997,6 +3033,11 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
+		    		    {
+			"DriverDescriptionName": "OcemDD",
+			"DriverDescriptionVersion": "1.0.0",
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,0,100:10"
+		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -3032,7 +3073,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -3138,6 +3179,11 @@
 		    "storage_ageing": 36000,
 
 		"DriverDescription": [
+				    		{
+		    "DriverDescriptionName": "C_AL250",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "HazemeyerAL250:/dev/ttyr0f,2,9600,N,8,1:1"
+		},
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
@@ -3173,7 +3219,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -3272,6 +3318,11 @@
 		    "storage_ageing": 36000,
 
 		"DriverDescription": [
+				    		{
+		    "DriverDescriptionName": "C_AL250",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "HazemeyerAL250:/dev/ttyr0f,2,9600,N,8,1:2"
+		},
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
@@ -3307,7 +3358,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -3407,6 +3458,11 @@
 		    "storage_ageing": 36000,
 
 		"DriverDescription": [
+				    		{
+		    "DriverDescriptionName": "C_AL250",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "HazemeyerAL250:/dev/ttyr0f,2,9600,N,8,1:2"
+		},
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
@@ -3442,7 +3498,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -3541,6 +3597,11 @@
 		    "storage_ageing": 36000,
 
 		"DriverDescription": [
+				    		{
+		    "DriverDescriptionName": "C_AL250",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "HazemeyerAL250:/dev/ttyr0f,2,9600,N,8,1:2"
+		},
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
@@ -3576,7 +3637,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -3675,6 +3736,11 @@
 		    "storage_ageing": 36000,
 
 	    "DriverDescription": [
+	    		    		{
+		    "DriverDescriptionName": "C_AL250",
+		    "DriverDescriptionVersion": "1.0.0",
+		    "DriverDescriptionInitParam": "HazemeyerAL250:/dev/ttyr0f,2,9600,N,8,1:2"
+		},
 		{
 		    "DriverDescriptionName": "PowerSimDD",
 		    "DriverDescriptionVersion": "1.0.0",
@@ -3710,7 +3776,7 @@
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "unit",
@@ -4577,6 +4643,12 @@
 		    ],
 		    "AttrDesc": [
 		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
@@ -4747,10 +4819,16 @@
 		    ],
 		    "AttrDesc": [
 		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "3,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse3.t.zip"
+			    "ds_default_value": "3,asse3.t.zip"
 		    },
 		    {
 			    "ds_attr_name": "axisID",
@@ -4904,11 +4982,18 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
+		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
+
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -4925,7 +5010,7 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "4,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/2008_03_27Asse4BtfApp.t.zip"
+			    "ds_default_value": "4,2008_03_27Asse4BtfApp.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5079,11 +5164,18 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
+
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -5100,7 +5192,7 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "5,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/2008_03_26Asse5BtfApp.t.zip"
+			    "ds_default_value": "5,2008_03_26Asse5BtfApp.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5254,8 +5346,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -5271,11 +5363,18 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "6,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/2008_03_26Asse6BtfApp.t.zip"
+			    "ds_default_value": "6,2008_03_26Asse6BtfApp.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5429,8 +5528,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -5446,11 +5545,17 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "7,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/TB03UP_21.t.zip"
+			    "ds_default_value": "7,TB03UP_21.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5604,8 +5709,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -5621,11 +5726,17 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "8,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/TB03DW_0606.t.zip"
+			    "ds_default_value": "8,TB03DW_0606.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5779,8 +5890,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -5796,11 +5907,18 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "9,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse9_20080604.t.zip"
+			    "ds_default_value": "9,asse9_20080604.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -5954,8 +6072,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -5971,11 +6089,18 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "10,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/TB01_Dw_17.t.zip"
+			    "ds_default_value": "10,TB01_Dw_17.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -6129,8 +6254,8 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
-		    "auto_init":true,
+		    "auto_start":false,
+		    "auto_init":false,
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
@@ -6146,11 +6271,18 @@
 			}
 		    ],
 		    "AttrDesc": [
+		    		    {		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+		    },
+
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "11,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/Target_17.t.zip"
+			    "ds_default_value": "11,Target_17.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
