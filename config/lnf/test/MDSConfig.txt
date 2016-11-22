@@ -6300,7 +6300,7 @@
 		},
 		{
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/SLTB001TEST",
+		    "cu_id": "BTF/SCRAPER/LAB_MAE",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -6475,7 +6475,7 @@
 		},
 		{
 		    "unit_server_alias": "BTFSCRAPERS",
-		    "cu_id": "BTF/SCRAPER/SLTB002TEST",
+		    "cu_id": "BTF/SCRAPER/LAB_SLOSYN",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
