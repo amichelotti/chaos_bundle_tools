@@ -6391,7 +6391,7 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "14,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			    "ds_default_value": "14,/home/caschera/chaos_bundle/common/actuators/models/technosoft/conf/1setup001.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
@@ -6566,7 +6566,7 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "15,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/1setup001.t.zip"
+			    "ds_default_value": "15,/home/caschera/chaos_bundle/common/actuators/models/technosoft/conf/1setup001.t.zip"
 			},
 			{
 			    "ds_attr_name": "axisID",
