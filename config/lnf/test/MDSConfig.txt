@@ -2023,11 +2023,6 @@
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
-		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,4,700:10"
-		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2163,12 +2158,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		{
-		    "DriverDescriptionName": "OcemDD",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,6,700:10"
-
-		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2304,11 +2293,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,9,100:10"
-		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2443,11 +2427,6 @@
 		    "storage_type": 2,
 		    "storage_ageing": 36000,
 		    "DriverDescription": [
-		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr08,11,100:10"
-		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2583,11 +2562,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		{
-		    "DriverDescriptionName": "OcemDD",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam":  "OcemE642X:/dev/ttyr16,5,100:10"
-		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2753,11 +2727,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		{
-		    "DriverDescriptionName": "OcemDD",
-		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,4,100:10"
-		},
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -2893,11 +2862,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,3,100:10"
-		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
@@ -3033,11 +2997,6 @@
 		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
-		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr08,0,100:10"
-		    },
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
