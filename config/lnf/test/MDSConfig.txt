@@ -4633,12 +4633,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -4808,7 +4808,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -4816,13 +4816,13 @@
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
 			    "ds_min_range": "",
-			    "ds_default_value": "3,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse3.t.zip"
+			    "ds_default_value": "29,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse3.t.zip"
 		    },
 		    {
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "3"
+			    "ds_default_value": "29"
 	            },
 	            {
 			    "ds_attr_name": "fileTable",
@@ -4978,12 +4978,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5153,12 +5153,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5328,12 +5328,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5503,12 +5503,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5678,12 +5678,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5853,12 +5853,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -6028,12 +6028,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -6203,12 +6203,12 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
 			},
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -6383,7 +6383,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
@@ -6558,7 +6558,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
