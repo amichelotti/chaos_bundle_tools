@@ -1,5 +1,5 @@
 #!/bin/bash
-ulimit -u unlimited
+
 separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`
@@ -14,57 +14,60 @@ else
     source $CHAOS_PREFIX/tools/common_util.sh
 fi
 
+
+
+
+
+
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "using prefix " "$CHAOS_PREFIX"
-
-check_proc_then_kill daqLiberaServer
-check_proc_then_kill BPMSync
-check_proc_then_kill UnitServer    
+kill_monitor_process
 
 procid=()
 cuid=()
+ # for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09 LIBERA12 LIBERA13; do
+ #     if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" daqLiberaServer $k;then
+ # 	procid+=($!)
+ # 	cuid+=($k)
+ # 	ok_mesg "daqLiberaServer $k $!"
+ #     else
+ # 	nok_mesg "daqLiberaServer $k"
+ # 	exit 1
+ #     fi
+ # done
 
-## Transfer line
+# ## Transfer line
+ if launch_us_cu 1 8 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE;then
+     procid+=($!)
+     cuid+=("BTF/TRXLINE")
+     ok_mesg "US BTF/TRXLINE $!"
 
- # if launch_us_cu 1 3 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE0;then
- #     procid+=($!)
- #     cuid+=("BTF/TRXLINE0")
- #     ok_mesg "US BTF/TRXLINE0 $!"
+ else
+     nok_mesg "US BTF/TRXLINE"
+     exit 1
+ fi
 
- # else
- #     nok_mesg "US BTF/TRXLINE0"
- #     exit 1
- # fi
+# ## Transfer line
+ if launch_us_cu 1 4 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/CORRECTORS;then
+     procid+=($!)
+     cuid+=("BTF/CORRECTORS")
+     ok_mesg "US BTF/CORRECTORS $!"
 
- # if launch_us_cu 1 5 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/TRXLINE1;then
- #     procid+=($!)
- #     cuid+=("BTF/TRXLINE1")
- #     ok_mesg "US BTF/TRXLINE1 $!"
+ else
+     nok_mesg "US BTF/CORRECTORS"
+     exit 1
+ fi
 
- # else
- #     nok_mesg "US BTF/TRXLINE1"
- #     exit 1
- # fi
 
-# if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+## BENCHMARK
+# if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_0;then
+#     ok_mesg "US Benchmark Unit $!"
 #     procid+=($!)
-#     cuid+=("BTF/GLUE")
-#     ok_mesg "US BTF/GLUE $!"
-
+#     cuid+=("BENCHMARK_UNIT_0")
 # else
-#     nok_mesg "US BTF/GLUE"
+#     nok_mesg "BENCHMARK_UNIT_0"
 #     exit 1
 # fi
-
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
-    ok_mesg "US BPMsync $!"
-    procid+=($!)
-    cuid+=("ACCUMULATOR/BPM")
-else
-    nok_mesg "US BPMSync"
-    exit 1
-fi
-
 
 ## DAQ
 
