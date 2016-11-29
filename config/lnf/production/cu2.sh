@@ -23,14 +23,6 @@ procid=()
 cuid=()
 
 
- if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/IMPORT;then
-     ok_mesg "US DAFNE_IMPORT $!"
-     procid+=($!)
-     cuid+=("DAFNE_IMPORT")
- else
-     nok_mesg "US DAFNE_IMPORT"
-     exit 1
- fi
 
  if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
      ok_mesg "US BPMsync $!"
