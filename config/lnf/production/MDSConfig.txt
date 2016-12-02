@@ -4046,7 +4046,7 @@
 	    "cu_id": "DAFNE/STATUS",
 	    "cu_type": "DataImport",
 	    "storage_type": 2,
-            "storage_ageing": 36000,
+            "storage_ageing": 3600000,
             "auto_load": true,
             "auto_start": true,
             "auto_init": true,
