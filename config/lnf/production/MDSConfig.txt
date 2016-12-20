@@ -4255,12 +4255,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4288,12 +4288,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4320,13 +4320,13 @@
 			}
 		    ],
 		    	    "AttrDesc": [
-			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			   {
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4354,12 +4354,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4389,12 +4389,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		},
 {
@@ -4412,12 +4412,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4443,12 +4443,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		},
 		{
@@ -4466,12 +4466,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		},
 				{
@@ -4489,12 +4489,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		},
 				{
@@ -4512,12 +4512,12 @@
 		    ],
 		    	    "AttrDesc": [
 			    {
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 		
@@ -4543,12 +4543,12 @@
 		    ],
 		    "AttrDesc": [
 		    	{
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 	    ]
@@ -4573,12 +4573,12 @@
 		    ],
 		    "AttrDesc": [
 		    		    	{
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 
 		    ]
 		}
@@ -4603,13 +4603,13 @@
 			}
 		    ],
 		    "AttrDesc": [
-		    		    		    	{
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+		    		    		    {
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 
 		    ]
 		}
@@ -4634,12 +4634,12 @@
 		    ],
 		    "AttrDesc": [
 		    	{
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}"
 
-		    	    }
+		    	}
 		    ]
 		}
 	    ]
@@ -4664,12 +4664,12 @@
 		    ],
 		    "AttrDesc": [
 		    		    	{
-			    "ds_attr_name": "POLYTYPE",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_attr_name": "config",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}"
 
-		    	    }
+		    	}
 
 		    ]
 		}
