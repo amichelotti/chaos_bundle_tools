@@ -4572,7 +4572,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -4747,7 +4747,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -4917,7 +4917,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5092,7 +5092,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5267,7 +5267,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5442,7 +5442,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5617,7 +5617,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5792,7 +5792,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5967,7 +5967,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -6142,7 +6142,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": false,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -6378,9 +6378,9 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
+			    "ds_max_range": "1",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_default_value": "0.5"
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
@@ -6392,7 +6392,7 @@
 			    "ds_attr_name": "acceleration",
 			    "ds_max_range": "5",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_default_value": "0.6"
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
@@ -6555,7 +6555,7 @@
 			    "ds_attr_name": "speed",
 			    "ds_max_range": "600",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_default_value": "0.5"
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
@@ -6567,7 +6567,7 @@
 			    "ds_attr_name": "acceleration",
 			    "ds_max_range": "5",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_default_value": "0.6"
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
