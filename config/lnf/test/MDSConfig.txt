@@ -4571,8 +4571,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB004R",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -4628,63 +4628,63 @@
 	            },
 		    {
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "200"
+			    "ds_max_range": "1.099",                      
+			    "ds_min_range": "0.00000000000183",            
+			    "ds_default_value": "0.366"                   
 	            },
 		    {
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                                    
+			    "ds_min_range": "0.00000000000183",             
+			    "ds_default_value": "1.099"                   
 	            },
 		    {
-			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "acceleration",                
+			    "ds_max_range": "11.444",                       
+			    "ds_min_range": "0.00000000229",                
+			    "ds_default_value": "2.289"                     
 	            },
 		    {
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                       
+			    "ds_min_range": "0.00000000229",                 
+			    "ds_default_value": "11.444"                    
 	            },
 		    {
-			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_attr_name": "highspeedhoming",             
+			    "ds_max_range": "0.046",                       
+			    "ds_min_range": "0.00000000000183",             
+			    "ds_default_value": "0.018"                    
 	            },
 		    {
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",                            
+			    "ds_min_range": "0.00000000000183",                  
+			    "ds_default_value": "0.046"                         
 	            },
 	            {
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",                             
+			    "ds_min_range": "0.00000000000183",                  
+			    "ds_default_value": "0.005"                         
 	            },
 		    {
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",                                
+			    "ds_min_range": "0.00000000000183",                      
+			    "ds_default_value": "0.013"                              
 	            },
 		    {
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",                                                  
+			    "ds_min_range": "0.00000000229",                  
+			    "ds_default_value": "0.687"                           
 	            },
 		    {
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",                                
+			    "ds_min_range": "0.00000000229",                    
+			    "ds_default_value": "1.373"                             
 	            },
 		    {
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -4742,7 +4742,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -4798,63 +4798,63 @@
 	            },
 		    {
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "200"
+			    "ds_max_range": "1.099",                             
+			    "ds_min_range": "0.00000000000183",                    
+			    "ds_default_value": "0.366"                         
 	            },
 		    {
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                                              
+			    "ds_min_range": "0.00000000000183",                    
+			    "ds_default_value": "1.099"                          
 	            },
 		    {
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                             
+			    "ds_min_range": "0.00000000229",                    
+			    "ds_default_value": "2.289"                           
 	            },
 		    {
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                                  
+			    "ds_min_range": "0.00000000229",                   
+			    "ds_default_value": "11.444"                               
 	            },
 		    {
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            },
 		    {
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            },
 	            {
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            },
 		    {
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            },
 		    {
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            },
 		    {
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            },
 		    {
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -4911,8 +4911,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB004L",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -4969,63 +4969,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "200"
+			    "ds_max_range": "1.099",                 
+			    "ds_min_range": "0.00000000000183",         
+			    "ds_default_value": "0.366"              
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                  
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "1.099"               
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                   
+			    "ds_min_range": "0.00000000229",         
+			    "ds_default_value": "2.289"                
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                   
+			    "ds_min_range": "0.00000000229",         
+			    "ds_default_value": "11.444"                
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5082,8 +5082,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB002R",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5139,63 +5139,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "200"
+			    "ds_max_range": "1.099",                     
+			    "ds_min_range": "0.00000000000183",            
+			    "ds_default_value": "0.366"                  
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                       
+			    "ds_min_range": "0.00000000000183",               
+			    "ds_default_value": "1.099"                    
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                        
+			    "ds_min_range": "0.00000000229",           
+			    "ds_default_value": "2.289"                     
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                       
+			    "ds_min_range": "0.00000000229",           
+			    "ds_default_value": "11.444"                    
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5252,8 +5252,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB002L",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5310,63 +5310,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "200"
+			    "ds_max_range": "1.099",                  
+			    "ds_min_range": "0.00000000000183",                          
+			    "ds_default_value": "0.366"               
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                    
+			    "ds_min_range": "0.00000000000183",            
+			    "ds_default_value": "1.099"                 
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                     
+			    "ds_min_range": "0.00000000229",                
+			    "ds_default_value": "2.289"                      
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                        
+			    "ds_min_range": "0.00000000229",                 
+			    "ds_default_value": "11.444"                      
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5423,8 +5423,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB003U",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5481,63 +5481,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "100"
+			    "ds_max_range": "1.099",                           
+			    "ds_min_range": "0.00000000000183",                                      
+			    "ds_default_value": "0.183"                        
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "1.099"             
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                     
+			    "ds_min_range": "0.00000000229",           
+			    "ds_default_value": "2.289"                    
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
-	            	},
+			    "ds_max_range": "11.444",                                        
+			    "ds_min_range": "0.00000000229",      
+			    "ds_default_value": "11.444"                 
+	            	}, 
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5594,8 +5594,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB003D",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5652,63 +5652,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "100"
+			    "ds_max_range": "1.099",                 
+			    "ds_min_range": "0.00000000000183",         
+			    "ds_default_value": "0.183"              
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",               
+			    "ds_min_range": "0.00000000000183",      
+			    "ds_default_value": "1.099"             
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                        
+			    "ds_min_range": "0.00000000229",          
+			    "ds_default_value": "2.289"                     
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                 
+			    "ds_min_range": "0.00000000229",         
+			    "ds_default_value": "11.444"               
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5765,8 +5765,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB001U",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5823,63 +5823,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_max_range": "1.099",                 
+			    "ds_min_range": "0.00000000000183",       
+			    "ds_default_value": "0.091"               
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                 
+			    "ds_min_range": "0.00000000000183",          
+			    "ds_default_value": "1.099"              
 	            	},
 		    	{
-			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_attr_name": "acceleration",          
+			    "ds_max_range": "11.444",                 
+			    "ds_min_range": "0.00000000229",          
+			    "ds_default_value": "2.289"              
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                  
+			    "ds_min_range": "0.00000000229",           
+			    "ds_default_value": "11.444"               
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
+			    "ds_max_range": "0.046",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -5936,8 +5936,8 @@
 		    "cu_id": "BTF/SCRAPER/SLTB001D",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -5993,63 +5993,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_max_range": "1.099",                    
+			    "ds_min_range": "0.00000000000183",            
+			    "ds_default_value": "0.091"                  
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                  
+			    "ds_min_range": "0.00000000000183",          
+			    "ds_default_value": "1.099"               
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",                
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "2.289"             
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",            
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "11.444"               
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -6106,8 +6106,8 @@
 		    "cu_id": "BTF/SCRAPER/TARGET",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
-		    "auto_load": true,
-		    "auto_start":true,
+		    "auto_load": false,
+		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
@@ -6163,63 +6163,63 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "100"
+			    "ds_max_range": "1.099",            
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.183"          
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",             
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "1.099"          
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_max_range": "11.444",               
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "2.289"              
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",              
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "11.444"           
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -6333,63 +6333,64 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-			    "ds_max_range": "600",
+			    "ds_max_range": "1",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_default_value": "0.5"
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",                     
+			    "ds_min_range": "0.00000000000183",         
+			    "ds_default_value": "1.099"                  
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
 			    "ds_max_range": "5",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_default_value": "0.6"
+
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                     
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "11.444"                  
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
@@ -6465,6 +6466,12 @@
 			    "ds_min_range": "",
 			    "ds_default_value": "15,/home/caschera/chaos_bundle/common/actuators/models/technosoft/conf/1setup001.t.zip"
 			},
+{
+			    "ds_attr_name": "auxiliaryConfigParameters",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "numencoderlines:1600;speed:0.7"
+			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
@@ -6505,61 +6512,65 @@
 			    "ds_attr_name": "speed",
 			    "ds_max_range": "600",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "50"
+			    "ds_default_value": "0.7"
+
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "600"
+			    "ds_max_range": "1.099",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "1.099"
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
+                 
+
 			    "ds_max_range": "5",
 			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "1"
+			    "ds_default_value": "0.6"
+
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "5"
+			    "ds_max_range": "11.444",                     
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "11.444"                 
 	            	},
 		    	{
 			    "ds_attr_name": "highspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "10"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.018"
 	            	},
 		    	{
 			    "ds_attr_name": "maxhighspeedhoming",
-			    "ds_max_range": "25",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "25"
+			    "ds_max_range": "0.046",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.046"
 	            	},
 	            	{
 			    "ds_attr_name": "lowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "3"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.005"
 	            	},
 		    	{
 			    "ds_attr_name": "maxlowspeedhoming",
-			    "ds_max_range": "7",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "7"
+			    "ds_max_range": "0.013",
+			    "ds_min_range": "0.00000000000183",
+			    "ds_default_value": "0.013"
 	            	},
 		    	{
 			    "ds_attr_name": "accelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.3"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "0.687"
 	            	},
 		    	{
 			    "ds_attr_name": "maxaccelerationhoming",
-			    "ds_max_range": "0.6",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
+			    "ds_max_range": "1.373",
+			    "ds_min_range": "0.00000000229",
+			    "ds_default_value": "1.373"
 	            	},
 		    	{
 			    "ds_attr_name": "nummicrostepsperstep",
