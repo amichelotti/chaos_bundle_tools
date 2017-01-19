@@ -4742,7 +4742,7 @@
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
 		    "cu_param": "",
 		    "auto_load": true,
-		    "auto_start":false,
+		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
