@@ -1982,7 +1982,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "BTF/DAQ",
-		    "cu_id": "BTF/DAQ2",
+		    "cu_id": "BTF/DAQ/DIAG",
 		    "cu_type":"::driver::daq::btf::RTBTFdaqSimCU",
 		    "cu_param": "",
 		    "auto_load": false,
@@ -3980,7 +3980,7 @@
 	    "unit_server_alias": "BTF/GLUE",
 	    "cu_id": "BTF/MEMCACHE_PRESENTER",
 	    "cu_type": "::driver::daq::btf::RTChaos2Memcache",
-	    "cu_param": "BTF/DAQ2/ACQUISITION BTF/DAQ2/TRIGGER BTF/DAQ2/QDC965HI BTF/DAQ2/QDC965LO BTF/DAQ2/QDC792 BTF/DAQ2/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
+	    "cu_param": "BTF/DAQ/DIAG/ACQUISITION BTF/DAQ/DIAG/TRIGGER BTF/DAQ/DIAG/QDC965HI BTF/DAQ/DIAG/QDC965LO BTF/DAQ/DIAG/QDC792 BTF/DAQ/DIAG/SCALER BTF/CHHTB001/current BTF/CHHTB002/current BTF/CVVTB001/current BTF/CVVTB002/current",
 	    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
