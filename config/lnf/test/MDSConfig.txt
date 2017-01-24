@@ -6565,15 +6565,9 @@
 	            	},
 		    	{
 			    "ds_attr_name": "speed",
-<<<<<<< HEAD
 			    "ds_max_range": "1.099",                     
 			    "ds_min_range": "0.00000000000183",       
 			    "ds_default_value": "0.091"                
-=======
-			    "ds_max_range": "600",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.5"
->>>>>>> ad91fcb5ee6daddaa72df72ae2e0b6ff670a15ef
 	            	},
 		    	{
 			    "ds_attr_name": "maxspeed",
@@ -6583,15 +6577,9 @@
 	            	},
 		    	{
 			    "ds_attr_name": "acceleration",
-<<<<<<< HEAD
 			    "ds_max_range": "11.444",                    
 			    "ds_min_range": "0.00000000229",
 			    "ds_default_value": "2.289"                  
-=======
-			    "ds_max_range": "5",
-			    "ds_min_range": "0.000000001",
-			    "ds_default_value": "0.6"
->>>>>>> ad91fcb5ee6daddaa72df72ae2e0b6ff670a15ef
 	            	},
 		    	{
 			    "ds_attr_name": "maxacceleration",
