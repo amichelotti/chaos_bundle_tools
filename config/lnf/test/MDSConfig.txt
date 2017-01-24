@@ -4711,12 +4711,6 @@
 			    "ds_default_value": "1"
 	            },
 		    {
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
-	            },
-		    {
 			    "ds_attr_name": "voltage_LNS[V]",
 			    "ds_max_range": "1000000",
 			    "ds_min_range": "0.000000001",
@@ -4878,12 +4872,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            },
-		    {
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            },
 		    {
@@ -5052,12 +5040,6 @@
 			    "ds_default_value": "1"
 	            	},
 		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
-	            	},
-		    	{
 			    "ds_attr_name": "voltage_LNS[V]",
 			    "ds_max_range": "1000000",
 			    "ds_min_range": "0.000000001",
@@ -5219,12 +5201,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
@@ -5393,12 +5369,6 @@
 			    "ds_default_value": "1"
 	            	},
 		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
-	            	},
-		    	{
 			    "ds_attr_name": "voltage_LNS[V]",
 			    "ds_max_range": "1000000",
 			    "ds_min_range": "0.000000001",
@@ -5561,12 +5531,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
@@ -5735,12 +5699,6 @@
 			    "ds_default_value": "1"
 	            	},
 		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
-	            	},
-		    	{
 			    "ds_attr_name": "voltage_LNS[V]",
 			    "ds_max_range": "1000000",
 			    "ds_min_range": "0.000000001",
@@ -5903,12 +5861,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
@@ -6076,12 +6028,6 @@
 			    "ds_default_value": "1"
 	            	},
 		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
-			    "ds_default_value": "1"
-	            	},
-		    	{
 			    "ds_attr_name": "voltage_LNS[V]",
 			    "ds_max_range": "1000000",
 			    "ds_min_range": "0.000000001",
@@ -6243,12 +6189,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
@@ -6414,12 +6354,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
@@ -6590,12 +6524,6 @@
 			    "ds_attr_name": "movement",
 			    "ds_max_range": "1",
 			    "ds_min_range": "-1",
-			    "ds_default_value": "1"
-	            	},
-		    	{
-			    "ds_attr_name": "referenceBase",
-			    "ds_max_range": "1",
-			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 	            	},
 		    	{
