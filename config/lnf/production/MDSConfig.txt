@@ -6822,6 +6822,8 @@
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 0,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    	{		    

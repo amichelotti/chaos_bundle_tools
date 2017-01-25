@@ -4584,6 +4584,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -4748,6 +4754,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -4913,6 +4925,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5077,6 +5095,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5242,6 +5266,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5407,6 +5437,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5572,6 +5608,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    {		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5737,6 +5779,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -5901,6 +5949,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -6065,6 +6119,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -6229,6 +6289,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
@@ -6394,6 +6460,12 @@
 			}
 		    ],
 		    "AttrDesc": [
+{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+		    },
 		    	{		    
 			    "ds_attr_name": "ConfigString",
 			    "ds_max_range": "",
