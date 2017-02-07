@@ -3,6 +3,7 @@ CDS_SERVERS="chaosdev-cds1.chaos.lnf.infn.it chaosdev-cds2.chaos.lnf.infn.it"
 CU_SERVERS="chaosdev-cu1.chaos.lnf.infn.it chaosdev-cu2.chaos.lnf.infn.it chaosdev-cu3.chaos.lnf.infn.it"
 WEBUI_SERVER="chaosdev-webui1.chaos.lnf.infn.it"
 WAN_SERVER="chaosdev-webui1.chaos.lnf.infn.it"
+DEPLOY_BINARIES=
 # DEPLOY_SERVERS="chaosdev-labview4.chaos.lnf.infn.it chaosdev-cephmon.chaos.lnf.infn.it chaosdev-cephosd2.chaos.lnf.infn.it chaosdev-cephosd1.chaos.lnf.infn.it chaosdev-mongofe1.chaos.lnf.infn.it chaosdev-mongofe2.chaos.lnf.infn.it chaosdev-mongofe3.chaos.lnf.infn.it"
 
 
