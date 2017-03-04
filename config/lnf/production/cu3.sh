@@ -30,11 +30,11 @@ cuid=()
  fi
 
  if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer MEA;then
-     ok_mesg "LLM $!"
+     ok_mesg "MEA $!"
      procid+=($!)
-     cuid+=("LLM")
+     cuid+=("MEA")
  else
-     nok_mesg "US LLM"
+     nok_mesg "US MEA"
      exit 1
  fi
 
