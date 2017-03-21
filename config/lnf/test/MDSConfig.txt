@@ -3110,6 +3110,854 @@
 		}
 	    ]
 	},
+
+
+	{
+	    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB991",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,9,1,0:100,0:10,100:200,200:300,60,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "70",
+			    "ds_min_range": "1",
+			    "ds_default_value": "35"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "70",
+			    "ds_min_range": "1",
+			    "ds_default_value": "35"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB992",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "5"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "5"
+			}
+			]
+		},
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB993",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,1,1,0:100,0:10,100000:1000000,200000:500000,0,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB994",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,3,1,0:100,0:10,100:200,200:300,0,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB191",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,14,1,0:100,0:10,100:200,200:300,0,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "BTF/DAFNE/TRXLINE",
+		    "cu_id": "BTF/QUADRUPOLE/QUATB192",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "PowerSimDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr02,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.5"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "60000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "5",
+			    "ds_default_value": "1"
+			}
+		    ]
+		}
+	    ]
+	},
 	{
 	    "unit_server_alias": "BTF/CORRECTORS",
 	    "private_key": null,
@@ -3398,7 +4246,7 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,6,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,61,2,-10:9.995,0:10,100:200,200:300,0,1.0"
 		    }
 		],
 		"AttrDesc": [

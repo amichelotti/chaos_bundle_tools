@@ -41,6 +41,15 @@ cuid=()
      exit 1
  fi
 
+## BENCHMARK
+if launch_us_cu 1 6 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/DAFNE/TRXLINE;then
+    ok_mesg "US Benchmark Unit $!"
+    procid+=($!)
+    cuid+=("BTF/DAFNE/TRXLINE")
+else
+    nok_mesg "BTF/DAFNE/TRXLINE"
+    exit 1
+fi
 
 
 ## BENCHMARK
