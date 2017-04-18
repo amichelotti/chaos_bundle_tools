@@ -38,14 +38,14 @@ cuid=()
      exit 1
  fi
 
- # if launch_us_cu 1 26 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer AULA_TOUSHECK;then
- #     ok_mesg "US AULA_TOUSHECK $!"
- #     procid+=($!)
- #     cuid+=("AULA_TOUSHECK")
- # else
- #     nok_mesg "US AULA_TOUSHECK"
- #     exit 1
- # fi
+  if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/TRXLINE;then
+      ok_mesg "US DAFNE_TRXLINE $!"
+      procid+=($!)
+      cuid+=("DAFNE_TRXLINE")
+  else
+      nok_mesg "US DAFNE_TRXLINE"
+      exit 1
+  fi
 
 
 # # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_BIS;then
