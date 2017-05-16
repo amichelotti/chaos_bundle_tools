@@ -4,6 +4,6 @@ CU_SERVERS="chaost-cu1.chaos.lnf.infn.it chaost-cu2.chaos.lnf.infn.it chaost-cu3
 WEBUI_SERVER="chaost-webui1.chaos.lnf.infn.it"
 WAN_SERVER="chaost-webui1.chaos.lnf.infn.it"
 # DEPLOY_SERVERS="chaost-labview4.chaos.lnf.infn.it chaost-cephmon.chaos.lnf.infn.it chaost-cephosd2.chaos.lnf.infn.it chaost-cephosd1.chaos.lnf.infn.it chaost-mongofe1.chaos.lnf.infn.it chaost-mongofe2.chaos.lnf.infn.it chaost-mongofe3.chaos.lnf.infn.it"
-DEPLOY_BINARIES="ChaosWANProxy:webui ChaosAgent:agent ChaosMetadataService:mds ChaosMetadataService:cds UnitServer:cu test_ocem ccs"
+DEPLOY_BINARIES="ChaosWANProxy:webui ChaosAgent:agent ChaosMetadataService:mds ChaosMetadataService:cds UnitServer:cu ChaosMDSCmd:mdscmd test_ocem ccs"
 DEPLOY_REPO=chaosweb@opensource.lnf.infn.it:/var/www/html/binary/chaos/
 
