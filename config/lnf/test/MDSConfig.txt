@@ -6214,7 +6214,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "IMA",
-		    "cu_id": "IMA/DAQ",
+		    "cu_id": "IMA/ACCELEROMETER/DAQ",
 		    "cu_type": "",
 		    "cu_param": "",
 		    "auto_load": false,
