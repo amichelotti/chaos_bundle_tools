@@ -420,7 +420,7 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_0",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_0",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -435,7 +435,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_1",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_1",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -450,7 +450,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_2",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_2",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -465,7 +465,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_3",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_3",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -480,7 +480,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_4",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_4",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -495,7 +495,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_5",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_5",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -510,7 +510,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_6",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_6",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -525,7 +525,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_7",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_7",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -540,7 +540,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_8",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_8",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -555,7 +555,7 @@
 		},
 		{
 		    "unit_server_alias": "BENCHMARK_UNIT_0",
-		    "cu_id": "BENCHMARK_UNIT_0/TEST_CU_9",
+		    "cu_id": "BENCHMARK_UNIT_0/BENCHMARK/TEST_CU_9",
 		    "cu_type": "ChaosMESS",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -6232,7 +6232,7 @@
 	"public_key": null,
 	"cu_desc":[{
 	    "unit_server_alias": "DAFNE/IMPORT",
-	    "cu_id": "DAFNE/STATUS",
+	    "cu_id": "DAFNE/FILE/NEWDAFNE",
 	    "cu_type": "DataImport",
 	    "storage_type": 2,
             "storage_ageing": 3600000,

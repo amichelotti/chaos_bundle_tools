@@ -5070,7 +5070,7 @@
 	"public_key": null,
 	"cu_desc":[{
 	    "unit_server_alias": "DAFNE/IMPORT",
-	    "cu_id": "DAFNE/STATUS",
+	    "cu_id": "DAFNE/FILE/NEWDAFNE",
 	    "cu_type": "DataImport",
 	    "storage_type": 2,
             "storage_ageing": 0,
