@@ -1,0 +1,4 @@
+.include /home/michelo/chaos_bundle/chaosframework/chaos-distrib-x86_64-Linux/include
+.L /home/michelo/chaos_bundle/chaosframework/chaos-distrib-x86_64-Linux/lib/libchaos_driver_misc.so
+
+

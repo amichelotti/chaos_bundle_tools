@@ -1,5 +1,4 @@
-{
-    
+{  
     "us": [
 	{
 	    "unit_server_alias": "AULA_TOUSHECK",
@@ -2087,7 +2086,7 @@
 		    "cu_id": "MEA/QUADRUPOLE/TEST001",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2096,7 +2095,7 @@
 		    		    {
 			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1c,10,280:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr06,10,280:10"
 		    }
 
 		    ],
@@ -2229,7 +2228,7 @@
 		    "cu_id": "MEA/QUADRUPOLE/TEST002",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2238,7 +2237,7 @@
 		    		    {
 			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1d,11,280:10"
+			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr07,11,280:10"
 		    }
 
 		    ],
@@ -7876,13 +7875,14 @@
 		    ]
 		}
 	    ]
-	}, { "unit_server_alias": "LUMINOMETER",
+	}, 
+	{ "unit_server_alias": "LUMINOMETER",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LUMINOMETER",
-		    "cu_id": "LUMINOMETER/CAEN775",
+		    "cu_id": "DAFNE/LUMINOMETER/TDC/CAEN775",
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
@@ -7936,10 +7936,12 @@
 		},
 		{
 		    "unit_server_alias": "LUMINOMETER",
-		    "cu_id": "LUMINOMETER/CAEN965",
+		    "cu_id": "DAFNE/LUMINOMETER/QDC/CAEN965",
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 0,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    {		    
@@ -7972,9 +7974,7 @@
 			    "ds_default_value": "0x1C38"
 			}
 		    ]
-
 		}
-
 	    ]
 	},{ "unit_server_alias": "ASTRA",
 	    "private_key": null,
@@ -7982,10 +7982,12 @@
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "ASTRA",
-		    "cu_id": "ASTRA/CAEN775",
+		    "cu_id": "ASTRA/TDC/CAEN775",
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 0,
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    {		    
@@ -8028,9 +8030,11 @@
 		},
 		{
 		    "unit_server_alias": "ASTRA",
-		    "cu_id": "ASTRA/CAEN965",
+		    "cu_id": "ASTRA/QDC/CAEN965",
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
+		    "storage_type": 2,
+		    "storage_ageing": 0,
 		    "auto_load": false,
 		    "DriverDescription": [],
 		    "AttrDesc": [
@@ -8071,9 +8075,7 @@
 			    "ds_default_value": "0x1C38"
 			}
 		    ]
-
 		}
-
 	    ]
 	}
     ]
