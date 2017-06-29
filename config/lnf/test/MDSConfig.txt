@@ -1989,7 +1989,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "AttrDesc": []
 		}
@@ -2009,7 +2009,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "PowerSimDD",
@@ -2150,7 +2150,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -2292,7 +2292,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -2434,7 +2434,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "PowerSimDD",
@@ -2575,7 +2575,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -2747,7 +2747,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -2889,7 +2889,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -3031,7 +3031,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		    "DriverDescription": [
 			{
@@ -5355,7 +5355,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		"DriverDescription": [
 		    {
@@ -5496,7 +5496,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		"DriverDescription": [
 		    {
@@ -5638,7 +5638,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		"DriverDescription": [
 		    {
@@ -5779,7 +5779,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		"DriverDescription": [
 		    {
@@ -5920,7 +5920,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 	    "DriverDescription": [
 		{
@@ -6121,7 +6121,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 		"AttrDesc": [
 		    {
@@ -6165,7 +6165,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 	    "DriverDescription": [
 		{
@@ -6186,7 +6186,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 	    "DriverDescription": [],
 	    "AttrDesc": [
@@ -6221,7 +6221,7 @@
 		    "auto_start": false,
 		    "auto_init": false,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [],
 		    "AttrDesc": []
 		}
@@ -6235,14 +6235,14 @@
 	    "cu_id": "DAFNE/FILE/NEWDAFNE",
 	    "cu_type": "DataImport",
 	    "storage_type": 2,
-            "storage_ageing": 3600000,
+            "storage_ageing": 36000,
             "auto_load": true,
 	    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
 	    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 
 	    "DriverDescription": [
 		{
@@ -6430,7 +6430,7 @@
 		    "cu_param": "",
 		    "auto_load": true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaSoftDriver",
@@ -6793,7 +6793,7 @@
 		    "cu_param": "",
 		    "auto_load": true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "remoteGroupAccessDriver",
@@ -6817,7 +6817,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
@@ -6987,7 +6987,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
@@ -7157,7 +7157,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 
 			{
@@ -7328,7 +7328,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
@@ -7498,7 +7498,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			
 			{
@@ -7669,7 +7669,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			
 			{
@@ -7840,7 +7840,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			
 			{
@@ -8011,7 +8011,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			
 			{
@@ -8182,7 +8182,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
@@ -8352,7 +8352,7 @@
 		    "auto_start":false,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ActuatorSim",
@@ -8522,7 +8522,7 @@
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
-		    "storage_ageing": 3600000,
+		    "storage_ageing": 36000,
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
