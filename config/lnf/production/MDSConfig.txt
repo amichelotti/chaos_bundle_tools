@@ -5269,6 +5269,7 @@
 		    "auto_start": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5411,6 +5412,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5436,6 +5440,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5469,6 +5476,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5494,6 +5504,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5519,6 +5532,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5544,6 +5560,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrilliancePlusDriver",
@@ -5577,6 +5596,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5609,6 +5631,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5642,6 +5667,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5674,6 +5702,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5706,6 +5737,9 @@
 		    "auto_load": true,
 		    "auto_init": true,
 		    "auto_start": true,
+		    "storage_type": 2,
+		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "LiberaBrillianceCSPIDriver",
@@ -5765,6 +5799,7 @@
 		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 3600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "remoteGroupAccessDriver",
@@ -7888,6 +7923,7 @@
 		    "auto_load": true,
 		    "storage_type": 2,
 		    "storage_ageing": 0,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    	{		    
@@ -7943,6 +7979,7 @@
 		    "storage_type": 2,
 		    "storage_ageing": 0,
 		    "DriverDescription": [],
+		    "default_schedule_delay": 1,	
 		    "AttrDesc": [
 		    {		    
 			    "ds_attr_name": "VME_DRIVER",
