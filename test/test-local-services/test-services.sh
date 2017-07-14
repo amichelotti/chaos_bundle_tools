@@ -34,29 +34,32 @@ fi
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU on $TESTCU"
 start_services || end_test 1 "cannot start services"
 
-if execute_command_until_ok "grep -o \"with url:.\+\" $CHAOS_PREFIX/log/ChaosDataService.log  |sed 's/with url: //g'" 15; then
-    ok_mesg "CDS on $execute_command"
-else
-    nok_mesg "CDS not bind a valid url"
-    end_test 1 "CDS not bind a valid url"
-fi
 cds_url="$execute_command"
-info_mesg "Building " "configuration for $TESTCU"
-if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
-    if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.txt ]; then
-	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.txt"
-	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.txt
-    else
-	nok_mesg "MDS configuration created with cds url:$cds_url"
-	end_test 1 "MDS configuration"
-    fi
-else
-    ok_mesg "MDS configuration created with cds url:$cds_url"
-fi
+# info_mesg "Building " "configuration for $TESTCU"
+# if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
+#     if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.txt ]; then
+# 	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.txt"
+# 	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.txt
+#     else
+# 	nok_mesg "MDS configuration created with cds url:$cds_url"
+# 	end_test 1 "MDS configuration"
+#     fi
+# else
+#     ok_mesg "MDS configuration created with cds url:$cds_url"
+# fi
 
+
+if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt" ];then
+    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt
+    ok_mesg "found $MDS_TEST_CONF"
+else
+    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
+    end_test 1 "Cannot find MDS_TEST_CONF"
+fi
+   
 start_mds || end_test 1 "Starting MDS"
 
-
+info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
 if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 $CHAOS_OVERALL_OPT --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
