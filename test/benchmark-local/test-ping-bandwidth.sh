@@ -36,7 +36,7 @@ info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 
 if [[ $META =~ localhost ]] || [ -n "$US_LOCAL" ];then
     if [ -z "$US_TEST" ];then
-	US_TEST=TEST_UNIT_0
+	US_TEST=BENCHMARK_UNIT_0
     fi
 
     if launch_us_cu $NUS $NCU "--metadata-server $META" $USNAME $US_TEST 1;then
