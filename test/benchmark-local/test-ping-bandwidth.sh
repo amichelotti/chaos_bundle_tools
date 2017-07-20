@@ -33,13 +33,14 @@ fi
 
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
-
+ADDITIONAL_FLAGS=""
 if [[ $META =~ localhost ]] || [ -n "$US_LOCAL" ];then
+    ADDITIONAL_FLAGS="--publishing-interface lo"
     if [ -z "$US_TEST" ];then
 	US_TEST=BENCHMARK_UNIT_0
     fi
 
-    if launch_us_cu $NUS $NCU "--metadata-server $META" $USNAME $US_TEST 1;then
+    if launch_us_cu $NUS $NCU "--metadata-server $META $ADDITIONAL_FLAGS" $USNAME $US_TEST 1;then
 	if ! check_proc $USNAME;then
 	    error_mesg "$USNAME quitted"
 	    end_test 1 "$USNAME quitted"
