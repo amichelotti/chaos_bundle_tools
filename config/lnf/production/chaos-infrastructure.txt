@@ -6,6 +6,6 @@ WEBUI_SERVER="chaost-webui1.chaos.lnf.infn.it"
 DEPLOY_DIR="tools etc bin lib html include"
 WAN_SERVER="chaost-webui1.chaos.lnf.infn.it"
 # DEPLOY_SERVERS="chaost-labview4.chaos.lnf.infn.it chaost-cephmon.chaos.lnf.infn.it chaost-cephosd2.chaos.lnf.infn.it chaost-cephosd1.chaos.lnf.infn.it chaost-mongofe1.chaos.lnf.infn.it chaost-mongofe2.chaos.lnf.infn.it chaost-mongofe3.chaos.lnf.infn.it"
-DEPLOY_BINARIES="ChaosWANProxy:webui ChaosAgent:agent ChaosMetadataService:mds ChaosMetadataService:cds UnitServer:cu ChaosMDSCmd:mdscmd test_ocem ccs chaosRoot"
+DEPLOY_BINARIES="ChaosWANProxy:webui ChaosAgent:agent ChaosMetadataService:mds ChaosMetadataService:cds UnitServer:cu ChaosMDSCmd:mdscmd test_ocem chaosRoot"
 # DEPLOY_REPO=chaosweb@opensource.lnf.infn.it:/var/www/html/binary/chaos/
 

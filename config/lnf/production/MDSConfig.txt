@@ -2366,16 +2366,1729 @@
 		}
 ]},
 {
-	    "unit_server_alias": "DANTE035",
+	    "unit_server_alias": "DANTE210",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
-		    "unit_server_alias": "DANTE035",
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DHRTT001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr06,1,280:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "280"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "28"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "28"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DHSTT001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr0f,5,700:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "700"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "700",
+			    "ds_min_range": "1",
+			    "ds_default_value": "70"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "700",
+			    "ds_min_range": "1",
+			    "ds_default_value": "70"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DHSTS001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": false,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr0e,2,280:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "280"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "28"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "28"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DVRTT002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr22,0,120:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "120"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "120",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "12"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "12"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DVRTT001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr24,1,120:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "280",
+			    "ds_min_range": "0",
+			    "ds_default_value": "120"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "120",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "12"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "12"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DHPTS001",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": false,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr25,3,230:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "230",
+			    "ds_min_range": "0",
+			    "ds_default_value": "230"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "230",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "23"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "23"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/DIPOLE/DHPTT002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr23,6,650:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "650",
+			    "ds_min_range": "0",
+			    "ds_default_value": "650"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "650",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "65"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "100",
+			    "ds_min_range": "1",
+			    "ds_default_value": "65"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATR002",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1c,7,100:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATR003",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1d,8,100:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATL003",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr18,13,100:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			}
+		    ]
+		},
+
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATL004",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr17,14,100:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			}
+		    ]
+		},
+		{
+		    "unit_server_alias": "DANTE210",
+		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATL005",
+		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 300000,
+
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "OcemDD",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr16,15,100:10"
+			}
+		    ],
+		    "AttrDesc": [
+		    {
+			    "ds_attr_name": "polFromSet",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "polSwSign",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "stbyOnPol",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "zeroOnStby",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "unit",
+			    "ds_max_range": "",
+			    "ds_min_range": "",
+			    "ds_default_value": "A"
+			},
+			{
+			    "ds_attr_name": "scale",
+			    "ds_max_range": "1000000",
+			    "ds_min_range": "1",
+			    "ds_default_value": "1"
+			},
+			{
+			    "ds_attr_name": "minimumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "maximumWorkingValue",
+			    "ds_max_range": "700",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100"
+			},
+			{
+			    "ds_attr_name": "warningThreshold",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "warningThresholdTimeout",
+			    "ds_max_range": "2000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1000"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "getTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "5000"
+			},
+			{
+			    "ds_attr_name": "driverTimeout",
+			    "ds_max_range": "1200000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000"
+			},
+
+			{
+			    "ds_attr_name": "conversionFactor",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "1.0"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.001"
+			},
+			{
+			    "ds_attr_name": "current",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "rampDownRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			},
+			{
+			    "ds_attr_name": "rampUpRate",
+			    "ds_max_range": "10",
+			    "ds_min_range": "1",
+			    "ds_default_value": "10"
+			}
+		    ]
+		},
+
+{
+		    "unit_server_alias": "DANTE210",
 		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATM009",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2385,7 +4098,7 @@
 			{
 			    "DriverDescriptionName": "OcemDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr00,8,0:100"
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1e,8,100:10"
 			}
 		    ],
 		    "AttrDesc": [
@@ -2514,11 +4227,11 @@
 		},
 
 		{
-		    "unit_server_alias": "DANTE035",
+		    "unit_server_alias": "DANTE210",
 		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATM005",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2528,7 +4241,7 @@
 			{
 			    "DriverDescriptionName": "OcemDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr01,4,100:10"
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr1f,4,100:10"
 			}
 		    ],
 		    "AttrDesc": [
@@ -2657,11 +4370,11 @@
 		},
 
 		{
-		    "unit_server_alias": "DANTE035",
+		    "unit_server_alias": "DANTE210",
 		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATM007",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2671,7 +4384,7 @@
 			{
 			    "DriverDescriptionName": "OcemDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr0b,6,100:10"
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr29,6,100:10"
 			}
 		    ],
 		    "AttrDesc": [
@@ -2800,11 +4513,11 @@
 		},
 
 		{
-		    "unit_server_alias": "DANTE035",
+		    "unit_server_alias": "DANTE210",
 		    "cu_id": "DAFNE/TM/QUADRUPOLE/QUATM008",
 		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -2814,7 +4527,7 @@
 			{
 			    "DriverDescriptionName": "OcemDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr03,7,100:10"
+			    "DriverDescriptionInitParam": "OcemE642X:/dev/ttyr21,7,100:10"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5139,47 +6852,6 @@
 	    ]
 	},
 	{
-	    "unit_server_alias": "TEST_MIKE",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "TEST_MIKE",
-		    "cu_id": "TEST_MIKE/SUPPLY",
-		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "PowerSimDD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0,1.0"
-			}
-		    ],
-		    "AttrDesc": [
-			{
-			    "ds_attr_name": "current",
-			    "ds_max_range": "700",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
-			},
-			{
-			    "ds_attr_name": "rampDownRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			},
-			{
-			    "ds_attr_name": "rampUpRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			}
-		    ]
-		}
-	    ]
-	},
-	{
 	    "unit_server_alias": "LNS",
 	    "private_key": null,
 	    "public_key": null,
@@ -5219,40 +6891,6 @@
 		    ]
 		}
 	    ]
-	},
-	{
-	    "unit_server_alias": "d0:39:72:4a:f3:ab",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "d0:39:72:4a:f3:ab",
-		    "cu_id": "LUCID_TEMP_0",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LucidTemperatureDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyUSB0"
-			}
-		    ],
-		    "AttrDesc": []
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "fb91b658",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
-	},
-	{
-	    "unit_server_alias": "fe757fb5",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
 	},
 	{
 	    "unit_server_alias": "LIBERA01",
