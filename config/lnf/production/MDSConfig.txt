@@ -2447,7 +2447,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -2590,7 +2590,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -2733,7 +2733,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -2875,7 +2875,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -3018,7 +3018,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -3161,7 +3161,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
@@ -3303,7 +3303,7 @@
 			    "ds_attr_name": "warningThreshold",
 			    "ds_max_range": "10",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0.2"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "warningThresholdTimeout",
