@@ -64,7 +64,7 @@ if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 $CHAOS_OVERALL_OPT --mds-conf $MDS_TEST_CO
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-    end_test 1
+#    end_test 1
 fi
 status=0
 
