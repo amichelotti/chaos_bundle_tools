@@ -1,4 +1,3 @@
-export CHAOS_INTERFACE=lo
 source $CHAOS_TOOLS/common_util.sh
 start_test
 ### <> 1 1 localhost:5000 524288 UnitServer BENCHMARK_UNIT_0
