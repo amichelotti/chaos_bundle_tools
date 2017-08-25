@@ -65,16 +65,17 @@ sched=1000
 # for ((sched=10000;sched>=0;sched-=1000));do
 rm -f $CHAOS_PREFIX/log/*.csv
 rm -f $CHAOS_PREFIX/log/*.png
-
+nerr=0
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
     cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
     echo "$cmd" > $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 
     if eval $cmd >> $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout 2>&1 ;then
 	    ok_mesg "MessClient process with $sched"
-	else
-	    nok_mesg "MessClient process with $sched"
-	fi
+    else
+	((nerr+=1))
+	nok_mesg "MessClient process with $sched"
+    fi
 	if which gnuplot >& /dev/null ;then
 	    info_mesg "generating benchmark plots..."
 	    pushd $CHAOS_PREFIX/log > /dev/null
@@ -140,5 +141,5 @@ popd >& /dev/null
 
 stop_proc $USNAME
 
-end_test 0
+end_test $nerr
 
