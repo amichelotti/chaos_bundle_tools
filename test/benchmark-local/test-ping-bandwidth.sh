@@ -66,8 +66,8 @@ sched=1000
 rm -f $CHAOS_PREFIX/log/*.csv
 rm -f $CHAOS_PREFIX/log/*.png
 nerr=0
-info_mesg "waiting all CU running " " ..."
-sleep 15
+info_mesg "waiting all CU running " " for 60s"
+sleep 60
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
     cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log --metadata-server $META --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched" 
