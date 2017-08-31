@@ -66,7 +66,7 @@ sched=1000
 rm -f $CHAOS_PREFIX/log/*.csv
 rm -f $CHAOS_PREFIX/log/*.png
 nerr=0
-info_mesg "waiting all CU running " " for 60 s"
+info_mesg "waiting all CU running " " for 30 s"
 sleep 30
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"

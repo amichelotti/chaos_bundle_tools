@@ -1,4 +1,5 @@
 # start local services
 # test-local-services/test-local-services.sh
 benchmark-local/benchmark-local.sh
+js/test_chaos_rest.sh
 # test-local-default-us
