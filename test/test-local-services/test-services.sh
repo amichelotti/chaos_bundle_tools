@@ -67,11 +67,11 @@ else
 #    end_test 1
 fi
 status=0
-
+sleep 5;
 if which wget >& /dev/null ;then 
     info_mesg "Testing UI Server"
     unset http_proxy
-    if execute_command_until_ok "wget localhost:8081/CU?dev=TEST_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
+    if execute_command_until_ok "wget localhost:8081/CU?dev=BENCHMARK_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
 	ok_mesg "CUI answer"
     else
 	nok_mesg "CUI answer"
