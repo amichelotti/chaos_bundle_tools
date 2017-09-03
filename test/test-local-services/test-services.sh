@@ -60,7 +60,7 @@ fi
 start_mds || end_test 1 "Starting MDS"
 
 info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
-if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 $CHAOS_OVERALL_OPT --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
+if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
