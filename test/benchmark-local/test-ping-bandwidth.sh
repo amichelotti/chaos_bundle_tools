@@ -34,8 +34,7 @@ fi
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 ADDITIONAL_FLAGS=""
-if [[ $META =~ localhost ]] || [ -n "$US_LOCAL" ];then
-    ADDITIONAL_FLAGS="--publishing-interface lo"
+if [[ $META =~ localhost ]] || [[ $META =~ "127.0.0.1" ]] || [ -n "$US_LOCAL" ];then
     if [ -z "$US_TEST" ];then
 	US_TEST=BENCHMARK_UNIT_0
     fi

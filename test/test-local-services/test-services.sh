@@ -57,8 +57,6 @@ else
     end_test 1 "Cannot find MDS_TEST_CONF"
 fi
    
-start_mds || end_test 1 "Starting MDS"
-
 info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
 if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
@@ -68,18 +66,18 @@ else
 fi
 status=0
 
-# if which wget >& /dev/null ;then 
-#     info_mesg "Testing UI Server"
-#     unset http_proxy
-#     if execute_command_until_ok "wget localhost:8081/CU?dev=BENCHMARK_UNIT_0/TEST_CU_0 -P wget_test1 " 10 ;then
-# 	ok_mesg "CUI answer"
-#     else
-# 	nok_mesg "CUI answer"
-# 	end_test 1 "CUI answer"
-#     fi
-# else
-#     info_mesg "skipping CUI test because wget is " "missing"
-# fi
+if which wget >& /dev/null ;then 
+    info_mesg "Testing UI Server"
+    unset http_proxy
+    if execute_command_until_ok "wget localhost:8081/CU?dev=BENCHMARK_UNIT_0/TEST_CU_0 -P wget_test1 -T 1 >& /dev/null" 10 ;then
+	ok_mesg "CUI answer"
+    else
+	nok_mesg "CUI answer"
+	end_test 1 "CUI answer"
+    fi
+else
+    info_mesg "skipping CUI test because wget is " "missing"
+fi
 sleep 1
 
 
