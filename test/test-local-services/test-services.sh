@@ -62,14 +62,15 @@ if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_O
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-#    end_test 1
+    check_proc mds 
+    end_test 1 "trasfering configuration"
 fi
 status=0
 
 if which wget >& /dev/null ;then 
     info_mesg "Testing UI Server"
     unset http_proxy
-    if execute_command_until_ok "wget localhost:8081/CU?dev=BENCHMARK_UNIT_0/TEST_CU_0 -P wget_test1 -T 1 >& /dev/null" 10 ;then
+    if execute_command_until_ok "wget localhost:8081/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& /dev/null" 5 ;then
 	ok_mesg "CUI answer"
     else
 	nok_mesg "CUI answer"
