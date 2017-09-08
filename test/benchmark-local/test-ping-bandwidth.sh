@@ -27,6 +27,10 @@ US_TEST=BENCHMARK_UNIT_0
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 ADDITIONAL_FLAGS=""
+if ! check_proc mds;then
+    nok_mesg "MDS is unexpectly dead!!"
+    end_test 1 "MDS is unexpectly dead!!"
+fi
 
 if launch_us_cu 1 1 "--metadata-server $META $ADDITIONAL_FLAGS" $USNAME $US_TEST 1;then
     if ! check_proc $USNAME;then
@@ -47,9 +51,10 @@ rm -f $CHAOS_PREFIX/log/*.png
 nerr=0
 info_mesg "waiting 20s ..."
 sleep 20
+PID=$!
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.stdout" 
+    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.$PID.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.$PID.stdout" 
     if run_proc "$cmd" "MessClient";then
 	    ok_mesg "MessClient process with $sched"
     else
