@@ -51,10 +51,14 @@ rm -f $CHAOS_PREFIX/log/*.png
 nerr=0
 info_mesg "waiting 20s ..."
 sleep 20
-PID=$!
+if ! check_proc mds;then
+    nok_mesg "MDS is unexpectly dead!!"
+    end_test 1 "MDS is unexpectly dead!!"
+fi
+
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.$PID.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.$PID.stdout" 
+    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.$MYPID.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.$MYPID.stdout" 
     if run_proc "$cmd" "MessClient";then
 	    ok_mesg "MessClient process with $sched"
     else
