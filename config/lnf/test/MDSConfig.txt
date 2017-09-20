@@ -2014,7 +2014,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,4,1,0:700,0:10,100:200,200:300,0,5.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":700.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -2156,7 +2157,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,6,1,0:700,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0.0,\"max_curr\":700.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -2298,7 +2299,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,9,1,0:100,0:10,100:200,200:300,60,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":9,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -2439,7 +2440,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -2581,7 +2583,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,1,1,0:100,0:10,100000:1000000,200000:500000,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -2753,7 +2756,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,3,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
+
 			}
 		    ],
 		    "AttrDesc": [
@@ -2895,7 +2899,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,14,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -3037,7 +3041,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr02,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -3188,7 +3192,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr00,8,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr22\",\"slaveid\":6,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -3331,7 +3335,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr01,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr32\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -3474,7 +3478,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr02,6,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr42\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -3617,7 +3621,7 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr03,7,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr52\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -3759,7 +3763,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr04,0,1,0:120,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":120.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
+			   
 			}
 		    ],
 		    "AttrDesc": [
@@ -3903,7 +3908,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr05,6,1,0:650,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":650.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4046,7 +4052,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr06,1,1,0:120,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":120.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4189,7 +4196,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr28,2,1,0:280,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr62\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4332,7 +4340,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr07,3,1,0:230,0:10,100:200,200:300,0,1.0"
+			    			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr07\",\"slaveid\":1,\"feature\":1,\"min_curr\":0.0,\"max_curr\":230.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4474,7 +4483,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX08,9,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyrX2\",\"slaveid\":9,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4615,7 +4625,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX05,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyX05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4757,7 +4768,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX08,1,1,0:100,0:10,100000:1000000,200000:500000,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyX08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -4929,7 +4941,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX88,3,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyX88\",\"slaveid\":3,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -5071,7 +5084,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX78,14,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyrX89\",\"slaveid\":14,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -5213,7 +5227,8 @@
 			{
 			    "DriverDescriptionName": "PowerSimDD",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyrX02,4,1,0:100,0:10,100:200,200:300,0,1.0"
+			    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyrX22\",\"slaveid\":4,\"feature\":1,\"min_curr\":0.0,\"max_curr\":100.0,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"
+			    
 			}
 		    ],
 		    "AttrDesc": [
@@ -5361,7 +5376,8 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+			"DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10.0,\"max_curr\":9.95,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    
+			
 		    }
 		],
 		"AttrDesc": [
@@ -5502,7 +5518,8 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,5,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+			"DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10.0,\"max_curr\":9.95,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    			    
+			
 		    }
 		],
 		"AttrDesc": [
@@ -5644,7 +5661,8 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,61,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+			"DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10.0,\"max_curr\":9.95,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    			    			    
+			
 		    }
 		],
 		"AttrDesc": [
@@ -5785,7 +5803,8 @@
 		    {
 			"DriverDescriptionName": "PowerSimDD",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+			"DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10.0,\"max_curr\":9.95,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    			    			    			    
+			
 		    }
 		],
 		"AttrDesc": [
@@ -5926,7 +5945,7 @@
 		{
 		    "DriverDescriptionName": "PowerSimDD",
 		    "DriverDescriptionVersion": "1.0.0",
-		    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,2,-10:9.995,0:10,100:200,200:300,0,1.0"
+		    "DriverDescriptionInitParam":"{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10.0,\"max_curr\":9.95,\"min_volt\":0.0,\"max_volt\":10.0,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5.0,\"update_delay_us\":100000}}"			    			    			    			    	
 		}
 	    ],
 	    "AttrDesc": [
@@ -6238,12 +6257,8 @@
             "storage_ageing": 36000,
             "auto_load": true,
 	    "cu_param": "{\"dataset\": [{\"name\": \"dafne_timestamp\",\"description\": \"Dafne timestamp of acquisition\",\"type\": \"int64\",\"offset\": 0,\"len\": 8},{\"name\": \"em\",\"description\": \"e- current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep\",\"description\": \"e+ current [mA]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"em_rate\",\"description\": \"e- rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"ep_rate\",\"description\": \"e+ rate [Hz]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"linac_mode\",\"description\": \"linac mode\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunches\",\"description\": \"number of e- bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_bunch_1_32\",\"description\": \"e- bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_33_64\",\"description\": \"e- bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_65_96\",\"description\": \"e- bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_bunch_97_120\",\"description\": \"e- bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunches\",\"description\": \"number of e+ bunches #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_bunch_1_32\",\"description\": \"e+ bunch 1-32 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_33_64\",\"description\": \"e+ bunch 33-64 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_65_96\",\"description\": \"e+ bunch 65-96 word bit 32-1\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"ep_bunch_97_120\",\"description\": \"e+ bunch 96-120 word bit 32-8\",\"type\": \"int32\",\"offset\": 16,\"len\": 4},{\"name\": \"em_status\",\"description\": \"status e-\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_status\",\"description\": \"status e+\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"dafne_status\",\"description\": \"status DAFNE\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"fill_number\",\"description\": \"filler\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"em_lifetime\",\"description\": \"e- lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"ep_lifetime\",\"description\": \"e+ lifetime\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"LumIP1\",\"description\": \"LumIP1 [cm-2 s-1]/1e28 --> SIDDHARTA Kaon Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"LumIP2\",\"description\": \"LumIP2 [cm-2 s-1]/1e28 --> LUMI Bhabha Monitor [Hz] January 2008\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"interaction_flag\",\"description\": \"interaction flag #\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"RF\",\"description\": \"RF frequency [Hz]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"roundness_em\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"roundness_ep\",\"description\": \"Roundness e- [Ey/Ex]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"KLOE_field\",\"description\": \"KLOE field [Gauss]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_energy\",\"description\": \"BTF Energy [MeV]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"BTF_polarity\",\"description\": \"BTF Polarity [-1=e+, +1=e-]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"BTF_target_line\",\"description\": \"BTF Target Line [1 bend line, 0 straght line]\",\"type\": \"int32\",\"offset\": 0,\"len\": 4},{\"name\": \"WID_em\",\"description\": \"WID e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_em\",\"description\": \"wid e- [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"WID_ep\",\"description\": \"WID e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"wid2_ep\",\"description\": \"wid e+ [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL204\",\"description\": \"X BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL204\",\"description\": \"Y BPMEL204 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL205\",\"description\": \"X BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL205\",\"description\": \"Y BPMEL205 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL206\",\"description\": \"X BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL206\",\"description\": \"Y BPMEL206 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL207\",\"description\": \"X BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL207\",\"description\": \"Y BPMEL207 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1001\",\"description\": \"temperature I1001 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1002\",\"description\": \"temperature I1002 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1003\",\"description\": \"temperature I1003 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"TEMP_I1004\",\"description\": \"temperature I1004 [C]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL202\",\"description\": \"X BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL202\",\"description\": \"Y BPMEL202 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"X_BPMEL203\",\"description\": \"X BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8},{\"name\": \"Y_BPMEL203\",\"description\": \"Y BPMEL203 [mm]\",\"type\": \"double\",\"offset\": 0,\"len\": 8}]}",
-	    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
-		    "storage_type": 2,
-		    "storage_ageing": 36000,
-
 	    "DriverDescription": [
 		{
 		    "DriverDescriptionName": "FilePosixDataImporterDriver",
@@ -6254,169 +6269,6 @@
 	    "AttrDesc": [
 	    ]
 	}]
-	},
-	{
-	    "unit_server_alias": "c8:1f:66:b1:27:48",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
-	},
-	{
-	    "unit_server_alias": "LNF/TEST/CRIO0",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "LNF/TEST/CRIO0",
-		    "cu_id": "LNF/TEST/CRIO0/SUPPLY",
-		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "PowerSimDD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0,1.0"
-			}
-		    ],
-		    "AttrDesc": [
-			{
-			    "ds_attr_name": "current",
-			    "ds_max_range": "700",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
-			},
-			{
-			    "ds_attr_name": "rampDownRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			},
-			{
-			    "ds_attr_name": "rampUpRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			}
-		    ]
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "TEST_MIKE",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "TEST_MIKE",
-		    "cu_id": "TEST_MIKE/SUPPLY",
-		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "PowerSimDD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0,1.0"
-			}
-		    ],
-		    "AttrDesc": [
-			{
-			    "ds_attr_name": "current",
-			    "ds_max_range": "700",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
-			},
-			{
-			    "ds_attr_name": "rampDownRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			},
-			{
-			    "ds_attr_name": "rampUpRate",
-			    "ds_max_range": "10",
-			    "ds_min_range": "1",
-			    "ds_default_value": "1"
-			}
-		    ]
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "LNS",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "LNS",
-		    "cu_id": "LNS/CRIO",
-		    "cu_type": "::driver::powersupply::SCPowerSupplyControlUnit",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "PowerSimDD",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "SimPSupply:/dev/ttyr08,13,1,-10:9.995,0:10,100:200,200:300,0,1.0"
-			}
-		    ],
-		    "AttrDesc": [
-			{
-			    "ds_attr_name": "current",
-			    "ds_max_range": "700",
-			    "ds_min_range": "0",
-			    "ds_default_value": "0"
-			},
-			{
-			    "ds_attr_name": "rampDownRate",
-			    "ds_max_range": "70",
-			    "ds_min_range": "1",
-			    "ds_default_value": "35"
-			},
-			{
-			    "ds_attr_name": "rampUpRate",
-			    "ds_max_range": "70",
-			    "ds_min_range": "1",
-			    "ds_default_value": "35"
-			}
-		    ]
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "d0:39:72:4a:f3:ab",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": [
-		{
-		    "unit_server_alias": "d0:39:72:4a:f3:ab",
-		    "cu_id": "LUCID_TEMP_0",
-		    "cu_type": "BasicSensor",
-		    "cu_param": "",
-		    "auto_load": true,
-		    "DriverDescription": [
-			{
-			    "DriverDescriptionName": "LucidTemperatureDriver",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "/dev/ttyACM0"
-			}
-		    ],
-		    "AttrDesc": []
-		}
-	    ]
-	},
-	{
-	    "unit_server_alias": "fb91b658",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
-	},
-	{
-	    "unit_server_alias": "fe757fb5",
-	    "private_key": null,
-	    "public_key": null,
-	    "cu_desc": []
 	},
 	{
 	    "unit_server_alias": "LIBERA01",

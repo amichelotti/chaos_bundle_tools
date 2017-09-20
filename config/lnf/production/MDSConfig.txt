@@ -2093,9 +2093,9 @@
 		    "storage_ageing": 0,
 		    "DriverDescription": [
 		    		    {
-			"DriverDescriptionName": "OcemDD",
-			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "OcemE642X:/dev/ttyr06,10,280:10"
+					"DriverDescriptionName": "OcemDD",
+					"DriverDescriptionVersion": "1.0.0",
+					"DriverDescriptionInitParam":"{\"channel\":{\"serdev\":\"/dev/ttyr06\",\"baudrate\":9600,\"parity\":0,\"stop\":1,\"hwctrl\":0,\"bits\":8},\"driver\":{\"slaveid\":10,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"min_volt\":0.0,\"max_volt\":10.0}}"			    
 		    }
 
 		    ],
