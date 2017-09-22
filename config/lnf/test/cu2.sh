@@ -32,7 +32,7 @@ cuid=()
      exit 1
  fi
 
- if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" BPMSync ACCUMULATOR/BPM;then
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer ACCUMULATOR/BPM;then
      ok_mesg "US BPMsync $!"
      procid+=($!)
      cuid+=("ACCUMULATOR/BPM")
@@ -41,6 +41,15 @@ cuid=()
      exit 1
  fi
 
+## BENCHMARK
+if launch_us_cu 1 6 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/TRXLINE;then
+    ok_mesg "US Benchmark Unit $!"
+    procid+=($!)
+    cuid+=("BTF/DAFNE/TRXLINE")
+else
+    nok_mesg "BTF/DAFNE/TRXLINE"
+    exit 1
+fi
 
 
 ## BENCHMARK

@@ -75,7 +75,7 @@ void __template_name__CommandSample::setHandler(CDataWrapper *data) {
     parm_from_cmd= data->getInt32Value("parm1");
     driver->op1(parm_from_cmd);
     cnt =parm_from_cmd + 1;
-    BC_EXEC_RUNNIG_PROPERTY;
+    BC_EXEC_RUNNING_PROPERTY;
 }
 
 // Aquire the necessary data for the command
@@ -101,7 +101,7 @@ void __template_name__CommandSample::ccHandler() {
     // command has finished
     APP<< " * mark as end command:"<<cnt;
     
-    BC_END_RUNNIG_PROPERTY;
+    BC_END_RUNNING_PROPERTY;
   }
   getAttributeCache()->setOutputDomainAsChanged();
   
@@ -110,7 +110,7 @@ void __template_name__CommandSample::ccHandler() {
 bool __template_name__CommandSample::timeoutHandler() {
 	//move the state machine on fault
   APP<< " * TIMEOUT "<<cnt;
-  BC_FAULT_RUNNIG_PROPERTY;
+  BC_FAULT_RUNNING_PROPERTY;
 
   return false;
 }

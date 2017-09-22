@@ -1,0 +1,8 @@
+DEPLOY_USER=dante
+CU_SERVERS="192.168.198.210"
+DEPLOY_DIR="tools etc bin"
+DEPLOY_PREFIX_DIR=/usr/local/chaos
+DEPLOY_BINARIES="ChaosAgent:agent UnitServer:cu"
+START_STOP_CMD="sudo systemctl \$op chaos-\$type.service"
+# DEPLOY_REPO=chaosweb@opensource.lnf.infn.it:/var/www/html/binary/chaos/
+

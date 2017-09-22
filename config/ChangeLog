@@ -1,0 +1,4 @@
+2016.10.25, Version 0.5  
+
+Changes since version 0.4:
+* Added ChangeLog to be used into chaos_debianizer to determine the version

@@ -25,8 +25,10 @@ kill_monitor_process
 
 procid=()
 cuid=()
+
+$CHAOS_PREFI
  for k in LIBERA01 LIBERA02 LIBERA03 LIBERA07 LIBERA08 LIBERA09 LIBERA12 LIBERA13; do
-     if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" daqLiberaServer $k;then
+     if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer $k;then
  	procid+=($!)
  	cuid+=($k)
  	ok_mesg "daqLiberaServer $k $!"

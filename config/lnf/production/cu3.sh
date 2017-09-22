@@ -1,5 +1,4 @@
 #!/bin/bash
-ulimit -u unlimited
 separator='-'
 pushd `dirname $0` > /dev/null
 dir=`pwd -P`
@@ -16,37 +15,79 @@ fi
 
 export LD_LIBRARY_PATH=$CHAOS_PREFIX/lib
 info_mesg "using prefix " "$CHAOS_PREFIX"
-check_proc_then_kill BPMSync
-check_proc_then_kill daqLiberaServer
-check_proc_then_kill UnitServer    
+kill_monitor_process
 procid=()
 cuid=()
 
 
-# ## Transfer line
-if launch_us_cu 1 4 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/CORRECTORS;then
-    procid+=($!)
-    cuid+=("BTF/CORRECTORS")
-    ok_mesg "US BTF/CORRECTORS $!"
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/DAQ;then
+     ok_mesg "US BTF/DAQ $!"
+     procid+=($!)
+     cuid+=("BTF/DAQ")
+ else
+     nok_mesg "US BTF/DAQ"
+     exit 1
+ fi
 
-else
-    nok_mesg "US BTF/CORRECTORS"
-    exit 1
-fi
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer MEA;then
+     ok_mesg "MEA $!"
+     procid+=($!)
+     cuid+=("MEA")
+ else
+     nok_mesg "US MEA"
+     exit 1
+ fi
+
+  # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer DAFNE/TRXLINE;then
+  #     ok_mesg "US DAFNE_TRXLINE $!"
+  #     procid+=($!)
+  #     cuid+=("DAFNE_TRXLINE")
+  # else
+  #     nok_mesg "US DAFNE_TRXLINE"
+  #     exit 1
+  # fi
 
 
+# # if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_BIS;then
+# #     ok_mesg "US TEST_BIS $!"
+# #     procid+=($!)
+# #     cuid+=("TEST_BIS")
+# # else
+# #     nok_mesg "TEST_BIS"
+# #     exit 1
+# # fi
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTF/GLUE;then
+     procid+=($!)
+     cuid+=("BTF/GLUE")
+     ok_mesg "US BTF/GLUE $!"
 
-if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer TEST_UNIT;then
-    ok_mesg "US TEST_UNIT $!"
-    procid+=($!)
-    cuid+=("TEST_UNIT")
-else
-    nok_mesg "TEST_UNIT"
-    exit 1
-fi
+ else
+     nok_mesg "US BTF/GLUE"
+     exit 1
+ fi
 
 
+ if launch_us_cu 1 1 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BTFSCRAPERS;then
+     ok_mesg "US BTFSCRAPERS $!"
+     procid+=($!)
+     cuid+=("BTFSCRAPERS")
+ else
+     nok_mesg "BTFSCRAPERS"
+     exit 1
+ fi
+
+### Benchmark
+
+# if launch_us_cu 1 10 "--conf-file $CHAOS_PREFIX/etc/cu.cfg" UnitServer BENCHMARK_UNIT_2;then
+#     ok_mesg "US BENCHMARK_UNIT_2 $!"
+#     procid+=($!)
+#     cuid+=("BENCHMARK_UNIT_2")
+# else
+#     nok_mesg "US BENCHMARK_UNIT_2"
+#     exit 1
+# fi
 
 
-info_mesg "monitoring cus"
+Info_mesg "monitoring cus"
+
 monitor_processes $procid $cuid
