@@ -2095,7 +2095,7 @@
 		    		    {
 					"DriverDescriptionName": "OcemDD",
 					"DriverDescriptionVersion": "1.0.0",
-					"DriverDescriptionInitParam":"{\"channel\":{\"serdev\":\"/dev/ttyr00\",\"baudrate\":9600,\"parity\":0,\"stop\":1,\"hwctrl\":0,\"bits\":8},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":10,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"			    
+					"DriverDescriptionInitParam":"{\"channel\":{\"tcp\":\"192.168.192.20\",\"port\":4001},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":10,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"			    
 		    }
 
 		    ],
@@ -2237,7 +2237,7 @@
 		    		    {
 			"DriverDescriptionName": "OcemDD",
 			"DriverDescriptionVersion": "1.0.0",
-											"DriverDescriptionInitParam":"{\"channel\":{\"serdev\":\"/dev/ttyr01\",\"baudrate\":9600,\"parity\":0,\"stop\":1,\"hwctrl\":0,\"bits\":8},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":11,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"			    
+											"DriverDescriptionInitParam":"{\"channel\":{\"tcp\":\"192.168.192.20\",\"port\":4001},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":11,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"			    
 			
 		    }
 
