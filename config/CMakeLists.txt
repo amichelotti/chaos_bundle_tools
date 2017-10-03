@@ -2,7 +2,7 @@
 ## 29/8/2016
 cmake_minimum_required(VERSION 2.8.9)
 include(chaosframework/config/CMakeChaos.txt)
-
+option(CHAOS_VME "Vme Support" ON)
 project(chaos)
 ADD_DEFINITIONS(-DCHAOS)
 # ### framework
@@ -13,7 +13,9 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(common/debug)
  ADD_SUBDIRECTORY(common/misc)
  ADD_SUBDIRECTORY(common/crest)
- ADD_SUBDIRECTORY(common/vme)
+ IF(CHAOS_VME)
+  ADD_SUBDIRECTORY(common/vme)
+ ENDIF()	
  ADD_SUBDIRECTORY(common/serial)
  ADD_SUBDIRECTORY(common/modbus)
  ADD_SUBDIRECTORY(common/powersupply)
