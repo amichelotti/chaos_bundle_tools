@@ -32,7 +32,7 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(driver/data-import)
  ADD_SUBDIRECTORY(driver/modbus)
  ADD_SUBDIRECTORY(driver/actuator)
- ADD_SUBDIRECTORY(driver/eu/eledia-eu)
+#  ADD_SUBDIRECTORY(driver/eu/eledia-eu)
  
  ###
 ## ADD_SUBDIRECTORY(service/webgui/CUiserver)
