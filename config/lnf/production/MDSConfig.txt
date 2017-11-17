@@ -9663,12 +9663,13 @@
 		    "unit_server_alias": "DAFNE_LUMINOMITER",
 		    "cu_id": "DAFNE/LUMINOMETER/LUMI",
 		    "cu_type": "dafne::luminometer::RTLuminometer",
-		    "cu_param": "{\"driver_vme_type\":0x4,\"pio_vme_base\":\"0x33110000\",\"tdc_vme_base\":\"0xA0000000\",\"qdc_vme_base\":\"0xEE000000\",\"qdc_nchan\":16,\"tdc_nchan\":16}",
+		    "cu_param": "{\"driver_vme_type\":0x4,\"pio_vme_base\":\"0x33110000\",\"tdc_vme_base\":\"0xA0000000\",\"qdc_vme_base\":\"0xE0000000\",\"qdc_nchan\":16,\"tdc_nchan\":16}",
 		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
 		    "storage_ageing": 600000,
+ 		    "default_schedule_delay": 1,	
 		    "DriverDescription": [],
 		    "AttrDesc": [
 			{
