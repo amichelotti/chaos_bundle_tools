@@ -7,14 +7,15 @@ fi
 echo "* retriving libera ARM binaries"
 lista="libera13 libera12 libera10 libera02 libera03 libera05 libera06 libera07 libera08 libera09 libera01"
 for i in $lista;do
-echo "* stopping $i"
-ssh root@$i /etc/init.d/chaos-us.sh stop
+    echo "* stopping $i"
+    ssh root@$i "mount -o remount rw /"
+    ssh root@$i /etc/init.d/chaos-us.sh stop
 done
 
 wget http://opensource.lnf.infn.it/binary/chaos/$1/arm/chaos-distrib-$1-build_arm_linux26.tar.gz
 tar xvfz chaos-distrib-$1-build_arm_linux26.tar.gz chaos-distrib-$1-build_arm_linux26/bin/daqLiberaServer 
 scp chaos-distrib-$1-build_arm_linux26/bin/daqLiberaServer michelo@192.168.143.252:/export/chaos-libera/old
-rm -rf chaos-distrib-$1-build_arm_linux26*
+# rm -rf chaos-distrib-$1-build_arm_linux26*
 
 echo "* retriving libera i686 binaries"
 wget http://opensource.lnf.infn.it/binary/chaos/$1/i686/chaos-distrib-$1-build_i686_dynamic_linux26.tar.gz
