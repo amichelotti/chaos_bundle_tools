@@ -9212,12 +9212,7 @@
 			{
 			    "DriverDescriptionName": "TechnosoftMotor",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
-			},
-			{
-			    "DriverDescriptionName": "ActuatorSim",
-			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr23"
+			    "DriverDescriptionInitParam": "14,0,115200,/dev/ttyr1c"
 			}
 		    ],
 		    "AttrDesc": [
