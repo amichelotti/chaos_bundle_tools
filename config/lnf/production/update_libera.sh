@@ -12,14 +12,14 @@ for i in $lista;do
     ssh root@$i /etc/init.d/chaos-us.sh stop
 done
 
-wget http://opensource.lnf.infn.it/binary/chaos/$1/arm/chaos-distrib-$1-build_arm_linux26.tar.gz
-tar xvfz chaos-distrib-$1-build_arm_linux26.tar.gz chaos-distrib-$1-build_arm_linux26/bin/daqLiberaServer 
+wget -q http://opensource.lnf.infn.it/binary/chaos/$1/arm/chaos-distrib-$1-build_arm_linux26.tar.gz
+tar xfz chaos-distrib-$1-build_arm_linux26.tar.gz chaos-distrib-$1-build_arm_linux26/bin/daqLiberaServer 
 scp chaos-distrib-$1-build_arm_linux26/bin/daqLiberaServer michelo@192.168.143.252:/export/chaos-libera/old
 # rm -rf chaos-distrib-$1-build_arm_linux26*
 
 echo "* retriving libera i686 binaries"
-wget http://opensource.lnf.infn.it/binary/chaos/$1/i686/chaos-distrib-$1-build_i686_dynamic_linux26.tar.gz
-tar xvfz chaos-distrib-$1-build_i686_dynamic_linux26.tar.gz chaos-distrib-$1-build_i686_dynamic_linux26/bin/daqLiberaServer chaos-distrib-$1-build_i686_dynamic_linux26/lib
+wget -q http://opensource.lnf.infn.it/binary/chaos/$1/i686/chaos-distrib-$1-build_i686_dynamic_linux26.tar.gz
+tar xfz chaos-distrib-$1-build_i686_dynamic_linux26.tar.gz chaos-distrib-$1-build_i686_dynamic_linux26/bin/daqLiberaServer chaos-distrib-$1-build_i686_dynamic_linux26/lib
 cp /usr/local/chaos/i686-nptl-linux-gnu/i686-nptl-linux-gnu/sysroot/lib/libstdc++.so.6 chaos-distrib-$1-build_i686_dynamic_linux26/lib
 scp -r chaos-distrib-$1-build_i686_dynamic_linux26/ michelo@192.168.143.252:/export/chaos-libera/new
 ssh michelo@192.168.143.252 "rm -rf /export/chaos-libera/new/chaos-distrib"
