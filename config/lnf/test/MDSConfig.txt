@@ -8713,16 +8713,20 @@
 		    ]
 		}
 	    ]
-	}, { "unit_server_alias": "LUMINOMETER",
+	},
+	{ "unit_server_alias": "LUMINOMETER",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		{
 		    "unit_server_alias": "LUMINOMETER",
-		    "cu_id": "LUMINOMETER/CAEN775",
+		    "cu_id": "DAFNE/LUMINOMETER/TDC/CAEN775",
 		    "cu_type": "::driver::daq::caen::RTCAEN775",
 		    "cu_param": "",
 		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 600000,
+		    "default_schedule_delay": 1,	
 		    "DriverDescription": [],
 		    "AttrDesc": [
 		    	{		    
@@ -8771,11 +8775,14 @@
 		},
 		{
 		    "unit_server_alias": "LUMINOMETER",
-		    "cu_id": "LUMINOMETER/CAEN965",
+		    "cu_id": "DAFNE/LUMINOMETER/QDC/CAEN965",
 		    "cu_type": "::driver::daq::caen::RTCAEN965",
 		    "cu_param": "",
-		    "auto_load": false,
+		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 600000,
 		    "DriverDescription": [],
+		    "default_schedule_delay": 1,	
 		    "AttrDesc": [
 		    {		    
 			    "ds_attr_name": "VME_DRIVER",
@@ -8807,11 +8814,45 @@
 			    "ds_default_value": "0x1C38"
 			}
 		    ]
-
 		}
-
 	    ]
-	},{ "unit_server_alias": "ASTRA",
+	},
+
+	{
+	    "unit_server_alias": "DAFNE_LUMINOMITER",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		 {		
+		    "unit_server_alias": "DAFNE_LUMINOMITER",
+		    "cu_id": "DAFNE/LUMINOMETER/LUMI",
+		    "cu_type": "dafne::luminometer::RTLuminometer",
+		    "cu_param": "{\"driver_vme_type\":0x4,\"pio_vme_base\":\"0x33110000\",\"tdc_vme_base\":\"0xA0000000\",\"qdc_vme_base\":\"0xE0000000\",\"qdc_nchan\":16,\"tdc_nchan\":16}",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 600000,
+ 		    "default_schedule_delay": 1,	
+		    "DriverDescription": [],
+		    "AttrDesc": [
+			{
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0xffffffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1A38"
+			},
+			{
+			    "ds_attr_name": "BITCLR2",
+			    "ds_max_range": "0xffffffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x4043"
+			}
+	    ]
+	}
+    ]
+}
+,{ "unit_server_alias": "ASTRA",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
