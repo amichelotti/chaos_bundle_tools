@@ -8,8 +8,13 @@ curl -X POST -u Administrator:chaos2015 -d 'name=chaos' -d 'bucketType=memcached
 curl -u Administrator:chaos2015 http://$1:8091/pools/default/buckets
 
 echo "* init DB server $2"
+rm -rf /tmp/dbinit
+mkdir -p /tmp/dbinit
+cd /tmp/dbinit
+git clone git@baltig.infn.it:chaos-lnf-control/chaos_mongodb_script.git
 mongo $2/chaos --eval 'db.dropUser("chaos")'
+
 mongo --host $2 admin --eval 'var schema = db.system.version.findOne({"_id" : "authSchema"}); schema.currentVersion = 3 ; db.system.version.save(schema)'
 mongo $2/chaos --eval 'db.createUser({user:"chaos", pwd:"chaos", roles:[ { role: "readWrite", db: "chaos" } ]})'
-mongo $2/chaos --eval 'db.daq.createIndex({"ndk_uid" : 1, "dpck_ats":1,"data.dpck_seq_id":1}, {name:"paged_daq_search_index",unique:1})'
-mongo --host $2 admin --eval 'db.system.users.find().pretty();'
+mongo --host $2 chaos_mongodb_script/create_index.js
+
