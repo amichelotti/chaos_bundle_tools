@@ -1,5 +1,6 @@
 ## Andrea Michelotti
 ## 29/8/2016
+SET(CHAOS_BUNDLE ${CMAKE_CURRENT_LIST_DIR})
 cmake_minimum_required(VERSION 2.8.9)
 include(chaosframework/config/CMakeChaos.txt)
 option(CHAOS_VME "Vme Support" ON)
