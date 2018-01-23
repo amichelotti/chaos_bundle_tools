@@ -9650,16 +9650,16 @@
 	},
 
 	{
-	    "unit_server_alias": "DAFNE_LUMINOMITER",
+	    "unit_server_alias": "DAFNE_LUMINOMETER",
 	    "private_key": null,
 	    "public_key": null,
 	    "cu_desc": [
 		 {		
-		    "unit_server_alias": "DAFNE_LUMINOMITER",
+		    "unit_server_alias": "DAFNE_LUMINOMETER",
 		    "cu_id": "DAFNE/LUMINOMETER/LUMI",
 		    "cu_type": "dafne::luminometer::RTLuminometer",
-		    "cu_param": "{\"driver_vme_type\":0x4,\"pio_vme_base\":\"0x33110000\",\"tdc_vme_base\":\"0xA0000000\",\"qdc_vme_base\":\"0xE0000000\",\"qdc_nchan\":16,\"tdc_nchan\":16}",
-		    "auto_load": true,
+		    "cu_param": "{\"driver_vme_type\":4,\"pio_vme_base\":\"0x33110000\",\"tdc_vme_base\":\"0xA0000000\",\"qdc_vme_base\":\"0xE0000000\",\"qdc_nchan\":16,\"tdc_nchan\":16}",
+		    "auto_load": false,
 		    "auto_start":true,
 		    "auto_init":true,
 		    "storage_type": 2,
@@ -9680,9 +9680,20 @@
 			    "ds_default_value": "0x4043"
 			}
 	    ]
-	}
-    ]
-},
+	},{
+	  "unit_server_alias": "DAFNE_LUMINOMETER",
+		    "cu_id": "DAFNE/LUMINOMETER/MONITOR",
+		    "cu_type": "dafne::luminometer::RTLuminometerMonitor",
+		    "cu_param": "{\"driver_vme_type\":4,\"vme_base\":\"0x77440000\",\"pio_vme_base\":\"0x33110000\"}",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 600000,
+ 		    "default_schedule_delay": 2000000,	
+		    "DriverDescription": [],
+		    "AttrDesc": []
+}]},
 {"unit_server_alias": "ASTRA",
 	    "private_key": null,
 	    "public_key": null,
