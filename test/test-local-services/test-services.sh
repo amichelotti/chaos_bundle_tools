@@ -58,11 +58,10 @@ else
 fi
    
 info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
-if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
+if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-    check_proc mds 
     end_test 1 "trasfering configuration"
 fi
 status=0
