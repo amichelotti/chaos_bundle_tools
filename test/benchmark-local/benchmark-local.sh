@@ -11,7 +11,11 @@ mkdir $CHAOS_PREFIX/vfs
 ##    ./test-ping-bandwidth.sh 1 1 $CHAOS_MDS 1048576 MessMonitor || exit 
 
 
-$CHAOS_PREFIX/bin/misc/testDataSetIO --metadata-server $CHAOS_MDS --loop 1000000 --points 100 --log-on-file 1 --log-level debug --log-file $CHAOS_PREFIX/log/testDataSetIO.log --direct-io-client-kv-param=ZMQ_RCVTIMEO:600000
-
+if run_proc "$CHAOS_PREFIX/bin/misc/testDataSetIO --metadata-server $CHAOS_MDS --loop 1000000 --points 100 --log-on-file 1 --log-level debug --log-file $CHAOS_PREFIX/log/testDataSetIO.log --direct-io-client-kv-param=ZMQ_RCVTIMEO:600000
+" "testDataSetIO";then
+    ok_mesg "testDataSetIO"
+else
+    nok_mesg "testDataSetIO"
+fi
 rm -rf $CHAOS_PREFIX/vfs
 mkdir $CHAOS_PREFIX/vfs
