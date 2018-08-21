@@ -12,9 +12,10 @@ if [ -z "$2" ]; then
 fi
 
 title=$2
-images_png=`find $1 -name "*.png"`
-images_gif=`find $1 -name "*.gif"`
-images_jpg=`find $1 -name "*.jpg"`
+echo "* looking in $1"
+images_png=`find ./$1 -name "*.png"`
+images_gif=`find ./$1 -name "*.gif"`
+images_jpg=`find ./$1 -name "*.jpg"`
 echo "<!DOCTYPE html>" > index.html
 echo "<html>" >> index.html
 echo "<body>" >> index.html
