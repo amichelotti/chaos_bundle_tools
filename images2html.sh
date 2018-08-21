@@ -22,6 +22,7 @@ echo "<h2>$title</h2>" >> index.html
 echo "<table>" >> index.html
 # echo "<tr><th>Name</th><th>Image</th></tr>" >> index.html
 for img in $images_png $images_gif $images_jpg;do
+    echo "* processing $img"
     echo "<tr><td>\"$img\"</td><td><img src=\"$img\" alt=\"$img\" style=\"width:50%;height:50%;\"></td>" >> index.html
 done
 echo "</table>" >> index.html
