@@ -13,6 +13,7 @@ fi
 
 title=$2
 echo "* looking in $1"
+find $1 -name "*.png"
 images_png=`find ./$1 -name "*.png"`
 images_gif=`find ./$1 -name "*.gif"`
 images_jpg=`find ./$1 -name "*.jpg"`
