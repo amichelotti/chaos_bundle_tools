@@ -10,6 +10,10 @@ if [ -z "$2" ]; then
     echo "# you must provide a title"
     exit 1
 fi
+resize=50
+if [ -n "$3" ]; then
+    resize=$3
+fi
 
 title=$2
 images_png=`find $1 -name "*.png"`
@@ -22,7 +26,7 @@ echo "<h2>$title</h2>" >> index.html
 echo "<table>" >> index.html
 # echo "<tr><th>Name</th><th>Image</th></tr>" >> index.html
 for img in $images_png $images_gif $images_jpg;do
-    echo "<tr><td>\"$img\"</td><td><img src=\"$img\" alt=\"$img\" style=\"width:50%;height:50%;\"></td>" >> index.html
+    echo "<tr><td>\"$img\"</td><td><img href=\"$img\" alt=\"$img\" style=\"width:$resize%;height:$resize%;\"></td>" >> index.html
 done
 echo "</table>" >> index.html
 echo "</body>" >> index.html
