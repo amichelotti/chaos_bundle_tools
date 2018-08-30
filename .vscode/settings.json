@@ -77,7 +77,11 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cfenv": "cpp",
+        "csetjmp": "cpp",
+        "cuchar": "cpp",
+        "scoped_allocator": "cpp"
     },
     "cmake.configureOnOpen": true,
     "C_Cpp.configurationWarnings": "Disabled"
