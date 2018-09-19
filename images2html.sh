@@ -17,10 +17,10 @@ fi
 
 title=$2
 
-
-images_png=`find ./$1 -name "*.png"`
-images_gif=`find ./$1 -name "*.gif"`
-images_jpg=`find ./$1 -name "*.jpg"`
+pushd $1
+images_png=`find . -name "*.png"`
+images_gif=`find . -name "*.gif"`
+images_jpg=`find . -name "*.jpg"`
 echo "<!DOCTYPE html>"
 echo "<html>" 
 echo "<body>" 
@@ -33,3 +33,4 @@ done
 echo "</table>" 
 echo "</body>" 
 echo "</html>"
+popd
