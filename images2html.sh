@@ -17,7 +17,8 @@ fi
 
 title=$2
 
-pushd $1
+pushd $1 >& /dev/null
+htmls=`find . -name "*.htm*"`
 images_png=`find . -name "*.png"`
 images_gif=`find . -name "*.gif"`
 images_jpg=`find . -name "*.jpg"`
@@ -27,8 +28,11 @@ echo "<body>"
 echo "<h2>$title</h2>" 
 echo "<table>" 
 # echo "<tr><th>Name</th><th>Image</th></tr>" >> index.html
+for img in $htmls;do
+        echo "<tr><td>\"$img\"</td><td><a href=\"$img\">$img</a></td>" 
+done
 for img in $images_png $images_gif $images_jpg;do
-    echo "<tr><td>\"$img\"</td><td><img href=\"$img\" alt=\"$img\" style=\"width:$resize%;height:$resize%;\"></td>" 
+    echo "<tr><td>\"$img\"</td><td><img src=\"$img\" alt=\"$img\" style=\"width:$resize%;height:$resize%;\"></td>" 
 done
 echo "</table>" 
 echo "</body>" 
