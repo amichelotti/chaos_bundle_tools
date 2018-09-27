@@ -19,7 +19,7 @@ if [ -z $1 ];then
     exit 1
 fi
 
-
+DATE=`date '+%Y-%m-%d %H:%M:%S'`
 metadata_server="localhost:5000"
 while getopts m:hl:t:s:g opt; do
     case $opt in
@@ -56,10 +56,10 @@ echo "#set logscale y 2" >> testioMulti.gnuplot
 echo "set logscale x 2" >> testioMulti.gnuplot  
 echo "set xlabel 'Bytes'" >> testioMulti.gnuplot  
 echo "set terminal png size 2048,4096 enhanced font 'Verdana,10'" >> testioMulti.gnuplot  
-echo "set output 'testDataSetIOMulti-$host.png'">> testioMulti.gnuplot  
+echo "set output 'testDataSetIOMulti-$host-$DATE.png'">> testioMulti.gnuplot  
 mach=`uname -a`
 
-echo "set multiplot layout 8,1 title '$mach on $metadata_server, loops $loop' font ',14'" >> testioMulti.gnuplot  
+echo "set multiplot layout 8,1 title '$DATE:$mach on $metadata_server, loops $loop' font ',14'" >> testioMulti.gnuplot  
 
 echo "* starting performace test on $metadata_server loop:$loop"
 for i in `seq 1 $maxthread`;
@@ -78,3 +78,4 @@ do
     sleep 1
 done
 echo "unset multiplot">> testioMulti.gnuplot  
+gnuplot testioMulti.gnuplot
