@@ -28,10 +28,12 @@ echo "* starting performace test on $1"
 nthreads="1 2 3 4 5 6 7 8"
 for i in $nthreads;do
     echo "Starting test with $i threads"
-    LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libasan.so.5 $CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax 10000 --metadata-server $1 --nthread $i --pointincr 2 --loop $loop --report testDataSetIO_$i.csv
     echo "set title '$i threads'">> testioMulti.gnuplot  
-#    echo "plot 'testDataSetIO_$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','testDataSetIO_$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','testDataSetIO_$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','testDataSetIO_$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', 'testDataSetIO_$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> testioMulti.gnuplot  
     echo "plot 'testDataSetIO_$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','testDataSetIO_$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', 'testDataSetIO_$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> testioMulti.gnuplot  
+    $CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax 10000 --metadata-server $1 --nthread $i --pointincr 2 --loop $loop --report testDataSetIO_$i.csv
+    
+#    echo "plot 'testDataSetIO_$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','testDataSetIO_$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','testDataSetIO_$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','testDataSetIO_$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', 'testDataSetIO_$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> testioMulti.gnuplot  
+    
 
     echo "Sleeping 60"
     sleep 60
