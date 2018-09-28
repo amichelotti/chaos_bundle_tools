@@ -19,7 +19,7 @@ if [ -z $1 ];then
     exit 1
 fi
 
-DATE=`date '+%Y-%m-%d %H:%M:%S'`
+DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 metadata_server="localhost:5000"
 while getopts m:hl:t:s:g opt; do
     case $opt in
@@ -50,32 +50,35 @@ done
 
 
 host=`hostname`
-echo "set datafile separator \",\"" > testioMulti.gnuplot  
-#set yrange [1:150000]
-echo "#set logscale y 2" >> testioMulti.gnuplot  
-echo "set logscale x 2" >> testioMulti.gnuplot  
-echo "set xlabel 'Bytes'" >> testioMulti.gnuplot  
-echo "set terminal png size 2048,4096 enhanced font 'Verdana,10'" >> testioMulti.gnuplot  
-echo "set output 'testDataSetIOMulti-$host-$DATE.png'">> testioMulti.gnuplot  
 mach=`uname -a`
+csvprefix= testDataSetIO-$host-$DATE
 
-echo "set multiplot layout 8,1 title '$DATE:$mach on $metadata_server, loops $loop' font ',14'" >> testioMulti.gnuplot  
+echo "set datafile separator \",\"" > $csvprefix.gnuplot  
+#set yrange [1:150000]
+echo "#set logscale y 2" >> $csvprefix.gnuplot  
+echo "set logscale x 2" >> $csvprefix.gnuplot  
+echo "set xlabel 'Bytes'" >> $csvprefix.gnuplot  
+echo "set terminal png size 2048,4096 enhanced font 'Verdana,10'" >> $csvprefix.gnuplot  
+echo "set output 'testDataSetIOMulti-$host-$DATE.png'">> $csvprefix.gnuplot  
+
+echo "set multiplot layout 8,1 title '$DATE:$mach on $metadata_server, loops $loop' font ',14'" >> $csvprefix.gnuplot  
 
 echo "* starting performace test on $metadata_server loop:$loop"
+
 for i in `seq 1 $maxthread`;
 do
     echo "Starting test with $i threads"
-    echo "set title '$i threads'">> testioMulti.gnuplot  
-    echo "plot 'testDataSetIO-$host-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','testDataSetIO-$host-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', 'testDataSetIO-$host-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> testioMulti.gnuplot  
+    echo "set title '$i threads'">> $csvprefix.gnuplot  
+    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
     if [ -n $loglevel ];then
-	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report testDataSetIO-$host-$i.csv --log-on-file --log-file testDataSetIO-$host-$i.log --log-level debug
+	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv --log-on-file --log-file $csvprefix-$i.log --log-level debug
     else
-	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report testDataSetIO-$host-$i.csv 
+	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv 
     fi
-#    echo "plot 'testDataSetIO-$host-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','testDataSetIO-$host-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','testDataSetIO-$host-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','testDataSetIO-$host-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', 'testDataSetIO-$host-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> testioMulti.gnuplot  
+#    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','$csvprefix-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','$csvprefix-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
     
 
     sleep 1
 done
-echo "unset multiplot">> testioMulti.gnuplot  
-gnuplot testioMulti.gnuplot
+echo "unset multiplot">> $csvprefix.gnuplot  
+gnuplot $csvprefix.gnuplot
