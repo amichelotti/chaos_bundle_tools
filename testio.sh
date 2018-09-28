@@ -51,7 +51,7 @@ done
 
 host=`hostname`
 mach=`uname -a`
-csvprefix= testDataSetIO-$host-$DATE
+csvprefix="testDataSetIO-$host-$DATE"
 
 echo "set datafile separator \",\"" > $csvprefix.gnuplot  
 #set yrange [1:150000]
