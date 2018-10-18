@@ -105,7 +105,7 @@ done
 pushd $CHAOS_PREFIX/log > /dev/null
 cat /proc/cpuinfo /proc/meminfo > benchmark-`hostname`-info.txt
 tar cfz benchmark-`hostname`.tar.gz benchmark-`hostname`-info.txt *.csv
-$CHAOS_PREFIX/tools/images2html.sh . Benchmark > benchmark.hmtl
+$CHAOS_PREFIX/tools/images2html.sh . Benchmark > benchmark.html
 popd >& /dev/null
 
 # for ((us=0;us<$NUS;us++));do
