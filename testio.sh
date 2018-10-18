@@ -21,6 +21,7 @@ fi
 
 DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 metadata_server="localhost:5000"
+exit_status=0
 while getopts m:hl:t:s:g opt; do
     case $opt in
 	m)
@@ -72,8 +73,10 @@ do
     echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
     if [ -n $loglevel ];then
 	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv --log-on-file --log-file $csvprefix-$i.log --log-level debug
+	exit_status=$?
     else
-	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv 
+	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv
+	exit_status=$?
     fi
 #    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','$csvprefix-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','$csvprefix-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
     
@@ -82,3 +85,4 @@ do
 done
 echo "unset multiplot">> $csvprefix.gnuplot  
 gnuplot $csvprefix.gnuplot
+exit $exit_status
