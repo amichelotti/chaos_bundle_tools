@@ -85,4 +85,5 @@ do
 done
 echo "unset multiplot">> $csvprefix.gnuplot  
 gnuplot $csvprefix.gnuplot
+echo "exit status $exit_status"
 exit $exit_status
