@@ -594,7 +594,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr11c"
 		}	
 		],
 		"AttrDesc": [
@@ -777,7 +777,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr12c"
 		}
 		],
 		"AttrDesc": [
@@ -959,7 +959,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr13c"
 		}
 		],
 		"AttrDesc": [
@@ -1141,7 +1141,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr1c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr14c"
 		}
 		],
 		"AttrDesc": [
@@ -1323,7 +1323,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr2c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr25c"
 		}
 		],
 		"AttrDesc": [
@@ -1505,7 +1505,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr3c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr36c"
 		}
 		],
 		"AttrDesc": [
@@ -1687,7 +1687,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr4c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr47c"
 		}
 		],
 		"AttrDesc": [
@@ -1869,7 +1869,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr5c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr58c"
 		}
 		],
 		"AttrDesc": [
@@ -2051,7 +2051,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr2c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr29c"
 		}
 		],
 		"AttrDesc": [
@@ -2233,7 +2233,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr6c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr610c"
 		}
 		],
 		"AttrDesc": [
@@ -2415,7 +2415,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr7c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr711c"
 		}
 		],
 		"AttrDesc": [
@@ -2597,7 +2597,7 @@
 		{
 			"DriverDescriptionName": "ActuatorSim",
 			"DriverDescriptionVersion": "1.0.0",
-			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr6c"
+			"DriverDescriptionInitParam": "0,0,115200,/dev/ttyr612c"
 		}
 		],
 		"AttrDesc": [
