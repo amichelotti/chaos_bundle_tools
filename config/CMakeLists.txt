@@ -22,6 +22,7 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(common/powersupply)
  ADD_SUBDIRECTORY(common/actuators)
  ADD_SUBDIRECTORY(common/test)
+ ADD_SUBDIRECTORY(common/MultiChannelPowerSupply)
 
 # ## DRIVERS
  ADD_SUBDIRECTORY(driver/misc)
@@ -34,6 +35,7 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(driver/modbus)
  ADD_SUBDIRECTORY(driver/actuator)
  ADD_SUBDIRECTORY(driver/CCALTController)
+ ADD_SUBDIRECTORY(driver/MultiChannelPowerSupply)
 #  ADD_SUBDIRECTORY(driver/eu/eledia-eu)
  
  ###
