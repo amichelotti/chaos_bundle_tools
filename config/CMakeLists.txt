@@ -1,8 +1,9 @@
 ## Andrea Michelotti
 ## 29/8/2016
+SET(CHAOS_BUNDLE ${CMAKE_CURRENT_LIST_DIR})
 cmake_minimum_required(VERSION 2.8.9)
 include(chaosframework/config/CMakeChaos.txt)
-
+option(CHAOS_VME "Vme Support" ON)
 project(chaos)
 ADD_DEFINITIONS(-DCHAOS)
 # ### framework
@@ -13,12 +14,15 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(common/debug)
  ADD_SUBDIRECTORY(common/misc)
  ADD_SUBDIRECTORY(common/crest)
- ADD_SUBDIRECTORY(common/vme)
+ IF(CHAOS_VME)
+  ADD_SUBDIRECTORY(common/vme)
+ ENDIF()	
  ADD_SUBDIRECTORY(common/serial)
  ADD_SUBDIRECTORY(common/modbus)
  ADD_SUBDIRECTORY(common/powersupply)
  ADD_SUBDIRECTORY(common/actuators)
  ADD_SUBDIRECTORY(common/test)
+ ADD_SUBDIRECTORY(common/MultiChannelPowerSupply)
 
 # ## DRIVERS
  ADD_SUBDIRECTORY(driver/misc)
@@ -30,8 +34,14 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(driver/data-import)
  ADD_SUBDIRECTORY(driver/modbus)
  ADD_SUBDIRECTORY(driver/actuator)
+ ADD_SUBDIRECTORY(driver/CCALTController)
+ ADD_SUBDIRECTORY(driver/MultiChannelPowerSupply)
+#  ADD_SUBDIRECTORY(driver/eu/eledia-eu)
+ 
  ###
-## ADD_SUBDIRECTORY(service/webgui/CUiserver)
+IF(NOT CHAOS_TARGET)
+  ADD_SUBDIRECTORY(service/webgui/ChaosWANProxy)
+ENDIF()
 InstallChaos()
 INSTALL(DIRECTORY tools DESTINATION ${CMAKE_INSTALL_PREFIX} PATTERN "*" PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ)
 

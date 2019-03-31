@@ -37,9 +37,9 @@ start_services || end_test 1 "cannot start services"
 cds_url="$execute_command"
 # info_mesg "Building " "configuration for $TESTCU"
 # if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
-#     if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.txt ]; then
-# 	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.txt"
-# 	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.txt
+#     if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.json ]; then
+# 	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.json"
+# 	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.json
 #     else
 # 	nok_mesg "MDS configuration created with cds url:$cds_url"
 # 	end_test 1 "MDS configuration"
@@ -49,20 +49,19 @@ cds_url="$execute_command"
 # fi
 
 
-if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt" ];then
-    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt
+if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.json" ];then
+    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.json
     ok_mesg "found $MDS_TEST_CONF"
 else
-    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
+    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.json"
     end_test 1 "Cannot find MDS_TEST_CONF"
 fi
    
-info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
-if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
+info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.json"
+if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-    check_proc mds 
     end_test 1 "trasfering configuration"
 fi
 status=0

@@ -27,9 +27,11 @@ US_TEST=BENCHMARK_UNIT_0
 
 info_mesg "Test \"$0\" with:" "NUS:$NUS,NCU:$NCU,METADATASERVER:$META"
 ADDITIONAL_FLAGS=""
-if ! check_proc mds;then
-    nok_mesg "MDS is unexpectly dead!!"
-    end_test 1 "MDS is unexpectly dead!!"
+if [ -z $CHAOS_EXTERNAL_MDS ];then 
+    if ! check_proc mds;then
+	nok_mesg "MDS is unexpectly dead!!"
+	end_test 1 "MDS is unexpectly dead!!"
+    fi
 fi
 
 if launch_us_cu 1 1 "--metadata-server $META $ADDITIONAL_FLAGS" $USNAME $US_TEST 1;then
@@ -51,10 +53,13 @@ rm -f $CHAOS_PREFIX/log/*.png
 nerr=0
 info_mesg "waiting 20s ..."
 sleep 20
-if ! check_proc mds;then
-    nok_mesg "MDS is unexpectly dead!!"
-    end_test 1 "MDS is unexpectly dead!!"
+if [ -z $CHAOS_EXTERNAL_MDS ];then 
+    if ! check_proc mds;then
+	nok_mesg "MDS is unexpectly dead!!"
+	end_test 1 "MDS is unexpectly dead!!"
+    fi
 fi
+
 
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
@@ -68,7 +73,7 @@ while ((sched>0));do
 	if which gnuplot >& /dev/null ;then
 	    info_mesg "generating benchmark plots..."
 	    pushd $CHAOS_PREFIX/log > /dev/null
-	    cat  $CHAOS_PREFIX/etc/chaos_driver_misc_benchmark/benchmark.gnuplot | sed s/__report_bp__/"report-$US_TEST-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
+	    cat  $CHAOS_PREFIX/etc/benchmark.gnuplot | sed s/__report_bp__/"report-$US_TEST-bd-$sched"_bandwidth_test\.csv/g > benchmark.gnuplot
 
 	    if gnuplot < ./benchmark.gnuplot ;then
 		info_mesg "generated " " $CHAOS_PREFIX/log/bandwidth_report-$US_TEST-bd-$sched""_bandwidth_test.csv.png"
@@ -81,11 +86,13 @@ while ((sched>0));do
 	    end_test 1 "$USNAME is unexpectly dead!!"
 	fi
 
-	if ! check_proc mds;then
-	    nok_mesg "MDS is unexpectly dead!!"
-	    end_test 1 "MDS is unexpectly dead!!"
+	if [ -z $CHAOS_EXTERNAL_MDS ];then 
+	    if ! check_proc mds;then
+		nok_mesg "MDS is unexpectly dead!!"
+		end_test 1 "MDS is unexpectly dead!!"
+	    fi
 	fi
-	
+
 	if((sched<=1000));then
 	    ((sched-=200))
 	    if((sched==0));then
@@ -98,6 +105,7 @@ done
 pushd $CHAOS_PREFIX/log > /dev/null
 cat /proc/cpuinfo /proc/meminfo > benchmark-`hostname`-info.txt
 tar cfz benchmark-`hostname`.tar.gz benchmark-`hostname`-info.txt *.csv
+$CHAOS_PREFIX/tools/images2html.sh . Benchmark > benchmark.html
 popd >& /dev/null
 
 # for ((us=0;us<$NUS;us++));do
