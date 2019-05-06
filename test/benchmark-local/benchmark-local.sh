@@ -14,10 +14,9 @@ $CHAOS_PREFIX/tools/chaos_services.sh stop webui
 if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 4;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
-    mongoexport --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_ok_daq.json
 else
     nok_mesg "testio"
-    mongoexport --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_nok_daq.json
+    mongoexport --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_daq.json
 fi
 rm -rf $CHAOS_PREFIX/vfs
 mkdir $CHAOS_PREFIX/vfs
