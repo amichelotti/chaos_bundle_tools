@@ -70,7 +70,7 @@ for i in `seq 1 $maxthread`;
 do
     echo "Starting test with $i threads"
     echo "set title '$i threads'">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
-    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+    echo "plot '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     if [ -n $loglevel ];then
 	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
 	exit_status=$?
