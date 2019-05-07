@@ -54,36 +54,39 @@ host=`hostname`
 mach=`uname -a`
 csvprefix="testDataSetIO-$host-$DATE"
 
-echo "set datafile separator \",\"" > $csvprefix.gnuplot  
+echo "set datafile separator \",\"" > $CHAOS_PREFIX/log/$csvprefix.gnuplot  
 #set yrange [1:150000]
-echo "#set logscale y 2" >> $csvprefix.gnuplot  
-echo "set logscale x 2" >> $csvprefix.gnuplot  
-echo "set xlabel 'Bytes'" >> $csvprefix.gnuplot  
-echo "set terminal png size 2048,4096 enhanced font 'Verdana,10'" >> $csvprefix.gnuplot  
-echo "set output 'testDataSetIOMulti-$host-$DATE.png'">> $csvprefix.gnuplot  
+echo "#set logscale y 2" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+echo "set logscale x 2" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+echo "set xlabel 'Bytes'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+echo "set terminal png size 2048,4096 enhanced font 'Verdana,10'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+echo "set output 'testDataSetIOMulti-$host-$DATE.png'">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
 
-echo "set multiplot layout 8,1 title '$DATE:$mach on $metadata_server, loops $loop' font ',14'" >> $csvprefix.gnuplot  
+echo "set multiplot layout 8,1 title '$DATE:$mach on $metadata_server, loops $loop' font ',14'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
 
 echo "* starting performace test on $metadata_server loop:$loop"
 
 for i in `seq 1 $maxthread`;
 do
     echo "Starting test with $i threads"
-    echo "set title '$i threads'">> $csvprefix.gnuplot  
-    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
+    echo "set title '$i threads'">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+    echo "plot '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     if [ -n $loglevel ];then
-	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv --log-on-file --log-file $csvprefix-$i.log --log-level debug
+	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
 	exit_status=$?
     else
 	$CHAOS_PREFIX/bin/testDataSetIO --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --report $csvprefix-$i.csv
 	exit_status=$?
     fi
-#    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','$csvprefix-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','$csvprefix-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >> $csvprefix.gnuplot  
+#    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','$csvprefix-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','$csvprefix-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     
-
+    if [ $exit_status -gt 0 ];then
+	echo "## test interrupted because of errors"
+	exit $exit_status
+    fi
     sleep 1
 done
-echo "unset multiplot">> $csvprefix.gnuplot  
-gnuplot $csvprefix.gnuplot
+echo "unset multiplot">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
+gnuplot  $CHAOS_PREFIX/log/$csvprefix.gnuplot
 echo "exit status $exit_status"
 exit $exit_status

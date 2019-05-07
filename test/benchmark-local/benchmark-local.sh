@@ -11,11 +11,15 @@ mkdir $CHAOS_PREFIX/vfs
 ##    ./test-ping-bandwidth.sh 1 1 $CHAOS_MDS 1048576 MessMonitor || exit 
 $CHAOS_PREFIX/tools/chaos_services.sh stop webui
 
-if run_proc "$CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -t 4" "testDataSetIO";then
+if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 3;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
     nok_mesg "testio"
+    info_mesg "dumping " "$CHAOS_PREFIX/log/chaos_daq.json"
+    mongoexport --host mongo --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_daq.json
+    end_test 1 "TESTIO FAILED"
+    exit 1
 fi
 rm -rf $CHAOS_PREFIX/vfs
 mkdir $CHAOS_PREFIX/vfs
