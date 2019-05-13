@@ -100,7 +100,9 @@ sleep 1
 # fi
 # rm -rf wget_test1
 # check_proc ChaosDataService || end_test 1 "ChaosDataService not running"
-check_proc webui || end_test 1 "webui not running"
+if [ -z $CHAOS_WEBUI ];then
+    check_proc webui || end_test 1 "webui not running"
+fi
 # check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 # info_mesg "performing test pushing on webui " "CREST CU"
