@@ -65,11 +65,14 @@ else
     end_test 1 "trasfering configuration"
 fi
 status=0
-
+SERVER="localhost:8081"
+if [ -n $CHAOS_WEBUI ];then
+    SERVER=$CHAOS_WEBUI
+fi
 if which wget >& /dev/null ;then 
     info_mesg "Testing UI Server"
     unset http_proxy
-    if execute_command_until_ok "wget localhost:8081/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& /dev/null" 5 ;then
+    if execute_command_until_ok "wget $SERVER/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& /dev/null" 5 ;then
 	ok_mesg "CUI answer"
     else
 	nok_mesg "CUI answer"
