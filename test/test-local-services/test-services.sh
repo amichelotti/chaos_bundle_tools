@@ -37,9 +37,9 @@ start_services || end_test 1 "cannot start services"
 cds_url="$execute_command"
 # info_mesg "Building " "configuration for $TESTCU"
 # if ! build_mds_conf $NCU $NUS $MDS_TEST_CONF "$cds_url" "TEST_CU" "$TESTCU"; then
-#     if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.txt ]; then
-# 	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.txt"
-# 	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.txt
+#     if [ -e $CHAOS_TOOLS/../config/localhost/MDSConfig.json ]; then
+# 	info_mesg "using configuration " "$CHAOS_TOOLS/../config/localhost/MDSConfig.json"
+# 	MDS_TEST_CONF=$CHAOS_TOOLS/../config/localhost/MDSConfig.json
 #     else
 # 	nok_mesg "MDS configuration created with cds url:$cds_url"
 # 	end_test 1 "MDS configuration"
@@ -49,29 +49,33 @@ cds_url="$execute_command"
 # fi
 
 
-if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt" ];then
-    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.txt
+if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.json" ];then
+    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.json
     ok_mesg "found $MDS_TEST_CONF"
 else
-    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
+    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.json"
     end_test 1 "Cannot find MDS_TEST_CONF"
 fi
    
-start_mds || end_test 1 "Starting MDS"
-
-info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.txt"
-if $CHAOS_PREFIX/bin/ChaosMDSCmd -r 1 $CHAOS_OVERALL_OPT --mds-conf $MDS_TEST_CONF >& $CHAOS_PREFIX/log/ChaosMDSCmd.log; then
+info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.json"
+if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
     ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
 else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-#    end_test 1
+    end_test 1 "trasfering configuration"
 fi
 status=0
-sleep 5;
+
+SERVER="localhost:8081"
+if [ -n "$CHAOS_WEBUI" ];then
+    info_mesg "setting webui to " "$CHAOS_WEBUI"
+    SERVER=$CHAOS_WEBUI
+fi
+
 if which wget >& /dev/null ;then 
-    info_mesg "Testing UI Server"
+    info_mesg "Testing UI Server $SERVER"
     unset http_proxy
-    if execute_command_until_ok "wget localhost:8081/CU?dev=BENCHMARK_UNIT_0/TEST_CU_0 -P wget_test1 >& /dev/null" 10 ;then
+    if execute_command_until_ok "wget $SERVER/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& $CHAOS_PREFIX/log/testUIServer.stdout" 5 ;then
 	ok_mesg "CUI answer"
     else
 	nok_mesg "CUI answer"
@@ -99,7 +103,9 @@ sleep 1
 # fi
 # rm -rf wget_test1
 # check_proc ChaosDataService || end_test 1 "ChaosDataService not running"
-check_proc webui || end_test 1 "webui not running"
+if [ -z $CHAOS_WEBUI ];then
+    check_proc webui || end_test 1 "webui not running"
+fi
 # check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 # info_mesg "performing test pushing on webui " "CREST CU"

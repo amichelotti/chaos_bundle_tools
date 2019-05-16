@@ -1,0 +1,112 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "MDS",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/mds ",
+            "args": ["--conf-file ${workspaceFolder}/chaosframework/usr/local/etc/mds.cfg",
+                "--event-disable 1","true",
+                "--log-max-size 200",
+                "--metadata-server localhost:5000",
+                "--log-on-file 1",
+                "--log-file TESTMDSDEBUG.log",
+                "--log-on-console","true",
+                "--persistence-servers localhost",
+                "--obj-storage-driver-server_url localhost",
+                "--cache-servers localhost"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "BenchMark US",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTBENCHMARK.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","BENCHMARK_UNIT_0"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "WEBUI",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/webui",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTWEBUI.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--conf-file","${workspaceFolder}/chaosframework/usr/local/etc/webui.cfg"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

@@ -17,8 +17,8 @@ if [ -z "$CHAOS_PREFIX" ];then
     exit -3
 fi
 
-if [ ! -f "$confdir/MDSConfig.txt" ]; then
-    error_mesg "missing MDS configuration file \"$confdir/MDSConfig.txt\""
+if [ ! -f "$confdir/MDSConfig.json" ]; then
+    error_mesg "missing MDS configuration file \"$confdir/MDSConfig.json\""
     exit -2
 fi
 echo "$confdir/cu*.sh"
@@ -27,10 +27,10 @@ if [ -z "$cuscripts" ];then
     info_mesg "nothing to do $cuscripts" "exit"
     exit 0
 fi
-if ChaosMDSCmd -r 1 --mds-conf "$confdir/MDSConfig.txt" >& /dev/null; then
-    ok_mesg "Transfer test configuration \"$confdir/MDSConfig.txt\" to MDS"
+if ChaosMDSCmd -r 1 --mds-conf "$confdir/MDSConfig.json" >& /dev/null; then
+    ok_mesg "Transfer test configuration \"$confdir/MDSConfig.json\" to MDS"
 else
-    nok_mesg "Transfer test configuration \"$confdir/MDSConfig.txt\" to MDS"
+    nok_mesg "Transfer test configuration \"$confdir/MDSConfig.json\" to MDS"
     exit -5
 fi
 for cu in $cuscripts;do
