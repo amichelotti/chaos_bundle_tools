@@ -1,0 +1,55 @@
+{  
+    "us": [
+	{
+
+	 "unit_server_alias": "BTF_DAQ",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{
+		    "unit_server_alias": "BTF_DAQ",
+		    "cu_id": "BTF/DAQ/QDC/CAEN965",
+		    "cu_type": "::driver::daq::caen::RTCAEN965",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "storage_type": 2,
+		    "storage_ageing": 600000,
+		    "DriverDescription": [],
+		    "default_schedule_delay": 1,	
+		    "AttrDesc": [
+		    {		    
+			    "ds_attr_name": "VME_DRIVER",
+			    "ds_max_range": "3",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "VME_BASE",
+			    "ds_max_range": "0x44220000",
+			    "ds_min_range": "0x44220000",
+			    "ds_default_value": "0x44220000"
+			},
+			{
+			    "ds_attr_name": "CHANNELS",
+			    "ds_max_range": "16",
+			    "ds_min_range": "16",
+			    "ds_default_value": "16"
+			},
+			{
+			    "ds_attr_name": "TIMEOUT",
+			    "ds_max_range": "3600000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "100000"
+			},{
+			    "ds_attr_name": "BITSET2",
+			    "ds_max_range": "0x0000ffff",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0x1C38"
+			}
+		    ]
+		}
+	    ]
+	}
+
+	]
+}
