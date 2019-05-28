@@ -66,10 +66,16 @@ else
 fi
 status=0
 
+SERVER="localhost:8081"
+if [ -n "$CHAOS_WEBUI" ];then
+    info_mesg "setting webui to " "$CHAOS_WEBUI"
+    SERVER=$CHAOS_WEBUI
+fi
+
 if which wget >& /dev/null ;then 
-    info_mesg "Testing UI Server"
+    info_mesg "Testing UI Server $SERVER"
     unset http_proxy
-    if execute_command_until_ok "wget localhost:8081/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& /dev/null" 5 ;then
+    if execute_command_until_ok "wget $SERVER/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& $CHAOS_PREFIX/log/testUIServer.stdout" 5 ;then
 	ok_mesg "CUI answer"
     else
 	nok_mesg "CUI answer"
@@ -97,7 +103,9 @@ sleep 1
 # fi
 # rm -rf wget_test1
 # check_proc ChaosDataService || end_test 1 "ChaosDataService not running"
-check_proc webui || end_test 1 "webui not running"
+if [ -z $CHAOS_WEBUI ];then
+    check_proc webui || end_test 1 "webui not running"
+fi
 # check_proc ChaosWANProxy || end_test 1 "ChaosWANProxy not running"
 
 # info_mesg "performing test pushing on webui " "CREST CU"
