@@ -91,6 +91,6 @@ do
     sleep 1
 done
 echo "unset multiplot">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
-gnuplot  $CHAOS_PREFIX/log/$csvprefix.gnuplot
+gnuplot < $CHAOS_PREFIX/log/$csvprefix.gnuplot
 echo "exit status $exit_status"
 exit $exit_status
