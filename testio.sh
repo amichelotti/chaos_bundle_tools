@@ -11,8 +11,9 @@ loglevel=""
 maxsize=10000
 maxthread=8
 loop=10000
+page_len=0
 usage(){
-    echo -e "Usage is $0 [-m <metadataserver:port>] [-n dataset name] [-l <maxloop>][ -t <maxthreads> ] [ -s <maxsize> ] [-g: enable log debug]"
+    echo -e "Usage is $0 [-m <metadataserver:port>] [-n dataset name] [-l <maxloop>][ -t <maxthreads> ] [ -s <maxsize> ] [-g: enable log debug] [-p <page len>]"
 }
 if [ -z $1 ];then
     echo "## you should provide metadataserver:port"
@@ -23,10 +24,13 @@ DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 metadata_server="localhost:5000"
 dataset_name=PERFORMANCE_IO
 exit_status=0
-while getopts n:m:hl:t:s:g opt; do
+while getopts p:n:m:hl:t:s:g opt; do
     case $opt in
 	m)
 	    metadata_server=$OPTARG
+	    ;;
+	p)
+	    page_len=$OPTARG
 	    ;;
 	l)
 	    loop=$OPTARG
