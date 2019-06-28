@@ -16,6 +16,7 @@ rm -rf /tmp/dbinit
 mkdir -p /tmp/dbinit
 cd /tmp/dbinit
 git clone git@baltig.infn.it:chaos-lnf-control/chaos_mongodb_script.git
+mongo --host $2 chaos_mongodb_script/drop_collections.js
 mongo --host $2 chaos_mongodb_script/create_users.js
 mongo --host $2 chaos_mongodb_script/create_collections.js
 mongo --host $2 chaos_mongodb_script/create_index.js
