@@ -11,7 +11,7 @@ mkdir $CHAOS_PREFIX/vfs
 ##    ./test-ping-bandwidth.sh 1 1 $CHAOS_MDS 1048576 MessMonitor || exit 
 $CHAOS_PREFIX/tools/chaos_services.sh stop webui
 
-if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 3;then
+if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 2;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
