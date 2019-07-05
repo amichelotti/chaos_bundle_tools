@@ -1,0 +1,213 @@
+{
+    "us": [
+	{
+	    "unit_server_alias": "FLAME_MOTOR",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+		{		
+		    "unit_server_alias": "FLAME_MOTOR",
+		    "cu_id": "FLAME/SCRAPER/SLT001",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "default_schedule_delay": 1000000,	
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+				"DriverDescriptionInitParam":"{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr12c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			}
+		    ],
+		    "AttrDesc": [
+			{		    
+			    "ds_attr_name": "position",
+			    "ds_max_range": "100",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{		    
+			    "ds_attr_name": "bypass",
+			    "ds_max_range": "1",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0"
+			},
+			{
+			    "ds_attr_name": "axisID",
+			    "ds_max_range": "255",
+			    "ds_min_range": "0",
+			    "ds_default_value": "31"
+			},
+			{
+			    "ds_attr_name": "setTimeout",
+			    "ds_max_range": "10000000000",
+			    "ds_min_range": "0",
+			    "ds_default_value": "10000000"
+			},
+			{
+			    "ds_attr_name": "resolution",
+			    "ds_max_range": "10",
+			    "ds_min_range": "0",
+			    "ds_default_value": "0.2"
+			}
+		    ]
+		},	
+		{		
+		    "unit_server_alias": "FLAME_MOTOR",
+		    "cu_id": "FLAME/SCRAPER/SLT002",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "default_schedule_delay": 1000000,	
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			}
+		    ],
+		    "AttrDesc": [
+				{		    
+					"ds_attr_name": "position",
+					"ds_max_range": "100",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{		    
+					"ds_attr_name": "bypass",
+					"ds_max_range": "1",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{
+					"ds_attr_name": "axisID",
+					"ds_max_range": "255",
+					"ds_min_range": "0",
+					"ds_default_value": "31"
+				},
+				{
+					"ds_attr_name": "setTimeout",
+					"ds_max_range": "10000000000",
+					"ds_min_range": "0",
+					"ds_default_value": "10000000"
+				},
+				{
+					"ds_attr_name": "resolution",
+					"ds_max_range": "10",
+					"ds_min_range": "0",
+					"ds_default_value": "0.2"
+				}
+				]
+		},	{		
+		    "unit_server_alias": "FLAME_MOTOR",
+		    "cu_id": "FLAME/SCRAPER/SLT003",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "default_schedule_delay": 1000000,	
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr14c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			}
+		    ],
+		    "AttrDesc": [
+				{		    
+					"ds_attr_name": "position",
+					"ds_max_range": "100",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{		    
+					"ds_attr_name": "bypass",
+					"ds_max_range": "1",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{
+					"ds_attr_name": "axisID",
+					"ds_max_range": "255",
+					"ds_min_range": "0",
+					"ds_default_value": "31"
+				},
+				{
+					"ds_attr_name": "setTimeout",
+					"ds_max_range": "10000000000",
+					"ds_min_range": "0",
+					"ds_default_value": "10000000"
+				},
+				{
+					"ds_attr_name": "resolution",
+					"ds_max_range": "10",
+					"ds_min_range": "0",
+					"ds_default_value": "0.2"
+				}
+				]
+		},	
+		{		
+		    "unit_server_alias": "FLAME_MOTOR",
+		    "cu_id": "FLAME/SCRAPER/SLT004",
+		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
+		    "cu_param": "",
+		    "auto_load": true,
+		    "auto_start":true,
+		    "auto_init":true,
+		    "storage_type": 2,
+		    "storage_ageing": 36000,
+		    "default_schedule_delay": 1000000,	
+		    "DriverDescription": [
+			{
+			    "DriverDescriptionName": "ActuatorSim",
+			    "DriverDescriptionVersion": "1.0.0",
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr15c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			}
+		    ],
+		    "AttrDesc": [
+				{		    
+					"ds_attr_name": "position",
+					"ds_max_range": "100",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{		    
+					"ds_attr_name": "bypass",
+					"ds_max_range": "1",
+					"ds_min_range": "0",
+					"ds_default_value": "0"
+				},
+				{
+					"ds_attr_name": "axisID",
+					"ds_max_range": "255",
+					"ds_min_range": "0",
+					"ds_default_value": "31"
+				},
+				{
+					"ds_attr_name": "setTimeout",
+					"ds_max_range": "10000000000",
+					"ds_min_range": "0",
+					"ds_default_value": "10000000"
+				},
+				{
+					"ds_attr_name": "resolution",
+					"ds_max_range": "10",
+					"ds_min_range": "0",
+					"ds_default_value": "0.2"
+				}
+				]
+		}
+    ]
+	}]
+}
