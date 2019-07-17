@@ -15,12 +15,12 @@
 		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 1,
-  		    "default_schedule_delay": 1000000,	
+  		    "default_schedule_delay": 14000,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ShapeSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"movex\":1,\"movey\":1,\"framerate\":75.0,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":255}}"
+			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":75.0,\"movex\":1,\"movey\":1,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":251}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -60,12 +60,12 @@
 		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 1,
-  		    "default_schedule_delay": 1000000,	
+  		    "default_schedule_delay": 14000,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ShapeSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"movex\":1,\"movey\":1,\"framerate\":75.0,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":10.0,\"colr\":255}}"
+			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":75.0,\"movex\":1,\"movey\":1,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":10.0,\"colr\":254}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -104,12 +104,12 @@
 		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 1,
-  		    "default_schedule_delay": 1000000,	
+  		    "default_schedule_delay": 14000,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ShapeSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"movex\":1,\"movey\":1,\"framerate\":75.0,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":255}}"
+			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":75.0,\"movex\":1,\"movey\":1,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":253}}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -148,12 +148,12 @@
 		    "auto_init": true,
 		    "storage_type": 2,
 		    "storage_ageing": 1,
-  		    "default_schedule_delay": 1000000,	
+  		    "default_schedule_delay": 14000,	
 		    "DriverDescription": [
 			{
 			    "DriverDescriptionName": "ShapeSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"movex\":1,\"movey\":1,\"framerate\":75.0,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":255}}"
+			    "DriverDescriptionInitParam": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":75.0,\"movex\":1,\"movey\":1,\"err_centerx\":10.0,\"err_centery\":10.0,\"err_rotangle\":2.0,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50.0,\"colb\":252}}"
 			}
 		    ],
 		    "AttrDesc": [
