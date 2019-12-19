@@ -20,7 +20,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr16c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -28,21 +28,16 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+				"ds_default_value": "0",
+				"ds_attr_unit": "ustep",
+				"ds_value_inc": "0.1"
 			},
 			{		    
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
-			},
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "31,/home/chaos/chaos-distrib/etc/common_actuators_technosoft/asse3.t.zip"
-			},
-			{
+			},{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
@@ -267,7 +262,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr2c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 32,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -275,7 +270,10 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"
+			    
 			},
 		  	
 			{		    
@@ -284,17 +282,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "13,asse3.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "13"
+			    "ds_default_value": "32"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -451,7 +443,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr3c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 34,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -459,27 +451,20 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"
 			},
 			{		    
 			    "ds_attr_name": "bypass",
 			    "ds_max_range": "1",
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
-			},
-
-
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "4,2008_03_27Asse4BtfApp.t.zip"
-			},
-			{
+			},{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "4"
+			    "ds_default_value": "34"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -635,7 +620,7 @@
 		  	{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr4c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 35,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -643,7 +628,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 			{		    
 			    "ds_attr_name": "bypass",
@@ -651,18 +638,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "0"
 			},
-
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "5,2008_03_26Asse5BtfApp.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "5"
+			    "ds_default_value": "35"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -819,7 +799,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr5c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr14c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 1,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 
 		    ],
@@ -828,7 +808,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -836,18 +818,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "6,2008_03_26Asse6BtfApp.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "6"
+			    "ds_default_value": "1"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -1004,7 +979,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr6c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr17c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 2,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 
 		    ],
@@ -1013,7 +988,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -1021,17 +998,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "7,TB03UP_21.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "7"
+			    "ds_default_value": "2"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -1188,7 +1159,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr7c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 41,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1196,7 +1167,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -1204,17 +1177,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-			{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "8,TB03DW_0606.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "8"
+			    "ds_default_value": "41"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -1371,7 +1338,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr8c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 51,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.8\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1379,7 +1346,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -1387,18 +1356,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-
-		    	{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "9,asse9_20080604.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "9"
+			    "ds_default_value": "51"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -1554,7 +1516,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr9c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr12c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 65,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1562,7 +1524,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -1570,18 +1534,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-
-		    	{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "10,TB01_Dw_17.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "10"
+			    "ds_default_value": "65"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -1737,7 +1694,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "0,0,115200,/dev/ttyr10c"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 215,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"1.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1745,7 +1702,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 		    	{		    
 			    "ds_attr_name": "bypass",
@@ -1753,18 +1712,11 @@
 			    "ds_min_range": "0",
 			    "ds_default_value": "1"
 			},
-
-		    	{		    
-			    "ds_attr_name": "ConfigString",
-			    "ds_max_range": "",
-			    "ds_min_range": "",
-			    "ds_default_value": "11,Target_17.t.zip"
-			},
 			{
 			    "ds_attr_name": "axisID",
 			    "ds_max_range": "255",
 			    "ds_min_range": "0",
-			    "ds_default_value": "11"
+			    "ds_default_value": "215"
 			},
 			{
 			    "ds_attr_name": "fileTable",
@@ -5811,7 +5763,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-				"DriverDescriptionInitParam":"{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr12c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+				"DriverDescriptionInitParam":"{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr12c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5819,7 +5771,9 @@
 			    "ds_attr_name": "position",
 			    "ds_max_range": "100",
 			    "ds_min_range": "0",
-			    "ds_default_value": "0"
+			    "ds_default_value": "0",
+			    "ds_attr_unit": "ustep",
+			    "ds_value_inc":"0.1"			    
 			},
 			{		    
 			    "ds_attr_name": "bypass",
@@ -5862,7 +5816,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5870,7 +5824,9 @@
 					"ds_attr_name": "position",
 					"ds_max_range": "100",
 					"ds_min_range": "0",
-					"ds_default_value": "0"
+				    "ds_default_value": "0",
+					"ds_attr_unit": "ustep",
+					"ds_value_inc":"0.1"				    
 				},
 				{		    
 					"ds_attr_name": "bypass",
@@ -5912,7 +5868,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr14c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr14c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5920,7 +5876,9 @@
 					"ds_attr_name": "position",
 					"ds_max_range": "100",
 					"ds_min_range": "0",
-					"ds_default_value": "0"
+				    "ds_default_value": "0",
+					"ds_attr_unit": "ustep",
+					"ds_value_inc":"0.1"				    
 				},
 				{		    
 					"ds_attr_name": "bypass",
@@ -5963,7 +5921,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr15c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_config\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_config\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr15c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5971,7 +5929,9 @@
 					"ds_attr_name": "position",
 					"ds_max_range": "100",
 					"ds_min_range": "0",
-					"ds_default_value": "0"
+				    "ds_default_value": "0",
+					"ds_attr_unit": "ustep",
+					"ds_value_inc":"0.1"			    
 				},
 				{		    
 					"ds_attr_name": "bypass",
