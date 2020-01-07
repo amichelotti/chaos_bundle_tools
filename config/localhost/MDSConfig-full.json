@@ -1683,7 +1683,7 @@
 		    "unit_server_alias": "TEST",
 		    "cu_id": "BTF/SCRAPER/TARGET",
 		    "cu_type": "::driver::actuator::SCActuatorControlUnit",
-		    "cu_param": "",
+		    "cu_param": "{\"poi\":{\"red\":1.2,\"green\":2.4,\"blue\":4.8,\"yellow\":6.91}}",
 		    "auto_load": true,
 		    "auto_start":true,
 		    "auto_init":true,
