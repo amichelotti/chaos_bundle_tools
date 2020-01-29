@@ -1,0 +1,26 @@
+{
+    "us": [
+	{
+	    "unit_server_alias": "BTFDAQ",
+	    "private_key": null,
+	    "public_key": null,
+	    "cu_desc": [
+			{
+				"unit_server_alias": "BTFDAQ",
+				"cu_id": "BTF/DAQ/BTFDAQ",
+				"cu_type": "::driver::daq::btf::RTBTFdaqCUq",
+				"cu_param": "{\"vme\":{\"driver\":\"vme_sis3153_eth\",\"params\":\"192.168.189.111\"},\"qdc\":{\"address\":\"0xBBBB0000\",\"channels\":16},\"tdc\":{\"address\":\"0xAAAA0000\",\"channels\":16},\"sis\":{\"address\":\"0x38380800\",\"channels\":16},\"pio\":{\"address\":\"0xCCCC0000\",\"channels\":16}}",
+				"auto_load": true,
+				"auto_start": true,
+				"auto_init": true,
+				"storage_type": 2,
+				"storage_ageing": 3600,
+				"default_schedule_delay": 1,	
+				"DriverDescription": [],
+				"AttrDesc": [
+				]
+	
+			}
+		]
+	}]
+}
