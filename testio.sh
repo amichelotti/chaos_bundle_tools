@@ -90,10 +90,10 @@ do
     echo "set title '$i threads'">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     echo "plot '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     if [ -n $loglevel ];then
-	$CHAOS_PREFIX/bin/testDataSetIO --direct-io-client-kv-param ZMQ_RCVTIMEO:-1 --dsname $dataset_name --wait 10 --points 0 --pointmax $maxsize --nerror $nerror --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
+	$CHAOS_PREFIX/bin/testDataSetIO --direct-io-client-kv-param ZMQ_RCVTIMEO:-1 --dsname $dataset_name --wait 15 --points 0 --pointmax $maxsize --nerror $nerror --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
 	exit_status=$?
     else
-	$CHAOS_PREFIX/bin/testDataSetIO --nerror $nerror --direct-io-client-kv-param ZMQ_RCVTIMEO:-1 --wait 10 --dsname $dataset_name --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv
+	$CHAOS_PREFIX/bin/testDataSetIO --nerror $nerror --direct-io-client-kv-param ZMQ_RCVTIMEO:-1 --wait 15 --dsname $dataset_name --points 0 --pointmax $maxsize --metadata-server $metadata_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv
 	exit_status=$?
     fi
 #    echo "plot '$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)','$csvprefix-$i.csv' using 2:8 lc rgb \"pink\" with lines title 'bandwith (MB/s)','$csvprefix-$i.csv' using 2:9 lc rgb \"magenta\" with lines title  'prep overhead(us)', '$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
