@@ -15,10 +15,10 @@ if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 2;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
-    if [ -d /tmp/OBJECT_STORAGE ];then
-	echo "* dumping OBJECT_STORAGE dir"
-	tar cvfz $CHAOS_PREFIX/log/OBJECT_STORAGE.tgz -C /tmp OBJECT_STORAGE
-    fi
+#    if [ -d /tmp/OBJECT_STORAGE ];then
+#	echo "* dumping OBJECT_STORAGE dir"
+#	tar cvfz $CHAOS_PREFIX/log/OBJECT_STORAGE.tgz -C /tmp OBJECT_STORAGE
+#    fi
        
     nok_mesg "testio"
     info_mesg "dumping " "$CHAOS_PREFIX/log/chaos_daq.json"
