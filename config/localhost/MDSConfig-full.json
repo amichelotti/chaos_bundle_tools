@@ -20,7 +20,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr73c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -262,7 +262,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 32,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr93c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 32,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -443,7 +443,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 34,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr113c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 34,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -620,7 +620,7 @@
 		  	{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 35,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr1336c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 35,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1159,7 +1159,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 41,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr563c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 41,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -1338,7 +1338,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 51,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.8\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyk13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 51,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.8\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
@@ -5816,7 +5816,7 @@
 			{
 			    "DriverDescriptionName": "ActuatorSim",
 			    "DriverDescriptionVersion": "1.0.0",
-			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr13c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
+			    "DriverDescriptionInitParam": "{  \"driver_param\": {    \"HostID\": 0,\"serdev\": \"/dev/ttyr83c\",\"BtType\": 0,\"Baudrate\": 0  },\"device_param\": {    \"ConfigAxis\": 31,\"ConfigFile\": \"/home/caschera/filedicaschera.zip\",\"useIU\": \"0\",\"speed\": \"0.5\"  }}"
 			}
 		    ],
 		    "AttrDesc": [
