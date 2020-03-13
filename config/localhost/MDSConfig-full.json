@@ -1726,13 +1726,13 @@
 	            	},
 		    	{
 			    "cudk_ds_attr_name": "fixednumberofrounds",
-			    "cudk_ds_max_range": "4294967295",
+			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0",
 			    "cudk_default_value": "1"
 	            	},
 		    	{
 			    "cudk_ds_attr_name": "lineardisplacement[mm]",
-			    "cudk_ds_max_range": "4294967295",
+			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0.000000001",
 			    "cudk_default_value": "1"
 	            	},
@@ -1744,7 +1744,7 @@
 	            	},
 	 	    	{
 			    "cudk_ds_attr_name": "range_slit[mm]",
-			    "cudk_ds_max_range": "4294967295",
+			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0.000000001",
 			    "cudk_default_value": "150"
 	            	},
@@ -1810,13 +1810,13 @@
 	            	},
 		    	{
 			    "cudk_ds_attr_name": "nummicrostepsperstep",
-			    "cudk_ds_max_range": "4294967295",
+			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0",
 			    "cudk_default_value": "256"
 	            	},
 		    	{
 			    "cudk_ds_attr_name": "stepsperround",
-			    "cudk_ds_max_range": "4294967295",
+			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0",
 			    "cudk_default_value": "200"
 	            	},
