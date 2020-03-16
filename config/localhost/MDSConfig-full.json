@@ -4532,7 +4532,7 @@
 		    "auto_load": true,
 		    "auto_start": true,
 		    "auto_init": true,
-		    "storage_type": 2,
+		    "storage_type": 18,
 		    "storage_ageing": 1,
   		    "default_schedule_delay": 1000000,	
 		    "DriverDescription": [
