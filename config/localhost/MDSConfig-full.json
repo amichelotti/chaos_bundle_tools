@@ -1731,7 +1731,7 @@
 			    "cudk_default_value": "1"
 	            	},
 		    	{
-			    "cudk_ds_attr_name": "lineardisplacement",
+			    "cudk_ds_attr_name": "lineardisplacement[mm]",
 			    "cudk_ds_max_range": "1000000",
 			    "cudk_ds_min_range": "0.000000001",
 			    "cudk_default_value": "1"
