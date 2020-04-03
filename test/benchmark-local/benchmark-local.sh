@@ -10,11 +10,20 @@ mkdir $CHAOS_PREFIX/vfs
 
 ##    ./test-ping-bandwidth.sh 1 1 $CHAOS_MDS 1048576 MessMonitor || exit 
 $CHAOS_PREFIX/tools/chaos_services.sh stop webui
-
+sleep 1
+if ! check_proc mds;then
+	nok_mesg "MDS is unexpectly dead!!"
+	end_test 1 "MDS is unexpectly dead!!"
+fi
 if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 1000 -g -t 2;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
+#    if [ -d /tmp/OBJECT_STORAGE ];then
+#	echo "* dumping OBJECT_STORAGE dir"
+#	tar cvfz $CHAOS_PREFIX/log/OBJECT_STORAGE.tgz -C /tmp OBJECT_STORAGE
+#    fi
+       
     nok_mesg "testio"
     info_mesg "dumping " "$CHAOS_PREFIX/log/chaos_daq.json"
     mongoexport --host mongo --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_daq.json
