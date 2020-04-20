@@ -6,6 +6,11 @@ NUS=10
 NCU=20
 TESTCU=""
 CDSMODE="3"
+SERVER="localhost:8081"
+if [ -n "$CHAOS_WEBUI" ];then
+    info_mesg "setting webui to " "$CHAOS_WEBUI"
+    SERVER=$CHAOS_WEBUI
+fi
 
 if [ -n "$1" ];then
     NUS=$1
@@ -49,40 +54,30 @@ cds_url="$execute_command"
 # fi
 
 
-if [ -e "$CHAOS_TOOLS/../etc/localhost/MDSConfig.json" ];then
-    MDS_TEST_CONF=$CHAOS_TOOLS/../etc/localhost/MDSConfig.json
-    ok_mesg "found $MDS_TEST_CONF"
+if [ -e "$CHAOS_PREFIX/etc/localhost/chaosDashboard.json" ];then
+    MDS_TEST_CONF=$CHAOS_PREFIX/etc/localhost/chaosDashboard.json
+    ok_mesg "found $CHAOS_PREFIX/etc/localhost/chaosDashboard.json"
 else
-    nok_mesg "cannot find $CHAOS_TOOLS/etc/localhost/MDSConfig.json"
+    nok_mesg "cannot find $CHAOS_PREFIX/etc/localhost/chaosDashboard.json"
     end_test 1 "Cannot find MDS_TEST_CONF"
 fi
-   
-info_mesg "using configuration " "$CHAOS_TOOLS/etc/localhost/MDSConfig.json"
-if run_proc "$CHAOS_PREFIX/bin/ChaosMDSCmd --mds-conf $MDS_TEST_CONF $CHAOS_OVERALL_OPT >& $CHAOS_PREFIX/log/ChaosMDSCmd.log;" "ChaosMDSCmd"; then
-    ok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
-else
+
+ if jchaosctl --server $SERVER --upload $MDS_TEST_CONF > $CHAOS_PREFIX/log/jchaosctl.transfer.std.out 2>&1;then
+ else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
     end_test 1 "trasfering configuration"
-fi
+fi   
+
 status=0
 
-SERVER="localhost:8081"
-if [ -n "$CHAOS_WEBUI" ];then
-    info_mesg "setting webui to " "$CHAOS_WEBUI"
-    SERVER=$CHAOS_WEBUI
-fi
+info_mesg "Testing REST Server $SERVER"
 
-if which wget >& /dev/null ;then 
-    info_mesg "Testing UI Server $SERVER"
-    unset http_proxy
-    if execute_command_until_ok "wget $SERVER/CU?dev=BTF/QUADRUPOLE/QUATB001 -P wget_test1 -T 1 >& $CHAOS_PREFIX/log/testUIServer.stdout" 5 ;then
-	ok_mesg "CUI answer"
-    else
-	nok_mesg "CUI answer"
-	end_test 1 "CUI answer"
-    fi
+if jchaosctl --server $SERVER --find cu;;then 
+	ok_mesg "REST answer"
 else
-    info_mesg "skipping CUI test because wget is " "missing"
+	nok_mesg "REST answer"
+    end_test 1 "search failed"
+
 fi
 sleep 1
 
