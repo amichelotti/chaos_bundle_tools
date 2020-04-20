@@ -62,7 +62,9 @@ else
     end_test 1 "Cannot find MDS_TEST_CONF"
 fi
 
- if jchaosctl --server $SERVER --upload $MDS_TEST_CONF > $CHAOS_PREFIX/log/jchaosctl.transfer.std.out 2>&1;then
+ if jchaosctl --server $SERVER --upload $MDS_TEST_CONF;then
+    ok_mesg "configuration transferred $CHAOS_PREFIX/etc/localhost/chaosDashboard.json"
+
  else
     nok_mesg "Transfer test configuration \"$MDS_TEST_CONF\" to MDS"
     end_test 1 "trasfering configuration"
@@ -72,7 +74,7 @@ status=0
 
 info_mesg "Testing REST Server $SERVER"
 
-if jchaosctl --server $SERVER --find cu;;then 
+if jchaosctl --server $SERVER --find cu; then 
 	ok_mesg "REST answer"
 else
 	nok_mesg "REST answer"

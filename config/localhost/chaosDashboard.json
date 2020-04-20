@@ -5,14 +5,14 @@
             "instance_seq": 0,
             "instance_name": "",
             "ndk_rpc_addr": "",
-            "ndk_host_name": "chaost-camera01.chaos.lnf.infn.it",
+            "ndk_host_name": "",
             "andk_working_directory": "/usr/local/chaos/chaos-distrib",
             "andk_node_associated": [{
                 "association_uid": "6966be63",
                 "ndk_uid": "TEST",
                 "node_launch_cmd_line": "UnitServer",
                 "node_init_cfg": "unit-gateway-enable=true",
-                "node_auto_start": true,
+                "node_auto_start": false,
                 "node_keep_alive": false,
                 "node_log_on_mds": false
             }]
