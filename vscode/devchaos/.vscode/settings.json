@@ -1,0 +1,147 @@
+{
+    "remote.SSH.defaultExtensions": [
+
+        "eamodio.gitlens",
+        "twxs.cmake",
+        "ms-vscode.cpptools"
+    ],
+    "cmake.configureSettings": {
+        "CHAOS_ARCHITECTURE_TEST": "ON",
+        "OPENCV": "/usr/local/chaos/chaos-distrib",
+        "ENABLE_MEMCACHE": "ON",
+        "CERN_ROOT": "/usr/local/chaos/chaos-distrib",
+        "CMAKE_INSTALL_PREFIX": "/usr/local/chaos/chaos-distrib",
+        "IDS": "ON",
+        "KAFKA_RDK_ENABLE": "OFF",
+        "KAFKA_ASIO_ENABLE": "ON",
+        "CHAOS_PROMETHEUS":"ON",
+        "BASLER":"/usr/local/chaos/chaos-distrib"
+    },
+    "cmake.configureOnOpen": false,
+    "cmake.clearOutputBeforeBuild": false,
+
+    "cmake.parallelJobs": 12,
+    "cmake.buildDirectory": "${workspaceRoot}/build-x86_64-Linux",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**"
+    ],
+    "files.associations": {
+        "*.ipp": "cpp",
+        "cstdio": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "strstream": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cctype": "cpp",
+        "chrono": "cpp",
+        "cinttypes": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "csignal": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "future": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "numeric": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "thread": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp",
+        "cfenv": "cpp",
+        "csetjmp": "cpp",
+        "cuchar": "cpp",
+        "scoped_allocator": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "CU2Tree.C": "cpp"
+    },
+    "C_Cpp.configurationWarnings": "Disabled",
+    "cmake.defaultVariants": {
+        "buildType": {
+            "default": "debug",
+            "description": "The build type",
+            "choices": {
+                "profile": {
+                    "short": "Profile",
+                    "long": "Emit profile code",
+                    "buildType": "PROFILE"
+                },
+                "debug": {
+                    "short": "Debug",
+                    "long": "Emit debug information without performing optimizations",
+                    "buildType": "Debug"
+                },
+                "sanitize": {
+                    "short": "Sanitize",
+                    "long": "Sanitize address",
+                    "buildType": "SANITIZE"
+                },
+                "release": {
+                    "short": "Release",
+                    "long": "Enable optimizations, omit debug info",
+                    "buildType": "Release"
+                },
+                "minsize": {
+                    "short": "MinSizeRel",
+                    "long": "Optimize for smallest binary size",
+                    "buildType": "MinSizeRel"
+                },
+                "reldeb": {
+                    "short": "RelWithDebInfo",
+                    "long": "Perform optimizations AND include debugging information",
+                    "buildType": "RelWithDebInfo"
+                }
+            }
+        }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
+}

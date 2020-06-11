@@ -1,0 +1,737 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ChaosRoot LumimonPROD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/chaosRoot",
+            "args": [
+                "--conf-file","test/rootProd.cfg",
+                "--log-on-file","1",
+                "--log-file","ROOT.log",
+                "--log-level","debug",
+                "--rootopt","-q test/lumimon.C()"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib:/usr/local/chaos/chaos-distrib/lib64"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "restCUServer Localhost",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/restCUServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--port","8018",
+                "--nthread",16,
+                "--log-file","RESTCUSERVER.log",
+                "--log-level","debug",
+                "--log-on-file","1"
+
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "testKafka Localhost",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/testKafkaProducer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--loop","1000",
+                "--size","512000",
+ //               "--driver","rdk",
+ //               "--dsname","provetta",
+                "--log-file","KAFKA.log",
+                "--log-level","debug",
+                "--log-on-file","1"
+
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "chaosHisto PREPROD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/chaosHisto2tree",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-level","debug",
+                "--start","27-05-2020 01:00:00",
+                "--end"," 27-05-2020 17:00:00",
+                "--page","1000",
+                "--notoutput","1",
+                "--log-file","CHAOSHISTO.log",
+                "--nodeid", "ALGO/WAVE/TEST/SINWAVE",
+                "--direct-io-client-kv-param=ZMQ_RCVTIMEO:600000"
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "chaosHisto",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/chaosHisto2tree",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-level","debug",
+                "--start","25-05-2020 19:00:00",
+                "--end"," 25-05-2020 20:00:00",
+                "--log-file","CHAOSHISTO.log",
+                "--nodeid", "PERFORMANCE_IO_0",
+                "--direct-io-client-kv-param=ZMQ_RCVTIMEO:600000"
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "ChaosRoot Wave",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/chaosRoot",
+            "args": [
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","ROOT.log",
+                "--log-level","debug",
+                "--rootopt","-q /home/chaos/chaos-root-script/test/sineWave.C(1.0,2.1)"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },{
+            "name": "UnitServer DAFNESTATUS",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","DAFNE_STATUS.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","TEST_DAFNE_STATUS"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },{
+            "name": "UnitServer DANTE",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","DANTE.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","TEST_DANTE"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },{
+            "name": "MDS Local Posix",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/ChaosMetadataService",
+            "args": [
+                "--rpc-server-port","5000",
+                "--log-level","debug",
+                "--direct-io-service-server-port","18970",
+                "--direct-io-priority-server-port","1680",
+                "--persistence-impl","MongoDB",
+                "--persistence-kv-param","db:chaos",
+                "--cache-driver","Couchbase",
+                "--cache-driver-kvp","bucket:chaos",
+                "--cache-driver-kvp","user:chaos",
+                "--cache-driver-kvp","pwd:chaos2015",
+ //               "--obj-storage-kvp=singleCollection","true",
+ //               "--obj-storage-driver","NewMongoDB",
+                 "--obj-storage-driver","PosixFile",
+                 "--obj-storage-kvp","data:/tmp/OBJECT_STORAGE",
+//                 "--obj-storage-kvp","genroot:1",
+//                 "--obj-storage-kvp","notemp:1",
+                 "--obj-storage-kvp","compressed:1",
+                  "--obj-storage-kvp","db:chaos",
+                  "--obj-storage-kvp","apply_index:1",
+                  "--obj-storage-kvp","mongodb_oswc:majority",
+                  "--direct-io-client-kv-param","ZMQ_RCVTIMEO:-1",
+                  "--archiver-thread","2",
+                  "--archiver-instances","4",
+                  "--log-storage-driver","InfluxDB",
+                  "--log-storage-kvp","db:chaoslog",
+//                  "--log-storage-kvp","user:chaos",
+//                  "--log-storage-kvp","pwd:chaos",
+                 "--log-storage-driver-server_url","chaos-lb01.chaos.lnf.infn.it:80/influxdb/",
+
+                "--direct-io-server-thread-number","10",
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTMDSDEBUG.log",
+                "--log-on-console","true",
+                "--persistence-servers","localhost",
+                "--cache-servers","localhost"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "TestDatasetIO",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/misc/testDataSetIO",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTDATASETIO.log",
+                "--loop","100",
+                "--points","0",
+                "--pointincr","2",
+                "--pointmax","10000",
+                "--direct-io-client-kv-param=ZMQ_RCVTIMEO:600000"
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "TestDatasetIO",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/misc/testDataSetIO",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTDATASETIO.log",
+                "--loop","100",
+                "--points","0",
+                "--pointincr","2",
+                "--pointmax","10000",
+                "--direct-io-client-kv-param=ZMQ_RCVTIMEO:600000"
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "TestWriteRead",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/testWriteAndRead",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size", "200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","TESTWRITEREAD.log",
+                "--log-level","debug",
+                "--loop","1000",
+                "--nthread","2",
+                "--dsname","DBGTEST",
+                "--direct-io-client-kv-param=ZMQ_RCVTIMEO:600000"
+                ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "CAMERA_ICH",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/chaos/chaos-distrib/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","FLAME_ICH.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","FLAME_ICH"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"/usr/local/chaos/chaos-distrib/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib:/usr/local/chaos/chaos-distrib/lib64"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "TEST_CAMERA_ICH",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/chaos/chaos-distrib/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","TEST_FLAME_ICH.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","TEST_FLAME_CAMERA_ICH"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"/usr/local/chaos/chaos-distrib/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib:/usr/local/chaos/chaos-distrib/lib64"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "UnitServer FLAME_ELAB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/local/chaos/chaos-distrib/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaosfe1.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","HALL0.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","FLAME_ELAB"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"/usr/local/chaos/chaos-distrib/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "UnitServer TEST",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/UnitServer",
+            "args": [
+                "--unit-gateway-enable","1",
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TEST.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","TEST"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "UnitServer BTFDAQ",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","BTFDAQ.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","BTFDAQ"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "UnitServer READYFORPROD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","READYFORPROD.log",
+                "--log-on-console","true",
+              //  "--log-level","debug",
+                "--unit-server-alias","READYFORPROD"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "AGENT TEST",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/agent",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","AGENT_TEST.log",
+                "--log-on-console","true",
+                "--log-level","debug"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "UnitServer CCALT on chaost",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/UnitServer",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaost-mds1.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","CCALT.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--unit-server-alias","CCALT"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "WEBUI PRODUZIONE",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/ChaosWANProxy",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaosfe1.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","TESTWEBUIPROD.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--conf-file","${workspaceFolder}/chaosframework/usr/local/etc/webui.cfg"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "CHAOS2TREE",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/chaosframework/usr/local/bin/chaos2tree",
+            "args": ["/tmp/OBJECT_STORAGE/PERFORMANCE_IO_0_o/2020/02/13/11/1581589804176_1581589801_0000001433", 
+                "pippo"
+               ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [
+                {"name":"LD_LIBRARY_PATH", "value": "${workspaceFolder}/chaosframework/usr/local/lib"}
+              //  {"name":"LD_PRELOAD","value":"/usr/lib/x86_64-linux-gnu/libtsan.so.0"}
+             
+                ]
+                ,
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "WEBUI PREPROD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/ChaosWANProxy",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","chaost-cds01.chaos.lnf.infn.it:5000",
+                "--log-on-file","1",
+                "--log-file","TESTWEBUIPREPROD.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--conf-file","${workspaceFolder}/chaosframework/usr/local/etc/webui.cfg"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "WEBUI",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/ChaosWANProxy",
+            "args": [
+                "--event-disable","true",
+                "--log-max-size","200",
+                "--metadata-server","localhost:5000",
+                "--log-on-file","1",
+                "--log-file","TESTWEBUI.log",
+                "--log-on-console","true",
+                "--log-level","debug",
+                "--conf-file","${workspaceFolder}/chaosframework/usr/local/etc/webui.cfg"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "additionalSOLibSearchPath":"${workspaceFolder}/chaosframework/usr/local/lib",
+            "environment": [{"name": "LD_LIBRARY_PATH", "value": "${workspaceFolder}/build-x86_64-Linux/build-x86_64-Linux/:/usr/local/chaos/chaos-distrib/lib"}]
+                ,
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
