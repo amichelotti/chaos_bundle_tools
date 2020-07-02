@@ -26,7 +26,7 @@ fi
 
 DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 
-waitfor=120
+waitfor=70
 exit_status=0
 while getopts f:e:p:n:m:hl:t:s:gw: opt; do
     case $opt in
