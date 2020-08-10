@@ -8,7 +8,7 @@ if [ -z $CHAOS_PREFIX ];then
 fi
 
 loglevel=""
-maxsize=10000
+maxsize=8191
 maxthread=8
 loop=10000
 page_len=0
