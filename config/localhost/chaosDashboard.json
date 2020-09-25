@@ -13,10 +13,10 @@
                         "association_uid": "1057f24f",
                         "ndk_uid": "TEST",
                         "node_launch_cmd_line": "UnitServer",
-                        "node_init_cfg": "unit-gateway-enable=true",
-                        "node_auto_start": false,
+                        "node_init_cfg": "unit-gateway-enable=true\nlog-level=debug",
+                        "node_auto_start": true,
                         "node_keep_alive": false,
-                        "node_log_on_mds": false,
+                        "node_log_on_console": false,
                         "node_script_id": "",
                         "node_workdir": ""
                     }
