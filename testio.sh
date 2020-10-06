@@ -8,7 +8,7 @@ if [ -z $CHAOS_PREFIX ];then
 fi
 
 loglevel=""
-maxsize=10000
+maxsize=8191
 maxthread=8
 loop=10000
 page_len=0
@@ -26,7 +26,7 @@ fi
 
 DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 
-waitfor=62
+waitfor=120
 exit_status=0
 while getopts f:e:p:n:m:hl:t:s:gw: opt; do
     case $opt in
