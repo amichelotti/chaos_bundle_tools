@@ -6,6 +6,7 @@
                 "instance_seq": 0,
                 "instance_name": "",
                 "ndk_rpc_addr": "192.168.197.24:7997",
+                "ndk_rest_port": "8076",
                 "ndk_host_name": "chaost-camera01.chaos.lnf.infn.it",
                 "andk_working_directory": "/usr/local/chaos/chaos-distrib",
                 "andk_node_associated": [
