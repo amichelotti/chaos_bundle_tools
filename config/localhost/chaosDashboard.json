@@ -983,7 +983,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -1118,7 +1118,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -3364,7 +3364,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "700",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -3499,7 +3499,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "700",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -3634,7 +3634,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "700",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -3769,7 +3769,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "700",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -3904,7 +3904,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4039,7 +4039,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4174,7 +4174,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4309,7 +4309,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4444,7 +4444,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4579,7 +4579,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4624,7 +4624,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4669,7 +4669,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4714,7 +4714,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4759,7 +4759,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -4936,7 +4936,7 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.01",
+                                "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1"
                             },
@@ -8457,7 +8457,7 @@
                         "cudk_default_value": "0",
                         "cudk_ds_max_range": "100",
                         "cudk_ds_min_range": "0",
-                        "cudk_ds_attr_inc": "0.01",
+                        "cudk_ds_attr_inc": "0.10",
                         "cudk_ds_attr_unit": "A",
                         "cudk_ds_attr_convfact": "1"
                     },
