@@ -512,7 +512,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -698,7 +698,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -884,7 +884,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -1019,7 +1019,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3265,7 +3265,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3400,7 +3400,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3535,7 +3535,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":11,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":11,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3670,7 +3670,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3805,7 +3805,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3940,7 +3940,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4075,7 +4075,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4210,7 +4210,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4480,7 +4480,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4615,7 +4615,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4660,7 +4660,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4705,7 +4705,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4750,7 +4750,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4795,7 +4795,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4837,7 +4837,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -8376,7 +8376,7 @@
                     {
                         "cudk_driver_description_name": "PowerSimDD",
                         "cudk_driver_description_version": "1.0.0",
-                        "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":100,\"max_write_time_ms\":200,\"min_read_time_ms\":200,\"max_read_time_ms\":300,\"force_err_sec\":0,\"readout_err\":5,\"update_delay_us\":100000}}"
+                        "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
                     }
                 ],
                 "attribute_value_descriptions": [
