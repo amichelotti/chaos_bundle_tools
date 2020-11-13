@@ -495,138 +495,6 @@
                         ]
                     },
                     {
-                        "ndk_uid": "FLAME/QUADRUPOLE/QUATB001",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "FLAME",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 3600,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "700",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "1"
-                            }
-                        ]
-                    },
-                    {
                         "ndk_uid": "FLAME/CAMERA/LASERCAM006",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "FLAME",
@@ -681,138 +549,6 @@
                         ]
                     },
                     {
-                        "ndk_uid": "FLAME/QUADRUPOLE/QUATB002",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "FLAME",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 3600,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "700",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "1"
-                            }
-                        ]
-                    },
-                    {
                         "ndk_uid": "FLAME/CAMERA/LASERCAM008",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "FLAME",
@@ -863,276 +599,6 @@
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
-                            }
-                        ]
-                    },
-                    {
-                        "ndk_uid": "FLAME/QUADRUPOLE/QUATB003",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "FLAME",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 3600,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "700",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.10",
-                                "cudk_ds_attr_unit": "A",
-                                "cudk_ds_attr_convfact": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "5"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "5"
-                            }
-                        ]
-                    },
-                    {
-                        "ndk_uid": "FLAME/QUADRUPOLE/QUATB004",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "FLAME",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 3600,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "700",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.10",
-                                "cudk_ds_attr_unit": "A",
-                                "cudk_ds_attr_convfact": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "5"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "5"
                             }
                         ]
                     },
@@ -3248,141 +2714,6 @@
                         ]
                     },
                     {
-                        "ndk_uid": "MEA/QUADRUPOLE/TEST001",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "TEST",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 0,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "20",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.10",
-                                "cudk_ds_attr_unit": "A",
-                                "cudk_ds_attr_convfact": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "28",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "28",
-                                "cudk_ds_min_range": "1"
-                            }
-                        ]
-                    },
-                    {
                         "ndk_uid": "BTF/DIPOLE/DHSTB002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST",
@@ -3400,7 +2731,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3518,141 +2849,6 @@
                         ]
                     },
                     {
-                        "ndk_uid": "MEA/QUADRUPOLE/TEST002",
-                        "ndk_type": "nt_control_unit",
-                        "ndk_parent": "TEST",
-                        "auto_load": true,
-                        "auto_init": true,
-                        "auto_start": true,
-                        "cudk_load_param": "",
-                        "cudk_thr_sch_delay": 1000000,
-                        "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 0,
-                        "dsndk_storage_history_time": 0,
-                        "dsndk_storage_live_time": 0,
-                        "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [
-                            {
-                                "cudk_driver_description_name": "PowerSimDD",
-                                "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyrd02\",\"slaveid\":11,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
-                            }
-                        ],
-                        "attribute_value_descriptions": [
-                            {
-                                "cudk_ds_attr_name": "polFromSet",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "polSwSign",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "stbyOnPol",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "zeroOnStby",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "bypass",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "unit",
-                                "cudk_default_value": "A",
-                                "cudk_ds_max_range": "",
-                                "cudk_ds_min_range": ""
-                            },
-                            {
-                                "cudk_ds_attr_name": "scale",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "1000000",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "minimumWorkingValue",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "maximumWorkingValue",
-                                "cudk_default_value": "20",
-                                "cudk_ds_max_range": "100",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThreshold",
-                                "cudk_default_value": "0.5",
-                                "cudk_ds_max_range": "10",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "warningThresholdTimeout",
-                                "cudk_default_value": "1000",
-                                "cudk_ds_max_range": "2000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "setTimeout",
-                                "cudk_default_value": "60000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "getTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "driverTimeout",
-                                "cudk_default_value": "10000",
-                                "cudk_ds_max_range": "1200000000",
-                                "cudk_ds_min_range": "0"
-                            },
-                            {
-                                "cudk_ds_attr_name": "current",
-                                "cudk_default_value": "0",
-                                "cudk_ds_max_range": "700",
-                                "cudk_ds_min_range": "0",
-                                "cudk_ds_attr_inc": "0.10",
-                                "cudk_ds_attr_unit": "A",
-                                "cudk_ds_attr_convfact": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampDownRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "28",
-                                "cudk_ds_min_range": "1"
-                            },
-                            {
-                                "cudk_ds_attr_name": "rampUpRate",
-                                "cudk_default_value": "1",
-                                "cudk_ds_max_range": "28",
-                                "cudk_ds_min_range": "1"
-                            }
-                        ]
-                    },
-                    {
                         "ndk_uid": "BTF/DIPOLE/DHSTB001",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST",
@@ -3670,7 +2866,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":100,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3805,7 +3001,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -3940,7 +3136,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4075,7 +3271,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4210,7 +3406,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4480,7 +3676,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4615,7 +3811,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4660,7 +3856,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4705,7 +3901,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4750,7 +3946,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4795,7 +3991,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -4837,7 +4033,7 @@
                             {
                                 "cudk_driver_description_name": "PowerSimDD",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                             }
                         ],
                         "attribute_value_descriptions": [
@@ -8376,7 +7572,7 @@
                     {
                         "cudk_driver_description_name": "PowerSimDD",
                         "cudk_driver_description_version": "1.0.0",
-                        "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":100000}}"
+                        "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
                     }
                 ],
                 "attribute_value_descriptions": [
