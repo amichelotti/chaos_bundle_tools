@@ -7252,10 +7252,8 @@
     ],
     "scripts": [
         {
-            "_id": {
-                "$oid": "5ec7a4e83d97f911a8258fc8"
-            },
-            "seq": 1590142184841,
+           
+            "seq": 0,
             "name": "simpleRootCounter",
             "script_name": "simpleRootCounter.C",
             "eudk_script_content": "#include <driver/misc/models/cernRoot/rootUtil.h>\nint simpleRootCounter(int max){\n int cnt;for(cnt=0;cnt<max;cnt++){std::cout<<\"counter:\"<<cnt<<std::endl;sleep(1);} std::cout<<\"END COUNTER:\"<<cnt<<std::endl;exit(0);}",
@@ -7265,9 +7263,6 @@
             "workingdir": ""
         },
         {
-            "_id": {
-                "$oid": "5ec80c6745f3b533c5cc8d64"
-            },
             "seq": 0,
             "script_name": "sineWave.C",
             "eudk_script_language": "CPP",
