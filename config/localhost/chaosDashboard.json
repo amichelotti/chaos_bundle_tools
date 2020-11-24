@@ -5102,7 +5102,7 @@
                             {
                                 "cudk_driver_description_name": "ShapeSim",
                                 "cudk_driver_description_version": "1.0.0",
-                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":10,\"colr\":255}}"
+                                "cudk_driver_description_init_parameter": "{\"serial\":\"21278018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":75,\"centerx\":512,\"centery\":334,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
                             }
                         ],
                         "attribute_value_descriptions": [
