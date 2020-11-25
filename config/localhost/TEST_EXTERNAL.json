@@ -1,1 +1,595 @@
-{"ndk_uid":"TEST_EXTERNAL","cu_desc":[{"ndk_uid":"TEST/QUADRUPOLE/QUADEXT01","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::powersupply::SCPowerSupplyControlUnit","cudk_load_param":"","auto_load":false,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":3600,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1},\"device_param\":{\"slaveid\":12}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"polFromSet","cudk_default_value":"0","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"polSwSign","cudk_default_value":"0","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"stbyOnPol","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"zeroOnStby","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"bypass","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"unit","cudk_default_value":"A","cudk_ds_max_range":"","cudk_ds_min_range":""},{"cudk_ds_attr_name":"scale","cudk_default_value":"1","cudk_ds_max_range":"1000000","cudk_ds_min_range":"1"},{"cudk_ds_attr_name":"minimumWorkingValue","cudk_default_value":"0","cudk_ds_max_range":"700","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"maximumWorkingValue","cudk_default_value":"700","cudk_ds_max_range":"700","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThreshold","cudk_default_value":"0.5","cudk_ds_max_range":"10","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThresholdTimeout","cudk_default_value":"1000","cudk_ds_max_range":"2000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThresholdTimeout","cudk_default_value":"1000","cudk_ds_max_range":"2000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"setTimeout","cudk_default_value":"60000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"getTimeout","cudk_default_value":"10000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"driverTimeout","cudk_default_value":"10000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"current","cudk_default_value":"0","cudk_ds_max_range":"100","cudk_ds_min_range":"0","cudk_ds_attr_inc":"0.01","cudk_ds_attr_unit":"A","cudk_ds_attr_convfact":"1"},{"cudk_ds_attr_name":"rampDownRate","cudk_default_value":"1","cudk_ds_max_range":"10","cudk_ds_min_range":"5"},{"cudk_ds_attr_name":"rampUpRate","cudk_default_value":"1","cudk_ds_max_range":"10","cudk_ds_min_range":"5"}],"ndk_sub_type":"nt_sc_cu","dsndk_storage_history_time":0},{"ndk_uid":"TEST/QUADRUPOLE/QUADEXT02","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::powersupply::SCPowerSupplyControlUnit","cudk_load_param":"","auto_load":false,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":3600,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"polFromSet","cudk_default_value":"0","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"polSwSign","cudk_default_value":"0","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"stbyOnPol","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"zeroOnStby","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"bypass","cudk_default_value":"1","cudk_ds_max_range":"1","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"unit","cudk_default_value":"A","cudk_ds_max_range":"","cudk_ds_min_range":""},{"cudk_ds_attr_name":"scale","cudk_default_value":"1","cudk_ds_max_range":"1000000","cudk_ds_min_range":"1"},{"cudk_ds_attr_name":"minimumWorkingValue","cudk_default_value":"0","cudk_ds_max_range":"700","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"maximumWorkingValue","cudk_default_value":"700","cudk_ds_max_range":"700","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThreshold","cudk_default_value":"0.5","cudk_ds_max_range":"10","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThresholdTimeout","cudk_default_value":"1000","cudk_ds_max_range":"2000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"warningThresholdTimeout","cudk_default_value":"1000","cudk_ds_max_range":"2000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"setTimeout","cudk_default_value":"60000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"getTimeout","cudk_default_value":"10000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"driverTimeout","cudk_default_value":"10000","cudk_ds_max_range":"1200000000","cudk_ds_min_range":"0"},{"cudk_ds_attr_name":"current","cudk_default_value":"0","cudk_ds_max_range":"100","cudk_ds_min_range":"0","cudk_ds_attr_inc":"0.01","cudk_ds_attr_unit":"A","cudk_ds_attr_convfact":"1"},{"cudk_ds_attr_name":"rampDownRate","cudk_default_value":"1","cudk_ds_max_range":"10","cudk_ds_min_range":"5"},{"cudk_ds_attr_name":"rampUpRate","cudk_default_value":"1","cudk_ds_max_range":"10","cudk_ds_min_range":"5"}],"ndk_sub_type":"nt_sc_cu","dsndk_storage_history_time":0},{"ndk_uid":"TEST/MOT/EXTMOT001","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"100","cudk_ds_min_range":"-100","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"step","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}],"ndk_sub_type":"nt_sc_cu"},{"ndk_uid":"TEST/MOT/EXTMOT002","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"100","cudk_ds_min_range":"-100","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}],"ndk_sub_type":"nt_sc_cu"},{"ndk_uid":"TEST/MOT/EXTMOT003","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]},{"ndk_uid":"TEST/MOT/EXTMOT004","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]},{"ndk_uid":"TEST/MOT/EXTMOT005","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]},{"ndk_uid":"TEST/MOT/EXTMOT006","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]},{"ndk_uid":"TEST/MOT/EXTMOT007","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":7}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]},{"ndk_uid":"TEST/MOT/EXTMOT0031604511148382","ndk_parent":"TEST_EXTERNAL","ndk_type":"nt_control_unit","control_unit_implementation":"::driver::actuator::SCActuatorControlUnit","cudk_load_param":"","auto_load":true,"auto_init":true,"auto_start":true,"cudk_thr_sch_delay":1000000,"dsndk_storage_type":2,"dsndk_storage_history_ageing":36000,"dsndk_storage_live_time":0,"cudk_driver_description":[{"cudk_driver_description_version":"1.0.0","cudk_driver_description_init_parameter":"{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}","cudk_driver_prop":[{"name":"","value":""}]}],"attribute_value_descriptions":[{"cudk_ds_attr_name":"position","cudk_default_value":"0","cudk_ds_max_range":"200","cudk_ds_min_range":"-200","cudk_ds_attr_inc":"1","cudk_ds_attr_unit":"steps","cudk_ds_attr_convfact":"1","cudk_ds_attr_offset":"0"}]}]}
+{
+    "us_desc": {
+        "ndk_uid": "TEST_EXTERNAL",
+        "cu_desc": [
+            {
+                "ndk_uid": "TEST/QUADRUPOLE/QUADEXT01",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
+                "cudk_load_param": "",
+                "auto_load": false,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 3600,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1},\"device_param\":{\"slaveid\":12}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "polFromSet",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "polSwSign",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "stbyOnPol",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "zeroOnStby",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "bypass",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "unit",
+                        "cudk_default_value": "A",
+                        "cudk_ds_max_range": "",
+                        "cudk_ds_min_range": ""
+                    },
+                    {
+                        "cudk_ds_attr_name": "scale",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1000000",
+                        "cudk_ds_min_range": "1"
+                    },
+                    {
+                        "cudk_ds_attr_name": "minimumWorkingValue",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "700",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "maximumWorkingValue",
+                        "cudk_default_value": "700",
+                        "cudk_ds_max_range": "700",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThreshold",
+                        "cudk_default_value": "0.5",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThresholdTimeout",
+                        "cudk_default_value": "1000",
+                        "cudk_ds_max_range": "2000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThresholdTimeout",
+                        "cudk_default_value": "1000",
+                        "cudk_ds_max_range": "2000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "setTimeout",
+                        "cudk_default_value": "60000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "getTimeout",
+                        "cudk_default_value": "10000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "driverTimeout",
+                        "cudk_default_value": "10000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "current",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "100",
+                        "cudk_ds_min_range": "0",
+                        "cudk_ds_attr_inc": "0.01",
+                        "cudk_ds_attr_unit": "A",
+                        "cudk_ds_attr_convfact": "1"
+                    },
+                    {
+                        "cudk_ds_attr_name": "rampDownRate",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "5"
+                    },
+                    {
+                        "cudk_ds_attr_name": "rampUpRate",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "5"
+                    }
+                ],
+                "ndk_sub_type": "nt_sc_cu",
+                "dsndk_storage_history_time": 0
+            },
+            {
+                "ndk_uid": "TEST/QUADRUPOLE/QUADEXT02",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
+                "cudk_load_param": "",
+                "auto_load": false,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 3600,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "polFromSet",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "polSwSign",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "stbyOnPol",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "zeroOnStby",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "bypass",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "unit",
+                        "cudk_default_value": "A",
+                        "cudk_ds_max_range": "",
+                        "cudk_ds_min_range": ""
+                    },
+                    {
+                        "cudk_ds_attr_name": "scale",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "1000000",
+                        "cudk_ds_min_range": "1"
+                    },
+                    {
+                        "cudk_ds_attr_name": "minimumWorkingValue",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "700",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "maximumWorkingValue",
+                        "cudk_default_value": "700",
+                        "cudk_ds_max_range": "700",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThreshold",
+                        "cudk_default_value": "0.5",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThresholdTimeout",
+                        "cudk_default_value": "1000",
+                        "cudk_ds_max_range": "2000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "warningThresholdTimeout",
+                        "cudk_default_value": "1000",
+                        "cudk_ds_max_range": "2000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "setTimeout",
+                        "cudk_default_value": "60000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "getTimeout",
+                        "cudk_default_value": "10000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "driverTimeout",
+                        "cudk_default_value": "10000",
+                        "cudk_ds_max_range": "1200000000",
+                        "cudk_ds_min_range": "0"
+                    },
+                    {
+                        "cudk_ds_attr_name": "current",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "100",
+                        "cudk_ds_min_range": "0",
+                        "cudk_ds_attr_inc": "0.01",
+                        "cudk_ds_attr_unit": "A",
+                        "cudk_ds_attr_convfact": "1"
+                    },
+                    {
+                        "cudk_ds_attr_name": "rampDownRate",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "5"
+                    },
+                    {
+                        "cudk_ds_attr_name": "rampUpRate",
+                        "cudk_default_value": "1",
+                        "cudk_ds_max_range": "10",
+                        "cudk_ds_min_range": "5"
+                    }
+                ],
+                "ndk_sub_type": "nt_sc_cu",
+                "dsndk_storage_history_time": 0
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT001",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "100",
+                        "cudk_ds_min_range": "-100",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "step",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ],
+                "ndk_sub_type": "nt_sc_cu"
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT002",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "100",
+                        "cudk_ds_min_range": "-100",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ],
+                "ndk_sub_type": "nt_sc_cu"
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT003",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT004",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT005",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT006",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT007",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":7}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            },
+            {
+                "ndk_uid": "TEST/MOT/EXTMOT0031604511148382",
+                "ndk_parent": "TEST_EXTERNAL",
+                "ndk_type": "nt_control_unit",
+                "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
+                "cudk_load_param": "",
+                "auto_load": true,
+                "auto_init": true,
+                "auto_start": true,
+                "cudk_thr_sch_delay": 1000000,
+                "dsndk_storage_type": 2,
+                "dsndk_storage_history_ageing": 36000,
+                "dsndk_storage_live_time": 0,
+                "cudk_driver_description": [
+                    {
+                        "cudk_driver_description_version": "1.0.0",
+                        "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}",
+                        "cudk_driver_prop": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ],
+                "attribute_value_descriptions": [
+                    {
+                        "cudk_ds_attr_name": "position",
+                        "cudk_default_value": "0",
+                        "cudk_ds_max_range": "200",
+                        "cudk_ds_min_range": "-200",
+                        "cudk_ds_attr_inc": "1",
+                        "cudk_ds_attr_unit": "steps",
+                        "cudk_ds_attr_convfact": "1",
+                        "cudk_ds_attr_offset": "0"
+                    }
+                ]
+            }
+        ]
+    }
+}
