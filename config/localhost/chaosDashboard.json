@@ -43,6 +43,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosPowerSupplyRemoteClientDriver",
@@ -185,6 +186,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -327,6 +329,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -367,6 +370,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -407,6 +411,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -446,6 +451,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosPowerSupplyRemoteClientDriver",
@@ -485,6 +491,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -524,6 +531,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosPowerSupplyRemoteClientDriver",
@@ -563,6 +571,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -602,6 +611,7 @@
                         "dsndk_storage_type": 2,
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
                                 "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
@@ -650,6 +660,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "ChaosMESS",
                         "cudk_driver_description": [
                             {
@@ -680,6 +691,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -734,6 +746,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -788,6 +801,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -842,6 +856,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -896,6 +911,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -950,6 +966,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -1004,6 +1021,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -1058,6 +1076,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -1112,6 +1131,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -1166,6 +1186,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -1220,6 +1241,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1276,6 +1298,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1332,6 +1355,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1388,6 +1412,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1452,6 +1477,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": ""
                     },
                     {
@@ -1467,6 +1493,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": ""
                     },
                     {
@@ -1482,6 +1509,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1664,6 +1692,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": ""
                     },
                     {
@@ -1679,6 +1708,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -1860,6 +1890,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2042,6 +2073,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2224,6 +2256,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2406,6 +2439,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2588,6 +2622,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2770,6 +2805,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": ""
                     },
                     {
@@ -2785,6 +2821,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -2967,6 +3004,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3149,6 +3187,7 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3331,6 +3370,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3466,6 +3506,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3601,6 +3642,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3736,6 +3778,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -3871,6 +3914,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4006,6 +4050,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4141,6 +4186,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4276,6 +4322,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4411,6 +4458,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4456,6 +4504,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4501,6 +4550,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4546,6 +4596,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4591,6 +4642,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4633,6 +4685,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
                         "cudk_driver_description": [
                             {
@@ -4768,6 +4821,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -4804,6 +4858,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "DataImport",
                         "cudk_driver_description": [
                             {
@@ -4826,6 +4881,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -4862,6 +4918,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -4898,6 +4955,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -4934,6 +4992,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -4970,6 +5029,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5006,6 +5066,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5042,6 +5103,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5078,6 +5140,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5114,6 +5177,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5150,6 +5214,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5186,6 +5251,7 @@
                         "dsndk_storage_history_ageing": 36000000,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "SCDafneAccumulatorBPMSync",
                         "cudk_driver_description": [
                             {
@@ -5208,6 +5274,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::data_import::RTChaos2Memcache",
                         "attribute_value_descriptions": [
                             {
@@ -5237,6 +5304,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::data_import::RTChaos2Memcache",
                         "attribute_value_descriptions": [
                             {
@@ -5266,6 +5334,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN775",
                         "attribute_value_descriptions": [
                             {
@@ -5325,6 +5394,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN965",
                         "attribute_value_descriptions": [
                             {
@@ -5378,6 +5448,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN775",
                         "attribute_value_descriptions": [
                             {
@@ -5431,6 +5502,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN965",
                         "attribute_value_descriptions": [
                             {
@@ -5490,6 +5562,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5512,6 +5585,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5534,6 +5608,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
                         "cudk_driver_description": [
                             {
@@ -5570,6 +5645,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5592,6 +5668,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5614,6 +5691,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5636,6 +5714,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5658,6 +5737,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5680,6 +5760,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5702,6 +5783,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -5756,6 +5838,7 @@
                         "dsndk_storage_history_ageing": 1,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
                         "cudk_driver_description": [
                             {
@@ -5810,6 +5893,7 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
                         "cudk_driver_description": [
                             {
@@ -5913,6 +5997,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6051,6 +6136,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6189,6 +6275,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6327,6 +6414,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6465,6 +6553,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6603,6 +6692,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6749,6 +6839,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -6887,6 +6978,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -7025,6 +7117,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -7163,6 +7256,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -7301,6 +7395,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -7439,6 +7534,7 @@
                         "cudk_set_tag": "",
                         "dsndk_storage_type": 2,
                         "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
                         "dsndk_storage_history_time": 0,
                         "dp_sys_que_cmd": 0,
                         "dp_sys_stack_cmd": 0,
@@ -7857,7 +7953,6 @@
     ],
     "scripts": [
         {
-           
             "seq": 0,
             "name": "simpleRootCounter",
             "script_name": "simpleRootCounter.C",
@@ -8168,6 +8263,7 @@
                 "dsndk_storage_type": 2,
                 "dsndk_storage_history_ageing": 3600,
                 "dsndk_storage_live_time": 0,
+                "dsndk_update_anyway": 2000,
                 "cudk_driver_description": [
                     {
                         "cudk_driver_description_name": "PowerSimDD",
