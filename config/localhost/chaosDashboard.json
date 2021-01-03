@@ -189,7 +189,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}",
                                 "cudk_driver_prop": [
@@ -332,7 +332,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
                                 "cudk_driver_prop": [
@@ -373,7 +373,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
                                 "cudk_driver_prop": [
@@ -414,7 +414,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
                                 "cudk_driver_prop": [
@@ -454,7 +454,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorExtDD",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
                                 "cudk_driver_prop": [
@@ -494,7 +494,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
                                 "cudk_driver_prop": [
@@ -534,7 +534,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorExtDD",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
                                 "cudk_driver_prop": [
@@ -574,7 +574,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":7}}",
                                 "cudk_driver_prop": [
@@ -614,7 +614,7 @@
                         "dsndk_update_anyway": 2000,
                         "cudk_driver_description": [
                             {
-                                "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
                                 "cudk_driver_description_version": "1.0.0",
                                 "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}",
                                 "cudk_driver_prop": [
