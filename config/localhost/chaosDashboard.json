@@ -353,7 +353,14 @@
                                 "cudk_ds_attr_unit": "step",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "1",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
+
                         ],
                         "ndk_sub_type": "nt_sc_cu"
                     },
@@ -394,6 +401,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "2",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ],
                         "ndk_sub_type": "nt_sc_cu"
@@ -435,6 +448,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "3",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     },
@@ -475,6 +494,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "4",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     },
@@ -515,6 +540,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "5",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     },
@@ -555,6 +586,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "6",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     },
@@ -595,6 +632,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "7",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     },
@@ -635,6 +678,12 @@
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
                                 "cudk_ds_attr_offset": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "axisID",
+                                "cudk_default_value": "8",
+                                "cudk_ds_max_range": "255",
+                                "cudk_ds_min_range": "0"
                             }
                         ]
                     }
