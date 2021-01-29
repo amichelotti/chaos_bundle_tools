@@ -9,6 +9,7 @@ ping chaost-webui03.chaos.lnf.infn.it
 ping chaost-cu01.chaos.lnf.infn.it
 ping chaost-cu02.chaos.lnf.infn.it
 ping chaost-cu03.chaos.lnf.infn.it
+ping chaost-cu04.chaos.lnf.infn.it
 
 ping chaost-mongofe01.chaos.lnf.infn.it
 ping chaost-mongofe02.chaos.lnf.infn.it
