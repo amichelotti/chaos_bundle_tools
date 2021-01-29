@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "TEST PREPROD"
 ping chaost-cds01.chaos.lnf.infn.it
 ping chaost-cds02.chaos.lnf.infn.it
 ping chaost-cds03.chaos.lnf.infn.it
