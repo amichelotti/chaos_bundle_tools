@@ -1,5 +1,3 @@
-{
-    "us": [
 	{
 	    "unit_server_alias": "BTFDAQ",
 	    "private_key": null,
@@ -22,5 +20,5 @@
 	
 			}
 		]
-	}]
-}
+	}
+
