@@ -149,16 +149,15 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                "cudk_ds_attr_name": "current",                                
+                                "cudk_ds_attr_name": "current",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
                                 "cudk_ds_attr_inc": "0.01",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
-
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -302,8 +301,8 @@
                                 "cudk_ds_attr_inc": "0.01",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -357,8 +356,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "step",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -367,7 +366,6 @@
                                 "cudk_ds_max_range": "255",
                                 "cudk_ds_min_range": "0"
                             }
-
                         ],
                         "ndk_sub_type": "nt_sc_cu"
                     },
@@ -407,8 +405,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -456,8 +454,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -504,8 +502,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -552,8 +550,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -600,8 +598,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -648,8 +646,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -696,8 +694,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -1534,7 +1532,6 @@
                 "ndk_uid": "TEST",
                 "ndk_desc": "",
                 "cu_desc": [
-
                     {
                         "ndk_uid": "TEST/QUADRUPOLE/QUADEXT01",
                         "ndk_parent": "TEST",
@@ -1661,8 +1658,8 @@
                                 "cudk_ds_attr_inc": "0.01",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -1799,16 +1796,16 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
                                 "cudk_ds_attr_inc": "0.01",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -1862,8 +1859,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "step",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -1872,7 +1869,6 @@
                                 "cudk_ds_max_range": "255",
                                 "cudk_ds_min_range": "0"
                             }
-
                         ],
                         "ndk_sub_type": "nt_sc_cu"
                     },
@@ -1912,8 +1908,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -1961,8 +1957,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2009,8 +2005,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2057,8 +2053,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2105,8 +2101,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2153,8 +2149,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2201,8 +2197,8 @@
                                 "cudk_ds_attr_inc": "1",
                                 "cudk_ds_attr_unit": "steps",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_ds_attr_offset": "0"
                             },
                             {
@@ -2213,7 +2209,6 @@
                             }
                         ]
                     },
-                
                     {
                         "ndk_uid": "BTF/DIAG/DAQ/QDC/QDC965LO",
                         "ndk_type": "nt_control_unit",
@@ -4228,8 +4223,8 @@
                                 "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -4366,8 +4361,8 @@
                                 "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -4504,8 +4499,8 @@
                                 "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -4642,8 +4637,8 @@
                                 "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -4780,8 +4775,8 @@
                                 "cudk_ds_attr_inc": "0.10",
                                 "cudk_ds_attr_unit": "A",
                                 "cudk_ds_attr_convfact": "1",
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0"
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0"
                             },
                             {
                                 "cudk_ds_attr_name": "rampDownRate",
@@ -4911,9 +4906,9 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                "cudk_ds_attr_name": "current",                                
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
@@ -5049,9 +5044,9 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                "cudk_ds_attr_name": "current",                                
-                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
@@ -5187,8 +5182,9 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
@@ -5234,8 +5230,9 @@
                         ],
                         "attribute_value_descriptions": [
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
@@ -5281,8 +5278,9 @@
                         ],
                         "attribute_value_descriptions": [
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
@@ -5328,8 +5326,9 @@
                         ],
                         "attribute_value_descriptions": [
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
@@ -5375,8 +5374,9 @@
                         ],
                         "attribute_value_descriptions": [
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "9.995",
                                 "cudk_ds_min_range": "-10",
@@ -5422,8 +5422,9 @@
                         ],
                         "attribute_value_descriptions": [
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "0",
                                 "cudk_ds_min_range": "0"
@@ -5556,8 +5557,9 @@
                                 "cudk_ds_min_range": "0"
                             },
                             {
-                                "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                                "cudk_ds_attr_name": "current",
+                                "cudk_ds_attr_wrn_thr": "1.0",
+                                "cudk_ds_attr_err_thr": "10.0",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
                                 "cudk_ds_min_range": "0",
@@ -8737,9 +8739,9 @@
             "seq": 0,
             "script_name": "sineWave.C",
             "eudk_script_language": "CPP",
-            "eudk_script_content": "LyoqCiAgIFNpbXBsZSBjb3VudGVyIHRvIHBlcmZvcm0gc2ltcGxlIHRlc3RzCiovCiNpbmNsdWRlIDxkcml2ZXIvbWlzYy9tb2RlbHMvY2VyblJvb3Qvcm9vdFV0aWwuaD4KI2luY2x1ZGUgPG1hdGguaD4KI2RlZmluZSBOQl9PRl9TQU1QTEVTIDEwMDAKYm9vbCBleGl0TG9vcDsKCmNoYW9zOjpjb21tb246OmRhdGE6OkNEV1VuaXF1ZVB0ciBwaWxvKGNoYW9zOjpjb21tb246OmRhdGE6OkNEV1VuaXF1ZVB0ciBkLDo6ZHJpdmVyOjptaXNjOjpDaGFvc0RhdGFzZXRJTypwKXsKICAgY291dDw8IlRSSUdHRVJFRCBVTkxPQUQiPDxkLT5nZXRKU09OU3RyaW5nKCk8PHN0ZDo6ZW5kbDsKICBleGl0TG9vcD10cnVlOwogIHJldHVybiBjaGFvczo6Y29tbW9uOjpkYXRhOjpDRFdVbmlxdWVQdHIoKTsKfQppbnQgc2luZVdhdmUoZG91YmxlIGZyZXE9MS4wLGRvdWJsZSBhbXA9MS4wKXsKICAgZXhpdExvb3A9ZmFsc2U7CgogIDo6ZHJpdmVyOjptaXNjOjpDaGFvc0RhdGFzZXRJTyB3YXZlKCJURVNUL1NJTldBVkUiKTsKICA6OmRyaXZlcjo6bWlzYzo6Q2hhb3NEYXRhU2V0IHdhdmVfb3V0PXdhdmUuYWxsb2NhdGVEYXRhc2V0KGNoYW9zOjpEYXRhUGFja0NvbW1vbktleTo6RFBDS19EQVRBU0VUX1RZUEVfT1VUUFVUKTsKICA6OmRyaXZlcjo6bWlzYzo6Q2hhb3NEYXRhU2V0IHdhdmVfaW49d2F2ZS5hbGxvY2F0ZURhdGFzZXQoY2hhb3M6OkRhdGFQYWNrQ29tbW9uS2V5OjpEUENLX0RBVEFTRVRfVFlQRV9JTlBVVCk7CiAgLyp3YXZlLnJlZ2lzdGVyQWN0aW9uKCBbXShjaGFvczo6Y29tbW9uOjpkYXRhOjpDRFdVbmlxdWVQdHIgZCkgewogICAgY291dDw8IlVOTE9BRCI8PGQtPmdldEpTT05TdHJpbmcoKTw8c3RkOjplbmRsOwogIH0pOyovCiAgd2F2ZS5yZWdpc3RlckFjdGlvbihwaWxvKTsKCiAgd2F2ZV9pbi0+YWRkRG91YmxlVmFsdWUoImZyZXEiLGZyZXEpOwogIHdhdmVfaW4tPmFkZERvdWJsZVZhbHVlKCJhbXAiLGFtcCk7CiAgd2F2ZV9vdXQtPmFkZERvdWJsZVZhbHVlKCJ3YXZlIiwwKTsKICBpZih3YXZlLnJlZ2lzdGVyRGF0YXNldCgpPT0wKXsKICAgICAgICBMREJHXzw8IiByZWdpc3RyYXRpb24gT0siOwoKICAgICAgICBpZih3YXZlLnB1c2hEYXRhc2V0KGNoYW9zOjpEYXRhUGFja0NvbW1vbktleTo6RFBDS19EQVRBU0VUX1RZUEVfSU5QVVQpIT0wKXsKICAgICAgICAgICAgTEVSUl88PCIgY2Fubm90IHB1c2giOwogICAgICAgICAgICBleGl0KDEpOwogICAgICAgIH0gCiAgICB9CiAgZG91YmxlIGFuZ2xlPTAuMDsKICBpbnQgbm90cHVzaD0wOwogIHdoaWxlKGV4aXRMb29wPT1mYWxzZSl7CiAgICBhbXA9IHdhdmVfaW4tPmdldERvdWJsZVZhbHVlKCJhbXAiKTsKICAgIGZyZXE9d2F2ZV9pbi0+Z2V0RG91YmxlVmFsdWUoImZyZXEiKTsKICAgIGRvdWJsZSB0PWFtcCpzaW4oZnJlcSphbmdsZSk7CiAgICB3YXZlX291dC0+c2V0VmFsdWUoIndhdmUiLHQpOwogICAgYW5nbGUgKz0gKCgyICogTV9QSSkgLyBOQl9PRl9TQU1QTEVTKTsKICAgIGlmKHdhdmUucHVzaERhdGFzZXQoKSE9MCl7CiAgICAgICAgICBzdGQ6OmNvdXQ8PCIgY2Fubm90IHB1c2g6Ijw8Kytub3RwdXNoOwogICAgfSBlbHNlIHsKICAgICAgICBzdGQ6OmNvdXQ8PCJmcmVxOiI8PGZyZXE8PCIgIGFtcDoiPDxhbXA8PCIgd2F2ZToiPDx0PDxzdGQ6OmVuZGw7CgogICAgfQovLyAgICBzbGVlcCgxKTsKCiAgfQogIHN0ZDo6Y291dDw8ImV4aXQgbG9vcCI8PHN0ZDo6ZW5kbDsKCiAgd2F2ZS5kZWluaXQoKTsKICBzdGQ6OmNvdXQ8PCJkZWluaXRpYWxpemVkIjw8c3RkOjplbmRsOwoKICByZXR1cm4gMDsKfQoKCgo=",
+            "eudk_script_content": "LyoqCiAgIFNpbXBsZSBjb3VudGVyIHRvIHBlcmZvcm0gc2ltcGxlIHRlc3RzCiovCiNpbmNsdWRlIDxkcml2ZXIvbWlzYy9tb2RlbHMvY2VyblJvb3Qvcm9vdFV0aWwuaD4KI2luY2x1ZGUgPG1hdGguaD4KI2RlZmluZSBOQl9PRl9TQU1QTEVTIDEwMDAKYm9vbCBleGl0TG9vcDsKCmNoYW9zOjpjb21tb246OmRhdGE6OkNEV1VuaXF1ZVB0ciBwaWxvKGNoYW9zOjpjb21tb246OmRhdGE6OkNEV1VuaXF1ZVB0ciYgZCw6OmRyaXZlcjo6bWlzYzo6Q2hhb3NEYXRhc2V0SU8qcCl7CiAgIGNvdXQ8PCJUUklHR0VSRUQgVU5MT0FEIjw8ZC0+Z2V0SlNPTlN0cmluZygpPDxzdGQ6OmVuZGw7CiAgZXhpdExvb3A9dHJ1ZTsKICByZXR1cm4gY2hhb3M6OmNvbW1vbjo6ZGF0YTo6Q0RXVW5pcXVlUHRyKCk7Cn0KaW50IHNpbmVXYXZlKGRvdWJsZSBmcmVxPTEuMCxkb3VibGUgYW1wPTEuMCl7CiAgIGV4aXRMb29wPWZhbHNlOwoKICA6OmRyaXZlcjo6bWlzYzo6Q2hhb3NEYXRhc2V0SU8gd2F2ZSgiVEVTVC9TSU5XQVZFIik7CiAgOjpkcml2ZXI6Om1pc2M6OkNoYW9zRGF0YVNldCB3YXZlX291dD13YXZlLmFsbG9jYXRlRGF0YXNldChjaGFvczo6RGF0YVBhY2tDb21tb25LZXk6OkRQQ0tfREFUQVNFVF9UWVBFX09VVFBVVCk7CiAgOjpkcml2ZXI6Om1pc2M6OkNoYW9zRGF0YVNldCB3YXZlX2luPXdhdmUuYWxsb2NhdGVEYXRhc2V0KGNoYW9zOjpEYXRhUGFja0NvbW1vbktleTo6RFBDS19EQVRBU0VUX1RZUEVfSU5QVVQpOwogIC8qd2F2ZS5yZWdpc3RlckFjdGlvbiggW10oY2hhb3M6OmNvbW1vbjo6ZGF0YTo6Q0RXVW5pcXVlUHRyIGQpIHsKICAgIGNvdXQ8PCJVTkxPQUQiPDxkLT5nZXRKU09OU3RyaW5nKCk8PHN0ZDo6ZW5kbDsKICB9KTsqLwogIHdhdmUucmVnaXN0ZXJBY3Rpb24ocGlsbyk7CgogIHdhdmVfaW4tPmFkZERvdWJsZVZhbHVlKCJmcmVxIixmcmVxKTsKICB3YXZlX2luLT5hZGREb3VibGVWYWx1ZSgiYW1wIixhbXApOwogIHdhdmVfb3V0LT5hZGREb3VibGVWYWx1ZSgid2F2ZSIsMCk7CiAgaWYod2F2ZS5yZWdpc3RlckRhdGFzZXQoKT09MCl7CiAgICAgICAgTERCR188PCIgcmVnaXN0cmF0aW9uIE9LIjsKCiAgICAgICAgaWYod2F2ZS5wdXNoRGF0YXNldChjaGFvczo6RGF0YVBhY2tDb21tb25LZXk6OkRQQ0tfREFUQVNFVF9UWVBFX0lOUFVUKSE9MCl7CiAgICAgICAgICAgIExFUlJfPDwiIGNhbm5vdCBwdXNoIjsKICAgICAgICAgICAgZXhpdCgxKTsKICAgICAgICB9IAogICAgfQogIGRvdWJsZSBhbmdsZT0wLjA7CiAgaW50IG5vdHB1c2g9MDsKICB3aGlsZShleGl0TG9vcD09ZmFsc2UpewogICAgYW1wPSB3YXZlX2luLT5nZXREb3VibGVWYWx1ZSgiYW1wIik7CiAgICBmcmVxPXdhdmVfaW4tPmdldERvdWJsZVZhbHVlKCJmcmVxIik7CiAgICBkb3VibGUgdD1hbXAqc2luKGZyZXEqYW5nbGUpOwogICAgd2F2ZV9vdXQtPnNldFZhbHVlKCJ3YXZlIix0KTsKICAgIGFuZ2xlICs9ICgoMiAqIE1fUEkpIC8gTkJfT0ZfU0FNUExFUyk7CiAgICBpZih3YXZlLnB1c2hEYXRhc2V0KCkhPTApewogICAgICAgICAgc3RkOjpjb3V0PDwiIGNhbm5vdCBwdXNoOiI8PCsrbm90cHVzaDsKICAgIH0gZWxzZSB7CiAgICAgICAgc3RkOjpjb3V0PDwiZnJlcToiPDxmcmVxPDwiICBhbXA6Ijw8YW1wPDwiIHdhdmU6Ijw8dDw8c3RkOjplbmRsOwoKICAgIH0KLy8gICAgc2xlZXAoMSk7CgogIH0KICBzdGQ6OmNvdXQ8PCJleGl0IGxvb3AiPDxzdGQ6OmVuZGw7CgogIHdhdmUuZGVpbml0KCk7CiAgc3RkOjpjb3V0PDwiZGVpbml0aWFsaXplZCI8PHN0ZDo6ZW5kbDsKCiAgcmV0dXJuIDA7Cn0KCgoK",
+            "script_description": "Test sinwave generator",
             "eudk_script_keepalive": false,
-            "script_description": "Imported from C:\\fakepath\\sineWave.C",
             "default_argument": "(1.2,4.3)"
         }
     ],
@@ -9116,8 +9118,9 @@
                         "cudk_ds_min_range": "0"
                     },
                     {
-                        "cudk_ds_attr_name": "current",                                "cudk_ds_attr_wrn_thr":"1.0",
-                                "cudk_ds_attr_err_thr":"10.0",
+                        "cudk_ds_attr_name": "current",
+                        "cudk_ds_attr_wrn_thr": "1.0",
+                        "cudk_ds_attr_err_thr": "10.0",
                         "cudk_default_value": "0",
                         "cudk_ds_max_range": "100",
                         "cudk_ds_min_range": "0",
