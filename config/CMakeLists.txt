@@ -25,7 +25,9 @@ ADD_SUBDIRECTORY(chaosframework)
  ADD_SUBDIRECTORY(common/MultiChannelPowerSupply)
 
 # ## DRIVERS
+IF(CHAOS_DRIVER_MISC)
  ADD_SUBDIRECTORY(driver/misc)
+ENDIF()
  ADD_SUBDIRECTORY(driver/powersupply)
  ADD_SUBDIRECTORY(driver/sensors)
 # ADD_SUBDIRECTORY(driver/plc)
@@ -39,7 +41,7 @@ ADD_SUBDIRECTORY(chaosframework)
 #  ADD_SUBDIRECTORY(driver/eu/eledia-eu)
  
  ###
-IF(NOT CHAOS_TARGET)
+IF(NOT CHAOS_TARGET AND CHAOS_DRIVER_MISC)
   ADD_SUBDIRECTORY(service/webgui/ChaosWANProxy)
 ENDIF()
 InstallChaos()
