@@ -777,7 +777,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -832,7 +832,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -887,7 +887,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -942,7 +942,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -997,7 +997,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -1052,7 +1052,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -1107,7 +1107,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -1162,7 +1162,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -1217,7 +1217,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -1272,7 +1272,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -6574,7 +6574,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
@@ -6629,7 +6629,7 @@
                             },
                             {
                                 "cudk_ds_attr_name": "WIDTH",
-                                "cudk_default_value": "640",
+                                "cudk_default_value": 640,
                                 "cudk_ds_max_range": "1024",
                                 "cudk_ds_min_range": "0"
                             },
