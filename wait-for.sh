@@ -21,6 +21,7 @@ USAGE
 
 wait_for() {
   for i in `seq $TIMEOUT` ; do
+    echo "Try $i to contact host:$HOST port:$PORT"
     nc -z "$HOST" "$PORT" > /dev/null 2>&1
     
     result=$?
@@ -32,7 +33,7 @@ wait_for() {
     fi
     sleep 1
   done
-  echo "Operation timed out" >&2
+  echo "Operation timed out after $i" >&2
   exit 1
 }
 
