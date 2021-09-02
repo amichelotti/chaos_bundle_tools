@@ -19,7 +19,7 @@
                     "node_log_on_console": false,
                     "node_script_id": "",
                     "node_workdir": ""
-                },{
+                }, {
                     "association_uid": "f7b2890c",
                     "ndk_uid": "BTF/HUNTERDOG/ALARM",
                     "node_launch_cmd_line": "chaosRoot --rootopt \"-q hunterDog.C()\"",
@@ -29,10 +29,10 @@
                     "node_log_on_console": true,
                     "node_script_id": "hunterDog.C",
                     "node_workdir": ""
-                },{
+                }, {
                     "association_uid": "b6986d44",
-                    "ndk_uid": "BTF/ALGO_FIT/CAM01",
-                    "node_launch_cmd_line": "chaosRoot --rootopt \"-q cameraGFIT.C(\"BTF/CAMERA/CAM01\")\"",
+                    "ndk_uid": "BTF/DIAG/ALGO_FIT/CAM01",
+                    "node_launch_cmd_line": "chaosRoot --rootopt \"-q cameraGFIT.C(\"BTF/DIAG/CAMERA/CAM01\")\"",
                     "node_init_cfg": "",
                     "node_auto_start": true,
                     "node_keep_alive": false,
@@ -44,13 +44,12 @@
         }
     },
     "us": {
-     
+
         "TEST_BTF": {
             "us_desc": {
                 "ndk_uid": "TEST_BTF",
-                "cu_desc": [
-                    {
-                        "ndk_uid": "BTF/CAMERA/CAM01",
+                "cu_desc": [{
+                        "ndk_uid": "BTF/DIAG/CAMERA/CAM01",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -100,24 +99,27 @@
                                 "cudk_ds_min_range": "0"
                             }
                         ]
-                    },        
+                    },
                     {
-                        "cu_id": "BTF/DAQ/BTFDAQ",
-                        "cu_type": "::driver::daq::btf::RTBTFdaqCUSim",
-                        "cu_param": "{\"qdc\":{\"address\":\"0xBBBB0000\",\"channels\":16},\"tdc\":{\"address\":\"0xAAAA0000\",\"channels\":16},\"sis\":{\"address\":\"0x38380800\",\"channels\":16},\"pio\":{\"address\":\"0xCCCC0000\",\"channels\":16}}",
+                        "ndk_uid": "BTF/DIAG/DAQ/BTFDAQ",
+                        "control_unit_implementation": "::driver::daq::btf::RTBTFdaqSimCU",
+                        "ndk_parent": "TEST_BTF",
+                        "ndk_type": "nt_control_unit",
+                        "cudk_load_param": "{\"caen965\":{\"address\":\"0xBBBB0000\",\"channels\":16,\"outchannels\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},\"caen792\":{\"address\":\"0xAAAA0000\",\"channels\":16,\"outchannels\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},\"sis\":{\"address\":\"0x38380800\",\"channels\":16},\"pio\":{\"address\":\"0xCCCC0000\",\"channels\":16}}",
                         "auto_load": true,
                         "auto_start": true,
                         "auto_init": true,
-                        "storage_type": 2,
-                        "storage_ageing": 3600,
-                        "default_schedule_delay": 1000000,	
-                        "DriverDescription": [],
-                        "AttrDesc": [
-                        ]
-            
+                        "cudk_thr_sch_delay": 1000000,
+                        "dsndk_storage_type": 2,
+                        "dsndk_storage_history_ageing": 36000,
+                        "dsndk_storage_history_time": 0,
+                        "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
+                        "attribute_value_descriptions": [{}]
+
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB004R",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB004R",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -297,7 +299,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB004L",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB004L",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -477,7 +479,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB002R",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB002R",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -657,7 +659,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB003D",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB003D",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -837,7 +839,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB003U",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB003U",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1017,7 +1019,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB002L",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB002L",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1197,7 +1199,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB001D",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB001D",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1377,7 +1379,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/SCRAPER/TARGET",
+                        "ndk_uid": "BTF/TL/SCRAPER/TARGET",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1557,7 +1559,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/DIPOLE/DHSTB002",
+                        "ndk_uid": "BTF/TL/DIPOLE/DHSTB002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1692,7 +1694,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB002",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1827,7 +1829,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB004",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB004",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -1962,7 +1964,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB101",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB101",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2097,7 +2099,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/DIPOLE/DHSTB001",
+                        "ndk_uid": "BTF/TL/DIPOLE/DHSTB001",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2232,7 +2234,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB001",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB001",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2367,7 +2369,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB003",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB003",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2502,7 +2504,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/CORRECTOR/CHHTB001",
+                        "ndk_uid": "BTF/TL/CORRECTOR/CHHTB001",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2547,7 +2549,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/CORRECTOR/CHHTB002",
+                        "ndk_uid": "BTF/TL/CORRECTOR/CHHTB002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2592,7 +2594,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/CORRECTOR/CVVTB002",
+                        "ndk_uid": "BTF/TL/CORRECTOR/CVVTB002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2637,7 +2639,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/CORRECTOR/CTMAIN0",
+                        "ndk_uid": "BTF/TL/CORRECTOR/CTMAIN0",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2679,7 +2681,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/QUADRUPOLE/QUATB102",
+                        "ndk_uid": "BTF/TL/QUADRUPOLE/QUATB102",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2813,9 +2815,9 @@
                             }
                         ]
                     },
-        
+
                     {
-                        "ndk_uid": "BTF/SCRAPER/SLTB001U",
+                        "ndk_uid": "BTF/TL/SCRAPER/SLTB001U",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -2995,7 +2997,7 @@
                         ]
                     },
                     {
-                        "ndk_uid": "BTF/CORRECTOR/CVVTB001",
+                        "ndk_uid": "BTF/TL/CORRECTOR/CVVTB001",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST_BTF",
                         "auto_load": true,
@@ -3064,12 +3066,12 @@
         }
     },
     "eu": {
-        "BTF/ALGO_FIT/CAM01": {
+        "BTF/DIAG/ALGO_FIT/CAM01": {
             "ndk_parent": "test-agent",
             "auto_load": true,
             "auto_init": true,
             "auto_start": true,
-            "cudk_load_param": "\"BTF/CAMERA/CAM01\"",
+            "cudk_load_param": "\"BTF/DIAG/CAMERA/CAM01\"",
             "cudk_thr_sch_delay": 1,
             "dsndk_storage_type": 18,
             "dsndk_storage_history_ageing": 36000,
@@ -3124,12 +3126,12 @@
                     "cudk_ds_attr_unit": "NA"
                 }
             ],
-            "ndk_uid": "BTF/ALGO_FIT/CAM01",
+            "ndk_uid": "BTF/DIAG/ALGO_FIT/CAM01",
             "ndk_type": "nt_root",
             "ndk_sub_type": "nt_script_eu"
 
         },
-     
+
         "BTF/HUNTERDOG/ALARM": {
             "ndk_uid": "BTF/HUNTERDOG/ALARM",
             "cudk_desc": "Imported from C:\\fakepath\\hunterDog.C",
