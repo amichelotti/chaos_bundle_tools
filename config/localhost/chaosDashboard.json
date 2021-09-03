@@ -6065,7 +6065,27 @@
             ]
         }
     },
-    "eu": {},
+    "eu": {
+        "ALGO/WAVE": {
+            "ndk_uid": "ALGO/WAVE",
+            "cudk_desc": "Imported from C:\\fakepath\\hunterDog.C",
+            "ndk_parent": "test-agent",
+            "control_unit_implementation": "sineWave.C",
+            "dsndk_storage_type": 18,
+            "cudk_load_param": "",
+            "cudk_prop": [],
+            "auto_load": true,
+            "auto_init": true,
+            "auto_start": true,
+            "cudk_thr_sch_delay": 1000000,
+            "dsndk_storage_history_ageing": 36000,
+            "dsndk_storage_live_time": 0,
+            "cudk_driver_description": [],
+            "ndk_type": "nt_root",
+            "ndk_sub_type": "nt_script_eu"
+        }
+    
+    },
     "snapshots": {},
     "scripts": {
         "sineWave.C": {
