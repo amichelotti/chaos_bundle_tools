@@ -21,7 +21,8 @@ USAGE
 
 wait_for() {
   for i in `seq $TIMEOUT` ; do
-    echo "Try $i to contact host:$HOST port:$PORT"
+    d=`date +%H:%M:%S`
+    echo "$d - Try $i to contact host:$HOST port:$PORT"
     nc -z "$HOST" "$PORT" > /dev/null 2>&1
     
     result=$?
