@@ -2,7 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 echo "* testing port $1:8091"
-if $DIR/wait-for.sh $1:8091 -t 80;then
+if $DIR/wait-for.sh $1:8091 -t 120;then
 echo "* init couchbase server $1"
 
 curl -u chaos:chaos2015 -v -X POST http://$1:8091/node/controller/setupServices -d 'services=data'
@@ -17,7 +17,6 @@ curl -f --silent --output /dev/null --show-error -X POST -u chaos:chaos2015 -d '
 #curl -u Administrator:chaos2015 http://$1:8091/pools/default/buckets
 else
     echo "## cannot access $1"
-    exit 1
 fi
 echo "* testing port $2:27017"
 if $DIR/wait-for.sh $2:27017 -t 60;then

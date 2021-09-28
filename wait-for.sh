@@ -23,7 +23,7 @@ wait_for() {
   for i in `seq $TIMEOUT` ; do
     d=`date +%H:%M:%S`
     echo "$d - Try $i to contact host:$HOST port:$PORT"
-    nc -z "$HOST" "$PORT" > /dev/null 2>&1
+    nc -zv "$HOST" "$PORT"
     
     result=$?
     if [ $result -eq 0 ] ; then
