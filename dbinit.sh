@@ -17,6 +17,7 @@ curl -f --silent --output /dev/null --show-error -X POST -u chaos:chaos2015 -d '
 #curl -u Administrator:chaos2015 http://$1:8091/pools/default/buckets
 else
     echo "## cannot access $1"
+    exit 1
 fi
 echo "* testing port $2:27017"
 if $DIR/wait-for.sh $2:27017 -t 60;then
