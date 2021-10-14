@@ -4846,6 +4846,7 @@
                             "cudk_driver_description_init_parameter": "{\"file_name\":\"newdafne.stat\",\"separator\":\" \"}"
                         }]
                     },
+
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/BPBA2001",
                         "ndk_type": "nt_control_unit",
@@ -5152,6 +5153,7 @@
                             }
                         ]
                     },
+                    
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/BPMSYNC",
                         "ndk_type": "nt_control_unit",

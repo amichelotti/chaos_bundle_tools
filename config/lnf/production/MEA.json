@@ -1,0 +1,285 @@
+{
+    "ndk_uid": "MEA",
+    "cu_desc": [{
+            "ndk_parent": "MEA",
+            "ndk_uid": "MEA/QUADRUPOLE/TEST001",
+            "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
+            "cudk_load_param": "",
+            "cudk_desc": "TEST OCEM IN SALA MEA",
+            "auto_load": true,
+            "auto_start": true,
+            "auto_init": true,
+            "dsndk_storage_type": 2,
+            "dsndk_storage_history_ageing": 600000,
+            "cudk_driver_description": [{
+                    "cudk_driver_description_name": "OcemDD",
+                    "cudk_driver_description_version": "1.0.0",
+                    "cudk_driver_description_init_parameter": "{\"channel\":{\"tcp\":\"192.168.192.20\",\"port\":4001},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":10,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"
+                }
+
+            ],
+            "attribute_value_descriptions": [{
+                    "cudk_ds_attr_name": "polFromSet",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "polSwSign",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "stbyOnPol",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "zeroOnStby",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "bypass",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "unit",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "",
+                    "cudk_default_value": "A"
+                },
+                {
+                    "cudk_ds_attr_name": "scale",
+                    "cudk_ds_max_range": "1000000",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "minimumWorkingValue",
+                    "cudk_ds_max_range": "700",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "maximumWorkingValue",
+                    "cudk_ds_max_range": "100",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "20"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThreshold",
+                    "cudk_ds_max_range": "10",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0.5"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThresholdTimeout",
+                    "cudk_ds_max_range": "2000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1000"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThresholdTimeout",
+                    "cudk_ds_max_range": "2000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1000"
+                },
+                {
+                    "cudk_ds_attr_name": "setTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "5000"
+                },
+                {
+                    "cudk_ds_attr_name": "getTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "5000"
+                },
+                {
+                    "cudk_ds_attr_name": "driverTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "10000"
+                },
+                {
+                    "cudk_ds_attr_name": "conversionFactor",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1.0"
+                },
+                {
+                    "cudk_ds_attr_name": "resolution",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0.001"
+                },
+                {
+                    "cudk_ds_attr_name": "current",
+                    "cudk_ds_max_range": "700",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "rampDownRate",
+                    "cudk_ds_max_range": "28",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "rampUpRate",
+                    "cudk_ds_max_range": "28",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                }
+            ]
+        },
+
+        {
+            "ndk_parent": "MEA",
+            "ndk_uid": "MEA/QUADRUPOLE/TEST002",
+            "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
+            "cudk_load_param": "",
+            "auto_load": true,
+            "auto_start": true,
+            "auto_init": true,
+            "dsndk_storage_type": 2,
+            "dsndk_storage_history_ageing": 600000,
+            "attribute_value_descriptions": [{
+                    "cudk_driver_description_name": "OcemDD",
+                    "cudk_driver_description_version": "1.0.0",
+                    "cudk_driver_description_init_parameter": "{\"channel\":{\"tcp\":\"192.168.192.20\",\"port\":4002},\"driver\":{\"protocol\":\"OcemProtocolScheduleCFQ\",\"slaveid\":11,\"feature\":1,\"min_curr\":0.0,\"max_curr\":280.0,\"maxcurr\":280.0,\"maxvoltage\":10.0,\"min_volt\":0.0,\"max_volt\":10.0}}"
+
+                }
+
+            ],
+            "attribute_value_descriptions": [{
+                    "cudk_ds_attr_name": "polFromSet",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "polSwSign",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "stbyOnPol",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "zeroOnStby",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "bypass",
+                    "cudk_ds_max_range": "1",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "unit",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "",
+                    "cudk_default_value": "A"
+                },
+                {
+                    "cudk_ds_attr_name": "scale",
+                    "cudk_ds_max_range": "1000000",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "minimumWorkingValue",
+                    "cudk_ds_max_range": "700",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "maximumWorkingValue",
+                    "cudk_ds_max_range": "100",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "20"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThreshold",
+                    "cudk_ds_max_range": "10",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0.5"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThresholdTimeout",
+                    "cudk_ds_max_range": "2000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1000"
+                },
+                {
+                    "cudk_ds_attr_name": "warningThresholdTimeout",
+                    "cudk_ds_max_range": "2000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1000"
+                },
+                {
+                    "cudk_ds_attr_name": "setTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "5000"
+                },
+                {
+                    "cudk_ds_attr_name": "getTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "5000"
+                },
+                {
+                    "cudk_ds_attr_name": "driverTimeout",
+                    "cudk_ds_max_range": "1200000000",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "10000"
+                },
+                {
+                    "cudk_ds_attr_name": "conversionFactor",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "1.0"
+                },
+                {
+                    "cudk_ds_attr_name": "resolution",
+                    "cudk_ds_max_range": "",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0.001"
+                },
+                {
+                    "cudk_ds_attr_name": "current",
+                    "cudk_ds_max_range": "700",
+                    "cudk_ds_min_range": "0",
+                    "cudk_default_value": "0"
+                },
+                {
+                    "cudk_ds_attr_name": "rampDownRate",
+                    "cudk_ds_max_range": "28",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                },
+                {
+                    "cudk_ds_attr_name": "rampUpRate",
+                    "cudk_ds_max_range": "28",
+                    "cudk_ds_min_range": "1",
+                    "cudk_default_value": "1"
+                }
+            ]
+        }
+    ]
+}
