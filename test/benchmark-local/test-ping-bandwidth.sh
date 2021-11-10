@@ -4,7 +4,7 @@ start_test
 USNAME=UnitServer
 NUS=5
 NCU=10
-META="kafka:9092"
+META="localhost:9092"
 MAXBUFFER=262144
 if [ -n "$1" ];then
     NUS=$1
