@@ -10,7 +10,7 @@ fi
 loglevel=""
 maxsize=8191
 maxthread=8
-loop=10000
+loop=1000
 page_len=0
 nerror=1
 dataset_name=PERFORMANCE_IO
