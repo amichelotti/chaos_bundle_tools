@@ -15,7 +15,7 @@ if ! check_proc mds;then
 	nok_mesg "MDS is unexpectly dead!!"
 	end_test 1 "MDS is unexpectly dead!!"
 fi
-if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 50 -g -t 1;then
+if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 50 -t 2 -s 1024;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
@@ -25,8 +25,6 @@ else
 #    fi
        
     nok_mesg "testio"
-    info_mesg "dumping " "$CHAOS_PREFIX/log/chaos_daq.json"
-    mongoexport --host mongo --db chaos --collection daq --out $CHAOS_PREFIX/log/chaos_daq.json
     end_test 1 "TESTIO FAILED"
     exit 1
 fi
