@@ -15,7 +15,7 @@ if ! check_proc mds;then
 	nok_mesg "MDS is unexpectly dead!!"
 	end_test 1 "MDS is unexpectly dead!!"
 fi
-if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 50 -t 2;then
+if $CHAOS_PREFIX/tools/testio.sh -m $CHAOS_MDS -l 50 -t 2 -s 2048;then
     ok_mesg "testio"
     mv *.png $CHAOS_PREFIX/log
 else
