@@ -4,7 +4,7 @@ start_test
 USNAME=UnitServer
 NUS=5
 NCU=10
-META="localhost:5000"
+META="localhost:9092"
 MAXBUFFER=262144
 if [ -n "$1" ];then
     NUS=$1
@@ -34,7 +34,7 @@ if [ -z $CHAOS_EXTERNAL_MDS ];then
     fi
 fi
 
-if launch_us_cu 1 1 "--metadata-server $META $ADDITIONAL_FLAGS" $USNAME $US_TEST 1;then
+if launch_us_cu 1 1 "--msg-broker-server $META $ADDITIONAL_FLAGS" $USNAME $US_TEST 1;then
     if ! check_proc $USNAME;then
 	error_mesg "$USNAME quitted"
 	end_test 1 "$USNAME quitted"
@@ -63,7 +63,7 @@ fi
 
 while ((sched>0));do
     info_mesg "${#us_proc[@]} Unit(s) running correctly " "performing bandwidth test sched $sched us"
-    cmd="$CHAOS_PREFIX/bin/MessClient --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file --log-file $CHAOS_PREFIX/log/MessClient-$sched.$MYPID.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.$MYPID.stdout" 
+    cmd="$CHAOS_PREFIX/bin/MessClient --msgopt-consumer-kvp=allow.auto.create.topics:true --node-uid MESS_CLIENT --max $MAXBUFFER --mess_device_id $US_TEST/TEST_CU_0 --log-on-file 1 --log-file $CHAOS_PREFIX/log/MessClient-$sched.$MYPID.log $CHAOS_OVERALL_OPT --scheduler_delay $sched --bandwidth_test --test_repetition 1000 --report $CHAOS_PREFIX/log/report-$US_TEST-bd-$sched >& $CHAOS_PREFIX/log/MessClient-$US_TEST-$sched.$MYPID.stdout" 
     if run_proc "$cmd" "MessClient";then
 	    ok_mesg "MessClient process with $sched"
     else
