@@ -16,7 +16,7 @@ nerror=1
 dataset_name=PERFORMANCE_IO
 from_thread=1
 broker_server="localhost:9092"
-waitfor=80
+waitfor=70
 
 usage(){
     echo -e "Usage is $0 [-m <broker> [$broker_server]][-f <from_threads($from_thread)> start test using the specified number of threads] [-n dataset name ($dataset_name)] [-w <waitfor (s)> [$waitfor]][-l <maxloop($loop)>][ -t <maxthreads($maxthread)> ] [ -s <maxsize($maxsize)> ] [-g: enable log debug] [-p <page len>] [-e <exit after nerrors($nerror)>]"
