@@ -16,7 +16,7 @@ nerror=1
 dataset_name=PERFORMANCE_IO
 from_thread=1
 broker_server="localhost:9092"
-waitfor=80
+waitfor=70
 
 usage(){
     echo -e "Usage is $0 [-m <broker> [$broker_server]][-f <from_threads($from_thread)> start test using the specified number of threads] [-n dataset name ($dataset_name)] [-w <waitfor (s)> [$waitfor]][-l <maxloop($loop)>][ -t <maxthreads($maxthread)> ] [ -s <maxsize($maxsize)> ] [-g: enable log debug] [-p <page len>] [-e <exit after nerrors($nerror)>]"
@@ -90,7 +90,7 @@ do
     echo "set title '$i threads'">>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     echo "plot '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:3 lc rgb \"green\" with lines title 'push rate (cycle/s)','$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:4 lc rgb \"cyan\" with lines title 'pull rate (cycle/s)', '$CHAOS_PREFIX/log/$csvprefix-$i.csv' using 2:10 lc rgb \"red\" with lines title  'errors'" >>  $CHAOS_PREFIX/log/$csvprefix.gnuplot  
     if [ -n $loglevel ];then
-	$CHAOS_PREFIX/bin/testDataSetIO --msgopt-consumer-kvp=allow.auto.create.topics:true --msgopt-consumer-kvp=max.partition.fetch.bytes:15048576 --msgopt-consumer-kvp=fetch.message.max.bytes:15048576 --node-uid testio --dsname $dataset_name --wait $waitfor --points 0 --pointmax $maxsize --nerror $nerror --msg-broker-server $broker_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
+	valgrind --log-file=$CHAOS_PREFIX/log/testDataSetIO.$i.valgrind.out $CHAOS_PREFIX/bin/testDataSetIO --msgopt-consumer-kvp=allow.auto.create.topics:true --msgopt-consumer-kvp=max.partition.fetch.bytes:15048576 --msgopt-consumer-kvp=fetch.message.max.bytes:15048576 --node-uid testio --dsname $dataset_name --wait $waitfor --points 0 --pointmax $maxsize --nerror $nerror --msg-broker-server $broker_server --nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv --log-on-file 1 --log-file $CHAOS_PREFIX/log/$csvprefix-$i.log --log-level debug
 	exit_status=$?
     else
 	$CHAOS_PREFIX/bin/testDataSetIO --msgopt-consumer-kvp=allow.auto.create.topics:true --msgopt-consumer-kvp=max.partition.fetch.bytes:15048576 --msgopt-consumer-kvp=fetch.message.max.bytes:15048576 --node-uid testio --nerror $nerror --wait $waitfor --dsname $dataset_name --points 0 --pointmax $maxsize --msg-broker-server $broker_server--nthread $i --pointincr 2 --loop $loop --page $page_len --report $CHAOS_PREFIX/log/$csvprefix-$i.csv
