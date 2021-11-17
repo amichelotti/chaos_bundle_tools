@@ -26,7 +26,7 @@ usage(){
 DATE=`date '+%Y-%m-%d-%H-%M-%S'`
 
 exit_status=0
-while getopts f:e:p:n:m:hl:t:s:gw: opt; do
+while getopts f:e:p:n:m:hl:t:s:gw:d opt; do
     case $opt in
 	f)
 	    from_thread=$OPTARG
@@ -60,6 +60,7 @@ while getopts f:e:p:n:m:hl:t:s:gw: opt; do
 	    ;;
 	d)
 	    debug="valgrind --log-file=$CHAOS_PREFIX/log/testDataSetIO.valgrind.out"
+		echo "* enable valgrind"
 	    ;;
 	h)
 	    usage
