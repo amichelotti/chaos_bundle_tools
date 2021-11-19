@@ -59,8 +59,9 @@ while getopts f:e:p:n:m:hl:t:s:gw:d opt; do
 	    loglevel="enabled"
 	    ;;
 	d)
-	    debug="valgrind --log-file=$CHAOS_PREFIX/log/testDataSetIO.valgrind.out"
-		echo "* enable valgrind"
+			export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libasan.so.6
+	 #   debug="valgrind --log-file=$CHAOS_PREFIX/log/testDataSetIO.valgrind.out"
+	 		echo "* enable debug checks"
 	    ;;
 	h)
 	    usage
