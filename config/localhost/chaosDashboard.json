@@ -5763,7 +5763,7 @@
                         "cudk_driver_description": [{
                             "cudk_driver_description_name": "ShapeSim",
                             "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"/usr/local/chaos/chaos-distrib/html/img/testimage1300-870.jpeg\",\"framerate\":2}}"
+                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"/usr/local/chaos/chaos-distrib/html/chaos_dashboard/img/testimage1300-870.jpeg\",\"framerate\":2}}"
                         }],
                         "attribute_value_descriptions": [{
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
