@@ -5746,6 +5746,58 @@
                         ]
                     },
                     {
+                        "ndk_uid": "TEST/CAMERA/TEST01",
+                        "ndk_type": "nt_control_unit",
+                        "ndk_parent": "TEST",
+                        "auto_load": true,
+                        "auto_init": true,
+                        "auto_start": true,
+                        "cudk_load_param": "{\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\"}",
+                        "cudk_thr_sch_delay": 1000000,
+                        "dsndk_storage_type": 2,
+                        "dsndk_storage_history_ageing": 1,
+                        "dsndk_storage_history_time": 0,
+                        "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
+                        "control_unit_implementation": "RTCameraBase",
+                        "cudk_driver_description": [{
+                            "cudk_driver_description_name": "ShapeSim",
+                            "cudk_driver_description_version": "1.0.0",
+                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"/usr/local/chaos/chaos-distrib/html/img/testimage1300-870.jpeg\",\"framerate\":2}}"
+                        }],
+                        "attribute_value_descriptions": [{
+                                "cudk_ds_attr_name": "TRIGGER_MODE",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "WIDTH",
+                                "cudk_default_value": 1300,
+                                "cudk_ds_max_range": "2048",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "HEIGHT",
+                                "cudk_default_value": "870",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "OFFSETX",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "OFFSETY",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            }
+                        ]
+                    },
+                    {
                         "ndk_uid": "FLAME/CAMERA/LASER002",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST",
