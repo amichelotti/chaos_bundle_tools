@@ -5703,7 +5703,7 @@
                         "cudk_load_param": "{\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\"}",
                         "cudk_thr_sch_delay": 1000000,
                         "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 1,
+                        "dsndk_storage_history_ageing": 0,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
@@ -5755,7 +5755,7 @@
                         "cudk_load_param": "{\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\"}",
                         "cudk_thr_sch_delay": 1000000,
                         "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 1,
+                        "dsndk_storage_history_ageing": 0,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
@@ -5807,7 +5807,7 @@
                         "cudk_load_param": "{\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\"}",
                         "cudk_thr_sch_delay": 1000000,
                         "dsndk_storage_type": 2,
-                        "dsndk_storage_history_ageing": 1,
+                        "dsndk_storage_history_ageing": 0,
                         "dsndk_storage_history_time": 0,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
@@ -5816,6 +5816,58 @@
                             "cudk_driver_description_name": "ShapeSim",
                             "cudk_driver_description_version": "1.0.0",
                             "cudk_driver_description_init_parameter": "{\"serial\":\"21278018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":75,\"centerx\":512,\"centery\":334,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
+                        }],
+                        "attribute_value_descriptions": [{
+                                "cudk_ds_attr_name": "TRIGGER_MODE",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "WIDTH",
+                                "cudk_default_value": 640,
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "HEIGHT",
+                                "cudk_default_value": "480",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "OFFSETX",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            },
+                            {
+                                "cudk_ds_attr_name": "OFFSETY",
+                                "cudk_default_value": "0",
+                                "cudk_ds_max_range": "1024",
+                                "cudk_ds_min_range": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "ndk_uid": "FLAME/CAMERA/LASER003",
+                        "ndk_type": "nt_control_unit",
+                        "ndk_parent": "TEST",
+                        "auto_load": true,
+                        "auto_init": true,
+                        "auto_start": true,
+                        "cudk_load_param": "{\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\"}",
+                        "cudk_thr_sch_delay": 1000000,
+                        "dsndk_storage_type": 2,
+                        "dsndk_storage_history_ageing": 0,
+                        "dsndk_storage_history_time": 0,
+                        "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
+                        "control_unit_implementation": "RTCameraBase",
+                        "cudk_driver_description": [{
+                            "cudk_driver_description_name": "ShapeSim",
+                            "cudk_driver_description_version": "1.0.0",
+                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":75,\"centerx\":420,\"centery\":300,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
                         }],
                         "attribute_value_descriptions": [{
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
