@@ -37,4 +37,4 @@ done
 echo "</table>" 
 echo "</body>" 
 echo "</html>"
-popd
+popd >& /dev/null
