@@ -1,5 +1,6 @@
 #/bin/bash
 find /usr/local/chaos/chaos-distrib -name "*.txt" -exec rm \{\} \;
+find /usr/local/chaos/chaos-distrib -name "*.log" -exec rm \{\} \;
 echo "* strip symbols"
 strip --strip-unneeded `find /usr/local/chaos/chaos-distrib/lib -name "*" -type f` >& /dev/null
 strip --strip-unneeded `find /usr/local/chaos/chaos-distrib/lib64 -name "*" -type f` >& /dev/null
