@@ -1,0 +1,8 @@
+{
+    "grafana":{
+        "href":"http://flame-grafana.chaos.lnf.infn.it",
+        "title":"Grafana Flame",
+        "user":"flame",
+        "password":"notchaos"
+    }
+}
