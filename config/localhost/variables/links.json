@@ -1,6 +1,6 @@
 {
     "grafana":{
-        "href":"",
-        "title":"Grafana test"
+        "href":"mikelinux:3000",
+        "title":"Grafana Test"
     }
 }
