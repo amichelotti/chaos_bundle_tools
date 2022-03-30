@@ -5711,7 +5711,7 @@
                         "cudk_driver_description": [{
                             "cudk_driver_description_name": "ShapeSim",
                             "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478016\",\"FRAMEBUFFER_ENCODING\":\"CV_8UC1\",\"SHAPE\":{\"type\":\"ellipse\",\"width\":2560,\"height\":1920,\"framerate\":10,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}}"
+                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478016\",\"FRAMEBUFFER_ENCODING\":\"CV_8UC1\",\"SHAPE\":{\"type\":\"ellipse\",\"width\":2560,\"height\":1920,\"framerate\":10,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
                         }],
                         "attribute_value_descriptions": [{
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
@@ -5791,7 +5791,7 @@
                         "cudk_driver_description": [{
                             "cudk_driver_description_name": "ShapeSim",
                             "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478019\",\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\",\"SHAPE\":{\"type\":\"ellipse\",\"width\":2560,\"height\":1920,\"framerate\":10,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}}"
+                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478019\",\"FRAMEBUFFER_ENCODING\":\"CV_8UC3\",\"SHAPE\":{\"type\":\"ellipse\",\"width\":2560,\"height\":1920,\"framerate\":10,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
                         }],
                         "attribute_value_descriptions": [{
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
