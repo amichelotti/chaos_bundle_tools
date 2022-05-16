@@ -2877,7 +2877,7 @@
                         "cudk_driver_description": [{
                             "cudk_driver_description_name": "ActuatorSim",
                             "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr14c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":1,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr144c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":1,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
                         }],
                         "attribute_value_descriptions": [{
                                 "cudk_ds_attr_name": "position",
