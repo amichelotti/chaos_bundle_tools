@@ -87,7 +87,7 @@
                         "cudk_driver_description": [{
                             "cudk_driver_description_name": "ChaosActuatorExternalDD",
                             "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
+                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":66,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
                             "cudk_driver_prop": [{
                                 "name": "",
                                 "value": ""
