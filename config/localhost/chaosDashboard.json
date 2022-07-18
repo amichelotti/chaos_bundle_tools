@@ -9,17 +9,19 @@
                 "ndk_rest_port": "8076",
                 "ndk_host_name": "chaost-camera01.chaos.lnf.infn.it",
                 "andk_working_directory": "/usr/local/chaos/chaos-distrib",
-                "andk_node_associated": [{
-                    "association_uid": "1057f24f",
-                    "ndk_uid": "TEST",
-                    "node_launch_cmd_line": "UnitServer",
-                    "node_init_cfg": "unit-gateway-enable=true\nlog-level=debug\nlog-max-size=100\n",
-                    "node_auto_start": true,
-                    "node_keep_alive": false,
-                    "node_log_on_console": false,
-                    "node_script_id": "",
-                    "node_workdir": ""
-                }]
+                "andk_node_associated": [
+                    {
+                        "association_uid": "1057f24f",
+                        "ndk_uid": "TEST",
+                        "node_launch_cmd_line": "UnitServer",
+                        "node_init_cfg": "unit-gateway-enable=true\nlog-level=debug\nlog-max-size=100\n",
+                        "node_auto_start": true,
+                        "node_keep_alive": false,
+                        "node_log_on_console": false,
+                        "node_script_id": "",
+                        "node_workdir": ""
+                    }
+                ]
             }
         }
     },
@@ -27,7 +29,8 @@
         "TEST_EXTERNAL": {
             "us_desc": {
                 "ndk_uid": "TEST_EXTERNAL",
-                "cu_desc": [{
+                "cu_desc": [
+                    {
                         "ndk_uid": "TEST/MOT/EXTMOT003",
                         "ndk_parent": "TEST_EXTERNAL",
                         "ndk_type": "nt_control_unit",
@@ -41,16 +44,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -84,16 +92,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":66,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":66,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -128,16 +141,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -172,16 +190,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -215,16 +238,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":7}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":7}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -258,16 +286,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -301,16 +334,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -344,16 +382,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -389,28 +432,32 @@
         "BENCHMARK_UNIT_0": {
             "us_desc": {
                 "ndk_uid": "BENCHMARK_UNIT_0",
-                "cu_desc": [{
-                    "ndk_uid": "BENCHMARK_UNIT_0/TEST_CU_0",
-                    "ndk_type": "nt_control_unit",
-                    "ndk_sub_type": "nt_sc_cu",
-                    "ndk_parent": "BENCHMARK_UNIT_0",
-                    "auto_load": true,
-                    "auto_init": true,
-                    "auto_start": true,
-                    "cudk_load_param": "",
-                    "cudk_thr_sch_delay": 1000000,
-                    "dsndk_storage_type": 2,
-                    "dsndk_storage_history_ageing": 36000,
-                    "dsndk_storage_history_time": 0,
-                    "dsndk_storage_live_time": 0,
-                    "dsndk_update_anyway": 2000,
-                    "control_unit_implementation": "ChaosMESS",
-                    "cudk_driver_description": [{
-                        "cudk_driver_description_name": "DummyDriver",
-                        "cudk_driver_description_version": "1.0.0",
-                        "cudk_driver_description_init_parameter": ""
-                    }]
-                }]
+                "cu_desc": [
+                    {
+                        "ndk_uid": "BENCHMARK_UNIT_0/TEST_CU_0",
+                        "ndk_type": "nt_control_unit",
+                        "ndk_sub_type": "nt_sc_cu",
+                        "ndk_parent": "BENCHMARK_UNIT_0",
+                        "auto_load": true,
+                        "auto_init": true,
+                        "auto_start": true,
+                        "cudk_load_param": "",
+                        "cudk_thr_sch_delay": 1000000,
+                        "dsndk_storage_type": 2,
+                        "dsndk_storage_history_ageing": 36000,
+                        "dsndk_storage_history_time": 0,
+                        "dsndk_storage_live_time": 0,
+                        "dsndk_update_anyway": 2000,
+                        "control_unit_implementation": "ChaosMESS",
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "DummyDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": ""
+                            }
+                        ]
+                    }
+                ]
             },
             "_id": {
                 "$oid": "612faea7104bb821d66eb2bd"
@@ -425,7 +472,8 @@
         "FLAME": {
             "us_desc": {
                 "ndk_uid": "FLAME",
-                "cu_desc": [{
+                "cu_desc": [
+                    {
                         "ndk_uid": "FLAME/CAMERA/LASERCAM003",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "FLAME",
@@ -440,12 +488,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -492,12 +543,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -544,12 +598,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -596,12 +653,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -648,12 +708,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -700,12 +763,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -752,12 +818,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -804,12 +873,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -856,12 +928,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -908,12 +983,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":10,\"err_centerx\":10,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -960,12 +1038,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr83c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr83c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1014,12 +1095,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr12c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr12c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1068,12 +1152,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr15c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr15c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1122,12 +1209,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr14c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr14c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1177,7 +1267,8 @@
         "TEST": {
             "us_desc": {
                 "ndk_uid": "TEST",
-                "cu_desc": [{
+                "cu_desc": [
+                    {
                         "ndk_uid": "TEST/QUADRUPOLE/QUADEXT01",
                         "ndk_parent": "TEST",
                         "ndk_type": "nt_control_unit",
@@ -1191,16 +1282,21 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1},\"device_param\":{\"slaveid\":12}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1},\"device_param\":{\"slaveid\":12}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -1331,16 +1427,21 @@
                         "dsndk_storage_history_ageing": 3600,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -1470,16 +1571,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":1}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1514,16 +1620,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":3}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -1557,16 +1668,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -1600,16 +1716,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":2}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1644,16 +1765,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":6}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -1687,16 +1813,21 @@
                         "dsndk_storage_history_ageing": 36000,
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosActuatorExternalDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosActuatorExternalDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":5}}",
+                                "cudk_driver_prop": [
+                                    {
+                                        "name": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "200",
@@ -1763,12 +1894,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr73c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr73c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":31,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -1959,12 +2093,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr113c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":34,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr113c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":34,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -2139,12 +2276,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr1336c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":35,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr1336c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":35,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -2319,12 +2459,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr93c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":32,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr93c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":32,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -2498,12 +2641,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr563c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":41,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr563c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":41,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -2694,12 +2840,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr17c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":2,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr17c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":2,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -2874,12 +3023,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr12c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":65,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr12c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":65,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -3054,12 +3206,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr13c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":215,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"1.5\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyr13c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":215,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"1.5\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -3234,12 +3389,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":6,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -3369,12 +3527,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr05\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -3504,12 +3665,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":3,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -3639,12 +3803,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":14,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -3774,12 +3941,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":100,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":700,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":100,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -3909,12 +4079,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr1\",\"slaveid\":10,\"feature\":1,\"min_curr\":0,\"max_curr\":280,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -4044,12 +4217,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":1,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -4179,12 +4355,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr08\",\"slaveid\":13,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "current",
                                 "cudk_ds_attr_wrn_thr": "1.0",
                                 "cudk_ds_attr_err_thr": "10.0",
@@ -4224,12 +4403,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr98\",\"slaveid\":6,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "current",
                                 "cudk_ds_attr_wrn_thr": "1.0",
                                 "cudk_ds_attr_err_thr": "10.0",
@@ -4269,12 +4451,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr28\",\"slaveid\":66,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "current",
                                 "cudk_ds_attr_wrn_thr": "1.0",
                                 "cudk_ds_attr_err_thr": "10.0",
@@ -4314,12 +4499,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr38\",\"slaveid\":0,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "current",
                                 "cudk_ds_attr_wrn_thr": "1.0",
                                 "cudk_ds_attr_err_thr": "10.0",
@@ -4356,12 +4544,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr02\",\"slaveid\":4,\"feature\":1,\"min_curr\":0,\"max_curr\":100,\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -4491,12 +4682,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":12}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ChaosPowerSupplyExtDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":12}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "polFromSet",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1",
@@ -4626,12 +4820,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "334,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "334,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4660,13 +4857,14 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "DataImport",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "FilePosixDataImporterDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"file_name\":\"newdafne.stat\",\"separator\":\" \"}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "FilePosixDataImporterDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"file_name\":\"newdafne.stat\",\"separator\":\" \"}"
+                            }
+                        ]
                     },
-
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/BPBA2001",
                         "ndk_type": "nt_control_unit",
@@ -4682,12 +4880,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "4,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "4,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4716,12 +4917,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "5,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "5,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4750,12 +4954,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "6,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "6,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4784,12 +4991,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "7,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "7,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4818,12 +5028,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "8,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "8,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4852,12 +5065,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "9,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "9,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4886,12 +5102,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "10,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "10,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}",
                                 "cudk_ds_max_range": "",
@@ -4920,12 +5139,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "11,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "11,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}",
                                 "cudk_ds_max_range": "",
@@ -4954,12 +5176,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "12,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "12,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[9.8435 ,-0.022408,0.00014638 ,0.034859 ,-1.4584e-6  ,-9.9279e-6,-1.15991e-5,1.94837e-7],\"coeff_v\":[32.0137,0.0432143,0.000222447,-0.339764,-0.000318269,0.00167884]}",
                                 "cudk_ds_max_range": "",
@@ -4973,7 +5198,6 @@
                             }
                         ]
                     },
-                    
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/BPMSYNC",
                         "ndk_type": "nt_control_unit",
@@ -4989,11 +5213,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "SCDafneAccumulatorBPMSync",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "remoteGroupAccessDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "ACCUMULATOR/BPM/BPSA1001/config ACCUMULATOR/BPM/BPSA1001/VA ACCUMULATOR/BPM/BPSA1001/VB ACCUMULATOR/BPM/BPSA1001/VC ACCUMULATOR/BPM/BPSA1001/VD ACCUMULATOR/BPM/BPSA1001/SUM ACCUMULATOR/BPM/BPSA1001/X_ACQ ACCUMULATOR/BPM/BPSA1001/Y_ACQ ACCUMULATOR/BPM/BPSA1001/VA_ACQ ACCUMULATOR/BPM/BPSA1001/VB_ACQ ACCUMULATOR/BPM/BPSA1001/VC_ACQ ACCUMULATOR/BPM/BPSA1001/VD_ACQ ACCUMULATOR/BPM/BPSA1001/X ACCUMULATOR/BPM/BPSA1001/Y ACCUMULATOR/BPM/BPSA1001/MODE ACCUMULATOR/BPM/BPSA1001/SAMPLES ACCUMULATOR/BPM/BPSA1001/ACQUISITION ACCUMULATOR/BPM/BPSA1001/MT ACCUMULATOR/BPM/BPSA2001/config ACCUMULATOR/BPM/BPSA2001/VA ACCUMULATOR/BPM/BPSA2001/VB ACCUMULATOR/BPM/BPSA2001/VC ACCUMULATOR/BPM/BPSA2001/VD ACCUMULATOR/BPM/BPSA2001/SUM ACCUMULATOR/BPM/BPSA2001/X_ACQ ACCUMULATOR/BPM/BPSA2001/Y_ACQ ACCUMULATOR/BPM/BPSA2001/VA_ACQ ACCUMULATOR/BPM/BPSA2001/VB_ACQ ACCUMULATOR/BPM/BPSA2001/VC_ACQ ACCUMULATOR/BPM/BPSA2001/VD_ACQ ACCUMULATOR/BPM/BPSA2001/X ACCUMULATOR/BPM/BPSA2001/Y ACCUMULATOR/BPM/BPSA2001/MODE ACCUMULATOR/BPM/BPSA2001/SAMPLES ACCUMULATOR/BPM/BPSA2001/ACQUISITION ACCUMULATOR/BPM/BPSA2001/MT ACCUMULATOR/BPM/BPSA3001/config ACCUMULATOR/BPM/BPSA3001/VA ACCUMULATOR/BPM/BPSA3001/VB ACCUMULATOR/BPM/BPSA3001/VC ACCUMULATOR/BPM/BPSA3001/VD ACCUMULATOR/BPM/BPSA3001/SUM ACCUMULATOR/BPM/BPSA3001/X_ACQ ACCUMULATOR/BPM/BPSA3001/Y_ACQ ACCUMULATOR/BPM/BPSA3001/VA_ACQ ACCUMULATOR/BPM/BPSA3001/VB_ACQ ACCUMULATOR/BPM/BPSA3001/VC_ACQ ACCUMULATOR/BPM/BPSA3001/VD_ACQ ACCUMULATOR/BPM/BPSA3001/X ACCUMULATOR/BPM/BPSA3001/Y ACCUMULATOR/BPM/BPSA3001/MODE ACCUMULATOR/BPM/BPSA3001/SAMPLES ACCUMULATOR/BPM/BPSA3001/ACQUISITION ACCUMULATOR/BPM/BPSA3001/MT ACCUMULATOR/BPM/BPSA4001/config ACCUMULATOR/BPM/BPSA4001/VA ACCUMULATOR/BPM/BPSA4001/VB ACCUMULATOR/BPM/BPSA4001/VC ACCUMULATOR/BPM/BPSA4001/VD ACCUMULATOR/BPM/BPSA4001/SUM ACCUMULATOR/BPM/BPSA4001/X_ACQ ACCUMULATOR/BPM/BPSA4001/Y_ACQ ACCUMULATOR/BPM/BPSA4001/VA_ACQ  ACCUMULATOR/BPM/BPSA4001/VB_ACQ ACCUMULATOR/BPM/BPSA4001/VC_ACQ ACCUMULATOR/BPM/BPSA4001/VD_ACQ ACCUMULATOR/BPM/BPSA4001/X ACCUMULATOR/BPM/BPSA4001/Y ACCUMULATOR/BPM/BPSA4001/MODE ACCUMULATOR/BPM/BPSA4001/SAMPLES ACCUMULATOR/BPM/BPSA4001/ACQUISITION ACCUMULATOR/BPM/BPSA4001/MT ACCUMULATOR/BPM/BPBA1001/config ACCUMULATOR/BPM/BPBA1001/VA ACCUMULATOR/BPM/BPBA1001/VB ACCUMULATOR/BPM/BPBA1001/VC ACCUMULATOR/BPM/BPBA1001/VD ACCUMULATOR/BPM/BPBA1001/SUM ACCUMULATOR/BPM/BPBA1001/X_ACQ ACCUMULATOR/BPM/BPBA1001/Y_ACQ ACCUMULATOR/BPM/BPBA1001/VA_ACQ ACCUMULATOR/BPM/BPBA1001/VB_ACQ ACCUMULATOR/BPM/BPBA1001/VC_ACQ ACCUMULATOR/BPM/BPBA1001/VD_ACQ ACCUMULATOR/BPM/BPBA1001/X ACCUMULATOR/BPM/BPBA1001/Y ACCUMULATOR/BPM/BPBA1001/MODE ACCUMULATOR/BPM/BPBA1001/SAMPLES ACCUMULATOR/BPM/BPBA1001/ACQUISITION ACCUMULATOR/BPM/BPBA1001/MT ACCUMULATOR/BPM/BPBA2002/config ACCUMULATOR/BPM/BPBA2002/VA ACCUMULATOR/BPM/BPBA2002/VB ACCUMULATOR/BPM/BPBA2002/VC ACCUMULATOR/BPM/BPBA2002/VD ACCUMULATOR/BPM/BPBA2002/SUM ACCUMULATOR/BPM/BPBA2002/X_ACQ ACCUMULATOR/BPM/BPBA2002/Y_ACQ ACCUMULATOR/BPM/BPBA2002/VA_ACQ ACCUMULATOR/BPM/BPBA2002/VB_ACQ ACCUMULATOR/BPM/BPBA2002/VC_ACQ ACCUMULATOR/BPM/BPBA2002/VD_ACQ ACCUMULATOR/BPM/BPBA2002/X ACCUMULATOR/BPM/BPBA2002/Y ACCUMULATOR/BPM/BPBA2002/MODE ACCUMULATOR/BPM/BPBA2002/SAMPLES ACCUMULATOR/BPM/BPBA2002/ACQUISITION ACCUMULATOR/BPM/BPBA2002/MT ACCUMULATOR/BPM/BPBA1002/config ACCUMULATOR/BPM/BPBA1002/VA ACCUMULATOR/BPM/BPBA1002/VB ACCUMULATOR/BPM/BPBA1002/VC ACCUMULATOR/BPM/BPBA1002/VD ACCUMULATOR/BPM/BPBA1002/SUM ACCUMULATOR/BPM/BPBA1002/X_ACQ ACCUMULATOR/BPM/BPBA1002/Y_ACQ ACCUMULATOR/BPM/BPBA1002/VA_ACQ ACCUMULATOR/BPM/BPBA1002/VB_ACQ ACCUMULATOR/BPM/BPBA1002/VC_ACQ ACCUMULATOR/BPM/BPBA1002/VD_ACQ ACCUMULATOR/BPM/BPBA1002/X ACCUMULATOR/BPM/BPBA1002/Y ACCUMULATOR/BPM/BPBA1002/MODE ACCUMULATOR/BPM/BPBA1002/SAMPLES ACCUMULATOR/BPM/BPBA1002/ACQUISITION ACCUMULATOR/BPM/BPBA1002/MT ACCUMULATOR/BPM/BPBA2001/config ACCUMULATOR/BPM/BPBA2001/VA ACCUMULATOR/BPM/BPBA2001/VB ACCUMULATOR/BPM/BPBA2001/VC ACCUMULATOR/BPM/BPBA2001/VD ACCUMULATOR/BPM/BPBA2001/SUM ACCUMULATOR/BPM/BPBA2001/X_ACQ ACCUMULATOR/BPM/BPBA2001/Y_ACQ ACCUMULATOR/BPM/BPBA2001/VA_ACQ ACCUMULATOR/BPM/BPBA2001/VB_ACQ ACCUMULATOR/BPM/BPBA2001/VC_ACQ ACCUMULATOR/BPM/BPBA2001/VD_ACQ ACCUMULATOR/BPM/BPBA2001/X ACCUMULATOR/BPM/BPBA2001/Y ACCUMULATOR/BPM/BPBA2001/MODE ACCUMULATOR/BPM/BPBA2001/SAMPLES ACCUMULATOR/BPM/BPBA2001/ACQUISITION ACCUMULATOR/BPM/BPBA2001/MT ACCUMULATOR/BPM/BPBA4001/config ACCUMULATOR/BPM/BPBA4001/VA ACCUMULATOR/BPM/BPBA4001/VB ACCUMULATOR/BPM/BPBA4001/VC ACCUMULATOR/BPM/BPBA4001/VD ACCUMULATOR/BPM/BPBA4001/SUM ACCUMULATOR/BPM/BPBA4001/X_ACQ ACCUMULATOR/BPM/BPBA4001/Y_ACQ ACCUMULATOR/BPM/BPBA4001/VA_ACQ ACCUMULATOR/BPM/BPBA4001/VB_ACQ ACCUMULATOR/BPM/BPBA4001/VC_ACQ ACCUMULATOR/BPM/BPBA4001/VD_ACQ ACCUMULATOR/BPM/BPBA4001/X ACCUMULATOR/BPM/BPBA4001/Y ACCUMULATOR/BPM/BPBA4001/MODE ACCUMULATOR/BPM/BPBA4001/SAMPLES ACCUMULATOR/BPM/BPBA4001/ACQUISITION ACCUMULATOR/BPM/BPBA4001/MT ACCUMULATOR/BPM/BPBA3001/config ACCUMULATOR/BPM/BPBA3001/VA ACCUMULATOR/BPM/BPBA3001/VB ACCUMULATOR/BPM/BPBA3001/VC ACCUMULATOR/BPM/BPBA3001/VD ACCUMULATOR/BPM/BPBA3001/SUM ACCUMULATOR/BPM/BPBA3001/X_ACQ ACCUMULATOR/BPM/BPBA3001/Y_ACQ ACCUMULATOR/BPM/BPBA3001/VA_ACQ ACCUMULATOR/BPM/BPBA3001/VB_ACQ ACCUMULATOR/BPM/BPBA3001/VC_ACQ ACCUMULATOR/BPM/BPBA3001/VD_ACQ ACCUMULATOR/BPM/BPBA3001/X ACCUMULATOR/BPM/BPBA3001/Y ACCUMULATOR/BPM/BPBA3001/MODE ACCUMULATOR/BPM/BPBA3001/SAMPLES ACCUMULATOR/BPM/BPBA3001/ACQUISITION ACCUMULATOR/BPM/BPBA3001/MT ACCUMULATOR/BPM/BPBA4002/config ACCUMULATOR/BPM/BPBA4002/VA ACCUMULATOR/BPM/BPBA4002/VB ACCUMULATOR/BPM/BPBA4002/VC ACCUMULATOR/BPM/BPBA4002/VD ACCUMULATOR/BPM/BPBA4002/SUM ACCUMULATOR/BPM/BPBA4002/X_ACQ ACCUMULATOR/BPM/BPBA4002/Y_ACQ ACCUMULATOR/BPM/BPBA4002/VA_ACQ ACCUMULATOR/BPM/BPBA4002/VB_ACQ ACCUMULATOR/BPM/BPBA4002/VC_ACQ ACCUMULATOR/BPM/BPBA4002/VD_ACQ ACCUMULATOR/BPM/BPBA4002/X ACCUMULATOR/BPM/BPBA4002/Y ACCUMULATOR/BPM/BPBA4002/MODE ACCUMULATOR/BPM/BPBA4002/SAMPLES ACCUMULATOR/BPM/BPBA4002/ACQUISITION ACCUMULATOR/BPM/BPBA4002/MT ACCUMULATOR/BPM/BPBA3002/config ACCUMULATOR/BPM/BPBA3002/VA ACCUMULATOR/BPM/BPBA3002/VB ACCUMULATOR/BPM/BPBA3002/VC ACCUMULATOR/BPM/BPBA3002/VD ACCUMULATOR/BPM/BPBA3002/SUM ACCUMULATOR/BPM/BPBA3002/X_ACQ ACCUMULATOR/BPM/BPBA3002/Y_ACQ ACCUMULATOR/BPM/BPBA3002/VA_ACQ ACCUMULATOR/BPM/BPBA3002/VB_ACQ ACCUMULATOR/BPM/BPBA3002/VC_ACQ ACCUMULATOR/BPM/BPBA3002/VD_ACQ ACCUMULATOR/BPM/BPBA3002/X ACCUMULATOR/BPM/BPBA3002/Y ACCUMULATOR/BPM/BPBA3002/MODE ACCUMULATOR/BPM/BPBA3002/SAMPLES ACCUMULATOR/BPM/BPBA3002/ACQUISITION ACCUMULATOR/BPM/BPBA3002/MT"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "remoteGroupAccessDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "ACCUMULATOR/BPM/BPSA1001/config ACCUMULATOR/BPM/BPSA1001/VA ACCUMULATOR/BPM/BPSA1001/VB ACCUMULATOR/BPM/BPSA1001/VC ACCUMULATOR/BPM/BPSA1001/VD ACCUMULATOR/BPM/BPSA1001/SUM ACCUMULATOR/BPM/BPSA1001/X_ACQ ACCUMULATOR/BPM/BPSA1001/Y_ACQ ACCUMULATOR/BPM/BPSA1001/VA_ACQ ACCUMULATOR/BPM/BPSA1001/VB_ACQ ACCUMULATOR/BPM/BPSA1001/VC_ACQ ACCUMULATOR/BPM/BPSA1001/VD_ACQ ACCUMULATOR/BPM/BPSA1001/X ACCUMULATOR/BPM/BPSA1001/Y ACCUMULATOR/BPM/BPSA1001/MODE ACCUMULATOR/BPM/BPSA1001/SAMPLES ACCUMULATOR/BPM/BPSA1001/ACQUISITION ACCUMULATOR/BPM/BPSA1001/MT ACCUMULATOR/BPM/BPSA2001/config ACCUMULATOR/BPM/BPSA2001/VA ACCUMULATOR/BPM/BPSA2001/VB ACCUMULATOR/BPM/BPSA2001/VC ACCUMULATOR/BPM/BPSA2001/VD ACCUMULATOR/BPM/BPSA2001/SUM ACCUMULATOR/BPM/BPSA2001/X_ACQ ACCUMULATOR/BPM/BPSA2001/Y_ACQ ACCUMULATOR/BPM/BPSA2001/VA_ACQ ACCUMULATOR/BPM/BPSA2001/VB_ACQ ACCUMULATOR/BPM/BPSA2001/VC_ACQ ACCUMULATOR/BPM/BPSA2001/VD_ACQ ACCUMULATOR/BPM/BPSA2001/X ACCUMULATOR/BPM/BPSA2001/Y ACCUMULATOR/BPM/BPSA2001/MODE ACCUMULATOR/BPM/BPSA2001/SAMPLES ACCUMULATOR/BPM/BPSA2001/ACQUISITION ACCUMULATOR/BPM/BPSA2001/MT ACCUMULATOR/BPM/BPSA3001/config ACCUMULATOR/BPM/BPSA3001/VA ACCUMULATOR/BPM/BPSA3001/VB ACCUMULATOR/BPM/BPSA3001/VC ACCUMULATOR/BPM/BPSA3001/VD ACCUMULATOR/BPM/BPSA3001/SUM ACCUMULATOR/BPM/BPSA3001/X_ACQ ACCUMULATOR/BPM/BPSA3001/Y_ACQ ACCUMULATOR/BPM/BPSA3001/VA_ACQ ACCUMULATOR/BPM/BPSA3001/VB_ACQ ACCUMULATOR/BPM/BPSA3001/VC_ACQ ACCUMULATOR/BPM/BPSA3001/VD_ACQ ACCUMULATOR/BPM/BPSA3001/X ACCUMULATOR/BPM/BPSA3001/Y ACCUMULATOR/BPM/BPSA3001/MODE ACCUMULATOR/BPM/BPSA3001/SAMPLES ACCUMULATOR/BPM/BPSA3001/ACQUISITION ACCUMULATOR/BPM/BPSA3001/MT ACCUMULATOR/BPM/BPSA4001/config ACCUMULATOR/BPM/BPSA4001/VA ACCUMULATOR/BPM/BPSA4001/VB ACCUMULATOR/BPM/BPSA4001/VC ACCUMULATOR/BPM/BPSA4001/VD ACCUMULATOR/BPM/BPSA4001/SUM ACCUMULATOR/BPM/BPSA4001/X_ACQ ACCUMULATOR/BPM/BPSA4001/Y_ACQ ACCUMULATOR/BPM/BPSA4001/VA_ACQ  ACCUMULATOR/BPM/BPSA4001/VB_ACQ ACCUMULATOR/BPM/BPSA4001/VC_ACQ ACCUMULATOR/BPM/BPSA4001/VD_ACQ ACCUMULATOR/BPM/BPSA4001/X ACCUMULATOR/BPM/BPSA4001/Y ACCUMULATOR/BPM/BPSA4001/MODE ACCUMULATOR/BPM/BPSA4001/SAMPLES ACCUMULATOR/BPM/BPSA4001/ACQUISITION ACCUMULATOR/BPM/BPSA4001/MT ACCUMULATOR/BPM/BPBA1001/config ACCUMULATOR/BPM/BPBA1001/VA ACCUMULATOR/BPM/BPBA1001/VB ACCUMULATOR/BPM/BPBA1001/VC ACCUMULATOR/BPM/BPBA1001/VD ACCUMULATOR/BPM/BPBA1001/SUM ACCUMULATOR/BPM/BPBA1001/X_ACQ ACCUMULATOR/BPM/BPBA1001/Y_ACQ ACCUMULATOR/BPM/BPBA1001/VA_ACQ ACCUMULATOR/BPM/BPBA1001/VB_ACQ ACCUMULATOR/BPM/BPBA1001/VC_ACQ ACCUMULATOR/BPM/BPBA1001/VD_ACQ ACCUMULATOR/BPM/BPBA1001/X ACCUMULATOR/BPM/BPBA1001/Y ACCUMULATOR/BPM/BPBA1001/MODE ACCUMULATOR/BPM/BPBA1001/SAMPLES ACCUMULATOR/BPM/BPBA1001/ACQUISITION ACCUMULATOR/BPM/BPBA1001/MT ACCUMULATOR/BPM/BPBA2002/config ACCUMULATOR/BPM/BPBA2002/VA ACCUMULATOR/BPM/BPBA2002/VB ACCUMULATOR/BPM/BPBA2002/VC ACCUMULATOR/BPM/BPBA2002/VD ACCUMULATOR/BPM/BPBA2002/SUM ACCUMULATOR/BPM/BPBA2002/X_ACQ ACCUMULATOR/BPM/BPBA2002/Y_ACQ ACCUMULATOR/BPM/BPBA2002/VA_ACQ ACCUMULATOR/BPM/BPBA2002/VB_ACQ ACCUMULATOR/BPM/BPBA2002/VC_ACQ ACCUMULATOR/BPM/BPBA2002/VD_ACQ ACCUMULATOR/BPM/BPBA2002/X ACCUMULATOR/BPM/BPBA2002/Y ACCUMULATOR/BPM/BPBA2002/MODE ACCUMULATOR/BPM/BPBA2002/SAMPLES ACCUMULATOR/BPM/BPBA2002/ACQUISITION ACCUMULATOR/BPM/BPBA2002/MT ACCUMULATOR/BPM/BPBA1002/config ACCUMULATOR/BPM/BPBA1002/VA ACCUMULATOR/BPM/BPBA1002/VB ACCUMULATOR/BPM/BPBA1002/VC ACCUMULATOR/BPM/BPBA1002/VD ACCUMULATOR/BPM/BPBA1002/SUM ACCUMULATOR/BPM/BPBA1002/X_ACQ ACCUMULATOR/BPM/BPBA1002/Y_ACQ ACCUMULATOR/BPM/BPBA1002/VA_ACQ ACCUMULATOR/BPM/BPBA1002/VB_ACQ ACCUMULATOR/BPM/BPBA1002/VC_ACQ ACCUMULATOR/BPM/BPBA1002/VD_ACQ ACCUMULATOR/BPM/BPBA1002/X ACCUMULATOR/BPM/BPBA1002/Y ACCUMULATOR/BPM/BPBA1002/MODE ACCUMULATOR/BPM/BPBA1002/SAMPLES ACCUMULATOR/BPM/BPBA1002/ACQUISITION ACCUMULATOR/BPM/BPBA1002/MT ACCUMULATOR/BPM/BPBA2001/config ACCUMULATOR/BPM/BPBA2001/VA ACCUMULATOR/BPM/BPBA2001/VB ACCUMULATOR/BPM/BPBA2001/VC ACCUMULATOR/BPM/BPBA2001/VD ACCUMULATOR/BPM/BPBA2001/SUM ACCUMULATOR/BPM/BPBA2001/X_ACQ ACCUMULATOR/BPM/BPBA2001/Y_ACQ ACCUMULATOR/BPM/BPBA2001/VA_ACQ ACCUMULATOR/BPM/BPBA2001/VB_ACQ ACCUMULATOR/BPM/BPBA2001/VC_ACQ ACCUMULATOR/BPM/BPBA2001/VD_ACQ ACCUMULATOR/BPM/BPBA2001/X ACCUMULATOR/BPM/BPBA2001/Y ACCUMULATOR/BPM/BPBA2001/MODE ACCUMULATOR/BPM/BPBA2001/SAMPLES ACCUMULATOR/BPM/BPBA2001/ACQUISITION ACCUMULATOR/BPM/BPBA2001/MT ACCUMULATOR/BPM/BPBA4001/config ACCUMULATOR/BPM/BPBA4001/VA ACCUMULATOR/BPM/BPBA4001/VB ACCUMULATOR/BPM/BPBA4001/VC ACCUMULATOR/BPM/BPBA4001/VD ACCUMULATOR/BPM/BPBA4001/SUM ACCUMULATOR/BPM/BPBA4001/X_ACQ ACCUMULATOR/BPM/BPBA4001/Y_ACQ ACCUMULATOR/BPM/BPBA4001/VA_ACQ ACCUMULATOR/BPM/BPBA4001/VB_ACQ ACCUMULATOR/BPM/BPBA4001/VC_ACQ ACCUMULATOR/BPM/BPBA4001/VD_ACQ ACCUMULATOR/BPM/BPBA4001/X ACCUMULATOR/BPM/BPBA4001/Y ACCUMULATOR/BPM/BPBA4001/MODE ACCUMULATOR/BPM/BPBA4001/SAMPLES ACCUMULATOR/BPM/BPBA4001/ACQUISITION ACCUMULATOR/BPM/BPBA4001/MT ACCUMULATOR/BPM/BPBA3001/config ACCUMULATOR/BPM/BPBA3001/VA ACCUMULATOR/BPM/BPBA3001/VB ACCUMULATOR/BPM/BPBA3001/VC ACCUMULATOR/BPM/BPBA3001/VD ACCUMULATOR/BPM/BPBA3001/SUM ACCUMULATOR/BPM/BPBA3001/X_ACQ ACCUMULATOR/BPM/BPBA3001/Y_ACQ ACCUMULATOR/BPM/BPBA3001/VA_ACQ ACCUMULATOR/BPM/BPBA3001/VB_ACQ ACCUMULATOR/BPM/BPBA3001/VC_ACQ ACCUMULATOR/BPM/BPBA3001/VD_ACQ ACCUMULATOR/BPM/BPBA3001/X ACCUMULATOR/BPM/BPBA3001/Y ACCUMULATOR/BPM/BPBA3001/MODE ACCUMULATOR/BPM/BPBA3001/SAMPLES ACCUMULATOR/BPM/BPBA3001/ACQUISITION ACCUMULATOR/BPM/BPBA3001/MT ACCUMULATOR/BPM/BPBA4002/config ACCUMULATOR/BPM/BPBA4002/VA ACCUMULATOR/BPM/BPBA4002/VB ACCUMULATOR/BPM/BPBA4002/VC ACCUMULATOR/BPM/BPBA4002/VD ACCUMULATOR/BPM/BPBA4002/SUM ACCUMULATOR/BPM/BPBA4002/X_ACQ ACCUMULATOR/BPM/BPBA4002/Y_ACQ ACCUMULATOR/BPM/BPBA4002/VA_ACQ ACCUMULATOR/BPM/BPBA4002/VB_ACQ ACCUMULATOR/BPM/BPBA4002/VC_ACQ ACCUMULATOR/BPM/BPBA4002/VD_ACQ ACCUMULATOR/BPM/BPBA4002/X ACCUMULATOR/BPM/BPBA4002/Y ACCUMULATOR/BPM/BPBA4002/MODE ACCUMULATOR/BPM/BPBA4002/SAMPLES ACCUMULATOR/BPM/BPBA4002/ACQUISITION ACCUMULATOR/BPM/BPBA4002/MT ACCUMULATOR/BPM/BPBA3002/config ACCUMULATOR/BPM/BPBA3002/VA ACCUMULATOR/BPM/BPBA3002/VB ACCUMULATOR/BPM/BPBA3002/VC ACCUMULATOR/BPM/BPBA3002/VD ACCUMULATOR/BPM/BPBA3002/SUM ACCUMULATOR/BPM/BPBA3002/X_ACQ ACCUMULATOR/BPM/BPBA3002/Y_ACQ ACCUMULATOR/BPM/BPBA3002/VA_ACQ ACCUMULATOR/BPM/BPBA3002/VB_ACQ ACCUMULATOR/BPM/BPBA3002/VC_ACQ ACCUMULATOR/BPM/BPBA3002/VD_ACQ ACCUMULATOR/BPM/BPBA3002/X ACCUMULATOR/BPM/BPBA3002/Y ACCUMULATOR/BPM/BPBA3002/MODE ACCUMULATOR/BPM/BPBA3002/SAMPLES ACCUMULATOR/BPM/BPBA3002/ACQUISITION ACCUMULATOR/BPM/BPBA3002/MT"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/ORBIT_E",
@@ -5010,7 +5236,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::data_import::RTChaos2Memcache",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "memcacheurl",
                                 "cudk_default_value": "192.168.192.107:11211",
                                 "cudk_ds_max_range": "",
@@ -5039,7 +5266,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::data_import::RTChaos2Memcache",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "memcacheurl",
                                 "cudk_default_value": "192.168.192.107:11211",
                                 "cudk_ds_max_range": "",
@@ -5068,7 +5296,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN775",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "VME_DRIVER",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "3",
@@ -5127,7 +5356,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN965",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "VME_DRIVER",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "3",
@@ -5180,12 +5410,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "13,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "13,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}",
                                 "cudk_ds_max_range": "",
@@ -5214,7 +5447,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN965",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "VME_DRIVER",
                                 "cudk_default_value": "3",
                                 "cudk_ds_max_range": "3",
@@ -5273,7 +5507,8 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::caen::RTCAEN775",
-                        "attribute_value_descriptions": [{
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "VME_DRIVER",
                                 "cudk_default_value": "3",
                                 "cudk_ds_max_range": "3",
@@ -5326,11 +5561,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":30,\"err\":2,\"type\":0}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":30,\"err\":2,\"type\":0}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "ACCUMULATOR/BPM/BPSA2001",
@@ -5347,12 +5584,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::daq::libera::SCLiberaCU",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "LiberaSoftDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "333,RndWave:0:3000"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "LiberaSoftDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "333,RndWave:0:3000"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "config",
                                 "cudk_default_value": "{\"coeff_u\":[28.5574,-0.046125,5.43125e-5,0.0172085,-1.15991e-5,1.94837e-7],\"coeff_v\":[28.5574,0.0172085,1.94837e-7,-0.046125,-1.15991e-5,5.43125e-5]}",
                                 "cudk_ds_max_range": "",
@@ -5381,11 +5621,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":50,\"err\":2,\"type\":2}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":50,\"err\":2,\"type\":2}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_D0101",
@@ -5402,11 +5644,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":20,\"err\":1,\"type\":0}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":20,\"err\":1,\"type\":0}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_C0101",
@@ -5423,11 +5667,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":25,\"err\":1,\"type\":1}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":25,\"err\":1,\"type\":1}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_D0102",
@@ -5444,11 +5690,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":22,\"err\":1,\"type\":1}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":22,\"err\":1,\"type\":1}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_D0201",
@@ -5465,11 +5713,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":25,\"err\":4,\"type\":1}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":25,\"err\":4,\"type\":1}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_D0203",
@@ -5486,11 +5736,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":{\"$numberDouble\":\"23.8\"},\"err\":1,\"type\":0}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":{\"$numberDouble\":\"23.8\"},\"err\":1,\"type\":0}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "AULA_TOUSHECK/TEMP/ZB_SENSOR_D0103",
@@ -5507,11 +5759,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":23,\"err\":1,\"type\":0}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":23,\"err\":1,\"type\":0}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "FLAME/CAMERA/LASER001",
@@ -5528,12 +5782,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":1,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"ellipse\",\"framerate\":1,\"err_centerx\":10,\"movex\":1,\"movey\":1,\"rot\":1,\"err_centery\":10,\"err_rotangle\":2,\"tickness\":-1,\"linetype\":8,\"err_tickness\":50,\"colb\":255}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -5580,12 +5837,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"/usr/local/chaos/chaos-distrib/html/chaos_dashboard/img/testimage1300-870.jpeg\",\"framerate\":2}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"SHAPE\":{\"type\":\"/usr/local/chaos/chaos-distrib/html/chaos_dashboard/img/testimage1300-870.jpeg\",\"framerate\":2}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -5632,12 +5892,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"serial\":\"21278018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":1,\"centerx\":512,\"centery\":334,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"serial\":\"21278018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":1,\"centerx\":512,\"centery\":334,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -5670,6 +5933,44 @@
                         ]
                     },
                     {
+                        "ndk_uid": "FLAME/CAMERA/LASER002_FILT",
+                        "cudk_desc": "",
+                        "ndk_parent": "TEST",
+                        "control_unit_implementation": "RTCameraProcess",
+                        "dsndk_storage_type": [
+                            "Live"
+                        ],
+                        "cudk_load_param": "{\"cudk_subscriptions\":\"FLAME/CAMERA/LASER002\",\"cudk_discard_too_old\":1000}",
+                        "cudk_prop": [],
+                        "auto_load": true,
+                        "auto_init": true,
+                        "auto_start": true,
+                        "cudk_thr_sch_delay": 1,
+                        "dsndk_storage_history_ageing": 36000,
+                        "dsndk_storage_live_time": 0,
+                        "cudk_driver_description": [],
+                        "attribute_value_descriptions": [
+                            {
+                                "cudk_ds_attr_name": "SETTINGS",
+                                "cudk_default_value": "{\n  \"filters\":[\n    {\"filter_name\":\"equalize\"},\n    {\"filter_name\":\"colormap\",\"filter_param\":10}\n  ]\n }",
+                                "cudk_ds_max_range": "",
+                                "cudk_ds_min_range": "",
+                                "cudk_ds_max_warn_range": "",
+                                "cudk_ds_min_warn_range": "",
+                                "cudk_ds_attr_inc": "0",
+                                "cudk_ds_attr_unit": "NA",
+                                "cudk_ds_attr_convfact": "1",
+                                "cudk_ds_attr_offset": "0",
+                                "cudk_ds_attr_wrn_thr": "",
+                                "cudk_ds_attr_error_thr": ""
+                            }
+                        ],
+                        "zone": "FLAME",
+                        "group": "CAMERA",
+                        "id": "LASER002_FILT",
+                        "ndk_type": "nt_control_unit"
+                    },
+                    {
                         "ndk_uid": "FLAME/CAMERA/LASER003",
                         "ndk_type": "nt_control_unit",
                         "ndk_parent": "TEST",
@@ -5684,12 +5985,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "RTCameraBase",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ShapeSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"serial\":\"21478018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":1,\"centerx\":420,\"centery\":300,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ShapeSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"serial\":\"21478018\",\"WIDTH\":1024,\"HEIGHT\":768,\"SHAPE\":{\"type\":\"beam\",\"framerate\":1,\"centerx\":420,\"centery\":300,\"movex\":{\"$numberDouble\":\"0.5\"},\"movey\":{\"$numberDouble\":\"0.9\"},\"min_movex\":500,\"max_movex\":520,\"min_movey\":330,\"max_movey\":337,\"sigmax\":50,\"sigmay\":40,\"amplitude\":1,\"inc_amplitude\":{\"$numberDouble\":\"0.3\"},\"max_amplitude\":10}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "TRIGGER_MODE",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "1024",
@@ -5736,11 +6040,13 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "BasicSensor",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "VTemperatureDriver",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"temp\":{\"$numberDouble\":\"22.5\"},\"err\":1,\"type\":1}"
-                        }]
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "VTemperatureDriver",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"temp\":{\"$numberDouble\":\"22.5\"},\"err\":1,\"type\":1}"
+                            }
+                        ]
                     },
                     {
                         "ndk_uid": "BTF/SCRAPER/SLTB001U",
@@ -5757,12 +6063,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::actuator::SCActuatorControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "ActuatorSim",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyk13c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":51,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.8\"}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "ActuatorSim",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver_param\":{\"HostID\":0,\"serdev\":\"/dev/ttyk13c\",\"BtType\":0,\"Baudrate\":0},\"device_param\":{\"ConfigAxis\":51,\"ConfigFile\":\"/home/caschera/filedicaschera.zip\",\"useIU\":\"0\",\"speed\":\"0.8\"}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "position",
                                 "cudk_default_value": "0",
                                 "cudk_ds_max_range": "100",
@@ -5937,12 +6246,15 @@
                         "dsndk_storage_live_time": 0,
                         "dsndk_update_anyway": 2000,
                         "control_unit_implementation": "::driver::powersupply::SCPowerSupplyControlUnit",
-                        "cudk_driver_description": [{
-                            "cudk_driver_description_name": "PowerSimDD",
-                            "cudk_driver_description_version": "1.0.0",
-                            "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
-                        }],
-                        "attribute_value_descriptions": [{
+                        "cudk_driver_description": [
+                            {
+                                "cudk_driver_description_name": "PowerSimDD",
+                                "cudk_driver_description_version": "1.0.0",
+                                "cudk_driver_description_init_parameter": "{\"driver\":{\"dev\":\"/dev/ttyr78\",\"slaveid\":5,\"feature\":2,\"min_curr\":-10,\"max_curr\":{\"$numberDouble\":\"9.95\"},\"min_volt\":0,\"max_volt\":10,\"min_write_time_ms\":50,\"max_write_time_ms\":100,\"min_read_time_ms\":100,\"max_read_time_ms\":200,\"force_err_sec\":0,\"readout_err\":0,\"update_delay_us\":50000}}"
+                            }
+                        ],
+                        "attribute_value_descriptions": [
+                            {
                                 "cudk_ds_attr_name": "current",
                                 "cudk_ds_attr_wrn_thr": "1.0",
                                 "cudk_ds_attr_err_thr": "10.0",
@@ -6010,7 +6322,6 @@
             "ndk_type": "nt_root",
             "ndk_sub_type": "nt_script_eu"
         }
-    
     },
     "snapshots": {},
     "scripts": {
@@ -6499,10 +6810,12 @@
                             "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
                             "cudk_driver_description_version": "1.0.0",
                             "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":8}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
+                            "cudk_driver_prop": [
+                                {
+                                    "name": "",
+                                    "value": ""
+                                }
+                            ]
                         },
                         "ActuatorSim": {
                             "cudk_driver_description_name": "ActuatorSim",
@@ -6519,10 +6832,12 @@
                             "cudk_driver_description_name": "ChaosPowerSupplyRemoteClientDriver",
                             "cudk_driver_description_version": "1.0.0",
                             "cudk_driver_description_init_parameter": "{\"url\":\"ws://localhost:8123/micos\",\"uri\":\"/micos\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":8},\"device_param\":{\"axis\":4}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
+                            "cudk_driver_prop": [
+                                {
+                                    "name": "",
+                                    "value": ""
+                                }
+                            ]
                         }
                     },
                     "attrs": {
@@ -6930,19 +7245,23 @@
                             "cudk_driver_description_name": "ChaosPowerSupplyRemoteClientDriver",
                             "cudk_driver_description_version": "1.0.0",
                             "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1},\"device_param\":{\"slaveid\":12}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
+                            "cudk_driver_prop": [
+                                {
+                                    "name": "",
+                                    "value": ""
+                                }
+                            ]
                         },
                         "ChaosActuatorRemoteClientDriver": {
                             "cudk_driver_description_name": "ChaosActuatorRemoteClientDriver",
                             "cudk_driver_description_version": "1.0.0",
                             "cudk_driver_description_init_parameter": "{\"url\":\"ws://127.0.0.1:8123/powersupply/SimpleSim\",\"uri\":\"/powersupply/SimpleSim\",\"device_param\":{\"slaveid\":13},\"driver_param\":{\"transport\":\"serial\",\"hostname\":\"127.0.0.1\",\"port\":6,\"BaudRate\":19200,\"Language\":0,\"NumberOfAxis\":1}}",
-                            "cudk_driver_prop": [{
-                                "name": "",
-                                "value": ""
-                            }]
+                            "cudk_driver_prop": [
+                                {
+                                    "name": "",
+                                    "value": ""
+                                }
+                            ]
                         }
                     },
                     "attrs": {
@@ -7125,7 +7444,8 @@
             }
         },
         "custom_zone": {
-            "grouplist": [{
+            "grouplist": [
+                {
                     "name": "grp",
                     "elems": [
                         "a",
@@ -7182,7 +7502,8 @@
                     "checkLive": 10000,
                     "defaultRestTimeout": 10000
                 },
-                "controls": [{
+                "controls": [
+                    {
                         "row": 41,
                         "col": 10,
                         "object": {
