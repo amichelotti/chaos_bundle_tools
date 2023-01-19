@@ -52,10 +52,10 @@ __template_name__Driver::~__template_name__Driver() {
 	
 }
 
-void __template_name__Driver::driverInit(const char *initParameter) throw(chaos::CException) {
+void __template_name__Driver::driverInit(const char *initParameter)  {
 	__template_name__LAPP_ << "Init __template_name__ driver";
 }
 
-void __template_name__Driver::driverDeinit() throw(chaos::CException) {
+void __template_name__Driver::driverDeinit()  {
 	__template_name__LAPP_ << "Deinit __template_name__ driver";
 }

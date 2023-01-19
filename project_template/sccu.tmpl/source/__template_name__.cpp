@@ -32,7 +32,7 @@ __template_name__::~__template_name__() {
 /*
  Return the default configuration
  */
-void __template_name__::unitDefineActionAndDataset() throw(CException) {
+void __template_name__::unitDefineActionAndDataset() 
 
     //install a default command
     installCommand<__template_name__DefaultCommand>("default_command");
@@ -97,7 +97,7 @@ void __template_name__::defineSharedVariable() {
 }
 
 // Abstract method for the initialization of the control unit
-void __template_name__::unitInit() throw(CException) {
+void __template_name__::unitInit() 
     chaos::cu::driver_manager::driver::DriverAccessor * accessor =AbstractControlUnit::getAccessoInstanceByIndex(0);
   if(accessor == NULL){
     throw chaos::CException(-1, "Cannot retrieve the requested driver", __FUNCTION__);
@@ -113,17 +113,17 @@ void __template_name__::unitInit() throw(CException) {
 }
 
 // Abstract method for the start of the control unit
-void __template_name__::unitStart() throw(CException) {
+void __template_name__::unitStart() 
 
 }
 
 // Abstract method for the stop of the control unit
-void __template_name__::unitStop() throw(CException) {
+void __template_name__::unitStop() 
 
 }
 
 // Abstract method for the deinit of the control unit
-void __template_name__::unitDeinit() throw(CException) {
+void __template_name__::unitDeinit() 
 
 }
 

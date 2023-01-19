@@ -33,23 +33,23 @@ namespace __template_type__ {
 			
 		protected:
 			//define dataset
-			void unitDefineActionAndDataset()throw(chaos::CException);
+			void unitDefineActionAndDataset();
 			
 			
 			// init contorl unit
-			void unitInit() throw(chaos::CException);
+			void unitInit() ;
 			
 			//start contor unit
-			void unitStart() throw(chaos::CException);
+			void unitStart() ;
 			
 			//intervalled scheduled method
-			void unitRun() throw(chaos::CException);
+			void unitRun() ;
 			
 			//stop contor unit
-			void unitStop() throw(chaos::CException);
+			void unitStop() ;
 			
 			//deinit
-			void unitDeinit() throw(chaos::CException);
+			void unitDeinit() ;
 		public:
 
 

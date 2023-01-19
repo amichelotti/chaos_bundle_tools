@@ -49,34 +49,34 @@ __template_name__ControlUnit::~__template_name__ControlUnit() {
 /*
  Return the default configuration
  */
-void __template_name__ControlUnit::unitDefineActionAndDataset() throw(chaos::CException) {
+void __template_name__ControlUnit::unitDefineActionAndDataset()  {
 }
 
 
 
 // Abstract method for the initialization of the control unit
-void __template_name__ControlUnit::unitInit() throw(chaos::CException) {
+void __template_name__ControlUnit::unitInit()  {
 	__template_name__CUAPP_ "unitInit";
 	//plc_s7_accessor = AbstractControlUnit::getAccessoInstanceByIndex(0);
 }
 
 // Abstract method for the start of the control unit
-void __template_name__ControlUnit::unitStart() throw(chaos::CException) {
+void __template_name__ControlUnit::unitStart()  {
 	__template_name__CUAPP_ "unitStart";
 }
 
 
 //intervalled scheduled method
-void __template_name__ControlUnit::unitRun() throw(chaos::CException) {
+void __template_name__ControlUnit::unitRun()  {
 	__template_name__CUAPP_ "unitRun";
 }
 
 // Abstract method for the stop of the control unit
-void __template_name__ControlUnit::unitStop() throw(chaos::CException) {
+void __template_name__ControlUnit::unitStop()  {
 	__template_name__CUAPP_ "unitStop";
 }
 
 // Abstract method for the deinit of the control unit
-void __template_name__ControlUnit::unitDeinit() throw(chaos::CException) {
+void __template_name__ControlUnit::unitDeinit()  {
 	__template_name__CUAPP_ "unitDeinit";
 }
