@@ -20,7 +20,7 @@
 
 #include "__template_name__ControlUnit.h"
 
-#include <boost/regex.hpp>
+#include <regex>
 #include <boost/lexical_cast.hpp>
 
 using namespace chaos::common::data;

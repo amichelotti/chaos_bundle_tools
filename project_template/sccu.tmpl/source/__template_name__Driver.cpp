@@ -21,7 +21,7 @@
 #include <string>
 #include <stdlib.h>
 #include <chaos/cu_toolkit/driver_manager/driver/AbstractDriverPlugin.h>
-#include <boost/regex.hpp>
+#include <regex>
 
 #define __template_name__LAPP_		LAPP_ << "[__template_name__Driver] "
 #define __template_name__LDBG_		LDBG_ << "[__template_name__Driver] "
