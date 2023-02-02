@@ -49,7 +49,7 @@ __template_name__Driver::~__template_name__Driver() {
 
 }
 
-void __template_name__Driver::driverInit(const char *initParameter) throw(chaos::CException) {
+void __template_name__Driver::driverInit(const char *initParameter)  {
 	__template_name__DriverLAPP_ << "Init driver";
 	try{
 		i32_out_1_value = boost::lexical_cast<int32_t>(initParameter);
@@ -59,7 +59,7 @@ void __template_name__Driver::driverInit(const char *initParameter) throw(chaos:
 	__template_name__DriverLAPP_ << "inizialised driver with seed: " << i32_out_1_value;
 }
 
-void __template_name__Driver::driverDeinit() throw(chaos::CException) {
+void __template_name__Driver::driverDeinit()  {
 	__template_name__DriverLAPP_ << "Deinit driver";
 
 }

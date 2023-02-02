@@ -52,7 +52,7 @@ The api that can be called withi this method are listed into
 "Control Unit Definition Public API" module into html documentation
 (chaosframework/Documentation/html/group___control___unit___definition___api.html)
 */
-void __template_name__::unitDefineActionAndDataset() throw(chaos::CException) {
+void __template_name__::unitDefineActionAndDataset()  {
     //insert your definition code here
     /*
 
@@ -113,7 +113,7 @@ void __template_name__::unitDefineCustomAttribute() {
 }
 
 //!Initialize the Custom Control Unit
-void __template_name__::unitInit() throw(chaos::CException) {
+void __template_name__::unitInit()  {
 
   //check the value set on MDS for in_1 channel
   //int32_t in_1 = getAttributeCache()->getValue<int32_t>(DOMAIN_INPUT, "in_1");
@@ -121,12 +121,12 @@ void __template_name__::unitInit() throw(chaos::CException) {
 }
 
 //!Execute the work, this is called with a determinated delay, it must be as fast as possible
-void __template_name__::unitStart() throw(chaos::CException) {
+void __template_name__::unitStart()  {
 
 }
 
 //!Execute the Control Unit work
-void __template_name__::unitRun() throw(chaos::CException) {
+void __template_name__::unitRun()  {
   //get the output attribute pointer form the internal cache
   int32_t *out_1_ptr = getAttributeCache()->getRWPtr<int32_t>(DOMAIN_OUTPUT, "out_1");
 
@@ -147,22 +147,22 @@ void __template_name__::unitRun() throw(chaos::CException) {
 }
 
 //!Execute the Control Unit work
-void __template_name__::unitStop() throw(chaos::CException) {
+void __template_name__::unitStop()  {
 
 }
 
 //!Deinit the Control Unit
-void __template_name__::unitDeinit() throw(chaos::CException) {
+void __template_name__::unitDeinit()  {
 
 }
 
 //! pre imput attribute change
-void __template_name__::unitInputAttributePreChangeHandler() throw(chaos::CException) {
+void __template_name__::unitInputAttributePreChangeHandler()  {
 
 }
 
 //! attribute changed handler
-void __template_name__::unitInputAttributeChangedHandler() throw(chaos::CException) {
+void __template_name__::unitInputAttributeChangedHandler()  {
 
   //array to managed the changed attribute list
   std::vector<chaos::cu::control_manager::VariableIndexType> changed_input_attribute;

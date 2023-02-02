@@ -37,8 +37,8 @@ typedef enum __template_name__DriverOpcode{
  */
 class __template_name__Driver: ADD_CU_DRIVER_PLUGIN_SUPERCLASS {
 	int32_t i32_out_1_value;
-	void driverInit(const char *initParameter) throw(chaos::CException);
-	void driverDeinit() throw(chaos::CException);
+	void driverInit(const char *initParameter) ;
+	void driverDeinit() ;
 public:
 	__template_name__Driver();
 	~__template_name__Driver();

@@ -40,8 +40,8 @@ namespace driver {
 		 */
 		class __template_name__Driver: ADD_CU_DRIVER_PLUGIN_SUPERCLASS {
 			
-			void driverInit(const char *initParameter) throw(chaos::CException);
-			void driverDeinit() throw(chaos::CException);
+			void driverInit(const char *initParameter) ;
+			void driverDeinit() ;
 
                  boost::mutex lock;
                  
